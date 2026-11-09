@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es-PY" class="js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>La Forja Barber Studio · Corte, Fade y Navaja en Asunción</title>
+  <meta name="description" content="Barbería de autor en Asunción: corte clásico, fade, barba con toalla caliente y afeitado a navaja. Martes a sábado. Pedí tu turno por WhatsApp al 0986 125 649.">
+  <meta name="theme-color" content="#0f0e0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --disp: 'Anton', Impact, 'Arial Narrow', sans-serif !important;
+      --mono: 'Space Mono', ui-monospace, Menlo, Consolas, monospace !important;
+    }
+    /* Ensure local images fit cleanly */
+    img { max-width: 100%; height: auto; display: block; }
+    .hero-fig img { width: 100%; height: 100%; object-fit: cover; }
+    .visit-fig img { width: 100%; height: 100%; object-fit: cover; }
+    .steps img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+    .strop-fig img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <a class="skip" href="#main">Saltar al contenido</a>
+
+  <header class="site-head">
+    <div class="head-in">
+      <a class="brand" href="index.html" aria-label="La Forja Barber Studio, inicio">
+        <svg class="mark" viewBox="0 0 28 56" width="18" height="36" aria-hidden="true">
+          <defs>
+            <clipPath id="pc1"><rect x="8" y="9" width="12" height="38" rx="3"></rect></clipPath>
+          </defs>
+          <rect x="5" y="1.5" width="18" height="6" rx="2.5" fill="currentColor"></rect>
+          <rect x="8" y="9" width="12" height="38" rx="3" fill="#ece3d3"></rect>
+          <g clip-path="url(#pc1)">
+            <path d="M0 18 28 4v6L0 24zM0 34l28-14v6L0 40zM0 50l28-14v6L0 56z" fill="#e0483a"></path>
+            <path d="M0 26l28-14v3L0 29zM0 42l28-14v3L0 45z" fill="#2f55a4"></path>
+          </g>
+          <rect x="5" y="48.5" width="18" height="6" rx="2.5" fill="currentColor"></rect>
+        </svg>
+        <span class="brand-word">La Forja<small>barber studio · asunción</small></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#turno">Turno</a>
+        <a href="#oficio">Oficio</a>
+        <a href="#visitanos">Visitanos</a>
+      </nav>
+      <a class="btn btn-red btn-sm" href="https://wa.me/595986125649?text=Hola%20La%20Forja%2C%20quiero%20un%20turno." target="_blank" rel="noopener">Turno<span class="hide-s"> por WhatsApp</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="tag"><span class="dot" aria-hidden="true"></span><span data-open-status="">Abierto · hasta las 20:00</span></p>
+        <h1 id="hero-title" class="giant"><span class="g1">Corte.</span> <span class="g2">Fade.</span> <span class="g3">Navaja.</span><span class="sr"> La Forja Barber Studio, en Asunción</span></h1>
+        <p class="lede">Barbería y taller de corte en Asunción. Tijera, máquina y navaja, con turno y sin apuro: te sentás, charlamos lo que querés y salís impecable.</p>
+        <div class="cta-row">
+          <a class="btn btn-red" href="#turno">Pedí tu turno</a>
+          <a class="btn btn-ghost" href="#servicios">Ver precios</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="pole" aria-hidden="true"><span class="pole-cap"></span><span class="pole-glass"></span><span class="pole-cap"></span></div>
+        <figure class="hero-fig">
+          <img src="sillon-1280.jpg" width="1280" height="720" fetchpriority="high" alt="Sillón de barbero vintage en cuero clásico bajo iluminación de estudio cálida">
+          <figcaption><span>Sillón Principal</span><span>Esperándote</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="stripe" aria-hidden="true"></div>
+
+    <!-- Servicios -->
+    <section class="board-sec" id="servicios" aria-labelledby="sv-title">
+      <div class="wrap board-grid">
+        <div>
+          <h2 id="sv-title" class="board-title">El tablero</h2>
+          <p class="sub">Tocá un servicio y lo cargamos en tu turno.</p>
+          <div class="board" role="list">
+            <a role="listitem" class="row" href="#turno" data-svc="corte"><span class="r-name">Corte clásico</span><span class="r-dots" aria-hidden="true"></span><span class="r-min">40 min</span><span class="r-price">Gs. 50.000</span><span class="r-note">Tijera y máquina, lavado y peinado.</span></a>
+            <a role="listitem" class="row" href="#turno" data-svc="fade"><span class="r-name">Fade / degradé</span><span class="r-dots" aria-hidden="true"></span><span class="r-min">45 min</span><span class="r-price">Gs. 60.000</span><span class="r-note">Bajo, medio o alto, terminado a mano.</span></a>
+            <a role="listitem" class="row" href="#turno" data-svc="barba"><span class="r-name">Barba con toalla caliente</span><span class="r-dots" aria-hidden="true"></span><span class="r-min">30 min</span><span class="r-price">Gs. 40.000</span><span class="r-note">Perfilado, toalla y aceite.</span></a>
+            <a role="listitem" class="row row-hot" href="#turno" data-svc="combo"><span class="r-name">Corte + barba <span class="r-diamond">◆</span></span><span class="r-dots" aria-hidden="true"></span><span class="r-min">70 min</span><span class="r-price">Gs. 85.000</span><span class="r-note">El completo. El más pedido del sábado.</span></a>
+            <a role="listitem" class="row" href="#turno" data-svc="navaja"><span class="r-name">Afeitado a navaja</span><span class="r-dots" aria-hidden="true"></span><span class="r-min">35 min</span><span class="r-price">Gs. 50.000</span><span class="r-note">Espuma de brocha y navaja de hoja.</span></a>
+            <a role="listitem" class="row" href="#turno" data-svc="nino"><span class="r-name">Corte niño</span><span class="r-dots" aria-hidden="true"></span><span class="r-min">30 min</span><span class="r-price">Gs. 40.000</span><span class="r-note">Hasta 12 años, con paciencia.</span></a>
+            <a role="listitem" class="row" href="#turno" data-svc="cejas"><span class="r-name">Perfilado de cejas</span><span class="r-dots" aria-hidden="true"></span><span class="r-min">10 min</span><span class="r-price">Gs. 15.000</span><span class="r-note">Con navaja o pinza.</span></a>
+          </div>
+          <p class="demo-note">Precios vigentes · Asunción, Paraguay.</p>
+        </div>
+        <aside class="house" aria-labelledby="house-t">
+          <h3 id="house-t">La casa</h3>
+          <ul>
+            <li><b>Con turno</b> no esperás: te sentás a la hora pactada.</li>
+            <li><b>Sin turno</b> te atendemos por orden de llegada, si hay sillón libre.</li>
+            <li><b>Niños</b> siempre con un adulto. Tenemos almohadón para el sillón.</li>
+            <li><b>Pago</b> en efectivo o transferencia.<br>Cambio de tu billete grande, también.</li>
+          </ul>
+          <div class="house-pole" aria-hidden="true"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Turno Interactivo -->
+    <section class="turno-sec" id="turno" aria-labelledby="tn-title">
+      <div class="wrap turno-grid">
+        <div class="turno-form">
+          <p class="kicker">02 · Turno</p>
+          <h2 id="tn-title" class="h2">Pedí tu turno</h2>
+          <p class="sub">Elegí qué te hacés y cuándo te queda bien. Te confirmamos el horario exacto por WhatsApp.</p>
+          <form id="turno-form" action="https://wa.me/595986125649" method="get" target="_blank">
+            <fieldset class="step">
+              <legend><span>01</span> Servicio</legend>
+              <div class="chips" id="svc-chips">
+                <label><input type="radio" name="svc" value="corte" data-label="Corte clásico" data-price="50000" checked=""><span>Corte</span></label>
+                <label><input type="radio" name="svc" value="fade" data-label="Fade / degradé" data-price="60000"><span>Fade</span></label>
+                <label><input type="radio" name="svc" value="barba" data-label="Barba con toalla caliente" data-price="40000"><span>Barba</span></label>
+                <label><input type="radio" name="svc" value="combo" data-label="Corte + barba" data-price="85000"><span>Corte + barba</span></label>
+                <label><input type="radio" name="svc" value="navaja" data-label="Afeitado a navaja" data-price="50000"><span>Navaja</span></label>
+                <label><input type="radio" name="svc" value="nino" data-label="Corte niño" data-price="40000"><span>Niño</span></label>
+                <label><input type="radio" name="svc" value="cejas" data-label="Perfilado de cejas" data-price="15000"><span>Cejas</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="step">
+              <legend><span>02</span> Día</legend>
+              <div class="chips" id="day-chips">
+                <!-- Se llena dinámicamente con JavaScript -->
+              </div>
+            </fieldset>
+            <fieldset class="step">
+              <legend><span>03</span> Franja</legend>
+              <div class="chips" id="slot-chips">
+                <label><input type="radio" name="slot" value="manana" checked=""><span data-slot-label="manana">Mañana · 9 a 12</span></label>
+                <label><input type="radio" name="slot" value="siesta"><span data-slot-label="siesta">Mediodía · 12 a 15</span></label>
+                <label><input type="radio" name="slot" value="tarde"><span data-slot-label="tarde">Tarde · 15 a 20</span></label>
+              </div>
+            </fieldset>
+            <label class="name-field">
+              <span>Tu nombre <small>(opcional)</small></span>
+              <input type="text" id="tn-name" name="nombre" autocomplete="given-name" maxlength="40" placeholder="Ej.: Diego">
+            </label>
+          </form>
+        </div>
+        <div class="ticket-wrap">
+          <div class="ticket" aria-live="polite">
+            <div class="t-head"><span class="t-brand">La Forja</span><span>Turno</span></div>
+            <dl>
+              <div><dt>Servicio</dt><dd id="t-svc">Corte clásico</dd></div>
+              <div><dt>Día</dt><dd id="t-day">Martes 10/11</dd></div>
+              <div><dt>Franja</dt><dd id="t-slot">Mañana · 9 a 12</dd></div>
+              <div><dt>Referencia</dt><dd id="t-price">Gs. 50.000</dd></div>
+            </dl>
+            <p class="t-foot">Asunción · Paraguay<br>Te confirmamos por WhatsApp.</p>
+            <div class="t-cut" aria-hidden="true"></div>
+            <a class="btn btn-red t-send" id="t-send" href="https://wa.me/595986125649?text=Hola%20La%20Forja%2C%20quiero%20pedir%20un%20turno." target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- El Oficio con Fotos -->
+    <section class="oficio-sec" id="oficio" aria-labelledby="of-title">
+      <div class="wrap">
+        <p class="kicker">03 · El oficio</p>
+        <h2 id="of-title" class="h2">Tres cosas<br>que no negociamos</h2>
+        <ol class="steps">
+          <li class="rv in">
+            <figure>
+              <img src="afeitado-960.jpg" width="960" height="720" loading="lazy" alt="Afeitado profesional a navaja con toalla caliente y espuma densa">
+            </figure>
+            <span class="s-n">01</span>
+            <h3>Toalla caliente</h3>
+            <p>Antes de cada afeitado, toalla caliente y espuma de brocha. La piel lo agradece y la navaja corre sola.</p>
+          </li>
+          <li class="rv in">
+            <figure>
+              <img src="herramientas-960.jpg" width="960" height="720" loading="lazy" alt="Tijeras de precisión, navaja, peines y maquinilla sobre mesa de trabajo">
+            </figure>
+            <span class="s-n">02</span>
+            <h3>Herramientas limpias</h3>
+            <p>Peine, tijera, navaja y máquina se desinfectan entre cliente y cliente. Hoja de navaja nueva para cada afeitado.</p>
+          </li>
+          <li class="rv in">
+            <figure>
+              <img src="fade-960.jpg" width="960" height="720" loading="lazy" alt="Barbero realizando un corte degradé fade con pulso preciso">
+            </figure>
+            <span class="s-n">03</span>
+            <h3>Terminación a mano</h3>
+            <p>El degradé no se apura. Se trabaja la línea hasta que la nuca quede limpia desde todos los ángulos.</p>
+          </li>
+        </ol>
+        <div class="strop">
+          <figure class="strop-fig">
+            <img src="navaja-560.jpg" width="560" height="560" loading="lazy" alt="Navaja recta clásica de afeitar abierta con detalle de filo">
+          </figure>
+          <blockquote><p>“La navaja se asienta en el cuero todas las mañanas, antes de abrir la puerta.”</p></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visitanos con Fachada -->
+    <section class="visit-sec" id="visitanos" aria-labelledby="vs-title">
+      <figure class="visit-fig">
+        <img src="fachada-1280.jpg" width="1280" height="720" loading="lazy" alt="Interior y fachada cálida de barbería artesanal en Asunción">
+        <h2 id="vs-title" class="h2 visit-title">Pasá por<br>el taller</h2>
+      </figure>
+      <div class="wrap visit-grid">
+        <div class="visit-info">
+          <p class="kicker">04 · Visitanos</p>
+          <table class="hours">
+            <caption class="sr">Horario de atención</caption>
+            <tbody>
+              <tr data-days="2,3,4,5"><th scope="row">Martes a viernes</th><td>9:00 – 20:00</td></tr>
+              <tr data-days="6"><th scope="row">Sábado</th><td>8:00 – 18:00</td></tr>
+              <tr data-days="0,1" class="today"><th scope="row">Domingo y lunes</th><td>Cerrado</td></tr>
+            </tbody>
+          </table>
+          <p class="status" data-open-status-long=""><b>Abierto ahora.</b> Si hay sillón libre te atendemos por orden de llegada; con turno, no esperás.</p>
+          <address><strong>Barrio Obrero</strong>Asunción, Paraguay</address>
+          <div class="visit-btns">
+            <a class="btn btn-red" href="https://wa.me/595986125649?text=Hola%20La%20Forja%2C%20%C2%BFtienen%20lugar%20hoy%20o%20ma%C3%B1ana%3F" target="_blank" rel="noopener">¿Tienen lugar?</a>
+            <a class="btn btn-ghost" href="tel:+595986125649">Llamar 0986 125 649</a>
+          </div>
+        </div>
+        <div class="map" id="map">
+          <iframe title="Mapa de ubicación en Asunción" src="https://www.openstreetmap.org/export/embed.html?bbox=-57.6600%2C-25.3170%2C-57.6240%2C-25.2900&amp;layer=mapnik" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <button class="map-shield" type="button"><span>Tocá para mover el mapa</span></button>
+          <a class="map-link" href="https://www.openstreetmap.org/#map=15/-25.3036/-57.6423" target="_blank" rel="noopener">Abrir mapa grande</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p class="foot-giant" aria-hidden="true">La Forja</p>
+    <div class="foot-in">
+      <div class="foot-brand">
+        <p>Barber Studio & Taller de Corte.<br>Corte clásico, fade y navaja en Asunción.</p>
+      </div>
+      <div><h2 class="foot-h">Dónde</h2><p>Asunción<br>Paraguay</p></div>
+      <div><h2 class="foot-h">Horario</h2><p>Mar a vie 9:00–20:00<br>Sáb 8:00–18:00<br>Dom y lun cerrado</p></div>
+      <div><h2 class="foot-h">Turnos</h2><p><a href="https://wa.me/595986125649" target="_blank" rel="noopener">WhatsApp 0986 125 649</a></p></div>
+    </div>
+    <p class="foot-small">© La Forja Barber Studio. Asunción, Paraguay. Todos los derechos reservados.</p>
+  </footer>
+
+  <nav class="m-bar" aria-label="Accesos rápidos">
+    <a href="#turno">Turno</a>
+    <a href="https://wa.me/595986125649?text=Hola%20La%20Forja%2C%20quiero%20un%20turno." target="_blank" rel="noopener">WhatsApp</a>
+    <a href="tel:+595986125649">Llamar</a>
+  </nav>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
