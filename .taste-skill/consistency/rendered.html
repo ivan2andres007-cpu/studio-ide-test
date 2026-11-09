@@ -1,0 +1,1628 @@
+<!doctype html>
+<html lang="es-PY" class="scroll-smooth" data-type="software"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Punto Prisma Studio · Infraestructura Digital &amp; Catálogos WhatsApp · Asunción</title>
+  
+  <meta name="description" content="Estudio de ingeniería web y sistemas digitales en Asunción, Paraguay. Desarrollamos catálogos móviles de cierre directo por WhatsApp, landing pages de alta velocidad y plataformas corporativas a medida para PyMEs.">
+  <meta name="theme-color" content="#060608">
+  <meta name="color-scheme" content="dark">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <link rel="canonical" href="https://studio.puntoprisma.store/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PY">
+  <meta property="og:site_name" content="Punto Prisma Studio">
+  <meta property="og:url" content="https://studio.puntoprisma.store/">
+  <meta property="og:title" content="Punto Prisma Studio · Infraestructura Digital &amp; Catálogos WhatsApp">
+  <meta property="og:description" content="Sistemas web y catálogos móviles de alta velocidad con cierre de venta directo por WhatsApp para PyMEs en Paraguay. Sin comisiones.">
+
+  <!-- Google Fonts: Syne, Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            studio: {
+              void: '#060608',
+              surface: '#0b0b0e',
+              elevated: '#111116',
+              highlight: '#16161d',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderHover: 'rgba(255, 255, 255, 0.20)',
+              text: '#f4f4f6',
+              muted: '#b4b4c2',
+              subtle: '#9898a8'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-void: #060608;
+      --bg-surface: #0b0b0e;
+      --bg-elevated: #111116;
+      --border-line: rgba(255, 255, 255, 0.08);
+      --text-main: #f4f4f6;
+      --text-muted: #b4b4c2;
+    }
+
+    body {
+      background-color: var(--bg-void);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: #ffffff;
+      color: #060608;
+    }
+
+    /* Architectural Swiss Grid Cells */
+    .swiss-grid-border {
+      border: 1px solid var(--border-line);
+    }
+
+    .swiss-cell {
+      border: 1px solid var(--border-line);
+      background-color: var(--bg-surface);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .swiss-cell:hover {
+      background-color: var(--bg-elevated);
+      border-color: rgba(255, 255, 255, 0.20);
+    }
+
+    /* Tabular data numerals */
+    .num-tabular {
+      font-variant-numeric: tabular-nums;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Accessible high-contrast focus rings */
+    :focus-visible {
+      outline: 2px solid #ffffff !important;
+      outline-offset: 2px !important;
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5) !important;
+    }
+
+    /* Custom architectural scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060608;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #202028;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #353542;
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.inset-x-0{left:0px;right:0px}.inset-x-3{left:0.75rem;right:0.75rem}.bottom-6{bottom:1.5rem}.right-6{right:1.5rem}.top-0{top:0px}.bottom-3{bottom:0.75rem}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-0\.5{margin-top:0.125rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[4\/5\]{aspect-ratio:4/5}.h-1\.5{height:0.375rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-2{height:0.5rem}.h-20{height:5rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-full{height:100%}.h-10{height:2.5rem}.h-9{height:2.25rem}.min-h-screen{min-height:100vh}.w-1\.5{width:0.375rem}.w-12{width:3rem}.w-2{width:0.5rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.max-w-lg{max-width:32rem}.max-w-sm{max-width:24rem}.max-w-xl{max-width:36rem}.max-w-\[160px\]{max-width:160px}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.cursor-pointer{cursor:pointer}.appearance-none{-webkit-appearance:none;appearance:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.items-baseline{align-items:baseline}.items-stretch{align-items:stretch}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-10{gap:2.5rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-white\/\[0\.08\] > :not([hidden]) ~ :not([hidden]){border-color:rgb(255 255 255 / 0.08)}.self-start{align-self:flex-start}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-y{border-top-width:1px;border-bottom-width:1px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-t-2{border-top-width:2px}.border-dashed{border-style:dashed}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/15{border-color:rgb(255 255 255 / 0.15)}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.border-white\/30{border-color:rgb(255 255 255 / 0.3)}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.border-white\/\[0\.06\]{border-color:rgb(255 255 255 / 0.06)}.border-white\/\[0\.08\]{border-color:rgb(255 255 255 / 0.08)}.border-white\/\[0\.12\]{border-color:rgb(255 255 255 / 0.12)}.border-l-white{--tw-border-opacity:1;border-left-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-t-white{--tw-border-opacity:1;border-top-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-studio-elevated{--tw-bg-opacity:1;background-color:rgb(17 17 22 / var(--tw-bg-opacity, 1))}.bg-studio-highlight{--tw-bg-opacity:1;background-color:rgb(22 22 29 / var(--tw-bg-opacity, 1))}.bg-studio-surface{--tw-bg-opacity:1;background-color:rgb(11 11 14 / var(--tw-bg-opacity, 1))}.bg-studio-surface\/50{background-color:rgb(11 11 14 / 0.5)}.bg-studio-void{--tw-bg-opacity:1;background-color:rgb(6 6 8 / var(--tw-bg-opacity, 1))}.bg-studio-void\/60{background-color:rgb(6 6 8 / 0.6)}.bg-studio-void\/95{background-color:rgb(6 6 8 / 0.95)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-studio-surface\/80{background-color:rgb(11 11 14 / 0.8)}.bg-studio-void\/90{background-color:rgb(6 6 8 / 0.9)}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-black{--tw-gradient-from:#000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-black\/40{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(0 0 0 / 0.4) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-black\/60{--tw-gradient-to:rgb(0 0 0 / 0.6) var(--tw-gradient-to-position)}.fill-current{fill:currentColor}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.p-5{padding:1.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.pb-10{padding-bottom:2.5rem}.pb-2{padding-bottom:0.5rem}.pl-2{padding-left:0.5rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Syne, sans-serif}.font-heading{font-family:Space Grotesk, sans-serif}.font-mono{font-family:JetBrains Mono, monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[8px\]{font-size:8px}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-normal{font-weight:400}.font-semibold{font-weight:600}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.leading-\[1\.08\]{line-height:1.08}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-wide{letter-spacing:0.025em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-studio-muted{--tw-text-opacity:1;color:rgb(180 180 194 / var(--tw-text-opacity, 1))}.text-studio-subtle{--tw-text-opacity:1;color:rgb(152 152 168 / var(--tw-text-opacity, 1))}.text-studio-text{--tw-text-opacity:1;color:rgb(244 244 246 / var(--tw-text-opacity, 1))}.text-studio-void{--tw-text-opacity:1;color:rgb(6 6 8 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-studio-muted::placeholder{--tw-placeholder-opacity:1;color:rgb(180 180 194 / var(--tw-placeholder-opacity, 1))}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.contrast-125{--tw-contrast:contrast(1.25);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-500{transition-duration:500ms}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-white:hover{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.hover\:border-white\/20:hover{border-color:rgb(255 255 255 / 0.2)}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-studio-elevated:hover{--tw-bg-opacity:1;background-color:rgb(17 17 22 / var(--tw-bg-opacity, 1))}.hover\:bg-studio-elevated\/50:hover{background-color:rgb(17 17 22 / 0.5)}.hover\:bg-studio-highlight:hover{--tw-bg-opacity:1;background-color:rgb(22 22 29 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.focus\:border-white:focus{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-2:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.group:hover .group-hover\:border-white\/20{border-color:rgb(255 255 255 / 0.2)}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.group:hover .group-hover\:grayscale-0{--tw-grayscale:grayscale(0);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}@media (min-width: 640px){.sm\:col-span-5{grid-column:span 5 / span 5}.sm\:col-span-7{grid-column:span 7 / span 7}.sm\:inline{display:inline}.sm\:flex{display:flex}.sm\:w-auto{width:auto}.sm\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:p-14{padding:3.5rem}.sm\:p-5{padding:1.25rem}.sm\:p-8{padding:2rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-20{padding-top:5rem;padding-bottom:5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}}@media (min-width: 768px){.md\:col-span-3{grid-column:span 3 / span 3}.md\:col-span-4{grid-column:span 4 / span 4}.md\:col-span-5{grid-column:span 5 / span 5}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}.md\:divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.md\:divide-y-0 > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(0px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(0px * var(--tw-divide-y-reverse))}.md\:self-auto{align-self:auto}}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:gap-14{gap:3.5rem}.lg\:divide-x > :not([hidden]) ~ :not([hidden]){--tw-divide-x-reverse:0;border-right-width:calc(1px * var(--tw-divide-x-reverse));border-left-width:calc(1px * calc(1 - var(--tw-divide-x-reverse)))}.lg\:divide-y-0 > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(0px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(0px * var(--tw-divide-y-reverse))}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:py-16{padding-top:4rem;padding-bottom:4rem}.lg\:text-5xl{font-size:3rem;line-height:1}}</style></head>
+
+<body class="bg-studio-void text-studio-text antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Navigation Bar (Single solid bar without text wrapping) -->
+  <header class="sticky top-0 z-40 bg-studio-void/95 backdrop-blur-md border-b border-white/[0.08]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Identity (Architectural Monochrome Prism) -->
+      <a href="#inicio" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+        <div class="w-8 h-8 border border-white/20 bg-studio-surface flex items-center justify-center p-1.5 group-hover:border-white transition-colors flex-shrink-0">
+          <svg class="w-full h-full text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12,2 22,21 2,21" stroke-linejoin="round"></polygon>
+            <line x1="12" y1="2" x2="12" y2="21" stroke-dasharray="2 2" stroke-width="1"></line>
+            <circle cx="12" cy="15" r="2" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <span class="font-heading font-bold text-base tracking-tight text-white whitespace-nowrap">PUNTO PRISMA STUDIO</span>
+        <span class="hidden sm:inline font-mono text-[10px] text-studio-muted border-l border-white/20 pl-2 uppercase whitespace-nowrap">ASUNCIÓN · PY</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-mono tracking-wider uppercase text-studio-muted whitespace-nowrap">
+        <a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a>
+        <a href="#demos" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <span>Demos en Vivo</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        </a>
+        <a href="#proceso" class="hover:text-white transition-colors">Metodología</a>
+        <a href="#faq" class="hover:text-white transition-colors">Preguntas</a>
+      </nav>
+
+      <!-- WhatsApp Direct Action -->
+      <div class="hidden sm:flex items-center gap-4 whitespace-nowrap flex-shrink-0">
+        <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web" target="_blank" rel="noopener" class="h-11 inline-flex items-center gap-2.5 px-5 border border-white/20 hover:border-white bg-studio-surface hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider transition-all">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>WhatsApp Directo</span>
+          <span class="text-studio-muted">↗</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú" class="md:hidden p-2.5 border border-white/15 bg-studio-surface text-white">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="square" d="M3 6h18M3 12h18M3 18h18"></path>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-white/10 bg-studio-surface px-6 py-6 font-mono text-xs uppercase tracking-wider">
+      <nav class="flex flex-col gap-4">
+        <a href="#soluciones" class="mobile-nav-link text-studio-muted hover:text-white py-1">01. Soluciones y Planes</a>
+        <a href="#demos" class="mobile-nav-link text-studio-muted hover:text-white py-1 flex items-center justify-between">
+          <span>02. Demos en Vivo</span>
+          <span class="text-emerald-400">ONLINE</span>
+        </a>
+        <a href="#proceso" class="mobile-nav-link text-studio-muted hover:text-white py-1">03. Metodología 7 Días</a>
+        <a href="#faq" class="mobile-nav-link text-studio-muted hover:text-white py-1">04. Preguntas Frecuentes</a>
+        <div class="pt-4 border-t border-white/10">
+          <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web" target="_blank" rel="noopener" class="w-full h-11 flex items-center justify-center gap-2 px-4 border border-white bg-white text-studio-void font-bold text-xs uppercase font-mono">
+            <span>Contactar al +595 986 125 649</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main id="inicio">
+
+    <!-- ───────────── Hero Section (Architectural 2-Column Swiss Grid) ───────────── -->
+    <section class="border-b border-white/[0.08] relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          <!-- Left Column: Magnetic Editorial Proposition -->
+          <div class="lg:col-span-7 flex flex-col items-start">
+            
+            <div class="font-mono text-xs text-studio-muted mb-4 flex items-center gap-2">
+              <span class="text-white font-semibold">INFRAESTRUCTURA DIGITAL</span>
+              <span class="text-studio-subtle">/</span>
+              <span>ASUNCIÓN, PARAGUAY</span>
+            </div>
+
+            <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-5xl text-white tracking-tight leading-[1.08] mb-5">
+              Infraestructura Digital, Catálogos Móviles y Sistemas Web que cierran ventas por WhatsApp.
+            </h1>
+
+            <p class="text-studio-muted text-sm sm:text-base font-normal leading-relaxed max-w-xl mb-6">
+              Desarrollamos interfaces web de alta velocidad para empresas y comercios en Paraguay. Sin fricción, sin registros obligatorios y sin comisiones por venta: tu cliente elige el producto, arma su carrito y te envía el pedido ordenado y costeado en Guaraníes a tu WhatsApp.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-8">
+              <a href="#demos" class="h-11 px-6 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center transition-colors">
+                Explorar Demos en Vivo ↓
+              </a>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener" class="h-11 px-6 border border-white/20 hover:border-white bg-studio-surface text-white font-mono text-xs uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2">
+                <span>Cotizar por WhatsApp</span>
+                <span>↗</span>
+              </a>
+            </div>
+
+            <!-- Hard Technical Data Strip -->
+            <div class="grid grid-cols-3 gap-6 pt-5 border-t border-white/[0.08] w-full max-w-lg">
+              <div>
+                <span class="block num-tabular text-xl sm:text-2xl font-bold text-white">&lt; 0.6s</span>
+                <span class="text-[11px] font-mono text-studio-muted uppercase">Velocidad 4G/5G</span>
+              </div>
+              <div>
+                <span class="block num-tabular text-xl sm:text-2xl font-bold text-white">0%</span>
+                <span class="text-[11px] font-mono text-studio-muted uppercase">Comisiones por venta</span>
+              </div>
+              <div>
+                <span class="block num-tabular text-xl sm:text-2xl font-bold text-white">7 Días</span>
+                <span class="text-[11px] font-mono text-studio-muted uppercase">Entrega final</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Architectural Index & System Diagram -->
+          <div class="lg:col-span-5 w-full flex flex-col gap-4">
+            
+            <!-- Index Box -->
+            <div class="border border-white/[0.08] bg-studio-surface">
+              
+              <!-- Index Header -->
+              <div class="px-5 py-3.5 border-b border-white/[0.08] flex items-center justify-between">
+                <span class="font-mono text-xs uppercase text-studio-muted tracking-wider">ÍNDICE DE SOLUCIONES</span>
+                <span class="font-mono text-xs text-white">2026.1</span>
+              </div>
+
+              <!-- Index Items (Using clean div to maintain proper h1 -> h2 -> h3 hierarchy) -->
+              <div class="divide-y divide-white/[0.08]">
+                
+                <!-- Item 01 -->
+                <a href="#soluciones" class="block p-4 sm:p-5 hover:bg-studio-elevated transition-colors group">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-mono text-xs text-studio-muted group-hover:text-white transition-colors">01 / PRESENCIA EXPRESS</span>
+                    <span class="font-mono text-xs text-white num-tabular font-bold">₲ 1.200.000</span>
+                  </div>
+                  <div class="font-heading font-bold text-sm sm:text-base text-white group-hover:underline">Landing Page Institucional</div>
+                  <p class="text-xs text-studio-muted mt-0.5">1 página de alta conversión, geolocalización Google Maps y contacto directo.</p>
+                </a>
+
+                <!-- Item 02 (Destacado) -->
+                <a href="#soluciones" class="block p-4 sm:p-5 bg-studio-elevated hover:bg-studio-highlight transition-colors group border-l-2 border-l-white">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-mono text-xs text-white font-semibold">02 / CATÁLOGO MÓVIL WHATSAPP</span>
+                    <span class="font-mono text-xs text-white num-tabular font-bold">₲ 1.850.000</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="font-heading font-bold text-sm sm:text-base text-white group-hover:underline">Catálogo con Cierre Directo</div>
+                    <span class="font-mono text-[9px] px-1.5 py-0.2 border border-white/20 text-white uppercase">Plan Estrella</span>
+                  </div>
+                  <p class="text-xs text-studio-muted mt-0.5">Buscador instantáneo por repuesto o código, carrito ágil y pedido formulado a WhatsApp.</p>
+                </a>
+
+                <!-- Item 03 -->
+                <a href="#soluciones" class="block p-4 sm:p-5 hover:bg-studio-elevated transition-colors group">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="font-mono text-xs text-studio-muted group-hover:text-white transition-colors">03 / SISTEMA A MEDIDA</span>
+                    <span class="font-mono text-xs text-white num-tabular font-bold">Desde ₲ 4.500.000</span>
+                  </div>
+                  <div class="font-heading font-bold text-sm sm:text-base text-white group-hover:underline">Sitio Corporativo &amp; Software</div>
+                  <p class="text-xs text-studio-muted mt-0.5">Multipágina, sincronización de stock con Google Sheets, cotizadores y sucursales.</p>
+                </a>
+
+              </div>
+
+              <!-- Index Footer Status -->
+              <div class="px-5 py-3 border-t border-white/[0.08] bg-studio-void/60 flex items-center justify-between text-[11px] font-mono text-studio-muted">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span>Disponibilidad en Asunción</span>
+                </span>
+                <span class="text-white">SIN COSTOS OCULTOS</span>
+              </div>
+
+            </div>
+
+            <!-- Architectural Dispatch Flow Diagram (SVG Visual) -->
+            <div class="border border-white/[0.08] bg-studio-surface p-4 font-mono text-[11px]">
+              <div class="flex items-center justify-between text-studio-muted border-b border-white/[0.08] pb-2 mb-3">
+                <span class="uppercase tracking-wider">FLUJO TÉCNICO DE CIERRE</span>
+                <span class="text-white">API DIRECTA</span>
+              </div>
+              <div class="flex items-center justify-between text-center gap-2 text-white">
+                <div class="p-2 border border-white/10 bg-studio-void flex-1">
+                  <span class="text-studio-muted block text-[9px]">PASO 1</span>
+                  <span>Cliente elige</span>
+                </div>
+                <span class="text-studio-muted font-bold">→</span>
+                <div class="p-2 border border-white/10 bg-studio-void flex-1">
+                  <span class="text-studio-muted block text-[9px]">PASO 2</span>
+                  <span>Carrito ₲</span>
+                </div>
+                <span class="text-studio-muted font-bold">→</span>
+                <div class="p-2 border border-white/20 bg-studio-elevated flex-1 text-emerald-400 font-bold">
+                  <span class="text-studio-muted block text-[9px]">PASO 3</span>
+                  <span>WhatsApp</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── Soluciones (Shared 1px Borders Editorial Grid) ───────────── -->
+    <section id="soluciones" class="py-16 sm:py-20 border-b border-white/[0.08]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-10">
+          <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">01 · PILARES DE SERVICIO</div>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Tres niveles de ingeniería digital. Precio cerrado y sin sorpresas.
+          </h2>
+          <p class="text-studio-muted text-sm sm:text-base mt-2 max-w-2xl">
+            Cada proyecto se entrega listo para operar, con hosting de alta velocidad, dominio propio y soporte técnico directo en Paraguay.
+          </p>
+        </div>
+
+        <!-- Shared 1px Border Grid Container (Linear / Vercel style) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 border border-white/[0.08] divide-y lg:divide-y-0 lg:divide-x divide-white/[0.08] bg-studio-surface">
+          
+          <!-- Pillar 1: Presencia Express -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between hover:bg-studio-elevated/50 transition-colors">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-studio-muted">NIVEL 01</span>
+                <span class="font-mono text-[10px] px-2 py-0.5 border border-white/10 text-studio-muted">PÁGINA ÚNICA</span>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white mb-2">Presencia Express</h3>
+              <p class="text-xs text-studio-muted leading-relaxed mb-4">
+                Ideal para profesionales independientes, estudios jurídicos, contables, consultorios médicos y empresas de servicios que necesitan una carta de presentación seria, veloz y geolocalizada.
+              </p>
+
+              <!-- Architecture blueprint visual for Pillar 1 -->
+              <div class="p-3 border border-white/[0.08] bg-studio-void mb-5">
+                <div class="flex items-center justify-between text-[10px] font-mono text-studio-muted mb-2">
+                  <span>ESTRUCTURA DE PÁGINA</span>
+                  <span class="text-white">100% RESPONSIVE</span>
+                </div>
+                <div class="space-y-1 font-mono text-[9px] text-studio-subtle">
+                  <div class="p-1 border border-white/5 bg-studio-surface">HERO + CTA WHATSAPP DIRECTO</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">PROPUESTA DE VALOR &amp; SERVICIOS</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">GOOGLE MAPS + HORARIOS DE ATENCIÓN</div>
+                </div>
+              </div>
+
+              <div class="space-y-2 py-4 border-y border-white/[0.08] text-xs text-studio-text mb-6">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Diseño editorial adaptado a la identidad de tu marca</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Propuesta de valor, lista de servicios y testimonios</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Geolocalización en Google Maps + Horarios comerciales</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Botón de contacto directo hacia tu WhatsApp oficial</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Dominio .com propio + Hosting administrado de por vida</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-4">
+                <span class="text-[11px] font-mono text-studio-muted block mb-0.5">Precio final llave en mano · 5 a 7 días</span>
+                <span class="font-mono text-2xl sm:text-3xl font-bold text-white num-tabular">₲ 1.200.000</span>
+              </div>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20me%20interesa%20el%20Plan%20Presencia%20Express%20%28Landing%20Page%20%E2%82%B2%201.200.000%29" target="_blank" rel="noopener" class="w-full h-11 px-4 border border-white/20 hover:border-white bg-studio-surface hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-all">
+                <span>Elegir Presencia Express</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Catálogo Móvil WhatsApp (Plan Principal con contraste de superficie y borde fino) -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between bg-studio-elevated relative border-t-2 border-t-white">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-white font-semibold">NIVEL 02 · PLAN ESTRELLA</span>
+                <span class="font-mono text-[10px] px-2 py-0.5 border border-white/30 text-white bg-white/5 uppercase">MÁS ELEGIDO</span>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white mb-2">Catálogo Móvil WhatsApp</h3>
+              <p class="text-xs text-studio-text leading-relaxed mb-4">
+                La herramienta definitiva para ferreterías, repuestos, gastronomía, bodegas, boutiques y distribuidoras. Permite a tu cliente buscar, elegir, armar su pedido y enviártelo cerrado por WhatsApp.
+              </p>
+
+              <!-- Architecture blueprint visual for Pillar 2 -->
+              <div class="p-3 border border-white/20 bg-studio-void mb-5">
+                <div class="flex items-center justify-between text-[10px] font-mono text-white mb-2">
+                  <span>MOTOR DE VENTAS MÓVIL</span>
+                  <span class="text-emerald-400">0% COMISIÓN</span>
+                </div>
+                <div class="space-y-1 font-mono text-[9px] text-white">
+                  <div class="p-1 border border-white/10 bg-studio-elevated flex justify-between">
+                    <span>BUSCADOR INSTANTÁNEO</span>
+                    <span class="text-studio-muted">CÓDIGO/MODELO</span>
+                  </div>
+                  <div class="p-1 border border-white/10 bg-studio-elevated flex justify-between">
+                    <span>CARRITO DE COMPRAS</span>
+                    <span class="text-emerald-400">TOTAL EN ₲</span>
+                  </div>
+                  <div class="p-1 border border-white/10 bg-studio-highlight flex justify-between text-emerald-300 font-bold">
+                    <span>DISPATCH AUTOMÁTICO</span>
+                    <span>WHATSAPP VENDEDOR</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2 py-4 border-y border-white/[0.08] text-xs text-white mb-6">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-white font-bold">—</span>
+                  <span>Buscador predictivo por código, marca, modelo o nombre</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-white font-bold">—</span>
+                  <span>Filtro dinámico de categorías y variantes de producto</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-white font-bold">—</span>
+                  <span>Carrito de compras ágil con totalización en Guaraníes (₲)</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-white font-bold">—</span>
+                  <span>Botón de cierre que redacta el pedido completo al WhatsApp</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-white font-bold">—</span>
+                  <span>Carga inicial de tus productos + Capacitación básica</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-white font-bold">—</span>
+                  <span>Dominio .com propio + Hosting sin límites de visitas</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-4">
+                <span class="text-[11px] font-mono text-white block mb-0.5">Precio final llave en mano · 7 a 10 días</span>
+                <span class="font-mono text-2xl sm:text-3xl font-bold text-white num-tabular">₲ 1.850.000</span>
+                <span class="text-[10px] font-mono text-emerald-400 block mt-0.5">Sin mensualidades por venta ni comisiones</span>
+              </div>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Cat%C3%A1logo%20M%C3%B3vil%20WhatsApp%20%28%E2%82%B2%201.850.000%29" target="_blank" rel="noopener" class="w-full h-11 px-4 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-colors">
+                <span>Quiero el Catálogo Móvil</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Corporativo & Sistemas A Medida -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between hover:bg-studio-elevated/50 transition-colors">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-mono text-xs text-studio-muted">NIVEL 03</span>
+                <span class="font-mono text-[10px] px-2 py-0.5 border border-white/10 text-studio-muted">A MEDIDA</span>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white mb-2">Corporativo &amp; Sistemas</h3>
+              <p class="text-xs text-studio-muted leading-relaxed mb-4">
+                Para empresas que requieren desarrollos a medida: plataformas multipágina de alto volumen, portales con acceso diferenciado, sincronización de stock y automatizaciones avanzadas.
+              </p>
+
+              <!-- Architecture blueprint visual for Pillar 3 -->
+              <div class="p-3 border border-white/[0.08] bg-studio-void mb-5">
+                <div class="flex items-center justify-between text-[10px] font-mono text-studio-muted mb-2">
+                  <span>INFRAESTRUCTURA ESCALABLE</span>
+                  <span class="text-white">API / SYNC</span>
+                </div>
+                <div class="space-y-1 font-mono text-[9px] text-studio-subtle">
+                  <div class="p-1 border border-white/5 bg-studio-surface">GOOGLE SHEETS / EXCEL LIVE SYNC</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">RUTEO MULTI-SUCURSAL ASUNCIÓN/CDE</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">PANELES ADMINISTRATIVOS PRIVADOS</div>
+                </div>
+              </div>
+
+              <div class="space-y-2 py-4 border-y border-white/[0.08] text-xs text-studio-text mb-6">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Arquitectura multipágina corporativa personalizada</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Sincronización de precios y stock con Google Sheets o Excel</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Ruteo de pedidos por sucursal geográfica (Asunción/CDE/Enc.)</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Cotizadores interactivos y formularios de evaluación previa</span>
+                </div>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-studio-muted">—</span>
+                  <span>Acuerdos de mantenimiento y soporte técnico prioritario</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="mb-4">
+                <span class="text-[11px] font-mono text-studio-muted block mb-0.5">Presupuesto según alcance</span>
+                <span class="font-mono text-2xl sm:text-3xl font-bold text-white num-tabular">Desde ₲ 4.500.000</span>
+              </div>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20tengo%20un%20proyecto%20corporativo%20o%20sistema%20a%20medida" target="_blank" rel="noopener" class="w-full h-11 px-4 border border-white/20 hover:border-white bg-studio-surface hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-all">
+                <span>Consultar Proyecto a Medida</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── Catálogo de Demos en Vivo (Vistas Previas Reales) ───────────── -->
+    <section id="demos" class="py-16 sm:py-20 border-b border-white/[0.08] bg-studio-surface/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+          <div>
+            <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">02 · CATÁLOGO INTERACTIVO</div>
+            <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+              Demostraciones en Vivo
+            </h2>
+            <p class="text-studio-muted text-sm sm:text-base mt-2 max-w-2xl">
+              Explorá interfaces reales diseñadas para los sectores comerciales más activos del mercado paraguayo. Hacé clic para abrir la demo en vivo o solicitar una idéntica para tu empresa.
+            </p>
+          </div>
+
+          <div class="font-mono text-xs text-studio-muted bg-studio-surface border border-white/[0.08] px-3.5 py-2 self-start md:self-auto">
+            <span id="demoCounterText" class="num-tabular">6 de 6 demostraciones</span>
+          </div>
+        </div>
+
+        <!-- Technical Toolbar: Search & Filters with accessible visible labels -->
+        <div class="space-y-4 mb-8">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
+            
+            <!-- Instant Search Input with visible label -->
+            <div class="sm:col-span-7 lg:col-span-8">
+              <label for="demoSearchInput" class="block font-mono text-[11px] text-studio-muted uppercase tracking-wider mb-1.5">
+                Buscar por rubro o nombre comercial
+              </label>
+              <input type="text" id="demoSearchInput" placeholder="Ej. ferretería, repuestos, sushi, boutique, clínica, abogados..." class="w-full px-4 py-2.5 bg-studio-void border border-white/10 text-xs text-white placeholder-studio-muted focus:outline-none focus:border-white transition-colors font-mono">
+            </div>
+
+            <!-- Rubro Selector with visible label -->
+            <div class="sm:col-span-5 lg:col-span-4">
+              <label for="rubroSelect" class="block font-mono text-[11px] text-studio-muted uppercase tracking-wider mb-1.5">
+                Filtrar por categoría comercial
+              </label>
+              <select id="rubroSelect" class="w-full px-4 py-2.5 bg-studio-void border border-white/10 text-xs text-white focus:outline-none focus:border-white transition-colors font-mono appearance-none cursor-pointer">
+                <option value="todos">Todos los rubros comerciales</option>
+                <option value="Ferreterías &amp; Repuestos">Ferreterías &amp; Repuestos</option>
+                <option value="Gastronomía &amp; Bares">Gastronomía &amp; Bares</option>
+                <option value="Automotor &amp; Talleres">Automotor &amp; Talleres</option>
+                <option value="Salud &amp; Clínicas">Salud &amp; Clínicas</option>
+                <option value="Servicios Profesionales">Servicios Profesionales</option>
+                <option value="Moda &amp; Retail">Moda &amp; Retail</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Solution Type Chips -->
+          <div>
+            <span class="block font-mono text-[11px] text-studio-muted uppercase tracking-wider mb-2">Filtrar por arquitectura</span>
+            <div class="flex flex-wrap items-center gap-2" id="planChipsContainer">
+              <button data-plan-filter="todos" class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white bg-white text-black transition-all">
+                TODOS
+              </button>
+              <button data-plan-filter="Catálogo Móvil WhatsApp" class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                CATÁLOGOS WHATSAPP
+              </button>
+              <button data-plan-filter="Presencia Express" class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                LANDING EXPRESS
+              </button>
+              <button data-plan-filter="Sitio Corporativo &amp; Sistemas" class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                CORPORATIVOS &amp; SISTEMAS
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Demos Grid (Injected via JS) -->
+        <div id="demoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="swiss-cell p-5 flex flex-col justify-between group">
+            <div>
+              <!-- Header info -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[10px] text-studio-muted uppercase tracking-wider">
+                  CATÁLOGO WHATSAPP
+                </span>
+                <span class="font-mono text-[10px] text-white border border-white/10 px-1.5 py-0.2">
+                  Ferreterías &amp; Repuestos
+                </span>
+              </div>
+
+              <!-- Real Interface Phone/Viewport Mockup (Aspect Ratio 4/5) -->
+              <div class="relative aspect-[4/5] bg-studio-void border border-white/[0.08] overflow-hidden mb-4 group-hover:border-white/20 transition-colors">
+                
+                <!-- Photographic Background from Unsplash -->
+                <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Previsualización de Ferretería &amp; Repuestos Los Laureles" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                
+                <!-- Dark Overlay for UI legibility -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+
+                <!-- Minimalist Simulated Phone Header Overlay -->
+                <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
+                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">Ferretería &amp; Repuestos Los Laureles</span>
+                  <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
+                </div>
+
+                <!-- Simulated Floating Order Bar inside Device Mockup -->
+                <div class="absolute bottom-3 inset-x-3 p-2 bg-studio-void/90 border border-white/20 backdrop-blur-md flex items-center justify-between text-[10px] font-mono">
+                  <span class="text-white font-medium">Pedido WhatsApp</span>
+                  <span class="text-emerald-400 font-bold">₲ Listo</span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+                Ferretería &amp; Repuestos Los Laureles
+              </h3>
+
+              <p class="text-xs text-studio-muted leading-relaxed mb-5">
+                Catálogo técnico con buscador por código de parte, marcas y carrito que despacha el pedido costeado en Guaraníes a WhatsApp.
+              </p>
+            </div>
+
+            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <div class="space-y-2 pt-3 border-t border-white/[0.08]">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20interactiva%20de%20Ferreter%C3%ADa%20y%20Repuestos" target="_blank" rel="noopener" class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Ver demo en vivo</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20vi%20la%20demo%20de%20Ferreter%C3%ADa%20%26%20Repuestos%20Los%20Laureles%20y%20quiero%20implementar%20este%20cat%C3%A1logo%20en%20mi%20negocio." target="_blank" rel="noopener" class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        
+          <article class="swiss-cell p-5 flex flex-col justify-between group">
+            <div>
+              <!-- Header info -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[10px] text-studio-muted uppercase tracking-wider">
+                  CATÁLOGO WHATSAPP
+                </span>
+                <span class="font-mono text-[10px] text-white border border-white/10 px-1.5 py-0.2">
+                  Gastronomía &amp; Bares
+                </span>
+              </div>
+
+              <!-- Real Interface Phone/Viewport Mockup (Aspect Ratio 4/5) -->
+              <div class="relative aspect-[4/5] bg-studio-void border border-white/[0.08] overflow-hidden mb-4 group-hover:border-white/20 transition-colors">
+                
+                <!-- Photographic Background from Unsplash -->
+                <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Previsualización de Kuro Sushi &amp; Asian Fusion" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                
+                <!-- Dark Overlay for UI legibility -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+
+                <!-- Minimalist Simulated Phone Header Overlay -->
+                <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
+                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">Kuro Sushi &amp; Asian Fusion</span>
+                  <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
+                </div>
+
+                <!-- Simulated Floating Order Bar inside Device Mockup -->
+                <div class="absolute bottom-3 inset-x-3 p-2 bg-studio-void/90 border border-white/20 backdrop-blur-md flex items-center justify-between text-[10px] font-mono">
+                  <span class="text-white font-medium">Pedido WhatsApp</span>
+                  <span class="text-emerald-400 font-bold">₲ Listo</span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+                Kuro Sushi &amp; Asian Fusion
+              </h3>
+
+              <p class="text-xs text-studio-muted leading-relaxed mb-5">
+                Carta digital interactiva con modificadores de piezas, combos y comanda directa al WhatsApp de cocina sin pagar comisiones de apps.
+              </p>
+            </div>
+
+            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <div class="space-y-2 pt-3 border-t border-white/[0.08]">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20interactiva%20de%20Kuro%20Sushi" target="_blank" rel="noopener" class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Ver demo en vivo</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20vi%20la%20demo%20gastron%C3%B3mica%20de%20Kuro%20Sushi%20y%20me%20gustar%C3%ADa%20cotizar%20una%20carta%20digital%20para%20mi%20restaurante." target="_blank" rel="noopener" class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        
+          <article class="swiss-cell p-5 flex flex-col justify-between group">
+            <div>
+              <!-- Header info -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[10px] text-studio-muted uppercase tracking-wider">
+                  CORPORATIVO &amp; SISTEMA
+                </span>
+                <span class="font-mono text-[10px] text-white border border-white/10 px-1.5 py-0.2">
+                  Automotor &amp; Talleres
+                </span>
+              </div>
+
+              <!-- Real Interface Phone/Viewport Mockup (Aspect Ratio 4/5) -->
+              <div class="relative aspect-[4/5] bg-studio-void border border-white/[0.08] overflow-hidden mb-4 group-hover:border-white/20 transition-colors">
+                
+                <!-- Photographic Background from Unsplash -->
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Previsualización de AutoPar Motors Asunción" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                
+                <!-- Dark Overlay for UI legibility -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+
+                <!-- Minimalist Simulated Phone Header Overlay -->
+                <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
+                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">AutoPar Motors Asunción</span>
+                  <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
+                </div>
+
+                <!-- Simulated Floating Order Bar inside Device Mockup -->
+                <div class="absolute bottom-3 inset-x-3 p-2 bg-studio-void/90 border border-white/20 backdrop-blur-md flex items-center justify-between text-[10px] font-mono">
+                  <span class="text-white font-medium">Pedido WhatsApp</span>
+                  <span class="text-emerald-400 font-bold">₲ Listo</span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+                AutoPar Motors Asunción
+              </h3>
+
+              <p class="text-xs text-studio-muted leading-relaxed mb-5">
+                Showroom virtual para importadoras y concesionarias con ficha técnica, simulador de cuotas y solicitud de test drive por chat.
+              </p>
+            </div>
+
+            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <div class="space-y-2 pt-3 border-t border-white/[0.08]">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20AutoPar%20Motors" target="_blank" rel="noopener" class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Ver demo en vivo</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20vi%20la%20demo%20de%20AutoPar%20Motors%20y%20quiero%20un%20showroom%20digital%20para%20mi%20concesionaria." target="_blank" rel="noopener" class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        
+          <article class="swiss-cell p-5 flex flex-col justify-between group">
+            <div>
+              <!-- Header info -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[10px] text-studio-muted uppercase tracking-wider">
+                  LANDING EXPRESS
+                </span>
+                <span class="font-mono text-[10px] text-white border border-white/10 px-1.5 py-0.2">
+                  Salud &amp; Clínicas
+                </span>
+              </div>
+
+              <!-- Real Interface Phone/Viewport Mockup (Aspect Ratio 4/5) -->
+              <div class="relative aspect-[4/5] bg-studio-void border border-white/[0.08] overflow-hidden mb-4 group-hover:border-white/20 transition-colors">
+                
+                <!-- Photographic Background from Unsplash -->
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Previsualización de Clínica Dental Bellas Artes" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                
+                <!-- Dark Overlay for UI legibility -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+
+                <!-- Minimalist Simulated Phone Header Overlay -->
+                <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
+                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">Clínica Dental Bellas Artes</span>
+                  <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
+                </div>
+
+                <!-- Simulated Floating Order Bar inside Device Mockup -->
+                <div class="absolute bottom-3 inset-x-3 p-2 bg-studio-void/90 border border-white/20 backdrop-blur-md flex items-center justify-between text-[10px] font-mono">
+                  <span class="text-white font-medium">Pedido WhatsApp</span>
+                  <span class="text-emerald-400 font-bold">₲ Listo</span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+                Clínica Dental Bellas Artes
+              </h3>
+
+              <p class="text-xs text-studio-muted leading-relaxed mb-5">
+                Landing médica de alta confianza con catálogo de tratamientos, perfil de especialistas, mapa de ubicación y agendamiento en 1 clic.
+              </p>
+            </div>
+
+            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <div class="space-y-2 pt-3 border-t border-white/[0.08]">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20Cl%C3%ADnica%20Dental" target="_blank" rel="noopener" class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Ver demo en vivo</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20me%20interes%C3%B3%20la%20demo%20de%20Cl%C3%ADnica%20Dental%20Bellas%20Artes%20para%20mi%20consultorio." target="_blank" rel="noopener" class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        
+          <article class="swiss-cell p-5 flex flex-col justify-between group">
+            <div>
+              <!-- Header info -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[10px] text-studio-muted uppercase tracking-wider">
+                  CORPORATIVO &amp; SISTEMA
+                </span>
+                <span class="font-mono text-[10px] text-white border border-white/10 px-1.5 py-0.2">
+                  Servicios Profesionales
+                </span>
+              </div>
+
+              <!-- Real Interface Phone/Viewport Mockup (Aspect Ratio 4/5) -->
+              <div class="relative aspect-[4/5] bg-studio-void border border-white/[0.08] overflow-hidden mb-4 group-hover:border-white/20 transition-colors">
+                
+                <!-- Photographic Background from Unsplash -->
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Previsualización de Benítez &amp; Asociados Abogados" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                
+                <!-- Dark Overlay for UI legibility -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+
+                <!-- Minimalist Simulated Phone Header Overlay -->
+                <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
+                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">Benítez &amp; Asociados Abogados</span>
+                  <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
+                </div>
+
+                <!-- Simulated Floating Order Bar inside Device Mockup -->
+                <div class="absolute bottom-3 inset-x-3 p-2 bg-studio-void/90 border border-white/20 backdrop-blur-md flex items-center justify-between text-[10px] font-mono">
+                  <span class="text-white font-medium">Pedido WhatsApp</span>
+                  <span class="text-emerald-400 font-bold">₲ Listo</span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+                Benítez &amp; Asociados Abogados
+              </h3>
+
+              <p class="text-xs text-studio-muted leading-relaxed mb-5">
+                Plataforma institucional para firmas legales y contables con presentación de áreas de práctica, socios y consulta confidencial a WhatsApp.
+              </p>
+            </div>
+
+            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <div class="space-y-2 pt-3 border-t border-white/[0.08]">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20Estudio%20Jur%C3%ADdico" target="_blank" rel="noopener" class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Ver demo en vivo</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20me%20interesa%20un%20sitio%20corporativo%20del%20nivel%20de%20Ben%C3%ADtez%20%26%20Asociados%20para%20nuestra%20firma%20profesional." target="_blank" rel="noopener" class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        
+          <article class="swiss-cell p-5 flex flex-col justify-between group">
+            <div>
+              <!-- Header info -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[10px] text-studio-muted uppercase tracking-wider">
+                  CATÁLOGO WHATSAPP
+                </span>
+                <span class="font-mono text-[10px] text-white border border-white/10 px-1.5 py-0.2">
+                  Moda &amp; Retail
+                </span>
+              </div>
+
+              <!-- Real Interface Phone/Viewport Mockup (Aspect Ratio 4/5) -->
+              <div class="relative aspect-[4/5] bg-studio-void border border-white/[0.08] overflow-hidden mb-4 group-hover:border-white/20 transition-colors">
+                
+                <!-- Photographic Background from Unsplash -->
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Previsualización de Aura Concept Store &amp; Calzados" loading="lazy" class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                
+                <!-- Dark Overlay for UI legibility -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+
+                <!-- Minimalist Simulated Phone Header Overlay -->
+                <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
+                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">Aura Concept Store &amp; Calzados</span>
+                  <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
+                </div>
+
+                <!-- Simulated Floating Order Bar inside Device Mockup -->
+                <div class="absolute bottom-3 inset-x-3 p-2 bg-studio-void/90 border border-white/20 backdrop-blur-md flex items-center justify-between text-[10px] font-mono">
+                  <span class="text-white font-medium">Pedido WhatsApp</span>
+                  <span class="text-emerald-400 font-bold">₲ Listo</span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+                Aura Concept Store &amp; Calzados
+              </h3>
+
+              <p class="text-xs text-studio-muted leading-relaxed mb-5">
+                Catálogo móvil para marcas de moda con selector de talles, colores y verificación de disponibilidad directa por WhatsApp desde la bio de Instagram.
+              </p>
+            </div>
+
+            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <div class="space-y-2 pt-3 border-t border-white/[0.08]">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20Aura%20Concept%20Store" target="_blank" rel="noopener" class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Ver demo en vivo</span>
+                <span>↗</span>
+              </a>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20vi%20la%20demo%20de%20Aura%20Concept%20Store%20y%20quiero%20convertir%20los%20seguidores%20de%20mi%20Instagram%20en%20pedidos%20de%20WhatsApp." target="_blank" rel="noopener" class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        
+        <article class="swiss-cell p-5 flex flex-col justify-between border-dashed border-white/20 bg-studio-surface/80">
+          <div>
+            <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-3">
+              PROTOTIPADO RÁPIDO
+            </div>
+            
+            <div class="aspect-[4/5] bg-studio-void border border-dashed border-white/10 flex flex-col items-start justify-center p-6 text-left mb-4">
+              <span class="font-mono text-3xl font-bold text-white mb-2">48h</span>
+              <p class="font-mono text-xs text-studio-muted">Prototipo inicial sin costo para tu empresa</p>
+            </div>
+
+            <h3 class="font-heading font-bold text-lg text-white mb-1.5">
+              ¿No ves tu rubro específico?
+            </h3>
+            
+            <p class="text-xs text-studio-muted leading-relaxed mb-5">
+              Diseñamos la estructura técnica y catálogo a medida para distribuidoras, ópticas, repuesterías agrícolas, veterinarias o industrias.
+            </p>
+          </div>
+
+          <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20no%20vi%20mi%20rubro%20espec%C3%ADfico%20en%20el%20cat%C3%A1logo%20y%20quiero%20armar%20un%20prototipo%20a%20medida%20para%20mi%20empresa." target="_blank" rel="noopener" class="w-full h-10 px-3 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-colors">
+            <span>Consultar por WhatsApp</span>
+            <span>→</span>
+          </a>
+        </article>
+      </div>
+
+        <!-- Empty State Fallback -->
+        <div id="demoEmptyState" class="hidden text-center py-16 border border-dashed border-white/10 bg-studio-surface">
+          <p class="font-mono text-xs text-studio-muted uppercase mb-3">Sin resultados para esta búsqueda</p>
+          <button onclick="resetFilters()" class="px-4 py-2 border border-white/20 hover:border-white text-white font-mono text-xs transition-colors">
+            Restablecer filtros
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── Metodología (Editorial Timeline 7 Días) ───────────── -->
+    <section id="proceso" class="py-16 sm:py-20 border-b border-white/[0.08]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-12">
+          <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">03 · METODOLOGÍA ÁGIL</div>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Listo en 7 días hábiles. Proceso técnico sin burocracia.
+          </h2>
+          <p class="text-studio-muted text-sm sm:text-base mt-2 max-w-xl">
+            Flujo de trabajo optimizado para PyMEs que necesitan comenzar a operar y cerrar ventas de inmediato.
+          </p>
+        </div>
+
+        <!-- 4-Step Technical Editorial Timeline with Fine 1px Dividers -->
+        <div class="grid grid-cols-1 md:grid-cols-4 border border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] bg-studio-surface">
+          
+          <!-- Step 1 -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 01</span>
+              <h3 class="font-heading font-bold text-lg text-white mb-2">Relevamiento y Estructura</h3>
+              <p class="text-xs text-studio-muted leading-relaxed mb-4">
+                Nos compartís tu lista de productos o servicios, precios, fotos y logo por WhatsApp o Google Drive. Si no tenés logo, definimos tipografía limpia y paleta de marca.
+              </p>
+              
+              <!-- Phase Schematic Visual -->
+              <div class="p-2 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle">
+                <span class="text-white block">INPUT:</span>
+                <span>Catálogo .xls / fotos / precios</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-studio-subtle uppercase">
+              FASE 01 / ONBOARDING
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 02–04</span>
+              <h3 class="font-heading font-bold text-lg text-white mb-2">Diseño &amp; Carga Inicial</h3>
+              <p class="text-xs text-studio-muted leading-relaxed mb-4">
+                Programamos la arquitectura responsive adaptada a celulares, cargamos tu catálogo inicial, configuramos las categorías y optimizamos la velocidad de carga.
+              </p>
+
+              <!-- Phase Schematic Visual -->
+              <div class="p-2 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle">
+                <span class="text-white block">BUILD:</span>
+                <span>Código responsive &amp; CDN 4G/5G</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-studio-subtle uppercase">
+              FASE 02 / DESARROLLO
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 05–06</span>
+              <h3 class="font-heading font-bold text-lg text-white mb-2">Prueba de Pedido Real</h3>
+              <p class="text-xs text-studio-muted leading-relaxed mb-4">
+                Te entregamos el enlace de prueba previa. Realizamos simulaciones de compra enviando el mensaje estructurado de prueba directo a tu número de WhatsApp.
+              </p>
+
+              <!-- Phase Schematic Visual -->
+              <div class="p-2 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle">
+                <span class="text-white block">QA TEST:</span>
+                <span>Simulación de orden y totales</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-studio-subtle uppercase">
+              FASE 03 / QA &amp; CIERRE
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="p-6 sm:p-8 flex flex-col justify-between bg-studio-elevated">
+            <div>
+              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 07</span>
+              <h3 class="font-heading font-bold text-lg text-white mb-2">Despliegue &amp; Entrega</h3>
+              <p class="text-xs text-studio-muted leading-relaxed mb-4">
+                Conectamos tu dominio (.com o .com.py), configuramos el certificado de seguridad SSL y te entregamos la propiedad total de la plataforma lista para facturar.
+              </p>
+
+              <!-- Phase Schematic Visual -->
+              <div class="p-2 border border-white/20 bg-studio-void font-mono text-[9px] text-emerald-400">
+                <span class="text-white block">DEPLOY:</span>
+                <span>Dominio .com activo + SSL</span>
+              </div>
+            </div>
+            <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-emerald-400 uppercase">
+              FASE 04 / SALIDA EN VIVO
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── Preguntas Frecuentes (Acordeón Minimalista) ───────────── -->
+    <section id="faq" class="py-16 sm:py-20 border-b border-white/[0.08]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-10">
+          <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">04 · PREGUNTAS FRECUENTES</div>
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            Resolución técnica directa.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Technical FAQ Accordion -->
+          <div class="lg:col-span-8 border border-white/[0.08] divide-y divide-white/[0.08] bg-studio-surface">
+            
+            <!-- FAQ 1 -->
+            <div class="p-6">
+              <button class="w-full flex items-center justify-between text-left font-heading font-bold text-base text-white faq-toggle group">
+                <span class="group-hover:underline">¿Cómo llegan los pedidos del catálogo a mi WhatsApp?</span>
+                <span class="font-mono text-sm text-studio-muted faq-icon">+</span>
+              </button>
+              <div class="faq-content hidden pt-4 text-xs text-studio-muted leading-relaxed border-t border-white/[0.06] mt-4">
+                Cuando el cliente presiona "Pedir por WhatsApp", el sistema abre de inmediato su aplicación con un mensaje pre-formateado que contiene la lista de productos seleccionados, cantidades, precios unitarios, subtotal y total en Guaraníes (₲). Tu equipo de ventas solo debe confirmar el stock y coordinar la entrega o facturación.
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="p-6">
+              <button class="w-full flex items-center justify-between text-left font-heading font-bold text-base text-white faq-toggle group">
+                <span class="group-hover:underline">¿Existen comisiones por cada venta realizada?</span>
+                <span class="font-mono text-sm text-studio-muted faq-icon">+</span>
+              </button>
+              <div class="faq-content hidden pt-4 text-xs text-studio-muted leading-relaxed border-t border-white/[0.06] mt-4">
+                Cero comisiones. A diferencia de las plataformas de suscripción o aplicaciones de delivery que descuentan porcentajes de tus ventas, con Punto Prisma pagás un único costo por el desarrollo y la plataforma es 100% tuya.
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="p-6">
+              <button class="w-full flex items-center justify-between text-left font-heading font-bold text-base text-white faq-toggle group">
+                <span class="group-hover:underline">¿Cómo se actualizan los precios o los productos?</span>
+                <span class="font-mono text-sm text-studio-muted faq-icon">+</span>
+              </button>
+              <div class="faq-content hidden pt-4 text-xs text-studio-muted leading-relaxed border-t border-white/[0.06] mt-4">
+                Te entregamos un panel simple o vinculamos tu catálogo a una planilla de Google Sheets. Modificás el precio o agregás una fila en la planilla y tu sitio web se actualiza al instante sin requerir conocimientos de programación.
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="p-6">
+              <button class="w-full flex items-center justify-between text-left font-heading font-bold text-base text-white faq-toggle group">
+                <span class="group-hover:underline">¿Cuáles son las formas de pago aceptadas?</span>
+                <span class="font-mono text-sm text-studio-muted faq-icon">+</span>
+              </button>
+              <div class="faq-content hidden pt-4 text-xs text-studio-muted leading-relaxed border-t border-white/[0.06] mt-4">
+                Aceptamos transferencias bancarias locales (SIPAP / cualquier banco de plaza en Paraguay), efectivo y criptomonedas (USDT por red TRC20/BEP20 o Bitcoin). Se abona el 50% al aprobar la arquitectura inicial y el 50% restante al desplegar en vivo a tu entera conformidad.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- FAQ Side Visual Card -->
+          <div class="lg:col-span-4 border border-white/[0.08] bg-studio-surface p-6 font-mono text-xs">
+            <div class="flex items-center gap-2 text-white font-bold mb-3 border-b border-white/[0.08] pb-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>SOPORTE LOCAL PY</span>
+            </div>
+            <p class="text-studio-muted text-xs leading-relaxed mb-4">
+              Atención directa por ingenieros radicados en Paraguay. Sin bots genéricos ni esperas telefónicas.
+            </p>
+            <div class="space-y-2 border-t border-white/[0.08] pt-3 text-[11px] text-studio-subtle">
+              <div class="flex justify-between">
+                <span>Horario de soporte:</span>
+                <span class="text-white">08:00 - 18:00 PYT</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Tiempo de respuesta:</span>
+                <span class="text-white">&lt; 15 minutos</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Línea técnica:</span>
+                <span class="text-white">+595 986 125 649</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── Banner de Cierre Editorial ───────────── -->
+    <section class="py-16 sm:py-20 border-b border-white/[0.08]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="p-8 sm:p-14 border border-white/[0.12] bg-studio-surface text-center">
+          
+          <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-3">
+            INICIAR PROYECTO CON UN INGENIERO
+          </div>
+
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight mb-4 max-w-2xl mx-auto">
+            Poné tu catálogo web a cerrar ventas por WhatsApp esta misma semana.
+          </h2>
+
+          <p class="text-studio-muted text-sm sm:text-base max-w-xl mx-auto mb-6">
+            Consultá directamente al <span class="font-mono text-white font-semibold">+595 986 125 649</span>. Evaluamos tu modelo de negocio y te presentamos una propuesta técnica en el día.
+          </p>
+
+          <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20poner%20en%20marcha%20mi%20cat%C3%A1logo%20web" target="_blank" rel="noopener" class="h-11 inline-flex items-center gap-2 px-8 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider transition-colors">
+            <span>Iniciar Consulta por WhatsApp</span>
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ───────────── Footer Brutalista Editorial ───────────── -->
+  <footer class="border-t border-white/[0.08] bg-studio-void py-12 text-xs text-studio-muted font-mono">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/[0.08]">
+        
+        <div class="md:col-span-5 space-y-2">
+          <div class="flex items-center gap-2 text-white font-heading font-bold text-sm tracking-tight">
+            <span>PUNTO PRISMA STUDIO</span>
+            <span class="text-[10px] border border-white/20 px-1 py-0.2 text-studio-muted">PY</span>
+          </div>
+          <p class="text-studio-muted text-xs leading-relaxed max-w-sm">
+            Ingeniería de software, landing pages y catálogos de cierre rápido para PyMEs en Paraguay. studio.puntoprisma.store
+          </p>
+        </div>
+
+        <div class="md:col-span-3 space-y-2">
+          <span class="text-white uppercase font-bold block">Navegación</span>
+          <ul class="space-y-1">
+            <li><a href="#soluciones" class="hover:text-white transition-colors">01. Soluciones y Planes</a></li>
+            <li><a href="#demos" class="hover:text-white transition-colors">02. Catálogo de Demos</a></li>
+            <li><a href="#proceso" class="hover:text-white transition-colors">03. Metodología 7 Días</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">04. Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div class="md:col-span-4 space-y-2">
+          <span class="text-white uppercase font-bold block">Contacto</span>
+          <p class="text-studio-text">Asunción &amp; Gran Asunción, Paraguay</p>
+          <p>
+            <span>WhatsApp: </span>
+            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio" target="_blank" rel="noopener" class="text-white hover:underline">
+              +595 986 125 649
+            </a>
+          </p>
+          <p class="text-studio-subtle text-[11px]">Fotografías de muestra provistas bajo licencia Unsplash.</p>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-studio-subtle">
+        <p>© 2026 Punto Prisma Studio · Todos los derechos reservados.</p>
+        <p>Swiss Grid / Brutalismo Editorial · Sin frameworks pesados</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ───────────── Floating WhatsApp Action (FAB) ───────────── -->
+  <aside aria-label="Contacto directo" class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quisiera%20recibir%20asesoramiento%20sobre%20sus%20servicios" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Punto Prisma Studio" class="w-12 h-12 bg-white hover:bg-slate-200 text-studio-void border border-white flex items-center justify-center transition-transform hover:scale-105 active:scale-95 shadow-xl">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+        <path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.86c0 1.74.46 3.44 1.32 4.94L2 22l5.35-1.4a9.9 9.9 0 0 0 4.69 1.2h.04c5.46 0 9.89-4.4 9.89-9.86C21.97 6.4 17.5 2 12.04 2zm0 18.06h-.03a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.17.83.85-3.09-.2-.32a8.18 8.18 0 0 1-1.26-4.39c0-4.52 3.7-8.2 8.26-8.2 4.54 0 8.24 3.68 8.24 8.2 0 4.52-3.7 8.2-8.21 8.2zm4.52-6.14c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.8-.79.97-.14.17-.3.19-.55.06-.25-.12-1.06-.39-2.02-1.24-.75-.66-1.25-1.48-1.4-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.3.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"></path>
+      </svg>
+    </a>
+  </aside>
+
+
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <!-- JAVASCRIPT: ARQUITECTURA DE DATOS ESCALABLE & CONTROLADORES       -->
+  <!-- ══════════════════════════════════════════════════════════════════ -->
+  <script>
+    /**
+     * ARQUITECTURA DE DATOS ESCALABLE:
+     * Para añadir una nueva demo, basta con agregar un nuevo objeto a este array
+     * con { id, titulo, rubro, plan, planTag, descripcion, imagenPreview, urlDemo, waMsg }.
+     */
+    const DEMOS = [
+      {
+        id: "ferreteria-los-laureles",
+        titulo: "Ferretería & Repuestos Los Laureles",
+        rubro: "Ferreterías & Repuestos",
+        plan: "Catálogo Móvil WhatsApp",
+        planTag: "CATÁLOGO WHATSAPP",
+        descripcion: "Catálogo técnico con buscador por código de parte, marcas y carrito que despacha el pedido costeado en Guaraníes a WhatsApp.",
+        imagenPreview: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=80",
+        urlDemo: "https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20interactiva%20de%20Ferreter%C3%ADa%20y%20Repuestos",
+        waMsg: "Hola Punto Prisma Studio, vi la demo de Ferretería & Repuestos Los Laureles y quiero implementar este catálogo en mi negocio."
+      },
+      {
+        id: "kuro-sushi-asuncion",
+        titulo: "Kuro Sushi & Asian Fusion",
+        rubro: "Gastronomía & Bares",
+        plan: "Catálogo Móvil WhatsApp",
+        planTag: "CATÁLOGO WHATSAPP",
+        descripcion: "Carta digital interactiva con modificadores de piezas, combos y comanda directa al WhatsApp de cocina sin pagar comisiones de apps.",
+        imagenPreview: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80",
+        urlDemo: "https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20interactiva%20de%20Kuro%20Sushi",
+        waMsg: "Hola Punto Prisma Studio, vi la demo gastronómica de Kuro Sushi y me gustaría cotizar una carta digital para mi restaurante."
+      },
+      {
+        id: "autopar-vehiculos",
+        titulo: "AutoPar Motors Asunción",
+        rubro: "Automotor & Talleres",
+        plan: "Sitio Corporativo & Sistemas",
+        planTag: "CORPORATIVO & SISTEMA",
+        descripcion: "Showroom virtual para importadoras y concesionarias con ficha técnica, simulador de cuotas y solicitud de test drive por chat.",
+        imagenPreview: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+        urlDemo: "https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20AutoPar%20Motors",
+        waMsg: "Hola Punto Prisma Studio, vi la demo de AutoPar Motors y quiero un showroom digital para mi concesionaria."
+      },
+      {
+        id: "clinica-dental-prisma",
+        titulo: "Clínica Dental Bellas Artes",
+        rubro: "Salud & Clínicas",
+        plan: "Presencia Express",
+        planTag: "LANDING EXPRESS",
+        descripcion: "Landing médica de alta confianza con catálogo de tratamientos, perfil de especialistas, mapa de ubicación y agendamiento en 1 clic.",
+        imagenPreview: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
+        urlDemo: "https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20Cl%C3%ADnica%20Dental",
+        waMsg: "Hola Punto Prisma Studio, me interesó la demo de Clínica Dental Bellas Artes para mi consultorio."
+      },
+      {
+        id: "estudio-benitez-asociados",
+        titulo: "Benítez & Asociados Abogados",
+        rubro: "Servicios Profesionales",
+        plan: "Sitio Corporativo & Sistemas",
+        planTag: "CORPORATIVO & SISTEMA",
+        descripcion: "Plataforma institucional para firmas legales y contables con presentación de áreas de práctica, socios y consulta confidencial a WhatsApp.",
+        imagenPreview: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+        urlDemo: "https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20Estudio%20Jur%C3%ADdico",
+        waMsg: "Hola Punto Prisma Studio, me interesa un sitio corporativo del nivel de Benítez & Asociados para nuestra firma profesional."
+      },
+      {
+        id: "aura-boutique-calzados",
+        titulo: "Aura Concept Store & Calzados",
+        rubro: "Moda & Retail",
+        plan: "Catálogo Móvil WhatsApp",
+        planTag: "CATÁLOGO WHATSAPP",
+        descripcion: "Catálogo móvil para marcas de moda con selector de talles, colores y verificación de disponibilidad directa por WhatsApp desde la bio de Instagram.",
+        imagenPreview: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+        urlDemo: "https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20ver%20la%20demo%20de%20Aura%20Concept%20Store",
+        waMsg: "Hola Punto Prisma Studio, vi la demo de Aura Concept Store y quiero convertir los seguidores de mi Instagram en pedidos de WhatsApp."
+      }
+    ];
+
+    // Estados de filtrado
+    let currentPlanFilter = "todos";
+    let currentRubroFilter = "todos";
+    let currentSearchTerm = "";
+
+    // Elementos DOM
+    const demoGrid = document.getElementById("demoGrid");
+    const demoEmptyState = document.getElementById("demoEmptyState");
+    const demoCounterText = document.getElementById("demoCounterText");
+    const demoSearchInput = document.getElementById("demoSearchInput");
+    const rubroSelect = document.getElementById("rubroSelect");
+    const planChipsContainer = document.getElementById("planChipsContainer");
+
+    /**
+     * Renderizado de Demos en Vistas Previas Reales
+     */
+    function renderDemos() {
+      const filtered = DEMOS.filter(demo => {
+        const matchPlan = currentPlanFilter === "todos" || demo.plan === currentPlanFilter;
+        const matchRubro = currentRubroFilter === "todos" || demo.rubro === currentRubroFilter;
+        const matchSearch = currentSearchTerm === "" || 
+          demo.titulo.toLowerCase().includes(currentSearchTerm) ||
+          demo.rubro.toLowerCase().includes(currentSearchTerm) ||
+          demo.descripcion.toLowerCase().includes(currentSearchTerm);
+
+        return matchPlan && matchRubro && matchSearch;
+      });
+
+      demoCounterText.textContent = `${filtered.length} de ${DEMOS.length} demostraciones`;
+
+      if (filtered.length === 0) {
+        demoGrid.innerHTML = "";
+        demoEmptyState.classList.remove("hidden");
+        return;
+      }
+
+      demoEmptyState.classList.add("hidden");
+
+      let html = "";
+      filtered.forEach((demo) => {
+        const waCardUrl = `https://wa.me/595986125649?text=${encodeURIComponent(demo.waMsg)}`;
+
+        html += `
+          <article class="swiss-cell p-5 flex flex-col justify-between group">
+            <div>
+              <!-- Header info -->
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="font-mono text-[10px] text-studio-muted uppercase tracking-wider">
+                  ${demo.planTag}
+                </span>
+                <span class="font-mono text-[10px] text-white border border-white/10 px-1.5 py-0.2">
+                  ${demo.rubro}
+                </span>
+              </div>
+
+              <!-- Real Interface Phone/Viewport Mockup (Aspect Ratio 4/5) -->
+              <div class="relative aspect-[4/5] bg-studio-void border border-white/[0.08] overflow-hidden mb-4 group-hover:border-white/20 transition-colors">
+                
+                <!-- Photographic Background from Unsplash -->
+                <img src="${demo.imagenPreview}" 
+                     alt="Previsualización de ${demo.titulo}" 
+                     loading="lazy" 
+                     class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                
+                <!-- Dark Overlay for UI legibility -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/60"></div>
+
+                <!-- Minimalist Simulated Phone Header Overlay -->
+                <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
+                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">${demo.titulo}</span>
+                  <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
+                </div>
+
+                <!-- Simulated Floating Order Bar inside Device Mockup -->
+                <div class="absolute bottom-3 inset-x-3 p-2 bg-studio-void/90 border border-white/20 backdrop-blur-md flex items-center justify-between text-[10px] font-mono">
+                  <span class="text-white font-medium">Pedido WhatsApp</span>
+                  <span class="text-emerald-400 font-bold">₲ Listo</span>
+                </div>
+              </div>
+
+              <!-- Title & Description -->
+              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+                ${demo.titulo}
+              </h3>
+
+              <p class="text-xs text-studio-muted leading-relaxed mb-5">
+                ${demo.descripcion}
+              </p>
+            </div>
+
+            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <div class="space-y-2 pt-3 border-t border-white/[0.08]">
+              <a href="${demo.urlDemo}" target="_blank" rel="noopener"
+                 class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Ver demo en vivo</span>
+                <span>↗</span>
+              </a>
+
+              <a href="${waCardUrl}" target="_blank" rel="noopener"
+                 class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </article>
+        `;
+      });
+
+      // Special 7th Card: "¿No ves tu rubro?" (Left-aligned, consistent axis)
+      const customRubroUrl = `https://wa.me/595986125649?text=${encodeURIComponent("Hola Punto Prisma Studio, no vi mi rubro específico en el catálogo y quiero armar un prototipo a medida para mi empresa.")}`;
+
+      html += `
+        <article class="swiss-cell p-5 flex flex-col justify-between border-dashed border-white/20 bg-studio-surface/80">
+          <div>
+            <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-3">
+              PROTOTIPADO RÁPIDO
+            </div>
+            
+            <div class="aspect-[4/5] bg-studio-void border border-dashed border-white/10 flex flex-col items-start justify-center p-6 text-left mb-4">
+              <span class="font-mono text-3xl font-bold text-white mb-2">48h</span>
+              <p class="font-mono text-xs text-studio-muted">Prototipo inicial sin costo para tu empresa</p>
+            </div>
+
+            <h3 class="font-heading font-bold text-lg text-white mb-1.5">
+              ¿No ves tu rubro específico?
+            </h3>
+            
+            <p class="text-xs text-studio-muted leading-relaxed mb-5">
+              Diseñamos la estructura técnica y catálogo a medida para distribuidoras, ópticas, repuesterías agrícolas, veterinarias o industrias.
+            </p>
+          </div>
+
+          <a href="${customRubroUrl}" target="_blank" rel="noopener"
+             class="w-full h-10 px-3 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-colors">
+            <span>Consultar por WhatsApp</span>
+            <span>→</span>
+          </a>
+        </article>
+      `;
+
+      demoGrid.innerHTML = html;
+    }
+
+    /**
+     * Handlers de Filtros y Búsqueda
+     */
+    demoSearchInput.addEventListener("input", (e) => {
+      currentSearchTerm = e.target.value.toLowerCase().trim();
+      renderDemos();
+    });
+
+    rubroSelect.addEventListener("change", (e) => {
+      currentRubroFilter = e.target.value;
+      renderDemos();
+    });
+
+    planChipsContainer.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[data-plan-filter]");
+      if (!btn) return;
+
+      document.querySelectorAll(".demo-chip").forEach(c => {
+        c.classList.remove("bg-white", "text-black", "border-white");
+        c.classList.add("bg-studio-void", "text-studio-muted", "border-white/10");
+      });
+
+      btn.classList.add("bg-white", "text-black", "border-white");
+      btn.classList.remove("bg-studio-void", "text-studio-muted", "border-white/10");
+
+      currentPlanFilter = btn.getAttribute("data-plan-filter");
+      renderDemos();
+    });
+
+    function resetFilters() {
+      currentPlanFilter = "todos";
+      currentRubroFilter = "todos";
+      currentSearchTerm = "";
+      demoSearchInput.value = "";
+      rubroSelect.value = "todos";
+      document.querySelectorAll(".demo-chip").forEach((c, idx) => {
+        if (idx === 0) {
+          c.classList.add("bg-white", "text-black", "border-white");
+          c.classList.remove("bg-studio-void", "text-studio-muted", "border-white/10");
+        } else {
+          c.classList.remove("bg-white", "text-black", "border-white");
+          c.classList.add("bg-studio-void", "text-studio-muted", "border-white/10");
+        }
+      });
+      renderDemos();
+    }
+
+    /**
+     * Mobile Menu Toggle
+     */
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      mobileMenuBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    document.querySelectorAll(".mobile-nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    /**
+     * FAQ Accordion
+     */
+    document.querySelectorAll(".faq-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector(".faq-icon");
+        const isOpen = !content.classList.contains("hidden");
+
+        document.querySelectorAll(".faq-content").forEach(c => c.classList.add("hidden"));
+        document.querySelectorAll(".faq-icon").forEach(i => i.textContent = "+");
+
+        if (!isOpen) {
+          content.classList.remove("hidden");
+          icon.textContent = "−";
+        }
+      });
+    });
+
+    // Inicializar catálogo al cargar
+    document.addEventListener("DOMContentLoaded", () => {
+      renderDemos();
+    });
+  </script>
+
+
+
+</body></html>
