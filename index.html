@@ -130,6 +130,15 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #353542;
     }
+
+    /* Hide scrollbar for horizontal chip bars */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 
@@ -137,7 +146,7 @@
 
   <!-- Header / Navigation Bar (Single solid bar without text wrapping) -->
   <header class="sticky top-0 z-40 bg-studio-void/95 backdrop-blur-md border-b border-white/[0.08]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
 
       <!-- Brand Identity (Architectural Monochrome Prism) -->
       <a href="#inicio"
@@ -221,9 +230,9 @@
 
     <!-- ───────────── Hero Section (Architectural 2-Column Swiss Grid) ───────────── -->
     <section class="border-b border-white/[0.08] relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
 
           <!-- Left Column: Magnetic Editorial Proposition -->
           <div class="lg:col-span-7 flex flex-col items-start">
@@ -235,7 +244,7 @@
             </div>
 
             <h1
-              class="font-display font-extrabold text-3xl sm:text-5xl lg:text-5xl text-white tracking-tight leading-[1.08] mb-5">
+              class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.12] sm:leading-[1.08] mb-5">
               Infraestructura Digital, Catálogos Móviles y Sistemas Web que cierran ventas por WhatsApp.
             </h1>
 
@@ -260,18 +269,18 @@
             </div>
 
             <!-- Hard Technical Data Strip -->
-            <div class="grid grid-cols-3 gap-6 pt-5 border-t border-white/[0.08] w-full max-w-lg">
+            <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-5 border-t border-white/[0.08] w-full max-w-lg">
               <div>
-                <span class="block num-tabular text-xl sm:text-2xl font-bold text-white">&lt; 0.6s</span>
-                <span class="text-[11px] font-mono text-studio-muted uppercase">Velocidad 4G/5G</span>
+                <span class="block num-tabular text-lg sm:text-2xl font-bold text-white">&lt; 0.6s</span>
+                <span class="text-[9px] sm:text-[11px] font-mono text-studio-muted uppercase">Velocidad 4G/5G</span>
               </div>
               <div>
-                <span class="block num-tabular text-xl sm:text-2xl font-bold text-white">0%</span>
-                <span class="text-[11px] font-mono text-studio-muted uppercase">Comisiones por venta</span>
+                <span class="block num-tabular text-lg sm:text-2xl font-bold text-white">0%</span>
+                <span class="text-[9px] sm:text-[11px] font-mono text-studio-muted uppercase">Comisiones por venta</span>
               </div>
               <div>
-                <span class="block num-tabular text-xl sm:text-2xl font-bold text-white">7 Días</span>
-                <span class="text-[11px] font-mono text-studio-muted uppercase">Entrega final</span>
+                <span class="block num-tabular text-lg sm:text-2xl font-bold text-white">7 Días</span>
+                <span class="text-[9px] sm:text-[11px] font-mono text-studio-muted uppercase">Entrega final</span>
               </div>
             </div>
 
@@ -350,25 +359,25 @@
             </div>
 
             <!-- Architectural Dispatch Flow Diagram (SVG Visual) -->
-            <div class="border border-white/[0.08] bg-studio-surface p-4 font-mono text-[11px]">
-              <div class="flex items-center justify-between text-studio-muted border-b border-white/[0.08] pb-2 mb-3">
+            <div class="border border-white/[0.08] bg-studio-surface p-3 sm:p-4 font-mono text-[10px] sm:text-[11px]">
+              <div class="flex items-center justify-between text-studio-muted border-b border-white/[0.08] pb-2 mb-2.5">
                 <span class="uppercase tracking-wider">FLUJO TÉCNICO DE CIERRE</span>
                 <span class="text-white">API DIRECTA</span>
               </div>
-              <div class="flex items-center justify-between text-center gap-2 text-white">
-                <div class="p-2 border border-white/10 bg-studio-void flex-1">
-                  <span class="text-studio-muted block text-[9px]">PASO 1</span>
-                  <span>Cliente elige</span>
+              <div class="flex items-center justify-between text-center gap-1.5 sm:gap-2 text-white">
+                <div class="p-1.5 sm:p-2 border border-white/10 bg-studio-void flex-1">
+                  <span class="text-studio-muted block text-[8px] sm:text-[9px]">PASO 1</span>
+                  <span class="text-[10px] sm:text-xs">Elige</span>
                 </div>
-                <span class="text-studio-muted font-bold">→</span>
-                <div class="p-2 border border-white/10 bg-studio-void flex-1">
-                  <span class="text-studio-muted block text-[9px]">PASO 2</span>
-                  <span>Carrito ₲</span>
+                <span class="text-studio-muted font-bold text-xs">→</span>
+                <div class="p-1.5 sm:p-2 border border-white/10 bg-studio-void flex-1">
+                  <span class="text-studio-muted block text-[8px] sm:text-[9px]">PASO 2</span>
+                  <span class="text-[10px] sm:text-xs">Carrito ₲</span>
                 </div>
-                <span class="text-studio-muted font-bold">→</span>
-                <div class="p-2 border border-white/20 bg-studio-elevated flex-1 text-emerald-400 font-bold">
-                  <span class="text-studio-muted block text-[9px]">PASO 3</span>
-                  <span>WhatsApp</span>
+                <span class="text-studio-muted font-bold text-xs">→</span>
+                <div class="p-1.5 sm:p-2 border border-white/20 bg-studio-elevated flex-1 text-emerald-400 font-bold">
+                  <span class="text-studio-muted block text-[8px] sm:text-[9px]">PASO 3</span>
+                  <span class="text-[10px] sm:text-xs">WhatsApp</span>
                 </div>
               </div>
             </div>
@@ -382,10 +391,10 @@
 
 
     <!-- ───────────── Soluciones (Shared 1px Borders Editorial Grid) ───────────── -->
-    <section id="soluciones" class="py-16 sm:py-20 border-b border-white/[0.08]">
+    <section id="soluciones" class="py-12 sm:py-20 border-b border-white/[0.08]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="mb-10">
+        <div class="mb-8 sm:mb-10">
           <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">01 · PILARES DE SERVICIO</div>
           <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
             Tres niveles de ingeniería digital. Precio cerrado y sin sorpresas.
@@ -401,7 +410,7 @@
           class="grid grid-cols-1 lg:grid-cols-3 border border-white/[0.08] divide-y lg:divide-y-0 lg:divide-x divide-white/[0.08] bg-studio-surface">
 
           <!-- Pillar 1: Presencia Express -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between hover:bg-studio-elevated/50 transition-colors">
+          <div class="p-5 sm:p-8 flex flex-col justify-between hover:bg-studio-elevated/50 transition-colors">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="font-mono text-xs text-studio-muted">NIVEL 01</span>
@@ -446,7 +455,7 @@
                 </div>
                 <div class="flex items-baseline gap-2">
                   <span class="font-mono text-studio-muted">—</span>
-                  <span>Dominio personalizado según disponibilidad (.com, .store para tiendas, etc.) + Hosting administrado de por vida</span>
+                  <span>Dominio de identidad según disponibilidad (.studio, .pro, .site, etc.) + Hosting administrado de por vida</span>
                 </div>
               </div>
             </div>
@@ -468,7 +477,7 @@
           </div>
 
           <!-- Pillar 2: Catálogo Móvil WhatsApp (Plan Principal con contraste de superficie y borde fino) -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between bg-studio-elevated relative border-t-2 border-t-white">
+          <div class="p-5 sm:p-8 flex flex-col justify-between bg-studio-elevated relative border-t-2 sm:border-t-2 border-l-2 sm:border-l-0 border-white">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="font-mono text-xs text-white font-semibold">NIVEL 02 · PLAN ESTRELLA</span>
@@ -528,7 +537,7 @@
                 </div>
                 <div class="flex items-baseline gap-2">
                   <span class="font-mono text-white font-bold">—</span>
-                  <span>Dominio personalizado según disponibilidad (.com, .store para tiendas, etc.) + Hosting sin límites de visitas</span>
+                  <span>Dominio de identidad comercial según disponibilidad (.store para tiendas, .shop, etc.) + Hosting sin límites de visitas</span>
                 </div>
               </div>
             </div>
@@ -552,7 +561,7 @@
           </div>
 
           <!-- Pillar 3: Corporativo & Sistemas A Medida -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between hover:bg-studio-elevated/50 transition-colors">
+          <div class="p-5 sm:p-8 flex flex-col justify-between hover:bg-studio-elevated/50 transition-colors">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="font-mono text-xs text-studio-muted">NIVEL 03</span>
@@ -686,21 +695,21 @@
           <div>
             <span class="block font-mono text-[11px] text-studio-muted uppercase tracking-wider mb-2">Filtrar por
               arquitectura</span>
-            <div class="flex flex-wrap items-center gap-2" id="planChipsContainer">
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 sm:pb-0 sm:flex-wrap -mx-4 px-4 sm:mx-0 sm:px-0" id="planChipsContainer">
               <button data-plan-filter="todos"
-                class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white bg-white text-black transition-all">
+                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white bg-white text-black transition-all">
                 TODOS
               </button>
               <button data-plan-filter="Catálogo Móvil WhatsApp"
-                class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
                 CATÁLOGOS WHATSAPP
               </button>
               <button data-plan-filter="Presencia Express"
-                class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
                 LANDING EXPRESS
               </button>
               <button data-plan-filter="Sitio Corporativo & Sistemas"
-                class="demo-chip px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
                 CORPORATIVOS & SISTEMAS
               </button>
             </div>
@@ -746,9 +755,9 @@
           class="grid grid-cols-1 md:grid-cols-4 border border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] bg-studio-surface">
 
           <!-- Step 1 -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between">
+          <div class="p-5 sm:p-8 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 01</span>
+              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 01</span>
               <h3 class="font-heading font-bold text-lg text-white mb-2">Relevamiento y Estructura</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Nos compartís tu lista de productos o servicios, precios, fotos y logo por WhatsApp o Google Drive. Si
@@ -767,9 +776,9 @@
           </div>
 
           <!-- Step 2 -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between">
+          <div class="p-5 sm:p-8 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 02–04</span>
+              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 02–04</span>
               <h3 class="font-heading font-bold text-lg text-white mb-2">Diseño & Carga Inicial</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Programamos la arquitectura responsive adaptada a celulares, cargamos tu catálogo inicial, configuramos
@@ -788,9 +797,9 @@
           </div>
 
           <!-- Step 3 -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between">
+          <div class="p-5 sm:p-8 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 05–06</span>
+              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 05–06</span>
               <h3 class="font-heading font-bold text-lg text-white mb-2">Prueba de Pedido Real</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Te entregamos el enlace de prueba previa. Realizamos simulaciones de compra enviando el mensaje
@@ -809,19 +818,19 @@
           </div>
 
           <!-- Step 4 -->
-          <div class="p-6 sm:p-8 flex flex-col justify-between bg-studio-elevated">
+          <div class="p-5 sm:p-8 flex flex-col justify-between bg-studio-elevated">
             <div>
-              <span class="font-mono text-2xl font-bold text-white block mb-3">DÍA 07</span>
+              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 07</span>
               <h3 class="font-heading font-bold text-lg text-white mb-2">Despliegue & Entrega</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
-                Conectamos tu dominio personalizado según disponibilidad (.com, .store para tiendas o .com.py), configuramos el certificado de seguridad SSL y te entregamos la
+                Conectamos tu dominio de identidad personalizado según disponibilidad (.store para tiendas, .shop, .studio, entre otros), configuramos el certificado de seguridad SSL y te entregamos la
                 propiedad total de la plataforma lista para facturar.
               </p>
 
               <!-- Phase Schematic Visual -->
               <div class="p-2 border border-white/20 bg-studio-void font-mono text-[9px] text-emerald-400">
                 <span class="text-white block">DEPLOY:</span>
-                <span>Dominio personalizado activo (según disponibilidad) + SSL</span>
+                <span>Dominio de identidad activo (.store, etc. según disponibilidad) + SSL</span>
               </div>
             </div>
             <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-emerald-400 uppercase">
@@ -1031,10 +1040,10 @@
 
 
   <!-- ───────────── Floating WhatsApp Action (FAB) ───────────── -->
-  <aside aria-label="Contacto directo" class="fixed bottom-6 right-6 z-50">
+  <aside aria-label="Contacto directo" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
     <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quisiera%20recibir%20asesoramiento%20sobre%20sus%20servicios"
       target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Punto Prisma Studio"
-      class="w-12 h-12 bg-white hover:bg-slate-200 text-studio-void border border-white flex items-center justify-center transition-transform hover:scale-105 active:scale-95 shadow-xl">
+      class="w-11 h-11 sm:w-12 sm:h-12 bg-white hover:bg-slate-200 text-studio-void border border-white flex items-center justify-center transition-transform hover:scale-105 active:scale-95 shadow-xl">
       <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
         <path
           d="M12.04 2C6.58 2 2.15 6.4 2.15 11.86c0 1.74.46 3.44 1.32 4.94L2 22l5.35-1.4a9.9 9.9 0 0 0 4.69 1.2h.04c5.46 0 9.89-4.4 9.89-9.86C21.97 6.4 17.5 2 12.04 2zm0 18.06h-.03a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.17.83.85-3.09-.2-.32a8.18 8.18 0 0 1-1.26-4.39c0-4.52 3.7-8.2 8.26-8.2 4.54 0 8.24 3.68 8.24 8.2 0 4.52-3.7 8.2-8.21 8.2zm4.52-6.14c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.12-.17.25-.64.8-.79.97-.14.17-.3.19-.55.06-.25-.12-1.06-.39-2.02-1.24-.75-.66-1.25-1.48-1.4-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.3.37-.44.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29z" />
