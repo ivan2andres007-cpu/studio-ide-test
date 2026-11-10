@@ -71,11 +71,19 @@
       --text-muted: #b4b4c2;
     }
 
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+
     body {
       background-color: var(--bg-void);
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -107,10 +115,13 @@
     }
 
     /* Accessible high-contrast focus rings */
-    :focus-visible {
+    :focus-visible,
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
       outline: 2px solid #ffffff !important;
       outline-offset: 2px !important;
-      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5) !important;
     }
 
     /* Custom architectural scrollbar */
@@ -146,11 +157,11 @@
 
   <!-- Header / Navigation Bar (Single solid bar without text wrapping) -->
   <header class="sticky top-0 z-40 bg-studio-void/95 backdrop-blur-md border-b border-white/[0.08]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
       <!-- Brand Identity (Architectural Monochrome Prism) -->
       <a href="#inicio"
-        class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+        class="flex items-center gap-3 group min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
         <div
           class="w-8 h-8 border border-white/20 bg-studio-surface flex items-center justify-center p-1.5 group-hover:border-white transition-colors flex-shrink-0">
           <svg class="w-full h-full text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -167,9 +178,9 @@
           · PY</span>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop Nav (Visible from lg breakpoint to prevent horizontal overflow on tablet) -->
       <nav
-        class="hidden md:flex items-center gap-6 text-xs font-mono tracking-wider uppercase text-studio-muted whitespace-nowrap">
+        class="hidden lg:flex items-center gap-6 text-xs font-mono tracking-wider uppercase text-studio-muted whitespace-nowrap">
         <a href="#soluciones" class="hover:text-white transition-colors">Soluciones</a>
         <a href="#demos" class="hover:text-white transition-colors flex items-center gap-1.5">
           <span>Demos en Vivo</span>
@@ -180,7 +191,7 @@
       </nav>
 
       <!-- WhatsApp Direct Action -->
-      <div class="hidden sm:flex items-center gap-4 whitespace-nowrap flex-shrink-0">
+      <div class="hidden lg:flex items-center gap-4 whitespace-nowrap flex-shrink-0">
         <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web"
           target="_blank" rel="noopener"
           class="h-11 inline-flex items-center gap-2.5 px-5 border border-white/20 hover:border-white bg-studio-surface hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider transition-all">
@@ -190,9 +201,9 @@
         </a>
       </div>
 
-      <!-- Mobile Menu Toggle Button -->
+      <!-- Mobile Menu Toggle Button (Strict 44px Touch Target) -->
       <button id="mobileMenuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú"
-        class="md:hidden p-2.5 border border-white/15 bg-studio-surface text-white">
+        class="lg:hidden w-11 h-11 border border-white/15 bg-studio-surface text-white flex items-center justify-center">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
           <path stroke-linecap="square" d="M3 6h18M3 12h18M3 18h18" />
         </svg>
@@ -202,18 +213,18 @@
 
     <!-- Mobile Drawer Menu -->
     <div id="mobileMenu"
-      class="hidden md:hidden border-b border-white/10 bg-studio-surface px-6 py-6 font-mono text-xs uppercase tracking-wider">
-      <nav class="flex flex-col gap-4">
-        <a href="#soluciones" class="mobile-nav-link text-studio-muted hover:text-white py-1">01. Soluciones y
+      class="hidden lg:hidden border-b border-white/10 bg-studio-surface px-6 py-6 font-mono text-xs uppercase tracking-wider">
+      <nav class="flex flex-col gap-1">
+        <a href="#soluciones" class="mobile-nav-link text-studio-muted hover:text-white min-h-[44px] flex items-center">01. Soluciones y
           Planes</a>
         <a href="#demos"
-          class="mobile-nav-link text-studio-muted hover:text-white py-1 flex items-center justify-between">
+          class="mobile-nav-link text-studio-muted hover:text-white min-h-[44px] flex items-center justify-between">
           <span>02. Demos en Vivo</span>
           <span class="text-emerald-400">ONLINE</span>
         </a>
-        <a href="#proceso" class="mobile-nav-link text-studio-muted hover:text-white py-1">03. Metodología 7 Días</a>
-        <a href="#faq" class="mobile-nav-link text-studio-muted hover:text-white py-1">04. Preguntas Frecuentes</a>
-        <div class="pt-4 border-t border-white/10">
+        <a href="#proceso" class="mobile-nav-link text-studio-muted hover:text-white min-h-[44px] flex items-center">03. Metodología 7 Días</a>
+        <a href="#faq" class="mobile-nav-link text-studio-muted hover:text-white min-h-[44px] flex items-center">04. Preguntas Frecuentes</a>
+        <div class="pt-4 border-t border-white/10 mt-2">
           <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web"
             target="_blank" rel="noopener"
             class="w-full h-11 flex items-center justify-center gap-2 px-4 border border-white bg-white text-studio-void font-bold text-xs uppercase font-mono">
@@ -229,32 +240,32 @@
   <main id="inicio">
 
     <!-- ───────────── Hero Section (Architectural 2-Column Swiss Grid) ───────────── -->
-    <section class="border-b border-white/[0.08] relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+    <section class="hero--editorial border-b border-white/[0.08] relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-8 lg:py-10">
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-14 items-start">
 
           <!-- Left Column: Magnetic Editorial Proposition -->
           <div class="lg:col-span-7 flex flex-col items-start">
 
-            <div class="font-mono text-xs text-studio-muted mb-4 flex items-center gap-2">
+            <div class="font-mono text-[11px] sm:text-xs text-studio-muted mb-3 sm:mb-4 flex items-center gap-2">
               <span class="text-white font-semibold">INFRAESTRUCTURA DIGITAL</span>
               <span class="text-studio-subtle">/</span>
               <span>ASUNCIÓN, PARAGUAY</span>
             </div>
 
             <h1
-              class="font-display font-extrabold text-2xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.12] sm:leading-[1.08] mb-5">
+              class="font-display font-extrabold text-[24px] sm:text-4xl lg:text-5xl xl:text-6xl text-white tracking-tight leading-[1.14] sm:leading-[1.08] mb-4 sm:mb-5">
               Infraestructura Digital, Catálogos Móviles y Sistemas Web que cierran ventas por WhatsApp.
             </h1>
 
-            <p class="text-studio-muted text-sm sm:text-base font-normal leading-relaxed max-w-xl mb-6">
+            <p class="text-studio-muted text-xs sm:text-base font-normal leading-relaxed max-w-xl mb-5 sm:mb-6">
               Desarrollamos interfaces web de alta velocidad para empresas y comercios en Paraguay. Sin fricción, sin
               registros obligatorios y sin comisiones por venta: tu cliente elige el producto, arma su carrito y te
               envía el pedido ordenado y costeado en Guaraníes a tu WhatsApp.
             </p>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto mb-8">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto mb-6 sm:mb-8">
               <a href="#demos"
                 class="h-11 px-6 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center transition-colors">
                 Explorar Demos en Vivo ↓
@@ -269,16 +280,16 @@
             </div>
 
             <!-- Hard Technical Data Strip -->
-            <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-5 border-t border-white/[0.08] w-full max-w-lg">
-              <div>
+            <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-4 sm:pt-5 border-t border-white/[0.08] w-full max-w-lg">
+              <div class="min-w-0">
                 <span class="block num-tabular text-lg sm:text-2xl font-bold text-white">&lt; 0.6s</span>
                 <span class="text-[9px] sm:text-[11px] font-mono text-studio-muted uppercase">Velocidad 4G/5G</span>
               </div>
-              <div>
+              <div class="min-w-0">
                 <span class="block num-tabular text-lg sm:text-2xl font-bold text-white">0%</span>
                 <span class="text-[9px] sm:text-[11px] font-mono text-studio-muted uppercase">Comisiones por venta</span>
               </div>
-              <div>
+              <div class="min-w-0">
                 <span class="block num-tabular text-lg sm:text-2xl font-bold text-white">7 Días</span>
                 <span class="text-[9px] sm:text-[11px] font-mono text-studio-muted uppercase">Entrega final</span>
               </div>
@@ -365,17 +376,27 @@
                 <span class="text-white">API DIRECTA</span>
               </div>
               <div class="flex items-center justify-between text-center gap-1.5 sm:gap-2 text-white">
-                <div class="p-1.5 sm:p-2 border border-white/10 bg-studio-void flex-1">
+                <div class="p-2 border border-white/10 bg-studio-void flex-1 flex flex-col items-center">
+                  <svg class="w-4 h-4 text-studio-muted mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M9 3v18M3 9h18"/>
+                  </svg>
                   <span class="text-studio-muted block text-[8px] sm:text-[9px]">PASO 1</span>
                   <span class="text-[10px] sm:text-xs">Elige</span>
                 </div>
                 <span class="text-studio-muted font-bold text-xs">→</span>
-                <div class="p-1.5 sm:p-2 border border-white/10 bg-studio-void flex-1">
+                <div class="p-2 border border-white/10 bg-studio-void flex-1 flex flex-col items-center">
+                  <svg class="w-4 h-4 text-studio-muted mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
                   <span class="text-studio-muted block text-[8px] sm:text-[9px]">PASO 2</span>
                   <span class="text-[10px] sm:text-xs">Carrito ₲</span>
                 </div>
                 <span class="text-studio-muted font-bold text-xs">→</span>
-                <div class="p-1.5 sm:p-2 border border-white/20 bg-studio-elevated flex-1 text-emerald-400 font-bold">
+                <div class="p-2 border border-white/20 bg-studio-elevated flex-1 text-emerald-400 font-bold flex flex-col items-center">
+                  <svg class="w-4 h-4 text-emerald-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
                   <span class="text-studio-muted block text-[8px] sm:text-[9px]">PASO 3</span>
                   <span class="text-[10px] sm:text-xs">WhatsApp</span>
                 </div>
@@ -391,15 +412,15 @@
 
 
     <!-- ───────────── Soluciones (Shared 1px Borders Editorial Grid) ───────────── -->
-    <section id="soluciones" class="py-12 sm:py-20 border-b border-white/[0.08]">
+    <section id="soluciones" class="pricing py-12 sm:py-20 border-b border-white/[0.08]" aria-label="Planes y Soluciones">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="mb-8 sm:mb-10">
           <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">01 · PILARES DE SERVICIO</div>
-          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+          <h2 class="font-display font-extrabold text-[18px] sm:text-[26px] lg:text-[34px] text-white tracking-tight">
             Tres niveles de ingeniería digital. Precio cerrado y sin sorpresas.
           </h2>
-          <p class="text-studio-muted text-sm sm:text-base mt-2 max-w-2xl">
+          <p class="text-studio-muted text-sm sm:text-base mt-2 max-w-2xl pr-14 sm:pr-0">
             Cada proyecto se entrega listo para operar, con hosting de alta velocidad, dominio propio y soporte técnico
             directo en Paraguay.
           </p>
@@ -417,14 +438,19 @@
                 <span class="font-mono text-[10px] px-2 py-0.5 border border-white/10 text-studio-muted">PÁGINA
                   ÚNICA</span>
               </div>
-              <h3 class="font-heading font-bold text-lg text-white mb-2">Presencia Express</h3>
+              <div class="flex items-center gap-2.5 mb-2">
+                <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="square" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM3 9h18M9 21V9"/>
+                </svg>
+                <h3 class="font-heading font-bold text-[13px] sm:text-base text-white">Presencia Express</h3>
+              </div>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Ideal para profesionales independientes, estudios jurídicos, contables, consultorios médicos y empresas
                 de servicios que necesitan una carta de presentación seria, veloz y geolocalizada.
               </p>
 
               <!-- Architecture blueprint visual for Pillar 1 -->
-              <div class="p-3 border border-white/[0.08] bg-studio-void mb-5">
+              <div data-ui="blueprint-express" class="p-3.5 border border-white/[0.08] bg-studio-void mb-5 min-h-[100px]">
                 <div class="flex items-center justify-between text-[10px] font-mono text-studio-muted mb-2">
                   <span>ESTRUCTURA DE PÁGINA</span>
                   <span class="text-white">100% RESPONSIVE</span>
@@ -464,7 +490,7 @@
               <div class="mb-4">
                 <span class="text-[11px] font-mono text-studio-muted block mb-0.5">Precio final llave en mano · 5 a 7
                   días</span>
-                <span class="font-mono text-2xl sm:text-3xl font-bold text-white num-tabular">₲ 1.200.000</span>
+                <span class="font-mono text-[17px] sm:text-2xl font-bold text-white num-tabular">₲ 1.200.000</span>
               </div>
 
               <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20me%20interesa%20el%20Plan%20Presencia%20Express%20%28Landing%20Page%20%E2%82%B2%201.200.000%29"
@@ -485,14 +511,19 @@
                   class="font-mono text-[10px] px-2 py-0.5 border border-white/30 text-white bg-white/5 uppercase">MÁS
                   ELEGIDO</span>
               </div>
-              <h3 class="font-heading font-bold text-lg text-white mb-2">Catálogo Móvil WhatsApp</h3>
+              <div class="flex items-center gap-2.5 mb-2">
+                <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="square" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                </svg>
+                <h3 class="font-heading font-bold text-[13px] sm:text-base text-white">Catálogo Móvil WhatsApp</h3>
+              </div>
               <p class="text-xs text-studio-text leading-relaxed mb-4">
                 La herramienta definitiva para ferreterías, repuestos, gastronomía, bodegas, boutiques y distribuidoras.
                 Permite a tu cliente buscar, elegir, armar su pedido y enviártelo cerrado por WhatsApp.
               </p>
 
               <!-- Architecture blueprint visual for Pillar 2 -->
-              <div class="p-3 border border-white/20 bg-studio-void mb-5">
+              <div data-ui="blueprint-catalog" class="p-3.5 border border-white/20 bg-studio-void mb-5 min-h-[100px]">
                 <div class="flex items-center justify-between text-[10px] font-mono text-white mb-2">
                   <span>MOTOR DE VENTAS MÓVIL</span>
                   <span class="text-emerald-400">0% COMISIÓN</span>
@@ -546,7 +577,7 @@
               <div class="mb-4">
                 <span class="text-[11px] font-mono text-white block mb-0.5">Precio final llave en mano · 7 a 10
                   días</span>
-                <span class="font-mono text-2xl sm:text-3xl font-bold text-white num-tabular">₲ 1.850.000</span>
+                <span class="font-mono text-[17px] sm:text-2xl font-bold text-white num-tabular">₲ 1.850.000</span>
                 <span class="text-[10px] font-mono text-emerald-400 block mt-0.5">Sin mensualidades por venta ni
                   comisiones</span>
               </div>
@@ -567,14 +598,19 @@
                 <span class="font-mono text-xs text-studio-muted">NIVEL 03</span>
                 <span class="font-mono text-[10px] px-2 py-0.5 border border-white/10 text-studio-muted">A MEDIDA</span>
               </div>
-              <h3 class="font-heading font-bold text-lg text-white mb-2">Corporativo & Sistemas</h3>
-              <p class="text-xs text-studio-muted leading-relaxed mb-4">
+              <div class="flex items-center gap-2.5 mb-2">
+                <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="square" d="M4 7v10c0 2 1.5 3 3.5 3s3.5-1 3.5-3V7c0-2-1.5-3-3.5-3S4 5 4 7zm9 0v10c0 2 1.5 3 3.5 3s3.5-1 3.5-3V7c0-2-1.5-3-3.5-3S13 5 13 7zM4 12c0 2 1.5 3 3.5 3s3.5-1 3.5-3m5.5 0c0 2 1.5 3 3.5 3s3.5-1 3.5-3"/>
+                </svg>
+                <h3 class="font-heading font-bold text-[13px] sm:text-base text-white">Corporativo & Sistemas</h3>
+              </div>
+              <p class="text-xs text-studio-muted leading-relaxed mb-4 pr-14 sm:pr-0">
                 Para empresas que requieren desarrollos a medida: plataformas multipágina de alto volumen, portales con
                 acceso diferenciado, sincronización de stock y automatizaciones avanzadas.
               </p>
 
               <!-- Architecture blueprint visual for Pillar 3 -->
-              <div class="p-3 border border-white/[0.08] bg-studio-void mb-5">
+              <div data-ui="blueprint-systems" class="p-3.5 border border-white/[0.08] bg-studio-void mb-5 min-h-[100px]">
                 <div class="flex items-center justify-between text-[10px] font-mono text-studio-muted mb-2">
                   <span>INFRAESTRUCTURA ESCALABLE</span>
                   <span class="text-white">API / SYNC</span>
@@ -613,7 +649,7 @@
             <div>
               <div class="mb-4">
                 <span class="text-[11px] font-mono text-studio-muted block mb-0.5">Presupuesto según alcance</span>
-                <span class="font-mono text-2xl sm:text-3xl font-bold text-white num-tabular">Desde ₲ 4.500.000</span>
+                <span class="font-mono text-[17px] sm:text-2xl font-bold text-white num-tabular block pr-14 sm:pr-0">Desde ₲ 4.500.000</span>
               </div>
 
               <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20tengo%20un%20proyecto%20corporativo%20o%20sistema%20a%20medida"
@@ -640,7 +676,7 @@
           <div>
             <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">02 · CATÁLOGO INTERACTIVO
             </div>
-            <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+            <h2 class="font-display font-extrabold text-[18px] sm:text-[26px] lg:text-[34px] text-white tracking-tight">
               Demostraciones en Vivo
             </h2>
             <p class="text-studio-muted text-sm sm:text-base mt-2 max-w-2xl">
@@ -660,7 +696,7 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-12 gap-4">
 
-            <!-- Instant Search Input with visible label -->
+            <!-- Instant Search Input with visible label (Strict 44px Height) -->
             <div class="sm:col-span-7 lg:col-span-8">
               <label for="demoSearchInput"
                 class="block font-mono text-[11px] text-studio-muted uppercase tracking-wider mb-1.5">
@@ -668,17 +704,17 @@
               </label>
               <input type="text" id="demoSearchInput"
                 placeholder="Ej. barbería, fade, ferretería, repuestos, boutique, clínica, abogados..."
-                class="w-full px-4 py-2.5 bg-studio-void border border-white/10 text-xs text-white placeholder-studio-muted focus:outline-none focus:border-white transition-colors font-mono">
+                class="w-full h-11 px-4 bg-studio-void border border-white/10 text-xs text-white placeholder-studio-muted focus:border-white transition-colors font-mono">
             </div>
 
-            <!-- Rubro Selector with visible label -->
+            <!-- Rubro Selector with visible label (Strict 44px Height) -->
             <div class="sm:col-span-5 lg:col-span-4">
               <label for="rubroSelect"
                 class="block font-mono text-[11px] text-studio-muted uppercase tracking-wider mb-1.5">
                 Filtrar por categoría comercial
               </label>
               <select id="rubroSelect"
-                class="w-full px-4 py-2.5 bg-studio-void border border-white/10 text-xs text-white focus:outline-none focus:border-white transition-colors font-mono appearance-none cursor-pointer">
+                class="w-full h-11 px-4 bg-studio-void border border-white/10 text-xs text-white focus:border-white transition-colors font-mono appearance-none cursor-pointer">
                 <option value="todos">Todos los rubros comerciales</option>
                 <option value="Ferreterías & Repuestos">Ferreterías & Repuestos</option>
                 <option value="Barberías & Estética">Barberías & Estética</option>
@@ -691,25 +727,25 @@
 
           </div>
 
-          <!-- Solution Type Chips -->
+          <!-- Solution Type Chips (Strict 44px Touch Targets) -->
           <div>
             <span class="block font-mono text-[11px] text-studio-muted uppercase tracking-wider mb-2">Filtrar por
               arquitectura</span>
-            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 sm:pb-0 sm:flex-wrap -mx-4 px-4 sm:mx-0 sm:px-0" id="planChipsContainer">
+            <div class="flex flex-wrap items-center gap-2 w-full" id="planChipsContainer">
               <button data-plan-filter="todos"
-                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white bg-white text-black transition-all">
+                class="demo-chip whitespace-nowrap min-h-[44px] px-4 py-2 inline-flex items-center justify-center text-[11px] font-mono border border-white bg-white text-black transition-all">
                 TODOS
               </button>
               <button data-plan-filter="Catálogo Móvil WhatsApp"
-                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                class="demo-chip whitespace-nowrap min-h-[44px] px-4 py-2 inline-flex items-center justify-center text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
                 CATÁLOGOS WHATSAPP
               </button>
               <button data-plan-filter="Presencia Express"
-                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                class="demo-chip whitespace-nowrap min-h-[44px] px-4 py-2 inline-flex items-center justify-center text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
                 LANDING EXPRESS
               </button>
               <button data-plan-filter="Sitio Corporativo & Sistemas"
-                class="demo-chip flex-shrink-0 whitespace-nowrap px-3 py-1.5 text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
+                class="demo-chip whitespace-nowrap min-h-[44px] px-4 py-2 inline-flex items-center justify-center text-[11px] font-mono border border-white/10 bg-studio-void text-studio-muted hover:text-white hover:border-white/20 transition-all">
                 CORPORATIVOS & SISTEMAS
               </button>
             </div>
@@ -737,12 +773,12 @@
 
 
     <!-- ───────────── Metodología (Editorial Timeline 7 Días) ───────────── -->
-    <section id="proceso" class="py-16 sm:py-20 border-b border-white/[0.08]">
+    <section id="proceso" class="order-process py-16 sm:py-20 border-b border-white/[0.08]" aria-label="Proceso de Pedido y Entrega">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="mb-12">
           <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">03 · METODOLOGÍA ÁGIL</div>
-          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+          <h2 class="font-display font-extrabold text-[18px] sm:text-[26px] lg:text-[34px] text-white tracking-tight">
             Listo en 7 días hábiles. Proceso técnico sin burocracia.
           </h2>
           <p class="text-studio-muted text-sm sm:text-base mt-2 max-w-xl">
@@ -757,17 +793,29 @@
           <!-- Step 1 -->
           <div class="p-5 sm:p-8 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 01</span>
-              <h3 class="font-heading font-bold text-lg text-white mb-2">Relevamiento y Estructura</h3>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-xl sm:text-2xl font-bold text-white">DÍA 01</span>
+                <svg class="w-5 h-5 text-studio-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="square" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-[13px] sm:text-base text-white mb-2">Relevamiento y Estructura</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Nos compartís tu lista de productos o servicios, precios, fotos y logo por WhatsApp o Google Drive. Si
                 no tenés logo, definimos tipografía limpia y paleta de marca.
               </p>
 
               <!-- Phase Schematic Visual -->
-              <div class="p-2 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle">
-                <span class="text-white block">INPUT:</span>
-                <span>Catálogo .xls / fotos / precios</span>
+              <div data-ui="schematic-onboarding" class="p-3.5 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle min-h-[140px] flex flex-col justify-between">
+                <div class="flex items-center justify-between text-white border-b border-white/10 pb-1.5 mb-2">
+                  <span class="tracking-wider">INTAKE DE DATOS</span>
+                  <span class="text-emerald-400">FASE 01</span>
+                </div>
+                <div class="space-y-1.5 text-studio-muted">
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Catálogo .xls / fotos / precios</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Número de WhatsApp receptor</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Identidad visual y paleta</div>
+                </div>
               </div>
             </div>
             <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-studio-subtle uppercase">
@@ -778,17 +826,29 @@
           <!-- Step 2 -->
           <div class="p-5 sm:p-8 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 02–04</span>
-              <h3 class="font-heading font-bold text-lg text-white mb-2">Diseño & Carga Inicial</h3>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-xl sm:text-2xl font-bold text-white">DÍA 02–04</span>
+                <svg class="w-5 h-5 text-studio-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="square" d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-[13px] sm:text-base text-white mb-2">Diseño & Carga Inicial</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Programamos la arquitectura responsive adaptada a celulares, cargamos tu catálogo inicial, configuramos
                 las categorías y optimizamos la velocidad de carga.
               </p>
 
               <!-- Phase Schematic Visual -->
-              <div class="p-2 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle">
-                <span class="text-white block">BUILD:</span>
-                <span>Código responsive & CDN 4G/5G</span>
+              <div data-ui="schematic-development" class="p-3.5 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle min-h-[140px] flex flex-col justify-between">
+                <div class="flex items-center justify-between text-white border-b border-white/10 pb-1.5 mb-2">
+                  <span class="tracking-wider">ARQUITECTURA MÓVIL</span>
+                  <span class="text-emerald-400">FASE 02</span>
+                </div>
+                <div class="space-y-1.5 text-studio-muted">
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Layout responsive celular</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Carga de catálogo & stock</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Caché CDN ultraveloz 4G/5G</div>
+                </div>
               </div>
             </div>
             <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-studio-subtle uppercase">
@@ -799,17 +859,29 @@
           <!-- Step 3 -->
           <div class="p-5 sm:p-8 flex flex-col justify-between">
             <div>
-              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 05–06</span>
-              <h3 class="font-heading font-bold text-lg text-white mb-2">Prueba de Pedido Real</h3>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-xl sm:text-2xl font-bold text-white">DÍA 05–06</span>
+                <svg class="w-5 h-5 text-studio-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="square" d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-[13px] sm:text-base text-white mb-2">Prueba de Pedido Real</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Te entregamos el enlace de prueba previa. Realizamos simulaciones de compra enviando el mensaje
                 estructurado de prueba directo a tu número de WhatsApp.
               </p>
 
               <!-- Phase Schematic Visual -->
-              <div class="p-2 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle">
-                <span class="text-white block">QA TEST:</span>
-                <span>Simulación de orden y totales</span>
+              <div data-ui="schematic-qa" class="p-3.5 border border-white/10 bg-studio-void font-mono text-[9px] text-studio-subtle min-h-[140px] flex flex-col justify-between">
+                <div class="flex items-center justify-between text-white border-b border-white/10 pb-1.5 mb-2">
+                  <span class="tracking-wider">PRUEBA DE COMPRA REAL</span>
+                  <span class="text-emerald-400">FASE 03</span>
+                </div>
+                <div class="space-y-1.5 text-studio-muted">
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Enlace privado de revisión</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Simulación de orden a tu WA</div>
+                  <div class="p-1 border border-white/5 bg-studio-surface">[OK] Ajustes de precios finales</div>
+                </div>
               </div>
             </div>
             <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-studio-subtle uppercase">
@@ -820,17 +892,30 @@
           <!-- Step 4 -->
           <div class="p-5 sm:p-8 flex flex-col justify-between bg-studio-elevated">
             <div>
-              <span class="font-mono text-xl sm:text-2xl font-bold text-white block mb-3">DÍA 07</span>
-              <h3 class="font-heading font-bold text-lg text-white mb-2">Despliegue & Entrega</h3>
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-xl sm:text-2xl font-bold text-white">DÍA 07</span>
+                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path stroke-linecap="square" d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+              </div>
+              <h3 class="font-heading font-bold text-[13px] sm:text-base text-white mb-2">Despliegue & Entrega</h3>
               <p class="text-xs text-studio-muted leading-relaxed mb-4">
                 Conectamos tu dominio de identidad personalizado según disponibilidad (.store para tiendas, .shop, .studio, entre otros), configuramos el certificado de seguridad SSL y te entregamos la
                 propiedad total de la plataforma lista para facturar.
               </p>
 
               <!-- Phase Schematic Visual -->
-              <div class="p-2 border border-white/20 bg-studio-void font-mono text-[9px] text-emerald-400">
-                <span class="text-white block">DEPLOY:</span>
-                <span>Dominio de identidad activo (.store, etc. según disponibilidad) + SSL</span>
+              <div data-ui="schematic-deploy" class="p-3.5 border border-white/20 bg-studio-void font-mono text-[9px] text-emerald-400 min-h-[140px] flex flex-col justify-between">
+                <div class="flex items-center justify-between text-white border-b border-white/10 pb-1.5 mb-2">
+                  <span class="tracking-wider">ENTREGA & PRODUCCIÓN</span>
+                  <span class="text-emerald-400">ACTIVO</span>
+                </div>
+                <div class="space-y-1.5 text-white">
+                  <div class="p-1 border border-white/10 bg-studio-elevated">[OK] Dominio de identidad activo</div>
+                  <div class="p-1 border border-white/10 bg-studio-elevated">[OK] Certificado SSL HTTPS 256-bit</div>
+                  <div class="p-1 border border-white/10 bg-studio-highlight text-emerald-300 font-bold">[OK] 100% listo para facturar</div>
+                </div>
               </div>
             </div>
             <div class="pt-4 mt-6 border-t border-white/[0.08] font-mono text-[10px] text-emerald-400 uppercase">
@@ -850,7 +935,7 @@
 
         <div class="mb-10">
           <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">04 · PREGUNTAS FRECUENTES</div>
-          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+          <h2 class="font-display font-extrabold text-[18px] sm:text-[26px] lg:text-[34px] text-white tracking-tight">
             Resolución técnica directa.
           </h2>
         </div>
@@ -924,10 +1009,15 @@
           </div>
 
           <!-- FAQ Side Visual Card -->
-          <div class="lg:col-span-4 border border-white/[0.08] bg-studio-surface p-6 font-mono text-xs">
-            <div class="flex items-center gap-2 text-white font-bold mb-3 border-b border-white/[0.08] pb-2">
-              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span>SOPORTE LOCAL PY</span>
+          <div data-ui="support-card" class="lg:col-span-4 border border-white/[0.08] bg-studio-surface p-6 font-mono text-xs">
+            <div class="flex items-center justify-between text-white font-bold mb-3 border-b border-white/[0.08] pb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>SOPORTE LOCAL PY</span>
+              </div>
+              <svg class="w-7 h-7 text-studio-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="square" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
             </div>
             <p class="text-studio-muted text-xs leading-relaxed mb-4">
               Atención directa por ingenieros radicados en Paraguay. Sin bots genéricos ni esperas telefónicas.
@@ -954,31 +1044,97 @@
     </section>
 
 
-    <!-- ───────────── Banner de Cierre Editorial ───────────── -->
+    <!-- ───────────── Banner de Cierre Editorial (Architectural 2-Column Split) ───────────── -->
     <section class="py-16 sm:py-20 border-b border-white/[0.08]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="p-8 sm:p-14 border border-white/[0.12] bg-studio-surface text-center">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-12 border border-white/[0.12] bg-studio-surface divide-y lg:divide-y-0 lg:divide-x divide-white/[0.08]">
 
-          <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-3">
-            INICIAR PROYECTO CON UN INGENIERO
+          <!-- Left Column: Magnetic High-Conviction Proposition -->
+          <div class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 font-mono text-xs text-studio-muted uppercase tracking-wider mb-3">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>INICIAR PROYECTO CON UN INGENIERO</span>
+              </div>
+
+              <h2 class="font-display font-extrabold text-[18px] sm:text-[26px] lg:text-[34px] text-white tracking-tight mb-4">
+                Poné tu catálogo web a cerrar ventas por WhatsApp esta misma semana.
+              </h2>
+
+              <p class="text-studio-muted text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
+                Consultá directamente al <span class="font-mono text-white font-semibold">+595 986 125 649</span>. Evaluamos
+                tu modelo de negocio y te presentamos una propuesta técnica en el día.
+              </p>
+            </div>
+
+            <div>
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20poner%20en%20marcha%20mi%20cat%C3%A1logo%20web"
+                target="_blank" rel="noopener"
+                class="h-11 inline-flex items-center gap-2.5 px-8 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider transition-colors">
+                <span>Iniciar Consulta por WhatsApp</span>
+                <span>↗</span>
+              </a>
+            </div>
           </div>
 
-          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight mb-4 max-w-2xl mx-auto">
-            Poné tu catálogo web a cerrar ventas por WhatsApp esta misma semana.
-          </h2>
+          <!-- Right Column: Technical Guarantees Spec Board -->
+          <div data-ui="specs-guarantee" class="lg:col-span-5 p-8 sm:p-12 bg-studio-elevated/40 font-mono text-xs flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-white border-b border-white/[0.08] pb-3 mb-4">
+                <span class="uppercase tracking-wider font-bold">ESPECIFICACIONES TÉCNICAS</span>
+                <span class="text-emerald-400">AUDITADO</span>
+              </div>
 
-          <p class="text-studio-muted text-sm sm:text-base max-w-xl mx-auto mb-6">
-            Consultá directamente al <span class="font-mono text-white font-semibold">+595 986 125 649</span>. Evaluamos
-            tu modelo de negocio y te presentamos una propuesta técnica en el día.
-          </p>
+              <div class="space-y-3.5 text-studio-muted">
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <div>
+                    <span class="text-white block font-medium">Relevamiento y prototipo en 48 horas</span>
+                    <span class="text-[11px] text-studio-subtle">Sin burocracia ni reuniones innecesarias</span>
+                  </div>
+                </div>
 
-          <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20poner%20en%20marcha%20mi%20cat%C3%A1logo%20web"
-            target="_blank" rel="noopener"
-            class="h-11 inline-flex items-center gap-2 px-8 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider transition-colors">
-            <span>Iniciar Consulta por WhatsApp</span>
-            <span>↗</span>
-          </a>
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <div>
+                    <span class="text-white block font-medium">0% comisiones sobre pedidos</span>
+                    <span class="text-[11px] text-studio-subtle">El 100% de la facturación va directo a tu cuenta</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <div>
+                    <span class="text-white block font-medium">Velocidad móvil &lt; 0.6s</span>
+                    <span class="text-[11px] text-studio-subtle">Optimizada para redes 4G/5G en Paraguay</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  <div>
+                    <span class="text-white block font-medium">Soporte directo en Asunción</span>
+                    <span class="text-[11px] text-studio-subtle">Atención técnica humana vía WhatsApp</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 mt-6 border-t border-white/[0.08] text-[10px] text-studio-subtle flex items-center justify-between">
+              <span>INGENIERÍA WEB PARAGUAY</span>
+              <span class="text-white">studio.puntoprisma.store</span>
+            </div>
+          </div>
 
         </div>
 
@@ -1006,12 +1162,12 @@
         </div>
 
         <div class="md:col-span-3 space-y-2">
-          <span class="text-white uppercase font-bold block">Navegación</span>
-          <ul class="space-y-1">
-            <li><a href="#soluciones" class="hover:text-white transition-colors">01. Soluciones y Planes</a></li>
-            <li><a href="#demos" class="hover:text-white transition-colors">02. Catálogo de Demos</a></li>
-            <li><a href="#proceso" class="hover:text-white transition-colors">03. Metodología 7 Días</a></li>
-            <li><a href="#faq" class="hover:text-white transition-colors">04. Preguntas Frecuentes</a></li>
+          <span class="text-white uppercase font-bold block mb-1">Navegación</span>
+          <ul class="space-y-0.5">
+            <li><a href="#soluciones" class="min-h-[44px] inline-flex items-center hover:text-white transition-colors">01. Soluciones y Planes</a></li>
+            <li><a href="#demos" class="min-h-[44px] inline-flex items-center hover:text-white transition-colors">02. Catálogo de Demos</a></li>
+            <li><a href="#proceso" class="min-h-[44px] inline-flex items-center hover:text-white transition-colors">03. Metodología 7 Días</a></li>
+            <li><a href="#faq" class="min-h-[44px] inline-flex items-center hover:text-white transition-colors">04. Preguntas Frecuentes</a></li>
           </ul>
         </div>
 
@@ -1025,14 +1181,14 @@
               +595 986 125 649
             </a>
           </p>
-          <p class="text-studio-subtle text-[11px]">Fotografías de muestra provistas bajo licencia Unsplash.</p>
+          <p class="text-studio-subtle text-[11px] whitespace-nowrap">Muestras: Unsplash License.</p>
         </div>
 
       </div>
 
       <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-studio-subtle">
         <p>© 2026 Punto Prisma Studio · Todos los derechos reservados.</p>
-        <p>Swiss Grid / Brutalismo Editorial · Sin frameworks pesados</p>
+        <p class="pr-14 sm:pr-0">Swiss Grid / Brutalismo Editorial · Sin frameworks pesados</p>
       </div>
 
     </div>
@@ -1080,7 +1236,7 @@
         plan: "Catálogo Móvil WhatsApp",
         planTag: "CATÁLOGO WHATSAPP",
         descripcion: "Taller de corte y barbería de autor con tablero de servicios, precios en Guaraníes y sistema interactivo de reserva de turnos por WhatsApp.",
-        imagenPreview: "demos/la-forja/sillon-1280.jpg",
+        imagenPreview: "demos/la-forja/sillon-thumb.jpg",
         urlDemo: "demos/la-forja/index.html",
         waMsg: "Hola Punto Prisma Studio, vi la demo interactiva de La Forja Barber Studio y quiero un sistema de turnos y catálogo idéntico para mi barbería / salón."
       },
@@ -1199,7 +1355,7 @@
 
                 <!-- Minimalist Simulated Phone Header Overlay -->
                 <div class="absolute top-0 inset-x-0 p-3 flex items-center justify-between border-b border-white/10 bg-black/60 backdrop-blur-sm">
-                  <span class="font-mono text-[9px] text-white truncate max-w-[160px] tracking-wide">${demo.titulo}</span>
+                  <span class="font-mono text-[9px] text-white tracking-wide">${demo.titulo}</span>
                   <span class="font-mono text-[8px] text-emerald-400">ONLINE</span>
                 </div>
 
@@ -1211,7 +1367,7 @@
               </div>
 
               <!-- Title & Description -->
-              <h3 class="font-heading font-bold text-lg text-white mb-1.5 group-hover:underline">
+              <h3 class="font-heading font-bold text-[13px] sm:text-base text-white mb-1.5 group-hover:underline">
                 ${demo.titulo}
               </h3>
 
@@ -1220,16 +1376,16 @@
               </p>
             </div>
 
-            <!-- Direct Actions: Demo URL opens in new tab, secondary to WhatsApp -->
+            <!-- Direct Actions: Strict 44px Height (h-11) for Touch Ergonomics -->
             <div class="space-y-2 pt-3 border-t border-white/[0.08]">
               <a href="${demo.urlDemo}" target="_blank" rel="noopener"
-                 class="w-full h-10 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+                 class="w-full h-11 px-3 border border-white/20 hover:border-white bg-studio-void hover:bg-studio-elevated text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
                 <span>Ver demo en vivo</span>
                 <span>↗</span>
               </a>
 
               <a href="${waCardUrl}" target="_blank" rel="noopener"
-                 class="w-full h-9 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
+                 class="w-full h-11 px-3 text-studio-muted hover:text-white font-mono text-[11px] uppercase tracking-wider flex items-center justify-between transition-colors">
                 <span>Pedir para mi rubro</span>
                 <span>→</span>
               </a>
@@ -1238,35 +1394,33 @@
         `;
       });
 
-      // Special 7th Card: "¿No ves tu rubro?" (Left-aligned, consistent axis)
+      // Special 7th Card: Full-width architectural banner closing the 3rd row (No Grid Holes)
       const customRubroUrl = `https://wa.me/595986125649?text=${encodeURIComponent("Hola Punto Prisma Studio, no vi mi rubro específico en el catálogo y quiero armar un prototipo a medida para mi empresa.")}`;
 
       html += `
-        <article class="swiss-cell p-5 flex flex-col justify-between border-dashed border-white/20 bg-studio-surface/80">
-          <div>
-            <div class="font-mono text-xs text-studio-muted uppercase tracking-wider mb-3">
-              PROTOTIPADO RÁPIDO
+        <article class="swiss-cell p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-dashed border-white/20 bg-studio-surface/80 col-span-1 md:col-span-2 lg:col-span-3">
+          <div class="flex-1">
+            <div class="flex items-center gap-3 font-mono text-xs text-studio-muted uppercase tracking-wider mb-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>PROTOTIPADO RÁPIDO PYMES</span>
             </div>
             
-            <div class="aspect-[4/5] bg-studio-void border border-dashed border-white/10 flex flex-col items-start justify-center p-6 text-left mb-4">
-              <span class="font-mono text-3xl font-bold text-white mb-2">48h</span>
-              <p class="font-mono text-xs text-studio-muted">Prototipo inicial sin costo para tu empresa</p>
-            </div>
-
-            <h3 class="font-heading font-bold text-lg text-white mb-1.5">
-              ¿No ves tu rubro específico?
+            <h3 class="font-heading font-bold text-[13px] sm:text-base text-white mb-2">
+              ¿No ves tu rubro comercial en la lista?
             </h3>
             
-            <p class="text-xs text-studio-muted leading-relaxed mb-5">
-              Diseñamos la estructura técnica y catálogo a medida para distribuidoras, ópticas, repuesterías agrícolas, veterinarias o industrias.
+            <p class="text-xs sm:text-sm text-studio-muted leading-relaxed max-w-2xl">
+              Diseñamos la arquitectura técnica, catálogo interactivo o sistema a medida para distribuidoras, ópticas, repuesterías agrícolas, veterinarias o industrias en 48 horas sin costo inicial.
             </p>
           </div>
 
-          <a href="${customRubroUrl}" target="_blank" rel="noopener"
-             class="w-full h-10 px-3 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-colors">
-            <span>Consultar por WhatsApp</span>
-            <span>→</span>
-          </a>
+          <div class="flex-shrink-0 w-full md:w-auto">
+            <a href="${customRubroUrl}" target="_blank" rel="noopener"
+               class="w-full md:w-auto h-11 px-6 bg-white hover:bg-slate-200 text-studio-void font-heading font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition-colors">
+              <span>Consultar por WhatsApp</span>
+              <span>→</span>
+            </a>
+          </div>
         </article>
       `;
 
@@ -1356,6 +1510,19 @@
           icon.textContent = "−";
         }
       });
+    });
+
+    /**
+     * Accesibilidad de foco por teclado: desplazamiento instantáneo a la vista
+     */
+    document.addEventListener("focusin", (e) => {
+      if (e.target && typeof e.target.scrollIntoView === "function") {
+        try {
+          e.target.scrollIntoView({ block: "center", inline: "nearest", behavior: "instant" });
+        } catch (err) {
+          e.target.scrollIntoView(true);
+        }
+      }
     });
 
     // Inicializar catálogo al cargar

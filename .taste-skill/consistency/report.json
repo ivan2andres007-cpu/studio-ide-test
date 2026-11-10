@@ -1,7 +1,7 @@
 {
  "page": "C:\\Users\\Portfolio\\Downloads\\studio ide test\\index.html",
  "url": "http://127.0.0.1:5200/index.html",
- "at": "2026-11-10T10:10:05.364Z",
+ "at": "2026-11-10T11:49:44.881Z",
  "out": "C:\\Users\\Portfolio\\Downloads\\studio ide test\\.taste-skill\\consistency",
  "widths": [
   {
@@ -12,120 +12,14 @@
    "errors": [],
    "findings": [
     {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
-     "text": "Infraestructura Digital, Catálogos Móviles y Sis",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 0,
-     "crop": "1440-01-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 1,
-     "crop": "1440-14-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#proceso",
-     "text": "Listo en 7 días hábiles. Proceso técnico sin bur",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 6,
-     "crop": "1440-21-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "section#faq",
-     "text": "Resolución técnica directa.",
-     "msg": "the section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 7,
-     "crop": "1440-22-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "the closing section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 8,
-     "crop": "1440-24-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "hole",
-     "sev": "FAIL",
-     "sel": "section#demos",
-     "text": "Demostraciones en Vivo",
-     "msg": "an empty hole 624x552px inside the section (61% of the screen's height), with content above and below it",
-     "stop": 5,
-     "crop": "1440-20-hole.jpg",
-     "fix": "close the empty space: move the content together, or give the space the visual it lacks"
-    },
-    {
      "check": "phone-number",
      "sev": "FAIL",
      "sel": "div.grid.grid-cols-1 > div.flex.flex-col:nth-of-type(1) > div.flex.flex-col > a.h-11.px-6:nth-of-type(2)",
      "text": "https://wa.me/595986125649?text=Hola%20P",
      "stop": 0,
      "msg": "a WhatsApp link calls a number in a real dialable format: \"https://wa.me/595986125649?text=Hola%20P\"; a visitor can dial it and reach a stranger (and 20 more like it: div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(1) > div:nth-of-type(2) > a.w-full.h-11, div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(2) > div:nth-of-type(2) > a.w-full.h-11, div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(3) > div:nth-of-type(2) > a.w-full.h-11, ...)",
-     "crop": "1440-02-phone-number.jpg",
+     "crop": "1440-01-phone-number.jpg",
      "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number"
-    },
-    {
-     "check": "empty-area",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "Poné tu catálogo web a cerrar ventas por",
-     "msg": "65% of the section is empty: 32px above its first content, 48px under its last (a.h-11.inline-flex), 49% beside content that covers under half the container, in its 436px of rows (WARN over 35%, FAIL over 50%)",
-     "stop": 8,
-     "crop": "1440-25-empty-area.jpg",
-     "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)"
-    },
-    {
-     "check": "focus-visible",
-     "sev": "FAIL",
-     "sel": "div.grid.grid-cols-1:nth-of-type(2) > div.p-5.flex:nth-of-type(1) > div:nth-of-type(2) > a.w-full.h-11",
-     "text": "Elegir Presencia Express ↗",
-     "stop": 15,
-     "msg": "Tab stop 12, a \"Elegir Presencia Express ↗\": the focus lands on something you cannot see",
-     "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
-    },
-    {
-     "check": "focus-visible",
-     "sev": "FAIL",
-     "sel": "input#demoSearchInput",
-     "text": "",
-     "stop": 16,
-     "msg": "Tab stop 15, input \"\": the focus lands on something you cannot see",
-     "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
-    },
-    {
-     "check": "focus-visible",
-     "sev": "FAIL",
-     "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(1) > div.space-y-2.pt-3:nth-of-type(2) > a.w-full.h-10:nth-of-type(1)",
-     "text": "Ver demo en vivo ↗",
-     "stop": 17,
-     "msg": "Tab stop 21, a \"Ver demo en vivo ↗\": the focus lands on something you cannot see",
-     "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
-    },
-    {
-     "check": "focus-visible",
-     "sev": "FAIL",
-     "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(4) > div.space-y-2.pt-3:nth-of-type(2) > a.w-full.h-10:nth-of-type(1)",
-     "text": "Ver demo en vivo ↗",
-     "stop": 18,
-     "msg": "Tab stop 27, a \"Ver demo en vivo ↗\": the focus lands on something you cannot see",
-     "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus"
     },
     {
      "check": "nav",
@@ -135,17 +29,37 @@
      "stop": 0,
      "msg": "the nav is lopsided: its first item starts 7px inside the content's edge (112px), while its last ends on the other edge",
      "fix": "start the nav's first item and end its last on the content's two edges",
-     "crop": "1440-03-nav.jpg"
+     "crop": "1440-02-nav.jpg"
     },
     {
-     "check": "cut-text",
+     "check": "fold-cut",
      "sev": "WARN",
-     "sel": "div:nth-of-type(1) > div.relative.bg-studio-void > div.absolute.top-0 > span.font-mono.text-white",
-     "text": "Ferretería & Repuestos Los Laureles",
-     "msg": "shortened with an ellipsis (and 1 more like it: \"Aura Concept Store & Cal\")",
-     "stop": 3,
-     "crop": "1440-19-cut-text.jpg",
-     "fix": "give the text room: no overflow clipping a line, no line past its box"
+     "sel": "div.flex.flex-col:nth-of-type(1) > div.grid.grid-cols-3 > div.min-w-0:nth-of-type(1) > span.font-mono.text-studio-muted",
+     "text": "VELOCIDAD 4G/5G",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "1440-03-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
+    },
+    {
+     "check": "fold-cut",
+     "sev": "WARN",
+     "sel": "div.flex.flex-col:nth-of-type(1) > div.grid.grid-cols-3 > div.min-w-0:nth-of-type(2) > span.font-mono.text-studio-muted",
+     "text": "COMISIONES POR VENTA",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "1440-04-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
+    },
+    {
+     "check": "fold-cut",
+     "sev": "WARN",
+     "sel": "div.flex.flex-col:nth-of-type(1) > div.grid.grid-cols-3 > div.min-w-0:nth-of-type(3) > span.font-mono.text-studio-muted",
+     "text": "ENTREGA FINAL",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "1440-05-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
     },
     {
      "check": "copy-headline",
@@ -154,7 +68,7 @@
      "text": "Infraestructura Digital, Catálogos Móviles y Sis",
      "msg": "\"Infraestructura Digital, Catálogos Móviles y Sistemas Web qu\": no category known to check it against (pass --category, or write the <title> as \"Name: what it is for whom\")",
      "stop": 0,
-     "crop": "1440-04-copy-headline.jpg",
+     "crop": "1440-06-copy-headline.jpg",
      "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words"
     },
     {
@@ -164,17 +78,17 @@
      "text": "Infraestructura Digital, Catálogos Móviles y Sis",
      "msg": "the h1 has 12 words (2 to 8 read at a glance)",
      "stop": 0,
-     "crop": "1440-05-copy-headline.jpg",
+     "crop": "1440-07-copy-headline.jpg",
      "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words"
     },
     {
      "check": "copy-headings",
      "sev": "WARN",
-     "sel": "div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(1) > div:nth-of-type(1) > h3.font-heading.font-bold",
+     "sel": "div.p-5.flex:nth-of-type(1) > div:nth-of-type(1) > div.flex.items-center:nth-of-type(2) > h3.font-heading.font-bold",
      "text": "Presencia Express",
-     "msg": "\"Presencia Express\" names no product, part, place or section (9 headings like it; at most one brand line per page) (and 8 more like it: \"Ferretería & Repuestos L\", \"Clínica Dental Bellas Ar\", \"Benítez & Asociados Abog\", \"¿No ves tu rubro específ\", ...)",
+     "msg": "\"Presencia Express\" names no product, part, place or section (9 headings like it; at most one brand line per page) (and 8 more like it: \"Ferretería & Repuestos L\", \"Clínica Dental Bellas Ar\", \"Benítez & Asociados Abog\", \"¿No ves tu rubro comerci\", ...)",
      "stop": 1,
-     "crop": "1440-15-copy-headings.jpg",
+     "crop": "1440-16-copy-headings.jpg",
      "fix": "name the thing in every heading: the product, a part, the place or a section noun"
     },
     {
@@ -184,7 +98,7 @@
      "text": "EXPLORAR DEMOS EN VIVO ↓",
      "msg": "\"EXPLORAR DEMOS EN VIVO ↓\" does not start with a verb (book, buy, try, start, get, see...) (and 4 more like it: \"QUIERO EL CATÁLOGO MÓVIL\", \"TODOS\", \"CONSULTAR POR WHATSAPP →\", \"INICIAR CONSULTA POR WHA\")",
      "stop": 0,
-     "crop": "1440-06-copy-buttons.jpg",
+     "crop": "1440-08-copy-buttons.jpg",
      "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")"
     },
     {
@@ -195,6 +109,26 @@
      "msg": "the main action \"EXPLORAR DEMOS EN VIVO ↓\" does not read word for word the same in the closing section",
      "stop": null,
      "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close"
+    },
+    {
+     "check": "off-grid",
+     "sev": "WARN",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
+     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
+     "msg": "the section's heading starts at 161px, 49px off the page margin (112px), and no other section starts there",
+     "stop": 7,
+     "crop": "1440-19-off-grid.jpg",
+     "fix": "move it onto the page margin, or the column edge its section uses"
+    },
+    {
+     "check": "col-edge",
+     "sev": "WARN",
+     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1 > div.p-8.font-mono",
+     "text": "ESPECIFICACIONES TÉCNICAS AUDITADO Relevamiento ",
+     "msg": "the second column starts at 3 places: 821px (section.py-16.border-b:nth-of-type(6)), 854px (section.hero--editorial.border-b), 944px (section#faq)",
+     "stop": 8,
+     "crop": "1440-22-col-edge.jpg",
+     "fix": "start the second column of every split on the same one or two grid columns"
     },
     {
      "check": "photo-credit",
@@ -212,7 +146,7 @@
      "text": "",
      "stop": 0,
      "msg": "the nav's links and actions use 2 type families (Space Grotesk, JetBrains Mono)",
-     "crop": "1440-07-nav-family.jpg",
+     "crop": "1440-09-nav-family.jpg",
      "fix": "keep one nav on every screen: the same bar, fill, links and type"
     },
     {
@@ -222,7 +156,7 @@
      "text": "",
      "stop": 0,
      "msg": "the nav's links come in 2 sizes (16, 12px)",
-     "crop": "1440-08-nav-family.jpg",
+     "crop": "1440-10-nav-family.jpg",
      "fix": "keep one nav on every screen: the same bar, fill, links and type"
     },
     {
@@ -232,7 +166,7 @@
      "text": "PUNTO PRISMA STUDIO ASUNCIÓN · PY",
      "msg": "\"PUNTO PRISMA STUDIO ASUNCIÓN · PY\" opens a section headed \"Infraestructura Digital, Catálogos Móviles y Siste\"",
      "stop": 0,
-     "crop": "1440-09-nav-labels.jpg",
+     "crop": "1440-11-nav-labels.jpg",
      "fix": "name each nav link after the heading of the section it opens"
     },
     {
@@ -242,7 +176,7 @@
      "text": "SOLUCIONES",
      "msg": "\"SOLUCIONES\" opens a section headed \"Tres niveles de ingeniería digital. Precio cerrado\"",
      "stop": 0,
-     "crop": "1440-10-nav-labels.jpg",
+     "crop": "1440-12-nav-labels.jpg",
      "fix": "name each nav link after the heading of the section it opens"
     },
     {
@@ -252,7 +186,7 @@
      "text": "METODOLOGÍA",
      "msg": "\"METODOLOGÍA\" opens a section headed \"Listo en 7 días hábiles. Proceso técnico sin buroc\"",
      "stop": 0,
-     "crop": "1440-11-nav-labels.jpg",
+     "crop": "1440-13-nav-labels.jpg",
      "fix": "name each nav link after the heading of the section it opens"
     },
     {
@@ -262,7 +196,7 @@
      "text": "PREGUNTAS",
      "msg": "\"PREGUNTAS\" opens a section headed \"Resolución técnica directa.\"",
      "stop": 0,
-     "crop": "1440-12-nav-labels.jpg",
+     "crop": "1440-14-nav-labels.jpg",
      "fix": "name each nav link after the heading of the section it opens"
     },
     {
@@ -284,21 +218,11 @@
      "fix": "name each nav link after the heading of the section it opens"
     },
     {
-     "check": "heading-align",
-     "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "4 section headings sit on the left, 1 centred: \"Poné tu catálogo web a c\"",
-     "stop": 8,
-     "crop": "1440-26-heading-align.jpg",
-     "fix": "set every section heading in one place: all on the left grid, or all centred"
-    },
-    {
      "check": "stranded-action",
      "sev": "WARN",
      "sel": "div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(2) > div:nth-of-type(2) > a.w-full.h-11",
      "text": "QUIERO EL CATÁLOGO MÓVIL →",
-     "msg": "stands 509px down from the nearest text of its block (\"La herramienta definitiva para\")",
+     "msg": "stands 362px down from the nearest text of its block (\"MOTOR DE VENTAS MÓVIL 0% COMIS\")",
      "stop": 2,
      "crop": "1440-18-stranded-action.jpg",
      "fix": "put the button under or beside the text it belongs to"
@@ -308,19 +232,19 @@
      "sev": "WARN",
      "sel": "div.max-w-7xl.mx-auto > div.grid.grid-cols-1 > div.flex.flex-col:nth-of-type(1) > h1.font-display.font-extrabold",
      "text": "Infraestructura Digital, Catálogos Móviles y Sis",
-     "msg": "a headline of 12 words on 6 lines at 48px: a paragraph set in display type",
+     "msg": "a headline of 12 words on 8 lines at 60px: a paragraph set in display type",
      "stop": 0,
-     "crop": "1440-13-copy-length.jpg",
+     "crop": "1440-15-copy-length.jpg",
      "fix": "cut the heading to one short line (2 to 12 words) and move the rest into the text under it"
     },
     {
      "check": "copy-length",
      "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
      "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "a section heading of 12 words on 4 lines at 36px: a paragraph set in display type",
-     "stop": 8,
-     "crop": "1440-27-copy-length.jpg",
+     "msg": "a section heading of 12 words on 4 lines at 34px: a paragraph set in display type",
+     "stop": 7,
+     "crop": "1440-20-copy-length.jpg",
      "fix": "cut the heading to one short line (2 to 12 words) and move the rest into the text under it"
     },
     {
@@ -328,30 +252,20 @@
      "sev": "WARN",
      "sel": "section#soluciones",
      "text": "Tres niveles de ingeniería digital. Prec",
-     "msg": "4 sections over 90 words a screen outside the UI mocks (\"Tres niveles de ingenier\" 276, \"Listo en 7 días hábiles.\" 197, \"Infraestructura Digital,\" 164); 143 words a screen across the page (1187 words in 8.3 screens): a tech page says it in about 80 or fewer",
+     "msg": "4 sections over 90 words a screen outside the UI mocks (\"Tres niveles de ingenier\" 235, \"Listo en 7 días hábiles.\" 169, \"Infraestructura Digital,\" 164); 138 words a screen across the page (1077 words in 7.8 screens): a tech page says it in about 80 or fewer",
      "fix": "cut every section to its heading, one line and the product UI: the UI says the rest; no second paragraph, no list of feature sentences",
      "stop": 1,
-     "crop": "1440-16-copy-length.jpg"
-    },
-    {
-     "check": "nav-current",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 1,
-     "msg": "the nav stays on screen with 5 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)",
-     "crop": "1440-17-nav-current.jpg",
-     "fix": "mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls"
+     "crop": "1440-17-copy-length.jpg"
     },
     {
      "check": "one-screen",
      "sev": "WARN",
      "sel": "section#faq",
      "text": "Resolución técnica directa.",
-     "msg": "1 section is shorter than the screen, so the next one's heading or picture shows with it: \"Resolución técnica directa.\" is 558px of the 819px under the nav, and \"Poné tu catálogo web a cerrar \" shows below it",
+     "msg": "1 section is shorter than the screen, so the next one's heading or picture shows with it: \"Resolución técnica directa.\" is 569px of the 835px under the nav, and \"Poné tu catálogo web a cerrar \" shows below it",
      "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
      "stop": 7,
-     "crop": "1440-23-one-screen.jpg"
+     "crop": "1440-21-one-screen.jpg"
     },
     {
      "check": "moment-none",
@@ -383,49 +297,19 @@
     {
      "check": "hero-screen",
      "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
+     "sel": "main#inicio > section.hero--editorial.border-b",
      "text": "INFRAESTRUCTURA DIGITAL / ASUNCIÓN, PARA",
-     "msg": "the hero ends at 823px on a 900px screen, 77px above the fold: it ends at the fold, 1px either way (SR-1)",
+     "msg": "the hero ends at 951px on a 900px screen, 51px below the fold: it ends at the fold, 1px either way (SR-1)",
      "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
      "rule": "SR-1 T1",
      "crop": "1440-rhythm-01-hero-screen.jpg"
-    },
-    {
-     "check": "hero-screen",
-     "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "01 · PILARES DE SERVICIO Tres niveles de",
-     "msg": "77px of the next section shows on the first screen (from 823px on a 900px screen): nothing below the hero shows at load (SR-1)",
-     "fix": "end the hero at the fold so nothing of the next section shows at load (hero height: 100svh)",
-     "rule": "SR-1 T2",
-     "crop": "1440-rhythm-02-hero-screen.jpg"
-    },
-    {
-     "check": "section-height",
-     "sev": "FAIL",
-     "sel": "section#demos",
-     "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
-     "msg": "the section is 2683px tall (3 screens), 883px over two screens (1800px): every section after the hero is one screen or two, 2px either way (SR-2)",
-     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
-     "rule": "SR-2 T-height",
-     "crop": "1440-rhythm-03-section-height.jpg"
     },
     {
      "check": "section-height",
      "sev": "FAIL",
      "sel": "footer.border-t.bg-studio-void",
      "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the section is 278px tall (0.3 screens), 622px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
-     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
-     "rule": "SR-2 T-height",
-     "crop": "1440-rhythm-04-section-height.jpg"
-    },
-    {
-     "check": "section-height",
-     "sev": "FAIL",
-     "sel": "section#faq",
-     "text": "04 · PREGUNTAS FRECUENTES Resolución téc",
-     "msg": "the section is 558px tall (0.6 screens), 342px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"INICIAR PROYECTO CON UN \", \"01 · PILARES DE SERVICIO\", \"03 · METODOLOGÍA ÁGIL Li\") (SR-2)",
+     "msg": "the section is 384px tall (0.4 screens), 516px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
      "rule": "SR-2 T-height",
      "crop": "1440-rhythm-05-section-height.jpg"
@@ -433,29 +317,29 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the section starts at 5977px, 324px above the screen grid (7 x 900px): sections start on whole screens (SR-2)",
-     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
-     "rule": "SR-2 T-grid",
+     "sel": "section#demos",
+     "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
+     "msg": "the section is 2218px tall (2.5 screens), 418px over two screens (1800px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
      "crop": "1440-rhythm-06-section-height.jpg"
     },
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "footer.border-t.bg-studio-void",
-     "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the section starts at 6573px, 273px below the screen grid (7 x 900px): sections start on whole screens (SR-2)",
-     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
-     "rule": "SR-2 T-grid",
+     "sel": "section#faq",
+     "text": "04 · PREGUNTAS FRECUENTES Resolución téc",
+     "msg": "the section is 569px tall (0.6 screens), 331px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"INICIAR PROYECTO CON UN \", \"01 · PILARES DE SERVICIO\", \"03 · METODOLOGÍA ÁGIL Li\") (SR-2)",
+     "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+     "rule": "SR-2 T-height",
      "crop": "1440-rhythm-07-section-height.jpg"
     },
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "section#demos",
-     "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
-     "msg": "the section starts at 1954px, 154px below the screen grid (2 x 900px): sections start on whole screens (and 4 more like it: \"03 · METODOLOGÍA ÁGIL Li\", \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\") (SR-2)",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "the section starts at 5770px, 370px below the screen grid (6 x 900px): sections start on whole screens (SR-2)",
      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
      "rule": "SR-2 T-grid",
      "crop": "1440-rhythm-08-section-height.jpg"
@@ -463,49 +347,39 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "footer.border-t.bg-studio-void",
-     "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the section's content does not fit it: its lowest content ends 229px below its top, past 206px (the section less 72px of bottom padding) (SR-2)",
-     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
-     "rule": "SR-2 T-fit",
+     "sel": "section#demos",
+     "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
+     "msg": "the section starts at 2100px, 300px below the screen grid (2 x 900px): sections start on whole screens (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
      "crop": "1440-rhythm-09-section-height.jpg"
     },
     {
-     "check": "section-air",
-     "sev": "WARN",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the content fills 53.8% of the section's height (321 of 596px): 55% or more (40% WARN) (SR-3)",
-     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
-     "rule": "SR-3 T-fill",
-     "crop": "1440-rhythm-31-section-air.jpg"
-    },
-    {
-     "check": "one-section",
+     "check": "section-height",
      "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por",
-     "msg": "the screen at scroll 5419px (the top of section 5) shows 343px of section 6 and the heading of section 6 whole and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
-     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
-     "rule": "SR-4 T-views",
-     "crop": "1440-rhythm-10-one-section.jpg"
+     "sel": "section#faq",
+     "text": "04 · PREGUNTAS FRECUENTES Resolución téc",
+     "msg": "the section starts at 5201px, 199px above the screen grid (6 x 900px): sections start on whole screens (and 4 more like it: \"03 · METODOLOGÍA ÁGIL Li\", \"PUNTO PRISMA STUDIO PY I\", \"INFRAESTRUCTURA DIGITAL \") (SR-2)",
+     "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+     "rule": "SR-2 T-grid",
+     "crop": "1440-rhythm-10-section-height.jpg"
     },
     {
-     "check": "one-section",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the screen at scroll 5400px (stride 6) shows 324px of section 6 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
-     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
-     "rule": "SR-4 T-views",
-     "crop": "1440-rhythm-11-one-section.jpg"
-    },
-    {
-     "check": "one-section",
+     "check": "section-height",
      "sev": "FAIL",
      "sel": "footer.border-t.bg-studio-void",
      "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the screen at scroll 5951px (the top of section 6) shows 278px of section 7 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 4 more like it: scroll 81px, scroll 4637px, scroll 0px) (SR-4)",
+     "msg": "the section's content does not fit it: its lowest content ends 335px below its top, past 312px (the section less 72px of bottom padding) (SR-2)",
+     "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+     "rule": "SR-2 T-fit",
+     "crop": "1440-rhythm-11-section-height.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "the screen at scroll 5201px (the top of section 5) shows 331px of section 6 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
      "rule": "SR-4 T-views",
      "crop": "1440-rhythm-12-one-section.jpg"
@@ -513,32 +387,42 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "section#soluciones > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
-     "text": "NIVEL 01 PÁGINA ÚNICA Presencia Express ",
-     "msg": "a band: a box 84% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
-     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
-     "rule": "SR-4 T-dom",
+     "sel": "section#faq",
+     "text": "04 · PREGUNTAS FRECUENTES Resolución téc",
+     "msg": "the screen at scroll 5400px (stride 6) shows 305px of section 5 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
      "crop": "1440-rhythm-13-one-section.jpg"
     },
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "section#proceso > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
-     "text": "DÍA 01 Relevamiento y Estructura Nos com",
-     "msg": "a band: a box 84% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
-     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
-     "rule": "SR-4 T-dom",
+     "sel": "footer.border-t.bg-studio-void",
+     "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
+     "msg": "the screen at scroll 5770px (the top of section 6) shows 276px of section 7 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 5 more like it: scroll 1800px, scroll 4500px, scroll 3600px) (SR-4)",
+     "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+     "rule": "SR-4 T-views",
      "crop": "1440-rhythm-14-one-section.jpg"
     },
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border",
+     "sel": "div#demoGrid > article.swiss-cell.p-6",
+     "text": "PROTOTIPADO RÁPIDO PYMES ¿No ves tu rubr",
+     "msg": "a band: a box 84% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
+     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
+     "rule": "SR-4 T-dom",
+     "crop": "1440-rhythm-15-one-section.jpg"
+    },
+    {
+     "check": "one-section",
+     "sev": "FAIL",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
      "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
      "msg": "a band: a box 84% of the section wide on a ground of its own that holds the heading or the intro: the section's own ground is the band (SR-4)",
      "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
      "rule": "SR-4 T-dom",
-     "crop": "1440-rhythm-15-one-section.jpg"
+     "crop": "1440-rhythm-16-one-section.jpg"
     },
     {
      "check": "container-edges",
@@ -548,7 +432,7 @@
      "msg": "the nav's content runs 112px from the left and 112px from the right (read from its outermost blocks: no .wrap): the page's container starts at 80px (one container, equal margins, 2px either way) (SR-6)",
      "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
      "rule": "SR-6 T1-margins",
-     "crop": "1440-rhythm-16-container-edges.jpg"
+     "crop": "1440-rhythm-17-container-edges.jpg"
     },
     {
      "check": "container-edges",
@@ -558,17 +442,27 @@
      "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
      "rule": "SR-6 T1-structure",
-     "crop": "1440-rhythm-17-container-edges.jpg"
+     "crop": "1440-rhythm-18-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
      "sel": "footer.border-t.bg-studio-void",
      "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "a <footer> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 8 more like it: \"Contacto directo\", \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\") (SR-6)",
+     "msg": "a <footer> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
      "rule": "SR-6 T1-structure",
-     "crop": "1440-rhythm-18-container-edges.jpg"
+     "crop": "1440-rhythm-19-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "aside.fixed.bottom-4",
+     "text": "Contacto directo",
+     "msg": "a <aside> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 7 more like it: \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\", \"02 · CATÁLOGO INTERACTIV\") (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
+     "crop": "1440-rhythm-20-container-edges.jpg"
     },
     {
      "check": "container-edges",
@@ -578,36 +472,16 @@
      "msg": "1 text block starts on a left line at x 933, 853px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (SR-6)",
      "fix": "start the text on the container's left, or on the one split line every split shares",
      "rule": "SR-6 T3-left-lines",
-     "crop": "1440-rhythm-19-container-edges.jpg"
-    },
-    {
-     "check": "container-edges",
-     "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > div.font-mono.text-xs",
-     "text": "INICIAR PROYECTO CON UN INGENIERO",
-     "msg": "1 text block starts on a left line at x 591, 511px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (and 10 more like it: x 450, x 393, \"Poné tu catálogo web a c\") (SR-6)",
-     "fix": "start the text on the container's left, or on the one split line every split shares",
-     "rule": "SR-6 T3-left-lines",
-     "crop": "1440-rhythm-20-container-edges.jpg"
-    },
-    {
-     "check": "container-edges",
-     "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > div.font-mono.text-xs",
-     "text": "INICIAR PROYECTO CON UN INGENIERO",
-     "msg": "\"INICIAR PROYECTO CON UN INGENIER\" is set centred across 1102px, over half the 1280px container: text that wide is set left (SR-6)",
-     "fix": "set the text left (text-align: start)",
-     "rule": "SR-6 T4-alignment",
      "crop": "1440-rhythm-21-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por",
-     "msg": "\"Poné tu catálogo web a cerrar ve\" is set centred across 672px, over half the 1280px container: text that wide is set left (SR-6)",
-     "fix": "set the text left (text-align: start)",
-     "rule": "SR-6 T4-alignment",
+     "sel": "div.p-5.flex:nth-of-type(1) > div:nth-of-type(1) > div.flex.items-center:nth-of-type(2) > h3.font-heading.font-bold",
+     "text": "Presencia Express",
+     "msg": "2 text blocks start on a left line at x 177, 97px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (also \"INICIAR PROYECTO CON UN INGENIER\") (and 9 more like it: x 161, \"Poné tu catálogo web a c\", x 145) (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
      "crop": "1440-rhythm-22-container-edges.jpg"
     },
     {
@@ -615,10 +489,20 @@
      "sev": "FAIL",
      "sel": "section#soluciones > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
      "text": "NIVEL 01 PÁGINA ÚNICA Presencia Express ",
-     "msg": "a box over half the container wide runs 112-1328px, not on the container's lines at 80-1360px (and 3 more like it: \"DÍA 01 Relevamiento y Es\", \"INICIAR PROYECTO CON UN \", \"PUNTO PRISMA STUDIO PY I\") (SR-6)",
+     "msg": "a box over half the container wide runs 112-1328px, not on the container's lines at 80-1360px (SR-6)",
      "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
      "rule": "SR-6 T6-right-edges",
      "crop": "1440-rhythm-23-container-edges.jpg"
+    },
+    {
+     "check": "container-edges",
+     "sev": "FAIL",
+     "sel": "div#demoGrid > article.swiss-cell.p-6",
+     "text": "PROTOTIPADO RÁPIDO PYMES ¿No ves tu rubr",
+     "msg": "a box over half the container wide runs 112-1328px, not on the container's lines at 80-1360px (and 3 more like it: \"DÍA 01 Relevamiento y Es\", \"INICIAR PROYECTO CON UN \", \"PUNTO PRISMA STUDIO PY I\") (SR-6)",
+     "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+     "rule": "SR-6 T6-right-edges",
+     "crop": "1440-rhythm-24-container-edges.jpg"
     },
     {
      "check": "row-lines",
@@ -628,17 +512,17 @@
      "msg": "a row of 3 items: its last item ends at 624px, its column's right line at 798px (2px either way) (SR-7)",
      "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
      "rule": "SR-7 T-rows",
-     "crop": "1440-rhythm-24-row-lines.jpg"
+     "crop": "1440-rhythm-25-row-lines.jpg"
     },
     {
      "check": "row-lines",
      "sev": "FAIL",
      "sel": "section#faq > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
      "text": "¿Cómo llegan los pedidos del catálogo a ",
-     "msg": "a row of 2 items: its first item starts at 112px, the container's left line at 80px; its last item ends at 1328px, the container's right line at 1360px; its items are 293/239px tall, not one height (2px either way) (SR-7)",
+     "msg": "a row of 2 items: its first item starts at 112px, the container's left line at 80px; its last item ends at 1328px, the container's right line at 1360px; its items are 293/251px tall, not one height (2px either way) (SR-7)",
      "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
      "rule": "SR-7 T-rows",
-     "crop": "1440-rhythm-25-row-lines.jpg"
+     "crop": "1440-rhythm-26-row-lines.jpg"
     },
     {
      "check": "row-lines",
@@ -648,7 +532,17 @@
      "msg": "a row of 3 items: its first item starts at 113px, the container's left line at 80px; its last item ends at 1327px, the container's right line at 1360px (2px either way) (and 3 more like it: \"DÍA 01 Relevamiento y Es\", \"CATÁLOGO WHATSAPP Ferret\", \"PUNTO PRISMA STUDIO PY I\") (SR-7)",
      "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
      "rule": "SR-7 T-rows",
-     "crop": "1440-rhythm-26-row-lines.jpg"
+     "crop": "1440-rhythm-27-row-lines.jpg"
+    },
+    {
+     "check": "split-pair",
+     "sev": "FAIL",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "the two columns of the split start 48px apart at the top (centred on each other): a split's columns are top-aligned, 8px either way (SR-8)",
+     "fix": "top-align both columns of the split (align-items: start)",
+     "rule": "SR-8 T-mode",
+     "crop": "1440-rhythm-28-split-pair.jpg"
     },
     {
      "check": "split-pair",
@@ -658,17 +552,37 @@
      "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 933, the first split's at 854; its right column starts at x 933, on none of the split lines 623 (k=5), 732 (k=6), 841 (k=7) (SR-8)",
      "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
      "rule": "SR-8 T-pair",
-     "crop": "1440-rhythm-27-split-pair.jpg"
+     "crop": "1440-rhythm-29-split-pair.jpg"
     },
     {
      "check": "split-pair",
      "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 821, the first split's at 854; its right column starts at x 821, on none of the split lines 623 (k=5), 732 (k=6), 841 (k=7) (SR-8)",
+     "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+     "rule": "SR-8 T-pair",
+     "crop": "1440-rhythm-30-split-pair.jpg"
+    },
+    {
+     "check": "split-pair",
+     "sev": "FAIL",
+     "sel": "main#inicio > section.hero--editorial.border-b > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
      "text": "INFRAESTRUCTURA DIGITAL / ASUNCIÓN, PARA",
      "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 854, on none of the split lines 623 (k=5), 732 (k=6), 841 (k=7) (SR-8)",
      "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
      "rule": "SR-8 T-pair",
-     "crop": "1440-rhythm-28-split-pair.jpg"
+     "crop": "1440-rhythm-31-split-pair.jpg"
+    },
+    {
+     "check": "split-pair",
+     "sev": "FAIL",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "the split does not run edge to edge on the container: its left column starts at 113px, the container's left at 80px; its right column ends at 1327px, the container's right at 1360px (SR-8)",
+     "fix": "run the split from the container's left line to its right line",
+     "rule": "SR-8 T-edges",
+     "crop": "1440-rhythm-32-split-pair.jpg"
     },
     {
      "check": "split-pair",
@@ -678,17 +592,17 @@
      "msg": "the split does not run edge to edge on the container: its left column starts at 112px, the container's left at 80px; its right column ends at 1328px, the container's right at 1360px (SR-8)",
      "fix": "run the split from the container's left line to its right line",
      "rule": "SR-8 T-edges",
-     "crop": "1440-rhythm-29-split-pair.jpg"
+     "crop": "1440-rhythm-33-split-pair.jpg"
     },
     {
      "check": "split-pair",
      "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
+     "sel": "main#inicio > section.hero--editorial.border-b > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
      "text": "INFRAESTRUCTURA DIGITAL / ASUNCIÓN, PARA",
      "msg": "the split does not run edge to edge on the container: its left column starts at 112px, the container's left at 80px; its right column ends at 1328px, the container's right at 1360px (SR-8)",
      "fix": "run the split from the container's left line to its right line",
      "rule": "SR-8 T-edges",
-     "crop": "1440-rhythm-30-split-pair.jpg"
+     "crop": "1440-rhythm-34-split-pair.jpg"
     }
    ],
    "glAsked": 0
@@ -701,84 +615,14 @@
    "errors": [],
    "findings": [
     {
-     "check": "credit-wall",
-     "sev": "FAIL",
-     "sel": "div.max-w-7xl.mx-auto > div.grid.grid-cols-1 > div.space-y-2:nth-of-type(3) > p.text-studio-subtle",
-     "text": "Fotografías de muestra provistas bajo licencia U",
-     "msg": "the photo credits fill 2 lines in 1 block (1 credits, 56 characters): a wall of credits",
-     "stop": 10,
-     "crop": "1024-20-credit-wall.jpg",
-     "fix": "one short credit line in the footer (or the credits on an imprint page): never a block of names"
-    },
-    {
      "check": "nav-covers",
      "sev": "FAIL",
      "sel": "aside.fixed.bottom-4",
      "text": "",
-     "msg": "sits on top of the text \"Para empresas que requieren desarrollos \" while the page scrolls: part of the line shows beside it",
-     "stop": 1,
-     "crop": "1024-07-nav-covers.jpg",
+     "msg": "sits on top of the text \"ONLINE\" while the page scrolls: part of the line shows beside it",
+     "stop": 4,
+     "crop": "1024-09-nav-covers.jpg",
      "fix": "make the fixed nav one opaque band across the whole screen, or let it scroll away with the page"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
-     "text": "Infraestructura Digital, Catálogos Móviles y Sis",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 0,
-     "crop": "1024-01-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 2,
-     "crop": "1024-09-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#proceso",
-     "text": "Listo en 7 días hábiles. Proceso técnico sin bur",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 7,
-     "crop": "1024-15-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "section#faq",
-     "text": "Resolución técnica directa.",
-     "msg": "the section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 8,
-     "crop": "1024-16-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "the closing section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 9,
-     "crop": "1024-17-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "button-styles",
-     "sev": "FAIL",
-     "sel": "(the page)",
-     "text": "",
-     "stop": 3,
-     "msg": "3 button styles on the page: square, fill #ffffff x4 (\"EXPLORAR DEMOS EN VIVO ↓\"); square, fill #ffffff, outline #ffffff x1 (\"TODOS\"); square, fill #0b0b0e x1 (\"WHATSAPP DIRECTO ↗\")",
-     "crop": "1024-11-button-styles.jpg",
-     "fix": "one primary and one secondary button: one shape, one height per size, one label size"
     },
     {
      "check": "nav",
@@ -788,27 +632,57 @@
      "stop": 0,
      "msg": "the nav is lopsided: its first item starts 7px inside the content's edge (32px), while its last ends on the other edge",
      "fix": "start the nav's first item and end its last on the content's two edges",
-     "crop": "1024-02-nav.jpg"
+     "crop": "1024-01-nav.jpg"
     },
     {
-     "check": "cut-text",
+     "check": "fold-cut",
      "sev": "WARN",
-     "sel": "div:nth-of-type(1) > div.relative.bg-studio-void > div.absolute.top-0 > span.font-mono.text-white",
-     "text": "Ferretería & Repuestos Los Laureles",
-     "msg": "shortened with an ellipsis (and 1 more like it: \"Aura Concept Store & Cal\")",
-     "stop": 3,
-     "crop": "1024-12-cut-text.jpg",
-     "fix": "give the text room: no overflow clipping a line, no line past its box"
+     "sel": "div.flex.flex-col:nth-of-type(1) > div.grid.grid-cols-3 > div.min-w-0:nth-of-type(1) > span.block.num-tabular",
+     "text": "< 0.6s",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "1024-02-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
     },
     {
-     "check": "no-visual",
+     "check": "fold-cut",
      "sev": "WARN",
-     "sel": "section#demos",
-     "text": "Demostraciones en Vivo",
-     "msg": "pictures, effects and mocks cover 24% of this section; a feature section needs a visual (about 25% or more)",
-     "stop": 4,
-     "crop": "1024-13-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
+     "sel": "div.flex.flex-col:nth-of-type(1) > div.grid.grid-cols-3 > div.min-w-0:nth-of-type(2) > span.block.num-tabular",
+     "text": "0%",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "1024-03-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
+    },
+    {
+     "check": "fold-cut",
+     "sev": "WARN",
+     "sel": "div.flex.flex-col:nth-of-type(1) > div.grid.grid-cols-3 > div.min-w-0:nth-of-type(3) > span.block.num-tabular",
+     "text": "7 Días",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "1024-04-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
+    },
+    {
+     "check": "off-grid",
+     "sev": "WARN",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
+     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
+     "msg": "the section's heading starts at 81px, 49px off the page margin (32px), and no other section starts there",
+     "stop": 9,
+     "crop": "1024-10-off-grid.jpg",
+     "fix": "move it onto the page margin, or the column edge its section uses"
+    },
+    {
+     "check": "col-edge",
+     "sev": "WARN",
+     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1 > div.p-8.font-mono",
+     "text": "ESPECIFICACIONES TÉCNICAS AUDITADO Relevamiento ",
+     "msg": "the second column starts at 4 places: 592px (section.py-16.border-b:nth-of-type(6)), 625px (section.hero--editorial.border-b), 693px (section#faq), 720px (section#demos)",
+     "stop": 9,
+     "crop": "1024-11-col-edge.jpg",
+     "fix": "start the second column of every split on the same one or two grid columns"
     },
     {
      "check": "photo-credit",
@@ -826,7 +700,7 @@
      "text": "",
      "stop": 0,
      "msg": "the nav's links and actions use 2 type families (Space Grotesk, JetBrains Mono)",
-     "crop": "1024-03-nav-family.jpg",
+     "crop": "1024-05-nav-family.jpg",
      "fix": "keep one nav on every screen: the same bar, fill, links and type"
     },
     {
@@ -836,47 +710,17 @@
      "text": "",
      "stop": 0,
      "msg": "the nav's links come in 2 sizes (16, 12px)",
-     "crop": "1024-04-nav-family.jpg",
+     "crop": "1024-06-nav-family.jpg",
      "fix": "keep one nav on every screen: the same bar, fill, links and type"
-    },
-    {
-     "check": "heading-align",
-     "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "4 section headings sit on the left, 1 centred: \"Poné tu catálogo web a c\"",
-     "stop": 9,
-     "crop": "1024-18-heading-align.jpg",
-     "fix": "set every section heading in one place: all on the left grid, or all centred"
-    },
-    {
-     "check": "fake-button",
-     "sev": "WARN",
-     "sel": "div.w-full.flex > div.border.bg-studio-surface:nth-of-type(2) > div.flex.items-center:nth-of-type(2) > div.border.bg-studio-elevated",
-     "text": "PASO 3 WhatsApp",
-     "stop": 0,
-     "msg": "\"PASO 3 WhatsApp\" looks like a button (square, fill #111116, the same look as the page's buttons) but is not a link or a button (and 1 more like it: \"AutoPar Motors Asunción \")",
-     "crop": "1024-05-fake-button.jpg",
-     "fix": "make it a real link or button, or drop its button look"
-    },
-    {
-     "check": "fake-button",
-     "sev": "WARN",
-     "sel": "article.swiss-cell.p-5:nth-of-type(1) > div:nth-of-type(1) > div.relative.bg-studio-void > div.absolute.bottom-3",
-     "text": "Pedido WhatsApp ₲ Listo",
-     "stop": 4,
-     "msg": "\"Pedido WhatsApp ₲ Listo\" looks like a button (square, fill #060608, the same look as the page's buttons) but is not a link or a button (6 like it)",
-     "crop": "1024-14-fake-button.jpg",
-     "fix": "make it a real link or button, or drop its button look"
     },
     {
      "check": "stranded-action",
      "sev": "WARN",
      "sel": "div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(2) > div:nth-of-type(2) > a.w-full.h-11",
      "text": "QUIERO EL CATÁLOGO MÓVIL →",
-     "msg": "stands 574px down from the nearest text of its block (\"La herramienta definitiva para\")",
+     "msg": "stands 426px down from the nearest text of its block (\"MOTOR DE VENTAS MÓVIL 0% COMIS\")",
      "stop": 2,
-     "crop": "1024-10-stranded-action.jpg",
+     "crop": "1024-08-stranded-action.jpg",
      "fix": "put the button under or beside the text it belongs to"
     },
     {
@@ -886,28 +730,18 @@
      "text": "Infraestructura Digital, Catálogos Móviles y Sis",
      "msg": "a headline of 12 words on 8 lines at 48px: a paragraph set in display type",
      "stop": 0,
-     "crop": "1024-06-copy-length.jpg",
+     "crop": "1024-07-copy-length.jpg",
      "fix": "cut the heading to one short line (2 to 12 words) and move the rest into the text under it"
     },
     {
      "check": "copy-length",
      "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
      "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "a section heading of 12 words on 4 lines at 36px: a paragraph set in display type",
+     "msg": "a section heading of 12 words on 5 lines at 34px: a paragraph set in display type",
      "stop": 9,
-     "crop": "1024-19-copy-length.jpg",
+     "crop": "1024-12-copy-length.jpg",
      "fix": "cut the heading to one short line (2 to 12 words) and move the rest into the text under it"
-    },
-    {
-     "check": "nav-current",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 1,
-     "msg": "the nav stays on screen with 5 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)",
-     "crop": "1024-08-nav-current.jpg",
-     "fix": "mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls"
     }
    ],
    "glAsked": 0
@@ -920,113 +754,44 @@
    "errors": [],
    "findings": [
     {
-     "check": "nav",
-     "sev": "FAIL",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 0,
-     "msg": "the nav has no bar, and its pieces sit past the content's edges (31-955px against 24-796px)",
-     "crop": "820-01-nav.jpg",
-     "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it"
-    },
-    {
      "check": "nav-covers",
      "sev": "FAIL",
      "sel": "aside.fixed.bottom-4",
      "text": "",
-     "msg": "sits on top of the text \"Swiss Grid / Brutalismo Editorial · Sin \" while the page scrolls: part of the line shows beside it",
-     "stop": 9,
-     "crop": "820-14-nav-covers.jpg",
+     "msg": "sits on top of the text \"MÁS ELEGIDO\" while the page scrolls: part of the line shows beside it",
+     "stop": 1,
+     "crop": "820-02-nav-covers.jpg",
      "fix": "make the fixed nav one opaque band across the whole screen, or let it scroll away with the page"
     },
     {
-     "check": "off-viewport",
-     "sev": "FAIL",
-     "sel": "(the page)",
-     "text": "",
-     "stop": null,
-     "msg": "the page is 955px wide on a 820px screen and scrolls sideways",
-     "fix": "keep it inside the screen at this width: let it shrink, wrap or stack"
-    },
-    {
-     "check": "cut-text",
-     "sev": "FAIL",
-     "sel": "div.max-w-7xl.mx-auto > div.hidden.items-center > a.h-11.inline-flex > span:nth-of-type(2)",
-     "text": "WHATSAPP DIRECTO",
-     "msg": "cut 95px by the right edge of the screen",
-     "stop": 0,
-     "crop": "820-02-cut-text.jpg",
-     "fix": "give the text room: no overflow clipping a line, no line past its box"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
-     "text": "Infraestructura Digital, Catálogos Móviles y Sis",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 0,
-     "crop": "820-03-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 2,
-     "crop": "820-08-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#proceso",
-     "text": "Listo en 7 días hábiles. Proceso técnico sin bur",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 7,
-     "crop": "820-11-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "section#faq",
-     "text": "Resolución técnica directa.",
-     "msg": "the section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 8,
-     "crop": "820-12-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "the closing section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 9,
-     "crop": "820-15-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "heading-scale",
-     "sev": "FAIL",
-     "sel": "section#soluciones > div.max-w-7xl.mx-auto > div.mb-8 > h2.font-display.font-extrabold",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "an h2 at 36px, as large as the h1 (36px) or larger (and 2 more like it: \"Demostraciones en Vivo\", \"Listo en 7 días hábiles.\")",
-     "stop": 1,
-     "crop": "820-06-heading-scale.jpg",
-     "fix": "size headings by level: the h1 largest, one size per level, each level below the one above"
-    },
-    {
-     "check": "cut-text",
+     "check": "nav",
      "sev": "WARN",
-     "sel": "div:nth-of-type(1) > div.relative.bg-studio-void > div.absolute.top-0 > span.font-mono.text-white",
-     "text": "Ferretería & Repuestos Los Laureles",
-     "msg": "shortened with an ellipsis (and 1 more like it: \"Aura Concept Store & Cal\")",
-     "stop": 3,
-     "crop": "820-10-cut-text.jpg",
-     "fix": "give the text room: no overflow clipping a line, no line past its box"
+     "sel": "header.sticky.top-0 > div.max-w-7xl.mx-auto > a.flex.items-center",
+     "text": "PUNTO PRISMA STUDIO ASUNCIÓN · PY",
+     "stop": 0,
+     "msg": "the nav is lopsided: its first item starts 7px inside the content's edge (24px), while its last ends on the other edge",
+     "fix": "start the nav's first item and end its last on the content's two edges",
+     "crop": "820-01-nav.jpg"
+    },
+    {
+     "check": "off-grid",
+     "sev": "WARN",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
+     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
+     "msg": "the section's heading starts at 73px, 49px off the page margin (24px), and no other section starts there",
+     "stop": 8,
+     "crop": "820-05-off-grid.jpg",
+     "fix": "move it onto the page margin, or the column edge its section uses"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#inicio > section.hero--editorial.border-b / section#soluciones",
+     "text": "",
+     "stop": 1,
+     "msg": "113px between these sections, -30% against the median 161px",
+     "crop": "820-03-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
     },
     {
      "check": "photo-credit",
@@ -1038,54 +803,14 @@
      "fix": "confirm the library photograph shows the client's own product, place or people; otherwise replace it"
     },
     {
-     "check": "nav-family",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 0,
-     "msg": "the nav's links and actions use 2 type families (Space Grotesk, JetBrains Mono)",
-     "crop": "820-04-nav-family.jpg",
-     "fix": "keep one nav on every screen: the same bar, fill, links and type"
-    },
-    {
-     "check": "nav-family",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 0,
-     "msg": "the nav's links come in 2 sizes (16, 12px)",
-     "crop": "820-05-nav-family.jpg",
-     "fix": "keep one nav on every screen: the same bar, fill, links and type"
-    },
-    {
-     "check": "heading-align",
-     "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "4 section headings sit on the left, 1 centred: \"Poné tu catálogo web a c\"",
-     "stop": 8,
-     "crop": "820-13-heading-align.jpg",
-     "fix": "set every section heading in one place: all on the left grid, or all centred"
-    },
-    {
      "check": "stranded-action",
      "sev": "WARN",
      "sel": "div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(2) > div:nth-of-type(2) > a.w-full.h-11",
      "text": "QUIERO EL CATÁLOGO MÓVIL →",
-     "msg": "stands 445px down from the nearest text of its block (\"La herramienta definitiva para\")",
+     "msg": "stands 298px down from the nearest text of its block (\"MOTOR DE VENTAS MÓVIL 0% COMIS\")",
      "stop": 2,
-     "crop": "820-09-stranded-action.jpg",
+     "crop": "820-04-stranded-action.jpg",
      "fix": "put the button under or beside the text it belongs to"
-    },
-    {
-     "check": "nav-current",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 1,
-     "msg": "the nav stays on screen with 5 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)",
-     "crop": "820-07-nav-current.jpg",
-     "fix": "mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls"
     }
    ],
    "glAsked": 0
@@ -1093,118 +818,69 @@
   {
    "width": 768,
    "height": 1024,
-   "screens": 12,
+   "screens": 11,
    "held": 0,
    "errors": [],
    "findings": [
-    {
-     "check": "nav",
-     "sev": "FAIL",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 0,
-     "msg": "the nav has no bar, and its pieces sit past the content's edges (31-955px against 24-744px)",
-     "crop": "768-01-nav.jpg",
-     "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it"
-    },
-    {
-     "check": "nav",
-     "sev": "FAIL",
-     "sel": "header.sticky.top-0 > div.max-w-7xl.mx-auto > div.hidden.items-center > a.h-11.inline-flex",
-     "text": "WHATSAPP DIRECTO ↗",
-     "stop": 1,
-     "msg": "\"WHATSAPP DIRECTO ↗\" sits outside the nav bar header.sticky.top-0 (0-768px)",
-     "crop": "768-06-nav.jpg",
-     "fix": "make the nav one bar from the content's left edge to its right edge, with every link and action inside it"
-    },
     {
      "check": "nav-covers",
      "sev": "FAIL",
      "sel": "aside.fixed.bottom-4",
      "text": "",
-     "msg": "sits on top of the text \"Desde ₲ 4.500.000\" while the page scrolls: part of the line shows beside it",
-     "stop": 0,
-     "crop": "768-02-nav-covers.jpg",
+     "msg": "sits on top of the text \"Taller de corte y barbería de autor con \" while the page scrolls: part of the line shows beside it",
+     "stop": 4,
+     "crop": "768-06-nav-covers.jpg",
      "fix": "make the fixed nav one opaque band across the whole screen, or let it scroll away with the page"
     },
     {
-     "check": "off-viewport",
-     "sev": "FAIL",
-     "sel": "(the page)",
-     "text": "",
-     "stop": null,
-     "msg": "the page is 955px wide on a 768px screen and scrolls sideways",
-     "fix": "keep it inside the screen at this width: let it shrink, wrap or stack"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
-     "text": "Infraestructura Digital, Catálogos Móviles y Sis",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 0,
-     "crop": "768-03-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 2,
-     "crop": "768-09-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#proceso",
-     "text": "Listo en 7 días hábiles. Proceso técnico sin bur",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 8,
-     "crop": "768-12-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "section#faq",
-     "text": "Resolución técnica directa.",
-     "msg": "the section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 9,
-     "crop": "768-13-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "the closing section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 10,
-     "crop": "768-14-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "heading-scale",
-     "sev": "FAIL",
-     "sel": "section#soluciones > div.max-w-7xl.mx-auto > div.mb-8 > h2.font-display.font-extrabold",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "an h2 at 36px, as large as the h1 (36px) or larger (and 2 more like it: \"Demostraciones en Vivo\", \"Listo en 7 días hábiles.\")",
-     "stop": 1,
-     "crop": "768-07-heading-scale.jpg",
-     "fix": "size headings by level: the h1 largest, one size per level, each level below the one above"
-    },
-    {
-     "check": "cut-text",
+     "check": "nav",
      "sev": "WARN",
-     "sel": "div:nth-of-type(1) > div.relative.bg-studio-void > div.absolute.top-0 > span.font-mono.text-white",
-     "text": "Ferretería & Repuestos Los Laureles",
-     "msg": "shortened with an ellipsis (and 1 more like it: \"Aura Concept Store & Cal\")",
-     "stop": 4,
-     "crop": "768-11-cut-text.jpg",
-     "fix": "give the text room: no overflow clipping a line, no line past its box"
+     "sel": "header.sticky.top-0 > div.max-w-7xl.mx-auto > a.flex.items-center",
+     "text": "PUNTO PRISMA STUDIO ASUNCIÓN · PY",
+     "stop": 0,
+     "msg": "the nav is lopsided: its first item starts 7px inside the content's edge (24px), while its last ends on the other edge",
+     "fix": "start the nav's first item and end its last on the content's two edges",
+     "crop": "768-01-nav.jpg"
+    },
+    {
+     "check": "fold-cut",
+     "sev": "WARN",
+     "sel": "div.border.bg-studio-surface:nth-of-type(1) > div.px-5.py-3 > span.flex.items-center > span:nth-of-type(2)",
+     "text": "Disponibilidad en Asunción",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "768-02-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
+    },
+    {
+     "check": "fold-cut",
+     "sev": "WARN",
+     "sel": "div.w-full.flex > div.border.bg-studio-surface:nth-of-type(1) > div.px-5.py-3 > span.text-white",
+     "text": "SIN COSTOS OCULTOS",
+     "msg": "a line of the hero text is sliced by the bottom of the first screen",
+     "stop": 0,
+     "crop": "768-03-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
+    },
+    {
+     "check": "off-grid",
+     "sev": "WARN",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
+     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
+     "msg": "the section's heading starts at 73px, 49px off the page margin (24px), and no other section starts there",
+     "stop": 9,
+     "crop": "768-07-off-grid.jpg",
+     "fix": "move it onto the page margin, or the column edge its section uses"
+    },
+    {
+     "check": "section-gaps",
+     "sev": "WARN",
+     "sel": "main#inicio > section.hero--editorial.border-b / section#soluciones",
+     "text": "",
+     "stop": 1,
+     "msg": "113px between these sections, -30% against the median 161px",
+     "crop": "768-04-section-gaps.jpg",
+     "fix": "use one gap between sections (all within 25% of each other)"
     },
     {
      "check": "photo-credit",
@@ -1216,61 +892,21 @@
      "fix": "confirm the library photograph shows the client's own product, place or people; otherwise replace it"
     },
     {
-     "check": "nav-family",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 0,
-     "msg": "the nav's links and actions use 2 type families (Space Grotesk, JetBrains Mono)",
-     "crop": "768-04-nav-family.jpg",
-     "fix": "keep one nav on every screen: the same bar, fill, links and type"
-    },
-    {
-     "check": "nav-family",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 0,
-     "msg": "the nav's links come in 2 sizes (16, 12px)",
-     "crop": "768-05-nav-family.jpg",
-     "fix": "keep one nav on every screen: the same bar, fill, links and type"
-    },
-    {
-     "check": "heading-align",
-     "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "4 section headings sit on the left, 1 centred: \"Poné tu catálogo web a c\"",
-     "stop": 10,
-     "crop": "768-15-heading-align.jpg",
-     "fix": "set every section heading in one place: all on the left grid, or all centred"
-    },
-    {
      "check": "stranded-action",
      "sev": "WARN",
      "sel": "div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(2) > div:nth-of-type(2) > a.w-full.h-11",
      "text": "QUIERO EL CATÁLOGO MÓVIL →",
-     "msg": "stands 461px down from the nearest text of its block (\"La herramienta definitiva para\")",
+     "msg": "stands 314px down from the nearest text of its block (\"MOTOR DE VENTAS MÓVIL 0% COMIS\")",
      "stop": 3,
-     "crop": "768-10-stranded-action.jpg",
+     "crop": "768-05-stranded-action.jpg",
      "fix": "put the button under or beside the text it belongs to"
-    },
-    {
-     "check": "nav-current",
-     "sev": "WARN",
-     "sel": "header.sticky.top-0",
-     "text": "",
-     "stop": 1,
-     "msg": "the nav stays on screen with 5 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)",
-     "crop": "768-08-nav-current.jpg",
-     "fix": "mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls"
     },
     {
      "check": "hero-screen",
      "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
+     "sel": "main#inicio > section.hero--editorial.border-b",
      "text": "INFRAESTRUCTURA DIGITAL / ASUNCIÓN, PARA",
-     "msg": "the hero ends at 1259px on a 1024px screen, 235px below the fold: it ends at the fold, 1px either way (SR-1)",
+     "msg": "the hero ends at 1231px on a 1024px screen, 207px below the fold: it ends at the fold, 1px either way (SR-1)",
      "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
      "rule": "SR-1 T1",
      "crop": "768-rhythm-01-hero-screen.jpg"
@@ -1280,7 +916,7 @@
      "sev": "FAIL",
      "sel": "section#demos",
      "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
-     "msg": "the section is 3299px tall (3.2 screens), 1251px over two screens (2048px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "msg": "the section is 2854px tall (2.8 screens), 806px over two screens (2048px): every section after the hero is one screen or two, 2px either way (SR-2)",
      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
      "rule": "SR-2 T-height",
      "crop": "768-rhythm-05-section-height.jpg"
@@ -1290,7 +926,7 @@
      "sev": "FAIL",
      "sel": "footer.border-t.bg-studio-void",
      "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the section is 342px tall (0.3 screens), 682px short of one screen (1024px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "msg": "the section is 400px tall (0.4 screens), 624px short of one screen (1024px): every section after the hero is one screen or two, 2px either way (SR-2)",
      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
      "rule": "SR-2 T-height",
      "crop": "768-rhythm-06-section-height.jpg"
@@ -1298,9 +934,9 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the section is 596px tall (0.6 screens), 428px short of one screen (1024px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"01 · PILARES DE SERVICIO\", \"04 · PREGUNTAS FRECUENTE\", \"03 · METODOLOGÍA ÁGIL Li\") (SR-2)",
+     "sel": "section#soluciones",
+     "text": "01 · PILARES DE SERVICIO Tres niveles de",
+     "msg": "the section is 2280px tall (2.2 screens), 232px over two screens (2048px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"04 · PREGUNTAS FRECUENTE\", \"03 · METODOLOGÍA ÁGIL Li\", \"INICIAR PROYECTO CON UN \") (SR-2)",
      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
      "rule": "SR-2 T-height",
      "crop": "768-rhythm-07-section-height.jpg"
@@ -1310,7 +946,7 @@
      "sev": "FAIL",
      "sel": "section#demos",
      "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
-     "msg": "the section starts at 3593px, 503px above the screen grid (4 x 1024px): sections start on whole screens (SR-2)",
+     "msg": "the section starts at 3511px, 439px below the screen grid (3 x 1024px): sections start on whole screens (SR-2)",
      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
      "rule": "SR-2 T-grid",
      "crop": "768-rhythm-08-section-height.jpg"
@@ -1318,9 +954,9 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the section starts at 8835px, 381px above the screen grid (9 x 1024px): sections start on whole screens (SR-2)",
+     "sel": "section#faq",
+     "text": "04 · PREGUNTAS FRECUENTES Resolución téc",
+     "msg": "the section starts at 7546px, 378px below the screen grid (7 x 1024px): sections start on whole screens (SR-2)",
      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
      "rule": "SR-2 T-grid",
      "crop": "768-rhythm-09-section-height.jpg"
@@ -1330,7 +966,7 @@
      "sev": "FAIL",
      "sel": "section#proceso",
      "text": "03 · METODOLOGÍA ÁGIL Listo en 7 días há",
-     "msg": "the section starts at 6892px, 276px above the screen grid (7 x 1024px): sections start on whole screens (and 4 more like it: \"01 · PILARES DE SERVICIO\", \"PUNTO PRISMA STUDIO PY I\", \"04 · PREGUNTAS FRECUENTE\") (SR-2)",
+     "msg": "the section starts at 6365px, 221px below the screen grid (6 x 1024px): sections start on whole screens (and 4 more like it: \"01 · PILARES DE SERVICIO\", \"INICIAR PROYECTO CON UN \", \"INFRAESTRUCTURA DIGITAL \") (SR-2)",
      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
      "rule": "SR-2 T-grid",
      "crop": "768-rhythm-10-section-height.jpg"
@@ -1340,7 +976,7 @@
      "sev": "FAIL",
      "sel": "footer.border-t.bg-studio-void",
      "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the section's content does not fit it: its lowest content ends 293px below its top, past 270px (the section less 72px of bottom padding) (SR-2)",
+     "msg": "the section's content does not fit it: its lowest content ends 351px below its top, past 328px (the section less 72px of bottom padding) (SR-2)",
      "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
      "rule": "SR-2 T-fit",
      "crop": "768-rhythm-11-section-height.jpg"
@@ -1370,27 +1006,17 @@
      "sev": "FAIL",
      "sel": "div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(3) > div:nth-of-type(1) > div.space-y-2.py-4",
      "text": "— Arquitectura multipágina corporativa p",
-     "msg": "a top border across 91% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (and 2 more like it: \"SOPORTE LOCAL PY\", \"Horario de soporte: 08:0\") (SR-3)",
+     "msg": "a top border across 91% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
      "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
      "rule": "SR-3 T-dividers",
      "crop": "768-rhythm-14-section-air.jpg"
-    },
-    {
-     "check": "section-air",
-     "sev": "WARN",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the content fills 53.8% of the section's height (321 of 596px): 55% or more (40% WARN) (SR-3)",
-     "fix": "fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block",
-     "rule": "SR-3 T-fill",
-     "crop": "768-rhythm-31-section-air.jpg"
     },
     {
      "check": "one-section",
      "sev": "FAIL",
      "sel": "section#soluciones",
      "text": "01 · PILARES DE SERVICIO Tres niveles de",
-     "msg": "the screen at scroll 3072px (stride 3) shows 440px of section 2 and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "msg": "the screen at scroll 3072px (stride 3) shows 374px of section 2 and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
      "rule": "SR-4 T-views",
      "crop": "768-rhythm-15-one-section.jpg"
@@ -1398,9 +1024,9 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por",
-     "msg": "the screen at scroll 8192px (stride 8) shows 381px of section 6 and the heading of section 6 whole and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "sel": "section#proceso",
+     "text": "03 · METODOLOGÍA ÁGIL Listo en 7 días há",
+     "msg": "the screen at scroll 7168px (stride 7) shows 313px of section 4 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
      "rule": "SR-4 T-views",
      "crop": "768-rhythm-16-one-section.jpg"
@@ -1408,9 +1034,9 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "footer.border-t.bg-studio-void",
-     "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the screen at scroll 8749px (the top of section 6) shows 342px of section 7 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 4 more like it: scroll 6144px, scroll 7168px, scroll 7986px) (SR-4)",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "the screen at scroll 7546px (the top of section 5) shows 204px of section 6 and the content of 2 sections, over 24px each beside section 5: a screen shows one section (another may peek 8px, 24px WARN) (and 4 more like it: scroll 6144px, scroll 1024px, scroll 8366px) (SR-4)",
      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
      "rule": "SR-4 T-views",
      "crop": "768-rhythm-17-one-section.jpg"
@@ -1418,8 +1044,8 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "section#soluciones > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
-     "text": "NIVEL 01 PÁGINA ÚNICA Presencia Express ",
+     "sel": "div#demoGrid > article.swiss-cell.p-6",
+     "text": "PROTOTIPADO RÁPIDO PYMES ¿No ves tu rubr",
      "msg": "a band: a box 94% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
      "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
      "rule": "SR-4 T-dom",
@@ -1428,29 +1054,29 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "section#proceso > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
-     "text": "DÍA 01 Relevamiento y Estructura Nos com",
-     "msg": "a band: a box 94% of the section wide on a ground of its own that holds only text: the section's own ground is the band (SR-4)",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "a band: a box 94% of the section wide on a ground of its own that holds the heading or the intro: the section's own ground is the band (SR-4)",
      "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
      "rule": "SR-4 T-dom",
      "crop": "768-rhythm-19-one-section.jpg"
     },
     {
-     "check": "one-section",
+     "check": "container-edges",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
      "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "a band: a box 94% of the section wide on a ground of its own that holds the heading or the intro: the section's own ground is the band (SR-4)",
-     "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
-     "rule": "SR-4 T-dom",
-     "crop": "768-rhythm-20-one-section.jpg"
+     "msg": "the content of section 6 runs 73px from the left and 73px from the right (read from its outermost blocks: no .wrap): the page's container starts at 24px (one container, equal margins, 2px either way) (SR-6)",
+     "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+     "rule": "SR-6 T1-margins",
+     "crop": "768-rhythm-20-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
      "sel": "header.sticky.top-0",
      "text": "PUNTO PRISMA STUDIO ASUNCIÓN · PY Soluci",
-     "msg": "the nav's content runs 24px from the left and -187px from the right (read from its outermost blocks: no .wrap): 24 and -187px are not one margin; the margin is 64-120px at 768px (one container, equal margins, 2px either way) (SR-6)",
+     "msg": "the nav's content runs 24px from the left and 24px from the right (read from its outermost blocks: no .wrap): the margin is 64-120px at 768px (one container, equal margins, 2px either way) (and 6 more like it: \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\", \"02 · CATÁLOGO INTERACTIV\") (SR-6)",
      "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
      "rule": "SR-6 T1-margins",
      "crop": "768-rhythm-21-container-edges.jpg"
@@ -1458,19 +1084,19 @@
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the content of section 6 runs 81px from the left and 81px from the right (read from its outermost blocks: no .wrap): the page's container starts at 24px (one container, equal margins, 2px either way) (and 6 more like it: \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\", \"02 · CATÁLOGO INTERACTIV\") (SR-6)",
-     "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
-     "rule": "SR-6 T1-margins",
+     "sel": "header.sticky.top-0",
+     "text": "PUNTO PRISMA STUDIO ASUNCIÓN · PY Soluci",
+     "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
      "crop": "768-rhythm-22-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "header.sticky.top-0",
-     "text": "PUNTO PRISMA STUDIO ASUNCIÓN · PY Soluci",
-     "msg": "a <header> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 9 more like it: \"PUNTO PRISMA STUDIO PY I\", \"Contacto directo\", \"INFRAESTRUCTURA DIGITAL \") (SR-6)",
+     "sel": "footer.border-t.bg-studio-void",
+     "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
+     "msg": "a <footer> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 8 more like it: \"Contacto directo\", \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\") (SR-6)",
      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
      "rule": "SR-6 T1-structure",
      "crop": "768-rhythm-23-container-edges.jpg"
@@ -1478,9 +1104,9 @@
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "header.sticky.top-0 > div.max-w-7xl.mx-auto > div.hidden.items-center > a.h-11.inline-flex",
-     "text": "WhatsApp Directo ↗",
-     "msg": "\"WhatsApp Directo ↗\" runs 751-955px, outside the container lines of the nav at 24-744px: full width is for background layers and grounds only (and 13 more like it: \"WhatsApp Directo ↗\", \"↗\", \"WhatsApp Directo\") (SR-6)",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
+     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
+     "msg": "a box runs 24-744px, outside the container lines of section 6 at 73-695px: full width is for background layers and grounds only (SR-6)",
      "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
      "rule": "SR-6 T2-containment",
      "crop": "768-rhythm-24-container-edges.jpg"
@@ -1488,42 +1114,32 @@
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "div.space-y-4.mb-8 > div.grid.grid-cols-1 > div:nth-of-type(2) > label.block.font-mono",
-     "text": "Filtrar por categoría comercial",
-     "msg": "1 text block starts on a left line at x 453, 429px from the container's left: text starts on the container's left, or on one split line (x 334, 396, 458) (and 7 more like it: x 198, x 75, x 70) (SR-6)",
-     "fix": "start the text on the container's left, or on the one split line every split shares",
-     "rule": "SR-6 T3-left-lines",
+     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1 > div.p-8.font-mono",
+     "text": "ESPECIFICACIONES TÉCNICAS AUDITADO Relev",
+     "msg": "a box runs 25-743px, outside the container lines of section 6 at 73-695px: full width is for background layers and grounds only (and 7 more like it: \"04 · PREGUNTAS FRECUENTE\", \"Resolución técnica direc\", \"¿Cómo llegan los pedidos\") (SR-6)",
+     "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+     "rule": "SR-6 T2-containment",
      "crop": "768-rhythm-25-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > div.font-mono.text-xs",
-     "text": "INICIAR PROYECTO CON UN INGENIERO",
-     "msg": "\"INICIAR PROYECTO CON UN INGENIER\" is set centred across 606px, over half the 606px container: text that wide is set left (and 2 more like it: \"Poné tu catálogo web a c\", \"Consultá directamente al\") (SR-6)",
-     "fix": "set the text left (text-align: start)",
-     "rule": "SR-6 T4-alignment",
+     "sel": "div.space-y-4.mb-8 > div.grid.grid-cols-1 > div:nth-of-type(2) > label.block.font-mono",
+     "text": "Filtrar por categoría comercial",
+     "msg": "1 text block starts on a left line at x 453, 429px from the container's left: text starts on the container's left, or on one split line (x 334, 396, 458) (and 6 more like it: x 87, x 77, x 57) (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
      "crop": "768-rhythm-26-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "header.sticky.top-0 > div.max-w-7xl.mx-auto > div.hidden.items-center",
-     "text": "WhatsApp Directo ↗",
-     "msg": "the page scrolls sideways (955px wide on a 768px screen): \"WhatsApp Directo ↗\" ends at 955px (and 4 more like it: \"WhatsApp Directo ↗\", \"↗\", \"WhatsApp Directo\") (SR-6)",
-     "fix": "take the sideways scroll away: nothing wider than the screen (overflow-x: clip on the part that spills)",
-     "rule": "SR-6 T5-overflow",
-     "crop": "768-rhythm-27-container-edges.jpg"
-    },
-    {
-     "check": "container-edges",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
      "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "a box over half the container wide runs 24-744px, not on the container's lines at 81-687px (SR-6)",
+     "msg": "a box over half the container wide runs 24-744px, not on the container's lines at 73-695px (SR-6)",
      "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
      "rule": "SR-6 T6-right-edges",
-     "crop": "768-rhythm-28-container-edges.jpg"
+     "crop": "768-rhythm-27-container-edges.jpg"
     },
     {
      "check": "row-lines",
@@ -1533,7 +1149,7 @@
      "msg": "a row of 3 items: its last item ends at 536px, the container's right line at 744px (2px either way) (SR-7)",
      "fix": "start the row's first item on the container's left line and end its last on the right line, every item one height",
      "rule": "SR-7 T-rows",
-     "crop": "768-rhythm-29-row-lines.jpg"
+     "crop": "768-rhythm-28-row-lines.jpg"
     },
     {
      "check": "split-pair",
@@ -1543,7 +1159,7 @@
      "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 453, on none of the split lines 334 (k=5), 396 (k=6), 458 (k=7) (SR-8)",
      "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
      "rule": "SR-8 T-pair",
-     "crop": "768-rhythm-30-split-pair.jpg"
+     "crop": "768-rhythm-29-split-pair.jpg"
     }
    ],
    "glAsked": 0
@@ -1560,90 +1176,10 @@
      "sev": "FAIL",
      "sel": "aside.fixed.bottom-4",
      "text": "",
-     "msg": "sits on top of the text \"Cada proyecto se entrega listo para oper\" while the page scrolls: part of the line shows beside it",
-     "stop": 1,
-     "crop": "390-06-nav-covers.jpg",
-     "fix": "make the fixed nav one opaque band across the whole screen, or let it scroll away with the page"
-    },
-    {
-     "check": "tap-size",
-     "sev": "FAIL",
-     "sel": "div.space-y-2:nth-of-type(2) > ul.space-y-1 > li:nth-of-type(1) > a.transition-colors",
-     "text": "01. Soluciones y Planes",
-     "msg": "a 166x16px tap target (and 3 more like it on this screen): 4px from the next one (\"02. Catálogo de Demos\"), so a thumb lands on the wrong one",
-     "stop": 17,
-     "crop": "390-27-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
-     "text": "Infraestructura Digital, Catálogos Móviles y Sis",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+     "msg": "sits on top of the text \"₲ 1.850.000\" while the page scrolls: part of the line shows beside it",
      "stop": 0,
-     "crop": "390-01-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 2,
-     "crop": "390-09-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "no-visual",
-     "sev": "FAIL",
-     "sel": "section#proceso",
-     "text": "Listo en 7 días hábiles. Proceso técnico sin bur",
-     "msg": "no picture, effect or mock in this section; a feature section needs a visual",
-     "stop": 14,
-     "crop": "390-21-no-visual.jpg",
-     "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "section#faq",
-     "text": "Resolución técnica directa.",
-     "msg": "the section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 15,
-     "crop": "390-23-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "text-only",
-     "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "the closing section is only text: no picture, icon, mock or effect in it (2 sections like it at this width)",
-     "stop": 16,
-     "crop": "390-24-text-only.jpg",
-     "fix": "give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground"
-    },
-    {
-     "check": "heading-scale",
-     "sev": "FAIL",
-     "sel": "section#soluciones > div.max-w-7xl.mx-auto > div.mb-8 > h2.font-display.font-extrabold",
-     "text": "Tres niveles de ingeniería digital. Precio cerra",
-     "msg": "an h2 at 24px, as large as the h1 (24px) or larger (and 2 more like it: \"Demostraciones en Vivo\", \"Listo en 7 días hábiles.\")",
-     "stop": 1,
-     "crop": "390-07-heading-scale.jpg",
-     "fix": "size headings by level: the h1 largest, one size per level, each level below the one above"
-    },
-    {
-     "check": "heading-scale",
-     "sev": "FAIL",
-     "sel": "article.swiss-cell.p-5:nth-of-type(7) > div > div.bg-studio-void.border > span.font-mono.text-3xl",
-     "text": "48h",
-     "msg": "the figure \"48h\" is set at 30px, larger than the h1 (24px)",
-     "fix": "set figures below the h1: a stat reads as data, not as the headline",
-     "stop": 12,
-     "crop": "390-19-heading-scale.jpg"
+     "crop": "390-01-nav-covers.jpg",
+     "fix": "make the fixed nav one opaque band across the whole screen, or let it scroll away with the page"
     },
     {
      "check": "nav",
@@ -1656,133 +1192,53 @@
      "crop": "390-02-nav.jpg"
     },
     {
-     "check": "tap-size",
+     "check": "fold-cut",
      "sev": "WARN",
-     "sel": "header.sticky.top-0 > div.max-w-7xl.mx-auto > a.flex.items-center",
-     "text": "PUNTO PRISMA STUDIO",
-     "msg": "a 208x32px tap target: under the 44px a phone needs",
+     "sel": "div.w-full.flex > div.border.bg-studio-surface:nth-of-type(1) > div.divide-y > a.block.p-4:nth-of-type(2)",
+     "text": "02 / CATÁLOGO MÓVIL WHATSAPP ₲ 1.850.000 Catálog",
+     "msg": "the hero's button \"02 / CATÁLOGO MÓVIL WHATSAPP ₲\" is cut by the bottom of the first screen (41px of its 107px below the fold)",
      "stop": 0,
-     "crop": "390-03-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+     "crop": "390-03-fold-cut.jpg",
+     "fix": "size the hero so the heading ends above the fold, or starts below it"
     },
     {
-     "check": "tap-size",
+     "check": "stagger",
      "sev": "WARN",
-     "sel": "button#mobileMenuBtn",
-     "text": "",
-     "msg": "a 42x42px tap target: under the 44px a phone needs",
-     "stop": 0,
-     "crop": "390-04-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "tap-size",
-     "sev": "WARN",
-     "sel": "input#demoSearchInput",
-     "text": "",
-     "msg": "a 358x38px tap target: under the 44px a phone needs",
-     "stop": 5,
-     "crop": "390-11-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "tap-size",
-     "sev": "WARN",
-     "sel": "select#rubroSelect",
-     "text": "Todos los rubros comerciales Ferreterías & Repue",
-     "msg": "a 358x38px tap target: under the 44px a phone needs",
-     "stop": 5,
-     "crop": "390-12-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "tap-size",
-     "sev": "WARN",
-     "sel": "div#planChipsContainer > button.demo-chip.flex-shrink-0:nth-of-type(1)",
-     "text": "TODOS",
-     "msg": "a 59x31px tap target: under the 44px a phone needs",
-     "stop": 5,
-     "crop": "390-13-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "tap-size",
-     "sev": "WARN",
-     "sel": "div#planChipsContainer > button.demo-chip.flex-shrink-0:nth-of-type(2)",
-     "text": "CATÁLOGOS WHATSAPP",
-     "msg": "a 145x31px tap target (and 2 more like it on this screen): under the 44px a phone needs",
-     "stop": 5,
-     "crop": "390-14-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "tap-size",
-     "sev": "WARN",
-     "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(1) > div.space-y-2.pt-3 > a.w-full.h-10",
-     "text": "VER DEMO EN VIVO ↗",
-     "msg": "a 316x40px tap target: under the 44px a phone needs",
+     "sel": "div#demoGrid",
+     "text": "CATÁLOGO WHATSAPP Ferreterías & Repuestos Ferret",
+     "msg": "7 rows start at 2 different left offsets (+0, +0, +0, +0, +0, +0, +4px)",
      "stop": 6,
-     "crop": "390-16-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
+     "crop": "390-07-stagger.jpg",
+     "fix": "start every row of the list on one left edge"
     },
     {
-     "check": "tap-size",
+     "check": "off-grid",
      "sev": "WARN",
-     "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(1) > div.space-y-2.pt-3 > a.w-full.h-9",
-     "text": "PEDIR PARA MI RUBRO →",
-     "msg": "a 316x36px tap target: under the 44px a phone needs",
-     "stop": 6,
-     "crop": "390-17-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "tap-size",
-     "sev": "WARN",
-     "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(7) > a.w-full.h-10",
-     "text": "CONSULTAR POR WHATSAPP →",
-     "msg": "a 316x40px tap target: under the 44px a phone needs",
-     "stop": 12,
-     "crop": "390-20-tap-size.jpg",
-     "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-    },
-    {
-     "check": "cut-text",
-     "sev": "WARN",
-     "sel": "div:nth-of-type(1) > div.relative.bg-studio-void > div.absolute.top-0 > span.font-mono.text-white",
-     "text": "Ferretería & Repuestos Los Laureles",
-     "msg": "shortened with an ellipsis (and 1 more like it: \"Aura Concept Store & Cal\")",
-     "stop": 5,
-     "crop": "390-15-cut-text.jpg",
-     "fix": "give the text room: no overflow clipping a line, no line past its box"
-    },
-    {
-     "check": "cta",
-     "sev": "WARN",
-     "sel": "section#proceso",
-     "text": "Listo en 7 días hábiles. Proceso técnico sin bur",
-     "msg": "a section over 1.5 screens long with no link or button in it",
-     "stop": 14,
-     "crop": "390-22-cta.jpg",
-     "fix": "add the action: a button in the hero, one on every priced item, one in the closing section"
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
+     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
+     "msg": "the section's heading starts at 49px, in a block centred on the page with its words on the left, 33px off the page margin (16px), and no other section starts there",
+     "stop": 16,
+     "crop": "390-08-off-grid.jpg",
+     "fix": "move it onto the page margin, or the column edge its section uses"
     },
     {
      "check": "body-size",
      "sev": "WARN",
-     "sel": "div.max-w-7xl.mx-auto > div.grid.grid-cols-1 > div.flex.flex-col:nth-of-type(1) > p.text-studio-muted.text-sm",
-     "text": "Desarrollamos interfaces web de alta velocidad p",
-     "stop": 0,
-     "msg": "6 of 6 paragraphs of running text are set under 16px (14px)",
-     "crop": "390-05-body-size.jpg",
+     "sel": "section#soluciones > div.max-w-7xl.mx-auto > div.mb-8 > p.text-studio-muted.text-sm",
+     "text": "Cada proyecto se entrega listo para operar, con ",
+     "stop": 1,
+     "msg": "5 of 5 paragraphs of running text are set under 16px (14px)",
+     "crop": "390-04-body-size.jpg",
      "fix": "set running text at 16px or more"
     },
     {
      "check": "section-gaps",
      "sev": "WARN",
-     "sel": "main#inicio > section.border-b.relative / section#soluciones",
+     "sel": "main#inicio > section.hero--editorial.border-b / section#soluciones",
      "text": "",
      "stop": 1,
-     "msg": "81px between these sections, -34% against the median 123px",
-     "crop": "390-08-section-gaps.jpg",
+     "msg": "69px between these sections, -44% against the median 123px",
+     "crop": "390-05-section-gaps.jpg",
      "fix": "use one gap between sections (all within 25% of each other)"
     },
     {
@@ -1795,51 +1251,31 @@
      "fix": "confirm the library photograph shows the client's own product, place or people; otherwise replace it"
     },
     {
-     "check": "heading-align",
-     "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
-     "text": "Poné tu catálogo web a cerrar ventas por WhatsAp",
-     "msg": "4 section headings sit on the left, 1 centred: \"Poné tu catálogo web a c\"",
-     "stop": 16,
-     "crop": "390-25-heading-align.jpg",
-     "fix": "set every section heading in one place: all on the left grid, or all centred"
-    },
-    {
      "check": "stranded-action",
      "sev": "WARN",
      "sel": "div.grid.grid-cols-1 > div.p-5.flex:nth-of-type(2) > div:nth-of-type(2) > a.w-full.h-11",
      "text": "QUIERO EL CATÁLOGO MÓVIL →",
-     "msg": "stands 537px down from the nearest text of its block (\"La herramienta definitiva para\")",
+     "msg": "stands 387px down from the nearest text of its block (\"MOTOR DE VENTAS MÓVIL 0% COMIS\")",
      "stop": 3,
-     "crop": "390-10-stranded-action.jpg",
+     "crop": "390-06-stranded-action.jpg",
      "fix": "put the button under or beside the text it belongs to"
     },
     {
      "check": "orphan",
      "sev": "WARN",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > p.text-studio-muted.text-sm",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > p.text-studio-muted.text-sm",
      "text": "Consultá directamente al +595 986 125 649. Evalu",
      "msg": "its last line holds only \"día.\"",
      "stop": 16,
-     "crop": "390-26-orphan.jpg",
+     "crop": "390-09-orphan.jpg",
      "fix": "rebalance the text (text-wrap: pretty, or a shorter line) so the last line holds more than one short word"
-    },
-    {
-     "check": "photo-weight",
-     "sev": "WARN",
-     "sel": "article.swiss-cell.p-5:nth-of-type(2) > div:nth-of-type(1) > div.relative.bg-studio-void > img.w-full.h-full",
-     "text": "sillon-1280.jpg",
-     "msg": "a photograph is 3x or more wider than drawn on the phone, with no srcset: sillon-1280.jpg is 1376px (806 KB, lazy) for a 314px frame; on a phone it arrives late and its frame shows only its ground until then",
-     "fix": "give each photograph srcset and sizes (a 800px and a 1600px file), or a smaller file: the frame never shows empty",
-     "stop": 7,
-     "crop": "390-18-photo-weight.jpg"
     },
     {
      "check": "hero-screen",
      "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
+     "sel": "main#inicio > section.hero--editorial.border-b",
      "text": "INFRAESTRUCTURA DIGITAL / ASUNCIÓN, PARA",
-     "msg": "the hero ends at 1266px on a 844px screen, 422px below the fold: it ends at the fold, 1px either way (SR-1)",
+     "msg": "the hero ends at 1197px on a 844px screen, 353px below the fold: it ends at the fold, 1px either way (SR-1)",
      "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
      "rule": "SR-1 T1",
      "crop": "390-rhythm-01-hero-screen.jpg"
@@ -1849,7 +1285,7 @@
      "sev": "FAIL",
      "sel": "section#demos",
      "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
-     "msg": "the section is 5570px tall (6.6 screens), 3882px over two screens (1688px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "msg": "the section is 5237px tall (6.2 screens), 3549px over two screens (1688px): every section after the hero is one screen or two, 2px either way (SR-2)",
      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
      "rule": "SR-2 T-height",
      "crop": "390-rhythm-05-section-height.jpg"
@@ -1859,7 +1295,7 @@
      "sev": "FAIL",
      "sel": "section#soluciones",
      "text": "01 · PILARES DE SERVICIO Tres niveles de",
-     "msg": "the section is 2491px tall (3 screens), 803px over two screens (1688px): every section after the hero is one screen or two, 2px either way (SR-2)",
+     "msg": "the section is 2432px tall (2.9 screens), 744px over two screens (1688px): every section after the hero is one screen or two, 2px either way (SR-2)",
      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
      "rule": "SR-2 T-height",
      "crop": "390-rhythm-06-section-height.jpg"
@@ -1867,9 +1303,9 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6)",
-     "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
-     "msg": "the section is 581px tall (0.7 screens), 263px short of one screen (844px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"PUNTO PRISMA STUDIO PY I\", \"04 · PREGUNTAS FRECUENTE\", \"03 · METODOLOGÍA ÁGIL Li\") (SR-2)",
+     "sel": "section#proceso",
+     "text": "03 · METODOLOGÍA ÁGIL Listo en 7 días há",
+     "msg": "the section is 1910px tall (2.3 screens), 222px over two screens (1688px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"PUNTO PRISMA STUDIO PY I\", \"04 · PREGUNTAS FRECUENTE\", \"INICIAR PROYECTO CON UN \") (SR-2)",
      "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
      "rule": "SR-2 T-height",
      "crop": "390-rhythm-07-section-height.jpg"
@@ -1877,9 +1313,9 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "01 · PILARES DE SERVICIO Tres niveles de",
-     "msg": "the section starts at 1266px, 422px above the screen grid (2 x 844px): sections start on whole screens (SR-2)",
+     "sel": "section#proceso",
+     "text": "03 · METODOLOGÍA ÁGIL Listo en 7 días há",
+     "msg": "the section starts at 8866px, 418px above the screen grid (11 x 844px): sections start on whole screens (SR-2)",
      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
      "rule": "SR-2 T-grid",
      "crop": "390-rhythm-08-section-height.jpg"
@@ -1887,9 +1323,9 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "section#demos",
-     "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
-     "msg": "the section starts at 3757px, 381px below the screen grid (4 x 844px): sections start on whole screens (SR-2)",
+     "sel": "section#soluciones",
+     "text": "01 · PILARES DE SERVICIO Tres niveles de",
+     "msg": "the section starts at 1197px, 353px below the screen grid (1 x 844px): sections start on whole screens (SR-2)",
      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
      "rule": "SR-2 T-grid",
      "crop": "390-rhythm-09-section-height.jpg"
@@ -1897,9 +1333,9 @@
     {
      "check": "section-height",
      "sev": "FAIL",
-     "sel": "footer.border-t.bg-studio-void",
-     "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the section starts at 12444px, 216px above the screen grid (15 x 844px): sections start on whole screens (and 4 more like it: \"INFRAESTRUCTURA DIGITAL \", \"INICIAR PROYECTO CON UN \", \"03 · METODOLOGÍA ÁGIL Li\") (SR-2)",
+     "sel": "section#demos",
+     "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
+     "msg": "the section starts at 3629px, 253px below the screen grid (4 x 844px): sections start on whole screens (and 4 more like it: \"04 · PREGUNTAS FRECUENTE\", \"INICIAR PROYECTO CON UN \", \"INFRAESTRUCTURA DIGITAL \") (SR-2)",
      "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
      "rule": "SR-2 T-grid",
      "crop": "390-rhythm-10-section-height.jpg"
@@ -1907,9 +1343,9 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "main#inicio > section.border-b.relative",
-     "text": "INFRAESTRUCTURA DIGITAL / ASUNCIÓN, PARA",
-     "msg": "the screen at scroll 844px (stride 1) shows 357px of section 1 and the content of 2 sections, over 24px each beside section 2: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "sel": "section#demos",
+     "text": "02 · CATÁLOGO INTERACTIVO Demostraciones",
+     "msg": "the screen at scroll 8440px (stride 10) shows 361px of section 3 and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
      "rule": "SR-4 T-views",
      "crop": "390-rhythm-11-one-section.jpg"
@@ -1917,9 +1353,9 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "section#soluciones",
-     "text": "01 · PILARES DE SERVICIO Tres niveles de",
-     "msg": "the screen at scroll 3376px (stride 4) shows 316px of section 2 and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+     "sel": "main#inicio > section.hero--editorial.border-b",
+     "text": "INFRAESTRUCTURA DIGITAL / ASUNCIÓN, PARA",
+     "msg": "the screen at scroll 844px (stride 1) shows 288px of section 1 and the content of 2 sections, over 24px each beside section 2: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
      "rule": "SR-4 T-views",
      "crop": "390-rhythm-12-one-section.jpg"
@@ -1927,9 +1363,9 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "footer.border-t.bg-studio-void",
-     "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "the screen at scroll 11863px (the top of section 6) shows 263px of section 7 and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 3 more like it: scroll 11816px, scroll 12199px, scroll 10128px) (SR-4)",
+     "sel": "section#faq > div.max-w-7xl.mx-auto > div.mb-10 > h2.font-display.font-extrabold",
+     "text": "Resolución técnica directa.",
+     "msg": "the screen at scroll 10128px (stride 12) shows 197px of section 5 and the heading of section 5 whole and the content of 2 sections, over 24px each beside section 4: a screen shows one section (another may peek 8px, 24px WARN) (and 4 more like it: scroll 3376px, scroll 10972px, scroll 12447px) (SR-4)",
      "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
      "rule": "SR-4 T-views",
      "crop": "390-rhythm-13-one-section.jpg"
@@ -1937,7 +1373,7 @@
     {
      "check": "one-section",
      "sev": "FAIL",
-     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border",
+     "sel": "main#inicio > section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.grid.grid-cols-1",
      "text": "INICIAR PROYECTO CON UN INGENIERO Poné t",
      "msg": "a band: a box 92% of the section wide on a ground of its own that holds the heading or the intro: the section's own ground is the band (SR-4)",
      "fix": "put every block of <main> in a <section>, and give a band its own section instead of a ground inside one",
@@ -1959,7 +1395,7 @@
      "sev": "FAIL",
      "sel": "footer.border-t.bg-studio-void",
      "text": "PUNTO PRISMA STUDIO PY Ingeniería de sof",
-     "msg": "a <footer> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 8 more like it: \"Contacto directo\", \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\") (SR-6)",
+     "msg": "a <footer> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
      "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
      "rule": "SR-6 T1-structure",
      "crop": "390-rhythm-16-container-edges.jpg"
@@ -1967,29 +1403,29 @@
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "div#planChipsContainer > button.demo-chip.flex-shrink-0:nth-of-type(4)",
-     "text": "CORPORATIVOS & SISTEMAS",
-     "msg": "\"CORPORATIVOS & SISTEMAS\" runs 382-390px, outside the container lines of section 3 at 16-374px: full width is for background layers and grounds only (SR-6)",
-     "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
-     "rule": "SR-6 T2-containment",
+     "sel": "aside.fixed.bottom-4",
+     "text": "Contacto directo",
+     "msg": "a <aside> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 7 more like it: \"INFRAESTRUCTURA DIGITAL \", \"01 · PILARES DE SERVICIO\", \"02 · CATÁLOGO INTERACTIV\") (SR-6)",
+     "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+     "rule": "SR-6 T1-structure",
      "crop": "390-rhythm-17-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "div#planChipsContainer > button.demo-chip.flex-shrink-0:nth-of-type(4)",
-     "text": "CORPORATIVOS & SISTEMAS",
-     "msg": "a box runs 369-390px, outside the container lines of section 3 at 16-374px: full width is for background layers and grounds only (SR-6)",
-     "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
-     "rule": "SR-6 T2-containment",
+     "sel": "article.swiss-cell.p-6 > div.flex-1 > div.flex.items-center > span:nth-of-type(2)",
+     "text": "PROTOTIPADO RÁPIDO PYMES",
+     "msg": "3 text blocks start on a left line at x 65, 49px from the container's left: text starts on the container's left, or on one split line (x 175, 207, 239) (also \"INICIAR PROYECTO CON UN INGENIER\", \"Presencia Express\") (SR-6)",
+     "fix": "start the text on the container's left, or on the one split line every split shares",
+     "rule": "SR-6 T3-left-lines",
      "crop": "390-rhythm-18-container-edges.jpg"
     },
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
      "text": "Poné tu catálogo web a cerrar ventas por",
-     "msg": "1 text block starts on a left line at x 124, 108px from the container's left: text starts on the container's left, or on one split line (x 175, 207, 239) (SR-6)",
+     "msg": "3 text blocks start on a left line at x 49, 33px from the container's left: text starts on the container's left, or on one split line (x 175, 207, 239) (also \"Consultá directamente al +595 98\", \"Disponibilidad en Asunción\") (SR-6)",
      "fix": "start the text on the container's left, or on the one split line every split shares",
      "rule": "SR-6 T3-left-lines",
      "crop": "390-rhythm-19-container-edges.jpg"
@@ -1997,22 +1433,12 @@
     {
      "check": "container-edges",
      "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > h2.font-display.font-extrabold",
+     "sel": "div.grid.grid-cols-1 > div.p-8.flex:nth-of-type(1) > div:nth-of-type(1) > h2.font-display.font-extrabold",
      "text": "Poné tu catálogo web a cerrar ventas por",
-     "msg": "the h2 starts 108px right of the container's left: every h1 and h2 starts on it, 2px either way (and 4 more like it: x 66, x 62, x 55) (SR-6)",
+     "msg": "the h2 starts 33px right of the container's left: every h1 and h2 starts on it, 2px either way (and 1 more like it: x 37) (SR-6)",
      "fix": "start the text on the container's left, or on the one split line every split shares",
      "rule": "SR-6 T3-left-lines",
      "crop": "390-rhythm-20-container-edges.jpg"
-    },
-    {
-     "check": "container-edges",
-     "sev": "FAIL",
-     "sel": "section.py-16.border-b:nth-of-type(6) > div.max-w-7xl.mx-auto > div.p-8.border > div.font-mono.text-xs",
-     "text": "INICIAR PROYECTO CON UN INGENIERO",
-     "msg": "\"INICIAR PROYECTO CON UN INGENIER\" is set centred across 292px, over half the 358px container: text that wide is set left (and 2 more like it: \"Poné tu catálogo web a c\", \"Consultá directamente al\") (SR-6)",
-     "fix": "set the text left (text-align: start)",
-     "rule": "SR-6 T4-alignment",
-     "crop": "390-rhythm-21-container-edges.jpg"
     },
     {
      "check": "container-edges",
@@ -2022,36 +1448,17 @@
      "msg": "a box over half the container wide runs 16-197px, not on the container's lines at 16-374px (SR-6)",
      "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
      "rule": "SR-6 T6-right-edges",
-     "crop": "390-rhythm-22-container-edges.jpg"
+     "crop": "390-rhythm-21-container-edges.jpg"
     },
     {
-     "check": "row-lines",
+     "check": "container-edges",
      "sev": "FAIL",
-     "sel": "div#planChipsContainer",
-     "text": "TODOS CATÁLOGOS WHATSAPP LANDING EXPRESS",
-     "msg": "a sideways scroller: 173px of it hidden behind overflow-x: auto (SR-7)",
-     "fix": "show every item inside the container, or stack them: no sideways scroller, no half-cut carousel",
-     "rule": "SR-7 T-overflow",
-     "crop": "390-rhythm-23-row-lines.jpg"
-    },
-    {
-     "check": "row-lines",
-     "sev": "FAIL",
-     "sel": "div#planChipsContainer > button.demo-chip.flex-shrink-0:nth-of-type(4)",
+     "sel": "div#planChipsContainer > button.demo-chip.whitespace-nowrap:nth-of-type(4)",
      "text": "CORPORATIVOS & SISTEMAS",
-     "msg": "\"CORPORATIVOS & SISTEMAS\" ends at 390px, past the container's right line at 374px (SR-7)",
-     "fix": "end it at the container's right line",
-     "rule": "SR-7 T-right",
-     "crop": "390-rhythm-24-row-lines.jpg"
-    },
-    {
-     "check": "empty-visual",
-     "sev": "FAIL",
-     "sel": "img (sillon-1280.jpg)",
-     "text": "sillon-1280.jpg",
-     "msg": "on a phone over a slow mobile line (1.6 Mbit/s) the frame of sillon-1280.jpg is still empty 1 s after it comes on screen (scrolled to at a reading pace): the file is 806 KB, 1376px wide for a 314px frame",
-     "fix": "serve the photograph at the size it is drawn (srcset and sizes: an 800px file for the phone), load it before it is reached (no loading=lazy on the next screen), or give the frame a blurred still of it",
-     "crop": "390-slow-01-empty-visual.jpg"
+     "msg": "a box over half the container wide runs 157-343px, not on the container's lines at 16-374px (SR-6)",
+     "fix": "run the picture or box from the container's left line to its right line, or put it in a row or a split",
+     "rule": "SR-6 T6-right-edges",
+     "crop": "390-rhythm-22-container-edges.jpg"
     }
    ],
    "glAsked": 0
@@ -2063,11 +1470,11 @@
   "notRead": 0
  },
  "hidden": {
-  "screens": 16
+  "screens": 41
  },
  "slow": {
   "stops": 19,
-  "late": 1
+  "late": 0
  },
  "sweep": {
   "widths": [
@@ -2082,149 +1489,34 @@
   "width": 320,
   "height": 640,
   "errors": [],
-  "findings": [
-   {
-    "check": "fold-cut",
-    "sev": "WARN",
-    "sel": "div.grid.grid-cols-1 > div.flex.flex-col:nth-of-type(1) > div.flex.flex-col > a.h-11.px-6:nth-of-type(2)",
-    "text": "COTIZAR POR WHATSAPP ↗",
-    "msg": "the hero's button \"COTIZAR POR WHATSAPP ↗\" is cut by the bottom of the first screen (11px of its 44px below the fold)",
-    "crop": "narrow-320-01-fold-cut.jpg",
-    "width": 320,
-    "fix": "size the hero so the heading ends above the fold, or starts below it"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "header.sticky.top-0 > div.max-w-7xl.mx-auto > a.flex.items-center",
-    "text": "PUNTO PRISMA STUDIO",
-    "msg": "a 208x32px tap target: under the 44px a phone needs",
-    "crop": "narrow-320-02-tap-size.jpg",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "button#mobileMenuBtn",
-    "text": "",
-    "msg": "a 42x42px tap target: under the 44px a phone needs",
-    "crop": "narrow-320-03-tap-size.jpg",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "input#demoSearchInput",
-    "text": "",
-    "msg": "a 288x38px tap target: under the 44px a phone needs",
-    "crop": "narrow-320-04-tap-size.jpg",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "select#rubroSelect",
-    "text": "Todos los rubros comerciales Ferreterías & Repue",
-    "msg": "a 288x38px tap target: under the 44px a phone needs",
-    "crop": "narrow-320-05-tap-size.jpg",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "div#planChipsContainer > button.demo-chip.flex-shrink-0:nth-of-type(1)",
-    "text": "TODOS",
-    "msg": "a 59x31px tap target: under the 44px a phone needs",
-    "crop": "narrow-320-06-tap-size.jpg",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "div#planChipsContainer > button.demo-chip.flex-shrink-0:nth-of-type(2)",
-    "text": "CATÁLOGOS WHATSAPP",
-    "msg": "a 145x31px tap target (and 2 more like it on this screen): under the 44px a phone needs",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(1) > div.space-y-2.pt-3 > a.w-full.h-10",
-    "text": "VER DEMO EN VIVO ↗",
-    "msg": "a 246x40px tap target: under the 44px a phone needs",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(1) > div.space-y-2.pt-3 > a.w-full.h-9",
-    "text": "PEDIR PARA MI RUBRO →",
-    "msg": "a 246x36px tap target: under the 44px a phone needs",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "WARN",
-    "sel": "div#demoGrid > article.swiss-cell.p-5:nth-of-type(7) > a.w-full.h-10",
-    "text": "CONSULTAR POR WHATSAPP →",
-    "msg": "a 246x40px tap target: under the 44px a phone needs",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "tap-size",
-    "sev": "FAIL",
-    "sel": "div.space-y-2:nth-of-type(2) > ul.space-y-1 > li:nth-of-type(1) > a.transition-colors",
-    "text": "01. Soluciones y Planes",
-    "msg": "a 166x16px tap target (and 3 more like it on this screen): 4px from the next one (\"02. Catálogo de Demos\"), so a thumb lands on the wrong one",
-    "width": 320,
-    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box"
-   },
-   {
-    "check": "off-viewport",
-    "sev": "FAIL",
-    "sel": "(the page)",
-    "text": "",
-    "msg": "the page is 326px wide on a 320px screen and scrolls sideways",
-    "width": 320,
-    "fix": "keep it inside the screen at this width: let it shrink, wrap or stack"
-   }
-  ]
+  "findings": []
  },
  "counts": {
-  "FAIL": 130,
-  "WARN": 84
+  "FAIL": 81,
+  "WARN": 61
  },
  "checks": {
   "assets": "PASS",
   "shader-lint": "PASS",
   "gl-fallback": "PASS",
-  "empty-visual": "FAIL",
+  "empty-visual": "PASS",
   "hero-fill": "PASS",
   "flush": "PASS",
   "placeholder": "PASS",
   "sample-label": "PASS",
   "caption": "PASS",
-  "credit-wall": "FAIL",
-  "nav": "FAIL",
+  "credit-wall": "PASS",
+  "nav": "WARN",
   "nav-covers": "FAIL",
   "spill": "PASS",
-  "off-viewport": "FAIL",
+  "off-viewport": "PASS",
   "fold-card": "PASS",
   "hover-spill": "PASS",
   "overlap-text": "PASS",
   "collide": "PASS",
-  "tap-size": "FAIL",
+  "tap-size": "PASS",
   "row-gap": "PASS",
-  "cut-text": "FAIL",
+  "cut-text": "PASS",
   "fold-cut": "WARN",
   "marquee": "PASS",
   "scroll-linked": "PASS",
@@ -2234,8 +1526,8 @@
   "reduced-motion": "PASS",
   "hidden-content": "PASS",
   "webgl": "PASS",
-  "no-visual": "FAIL",
-  "text-only": "FAIL",
+  "no-visual": "PASS",
+  "text-only": "PASS",
   "card-visual": "PASS",
   "hidden-visual": "PASS",
   "card-family": "PASS",
@@ -2245,22 +1537,22 @@
   "ui-fit": "PASS",
   "ui-centre": "PASS",
   "dark-ground": "PASS",
-  "button-styles": "FAIL",
+  "button-styles": "PASS",
   "button-shape": "PASS",
   "same-action": "PASS",
   "button-picture": "PASS",
-  "cta": "WARN",
+  "cta": "PASS",
   "pricing-tiers": "PASS",
   "copy-headline": "WARN",
   "copy-fact": "PASS",
   "copy-headings": "WARN",
   "copy-buttons": "WARN",
   "copy-actions": "WARN",
-  "heading-scale": "FAIL",
-  "stagger": "PASS",
+  "heading-scale": "PASS",
+  "stagger": "WARN",
   "top-stagger": "PASS",
-  "off-grid": "PASS",
-  "col-edge": "PASS",
+  "off-grid": "WARN",
+  "col-edge": "WARN",
   "right-edge": "PASS",
   "centre-axis": "PASS",
   "tilt": "PASS",
@@ -2270,7 +1562,7 @@
   "busy-ground": "PASS",
   "section-gaps": "WARN",
   "proximity": "PASS",
-  "hole": "FAIL",
+  "hole": "PASS",
   "links": "PASS",
   "forms": "PASS",
   "photo-upscale": "PASS",
@@ -2279,18 +1571,18 @@
   "nav-family": "WARN",
   "nav-labels": "WARN",
   "link-styles": "PASS",
-  "heading-align": "WARN",
+  "heading-align": "PASS",
   "label-centre": "PASS",
-  "fake-button": "WARN",
+  "fake-button": "PASS",
   "stranded-action": "WARN",
   "orphan": "WARN",
   "unit-break": "PASS",
   "tab-wrap": "PASS",
   "effects-fit": "PASS",
   "fade-cut": "PASS",
-  "photo-weight": "WARN",
+  "photo-weight": "PASS",
   "copy-length": "WARN",
-  "nav-current": "WARN",
+  "nav-current": "PASS",
   "progress-bar": "PASS",
   "photo-repeat": "PASS",
   "button-contrast": "PASS",
@@ -2328,14 +1620,14 @@
   "count-text": "PASS",
   "loop-cycle": "PASS",
   "section-tile": "PASS",
-  "empty-area": "FAIL",
+  "empty-area": "PASS",
   "a11y-name": "PASS",
   "img-alt": "PASS",
   "field-label": "PASS",
   "heading-order": "PASS",
   "tabindex": "PASS",
   "focus-ring": "PASS",
-  "focus-visible": "FAIL",
+  "focus-visible": "PASS",
   "focus-hidden": "PASS",
   "skip-link": "WARN",
   "menu-toggle": "PASS",
