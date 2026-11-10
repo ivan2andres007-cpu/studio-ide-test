@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto Prisma Studio · Industrial Lab | Hardware Web & Catálogos WhatsApp</title>
+  <meta name="description"
+    content="Laboratorio de ingeniería web en Asunción, Paraguay. Catálogos móviles de alta velocidad y cotizador en tiempo real en Guaraníes (₲).">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='2'/><circle cx='8' cy='8' r='2'/><line x1='16' y1='8' x2='16' y2='8'/><line x1='8' y1='16' x2='16' y2='16'/></svg>">
+
+  <!-- Google Fonts: Space Grotesk + JetBrains Mono + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            lab: {
+              void: '#0e0f12',
+              chassis: '#16181d',
+              card: '#1b1d24',
+              sunken: '#090a0d',
+              border: '#282b34',
+              borderBright: '#3b3f4d',
+              text: '#f1f2f6',
+              muted: '#8b8f9e',
+              amber: '#f59e0b',
+              amberGlow: '#d97706',
+              emerald: '#10b981',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    ::selection {
+      background-color: #f59e0b;
+      color: #0e0f12;
+    }
+
+    html {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+    }
+
+    body {
+      background-color: #0e0f12;
+      color: #f1f2f6;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Industrial Tactile Bevel */
+    .tactile-bevel {
+      box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.08), inset -1px -1px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    .tactile-btn:active {
+      transform: translateY(1px);
+      box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 0.08), inset 1px 1px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Strict Focus Ring */
+    :focus-visible,
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid #f59e0b !important;
+      outline-offset: 2px !important;
+    }
+
+    /* Custom range slider styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: #090a0d;
+      border: 1px solid #282b34;
+      height: 8px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #f59e0b;
+      cursor: pointer;
+      border: 2px solid #ffffff;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0e0f12;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #282b34;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-amber-500 selection:text-black antialiased">
+
+  <!-- ───────────── VARIANT SELECTOR BAR ───────────── -->
+  <aside aria-label="Selector de Variantes de Diseño"
+    class="bg-black/95 border-b border-lab-border px-4 py-2 font-mono text-[11px] flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 backdrop-blur-md">
+    <div class="flex items-center gap-2 text-lab-muted">
+      <span class="inline-block w-2 h-2 rounded-full bg-lab-amber animate-pulse"></span>
+      <span class="text-white font-semibold">VARIANTE 02:</span>
+      <span>INDUSTRIAL LAB (HARDWARE & CALCULADORA TÉCNICA)</span>
+    </div>
+    <nav class="flex items-center gap-2 overflow-x-auto text-[10px] uppercase">
+      <span class="text-lab-muted">Comparar:</span>
+      <a href="index.html" class="px-2 py-1 border border-lab-border hover:border-white text-lab-muted hover:text-white transition-colors">Original</a>
+      <a href="index-atelier-suizo.html" class="px-2 py-1 border border-lab-border hover:border-white text-lab-muted hover:text-white transition-colors">01. Atelier</a>
+      <a href="index-industrial-lab.html" class="px-2 py-1 border border-lab-amber bg-lab-amber text-black font-bold">02. Industrial Lab</a>
+      <a href="index-modernismo-asuncion.html" class="px-2 py-1 border border-lab-border hover:border-white text-lab-muted hover:text-white transition-colors">03. Asunción</a>
+    </nav>
+  </aside>
+
+  <!-- ───────────── HEADER DE CHÁSIS INDUSTRIAL ───────────── -->
+  <header class="border-b border-lab-border bg-lab-chassis">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Module ID -->
+      <a href="#inicio" class="flex items-center gap-3 group min-h-[44px]">
+        <div class="w-8 h-8 bg-lab-sunken border border-lab-border flex items-center justify-center font-mono text-xs font-bold text-lab-amber group-hover:border-lab-amber transition-colors">
+          PP
+        </div>
+        <div class="flex flex-col text-left">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-sm tracking-tight text-white uppercase">PUNTO PRISMA</span>
+            <span class="px-1.5 py-0.2 bg-lab-sunken border border-lab-border font-mono text-[9px] text-lab-amber font-semibold">SYS.26</span>
+          </div>
+          <span class="font-mono text-[10px] text-lab-muted uppercase">HARDWARE & LAB DIGITAL · ASUNCIÓN</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-6 font-mono text-xs uppercase tracking-wider text-lab-muted">
+        <a href="#modulos" class="hover:text-white transition-colors">[01] Módulos</a>
+        <a href="#cotizador" class="hover:text-lab-amber transition-colors text-white font-semibold flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-lab-amber"></span>
+          <span>[02] Cotizador ₲</span>
+        </a>
+        <a href="#demos" class="hover:text-white transition-colors">[03] Demos en Vivo</a>
+        <a href="#proceso" class="hover:text-white transition-colors">[04] Entrega 7D</a>
+      </nav>
+
+      <!-- Action -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web"
+          target="_blank" rel="noopener"
+          class="h-11 inline-flex items-center gap-2 px-4 border border-lab-amber/40 hover:border-lab-amber bg-lab-sunken text-lab-amber font-mono text-xs uppercase tracking-wider tactile-bevel tactile-btn transition-all">
+          <span class="w-2 h-2 rounded-full bg-lab-emerald"></span>
+          <span>WhatsApp Receptor</span>
+          <span>↗</span>
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="mobileMenuBtn" type="button" aria-expanded="false" aria-label="Abrir menú"
+        class="lg:hidden w-11 h-11 border border-lab-border bg-lab-sunken text-white flex items-center justify-center">
+        <svg class="w-5 h-5 text-lab-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="square" d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-lab-border bg-lab-chassis px-6 py-6 font-mono text-xs uppercase tracking-wider">
+      <nav class="flex flex-col gap-2">
+        <a href="#modulos" class="min-h-[44px] flex items-center text-lab-muted hover:text-white border-b border-lab-border/50">[01] Módulos de Servicio</a>
+        <a href="#cotizador" class="min-h-[44px] flex items-center text-lab-amber hover:text-white border-b border-lab-border/50">[02] Calculadora de Cotización ₲</a>
+        <a href="#demos" class="min-h-[44px] flex items-center text-lab-muted hover:text-white border-b border-lab-border/50">[03] Catálogo de Demos</a>
+        <a href="#proceso" class="min-h-[44px] flex items-center text-lab-muted hover:text-white border-b border-lab-border/50">[04] Cronograma 7 Días</a>
+        <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web"
+          target="_blank" rel="noopener"
+          class="min-h-[44px] mt-4 flex items-center justify-center gap-2 bg-lab-amber text-black font-bold uppercase">
+          <span>Abrir WhatsApp (+595 986 125 649)</span>
+          <span>→</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ───────────── MAIN ───────────── -->
+  <main id="inicio">
+
+    <!-- ───────────── HERO CHASSIS ───────────── -->
+    <section class="border-b border-lab-border py-12 sm:py-16 bg-lab-void">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Diagnostic Bar -->
+        <div class="bg-lab-chassis border border-lab-border p-3 mb-8 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px]">
+          <div class="flex items-center gap-3">
+            <span class="px-2 py-0.5 bg-lab-sunken border border-lab-border text-lab-amber font-bold">DEVICE_STATUS: ONLINE</span>
+            <span class="text-lab-muted">LATENCIA ASUNCIÓN &lt; 0.4s</span>
+          </div>
+          <div class="flex items-center gap-4 text-lab-muted">
+            <span>PASARELA WHATSAPP: 595-986-125-649</span>
+            <span>MONEDA: GUARANÍ (₲)</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7">
+            <div class="inline-block px-2 py-1 bg-lab-chassis border border-lab-border font-mono text-xs text-lab-amber mb-4">
+              LABORATORIO DE SOFTWARE COMERCIAL · PYMES PY
+            </div>
+            <h1 class="font-display font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-6">
+              Motores web y catálogos móviles con cierre directo en WhatsApp.
+            </h1>
+            <p class="text-lab-muted text-base sm:text-lg leading-relaxed max-w-xl mb-8">
+              Fabricamos infraestructura digital de alto rendimiento para ferreterías, talleres automotores, distribuidoras y comercios paraguayos. Tu cliente busca por código, selecciona productos y envía el resumen exacto de la orden directo al WhatsApp de tu negocio.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a href="#cotizador"
+                class="h-11 px-6 bg-lab-amber hover:bg-amber-400 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 tactile-btn transition-colors">
+                <span>Calcular Presupuesto en Vivo</span>
+                <span>↓</span>
+              </a>
+              <a href="#demos"
+                class="h-11 px-6 border border-lab-border hover:border-white bg-lab-chassis hover:bg-lab-card text-white font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 tactile-btn transition-colors">
+                <span>Ver Demos por Rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Hardware Console Panel -->
+          <div class="lg:col-span-5 bg-lab-chassis border border-lab-border p-6 tactile-bevel">
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-lab-border font-mono text-xs">
+              <span class="text-white font-bold flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-lab-emerald"></span>
+                <span>ESPECIFICACIONES DE OPERACIÓN</span>
+              </span>
+              <span class="text-lab-muted">VER. 2026.1</span>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
+                <span class="text-lab-muted">Protocolo de Despacho</span>
+                <span class="text-white font-semibold">WhatsApp Direct API</span>
+              </div>
+              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
+                <span class="text-lab-muted">Comisión por Transacción</span>
+                <span class="text-lab-emerald font-bold">0% (Cero comisiones)</span>
+              </div>
+              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
+                <span class="text-lab-muted">Tiempo de Despliegue</span>
+                <span class="text-lab-amber font-bold">7 Días Hábiles</span>
+              </div>
+              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
+                <span class="text-lab-muted">Dominio de Identidad</span>
+                <span class="text-white font-semibold">.store / .shop / .studio</span>
+              </div>
+            </div>
+
+            <div class="mt-5 p-3 bg-lab-sunken/80 border border-lab-border/80 font-mono text-[11px] text-lab-muted">
+              Hardware web probado en redes celulares 4G/5G de Paraguay con carga en menos de medio segundo.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── INTERACTIVE FEATURE: CALCULADORA DE COTIZACIÓN EN TIEMPO REAL ───────────── -->
+    <section id="cotizador" class="py-16 sm:py-20 border-b border-lab-border bg-lab-chassis">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-10">
+          <div class="inline-flex items-center gap-2 font-mono text-xs text-lab-amber uppercase tracking-wider mb-2">
+            <span class="w-2 h-2 bg-lab-amber rounded-full"></span>
+            <span>MÓDULO INTERACTIVO // COTIZADOR TÉCNICO EN VIVO</span>
+          </div>
+          <h2 class="font-display font-bold text-2xl sm:text-4xl text-white tracking-tight">
+            Calculá tu presupuesto exacto en Guaraníes (₲).
+          </h2>
+          <p class="text-lab-muted text-sm mt-2 max-w-xl">
+            Ajustá el volumen de productos de tu comercio y seleccioná los módulos necesarios para generar una cotización técnica instantánea.
+          </p>
+        </div>
+
+        <!-- Consola de Calculadora -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-lab-sunken border border-lab-border p-6 sm:p-8 tactile-bevel">
+          
+          <!-- Controles a la izquierda -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Selector de Tipo de Solución Base -->
+            <div>
+              <label class="block font-mono text-xs text-lab-muted uppercase tracking-wider mb-2">
+                1. Seleccioná la Arquitectura Base
+              </label>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <button type="button" class="plan-sel-btn p-3 border border-lab-border bg-lab-chassis text-left font-mono text-xs hover:border-lab-amber transition-colors" data-price="1490000" data-name="Presencia Express">
+                  <span class="block text-white font-bold">Express</span>
+                  <span class="text-lab-muted text-[10px]">Landing Page</span>
+                  <span class="block text-lab-amber font-bold mt-1">₲ 1.490.000</span>
+                </button>
+
+                <button type="button" class="plan-sel-btn p-3 border-2 border-lab-amber bg-lab-card text-left font-mono text-xs" data-price="2490000" data-name="Catálogo Móvil WhatsApp" data-active="true">
+                  <span class="block text-white font-bold">Catálogo Móvil</span>
+                  <span class="text-lab-emerald text-[10px] font-semibold">Más elegido PyME</span>
+                  <span class="block text-lab-amber font-bold mt-1">₲ 2.490.000</span>
+                </button>
+
+                <button type="button" class="plan-sel-btn p-3 border border-lab-border bg-lab-chassis text-left font-mono text-xs hover:border-lab-amber transition-colors" data-price="4890000" data-name="Corporativo & Sistemas">
+                  <span class="block text-white font-bold">Corporativo</span>
+                  <span class="text-lab-muted text-[10px]">A Medida</span>
+                  <span class="block text-lab-amber font-bold mt-1">₲ 4.890.000</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Deslizador de SKUs / Productos -->
+            <div class="pt-4 border-t border-lab-border">
+              <div class="flex items-center justify-between mb-2 font-mono text-xs">
+                <span class="text-lab-muted uppercase">2. Volumen Estimado de Productos en Catálogo:</span>
+                <span id="skuDisplay" class="text-lab-amber font-bold text-sm tabular-nums">50 productos iniciales</span>
+              </div>
+              <input id="skuRange" type="range" min="10" max="300" step="10" value="50" class="w-full">
+              <div class="flex justify-between font-mono text-[10px] text-lab-muted mt-1">
+                <span>10 items</span>
+                <span>150 items</span>
+                <span>300+ items</span>
+              </div>
+            </div>
+
+            <!-- Checkboxes de Módulos Opcionales -->
+            <div class="pt-4 border-t border-lab-border space-y-3 font-mono text-xs">
+              <span class="block text-lab-muted uppercase mb-1">3. Módulos Adicionales (Opcionales):</span>
+              
+              <label class="flex items-center gap-3 p-3 bg-lab-chassis border border-lab-border cursor-pointer hover:border-lab-borderBright transition-colors">
+                <input type="checkbox" id="modExcel" class="w-4 h-4 text-lab-amber bg-lab-sunken border-lab-border rounded-none" checked>
+                <div class="flex-1">
+                  <span class="text-white font-semibold">Carga inicial de stock por el equipo de Punto Prisma</span>
+                  <span class="block text-[11px] text-lab-muted">Te cargamos fotos, precios y códigos desde tu planilla o fotos.</span>
+                </div>
+                <span class="text-lab-emerald font-bold text-[11px]">[INCLUIDO]</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 bg-lab-chassis border border-lab-border cursor-pointer hover:border-lab-borderBright transition-colors">
+                <input type="checkbox" id="modDomain" class="w-4 h-4 text-lab-amber bg-lab-sunken border-lab-border rounded-none" checked>
+                <div class="flex-1">
+                  <span class="text-white font-semibold">Dominio comercial propio (.store / .shop) + SSL por 1 año</span>
+                  <span class="block text-[11px] text-lab-muted">Configuración DNS y certificado de seguridad 256-bit.</span>
+                </div>
+                <span class="text-lab-emerald font-bold text-[11px]">[INCLUIDO]</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 bg-lab-chassis border border-lab-border cursor-pointer hover:border-lab-borderBright transition-colors">
+                <input type="checkbox" id="modMultiBranch" class="w-4 h-4 text-lab-amber bg-lab-sunken border-lab-border rounded-none" data-addon="350000">
+                <div class="flex-1">
+                  <span class="text-white font-semibold">Selector Multi-Sucursal (Asunción / San Lorenzo / CDE)</span>
+                  <span class="block text-[11px] text-lab-muted">Deriva el pedido por WhatsApp a la sucursal más cercana del comprador.</span>
+                </div>
+                <span class="text-lab-amber font-bold text-[11px]">+ ₲ 350.000</span>
+              </label>
+            </div>
+
+          </div>
+
+          <!-- Pantalla LED / LCD de Resultado a la derecha -->
+          <div class="lg:col-span-5 bg-lab-chassis border border-lab-border p-6 flex flex-col justify-between tactile-bevel">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-lab-border font-mono text-xs text-lab-muted">
+                <span>ESTIMACIÓN EN GUARANÍES</span>
+                <span class="text-lab-emerald font-bold">IVA INCLUIDO</span>
+              </div>
+
+              <!-- Digital Readout Display -->
+              <div class="bg-lab-sunken border border-lab-border p-5 my-6">
+                <span class="font-mono text-xs text-lab-muted uppercase block mb-1">Total Presupuestado:</span>
+                <div id="totalQuoteDisplay" class="font-mono text-3xl sm:text-4xl font-bold text-lab-amber tracking-tight tabular-nums">
+                  ₲ 2.490.000
+                </div>
+                <div id="quoteBreakdownLabel" class="font-mono text-[11px] text-lab-muted mt-2">
+                  Plan Catálogo Móvil (50 productos) + Dominio & SSL
+                </div>
+              </div>
+
+              <div class="space-y-2 font-mono text-xs text-lab-muted">
+                <div class="flex justify-between">
+                  <span>Plazo de entrega:</span>
+                  <span class="text-white font-bold">7 días hábiles</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Modalidad de pago:</span>
+                  <span class="text-white">50% anticipo / 50% al entregar</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Factura legal:</span>
+                  <span class="text-lab-emerald font-bold">Incluida</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Export to WhatsApp -->
+            <div class="pt-6 mt-6 border-t border-lab-border">
+              <a id="exportWaBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20cotic%C3%A9%20un%20Cat%C3%A1logo%20M%C3%B3vil%20por%20Gs.%202.490.000"
+                target="_blank" rel="noopener"
+                class="w-full h-12 bg-lab-amber hover:bg-amber-400 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 tactile-btn transition-colors">
+                <span>Enviar Cotización a WhatsApp</span>
+                <span>→</span>
+              </a>
+              <span class="block font-mono text-[10px] text-lab-muted text-center mt-2">
+                Recibís la confirmación formal en tu celular en minutos.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────── MÓDULOS DE ARQUITECTURA (3 PILARES) ───────────── -->
+    <section id="modulos" class="pricing py-16 sm:py-20 border-b border-lab-border bg-lab-void">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-12">
+          <div class="font-mono text-xs text-lab-amber uppercase tracking-wider mb-2">[SYS-MOD // 01] ARQUITECTURA DE SOFTWARE</div>
+          <h2 class="font-display font-bold text-2xl sm:text-4xl text-white tracking-tight">
+            Tres niveles calibrados para el comercio paraguayo.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Mod 1 -->
+          <div class="bg-lab-chassis border border-lab-border p-6 flex flex-col justify-between tactile-bevel">
+            <div>
+              <div class="font-mono text-[11px] text-lab-muted pb-3 border-b border-lab-border mb-4 flex justify-between">
+                <span>MOD-01 // EXPRESS</span>
+                <span>LANDING PAGE</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white mb-2">Presencia Express</h3>
+              <p class="text-xs text-lab-muted mb-6 leading-relaxed">
+                Página web rápida para validar servicios, consultorios y estudios en Asunción con un canal directo a WhatsApp.
+              </p>
+              <div class="p-3 bg-lab-sunken border border-lab-border font-mono text-xl font-bold text-white mb-6 tabular-nums">
+                ₲ 1.490.000
+              </div>
+              <ul class="space-y-2 font-mono text-xs text-lab-muted mb-6">
+                <li>[OK] Optimización para móviles 4G/5G</li>
+                <li>[OK] Botón directo a WhatsApp</li>
+                <li>[OK] Mapa de ubicación y horarios</li>
+                <li>[OK] Entrega en 5 días hábiles</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20solicito%20el%20m%C3%B3dulo%20Presencia%20Express%20(Gs.%201.490.000)"
+              target="_blank" rel="noopener"
+              class="h-11 px-4 border border-lab-border hover:border-white bg-lab-sunken text-white font-mono text-xs uppercase flex items-center justify-between transition-colors">
+              <span>Seleccionar Mod-01</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Mod 2 (Highlight) -->
+          <div class="bg-lab-card border-2 border-lab-amber p-6 flex flex-col justify-between tactile-bevel relative">
+            <div class="absolute -top-3 right-6 bg-lab-amber text-black font-mono text-[10px] font-bold px-2 py-0.5 uppercase">
+              RECOMENDADO COMERCIOS
+            </div>
+            <div>
+              <div class="font-mono text-[11px] text-lab-amber pb-3 border-b border-lab-border mb-4 flex justify-between font-semibold">
+                <span>MOD-02 // COMMERCE</span>
+                <span>CATÁLOGO MÓVIL</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white mb-2">Catálogo WhatsApp</h3>
+              <p class="text-xs text-lab-muted mb-6 leading-relaxed">
+                El motor de ventas para ferreterías, repuesteras y tiendas. Carrito ágil que formatea el pedido directo al vendedor.
+              </p>
+              <div class="p-3 bg-lab-sunken border border-lab-border font-mono text-2xl font-bold text-lab-amber mb-6 tabular-nums">
+                ₲ 2.490.000
+              </div>
+              <ul class="space-y-2 font-mono text-xs text-white mb-6">
+                <li><span class="text-lab-emerald font-bold">[OK]</span> Carrito de pedidos formateado a WhatsApp</li>
+                <li><span class="text-lab-emerald font-bold">[OK]</span> Buscador instantáneo por código y nombre</li>
+                <li><span class="text-lab-emerald font-bold">[OK]</span> Carga inicial de hasta 100 productos</li>
+                <li><span class="text-lab-emerald font-bold">[OK]</span> Dominio .store / .shop + SSL incluido</li>
+                <li><span class="text-lab-emerald font-bold">[OK]</span> Entrega en 7 días hábiles</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20solicito%20el%20m%C3%B3dulo%20Cat%C3%A1logo%20WhatsApp%20(Gs.%202.490.000)"
+              target="_blank" rel="noopener"
+              class="h-11 px-4 bg-lab-amber hover:bg-amber-400 text-black font-display font-bold text-xs uppercase flex items-center justify-between transition-colors">
+              <span>Instalar Mod-02</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <!-- Mod 3 -->
+          <div class="bg-lab-chassis border border-lab-border p-6 flex flex-col justify-between tactile-bevel">
+            <div>
+              <div class="font-mono text-[11px] text-lab-muted pb-3 border-b border-lab-border mb-4 flex justify-between">
+                <span>MOD-03 // CUSTOM</span>
+                <span>SISTEMAS A MEDIDA</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-white mb-2">Corporativo & Sistemas</h3>
+              <p class="text-xs text-lab-muted mb-6 leading-relaxed">
+                Desarrollo a medida para operaciones complejas, paneles de administración, bases de datos y software específico.
+              </p>
+              <div class="p-3 bg-lab-sunken border border-lab-border font-mono text-xl font-bold text-white mb-6 tabular-nums">
+                ₲ 4.890.000+
+              </div>
+              <ul class="space-y-2 font-mono text-xs text-lab-muted mb-6">
+                <li>[OK] Multi-página institucional</li>
+                <li>[OK] Panel con base de datos SQL</li>
+                <li>[OK] Formularios integrados a CRM</li>
+                <li>[OK] Soporte técnico prioritario</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20solicito%20cotizaci%C3%B3n%20para%20un%20Sistema%20a%20Medida"
+              target="_blank" rel="noopener"
+              class="h-11 px-4 border border-lab-border hover:border-white bg-lab-sunken text-white font-mono text-xs uppercase flex items-center justify-between transition-colors">
+              <span>Consultar Mod-03</span>
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────── CATÁLOGO DE DEMOS ESCALABLE ───────────── -->
+    <section id="demos" class="py-16 sm:py-20 border-b border-lab-border bg-lab-chassis">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <div class="font-mono text-xs text-lab-amber uppercase tracking-wider mb-2">[SYS-CATALOG // 02] REGISTRO DE DEMOS</div>
+            <h2 class="font-display font-bold text-2xl sm:text-4xl text-white tracking-tight">
+              Modelos funcionales operativos por rubro.
+            </h2>
+          </div>
+          <div id="demoCount" class="font-mono text-xs text-lab-muted">
+            6 de 6 modelos cargados
+          </div>
+        </div>
+
+        <!-- Filtros de Consola -->
+        <div class="bg-lab-sunken border border-lab-border p-4 mb-8 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+            
+            <div class="md:col-span-7">
+              <label class="block font-mono text-[10px] text-lab-muted uppercase mb-1">Buscar por término o rubro</label>
+              <input id="searchInput" type="text" placeholder="Buscar ferretería, barbería, motores, clínica..."
+                class="w-full h-11 bg-lab-chassis border border-lab-border px-4 text-white font-mono text-xs focus:border-lab-amber">
+            </div>
+
+            <div class="md:col-span-5">
+              <label class="block font-mono text-[10px] text-lab-muted uppercase mb-1">Filtrar por rubro</label>
+              <select id="rubroFilter" class="w-full h-11 bg-lab-chassis border border-lab-border px-4 text-white font-mono text-xs focus:border-lab-amber cursor-pointer">
+                <option value="TODOS">Todos los rubros comerciales</option>
+                <option value="Ferreterías & Repuestos">Ferreterías & Repuestos</option>
+                <option value="Barberías & Estética">Barberías & Estética</option>
+                <option value="Automotor & Talleres">Automotor & Talleres</option>
+                <option value="Salud & Clínicas">Salud & Clínicas</option>
+                <option value="Servicios Profesionales">Servicios Profesionales</option>
+                <option value="Moda & Retail">Moda & Retail</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="pt-3 border-t border-lab-border flex flex-wrap gap-2">
+            <span class="font-mono text-[10px] text-lab-muted uppercase self-center mr-2">Plan:</span>
+            <button class="chip-filter h-9 px-3 border border-lab-amber bg-lab-amber text-black font-mono text-xs font-bold" data-plan="TODOS">TODOS</button>
+            <button class="chip-filter h-9 px-3 border border-lab-border bg-lab-chassis text-lab-muted hover:text-white font-mono text-xs" data-plan="Catálogo Móvil WhatsApp">CATÁLOGO WHATSAPP</button>
+            <button class="chip-filter h-9 px-3 border border-lab-border bg-lab-chassis text-lab-muted hover:text-white font-mono text-xs" data-plan="Presencia Express">LANDING EXPRESS</button>
+            <button class="chip-filter h-9 px-3 border border-lab-border bg-lab-chassis text-lab-muted hover:text-white font-mono text-xs" data-plan="Corporativo & Sistemas">CORPORATIVO</button>
+          </div>
+        </div>
+
+        <!-- Grid de Demostraciones -->
+        <div id="demoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Dinámico -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────── CRONOGRAMA 7 DÍAS ───────────── -->
+    <section id="proceso" class="order-process py-16 sm:py-20 border-b border-lab-border bg-lab-void" aria-label="Cronograma de Entrega">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="mb-12">
+          <div class="font-mono text-xs text-lab-amber uppercase tracking-wider mb-2">[SYS-TIMELINE // 03] PROTOCOLO DE DESPLIEGUE</div>
+          <h2 class="font-display font-bold text-2xl sm:text-4xl text-white tracking-tight">
+            Entrega final en 7 días hábiles.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 border border-lab-border divide-y md:divide-y-0 md:divide-x divide-lab-border bg-lab-chassis">
+          
+          <div class="p-6">
+            <span class="font-mono text-sm font-bold text-lab-amber block mb-2">PASO 01 · DÍA 01</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Ingesta de Catálogo</h3>
+            <p class="text-xs text-lab-muted leading-relaxed">
+              Recibimos tu lista en Excel, fotos de productos y el número de celular que recibirá los pedidos.
+            </p>
+          </div>
+
+          <div class="p-6">
+            <span class="font-mono text-sm font-bold text-lab-amber block mb-2">PASO 02 · DÍAS 02–04</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Ensamble y Carga</h3>
+            <p class="text-xs text-lab-muted leading-relaxed">
+              Programamos el motor móvil, cargamos tus artículos y estructuramos las categorías de venta.
+            </p>
+          </div>
+
+          <div class="p-6">
+            <span class="font-mono text-sm font-bold text-lab-amber block mb-2">PASO 03 · DÍAS 05–06</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Prueba de Pedido Real</h3>
+            <p class="text-xs text-lab-muted leading-relaxed">
+              Te pasamos el link privado y simulamos pedidos reales para comprobar la llegada del texto al WhatsApp.
+            </p>
+          </div>
+
+          <div class="p-6 bg-lab-card">
+            <span class="font-mono text-sm font-bold text-lab-emerald block mb-2">PASO 04 · DÍA 07</span>
+            <h3 class="font-display font-bold text-base text-white mb-2">Conexión de Dominio</h3>
+            <p class="text-xs text-lab-muted leading-relaxed">
+              Activamos tu dominio propio con certificado SSL y tu catálogo queda 100% operativo para facturar.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────── CIERRE INDUSTRIAL ───────────── -->
+    <section class="py-16 sm:py-20 border-b border-lab-border bg-lab-chassis">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-lab-sunken border border-lab-border p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 tactile-bevel">
+          <div class="max-w-xl">
+            <div class="font-mono text-xs text-lab-amber uppercase tracking-wider mb-2">LÍNEA DIRECTA DE PRODUCCIÓN</div>
+            <h2 class="font-display font-bold text-2xl sm:text-4xl text-white tracking-tight mb-4">
+              ¿Listo para ordenar la recepción de tus pedidos?
+            </h2>
+            <p class="text-xs sm:text-sm text-lab-muted leading-relaxed">
+              Conversá directamente con uno de nuestros ingenieros en Asunción. Revisamos tu catálogo y te entregamos una propuesta exacta en menos de 2 horas.
+            </p>
+          </div>
+          <div class="flex-shrink-0 w-full md:w-auto">
+            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20coordinar%20una%20reuni%C3%B3n%20para%20mi%20cat%C3%A1logo%20web"
+              target="_blank" rel="noopener"
+              class="w-full md:w-auto h-12 px-8 bg-lab-amber hover:bg-amber-400 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 tactile-btn transition-colors">
+              <span>Abrir WhatsApp (+595 986 125 649)</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ───────────── FOOTER ───────────── -->
+  <footer class="border-t border-lab-border bg-lab-void py-12 font-mono text-xs text-lab-muted">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="text-lab-amber font-bold">PUNTO PRISMA LAB</span>
+        <span>·</span>
+        <span>Asunción, Paraguay</span>
+      </div>
+      <div class="flex items-center gap-6 text-[11px]">
+        <a href="#modulos" class="hover:text-white transition-colors">Módulos</a>
+        <a href="#cotizador" class="hover:text-lab-amber transition-colors">Cotizador</a>
+        <a href="#demos" class="hover:text-white transition-colors">Demos</a>
+        <a href="https://wa.me/595986125649" target="_blank" rel="noopener" class="hover:text-white transition-colors">WhatsApp Directo</a>
+      </div>
+      <div class="text-[11px]">
+        © 2026 Punto Prisma Studio. Hardware digital PyME.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ───────────── SCRIPT: LOGICA DEL COTIZADOR Y CATALOGO ───────────── -->
+  <script>
+    const DEMOS = [
+      {
+        id: "ferreteria-los-laureles",
+        titulo: "Ferretería & Repuestos Los Laureles",
+        rubro: "Ferreterías & Repuestos",
+        plan: "Catálogo Móvil WhatsApp",
+        descripcion: "Catálogo técnico con buscador por código de pieza, filtro de marcas y carrito directo al vendedor.",
+        urlDemo: "https://wa.me/595986125649?text=" + encodeURIComponent("Hola Punto Prisma Studio, quiero ver la demo interactiva de Ferretería y Repuestos"),
+        imagenPreview: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        id: "la-forja-barber",
+        titulo: "La Forja Barber Studio",
+        rubro: "Barberías & Estética",
+        plan: "Presencia Express",
+        descripcion: "Landing de reserva rápida de turnos con selector de servicios de corte, fade y navaja en Asunción.",
+        urlDemo: "demos/la-forja/index.html",
+        imagenPreview: "demos/la-forja/sillon-thumb.jpg"
+      },
+      {
+        id: "autopar-motors",
+        titulo: "AutoPar Motors Asunción",
+        rubro: "Automotor & Talleres",
+        plan: "Catálogo Móvil WhatsApp",
+        descripcion: "Catálogo de vehículos en venta, ficha técnica de kilometraje/año y botón de tasación vía WhatsApp.",
+        urlDemo: "https://wa.me/595986125649?text=" + encodeURIComponent("Hola Punto Prisma Studio, quiero ver la demo de AutoPar Motors"),
+        imagenPreview: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        id: "clinica-bellas-artes",
+        titulo: "Clínica Dental Bellas Artes",
+        rubro: "Salud & Clínicas",
+        plan: "Presencia Express",
+        descripcion: "Sitio web médico con catálogo de tratamientos, perfiles de especialistas y agendamiento por WhatsApp.",
+        urlDemo: "https://wa.me/595986125649?text=" + encodeURIComponent("Hola Punto Prisma Studio, quiero ver la demo de Clínica Dental"),
+        imagenPreview: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        id: "benitez-abogados",
+        titulo: "Benítez & Asociados Abogados",
+        rubro: "Servicios Profesionales",
+        plan: "Corporativo & Sistemas",
+        descripcion: "Portal institucional corporativo con áreas de práctica jurídica, formulario cifrado y consulta inicial.",
+        urlDemo: "https://wa.me/595986125649?text=" + encodeURIComponent("Hola Punto Prisma Studio, quiero ver la demo de Estudio Jurídico"),
+        imagenPreview: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        id: "aura-concept-store",
+        titulo: "Aura Concept Store & Calzados",
+        rubro: "Moda & Retail",
+        plan: "Catálogo Móvil WhatsApp",
+        descripcion: "Showroom móvil con selector de talles, guía de colores y pedido formateado para delivery en Asunción.",
+        urlDemo: "https://wa.me/595986125649?text=" + encodeURIComponent("Hola Punto Prisma Studio, quiero ver la demo de Aura Concept Store"),
+        imagenPreview: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80"
+      }
+    ];
+
+    // Calculadora State
+    let selectedPlanPrice = 2490000;
+    let selectedPlanName = "Catálogo Móvil WhatsApp";
+    let selectedSkus = 50;
+
+    function formatPYG(val) {
+      return "₲ " + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+
+    function updateCalculator() {
+      const skuRange = document.getElementById("skuRange");
+      const skuDisplay = document.getElementById("skuDisplay");
+      const modMultiBranch = document.getElementById("modMultiBranch");
+      const totalDisplay = document.getElementById("totalQuoteDisplay");
+      const breakdownLabel = document.getElementById("quoteBreakdownLabel");
+      const exportWaBtn = document.getElementById("exportWaBtn");
+
+      if (skuRange) selectedSkus = parseInt(skuRange.value, 10);
+      if (skuDisplay) skuDisplay.textContent = `${selectedSkus} productos iniciales`;
+
+      // Calculate total
+      let total = selectedPlanPrice;
+
+      // Addons
+      let hasMulti = modMultiBranch && modMultiBranch.checked;
+      if (hasMulti) total += 350000;
+
+      // Sku volume adjustment over 100 skus (+ 200.000 per 100 extra skus)
+      if (selectedSkus > 100) {
+        const extraBlocks = Math.ceil((selectedSkus - 100) / 100);
+        total += extraBlocks * 200000;
+      }
+
+      if (totalDisplay) totalDisplay.textContent = formatPYG(total);
+
+      const summaryText = `${selectedPlanName} (${selectedSkus} SKUs)${hasMulti ? ' + Multi-Sucursal' : ''}`;
+      if (breakdownLabel) breakdownLabel.textContent = summaryText;
+
+      const waMsg = `Hola Punto Prisma Studio, coticé en su simulador un proyecto web: ${summaryText} por un total de ${formatPYG(total)}. Quiero coordinar los detalles.`;
+      if (exportWaBtn) {
+        exportWaBtn.href = `https://wa.me/595986125649?text=${encodeURIComponent(waMsg)}`;
+      }
+    }
+
+    // Catálogo Filtros
+    let currentFilterPlan = "TODOS";
+    let currentFilterRubro = "TODOS";
+    let currentSearch = "";
+
+    function renderDemos() {
+      const grid = document.getElementById("demoGrid");
+      const countLabel = document.getElementById("demoCount");
+      if (!grid) return;
+
+      const filtered = DEMOS.filter(d => {
+        const matchPlan = currentFilterPlan === "TODOS" || d.plan.toLowerCase() === currentFilterPlan.toLowerCase();
+        const matchRubro = currentFilterRubro === "TODOS" || d.rubro.toLowerCase() === currentFilterRubro.toLowerCase();
+        const matchSearch = !currentSearch ||
+          d.titulo.toLowerCase().includes(currentSearch) ||
+          d.rubro.toLowerCase().includes(currentSearch) ||
+          d.descripcion.toLowerCase().includes(currentSearch);
+        return matchPlan && matchRubro && matchSearch;
+      });
+
+      if (countLabel) countLabel.textContent = `${filtered.length} de ${DEMOS.length} modelos cargados`;
+
+      let html = "";
+      filtered.forEach(d => {
+        const waUrl = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, me interesa implementar la arquitectura de ${d.titulo} (${d.rubro})`)}`;
+
+        html += `
+          <div class="bg-lab-chassis border border-lab-border flex flex-col justify-between hover:border-lab-amber transition-all group">
+            <div>
+              <div class="relative aspect-video bg-lab-sunken overflow-hidden border-b border-lab-border">
+                <img src="${d.imagenPreview}" alt="${d.titulo}" loading="lazy" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                <div class="absolute top-2 left-2 px-2 py-0.5 bg-black/90 font-mono text-[9px] text-lab-amber border border-lab-border">
+                  ${d.rubro}
+                </div>
+              </div>
+              <div class="p-5">
+                <span class="font-mono text-[10px] text-lab-muted block mb-1 uppercase">${d.plan}</span>
+                <h3 class="font-display font-bold text-base text-white mb-2 group-hover:text-lab-amber transition-colors">${d.titulo}</h3>
+                <p class="text-xs text-lab-muted leading-relaxed">${d.descripcion}</p>
+              </div>
+            </div>
+            <div class="p-5 pt-0 grid grid-cols-2 gap-2 font-mono text-xs">
+              <a href="${d.urlDemo}" target="_blank" rel="noopener"
+                class="h-11 px-3 border border-lab-border bg-lab-sunken text-white flex items-center justify-center gap-1 hover:border-white transition-colors">
+                <span>Ver demo</span>
+                <span>↗</span>
+              </a>
+              <a href="${waUrl}" target="_blank" rel="noopener"
+                class="h-11 px-3 bg-lab-amber hover:bg-amber-400 text-black font-bold flex items-center justify-center gap-1 transition-colors">
+                <span>Pedir</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        `;
+      });
+
+      grid.innerHTML = html;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderDemos();
+      updateCalculator();
+
+      // Mobile Menu
+      const mobileBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener("click", () => {
+          const isOpen = mobileMenu.classList.toggle("hidden");
+          mobileBtn.setAttribute("aria-expanded", String(!isOpen));
+        });
+      }
+
+      // Calculadora Eventos
+      document.querySelectorAll(".plan-sel-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".plan-sel-btn").forEach(b => {
+            b.classList.remove("border-2", "border-lab-amber", "bg-lab-card");
+            b.classList.add("border", "border-lab-border", "bg-lab-chassis");
+          });
+          btn.classList.add("border-2", "border-lab-amber", "bg-lab-card");
+          btn.classList.remove("border", "border-lab-border", "bg-lab-chassis");
+
+          selectedPlanPrice = parseInt(btn.getAttribute("data-price"), 10);
+          selectedPlanName = btn.getAttribute("data-name");
+          updateCalculator();
+        });
+      });
+
+      const skuRange = document.getElementById("skuRange");
+      if (skuRange) {
+        skuRange.addEventListener("input", updateCalculator);
+      }
+
+      const modMulti = document.getElementById("modMultiBranch");
+      if (modMulti) {
+        modMulti.addEventListener("change", updateCalculator);
+      }
+
+      // Catalog filters
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          currentSearch = e.target.value.toLowerCase().trim();
+          renderDemos();
+        });
+      }
+
+      const rubroFilter = document.getElementById("rubroFilter");
+      if (rubroFilter) {
+        rubroFilter.addEventListener("change", (e) => {
+          currentFilterRubro = e.target.value;
+          renderDemos();
+        });
+      }
+
+      document.querySelectorAll(".chip-filter").forEach(chip => {
+        chip.addEventListener("click", () => {
+          document.querySelectorAll(".chip-filter").forEach(c => {
+            c.classList.remove("border-lab-amber", "bg-lab-amber", "text-black", "font-bold");
+            c.classList.add("border-lab-border", "bg-lab-chassis", "text-lab-muted");
+          });
+          chip.classList.add("border-lab-amber", "bg-lab-amber", "text-black", "font-bold");
+          chip.classList.remove("border-lab-border", "bg-lab-chassis", "text-lab-muted");
+
+          currentFilterPlan = chip.getAttribute("data-plan");
+          renderDemos();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
