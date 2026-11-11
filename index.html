@@ -719,6 +719,80 @@
 
         </div>
 
+        <!-- ──────── CALCULADORA INTERACTIVA DE AHORRO EN COMISIONES ──────── -->
+        <div class="mt-12 border border-asuncion-border bg-asuncion-card p-6 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-asuncion-border">
+            <div>
+              <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">[SIMULADOR FINANCIERO PYME]</span>
+              <h3 class="font-serif font-bold text-xl sm:text-3xl text-white">
+                Calculá cuánto dinero ahorrás en comisiones con tu propio catálogo
+              </h3>
+              <p class="text-xs sm:text-sm text-asuncion-muted mt-2 max-w-2xl leading-relaxed">
+                Las plataformas de marketplace y pedidos descuentan entre el 10% y el 20% de cada venta. Con Punto Prisma Studio tu comisión es ₲ 0. Ajustá el simulador a tus ventas reales:
+              </p>
+            </div>
+            <div class="font-mono text-xs text-emerald-400 bg-asuncion-void border border-emerald-500/30 px-3 py-2 flex items-center gap-2 self-start lg:self-end">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+              <span>0% COMISIONES DE POR VIDA</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Controles del Slider -->
+            <div class="lg:col-span-6 space-y-6">
+              <div>
+                <div class="flex justify-between items-center mb-2 font-mono text-xs">
+                  <span class="text-asuncion-muted uppercase">Ventas mensuales de tu negocio:</span>
+                  <span id="roiSalesDisplay" class="text-white font-bold text-base tabular-nums">₲ 15.000.000</span>
+                </div>
+                <input type="range" id="roiSalesSlider" min="3000000" max="60000000" step="1000000" value="15000000"
+                  class="w-full accent-asuncion-cognac cursor-pointer h-2.5 bg-asuncion-surface border border-asuncion-border"
+                  aria-label="Ajustar ventas mensuales estimadas">
+                <div class="flex justify-between font-mono text-[10px] text-asuncion-subtle mt-1.5">
+                  <span>₲ 3.000.000 / mes</span>
+                  <span>₲ 30.000.000 / mes</span>
+                  <span>₲ 60.000.000 / mes</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-mono text-xs text-asuncion-muted uppercase mb-2">Comisión habitual de otras plataformas:</label>
+                <div class="grid grid-cols-3 gap-2">
+                  <button type="button" class="roi-pct-btn p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs uppercase font-bold transition-all active:scale-[0.98]" data-pct="10">10%</button>
+                  <button type="button" class="roi-pct-btn p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs uppercase font-bold transition-all active:scale-[0.98] shadow-[0_0_12px_rgba(224,169,109,0.3)]" data-pct="15">15% (Habitual)</button>
+                  <button type="button" class="roi-pct-btn p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs uppercase font-bold transition-all active:scale-[0.98]" data-pct="20">20%</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Readout de Ahorro -->
+            <div class="lg:col-span-6 border border-asuncion-border bg-asuncion-surface p-6 font-mono text-xs space-y-4 shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
+              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border">
+                <span class="text-red-400">Comisión mensual en apps:</span>
+                <span id="roiMonthlyLost" class="text-red-400 font-bold text-sm sm:text-base tabular-nums">-₲ 2.250.000</span>
+              </div>
+              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border">
+                <span class="text-emerald-400">Comisión con Punto Prisma Studio:</span>
+                <span class="text-emerald-400 font-bold text-sm sm:text-base tabular-nums">₲ 0 (Cero comisiones)</span>
+              </div>
+              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border bg-asuncion-void p-3">
+                <span class="text-asuncion-sand font-bold">Ahorro anual en tu cuenta:</span>
+                <span id="roiYearlySaved" class="text-asuncion-cognac font-extrabold text-base sm:text-xl tabular-nums">+₲ 27.000.000</span>
+              </div>
+              <div class="flex justify-between items-center text-[11px] text-asuncion-muted">
+                <span>Amortización Plan Catálogo (₲ 2.490.000):</span>
+                <span id="roiPaybackDays" class="text-white font-bold">En solo 33 días</span>
+              </div>
+              <a id="roiWhatsAppBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20calcule%20un%20ahorro%20de%20comisiones%20y%20quiero%20mi%20cat%C3%A1logo%20propio"
+                target="_blank" rel="noopener"
+                class="w-full h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase flex items-center justify-between transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.25)]">
+                <span>Quiero Mi Catálogo Sin Comisiones</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -813,7 +887,7 @@
               Listo en 7 días hábiles.
             </h2>
             <p class="text-asuncion-muted text-sm mt-2 max-w-xl">
-              Un proceso ordenado y transparente para empresas de Asunción y Gran Asunción. Pulsá cada día para auditar los entregables paso a paso.
+              Un proceso ordenado y transparente para empresas de Asunción y Gran Asunción. Pulsá cada día, arrastrá el dial o activá el recorrido guiado para auditar la entrega paso a paso.
             </p>
           </div>
 
@@ -823,6 +897,25 @@
             <span class="text-asuncion-muted uppercase">ETAPA:</span>
             <span id="asuncionProcBadge" class="font-bold text-white uppercase">DÍA 01 / 07</span>
             <span id="asuncionProcStatus" class="text-asuncion-cognac font-semibold">[FASE 01: INTAKE &amp; DOMINIO]</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Live Calendar & Interactive Tour Controls -->
+        <div class="flex flex-wrap items-center justify-between gap-4 p-4 border border-asuncion-border bg-asuncion-card mb-8 font-mono text-xs">
+          <div class="flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+            <span class="text-asuncion-muted uppercase text-[11px]">CALENDARIO REAL DE ENTREGA:</span>
+            <span id="asuncionCalendarDates" class="text-white font-bold text-xs sm:text-sm">Iniciando hoy: Miércoles 11 Nov → En vivo: Jueves 19 Nov</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button type="button" id="asuncionPlaySprintBtn" class="min-h-[44px] px-3.5 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-cognac font-mono text-xs uppercase flex items-center gap-2 transition-all active:scale-[0.97]" aria-label="Reproducir recorrido guiado de 7 días">
+              <span id="asuncionPlayIcon" class="text-sm">▶</span>
+              <span id="asuncionPlayText">Recorrido Guiado</span>
+            </button>
+            <button type="button" id="asuncionAudioToggleBtn" class="min-h-[44px] px-3 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs flex items-center gap-1.5 transition-all active:scale-[0.97]" title="Activar sonido táctil">
+              <span id="asuncionAudioIcon">🔈</span>
+              <span id="asuncionAudioText">Audio: Off</span>
+            </button>
           </div>
         </div>
 
@@ -859,8 +952,21 @@
             </button>
           </div>
 
+          <!-- Interactive Range Slider Fader -->
+          <div class="mt-3 px-1">
+            <div class="flex justify-between font-mono text-[10px] text-asuncion-subtle mb-1.5 uppercase">
+              <span>DÍA 01 · Intake</span>
+              <span>DÍA 03 · Catálogo</span>
+              <span>DÍA 05 · Sheets</span>
+              <span>DÍA 07 · En Vivo</span>
+            </div>
+            <input type="range" id="asuncionProcRange" min="1" max="7" value="1" step="1"
+              class="w-full accent-asuncion-cognac cursor-pointer h-2 bg-asuncion-surface border border-asuncion-border"
+              aria-label="Arrastrar cronograma de días hábiles">
+          </div>
+
           <!-- Progress Line Track -->
-          <div class="w-full bg-asuncion-surface h-1.5 mt-2 border border-asuncion-border overflow-hidden">
+          <div class="w-full bg-asuncion-surface h-1.5 mt-3 border border-asuncion-border overflow-hidden">
             <div id="asuncionProcProgressBar" class="bg-asuncion-cognac h-full w-[14.28%] transition-all duration-300"></div>
           </div>
         </div>
@@ -1007,24 +1113,100 @@
         </div>
 
         <!-- ──────── BLOQUE 1: PROBADOR EN VIVO DE NUEVOS gTLD ──────── -->
-        <div class="border border-asuncion-border bg-asuncion-card p-6 sm:p-10 mb-12">
+        <div class="border border-asuncion-border bg-asuncion-card p-6 sm:p-10 mb-12 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
           
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-            <div class="max-w-xl">
-              <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-1 font-semibold">[PROBADOR EDITORIAL DE DOMINIOS]</span>
-              <h3 class="font-serif font-bold text-xl sm:text-2xl text-white">
-                Comprobá cómo lucirá la marca de tu negocio en internet
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+            <div class="max-w-2xl">
+              <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-1 font-semibold">[CONFIGURADOR INTERACTIVO DE DOMINIO]</span>
+              <h3 class="font-serif font-bold text-xl sm:text-3xl text-white">
+                Comprobá tu marca, elegí la extensión y reservala por WhatsApp
               </h3>
-              <p class="text-xs text-asuncion-muted mt-2">
-                Escribí el nombre de tu empresa (sin espacios ni acentos) para previsualizarlo en las extensiones comerciales disponibles:
+              <p class="text-xs sm:text-sm text-asuncion-muted mt-2 leading-relaxed">
+                Escribí el nombre de tu empresa (ej: <span class="text-asuncion-cognac font-mono font-bold">tumarca</span>), seleccioná la terminación comercial que mejor describe tu negocio y reservá tu enlace oficial con SSL bancario:
               </p>
             </div>
 
-            <div class="w-full md:w-80">
-              <label for="asuncionBrandInput" class="block font-mono text-xs text-asuncion-muted uppercase mb-1.5">Nombre comercial:</label>
-              <input type="text" id="asuncionBrandInput" value="mimarca"
-                class="w-full h-12 bg-asuncion-surface border border-asuncion-border px-4 text-white font-mono text-sm focus:border-asuncion-cognac transition-colors"
-                placeholder="ej: ferreteria, repuestos, boutique, clinicadental">
+            <div class="w-full lg:w-96">
+              <label for="asuncionBrandInput" class="block font-mono text-xs text-asuncion-muted uppercase mb-1.5 font-bold">Nombre comercial:</label>
+              <div class="relative">
+                <input type="text" id="asuncionBrandInput" value="tumarca"
+                  class="w-full h-12 bg-asuncion-surface border border-asuncion-border px-4 pr-10 text-white font-mono text-sm focus:border-asuncion-cognac transition-colors"
+                  placeholder="ej: tumarca, ferreteria, repuestos, boutique">
+                <span class="absolute right-3 top-3.5 text-xs font-mono text-asuncion-cognac">.py</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selector de Extensiones gTLD (Pill Chips) -->
+          <div class="mb-8">
+            <label class="block font-mono text-xs text-asuncion-muted uppercase mb-3">Elegí la extensión gTLD para tu marca:</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" role="radiogroup" aria-label="Extensiones de dominio">
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all shadow-[0_0_12px_rgba(224,169,109,0.25)] active:scale-[0.97]" data-gtld=".store" aria-checked="true">
+                <span class="text-sm font-extrabold">.store</span>
+                <span class="text-[9px] tracking-tight">Comercio / E-com</span>
+              </button>
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".shop" aria-checked="false">
+                <span class="text-sm font-extrabold">.shop</span>
+                <span class="text-[9px] tracking-tight">Tienda &amp; Retail</span>
+              </button>
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".tech" aria-checked="false">
+                <span class="text-sm font-extrabold">.tech</span>
+                <span class="text-[9px] tracking-tight">Tecnología / Software</span>
+              </button>
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".app" aria-checked="false">
+                <span class="text-sm font-extrabold">.app</span>
+                <span class="text-[9px] tracking-tight">Sistemas &amp; SaaS</span>
+              </button>
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".com.py" aria-checked="false">
+                <span class="text-sm font-extrabold">.com.py</span>
+                <span class="text-[9px] tracking-tight">Paraguay Oficial</span>
+              </button>
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".online" aria-checked="false">
+                <span class="text-sm font-extrabold">.online</span>
+                <span class="text-[9px] tracking-tight">Presencia Digital</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Browser Address Bar Simulator & WhatsApp Dispatch -->
+          <div class="border border-asuncion-border bg-asuncion-surface p-6 sm:p-8 mb-8 font-mono text-xs shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-asuncion-border text-asuncion-muted text-[11px]">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+                <span class="text-white font-bold uppercase">PREVISUALIZACIÓN DE URL OFICIAL</span>
+              </div>
+              <div class="flex items-center gap-4 text-asuncion-subtle">
+                <span class="flex items-center gap-1"><span class="text-asuncion-cognac">[SSL]</span> TLS 1.3 Bancario</span>
+                <span class="flex items-center gap-1"><span class="text-asuncion-cognac">[PING]</span> ~12ms en Asunción</span>
+              </div>
+            </div>
+
+            <!-- Simulated Browser URL Bar -->
+            <div class="bg-asuncion-void border border-asuncion-border p-3.5 sm:p-4 mb-6 flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-2 text-sm sm:text-base font-mono overflow-x-auto">
+                <span class="text-emerald-400 font-bold">🔒 https://</span>
+                <span id="domainBrandPreview" class="text-white font-bold">tumarca</span>
+                <span id="domainGtldPreview" class="text-asuncion-cognac font-extrabold">.store</span>
+              </div>
+              <span id="domainAvailabilityBadge" class="text-[10px] uppercase font-bold px-2 py-0.5 border border-emerald-500/40 bg-emerald-500/10 text-emerald-400">
+                ● DISPONIBLE PARA TU PLAN (0₲ COSTO EXTRA)
+              </span>
+            </div>
+
+            <!-- Direct CTA to WhatsApp with Selected Domain -->
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+              <a id="asuncionMainDomainWaBtn"
+                href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20reservar%20el%20dominio%20tumarca.store%20para%20mi%20cat%C3%A1logo%20web%20y%20consultar%20disponibilidad."
+                target="_blank" rel="noopener"
+                class="w-full sm:flex-1 h-12 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_20px_rgba(224,169,109,0.3)]">
+                <span id="asuncionMainDomainWaBtnText">Reservar tumarca.store en WhatsApp</span>
+                <span>→</span>
+              </a>
+              <button type="button" id="asuncionCopyDomainBtn"
+                class="w-full sm:w-auto h-12 px-5 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-card text-asuncion-sand hover:text-white font-mono text-xs uppercase flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+                <span>Copiar Enlace</span>
+                <span class="text-asuncion-cognac">⎘</span>
+              </button>
             </div>
           </div>
 
@@ -1131,18 +1313,6 @@
                 <span class="text-asuncion-muted text-[11px]">Disponibilidad y ajuste en precio según registrador</span>
                 <a id="asuncionLinkMulti" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20dominios%20.online%2C%20.xyz%20o%20.club"
                    target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
-                  <span>Consultar opciones →</span>
-                </a>
-              </div>
-            </div>
-                <p class="text-xs text-asuncion-muted leading-relaxed">
-                  Presencia digital general, clubes, membresías o comunidades. Extensiones modernas y directas para marcas contemporáneas que buscan alta recordación.
-                </p>
-              </div>
-              <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
-                <span class="text-asuncion-muted text-[11px]">Disponibilidad y ajuste en precio según registrador</span>
-                <a id="asuncionLinkMulti" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20dominios%20.online%2C%20.xyz%20o%20.club"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1">
                   <span>Consultar opciones →</span>
                 </a>
               </div>
@@ -1695,7 +1865,7 @@
         });
       });
 
-      // Lógica del Cronograma Interactivo de 7 Días (Modernismo Asunción)
+      // ───────────── CRONOGRAMA INTERACTIVO 7 DÍAS (MODERNISMO ASUNCIÓN) ─────────────
       const ASUNCION_SPRINT_DAYS = [
         {
           day: 1,
@@ -1716,26 +1886,31 @@
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
                 <span class="text-asuncion-cognac">ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
-                <span class="text-asuncion-cognac font-bold">[PROCESADO]</span>
+                <span id="simIngestStatus" class="text-emerald-400 font-bold">[PROCESADO 100%]</span>
               </div>
               <div class="space-y-1.5 text-asuncion-sand text-[11px]">
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between items-center">
                   <span>• SKUs importados:</span>
-                  <span class="text-white font-bold">100 artículos</span>
+                  <span id="simSkuCount" class="text-white font-bold">120 artículos</span>
                 </div>
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between items-center">
                   <span>• Moneda local:</span>
                   <span class="text-asuncion-cognac font-bold">Guaraníes (₲)</span>
                 </div>
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between items-center">
                   <span>• Receptor WhatsApp:</span>
                   <span class="text-white font-bold">+595 986 125 649</span>
                 </div>
               </div>
             </div>
-            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
+            <div class="mt-3 flex items-center gap-2">
+              <button type="button" id="simIngestBtn" class="flex-1 min-h-[38px] px-2.5 bg-asuncion-surface hover:bg-asuncion-card border border-asuncion-cognac/50 hover:border-asuncion-cognac text-asuncion-cognac font-mono text-[10px] uppercase font-bold flex items-center justify-center gap-1.5 transition-all active:scale-[0.98]">
+                <span>↻ Re-simular Ingesta Excel</span>
+              </button>
+            </div>
+            <div class="mt-3 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
               <span>DOMINIO SELECCIONADO:</span>
-              <span class="font-bold underline">tunegocio.store</span>
+              <span class="font-bold underline" id="simDay1Domain">tumarca.store</span>
             </div>
           `
         },
@@ -1775,9 +1950,13 @@
                 </div>
               </div>
             </div>
-            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-border text-asuncion-muted text-[10px] flex items-center justify-between">
-              <span>ESTÉTICA REGIONAL:</span>
-              <span class="text-white">Tonos cognac, arena y noche</span>
+            <div class="mt-3">
+              <span class="text-[10px] text-asuncion-muted block mb-1.5 uppercase font-mono">Probar paleta en tiempo real:</span>
+              <div class="grid grid-cols-3 gap-1.5">
+                <button type="button" class="palette-btn p-1.5 border border-asuncion-cognac bg-asuncion-cognac/20 text-asuncion-cognac text-[10px] font-mono font-bold active:scale-[0.98]" data-palette="cognac">Coñac</button>
+                <button type="button" class="palette-btn p-1.5 border border-asuncion-border bg-asuncion-void text-asuncion-muted text-[10px] font-mono font-bold active:scale-[0.98]" data-palette="sand">Arena</button>
+                <button type="button" class="palette-btn p-1.5 border border-asuncion-border bg-asuncion-void text-asuncion-muted text-[10px] font-mono font-bold active:scale-[0.98]" data-palette="monochrome">Noche</button>
+              </div>
             </div>
           `
         },
@@ -1790,7 +1969,7 @@
           title: "Motor de Catálogo Móvil y Carrito WhatsApp en Guaraníes",
           desc: "Programamos el carrito de pedidos en JavaScript vanilla puro. Calcula el importe total exacto en Guaraníes (₲) y formatea el mensaje de pedido estructurado para WhatsApp.",
           checklist: [
-            "Motor reactivo local sin librerías lentas (&lt; 10KB)",
+            "Motor reactivo local sin librerías lentas (< 10KB)",
             "Formateo en Guaraníes con separadores de miles",
             "Enlace seguro wa.me listo para recepción de ventas"
           ],
@@ -1798,21 +1977,26 @@
           progress: "PROGRESO 42%",
           telemetryHtml: `
             <div>
-              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
-                <span class="text-asuncion-cognac">DISPATCH_ENGINE: WA_GENERATOR</span>
-                <span class="text-asuncion-cognac font-bold">[200 OK]</span>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
+                <span class="text-asuncion-cognac">BUSCADOR EN VIVO DE PRODUCTOS</span>
+                <span class="text-emerald-400 font-bold">[REACTIVO 0.1s]</span>
               </div>
-              <div class="p-2 border border-asuncion-border bg-black font-mono text-[10px] text-asuncion-cognac leading-tight space-y-1 mb-2">
-                <div>*PEDIDO NUEVO // PUNTO PRISMA ASUNCIÓN*</div>
-                <div class="text-white">1x Repuesto Filtro Hidráulico (₲ 280.000)</div>
-                <div class="text-white">2x Aceite Sintético 5W30 (₲ 170.000)</div>
-                <div class="text-asuncion-muted">----------------------------------</div>
-                <div class="font-bold text-asuncion-sand">TOTAL: ₲ 450.000</div>
+              <input type="text" id="simSearchInput" placeholder="Escribí ej: filtro, aceite, amoladora..."
+                class="w-full h-8 bg-asuncion-void border border-asuncion-border px-2 text-white font-mono text-[11px] mb-2 focus:border-asuncion-cognac" />
+              <div id="simSearchResults" class="space-y-1 font-mono text-[10px]">
+                <div class="p-1 bg-asuncion-surface border border-white/5 flex justify-between text-white">
+                  <span>Filtro Hidráulico HF</span>
+                  <span class="text-asuncion-cognac font-bold">₲ 280.000</span>
+                </div>
+                <div class="p-1 bg-asuncion-surface border border-white/5 flex justify-between text-white">
+                  <span>Aceite Sintético 5W30</span>
+                  <span class="text-asuncion-cognac font-bold">₲ 170.000</span>
+                </div>
               </div>
             </div>
-            <div class="mt-2 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
-              <span>LATENCIA:</span>
-              <span class="font-bold">0 seg (Directo a WhatsApp)</span>
+            <div class="mt-2.5 p-2 bg-black border border-asuncion-cognac/30 text-[10px] font-mono text-asuncion-sand flex items-center justify-between">
+              <span>LATENCIA LOCAL:</span>
+              <span class="text-emerald-400 font-bold">0 seg (Cierre en WhatsApp)</span>
             </div>
           `
         },
@@ -1833,28 +2017,27 @@
           progress: "PROGRESO 57%",
           telemetryHtml: `
             <div>
-              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
-                <span class="text-asuncion-cognac">IMAGE_COMPRESSION: OPTIMIZER</span>
-                <span class="text-asuncion-cognac font-bold">[AHORRO 78%]</span>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
+                <span class="text-asuncion-cognac">SIMULADOR DE CARRITO TÁCTIL</span>
+                <span class="text-emerald-400 font-bold">[INTERACTIVO]</span>
               </div>
-              <div class="space-y-1.5 text-asuncion-sand text-[11px]">
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                  <span>• Peso original:</span>
-                  <span class="text-asuncion-muted line-through">4.8 MB</span>
+              <div class="p-2 border border-asuncion-border bg-asuncion-void space-y-2 font-mono text-xs">
+                <div class="flex items-center justify-between text-white text-[11px]">
+                  <span>Filtro Hidráulico HF</span>
+                  <div class="flex items-center gap-1.5">
+                    <button type="button" id="cartMinusBtn" class="w-6 h-6 border border-asuncion-border bg-asuncion-surface text-white flex items-center justify-center font-bold active:scale-[0.9]">−</button>
+                    <span id="cartQtyDisplay" class="w-5 text-center text-asuncion-cognac font-bold">1</span>
+                    <button type="button" id="cartPlusBtn" class="w-6 h-6 border border-asuncion-border bg-asuncion-surface text-white flex items-center justify-center font-bold active:scale-[0.9]">+</button>
+                  </div>
                 </div>
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                  <span>• Peso WebP:</span>
-                  <span class="text-asuncion-cognac font-bold">1.05 MB (-78%)</span>
-                </div>
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                  <span>• Tiempo carga móvil:</span>
-                  <span class="text-white font-bold">&lt; 0.6 seg</span>
+                <div class="pt-2 border-t border-white/10 flex justify-between items-center text-xs">
+                  <span class="text-asuncion-muted">TOTAL EN ₲:</span>
+                  <span id="cartTotalDisplay" class="text-asuncion-cognac font-extrabold">₲ 280.000</span>
                 </div>
               </div>
-            </div>
-            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-border text-asuncion-muted text-[10px] flex items-center justify-between">
-              <span>ASPECT RATIO:</span>
-              <span class="text-white">4:5 uniforme en todo el catálogo</span>
+              <div class="mt-2 text-[10px] text-asuncion-muted font-mono truncate">
+                Mensaje WA: <span id="cartWaMsgPreview" class="text-white font-mono">*Pedido: 1x Filtro (₲ 280.000)*</span>
+              </div>
             </div>
           `
         },
@@ -1865,7 +2048,7 @@
           tag: "[FASE 05 / INTEGRACIONES]",
           scope: "TIEMPO: 24 HORAS",
           title: "Sincronización con Google Sheets y Formulario",
-          desc: "Enlazamos la base de datos o planilha de Google Sheets para que puedas actualizar precios, stock o promociones desde tu propio celular sin tocar código.",
+          desc: "Enlazamos la base de datos o planilla de Google Sheets para que puedas actualizar precios, stock o promociones desde tu propio celular sin tocar código.",
           checklist: [
             "Conexión con Google Sheets en tiempo real",
             "Mapeo de campos: SKU, Título, Precio en Guaraníes, Stock",
@@ -1875,28 +2058,25 @@
           progress: "PROGRESO 71%",
           telemetryHtml: `
             <div>
-              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
-                <span class="text-asuncion-cognac">SYNC_ENGINE: GOOGLE_SHEETS</span>
-                <span class="text-asuncion-cognac font-bold">[ACTIVO]</span>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
+                <span class="text-asuncion-cognac">EDICIÓN EN VIVO DESDE SHEETS</span>
+                <span class="text-emerald-400 font-bold">[SINCRONIZADO]</span>
               </div>
-              <div class="space-y-1.5 text-asuncion-sand text-[11px]">
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                  <span>• Planilha enlazada:</span>
-                  <span class="text-white font-mono">Stock_Asuncion_2026</span>
+              <div class="p-2 border border-asuncion-border bg-asuncion-void font-mono text-[11px] space-y-2">
+                <div class="flex justify-between items-center text-white">
+                  <span>SKU #4892 - Batería 12V</span>
+                  <span id="sheetLivePrice" class="text-asuncion-cognac font-bold">₲ 450.000</span>
                 </div>
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                  <span>• Propagación:</span>
-                  <span class="text-asuncion-cognac font-bold">Tiempo real</span>
-                </div>
-                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                  <span>• Autonomía del negocio:</span>
-                  <span class="text-white font-bold">100% sin depender de técnicos</span>
+                <div class="pt-1.5 border-t border-white/10 flex items-center justify-between gap-2">
+                  <span class="text-asuncion-muted text-[10px]">Modificar precio:</span>
+                  <input type="number" id="simSheetPriceInput" value="450000" step="10000"
+                    class="w-28 h-7 bg-asuncion-surface border border-asuncion-cognac/60 px-2 text-right text-white font-mono text-xs focus:border-asuncion-cognac" />
                 </div>
               </div>
-            </div>
-            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
-              <span>ADMINISTRACIÓN:</span>
-              <span class="font-bold">Desde tu propio smartphone</span>
+              <div class="mt-2 p-1.5 bg-black text-[10px] text-emerald-400 font-mono flex items-center justify-between">
+                <span>ESTADO DEL SYNC:</span>
+                <span id="sheetSyncNotice">Enlace activo con smartphone</span>
+              </div>
             </div>
           `
         },
@@ -1909,7 +2089,7 @@
           title: "Auditoría Lighthouse 95+ y Pedido de Prueba Real",
           desc: "Realizamos pedidos de prueba reales hacia tu WhatsApp sobre redes móviles de Paraguay para certificar que recibas las órdenes al instante y sin errores.",
           checklist: [
-            "Puntajes Lighthouse &gt;= 95 en Rendimiento, Accesibilidad y SEO",
+            "Puntajes Lighthouse >= 95 en Rendimiento, Accesibilidad y SEO",
             "Prueba de orden y despacho real hacia tu número de WhatsApp",
             "Certificación de ergonomía táctil en pantallas de 360px a 1440px"
           ],
@@ -1917,32 +2097,34 @@
           progress: "PROGRESO 85%",
           telemetryHtml: `
             <div>
-              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
-                <span class="text-asuncion-cognac">LIGHTHOUSE_REPORT: ASUNCION</span>
-                <span class="text-asuncion-cognac font-bold">[100% CERTIFICADO]</span>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
+                <span class="text-asuncion-cognac">LIGHTHOUSE REPORT 100/100</span>
+                <span class="text-emerald-400 font-bold">[CERTIFICADO]</span>
               </div>
-              <div class="grid grid-cols-4 gap-2 text-center my-3">
-                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
-                  <div class="text-lg font-bold text-asuncion-cognac">99</div>
-                  <div class="text-[9px] text-asuncion-muted uppercase">Perf</div>
+              <div class="grid grid-cols-4 gap-1.5 text-center my-2">
+                <div class="p-1.5 border border-emerald-500/40 bg-emerald-500/10">
+                  <div class="text-base font-bold text-emerald-400">99</div>
+                  <div class="text-[8px] text-asuncion-muted uppercase">Perf</div>
                 </div>
-                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
-                  <div class="text-lg font-bold text-asuncion-cognac">100</div>
-                  <div class="text-[9px] text-asuncion-muted uppercase">A11y</div>
+                <div class="p-1.5 border border-emerald-500/40 bg-emerald-500/10">
+                  <div class="text-base font-bold text-emerald-400">100</div>
+                  <div class="text-[8px] text-asuncion-muted uppercase">A11y</div>
                 </div>
-                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
-                  <div class="text-lg font-bold text-asuncion-cognac">100</div>
-                  <div class="text-[9px] text-asuncion-muted uppercase">Best</div>
+                <div class="p-1.5 border border-emerald-500/40 bg-emerald-500/10">
+                  <div class="text-base font-bold text-emerald-400">100</div>
+                  <div class="text-[8px] text-asuncion-muted uppercase">Best</div>
                 </div>
-                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
-                  <div class="text-lg font-bold text-asuncion-cognac">100</div>
-                  <div class="text-[9px] text-asuncion-muted uppercase">SEO</div>
+                <div class="p-1.5 border border-emerald-500/40 bg-emerald-500/10">
+                  <div class="text-base font-bold text-emerald-400">100</div>
+                  <div class="text-[8px] text-asuncion-muted uppercase">SEO</div>
                 </div>
               </div>
-            </div>
-            <div class="p-2 bg-asuncion-void border border-asuncion-border text-[10px] text-asuncion-sand flex items-center justify-between">
-              <span>TEST DE WHATSAPP REAL:</span>
-              <span class="text-asuncion-cognac font-bold">[VERIFICADO EN ASUNCIÓN]</span>
+              <button type="button" id="simSpeedBtn" class="w-full min-h-[36px] bg-asuncion-void border border-asuncion-cognac/40 hover:border-asuncion-cognac text-asuncion-cognac font-mono text-[10px] uppercase font-bold flex items-center justify-center gap-1 transition-all active:scale-[0.98]">
+                <span id="simSpeedBtnText">▶ Ejecutar Test de Velocidad en Red 4G PY</span>
+              </button>
+              <div id="simSpeedResult" class="mt-2 text-[10px] text-asuncion-sand font-mono hidden">
+                Ping Gran Asunción: 14ms · TTFB: 82ms · Carga Total: 0.38s
+              </div>
             </div>
           `
         },
@@ -1963,18 +2145,18 @@
           progress: "PROGRESO 100%",
           telemetryHtml: `
             <div>
-              <div class="flex items-center justify-between text-[10px] text-asuncion-cognac border-b border-asuncion-cognac/30 pb-2 mb-3">
+              <div class="flex items-center justify-between text-[10px] text-asuncion-cognac border-b border-asuncion-cognac/30 pb-2 mb-2">
                 <span>DEPLOYMENT_STATUS: LIVE</span>
                 <span class="bg-asuncion-cognac text-black px-2 py-0.5 font-bold">[ONLINE]</span>
               </div>
               <div class="space-y-1.5 text-asuncion-sand text-[11px]">
                 <div class="p-1.5 border border-asuncion-cognac/20 bg-asuncion-cognac/5 flex justify-between">
                   <span>Dominio activo:</span>
-                  <span class="text-white font-bold">https://tunegocio.store</span>
+                  <span id="simFinalDomain" class="text-white font-bold">https://tumarca.store</span>
                 </div>
                 <div class="p-1.5 border border-asuncion-cognac/20 bg-asuncion-cognac/5 flex justify-between">
                   <span>Seguridad SSL:</span>
-                  <span class="text-asuncion-cognac font-bold">TLS 1.3 Cifrado</span>
+                  <span class="text-emerald-400 font-bold">TLS 1.3 Cifrado</span>
                 </div>
                 <div class="p-1.5 border border-asuncion-cognac/20 bg-asuncion-cognac/5 flex justify-between">
                   <span>Canal de ventas:</span>
@@ -1982,14 +2164,204 @@
                 </div>
               </div>
             </div>
-            <div class="mt-4 p-2 bg-asuncion-cognac text-black font-bold text-center text-xs uppercase tracking-wider">
-              SISTEMA LISTO PARA VENDER
-            </div>
+            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20el%20despliegue%20de%20mi%20cat%C3%A1logo%20en%207%20d%C3%ADas"
+              target="_blank" rel="noopener"
+              class="mt-3 p-2 bg-asuncion-cognac hover:bg-amber-300 text-black font-bold text-center text-xs uppercase tracking-wider block transition-colors shadow-sm">
+              SISTEMA LISTO · CONTACTAR POR WHATSAPP →
+            </a>
           `
         }
       ];
 
       let currentAsuncionDay = 1;
+      let audioEnabled = false;
+      let audioCtx = null;
+
+      // Web Audio API Click Feedback
+      function playTactileClick() {
+        if (!audioEnabled) return;
+        try {
+          if (!audioCtx) {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (AudioContext) audioCtx = new AudioContext();
+          }
+          if (audioCtx && audioCtx.state === "suspended") {
+            audioCtx.resume();
+          }
+          if (!audioCtx) return;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.035);
+          gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.035);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.04);
+        } catch (e) {
+          // Audio blocked or not supported
+        }
+      }
+
+      // Dynamic Delivery Calendar (Business Days Skipping Sundays)
+      function updateDynamicCalendar() {
+        const el = document.getElementById("asuncionCalendarDates");
+        if (!el) return;
+        const daysName = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+        const monthsName = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Dic"];
+        const today = new Date();
+        let count = 0;
+        let delivery = new Date(today);
+        while (count < 7) {
+          delivery.setDate(delivery.getDate() + 1);
+          if (delivery.getDay() !== 0) { // Skip Sunday
+            count++;
+          }
+        }
+        const todayStr = `${daysName[today.getDay()]} ${today.getDate()} ${monthsName[today.getMonth()]}`;
+        const deliveryStr = `${daysName[delivery.getDay()]} ${delivery.getDate()} ${monthsName[delivery.getMonth()]}`;
+        el.textContent = `Iniciando hoy: ${todayStr} → En vivo: ${deliveryStr} (7 días hábiles)`;
+      }
+
+      // Toast Notification Badge
+      function showToast(message) {
+        let toast = document.getElementById("asuncionToast");
+        if (!toast) {
+          toast = document.createElement("div");
+          toast.id = "asuncionToast";
+          toast.className = "fixed bottom-6 right-6 z-50 bg-asuncion-card border-2 border-asuncion-cognac text-white font-mono text-xs px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 opacity-0 translate-y-2 pointer-events-none flex items-center gap-2";
+          document.body.appendChild(toast);
+        }
+        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span><span>${message}</span>`;
+        toast.classList.remove("opacity-0", "translate-y-2", "pointer-events-none");
+        toast.classList.add("opacity-100", "translate-y-0");
+        setTimeout(() => {
+          toast.classList.add("opacity-0", "translate-y-2", "pointer-events-none");
+          toast.classList.remove("opacity-100", "translate-y-0");
+        }, 2800);
+      }
+
+      // Wire interactive widgets inside telemetry per day
+      function wireDayInteractiveHandlers(dayNum) {
+        if (dayNum === 1) {
+          const btn = document.getElementById("simIngestBtn");
+          const status = document.getElementById("simIngestStatus");
+          const count = document.getElementById("simSkuCount");
+          const dLabel = document.getElementById("simDay1Domain");
+          const bInput = document.getElementById("asuncionBrandInput");
+          if (dLabel && bInput) {
+            dLabel.textContent = `${bInput.value.toLowerCase().replace(/[^a-z0-9-]/g, "") || "tumarca"}.store`;
+          }
+          if (btn && status && count) {
+            btn.addEventListener("click", () => {
+              playTactileClick();
+              status.textContent = "[PROCESANDO...]";
+              status.className = "text-amber-400 font-bold";
+              setTimeout(() => {
+                status.textContent = "[148 SKUs VALIDADOS]";
+                status.className = "text-emerald-400 font-bold";
+                count.textContent = "148 artículos cargados";
+              }, 400);
+            });
+          }
+        } else if (dayNum === 2) {
+          document.querySelectorAll(".palette-btn").forEach(pBtn => {
+            pBtn.addEventListener("click", () => {
+              playTactileClick();
+              document.querySelectorAll(".palette-btn").forEach(b => {
+                b.className = "palette-btn p-1.5 border border-asuncion-border bg-asuncion-void text-asuncion-muted text-[10px] font-mono font-bold active:scale-[0.98]";
+              });
+              pBtn.className = "palette-btn p-1.5 border border-asuncion-cognac bg-asuncion-cognac/20 text-asuncion-cognac text-[10px] font-mono font-bold active:scale-[0.98]";
+            });
+          });
+        } else if (dayNum === 3) {
+          const sInput = document.getElementById("simSearchInput");
+          const sResults = document.getElementById("simSearchResults");
+          const mockItems = [
+            { name: "Filtro Hidráulico HF", price: "₲ 280.000" },
+            { name: "Aceite Sintético 5W30", price: "₲ 170.000" },
+            { name: "Amoladora Angular 850W", price: "₲ 340.000" },
+            { name: "Pastilla de Freno Cerámica", price: "₲ 195.000" }
+          ];
+          if (sInput && sResults) {
+            sInput.addEventListener("input", () => {
+              const q = sInput.value.toLowerCase().trim();
+              const matched = mockItems.filter(it => it.name.toLowerCase().includes(q));
+              if (matched.length === 0) {
+                sResults.innerHTML = `<div class="p-1 text-asuncion-muted text-[10px]">Sin coincidencias locales</div>`;
+              } else {
+                sResults.innerHTML = matched.map(it => `
+                  <div class="p-1 bg-asuncion-surface border border-white/5 flex justify-between text-white">
+                    <span>${it.name}</span>
+                    <span class="text-asuncion-cognac font-bold">${it.price}</span>
+                  </div>
+                `).join("");
+              }
+            });
+          }
+        } else if (dayNum === 4) {
+          const minusBtn = document.getElementById("cartMinusBtn");
+          const plusBtn = document.getElementById("cartPlusBtn");
+          const qtyEl = document.getElementById("cartQtyDisplay");
+          const totalEl = document.getElementById("cartTotalDisplay");
+          const waEl = document.getElementById("cartWaMsgPreview");
+          let qty = 1;
+          const unitPrice = 280000;
+          function syncCart() {
+            if (qtyEl) qtyEl.textContent = qty;
+            const total = qty * unitPrice;
+            const totalFmt = "₲ " + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            if (totalEl) totalEl.textContent = totalFmt;
+            if (waEl) waEl.textContent = `*Pedido: ${qty}x Filtro (${totalFmt})*`;
+          }
+          if (minusBtn) {
+            minusBtn.addEventListener("click", () => {
+              if (qty > 1) { qty--; syncCart(); playTactileClick(); }
+            });
+          }
+          if (plusBtn) {
+            plusBtn.addEventListener("click", () => {
+              qty++; syncCart(); playTactileClick();
+            });
+          }
+        } else if (dayNum === 5) {
+          const priceInput = document.getElementById("simSheetPriceInput");
+          const priceLabel = document.getElementById("sheetLivePrice");
+          const syncNotice = document.getElementById("sheetSyncNotice");
+          if (priceInput && priceLabel) {
+            priceInput.addEventListener("input", () => {
+              const val = parseInt(priceInput.value, 10) || 0;
+              priceLabel.textContent = "₲ " + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+              if (syncNotice) {
+                syncNotice.textContent = "Modificación reflejada en 0.2s";
+              }
+            });
+          }
+        } else if (dayNum === 6) {
+          const speedBtn = document.getElementById("simSpeedBtn");
+          const speedResult = document.getElementById("simSpeedResult");
+          const btnText = document.getElementById("simSpeedBtnText");
+          if (speedBtn && speedResult) {
+            speedBtn.addEventListener("click", () => {
+              playTactileClick();
+              if (btnText) btnText.textContent = "⏳ Analizando latencia en Asunción...";
+              setTimeout(() => {
+                if (btnText) btnText.textContent = "✓ Test Certificado: Aprobado";
+                speedResult.classList.remove("hidden");
+              }, 450);
+            });
+          }
+        } else if (dayNum === 7) {
+          const fDomain = document.getElementById("simFinalDomain");
+          const bInput = document.getElementById("asuncionBrandInput");
+          if (fDomain && bInput) {
+            const clean = bInput.value.toLowerCase().replace(/[^a-z0-9-]/g, "") || "tumarca";
+            fDomain.textContent = `https://${clean}.store`;
+          }
+        }
+      }
 
       function setAsuncionSprintDay(dayNum) {
         if (dayNum < 1) dayNum = 1;
@@ -1997,6 +2369,8 @@
         currentAsuncionDay = dayNum;
         const dayData = ASUNCION_SPRINT_DAYS[dayNum - 1];
         if (!dayData) return;
+
+        playTactileClick();
 
         document.querySelectorAll(".asuncion-proc-btn").forEach(btn => {
           const d = parseInt(btn.getAttribute("data-day"), 10);
@@ -2008,6 +2382,11 @@
             btn.className = "asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]";
           }
         });
+
+        const rangeSlider = document.getElementById("asuncionProcRange");
+        if (rangeSlider && parseInt(rangeSlider.value, 10) !== dayNum) {
+          rangeSlider.value = dayNum;
+        }
 
         const badge = document.getElementById("asuncionProcBadge");
         const status = document.getElementById("asuncionProcStatus");
@@ -2040,42 +2419,102 @@
             </li>
           `).join("");
         }
+
+        wireDayInteractiveHandlers(dayNum);
       }
 
       let userAsuncionInteractedTimeout = 0;
 
       document.querySelectorAll(".asuncion-proc-btn").forEach(btn => {
         btn.addEventListener("click", () => {
-          userAsuncionInteractedTimeout = Date.now() + 2500;
+          userAsuncionInteractedTimeout = Date.now() + 3000;
           const d = parseInt(btn.getAttribute("data-day"), 10);
           setAsuncionSprintDay(d);
         });
       });
+
+      const procRange = document.getElementById("asuncionProcRange");
+      if (procRange) {
+        procRange.addEventListener("input", (e) => {
+          userAsuncionInteractedTimeout = Date.now() + 3000;
+          const d = parseInt(e.target.value, 10);
+          setAsuncionSprintDay(d);
+        });
+      }
 
       const asuncionPrevBtn = document.getElementById("asuncionPrevBtn");
       const asuncionNextBtn = document.getElementById("asuncionNextBtn");
 
       if (asuncionPrevBtn) {
         asuncionPrevBtn.addEventListener("click", () => {
-          userAsuncionInteractedTimeout = Date.now() + 2500;
+          userAsuncionInteractedTimeout = Date.now() + 3000;
           setAsuncionSprintDay(currentAsuncionDay - 1);
         });
       }
 
       if (asuncionNextBtn) {
         asuncionNextBtn.addEventListener("click", () => {
-          userAsuncionInteractedTimeout = Date.now() + 2500;
+          userAsuncionInteractedTimeout = Date.now() + 3000;
           setAsuncionSprintDay(currentAsuncionDay + 1);
         });
       }
 
-      // Scroll-driven progression for #proceso in index-modernismo-asuncion.html
+      // Autoplay Sprint Loop
+      let sprintPlayInterval = null;
+      const playSprintBtn = document.getElementById("asuncionPlaySprintBtn");
+      const playIcon = document.getElementById("asuncionPlayIcon");
+      const playText = document.getElementById("asuncionPlayText");
+
+      if (playSprintBtn) {
+        playSprintBtn.addEventListener("click", () => {
+          if (sprintPlayInterval) {
+            clearInterval(sprintPlayInterval);
+            sprintPlayInterval = null;
+            if (playIcon) playIcon.textContent = "▶";
+            if (playText) playText.textContent = "Recorrido Guiado";
+            playSprintBtn.classList.remove("border-asuncion-cognac", "bg-asuncion-cognac/20");
+          } else {
+            if (playIcon) playIcon.textContent = "⏸";
+            if (playText) playText.textContent = "Pausar Recorrido";
+            playSprintBtn.classList.add("border-asuncion-cognac", "bg-asuncion-cognac/20");
+            sprintPlayInterval = setInterval(() => {
+              const next = currentAsuncionDay >= 7 ? 1 : currentAsuncionDay + 1;
+              setAsuncionSprintDay(next);
+            }, 2600);
+          }
+        });
+      }
+
+      // Audio Toggle Button
+      const audioToggleBtn = document.getElementById("asuncionAudioToggleBtn");
+      const audioIcon = document.getElementById("asuncionAudioIcon");
+      const audioText = document.getElementById("asuncionAudioText");
+
+      if (audioToggleBtn) {
+        audioToggleBtn.addEventListener("click", () => {
+          audioEnabled = !audioEnabled;
+          if (audioEnabled) {
+            playTactileClick();
+            if (audioIcon) audioIcon.textContent = "🔊";
+            if (audioText) audioText.textContent = "Audio: On";
+            audioToggleBtn.classList.add("border-asuncion-cognac", "text-asuncion-cognac");
+            showToast("Feedback sonoro táctil activado");
+          } else {
+            if (audioIcon) audioIcon.textContent = "🔈";
+            if (audioText) audioText.textContent = "Audio: Off";
+            audioToggleBtn.classList.remove("border-asuncion-cognac", "text-asuncion-cognac");
+          }
+        });
+      }
+
+      // Scroll-driven progression for #proceso
       const asuncionProcesoSection = document.getElementById("proceso");
       if (asuncionProcesoSection) {
         let isAsuncionTicking = false;
         window.addEventListener("scroll", () => {
           if (isAsuncionTicking) return;
           if (Date.now() < userAsuncionInteractedTimeout) return;
+          if (sprintPlayInterval) return; // Don't interrupt manual tour
           isAsuncionTicking = true;
           requestAnimationFrame(() => {
             const rect = asuncionProcesoSection.getBoundingClientRect();
@@ -2096,45 +2535,161 @@
         }, { passive: true });
       }
 
-      // Lógica de Previsualización de Dominios Nuevos gTLD (Modernismo Asunción)
+      // ───────────── CONFIGURADOR INTERACTIVO DE DOMINIO & NUEVOS gTLD ─────────────
+      let selectedGtld = ".store";
+      let brandRaw = "tumarca";
+
+      function updateDomainConfigurator() {
+        const brandInput = document.getElementById("asuncionBrandInput");
+        if (brandInput) {
+          const clean = brandInput.value.toLowerCase().replace(/[^a-z0-9-]/g, "");
+          brandRaw = clean || "tumarca";
+        }
+
+        const brandPrev = document.getElementById("domainBrandPreview");
+        const gtldPrev = document.getElementById("domainGtldPreview");
+        const mainWaBtn = document.getElementById("asuncionMainDomainWaBtn");
+        const mainWaBtnText = document.getElementById("asuncionMainDomainWaBtnText");
+
+        if (brandPrev) brandPrev.textContent = brandRaw;
+        if (gtldPrev) gtldPrev.textContent = selectedGtld;
+
+        const fullDomain = `${brandRaw}${selectedGtld}`;
+
+        if (mainWaBtn) {
+          const msg = `Hola Punto Prisma Studio, quiero reservar el dominio ${fullDomain} para mi catálogo web y consultar disponibilidad.`;
+          mainWaBtn.href = `https://wa.me/595986125649?text=${encodeURIComponent(msg)}`;
+        }
+        if (mainWaBtnText) {
+          mainWaBtnText.textContent = `Reservar ${fullDomain} en WhatsApp`;
+        }
+
+        // Update 5 preview cards below
+        const pStore = document.querySelector(".asuncion-preview-store");
+        const pTech = document.querySelector(".asuncion-preview-tech");
+        const pApp = document.querySelector(".asuncion-preview-app");
+        const pBlog = document.querySelector(".asuncion-preview-blog");
+        const pMulti = document.querySelector(".asuncion-preview-multi");
+
+        if (pStore) pStore.textContent = `${brandRaw}.store`;
+        if (pTech) pTech.textContent = `${brandRaw}.tech`;
+        if (pApp) pApp.textContent = `${brandRaw}.app`;
+        if (pBlog) pBlog.textContent = `${brandRaw}.blog`;
+        if (pMulti) pMulti.textContent = `${brandRaw}.online / ${brandRaw}.xyz / ${brandRaw}.club`;
+
+        const lStore = document.getElementById("asuncionLinkStore");
+        const lTech = document.getElementById("asuncionLinkTech");
+        const lApp = document.getElementById("asuncionLinkApp");
+        const lBlog = document.getElementById("asuncionLinkBlog");
+        const lMulti = document.getElementById("asuncionLinkMulti");
+
+        if (lStore) lStore.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.store para mi empresa.`)}`;
+        if (lTech) lTech.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.tech para mi empresa.`)}`;
+        if (lApp) lApp.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.app para mi empresa.`)}`;
+        if (lBlog) lBlog.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.blog para mi empresa.`)}`;
+        if (lMulti) lMulti.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar opciones de dominio para ${brandRaw} (.online, .xyz o .club).`)}`;
+
+        // Also update day 1 and day 7 simulation labels if present
+        const day1Dom = document.getElementById("simDay1Domain");
+        if (day1Dom) day1Dom.textContent = fullDomain;
+        const day7Dom = document.getElementById("simFinalDomain");
+        if (day7Dom) day7Dom.textContent = `https://${fullDomain}`;
+      }
+
       const asuncionBrandInput = document.getElementById("asuncionBrandInput");
       if (asuncionBrandInput) {
         asuncionBrandInput.addEventListener("input", () => {
-          let raw = asuncionBrandInput.value.toLowerCase().replace(/[^a-z0-9-]/g, "");
-          if (!raw) raw = "mimarca";
-
-          const pStore = document.querySelector(".asuncion-preview-store");
-          const pTech = document.querySelector(".asuncion-preview-tech");
-          const pApp = document.querySelector(".asuncion-preview-app");
-          const pBlog = document.querySelector(".asuncion-preview-blog");
-          const pMulti = document.querySelector(".asuncion-preview-multi");
-
-          if (pStore) pStore.textContent = `${raw}.store`;
-          if (pTech) pTech.textContent = `${raw}.tech`;
-          if (pApp) pApp.textContent = `${raw}.app`;
-          if (pBlog) pBlog.textContent = `${raw}.blog`;
-          if (pMulti) pMulti.textContent = `${raw}.online / ${raw}.xyz / ${raw}.club`;
-
-          const lStore = document.getElementById("asuncionLinkStore");
-          const lTech = document.getElementById("asuncionLinkTech");
-          const lApp = document.getElementById("asuncionLinkApp");
-          const lBlog = document.getElementById("asuncionLinkBlog");
-          const lMulti = document.getElementById("asuncionLinkMulti");
-
-          if (lStore) lStore.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${raw}.store para mi empresa.`)}`;
-          if (lTech) lTech.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${raw}.tech para mi empresa.`)}`;
-          if (lApp) lApp.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${raw}.app para mi empresa.`)}`;
-          if (lBlog) lBlog.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${raw}.blog para mi empresa.`)}`;
-          if (lMulti) lMulti.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar opciones de dominio para ${raw} (.online, .xyz o .club).`)}`;
+          updateDomainConfigurator();
         });
       }
 
-      setAsuncionSprintDay(1);
+      document.querySelectorAll(".asuncion-gtld-chip").forEach(chip => {
+        chip.addEventListener("click", () => {
+          playTactileClick();
+          document.querySelectorAll(".asuncion-gtld-chip").forEach(c => {
+            c.setAttribute("aria-checked", "false");
+            c.className = "asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]";
+          });
+          chip.setAttribute("aria-checked", "true");
+          chip.className = "asuncion-gtld-chip min-h-[48px] p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all shadow-[0_0_12px_rgba(224,169,109,0.25)] active:scale-[0.97]";
+          selectedGtld = chip.getAttribute("data-gtld") || ".store";
+          updateDomainConfigurator();
+        });
+      });
+
+      const copyDomainBtn = document.getElementById("asuncionCopyDomainBtn");
+      if (copyDomainBtn) {
+        copyDomainBtn.addEventListener("click", () => {
+          const fullDomain = `https://${brandRaw}${selectedGtld}`;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(fullDomain).then(() => {
+              showToast(`Copiado: ${fullDomain}`);
+            }).catch(() => {
+              showToast(`URL: ${fullDomain}`);
+            });
+          } else {
+            showToast(`URL: ${fullDomain}`);
+          }
+          playTactileClick();
+        });
+      }
+
+      // ───────────── CALCULADORA INTERACTIVA DE ROI & AHORRO EN COMISIONES ─────────────
+      let currentRoiSales = 15000000;
+      let currentRoiPct = 15;
+
+      function updateRoiCalculations() {
+        const slider = document.getElementById("roiSalesSlider");
+        const display = document.getElementById("roiSalesDisplay");
+        const lostEl = document.getElementById("roiMonthlyLost");
+        const savedEl = document.getElementById("roiYearlySaved");
+        const paybackEl = document.getElementById("roiPaybackDays");
+        const waBtn = document.getElementById("roiWhatsAppBtn");
+
+        if (slider) currentRoiSales = parseInt(slider.value, 10);
+        const formatPYG = (n) => "₲ " + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+        if (display) display.textContent = formatPYG(currentRoiSales);
+
+        const monthlyLost = Math.round(currentRoiSales * (currentRoiPct / 100));
+        const yearlySaved = monthlyLost * 12;
+        const catalogCost = 2490000;
+        const paybackDays = Math.max(1, Math.ceil((catalogCost / (monthlyLost / 30))));
+
+        if (lostEl) lostEl.textContent = `-${formatPYG(monthlyLost)}`;
+        if (savedEl) savedEl.textContent = `+${formatPYG(yearlySaved)}`;
+        if (paybackEl) paybackEl.textContent = `En solo ${paybackDays} días`;
+
+        if (waBtn) {
+          const msg = `Hola Punto Prisma Studio, calculé un ahorro anual de ${formatPYG(yearlySaved)} en comisiones y quiero consultar el Plan Catálogo Móvil para mi empresa.`;
+          waBtn.href = `https://wa.me/595986125649?text=${encodeURIComponent(msg)}`;
+        }
+      }
+
+      const roiSlider = document.getElementById("roiSalesSlider");
+      if (roiSlider) {
+        roiSlider.addEventListener("input", () => {
+          updateRoiCalculations();
+        });
+      }
+
+      document.querySelectorAll(".roi-pct-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          playTactileClick();
+          document.querySelectorAll(".roi-pct-btn").forEach(b => {
+            b.className = "roi-pct-btn p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs uppercase font-bold transition-all active:scale-[0.98]";
+          });
+          btn.className = "roi-pct-btn p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs uppercase font-bold transition-all active:scale-[0.98] shadow-[0_0_12px_rgba(224,169,109,0.3)]";
+          currentRoiPct = parseInt(btn.getAttribute("data-pct"), 10) || 15;
+          updateRoiCalculations();
+        });
+      });
 
       // FAQ Accordion (Modernismo Asunción)
       const faqToggles = document.querySelectorAll(".faq-toggle");
       faqToggles.forEach(btn => {
         btn.addEventListener("click", () => {
+          playTactileClick();
           const item = btn.closest(".faq-item");
           const content = item ? item.querySelector(".faq-content") : null;
           const icon = btn.querySelector(".faq-icon");
@@ -2157,6 +2712,12 @@
           }
         });
       });
+
+      // Initializations
+      updateDynamicCalendar();
+      updateDomainConfigurator();
+      updateRoiCalculations();
+      setAsuncionSprintDay(1);
 
       // Live Studio Clock (Asunción / GMT-3)
       function tickAsuncionStudioClock() {
