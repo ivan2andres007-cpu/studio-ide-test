@@ -208,6 +208,24 @@
     </div>
   </header>
 
+  <!-- Warm Editorial Studio Bar -->
+  <aside aria-label="Horario y Disponibilidad de Estudio" class="border-b border-asuncion-border/40 bg-asuncion-surface/80 py-2.5 px-4 font-mono text-[11px] text-asuncion-muted">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-asuncion-cognac ring-2 ring-asuncion-cognac/20"></span>
+        <span class="text-white font-medium">ESTUDIO EN ASUNCIÓN:</span>
+        <span class="text-asuncion-muted">PARAGUAY</span>
+        <span class="text-white/20">|</span>
+        <span id="asuncionStudioClock" class="tabular-nums text-asuncion-cognac font-bold">ASU --:--:-- PYT</span>
+      </div>
+      <div class="flex items-center gap-4 text-[10px] sm:text-[11px]">
+        <span class="text-asuncion-muted">RESPUESTA EN WHATSAPP: <strong class="text-white">&lt; 15 MIN</strong></span>
+        <span class="text-white/20">|</span>
+        <span class="text-asuncion-cognac font-bold">SIN COMISIONES POR VENTA</span>
+      </div>
+    </div>
+  </aside>
+
   <!-- ───────────── MAIN CONTENT ───────────── -->
   <main id="inicio">
 
@@ -1815,6 +1833,29 @@
       }
 
       setAsuncionSprintDay(1);
+
+      // Live Studio Clock (Asunción / GMT-3)
+      function tickAsuncionStudioClock() {
+        const el = document.getElementById("asuncionStudioClock");
+        if (!el) return;
+        try {
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString("es-PY", {
+            timeZone: "America/Asuncion",
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+          });
+          el.textContent = `ASU ${timeStr} PYT`;
+        } catch (err) {
+          const d = new Date();
+          const pad = (n) => String(n).padStart(2, "0");
+          el.textContent = `ASU ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} PYT`;
+        }
+      }
+      tickAsuncionStudioClock();
+      setInterval(tickAsuncionStudioClock, 1000);
     });
   </script>
 </body>

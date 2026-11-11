@@ -240,6 +240,24 @@
     </div>
   </header>
 
+  <!-- Industrial Precision Studio Bar -->
+  <aside aria-label="Monitor de Telemetría Industrial" class="border-b border-lab-border bg-lab-sunken py-2.5 px-4 font-mono text-[11px] text-lab-muted">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-lab-emerald ring-2 ring-lab-emerald/20"></span>
+        <span class="text-white font-semibold">SYS_NODE_ASU:</span>
+        <span class="text-lab-muted">LATENCIA &lt; 28MS</span>
+        <span class="text-white/20">|</span>
+        <span id="labStudioClock" class="tabular-nums text-lab-amber font-mono font-bold">UTC-3: --:--:--</span>
+      </div>
+      <div class="flex items-center gap-4 text-[10px] sm:text-[11px]">
+        <span class="text-lab-muted">DISPATCH_SLA: <strong class="text-white">&lt; 15 MIN</strong></span>
+        <span class="text-white/20">|</span>
+        <span class="text-lab-emerald font-bold uppercase">ZERO_LOCKIN_CODE</span>
+      </div>
+    </div>
+  </aside>
+
   <!-- ───────────── MAIN ───────────── -->
   <main id="inicio">
 
@@ -1835,6 +1853,29 @@
       }
 
       setLabStep(1);
+
+      // Live Studio Clock (Asunción / GMT-3)
+      function tickLabStudioClock() {
+        const el = document.getElementById("labStudioClock");
+        if (!el) return;
+        try {
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString("es-PY", {
+            timeZone: "America/Asuncion",
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+          });
+          el.textContent = `UTC-3: ${timeStr}`;
+        } catch (err) {
+          const d = new Date();
+          const pad = (n) => String(n).padStart(2, "0");
+          el.textContent = `UTC-3: ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+        }
+      }
+      tickLabStudioClock();
+      setInterval(tickLabStudioClock, 1000);
     });
   </script>
 </body>

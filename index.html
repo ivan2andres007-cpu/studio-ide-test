@@ -276,6 +276,25 @@
     </div>
   </header>
 
+  <!-- Telemetría de Estudio en Vivo y Garantías PyME (Swiss Precision Bar) -->
+  <aside aria-label="Telemetría de Estudio" class="border-b border-white/[0.06] bg-studio-surface/60 py-2.5 px-4 font-mono text-[11px] text-studio-muted">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/20"></span>
+        <span class="text-white font-medium">ESTUDIO EN LÍNEA:</span>
+        <span class="text-studio-muted">ASUNCIÓN, PARAGUAY</span>
+        <span class="text-white/20">|</span>
+        <span id="liveStudioClock" class="num-tabular text-emerald-400 font-bold">ASU --:--:-- PYT (GMT-3)</span>
+      </div>
+      <div class="flex items-center gap-4 text-[10px] sm:text-[11px]">
+        <span class="text-studio-muted">RESPUESTA WHATSAPP: <strong class="text-white font-semibold">&lt; 15 MIN</strong></span>
+        <span class="text-white/20">|</span>
+        <span class="text-studio-muted">PROTOTIPADO: <strong class="text-white font-semibold">48 HORAS</strong></span>
+        <span class="text-white/20 hidden md:inline">|</span>
+        <span class="hidden md:inline text-white font-bold tracking-wider">CÓDIGO 100% PROPIO</span>
+      </div>
+    </div>
+  </aside>
 
   <main id="inicio">
 
@@ -1907,6 +1926,29 @@
         if (lMulti) lMulti.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar opciones de dominio para ${brand} (.online, .xyz o .club).`)}`;
       });
     }
+
+    // Live Studio Clock (Asunción / GMT-3)
+    function tickStudioClock() {
+      const el = document.getElementById("liveStudioClock");
+      if (!el) return;
+      try {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString("es-PY", {
+          timeZone: "America/Asuncion",
+          hour12: false,
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit"
+        });
+        el.textContent = `ASU ${timeStr} PYT (GMT-3)`;
+      } catch (err) {
+        const d = new Date();
+        const pad = (n) => String(n).padStart(2, "0");
+        el.textContent = `ASU ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} PYT (GMT-3)`;
+      }
+    }
+    tickStudioClock();
+    setInterval(tickStudioClock, 1000);
   </script>
 
 </body>

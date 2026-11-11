@@ -227,6 +227,24 @@
     </div>
   </header>
 
+  <!-- Swiss Precision Studio Bar -->
+  <aside aria-label="Telemetría de Estudio Suizo" class="border-b border-white/[0.06] bg-[#0c0d10] py-2.5 px-4 font-mono text-[11px] text-swiss-muted">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/20"></span>
+        <span class="text-white font-bold">ATELIER DIGITAL:</span>
+        <span class="text-swiss-muted">ASUNCIÓN · PY</span>
+        <span class="text-white/20">|</span>
+        <span id="swissStudioClock" class="tabular-nums text-white font-mono font-bold">ASU --:--:-- PYT (GMT-3)</span>
+      </div>
+      <div class="flex items-center gap-4 text-[10px] sm:text-[11px]">
+        <span class="text-swiss-muted">TIEMPO DE RESPUESTA: <strong class="text-white">&lt; 15 MIN</strong></span>
+        <span class="text-white/20">|</span>
+        <span class="text-white font-bold tracking-wider">ENTREGA EN 7 DÍAS HÁBILES</span>
+      </div>
+    </div>
+  </aside>
+
   <!-- ───────────── MAIN CONTENT ───────────── -->
   <main id="inicio">
 
@@ -2055,6 +2073,29 @@ Hacé clic en '+ Agregar' en los productos de la izquierda para ver cómo se gen
       }
 
       setSwissSprintDay(1);
+
+      // Live Studio Clock (Asunción / GMT-3)
+      function tickSwissStudioClock() {
+        const el = document.getElementById("swissStudioClock");
+        if (!el) return;
+        try {
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString("es-PY", {
+            timeZone: "America/Asuncion",
+            hour12: false,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+          });
+          el.textContent = `ASU ${timeStr} PYT (GMT-3)`;
+        } catch (err) {
+          const d = new Date();
+          const pad = (n) => String(n).padStart(2, "0");
+          el.textContent = `ASU ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} PYT (GMT-3)`;
+        }
+      }
+      tickSwissStudioClock();
+      setInterval(tickSwissStudioClock, 1000);
     });
   </script>
 </body>
