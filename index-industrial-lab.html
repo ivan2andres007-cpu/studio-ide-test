@@ -381,16 +381,34 @@
               <label class="flex items-center gap-3 p-3 bg-lab-chassis border border-lab-border cursor-pointer hover:border-lab-borderBright transition-colors">
                 <input type="checkbox" id="modDomain" class="w-4 h-4 text-lab-amber bg-lab-sunken border-lab-border rounded-none" checked>
                 <div class="flex-1">
-                  <span class="text-white font-semibold">Dominio comercial propio (.store / .shop) + SSL por 1 año</span>
+                  <span class="text-white font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-lab-emerald inline-block"></span>
+                    <span>Dominio comercial propio (.store / .shop) + SSL por 1 año</span>
+                  </span>
                   <span class="block text-[11px] text-lab-muted">Configuración DNS y certificado de seguridad 256-bit.</span>
                 </div>
                 <span class="text-lab-emerald font-bold text-[11px]">[INCLUIDO]</span>
               </label>
 
               <label class="flex items-center gap-3 p-3 bg-lab-chassis border border-lab-border cursor-pointer hover:border-lab-borderBright transition-colors">
+                <input type="checkbox" id="modSync" class="w-4 h-4 text-lab-amber bg-lab-sunken border-lab-border rounded-none" data-addon="250000">
+                <div class="flex-1">
+                  <span class="text-white font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-lab-amber inline-block"></span>
+                    <span>Sincronización en vivo con Google Sheets / Excel</span>
+                  </span>
+                  <span class="block text-[11px] text-lab-muted">Actualizás los precios en tu planilla de Google Drive y el catálogo se refresca solo.</span>
+                </div>
+                <span class="text-lab-amber font-bold text-[11px]">+ ₲ 250.000</span>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 bg-lab-chassis border border-lab-border cursor-pointer hover:border-lab-borderBright transition-colors">
                 <input type="checkbox" id="modMultiBranch" class="w-4 h-4 text-lab-amber bg-lab-sunken border-lab-border rounded-none" data-addon="350000">
                 <div class="flex-1">
-                  <span class="text-white font-semibold">Selector Multi-Sucursal (Asunción / San Lorenzo / CDE)</span>
+                  <span class="text-white font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-lab-amber inline-block"></span>
+                    <span>Selector Multi-Sucursal (Asunción / San Lorenzo / CDE)</span>
+                  </span>
                   <span class="block text-[11px] text-lab-muted">Deriva el pedido por WhatsApp a la sucursal más cercana del comprador.</span>
                 </div>
                 <span class="text-lab-amber font-bold text-[11px]">+ ₲ 350.000</span>
@@ -510,8 +528,15 @@
               <p class="text-xs text-lab-muted mb-6 leading-relaxed">
                 El motor de ventas para ferreterías, repuesteras y tiendas. Carrito ágil que formatea el pedido directo al vendedor.
               </p>
-              <div class="p-3 bg-lab-sunken border border-lab-border font-mono text-2xl font-bold text-lab-amber mb-6 tabular-nums">
+              <div class="p-3 bg-lab-sunken border border-lab-border font-mono text-2xl font-bold text-lab-amber mb-4 tabular-nums">
                 ₲ 2.490.000
+              </div>
+              <div class="relative aspect-[16/9] mb-4 bg-lab-sunken border border-lab-border overflow-hidden">
+                <img src="assets/img/catalogo-movil.jpg" alt="Teléfono móvil con carrito de pedidos de WhatsApp en Asunción"
+                  width="800" height="450" loading="lazy" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity">
+                <div class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/85 font-mono text-[9px] text-lab-amber border border-lab-border">
+                  DESPACHO WHATSAPP // CELULAR OLED
+                </div>
               </div>
               <ul class="space-y-2 font-mono text-xs text-white mb-6">
                 <li><span class="text-lab-emerald font-bold">[OK]</span> Carrito de pedidos formateado a WhatsApp</li>
@@ -668,30 +693,59 @@
 
         </div>
 
+        <!-- Telemetry Engineering Workbench Visual -->
+        <div class="mt-8 border border-lab-border bg-lab-chassis overflow-hidden">
+          <div class="flex items-center justify-between px-4 py-2 border-b border-lab-border font-mono text-[10px] text-lab-muted bg-lab-sunken">
+            <span class="text-lab-amber font-semibold">TALLER DE INGENIERÍA // PROTOCOLO DE DESPLIEGUE</span>
+            <span>ASUNCIÓN LAB VER. 26</span>
+          </div>
+          <div class="relative aspect-[21/9] sm:aspect-[24/9] w-full overflow-hidden">
+            <img src="assets/img/workstation.jpg" alt="Estación de ingeniería y hardware de software en Asunción"
+              width="1920" height="800" loading="lazy" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-300">
+            <div class="absolute bottom-3 left-3 p-3 bg-black/90 border border-lab-border font-mono text-[11px] text-lab-muted max-w-sm">
+              <span class="text-white font-bold block mb-0.5">ESTRUCTURA SIN DEPENDENCIAS PESADAS</span>
+              <span>Desarrollo directo en HTML5, CSS moderno y JS vanilla para máxima velocidad en redes 4G/5G de Paraguay.</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ───────────── CIERRE INDUSTRIAL ───────────── -->
     <section class="py-16 sm:py-20 border-b border-lab-border bg-lab-chassis">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-lab-sunken border border-lab-border p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 tactile-bevel">
+        <div class="bg-lab-sunken border border-lab-border p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 tactile-bevel">
           <div class="max-w-xl">
-            <div class="font-mono text-xs text-lab-amber uppercase tracking-wider mb-2">LÍNEA DIRECTA DE PRODUCCIÓN</div>
+            <div class="font-mono text-xs text-lab-amber uppercase tracking-wider mb-2">LÍNEA DIRECTA DE PRODUCCIÓN // ASUNCIÓN HQ</div>
             <h2 class="font-display font-bold text-2xl sm:text-4xl text-white tracking-tight mb-4">
               ¿Listo para ordenar la recepción de tus pedidos?
             </h2>
-            <p class="text-xs sm:text-sm text-lab-muted leading-relaxed">
+            <p class="text-xs sm:text-sm text-lab-muted leading-relaxed mb-6">
               Conversá directamente con uno de nuestros ingenieros en Asunción. Revisamos tu catálogo y te entregamos una propuesta exacta en menos de 2 horas.
             </p>
+            <div class="flex items-center gap-3">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20coordinar%20una%20reuni%C3%B3n%20para%20mi%20cat%C3%A1logo%20web"
+                target="_blank" rel="noopener"
+                class="h-12 px-8 bg-lab-amber hover:bg-amber-400 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 tactile-btn transition-colors">
+                <span>Abrir WhatsApp (+595 986 125 649)</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
-          <div class="flex-shrink-0 w-full md:w-auto">
-            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20coordinar%20una%20reuni%C3%B3n%20para%20mi%20cat%C3%A1logo%20web"
-              target="_blank" rel="noopener"
-              class="w-full md:w-auto h-12 px-8 bg-lab-amber hover:bg-amber-400 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 tactile-btn transition-colors">
-              <span>Abrir WhatsApp (+595 986 125 649)</span>
-              <span>→</span>
-            </a>
+
+          <!-- Asunción Tech District Image Window -->
+          <div class="w-full lg:w-96 border border-lab-border bg-lab-chassis overflow-hidden">
+            <div class="px-3 py-1.5 border-b border-lab-border font-mono text-[9px] text-lab-muted flex justify-between">
+              <span>EJE CORPORATIVO ASUNCIÓN</span>
+              <span class="text-lab-emerald">ONLINE</span>
+            </div>
+            <div class="relative aspect-video">
+              <img src="assets/img/asuncion-district.jpg" alt="Eje corporativo y tecnológico de Asunción, Paraguay"
+                width="800" height="450" loading="lazy" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity">
+            </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -790,6 +844,7 @@
       const skuRange = document.getElementById("skuRange");
       const skuDisplay = document.getElementById("skuDisplay");
       const modMultiBranch = document.getElementById("modMultiBranch");
+      const modSync = document.getElementById("modSync");
       const totalDisplay = document.getElementById("totalQuoteDisplay");
       const breakdownLabel = document.getElementById("quoteBreakdownLabel");
       const exportWaBtn = document.getElementById("exportWaBtn");
@@ -802,7 +857,9 @@
 
       // Addons
       let hasMulti = modMultiBranch && modMultiBranch.checked;
+      let hasSync = modSync && modSync.checked;
       if (hasMulti) total += 350000;
+      if (hasSync) total += 250000;
 
       // Sku volume adjustment over 100 skus (+ 200.000 per 100 extra skus)
       if (selectedSkus > 100) {
@@ -812,7 +869,7 @@
 
       if (totalDisplay) totalDisplay.textContent = formatPYG(total);
 
-      const summaryText = `${selectedPlanName} (${selectedSkus} SKUs)${hasMulti ? ' + Multi-Sucursal' : ''}`;
+      const summaryText = `${selectedPlanName} (${selectedSkus} SKUs)${hasMulti ? ' + Multi-Sucursal' : ''}${hasSync ? ' + Sync Google Sheets' : ''}`;
       if (breakdownLabel) breakdownLabel.textContent = summaryText;
 
       const waMsg = `Hola Punto Prisma Studio, coticé en su simulador un proyecto web: ${summaryText} por un total de ${formatPYG(total)}. Quiero coordinar los detalles.`;
@@ -919,6 +976,11 @@
       const modMulti = document.getElementById("modMultiBranch");
       if (modMulti) {
         modMulti.addEventListener("change", updateCalculator);
+      }
+
+      const modSyncEl = document.getElementById("modSync");
+      if (modSyncEl) {
+        modSyncEl.addEventListener("change", updateCalculator);
       }
 
       // Catalog filters

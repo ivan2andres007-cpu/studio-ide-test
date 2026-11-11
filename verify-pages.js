@@ -121,6 +121,11 @@ async function runAudit() {
         await page.dispatchEvent('#skuRange', 'input');
         const updatedDisplay = await page.$eval('#totalQuoteDisplay', el => el.textContent.trim());
         console.log(`  [Calculator Test] Initial: ${initialDisplay} -> Updated (150 SKUs): ${updatedDisplay}`);
+
+        // Test toggle modSync
+        await page.click('#modSync');
+        const syncDisplay = await page.$eval('#totalQuoteDisplay', el => el.textContent.trim());
+        console.log(`  [Calculator Test] With Google Sheets Sync: ${syncDisplay}`);
       }
 
       if (item.file === 'index-atelier-suizo.html') {
@@ -128,8 +133,30 @@ async function runAudit() {
         await page.dispatchEvent('#demoSearchInput', 'input');
         const count = await page.$eval('#demoCountLabel', el => el.textContent.trim());
         console.log(`  [Search Filter Test] Result with 'barber': "${count}"`);
-        // Reset
         await page.click('#clearSearchBtn');
+
+        // Test WhatsApp Simulator
+        const addBtns = await page.$$('.sim-add-btn');
+        if (addBtns.length > 0) {
+          await addBtns[0].click();
+          await addBtns[1].click();
+          const simTotal = await page.$eval('#simTotalDisplay', el => el.textContent.trim());
+          console.log(`  [Simulator Test] Total after adding 2 items: ${simTotal}`);
+        }
+
+        // Test Domain input
+        await page.fill('#domainBrandInput', 'autocentro');
+        const firstDomain = await page.$eval('.domain-preview', el => el.textContent.trim());
+        console.log(`  [Domain Test] Domain preview for 'autocentro': ${firstDomain}`);
+      }
+
+      if (item.file === 'index-modernismo-asuncion.html') {
+        const tabBtn = await page.$('.case-tab-btn[data-case="barberia"]');
+        if (tabBtn) {
+          await tabBtn.click();
+          const caseTitle = await page.$eval('#beforeTitle', el => el.textContent.trim());
+          console.log(`  [Case Tab Test] Switched to Barbería case: "${caseTitle}"`);
+        }
       }
 
       // Screenshot Desktop

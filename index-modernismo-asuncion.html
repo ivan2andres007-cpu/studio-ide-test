@@ -243,6 +243,22 @@
           </div>
         </div>
 
+        <!-- Architectural Visual Feature Asunción -->
+        <div class="mt-12 border border-asuncion-border bg-asuncion-surface overflow-hidden">
+          <div class="px-5 py-2.5 border-b border-asuncion-border font-mono text-xs text-asuncion-cognac flex items-center justify-between bg-asuncion-void">
+            <span>ARQUITECTURA & SEDE LOCAL // ASUNCIÓN, PARAGUAY</span>
+            <span class="text-asuncion-muted">SANTA TERESA / VILLA MORRA</span>
+          </div>
+          <div class="relative aspect-[21/9] sm:aspect-[24/9] w-full overflow-hidden">
+            <img src="assets/img/asuncion-district.jpg" alt="Distrito corporativo y arquitectónico de Asunción, Paraguay"
+              width="1920" height="800" fetchpriority="high" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity duration-500">
+            <div class="absolute bottom-4 left-4 p-4 bg-black/85 backdrop-blur-sm border border-asuncion-border font-mono text-xs text-asuncion-muted max-w-md">
+              <span class="text-asuncion-cognac font-bold block mb-1">PRESENCIA LOCAL COMPROMETIDA</span>
+              <span class="leading-relaxed">Ingeniería concebida para el ritmo del comercio paraguayo. Tu dinero y tus clientes quedan en tu control directo.</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -326,10 +342,19 @@
                 Diseñado para ferreterías, repuesteras, tiendas y distribuidores de Asunción y Gran Asunción. Carrito que envía el resumen ordenado al vendedor.
               </p>
 
-              <div class="py-4 border-y border-asuncion-border mb-6 bg-asuncion-surface px-4">
+              <div class="py-4 border-y border-asuncion-border mb-4 bg-asuncion-surface px-4">
                 <span class="font-mono text-[11px] text-asuncion-cognac uppercase block font-semibold">Inversión PyME</span>
                 <span class="font-mono text-3xl font-bold text-asuncion-cognac tabular-nums">₲ 2.490.000</span>
                 <span class="font-mono text-[10px] text-asuncion-muted block mt-0.5">Sin comisiones por venta</span>
+              </div>
+
+              <!-- Visual Preview Móvil -->
+              <div class="relative aspect-[16/9] mb-6 bg-asuncion-surface border border-asuncion-border overflow-hidden">
+                <img src="assets/img/catalogo-movil.jpg" alt="Móvil OLED con catálogo y botón directo de WhatsApp en Asunción"
+                  width="800" height="450" loading="lazy" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity">
+                <div class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/85 font-mono text-[9px] text-asuncion-cognac border border-asuncion-border">
+                  CIERRE DIRECTO A WHATSAPP
+                </div>
               </div>
 
               <ul class="space-y-3 font-mono text-xs text-white mb-8">
@@ -415,6 +440,113 @@
       </div>
     </section>
 
+    <!-- ───────────── COMPRADOR INTERACTIVO: ANTES VS AHORA EN ASUNCIÓN ───────────── -->
+    <section id="comparador" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-12">
+          <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">02 · ANÁLISIS COMERCIAL COMPARATIVO</span>
+          <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight mb-4">
+            ¿Por qué los catálogos en PDF y las tiendas tradicionales pierden ventas?
+          </h2>
+          <p class="text-asuncion-muted text-sm leading-relaxed">
+            Hacé clic en los casos reales de comercio paraguayo para comparar el modelo antiguo frente al sistema de cierre ágil de Punto Prisma.
+          </p>
+        </div>
+
+        <!-- Pestañas de Rubro -->
+        <div class="flex flex-wrap gap-2 border-b border-asuncion-border pb-4 mb-8">
+          <button type="button" class="case-tab-btn h-10 px-5 border border-asuncion-cognac bg-asuncion-cognac text-black font-serif font-bold text-xs uppercase tracking-wider transition-colors" data-case="ferreteria">
+            01. Ferretería & Repuestos (Eusebio Ayala)
+          </button>
+          <button type="button" class="case-tab-btn h-10 px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-colors" data-case="barberia">
+            02. Barber Studio & Estética (Villa Morra)
+          </button>
+          <button type="button" class="case-tab-btn h-10 px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-colors" data-case="boutique">
+            03. Boutique & Calzados (Carmelitas)
+          </button>
+        </div>
+
+        <!-- Panel Comparativo Dinámico -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Lado Izquierdo: Antes -->
+          <div class="bg-asuncion-surface border border-red-950/40 p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-red-400 pb-3 border-b border-white/5 mb-6 font-bold uppercase">
+                <span>EL MODELO TRADICIONAL (FRICCIÓN)</span>
+                <span>VENTAS PERDIDAS</span>
+              </div>
+              <h3 id="beforeTitle" class="font-serif font-bold text-xl text-white mb-3">
+                PDFs pesados y audios interminables
+              </h3>
+              <p id="beforeDesc" class="text-xs text-asuncion-muted leading-relaxed mb-6">
+                Tu cliente en la calle pide precios por WhatsApp. Tu vendedor le manda un PDF de 45MB que tarda 2 minutos en descargar. El cliente se frustra, no busca el código y le compra a la competencia.
+              </p>
+              <ul id="beforeList" class="space-y-3 font-mono text-xs text-red-300/80">
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-bold">[X]</span>
+                  <span>PDFs desactualizados con precios viejos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-bold">[X]</span>
+                  <span>Vendedor atado a responder 50 audios por día</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-bold">[X]</span>
+                  <span>Sin buscador por código o compatibilidad</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pt-6 mt-6 border-t border-white/5 font-mono text-[11px] text-red-400/80">
+              Resultado: 60% de carritos abandonados antes de la cotización.
+            </div>
+          </div>
+
+          <!-- Lado Derecho: Ahora con Punto Prisma -->
+          <div class="bg-asuncion-card border-2 border-asuncion-cognac p-8 flex flex-col justify-between shadow-xl">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs text-asuncion-cognac pb-3 border-b border-asuncion-border mb-6 font-bold uppercase">
+                <span>CON PUNTO PRISMA STUDIO</span>
+                <span class="text-white">CIERRE EN 1 TOQUE</span>
+              </div>
+              <h3 id="afterTitle" class="font-serif font-bold text-xl text-white mb-3">
+                Catálogo ultrarrápido y orden lista al WhatsApp
+              </h3>
+              <p id="afterDesc" class="text-xs text-asuncion-muted leading-relaxed mb-6">
+                El cliente entra en 0.4s desde el celular, escribe "amoladora" o "pastilla", agrega 2 unidades al carrito y pulsa 'Enviar Pedido'. Tu vendedor recibe el detalle completo listo para cobrar y enviar.
+              </p>
+              <ul id="afterList" class="space-y-3 font-mono text-xs text-asuncion-text">
+                <li class="flex items-start gap-2">
+                  <span class="text-asuncion-cognac font-bold">[OK]</span>
+                  <span>Buscador instantáneo por código y descripción</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-asuncion-cognac font-bold">[OK]</span>
+                  <span>Mensaje de WhatsApp formateado con subtotal en ₲</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-asuncion-cognac font-bold">[OK]</span>
+                  <span>Precios actualizados en tiempo real por tu equipo</span>
+                </li>
+              </ul>
+            </div>
+            <div class="pt-6 mt-6 border-t border-asuncion-border flex items-center justify-between">
+              <span class="font-mono text-xs text-asuncion-cognac font-bold">Cierre en menos de 60 segundos</span>
+              <a id="caseWaBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20un%20cat%C3%A1logo%20m%C3%B3vil%20para%20Ferreter%C3%ADa%20y%20Repuestos"
+                target="_blank" rel="noopener"
+                class="h-10 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1 transition-colors">
+                <span>Pedir para mi rubro</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- ───────────── CATÁLOGO DE DEMOS INTERACTIVO ───────────── -->
     <section id="demos" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -483,6 +615,12 @@
         <p class="text-asuncion-muted text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8">
           En Paraguay el 90% de las ventas por internet se concretan por WhatsApp. Una tienda online compleja con registros tediosos y pasarelas lentas pierde clientes a cada segundo. Punto Prisma conecta tu stock con el canal que tu comprador ya domina y prefiere.
         </p>
+        <div class="mb-8 border border-asuncion-border bg-asuncion-card overflow-hidden">
+          <div class="relative aspect-[21/9] w-full">
+            <img src="assets/img/workstation.jpg" alt="Mesa de diseño y arquitectura de software en Asunción"
+              width="1920" height="800" loading="lazy" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity">
+          </div>
+        </div>
         <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-wider">
           PUNTO PRISMA STUDIO · ASUNCIÓN, PARAGUAY
         </div>
@@ -741,6 +879,112 @@
 
           currentFilterPlan = chip.getAttribute("data-plan");
           renderDemos();
+        });
+      });
+
+      // Lógica del Comparador Antes vs Ahora
+      const casesData = {
+        ferreteria: {
+          rubro: "Ferretería & Repuestos (Eusebio Ayala)",
+          beforeTitle: "PDFs pesados y audios interminables",
+          beforeDesc: "Tu cliente en la calle pide precios por WhatsApp. Tu vendedor le manda un PDF de 45MB que tarda 2 minutos en descargar. El cliente se frustra, no busca el código y le compra a la competencia.",
+          beforeItems: [
+            "[X] PDFs desactualizados con precios viejos",
+            "[X] Vendedor atado a responder 50 audios por día",
+            "[X] Sin buscador por código o compatibilidad"
+          ],
+          afterTitle: "Catálogo ultrarrápido y orden lista al WhatsApp",
+          afterDesc: "El cliente entra en 0.4s desde el celular, escribe 'amoladora' o 'pastilla', agrega 2 unidades al carrito y pulsa 'Enviar Pedido'. Tu vendedor recibe el detalle completo listo para cobrar y enviar.",
+          afterItems: [
+            "[OK] Buscador instantáneo por código y descripción",
+            "[OK] Mensaje de WhatsApp formateado con subtotal en ₲",
+            "[OK] Precios actualizados en tiempo real por tu equipo"
+          ],
+          waMsg: "Hola Punto Prisma Studio, quiero un catálogo móvil para Ferretería y Repuestos"
+        },
+        barberia: {
+          rubro: "Barber Studio & Estética (Villa Morra)",
+          beforeTitle: "Turnos perdidos y llamadas en pleno corte",
+          beforeDesc: "El barbero está con la navaja en la mano y suena el celular. Si atiende, interrumpe el servicio y desatiende al cliente sentado; si no atiende, pierde al nuevo cliente.",
+          beforeItems: [
+            "[X] Interrupciones constantes en medio del trabajo",
+            "[X] Mensajes de '¿a qué hora tenés libre?' sin responder",
+            "[X] Clientes esperando horas sin turno asignado"
+          ],
+          afterTitle: "Landing con agenda y servicios claros en 1 toque",
+          afterDesc: "El cliente ve los cortes, fade, perfilado de barba con toalla caliente y sus precios en ₲. Selecciona el servicio y envía su solicitud directa por WhatsApp con día y hora preferida.",
+          afterItems: [
+            "[OK] Carta de servicios visual con precios transparentes",
+            "[OK] Agendamiento ágil por WhatsApp con datos listos",
+            "[OK] Ubicación exacta y mapa de navegación a Villa Morra"
+          ],
+          waMsg: "Hola Punto Prisma Studio, quiero una landing con turnos para Barbería o Estética"
+        },
+        boutique: {
+          rubro: "Boutique & Calzados (Carmelitas)",
+          beforeTitle: "Fotos en Instagram sin talles ni precios claros",
+          beforeDesc: "Publicás una foto y te llegan 40 DMs preguntando '¿precio?', '¿tenés talle 38?'. El 80% no compra porque la respuesta demora horas y el impulso se enfría.",
+          beforeItems: [
+            "[X] 40 mensajes diarios preguntando exactamente lo mismo",
+            "[X] Sin stock actualizado visible en tiempo real",
+            "[X] Ventas perdidas por demora en responder precios"
+          ],
+          afterTitle: "Showroom móvil con talles, fotos y delivery en Asunción",
+          afterDesc: "Tu cliente entra al link desde tu bio de Instagram, filtra por talle y color, suma al carrito y te manda el pedido listo con su dirección para delivery.",
+          afterItems: [
+            "[OK] Filtro instantáneo por talle, color y categoría",
+            "[OK] Pedido listo con datos de entrega para delivery",
+            "[OK] Experiencia visual premium que eleva el valor de la marca"
+          ],
+          waMsg: "Hola Punto Prisma Studio, quiero un showroom móvil para Boutique o Calzados"
+        }
+      };
+
+      document.querySelectorAll(".case-tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".case-tab-btn").forEach(b => {
+            b.classList.remove("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
+            b.classList.add("border-asuncion-border", "bg-asuncion-surface", "text-asuncion-muted");
+          });
+          btn.classList.add("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
+          btn.classList.remove("border-asuncion-border", "bg-asuncion-surface", "text-asuncion-muted");
+
+          const c = casesData[btn.getAttribute("data-case")];
+          if (!c) return;
+
+          const bTitle = document.getElementById("beforeTitle");
+          const bDesc = document.getElementById("beforeDesc");
+          const bList = document.getElementById("beforeList");
+          const aTitle = document.getElementById("afterTitle");
+          const aDesc = document.getElementById("afterDesc");
+          const aList = document.getElementById("afterList");
+          const caseBtn = document.getElementById("caseWaBtn");
+
+          if (bTitle) bTitle.textContent = c.beforeTitle;
+          if (bDesc) bDesc.textContent = c.beforeDesc;
+          if (bList) {
+            bList.innerHTML = c.beforeItems.map(it => `
+              <li class="flex items-start gap-2">
+                <span class="text-red-400 font-bold">[X]</span>
+                <span>${it.replace(/^\[X\]\s*/, '')}</span>
+              </li>
+            `).join("");
+          }
+
+          if (aTitle) aTitle.textContent = c.afterTitle;
+          if (aDesc) aDesc.textContent = c.afterDesc;
+          if (aList) {
+            aList.innerHTML = c.afterItems.map(it => `
+              <li class="flex items-start gap-2">
+                <span class="text-asuncion-cognac font-bold">[OK]</span>
+                <span>${it.replace(/^\[OK\]\s*/, '')}</span>
+              </li>
+            `).join("");
+          }
+
+          if (caseBtn) {
+            caseBtn.href = `https://wa.me/595986125649?text=${encodeURIComponent(c.waMsg)}`;
+          }
         });
       });
     });
