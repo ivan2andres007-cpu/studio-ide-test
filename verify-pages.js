@@ -115,7 +115,25 @@ async function runAudit() {
       pageResult.tldDetected = bodyText.includes('.store') || bodyText.includes('.shop') || bodyText.includes('.studio');
 
       // Test specific interactivity if present
+      if (item.file === 'index.html') {
+        const day3Btn = await page.$('.proc-day-btn[data-day="3"]');
+        if (day3Btn) {
+          await day3Btn.click();
+          const badgeText = await page.$eval('#procDayBadge', el => el.textContent.trim());
+          const simTitle = await page.$eval('#procSimulatorTitle', el => el.textContent.trim());
+          console.log(`  [7-Day Timeline Test] Clicked Day 03 -> Badge: "${badgeText}" | Sim: "${simTitle}"`);
+        }
+      }
+
       if (item.file === 'index-industrial-lab.html') {
+        const step4Btn = await page.$('.lab-step-btn[data-step="4"]');
+        if (step4Btn) {
+          await step4Btn.click();
+          const badgeText = await page.$eval('#labStepBadge', el => el.textContent.trim());
+          const oscilloTitle = await page.$eval('#labOscilloTitle', el => el.textContent.trim());
+          console.log(`  [Hardware Sequencer Test] Clicked Step 04 -> Badge: "${badgeText}" | Oscillo: "${oscilloTitle}"`);
+        }
+
         const initialDisplay = await page.$eval('#totalQuoteDisplay', el => el.textContent.trim());
         await page.fill('#skuRange', '150');
         await page.dispatchEvent('#skuRange', 'input');
@@ -129,6 +147,14 @@ async function runAudit() {
       }
 
       if (item.file === 'index-atelier-suizo.html') {
+        const swissDay5Btn = await page.$('.swiss-proc-btn[data-day="5"]');
+        if (swissDay5Btn) {
+          await swissDay5Btn.click();
+          const badgeText = await page.$eval('#swissProcBadge', el => el.textContent.trim());
+          const simTitle = await page.$eval('#swissProcSimTitle', el => el.textContent.trim());
+          console.log(`  [Swiss 7-Day Timeline Test] Clicked Day 05 -> Badge: "${badgeText}" | Telemetry: "${simTitle}"`);
+        }
+
         await page.fill('#demoSearchInput', 'barber');
         await page.dispatchEvent('#demoSearchInput', 'input');
         const count = await page.$eval('#demoCountLabel', el => el.textContent.trim());
@@ -151,6 +177,14 @@ async function runAudit() {
       }
 
       if (item.file === 'index-modernismo-asuncion.html') {
+        const asuncionDay6Btn = await page.$('.asuncion-proc-btn[data-day="6"]');
+        if (asuncionDay6Btn) {
+          await asuncionDay6Btn.click();
+          const badgeText = await page.$eval('#asuncionProcBadge', el => el.textContent.trim());
+          const simTitle = await page.$eval('#asuncionSimTitle', el => el.textContent.trim());
+          console.log(`  [Asuncion 7-Day Timeline Test] Clicked Day 06 -> Badge: "${badgeText}" | Telemetry: "${simTitle}"`);
+        }
+
         const tabBtn = await page.$('.case-tab-btn[data-case="barberia"]');
         if (tabBtn) {
           await tabBtn.click();

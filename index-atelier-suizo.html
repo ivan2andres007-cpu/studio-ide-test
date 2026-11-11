@@ -897,84 +897,181 @@ Hacé clic en '+ Agregar' en los productos de la izquierda para ver cómo se gen
       </div>
     </section>
 
-    <!-- ───────────── SECTION 04: PROCESO (CRONOGRAMA 7 DÍAS) ───────────── -->
+    <!-- ───────────── SECTION 04: PROCESO (CRONOGRAMA 7 DÍAS INTERACTIVO) ───────────── -->
     <section id="proceso" class="order-process py-16 sm:py-20 border-b border-white/[0.08]" aria-label="Proceso de Pedido y Entrega">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="mb-12">
-          <div class="font-mono text-xs text-swiss-muted uppercase tracking-wider mb-2">04 · CRONOGRAMA DE ENTREGA</div>
-          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
-            Listo en 7 días hábiles. Ejecución técnica sin demoras.
-          </h2>
-          <p class="text-swiss-muted text-sm mt-2 max-w-xl">
-            Flujo ágil creado para dueños de PyMEs que necesitan comenzar a operar y cerrar ventas esta misma semana.
-          </p>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+          <div>
+            <div class="font-mono text-xs text-swiss-muted uppercase tracking-wider mb-2">04 · CRONOGRAMA DE ENTREGA</div>
+            <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+              Listo en 7 días hábiles. Ejecución técnica sin demoras.
+            </h2>
+            <p class="text-swiss-muted text-sm mt-2 max-w-xl">
+              Flujo ágil con validación día a día. Hacé clic en cada día para auditar qué componente construimos y cómo se prueba en vivo.
+            </p>
+          </div>
+
+          <!-- Dynamic Telemetry Readout -->
+          <div class="flex items-center gap-3 font-mono text-xs sm:text-sm self-start lg:self-end">
+            <span class="text-swiss-muted uppercase">ETAPA:</span>
+            <span id="swissProcBadge" class="px-3 py-1 bg-white text-black font-bold uppercase transition-all">DÍA 01 / 07</span>
+            <span id="swissProcStatus" class="text-emerald-400 font-semibold">[FASE 01: INTAKE & DOMINIO]</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 border border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] bg-swiss-base">
+        <!-- 7-Segment Scrubber Track (Days 1 to 7) -->
+        <div class="mb-8">
+          <div class="flex items-center justify-between gap-2 overflow-x-auto pb-2 no-scrollbar" role="tablist" aria-label="Línea de tiempo de 7 días">
+            <button type="button" class="swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white bg-white text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="1" role="tab" aria-selected="true">
+              <span class="text-[10px] text-swiss-subtle block font-semibold">DÍA</span>
+              <span class="text-sm font-extrabold">01</span>
+            </button>
+            <button type="button" class="swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-swiss-base text-swiss-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="2" role="tab" aria-selected="false">
+              <span class="text-[10px] text-swiss-subtle block font-semibold">DÍA</span>
+              <span class="text-sm font-extrabold">02</span>
+            </button>
+            <button type="button" class="swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-swiss-base text-swiss-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="3" role="tab" aria-selected="false">
+              <span class="text-[10px] text-swiss-subtle block font-semibold">DÍA</span>
+              <span class="text-sm font-extrabold">03</span>
+            </button>
+            <button type="button" class="swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-swiss-base text-swiss-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="4" role="tab" aria-selected="false">
+              <span class="text-[10px] text-swiss-subtle block font-semibold">DÍA</span>
+              <span class="text-sm font-extrabold">04</span>
+            </button>
+            <button type="button" class="swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-swiss-base text-swiss-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="5" role="tab" aria-selected="false">
+              <span class="text-[10px] text-swiss-subtle block font-semibold">DÍA</span>
+              <span class="text-sm font-extrabold">05</span>
+            </button>
+            <button type="button" class="swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-swiss-base text-swiss-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="6" role="tab" aria-selected="false">
+              <span class="text-[10px] text-swiss-subtle block font-semibold">DÍA</span>
+              <span class="text-sm font-extrabold">06</span>
+            </button>
+            <button type="button" class="swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-swiss-base text-swiss-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="7" role="tab" aria-selected="false">
+              <span class="text-[10px] text-swiss-subtle block font-semibold">DÍA</span>
+              <span class="text-sm font-extrabold text-emerald-400">07</span>
+            </button>
+          </div>
+
+          <!-- Progress Line Indicator -->
+          <div class="w-full bg-swiss-base h-1 mt-2 border border-white/10 overflow-hidden">
+            <div id="swissProcProgressBar" class="bg-emerald-400 h-full w-[14.28%] transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <!-- Interactive Phase Detail Stage (2-Column Swiss Grid Layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 border border-white/[0.08] bg-swiss-base">
           
-          <div class="p-6 flex flex-col justify-between">
+          <!-- Left Column: Milestone Briefing -->
+          <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/[0.08]">
             <div>
-              <div class="flex items-center justify-between mb-4 font-mono">
-                <span class="text-xl font-bold text-white">DÍA 01</span>
-                <span class="text-xs text-swiss-muted">01/04</span>
+              <div class="flex items-center gap-2 font-mono text-xs text-swiss-muted mb-3 uppercase">
+                <span id="swissProcPhaseTag" class="text-emerald-400 font-bold">[FASE 01 / ONBOARDING]</span>
+                <span>·</span>
+                <span id="swissProcPhaseScope">DURACIÓN: 24 HORAS</span>
               </div>
-              <h3 class="font-display font-bold text-base text-white mb-2">Recepción de Datos</h3>
-              <p class="text-xs text-swiss-muted leading-relaxed mb-4">
-                Recibimos por WhatsApp o correo tu lista de productos o catálogo en Excel, fotos, logo y los números que recibirán los pedidos.
+
+              <h3 id="swissProcPhaseTitle" class="font-display font-bold text-xl sm:text-2xl text-white mb-4">
+                Recepción de Datos, Catálogo y Reserva de Dominio
+              </h3>
+
+              <p id="swissProcPhaseDesc" class="text-xs sm:text-sm text-swiss-muted leading-relaxed mb-6">
+                Recibimos por WhatsApp o correo tu lista de productos o catálogo en Excel, fotos, logo y los números que recibirán los pedidos. Si no tenés logo, definimos tipografía limpia y paleta de color.
               </p>
+
+              <!-- Technical Checklist -->
+              <div class="p-4 border border-white/10 bg-swiss-void mb-6">
+                <span class="font-mono text-[10px] text-white uppercase block mb-2 font-semibold">ENTREGABLES CERTIFICADOS DE ESTA ETAPA:</span>
+                <ul id="swissProcChecklist" class="space-y-2 font-mono text-xs text-swiss-muted">
+                  <li class="flex items-center gap-2 text-white">
+                    <span class="text-emerald-400 font-bold">[OK]</span>
+                    <span>Ingesta completa de catálogo .xlsx con precios en Guaraníes</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-white">
+                    <span class="text-emerald-400 font-bold">[OK]</span>
+                    <span>Asignación de dominio de identidad comercial (.store / .shop / .studio)</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-white">
+                    <span class="text-emerald-400 font-bold">[OK]</span>
+                    <span>Número de WhatsApp receptor verificado y enlazado</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="pt-4 border-t border-white/10 font-mono text-[10px] text-swiss-subtle uppercase">
-              FASE 01 / INTAKE
+
+            <!-- Stage Navigation Controls -->
+            <div class="pt-6 border-t border-white/[0.08] flex items-center justify-between gap-4 font-mono text-xs">
+              <div class="flex items-center gap-2">
+                <button type="button" id="swissProcPrevBtn" aria-label="Día anterior"
+                  class="h-11 px-4 border border-white/20 hover:border-white text-white uppercase flex items-center gap-1 transition-colors">
+                  <span>← Anterior</span>
+                </button>
+                <button type="button" id="swissProcNextBtn" aria-label="Siguiente día"
+                  class="h-11 px-4 bg-white hover:bg-slate-200 text-black font-bold uppercase flex items-center gap-1 transition-colors">
+                  <span>Siguiente →</span>
+                </button>
+              </div>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20con%20el%20cronograma%20de%207%20d%C3%ADas"
+                target="_blank" rel="noopener"
+                class="hidden sm:inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors uppercase">
+                <span>Comenzar Día 01</span>
+                <span>↗</span>
+              </a>
             </div>
           </div>
 
-          <div class="p-6 flex flex-col justify-between">
+          <!-- Right Column: Live Telemetry Terminal / Deliverable Verification Stage -->
+          <div class="lg:col-span-5 p-6 sm:p-8 bg-swiss-void flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-4 font-mono">
-                <span class="text-xl font-bold text-white">DÍA 02–04</span>
-                <span class="text-xs text-swiss-muted">02/04</span>
+              <div class="flex items-center justify-between pb-3 border-b border-white/10 font-mono text-xs text-swiss-muted mb-4">
+                <span class="flex items-center gap-2 text-white font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span id="swissProcSimTitle">TELEMETRÍA EN VIVO // DÍA 01</span>
+                </span>
+                <span class="text-swiss-subtle">PROGRESO 14%</span>
               </div>
-              <h3 class="font-display font-bold text-base text-white mb-2">Diseño & Programación</h3>
-              <p class="text-xs text-swiss-muted leading-relaxed mb-4">
-                Construimos la interfaz móvil, optimizamos las imágenes de tus productos y configuramos el motor de despacho por WhatsApp.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-white/10 font-mono text-[10px] text-swiss-subtle uppercase">
-              FASE 02 / CONSTRUCCIÓN
-            </div>
-          </div>
 
-          <div class="p-6 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between mb-4 font-mono">
-                <span class="text-xl font-bold text-white">DÍA 05–06</span>
-                <span class="text-xs text-swiss-muted">03/04</span>
-              </div>
-              <h3 class="font-display font-bold text-base text-white mb-2">Simulación de Pedido Real</h3>
-              <p class="text-xs text-swiss-muted leading-relaxed mb-4">
-                Te entregamos el enlace de prueba privado. Hacemos compras de prueba para que verifiques cómo llega la orden a tu celular.
-              </p>
-            </div>
-            <div class="pt-4 border-t border-white/10 font-mono text-[10px] text-swiss-subtle uppercase">
-              FASE 03 / VALIDACIÓN
-            </div>
-          </div>
+              <!-- Dynamic Interactive Panel -->
+              <div id="swissProcStage" class="border border-white/10 bg-swiss-base p-5 font-mono text-xs leading-relaxed min-h-[220px] flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] text-swiss-muted border-b border-white/10 pb-2 mb-3">
+                    <span>ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
+                    <span class="text-emerald-400 font-bold">[PROCESADO]</span>
+                  </div>
+                  <div class="space-y-1.5 text-swiss-text text-[11px]">
+                    <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                      <span>SKUs importados:</span>
+                      <span class="text-white font-bold">100 artículos</span>
+                    </div>
+                    <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                      <span>Moneda local:</span>
+                      <span class="text-emerald-400 font-bold">Guaraníes (₲)</span>
+                    </div>
+                    <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                      <span>Receptor WhatsApp:</span>
+                      <span class="text-white font-bold">+595 986 125 649</span>
+                    </div>
+                  </div>
+                </div>
 
-          <div class="p-6 flex flex-col justify-between bg-swiss-elevated">
-            <div>
-              <div class="flex items-center justify-between mb-4 font-mono">
-                <span class="text-xl font-bold text-emerald-400">DÍA 07</span>
-                <span class="text-xs text-emerald-400 font-bold">ENTREGA</span>
+                <div class="mt-4 p-2 bg-swiss-void border border-emerald-500/20 text-emerald-300 text-[10px] flex items-center justify-between">
+                  <span>DOMINIO SELECCIONADO:</span>
+                  <span class="font-bold underline">tunegocio.store</span>
+                </div>
               </div>
-              <h3 class="font-display font-bold text-base text-white mb-2">Salida en Vivo</h3>
-              <p class="text-xs text-swiss-muted leading-relaxed mb-4">
-                Conectamos tu dominio de identidad (.store, .shop o .studio), activamos el certificado SSL y te entregamos la propiedad al 100%.
-              </p>
             </div>
-            <div class="pt-4 border-t border-white/10 font-mono text-[10px] text-emerald-400 uppercase font-bold">
-              FASE 04 / EN VIVO
+
+            <!-- Direct Contact Link for 7-day sprint -->
+            <div class="pt-6 mt-6 border-t border-white/10">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20agendar%20mi%20entrega%20en%207%20d%C3%ADas%20h%C3%A1biles"
+                target="_blank" rel="noopener"
+                class="w-full h-11 px-4 border border-white/20 hover:border-white bg-swiss-base text-white font-mono text-xs uppercase flex items-center justify-center gap-2 transition-colors">
+                <span>Agendar Sprint de 7 Días en WhatsApp</span>
+                <span>→</span>
+              </a>
             </div>
+
           </div>
 
         </div>
@@ -1454,6 +1551,375 @@ Hacé clic en '+ Agregar' en los productos de la izquierda para ver cómo se gen
           });
         });
       }
+
+      // Lógica del Cronograma Interactivo de 7 Días (Atelier Suizo)
+      const SWISS_SPRINT_DAYS = [
+        {
+          day: 1,
+          badge: "DÍA 01 / 07",
+          status: "[FASE 01: INTAKE & DOMINIO]",
+          tag: "[FASE 01 / ONBOARDING]",
+          scope: "DURACIÓN: 24 HORAS",
+          title: "Recepción de Datos, Catálogo y Reserva de Dominio",
+          desc: "Recibimos por WhatsApp o correo tu lista de productos o catálogo en Excel, fotos, logo y los números que recibirán los pedidos. Si no tenés logo, definimos tipografía limpia y paleta de color.",
+          checklist: [
+            "Ingesta completa de catálogo .xlsx con precios en Guaraníes",
+            "Asignación de dominio de identidad comercial (.store / .shop / .studio)",
+            "Número de WhatsApp receptor verificado y enlazado"
+          ],
+          simTitle: "TELEMETRÍA EN VIVO // DÍA 01",
+          progress: "14%",
+          simHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-swiss-muted border-b border-white/10 pb-2 mb-3">
+                <span>ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
+                <span class="text-emerald-400 font-bold">[PROCESADO]</span>
+              </div>
+              <div class="space-y-1.5 text-swiss-text text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>SKUs importados:</span>
+                  <span class="text-white font-bold">100 artículos</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Moneda local:</span>
+                  <span class="text-emerald-400 font-bold">Guaraníes (₲)</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Receptor WhatsApp:</span>
+                  <span class="text-white font-bold">+595 986 125 649</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-swiss-void border border-emerald-500/20 text-emerald-300 text-[10px] flex items-center justify-between">
+              <span>DOMINIO SELECCIONADO:</span>
+              <span class="font-bold underline">tunegocio.store</span>
+            </div>
+          `
+        },
+        {
+          day: 2,
+          badge: "DÍA 02 / 07",
+          status: "[FASE 02: ARQUITECTURA SWISS GRID]",
+          tag: "[FASE 02 / ESTRUCTURA]",
+          scope: "DURACIÓN: 24 HORAS",
+          title: "Estructura Editorial y Wireframing Mobile-First",
+          desc: "Planificamos la cuadrícula suiza con jerarquía tipográfica estricta en Syne y JetBrains Mono, optimizando la navegación para dedos y pulgares en pantallas móviles.",
+          checklist: [
+            "Grilla editorial asimétrica de alto impacto visual",
+            "Mapeo de zonas táctiles inferiores de 44px mínimo",
+            "Definición de micro-interacciones sutiles sin saturación"
+          ],
+          simTitle: "TELEMETRÍA EN VIVO // DÍA 02",
+          progress: "28%",
+          simHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-swiss-muted border-b border-white/10 pb-2 mb-3">
+                <span>GRID_ENGINE: SWISS_TYPOGRAPHY_SYSTEM</span>
+                <span class="text-emerald-400 font-bold">[VERIFICADO]</span>
+              </div>
+              <div class="space-y-1.5 text-swiss-text text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Familia titular:</span>
+                  <span class="text-white font-mono">Syne 800</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Familia técnica:</span>
+                  <span class="text-emerald-400 font-mono">JetBrains Mono</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Área táctil mínima:</span>
+                  <span class="text-white font-bold">&gt;= 44px</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-swiss-void border border-white/10 text-swiss-muted text-[10px] flex items-center justify-between">
+              <span>BORDES COMPARTIDOS:</span>
+              <span class="text-white">1px solid rgba(255,255,255,0.08)</span>
+            </div>
+          `
+        },
+        {
+          day: 3,
+          badge: "DÍA 03 / 07",
+          status: "[FASE 03: MOTOR DE CATÁLOGO & CARRITO]",
+          tag: "[FASE 03 / DESARROLLO MOTOR]",
+          scope: "DURACIÓN: 24 HORAS",
+          title: "Motor de Catálogo Móvil y Despacho WhatsApp",
+          desc: "Desarrollamos el motor reactivo de carrito de pedidos en JavaScript vanilla puro. Calcula subtotales en Guaraníes y prepara el texto codificado para WhatsApp.",
+          checklist: [
+            "Motor de carrito sin frameworks pesados ni dependencias externas",
+            "Soporte de búsqueda instantánea por código SKU y nombre",
+            "Cálculo matemático en Guaraníes con separadores de miles"
+          ],
+          simTitle: "TELEMETRÍA EN VIVO // DÍA 03",
+          progress: "42%",
+          simHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-swiss-muted border-b border-white/10 pb-2 mb-3">
+                <span>CART_ENGINE: VANILLA_DISPATCHER</span>
+                <span class="text-emerald-400 font-bold">[200 OK]</span>
+              </div>
+              <div class="p-2 border border-white/10 bg-black font-mono text-[10px] text-emerald-400 leading-tight space-y-1 mb-2">
+                <div>*PEDIDO NUEVO // ATELIER SUIZO*</div>
+                <div class="text-white">1x Repuesto Filtro Hidráulico (₲ 280.000)</div>
+                <div class="text-white">2x Aceite Sintético 5W30 (₲ 170.000)</div>
+                <div class="text-swiss-muted">----------------------------------</div>
+                <div class="font-bold text-emerald-300">TOTAL: ₲ 450.000</div>
+              </div>
+            </div>
+            <div class="mt-2 p-2 bg-swiss-void border border-emerald-500/20 text-emerald-300 text-[10px] flex items-center justify-between">
+              <span>DESPACHO DIRECTO:</span>
+              <span class="font-bold">wa.me/595986125649</span>
+            </div>
+          `
+        },
+        {
+          day: 4,
+          badge: "DÍA 04 / 07",
+          status: "[FASE 04: CONTENIDO & MEDIA WEBP]",
+          tag: "[FASE 04 / PROCESAMIENTO VISUAL]",
+          scope: "DURACIÓN: 24 HORAS",
+          title: "Procesamiento Fotográfico y Optimización WebP",
+          desc: "Optimizamos cada imagen de producto a formato WebP moderno con compresión visual sin pérdidas perceptibles, reduciendo el peso de la página hasta un 78%.",
+          checklist: [
+            "Conversión masiva a WebP optimizado con lazy loading nativo",
+            "Edición de encuadre en relación de aspecto 4:5 uniforme",
+            "Tiempo de carga bajo 4G reducido a menos de 0.8 segundos"
+          ],
+          simTitle: "TELEMETRÍA EN VIVO // DÍA 04",
+          progress: "57%",
+          simHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-swiss-muted border-b border-white/10 pb-2 mb-3">
+                <span>IMAGE_PIPELINE: WEBP_ENCODER</span>
+                <span class="text-emerald-400 font-bold">[OPTIMIZADO]</span>
+              </div>
+              <div class="space-y-1.5 text-swiss-text text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Peso de imágenes original:</span>
+                  <span class="text-swiss-muted line-through">5.2 MB</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Peso comprimido WebP:</span>
+                  <span class="text-emerald-400 font-bold">1.1 MB (-79%)</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Carga diferida:</span>
+                  <span class="text-white font-bold">loading='lazy'</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-swiss-void border border-white/10 text-swiss-muted text-[10px] flex items-center justify-between">
+              <span>RESPONSIVIDAD:</span>
+              <span class="text-white">Escalado perfecto 360px a 1440px</span>
+            </div>
+          `
+        },
+        {
+          day: 5,
+          badge: "DÍA 05 / 07",
+          status: "[FASE 05: PLANILHA & GOOGLE SHEETS]",
+          tag: "[FASE 05 / INTEGRACIONES]",
+          scope: "DURACIÓN: 24 HORAS",
+          title: "Sincronización con Planilha de Precios",
+          desc: "Conectamos el catálogo a tu Google Sheets para que actualices precios y productos desde tu celular en 30 segundos, sin depender de programadores.",
+          checklist: [
+            "Conexión con hoja de cálculo de Google Sheets en tiempo real",
+            "Mapeo de campos: SKU, Título, Precio en Guaraníes, Stock",
+            "Sistema de caché local para evitar lentitud en pedidos masivos"
+          ],
+          simTitle: "TELEMETRÍA EN VIVO // DÍA 05",
+          progress: "71%",
+          simHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-swiss-muted border-b border-white/10 pb-2 mb-3">
+                <span>INTEGRATION: GOOGLE_SHEETS_BRIDGE</span>
+                <span class="text-emerald-400 font-bold">[CONECTADO]</span>
+              </div>
+              <div class="space-y-1.5 text-swiss-text text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Hoja vinculada:</span>
+                  <span class="text-white font-mono">Stock_Precios_PyME_2026</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Frecuencia de lectura:</span>
+                  <span class="text-emerald-400 font-bold">Tiempo real</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-swiss-void flex justify-between">
+                  <span>Autonomía del cliente:</span>
+                  <span class="text-white font-bold">Total desde su celular</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-swiss-void border border-emerald-500/20 text-emerald-300 text-[10px] flex items-center justify-between">
+              <span>ACCESO CLIENTE:</span>
+              <span class="font-bold">Control total sin tocar código</span>
+            </div>
+          `
+        },
+        {
+          day: 6,
+          badge: "DÍA 06 / 07",
+          status: "[FASE 06: AUDITORÍA QA & SIMULACIÓN REAL]",
+          tag: "[FASE 06 / CONTROL DE CALIDAD]",
+          scope: "DURACIÓN: 24 HORAS",
+          title: "Auditoría Lighthouse 95+ y Pedido de Prueba Real",
+          desc: "Verificamos métricas Core Web Vitals en dispositivos móviles reales en redes Tigo y Personal. Enviamos un pedido de prueba real a tu WhatsApp para certificar el cierre.",
+          checklist: [
+            "Puntajes Lighthouse &gt;= 95 en Rendimiento, Accesibilidad y SEO",
+            "Prueba de pedido en WhatsApp con comprobante de recepción",
+            "Zero errores en consola de desarrollo y cero desbordes horizontales"
+          ],
+          simTitle: "TELEMETRÍA EN VIVO // DÍA 06",
+          progress: "85%",
+          simHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-swiss-muted border-b border-white/10 pb-2 mb-3">
+                <span>AUDIT_REPORT: LIGHTHOUSE_BENCHMARK</span>
+                <span class="text-emerald-400 font-bold">[CERTIFICADO]</span>
+              </div>
+              <div class="grid grid-cols-4 gap-2 text-center my-3">
+                <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                  <div class="text-lg font-bold text-emerald-400">99</div>
+                  <div class="text-[9px] text-swiss-muted uppercase">Perf</div>
+                </div>
+                <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                  <div class="text-lg font-bold text-emerald-400">100</div>
+                  <div class="text-[9px] text-swiss-muted uppercase">A11y</div>
+                </div>
+                <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                  <div class="text-lg font-bold text-emerald-400">100</div>
+                  <div class="text-[9px] text-swiss-muted uppercase">Best</div>
+                </div>
+                <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                  <div class="text-lg font-bold text-emerald-400">100</div>
+                  <div class="text-[9px] text-swiss-muted uppercase">SEO</div>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 bg-swiss-void border border-white/10 text-[10px] text-swiss-text flex items-center justify-between">
+              <span>DISPATCH_VERIFICATION:</span>
+              <span class="text-emerald-400 font-bold">[100% OPERATIVO]</span>
+            </div>
+          `
+        },
+        {
+          day: 7,
+          badge: "DÍA 07 / 07",
+          status: "[FASE 07: DESPLIEGUE FINAL & ENTREGA]",
+          tag: "[FASE 07 / LANZAMIENTO]",
+          scope: "ENTREGA EN MANO",
+          title: "Conexión de Dominio Propio, SSL y Entrega Final",
+          desc: "Tu sistema queda 100% activo bajo tu propio dominio (.store, .shop o .studio) con certificado SSL bancario, CDN global ultra rápida y soporte prioritario.",
+          checklist: [
+            "Despliegue en red global Edge con CDN de baja latencia",
+            "Certificado de seguridad SSL HTTPS activado y validado",
+            "Entrega de accesos completos y propiedad absoluta al cliente"
+          ],
+          simTitle: "TELEMETRÍA EN VIVO // DÍA 07",
+          progress: "100%",
+          simHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-emerald-400 border-b border-emerald-500/30 pb-2 mb-3">
+                <span>DEPLOYMENT_STATUS: PRODUCTION_LIVE</span>
+                <span class="bg-emerald-400 text-black px-2 py-0.5 font-bold">[ONLINE]</span>
+              </div>
+              <div class="space-y-1.5 text-swiss-text text-[11px]">
+                <div class="p-1.5 border border-emerald-500/20 bg-emerald-500/5 flex justify-between">
+                  <span>Dominio activo:</span>
+                  <span class="text-white font-bold">https://tunegocio.store</span>
+                </div>
+                <div class="p-1.5 border border-emerald-500/20 bg-emerald-500/5 flex justify-between">
+                  <span>Seguridad SSL:</span>
+                  <span class="text-emerald-400 font-bold">TLS 1.3 Cifrado</span>
+                </div>
+                <div class="p-1.5 border border-emerald-500/20 bg-emerald-500/5 flex justify-between">
+                  <span>Canal de ventas:</span>
+                  <span class="text-white font-bold">WhatsApp Operativo</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-emerald-400 text-black font-bold text-center text-xs uppercase tracking-wider">
+              SISTEMA LISTO PARA FACTURAR
+            </div>
+          `
+        }
+      ];
+
+      let currentSwissDay = 1;
+
+      function setSwissSprintDay(dayNum) {
+        if (dayNum < 1) dayNum = 1;
+        if (dayNum > 7) dayNum = 7;
+        currentSwissDay = dayNum;
+        const dayData = SWISS_SPRINT_DAYS[dayNum - 1];
+        if (!dayData) return;
+
+        document.querySelectorAll(".swiss-proc-btn").forEach(btn => {
+          const d = parseInt(btn.getAttribute("data-day"), 10);
+          const isCurrent = d === dayNum;
+          btn.setAttribute("aria-selected", String(isCurrent));
+          if (isCurrent) {
+            btn.className = "swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white bg-white text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+          } else {
+            btn.className = "swiss-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-swiss-base text-swiss-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+          }
+        });
+
+        const badge = document.getElementById("swissProcBadge");
+        const status = document.getElementById("swissProcStatus");
+        const pBar = document.getElementById("swissProcProgressBar");
+        const tag = document.getElementById("swissProcPhaseTag");
+        const scope = document.getElementById("swissProcPhaseScope");
+        const title = document.getElementById("swissProcPhaseTitle");
+        const desc = document.getElementById("swissProcPhaseDesc");
+        const checklist = document.getElementById("swissProcChecklist");
+        const simTitle = document.getElementById("swissProcSimTitle");
+        const simStage = document.getElementById("swissProcStage");
+
+        if (badge) badge.textContent = dayData.badge;
+        if (status) status.textContent = dayData.status;
+        if (pBar) pBar.style.width = `${(dayNum / 7) * 100}%`;
+        if (tag) tag.textContent = dayData.tag;
+        if (scope) scope.textContent = dayData.scope;
+        if (title) title.textContent = dayData.title;
+        if (desc) desc.textContent = dayData.desc;
+        if (simTitle) simTitle.textContent = dayData.simTitle;
+        if (simStage) simStage.innerHTML = dayData.simHtml;
+
+        if (checklist) {
+          checklist.innerHTML = dayData.checklist.map(item => `
+            <li class="flex items-center gap-2 text-white">
+              <span class="text-emerald-400 font-bold">[OK]</span>
+              <span>${item}</span>
+            </li>
+          `).join("");
+        }
+      }
+
+      document.querySelectorAll(".swiss-proc-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const d = parseInt(btn.getAttribute("data-day"), 10);
+          setSwissSprintDay(d);
+        });
+      });
+
+      const swissPrevBtn = document.getElementById("swissProcPrevBtn");
+      const swissNextBtn = document.getElementById("swissProcNextBtn");
+
+      if (swissPrevBtn) {
+        swissPrevBtn.addEventListener("click", () => {
+          setSwissSprintDay(currentSwissDay - 1);
+        });
+      }
+
+      if (swissNextBtn) {
+        swissNextBtn.addEventListener("click", () => {
+          setSwissSprintDay(currentSwissDay + 1);
+        });
+      }
+
+      setSwissSprintDay(1);
     });
   </script>
 </body>

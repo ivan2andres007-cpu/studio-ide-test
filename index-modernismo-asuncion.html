@@ -627,49 +627,182 @@
       </div>
     </section>
 
-    <!-- ───────────── CRONOGRAMA 7 DÍAS ───────────── -->
+    <!-- ───────────── CRONOGRAMA 7 DÍAS (EDITORIAL INTERACTIVO ASUNCIÓN) ───────────── -->
     <section id="proceso" class="order-process py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void" aria-label="Proceso de Pedido y Entrega">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="mb-12">
-          <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">04 · CRONOGRAMA ÁGIL</span>
-          <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
-            Listo en 7 días hábiles.
-          </h2>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+          <div>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">04 · CRONOGRAMA ÁGIL</span>
+            <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
+              Listo en 7 días hábiles.
+            </h2>
+            <p class="text-asuncion-muted text-sm mt-2 max-w-xl">
+              Un proceso ordenado y transparente para empresas de Asunción y Gran Asunción. Pulsá cada día para auditar los entregables paso a paso.
+            </p>
+          </div>
+
+          <!-- Dynamic Readout -->
+          <div class="flex items-center gap-3 font-mono text-xs sm:text-sm self-start lg:self-end bg-asuncion-card border border-asuncion-border px-3 py-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-asuncion-cognac"></span>
+            <span class="text-asuncion-muted uppercase">ETAPA:</span>
+            <span id="asuncionProcBadge" class="font-bold text-white uppercase">DÍA 01 / 07</span>
+            <span id="asuncionProcStatus" class="text-asuncion-cognac font-semibold">[FASE 01: INTAKE &amp; DOMINIO]</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 border border-asuncion-border divide-y md:divide-y-0 md:divide-x divide-asuncion-border bg-asuncion-card">
+        <!-- 7-Segment Scrubber Track (Days 1 to 7) -->
+        <div class="mb-8">
+          <div class="flex items-center justify-between gap-2 overflow-x-auto pb-2 no-scrollbar" role="tablist" aria-label="Cronograma de 7 días">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="1" role="tab" aria-selected="true">
+              <span class="text-[9px] block">ETAPA</span>
+              <span class="text-xs font-extrabold">DÍA 01</span>
+            </button>
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="2" role="tab" aria-selected="false">
+              <span class="text-[9px] block">ETAPA</span>
+              <span class="text-xs font-extrabold">DÍA 02</span>
+            </button>
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="3" role="tab" aria-selected="false">
+              <span class="text-[9px] block">ETAPA</span>
+              <span class="text-xs font-extrabold">DÍA 03</span>
+            </button>
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="4" role="tab" aria-selected="false">
+              <span class="text-[9px] block">ETAPA</span>
+              <span class="text-xs font-extrabold">DÍA 04</span>
+            </button>
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="5" role="tab" aria-selected="false">
+              <span class="text-[9px] block">ETAPA</span>
+              <span class="text-xs font-extrabold">DÍA 05</span>
+            </button>
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="6" role="tab" aria-selected="false">
+              <span class="text-[9px] block">ETAPA</span>
+              <span class="text-xs font-extrabold">DÍA 06</span>
+            </button>
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="7" role="tab" aria-selected="false">
+              <span class="text-[9px] block text-asuncion-cognac">FINAL</span>
+              <span class="text-xs font-extrabold text-asuncion-cognac">DÍA 07</span>
+            </button>
+          </div>
+
+          <!-- Progress Line Track -->
+          <div class="w-full bg-asuncion-surface h-1.5 mt-2 border border-asuncion-border overflow-hidden">
+            <div id="asuncionProcProgressBar" class="bg-asuncion-cognac h-full w-[14.28%] transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <!-- 2-Column Editorial Delivery Stage -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 border border-asuncion-border bg-asuncion-card">
           
-          <div class="p-6">
-            <span class="font-mono text-xs text-asuncion-cognac font-bold block mb-2">DÍA 01</span>
-            <h3 class="font-serif font-bold text-lg text-white mb-2">Recepción de Datos</h3>
-            <p class="text-xs text-asuncion-muted leading-relaxed">
-              Recibimos tu lista en Excel, fotos de tus productos y los números de WhatsApp que recibirán los pedidos.
-            </p>
+          <!-- Left Column: Milestone Briefing -->
+          <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-asuncion-border">
+            <div>
+              <div class="flex items-center gap-2 font-mono text-xs text-asuncion-muted mb-3 uppercase">
+                <span id="asuncionProcPhaseTag" class="text-asuncion-cognac font-bold">[FASE 01 / ONBOARDING]</span>
+                <span>·</span>
+                <span id="asuncionProcPhaseScope">TIEMPO: 24 HORAS</span>
+              </div>
+
+              <h3 id="asuncionProcPhaseTitle" class="font-serif font-bold text-xl sm:text-2xl text-white mb-4">
+                Recepción de Datos, Catálogo y Reserva de Dominio
+              </h3>
+
+              <p id="asuncionProcPhaseDesc" class="text-xs sm:text-sm text-asuncion-muted leading-relaxed mb-6">
+                Recibimos por WhatsApp o Drive tu lista de productos en Excel, fotos, lista de precios y tu logo. Si no tenés logo, definimos tipografía limpia y paleta de color. Configuramos el número de WhatsApp receptor de pedidos.
+              </p>
+
+              <!-- Technical Checklist -->
+              <div class="p-4 border border-asuncion-border bg-asuncion-void mb-6">
+                <span class="font-mono text-[10px] text-asuncion-cognac uppercase block mb-2 font-bold">[ENTREGABLES VERIFICADOS DE ESTA ETAPA]:</span>
+                <ul id="asuncionProcChecklist" class="space-y-2 font-mono text-xs text-asuncion-muted">
+                  <li class="flex items-center gap-2 text-white">
+                    <span class="text-asuncion-cognac font-bold">[OK]</span>
+                    <span>Ingesta completa de catálogo .xlsx con precios en Guaraníes</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-white">
+                    <span class="text-asuncion-cognac font-bold">[OK]</span>
+                    <span>Asignación de dominio de identidad comercial (.store / .shop / .studio)</span>
+                  </li>
+                  <li class="flex items-center gap-2 text-white">
+                    <span class="text-asuncion-cognac font-bold">[OK]</span>
+                    <span>Número de WhatsApp receptor verificado y enlazado</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Stage Navigation Controls -->
+            <div class="pt-6 border-t border-asuncion-border flex items-center justify-between gap-4 font-mono text-xs">
+              <div class="flex items-center gap-2">
+                <button type="button" id="asuncionPrevBtn" aria-label="Día anterior"
+                  class="h-11 px-4 border border-asuncion-border hover:border-white text-white uppercase flex items-center gap-1 transition-colors bg-asuncion-surface">
+                  <span>← Anterior</span>
+                </button>
+                <button type="button" id="asuncionNextBtn" aria-label="Siguiente día"
+                  class="h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-bold uppercase flex items-center gap-1 transition-colors">
+                  <span>Siguiente →</span>
+                </button>
+              </div>
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20el%20cronograma%20de%207%20d%C3%ADas"
+                target="_blank" rel="noopener"
+                class="hidden sm:inline-flex items-center gap-1.5 text-asuncion-cognac hover:text-amber-200 transition-colors uppercase">
+                <span>Comenzar Día 01</span>
+                <span>↗</span>
+              </a>
+            </div>
           </div>
 
-          <div class="p-6">
-            <span class="font-mono text-xs text-asuncion-cognac font-bold block mb-2">DÍA 02–04</span>
-            <h3 class="font-serif font-bold text-lg text-white mb-2">Diseño & Carga</h3>
-            <p class="text-xs text-asuncion-muted leading-relaxed">
-              Programamos el catálogo para móviles, estructuramos categorías y cargamos tu stock inicial.
-            </p>
-          </div>
+          <!-- Right Column: Editorial Delivery Monitor -->
+          <div class="lg:col-span-5 p-6 sm:p-8 bg-asuncion-surface flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-3 border-b border-asuncion-border font-mono text-xs text-asuncion-muted mb-4">
+                <span class="flex items-center gap-2 text-white font-semibold">
+                  <span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span>
+                  <span id="asuncionSimTitle">TELEMETRÍA // DÍA 01</span>
+                </span>
+                <span class="text-asuncion-cognac font-bold" id="asuncionSimProgress">PROGRESO 14%</span>
+              </div>
 
-          <div class="p-6">
-            <span class="font-mono text-xs text-asuncion-cognac font-bold block mb-2">DÍA 05–06</span>
-            <h3 class="font-serif font-bold text-lg text-white mb-2">Simulación Real</h3>
-            <p class="text-xs text-asuncion-muted leading-relaxed">
-              Hacemos pedidos de prueba contigo para verificar que el mensaje llegue exacto a tu celular.
-            </p>
-          </div>
+              <!-- Dynamic Data Monitor -->
+              <div id="asuncionStageTelemetry" class="border border-asuncion-border bg-asuncion-card p-5 font-mono text-xs leading-relaxed min-h-[220px] flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
+                    <span class="text-asuncion-cognac">ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
+                    <span class="text-asuncion-cognac font-bold">[PROCESADO]</span>
+                  </div>
+                  <div class="space-y-1.5 text-asuncion-sand text-[11px]">
+                    <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                      <span>• SKUs importados:</span>
+                      <span class="text-white font-bold">100 artículos</span>
+                    </div>
+                    <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                      <span>• Moneda local:</span>
+                      <span class="text-asuncion-cognac font-bold">Guaraníes (₲)</span>
+                    </div>
+                    <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                      <span>• Receptor WhatsApp:</span>
+                      <span class="text-white font-bold">+595 986 125 649</span>
+                    </div>
+                  </div>
+                </div>
 
-          <div class="p-6 bg-asuncion-void">
-            <span class="font-mono text-xs text-asuncion-cognac font-bold block mb-2">DÍA 07</span>
-            <h3 class="font-serif font-bold text-lg text-white mb-2">Salida en Vivo</h3>
-            <p class="text-xs text-asuncion-muted leading-relaxed">
-              Conectamos tu dominio comercial propio (.store / .shop) y te entregamos la plataforma facturando.
-            </p>
+                <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
+                  <span>DOMINIO SELECCIONADO:</span>
+                  <span class="font-bold underline">tunegocio.store</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Contact Link for 7-day sprint -->
+            <div class="pt-6 mt-6 border-t border-asuncion-border">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20agendar%20mi%20entrega%20en%207%20d%C3%ADas%20h%C3%A1biles"
+                target="_blank" rel="noopener"
+                class="w-full h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-card text-white font-mono text-xs uppercase flex items-center justify-center gap-2 transition-colors">
+                <span>Agendar Sprint de 7 Días en WhatsApp</span>
+                <span>→</span>
+              </a>
+            </div>
+
           </div>
 
         </div>
@@ -987,6 +1120,377 @@
           }
         });
       });
+
+      // Lógica del Cronograma Interactivo de 7 Días (Modernismo Asunción)
+      const ASUNCION_SPRINT_DAYS = [
+        {
+          day: 1,
+          badge: "DÍA 01 / 07",
+          status: "[FASE 01: INTAKE & DOMINIO]",
+          tag: "[FASE 01 / ONBOARDING]",
+          scope: "TIEMPO: 24 HORAS",
+          title: "Recepción de Datos, Catálogo y Reserva de Dominio",
+          desc: "Recibimos por WhatsApp o Drive tu lista de productos en Excel, fotos, lista de precios y tu logo. Si no tenés logo, definimos tipografía limpia y paleta de color. Configuramos el número de WhatsApp receptor de pedidos.",
+          checklist: [
+            "Ingesta completa de catálogo .xlsx con precios en Guaraníes",
+            "Asignación de dominio de identidad comercial (.store / .shop / .studio)",
+            "Número de WhatsApp receptor verificado y enlazado"
+          ],
+          simTitle: "TELEMETRÍA // DÍA 01",
+          progress: "PROGRESO 14%",
+          telemetryHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
+                <span class="text-asuncion-cognac">ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
+                <span class="text-asuncion-cognac font-bold">[PROCESADO]</span>
+              </div>
+              <div class="space-y-1.5 text-asuncion-sand text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• SKUs importados:</span>
+                  <span class="text-white font-bold">100 artículos</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Moneda local:</span>
+                  <span class="text-asuncion-cognac font-bold">Guaraníes (₲)</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Receptor WhatsApp:</span>
+                  <span class="text-white font-bold">+595 986 125 649</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
+              <span>DOMINIO SELECCIONADO:</span>
+              <span class="font-bold underline">tunegocio.store</span>
+            </div>
+          `
+        },
+        {
+          day: 2,
+          badge: "DÍA 02 / 07",
+          status: "[FASE 02: ARQUITECTURA & WIREFRAME]",
+          tag: "[FASE 02 / ESTRUCTURA]",
+          scope: "TIEMPO: 24 HORAS",
+          title: "Diseño Editorial y Wireframing Mobile-First",
+          desc: "Estructuramos la navegación táctil optimizada para celulares en Asunción y todo Paraguay. Priorizamos categorías clave, filtros instantáneos y la barra fija inferior para despacho a WhatsApp.",
+          checklist: [
+            "Composición tipográfica con Fraunces y Plus Jakarta Sans",
+            "Mapeo de ergonomía táctil con botones mínimos de 44px",
+            "Navegación fluida por rubros y colecciones"
+          ],
+          simTitle: "TELEMETRÍA // DÍA 02",
+          progress: "PROGRESO 28%",
+          telemetryHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
+                <span class="text-asuncion-cognac">LAYOUT_DESIGN: EDITORIAL_ASUNCION</span>
+                <span class="text-asuncion-cognac font-bold">[APROBADO]</span>
+              </div>
+              <div class="space-y-1.5 text-asuncion-sand text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Tipografía titular:</span>
+                  <span class="text-white font-serif">Fraunces 700</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Zona de interacción táctil:</span>
+                  <span class="text-asuncion-cognac font-bold">Inferior fija 44px</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Contraste visual WCAG:</span>
+                  <span class="text-white font-bold">AAA Compliant</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-border text-asuncion-muted text-[10px] flex items-center justify-between">
+              <span>ESTÉTICA REGIONAL:</span>
+              <span class="text-white">Tonos cognac, arena y noche</span>
+            </div>
+          `
+        },
+        {
+          day: 3,
+          badge: "DÍA 03 / 07",
+          status: "[FASE 03: MOTOR DE DESPACHO]",
+          tag: "[FASE 03 / DESARROLLO MOTOR]",
+          scope: "TIEMPO: 24 HORAS",
+          title: "Motor de Catálogo Móvil y Carrito WhatsApp en Guaraníes",
+          desc: "Programamos el carrito de pedidos en JavaScript vanilla puro. Calcula el importe total exacto en Guaraníes (₲) y formatea el mensaje de pedido estructurado para WhatsApp.",
+          checklist: [
+            "Motor reactivo local sin librerías lentas (&lt; 10KB)",
+            "Formateo en Guaraníes con separadores de miles",
+            "Enlace seguro wa.me listo para recepción de ventas"
+          ],
+          simTitle: "TELEMETRÍA // DÍA 03",
+          progress: "PROGRESO 42%",
+          telemetryHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
+                <span class="text-asuncion-cognac">DISPATCH_ENGINE: WA_GENERATOR</span>
+                <span class="text-asuncion-cognac font-bold">[200 OK]</span>
+              </div>
+              <div class="p-2 border border-asuncion-border bg-black font-mono text-[10px] text-asuncion-cognac leading-tight space-y-1 mb-2">
+                <div>*PEDIDO NUEVO // PUNTO PRISMA ASUNCIÓN*</div>
+                <div class="text-white">1x Repuesto Filtro Hidráulico (₲ 280.000)</div>
+                <div class="text-white">2x Aceite Sintético 5W30 (₲ 170.000)</div>
+                <div class="text-asuncion-muted">----------------------------------</div>
+                <div class="font-bold text-asuncion-sand">TOTAL: ₲ 450.000</div>
+              </div>
+            </div>
+            <div class="mt-2 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
+              <span>LATENCIA:</span>
+              <span class="font-bold">0 seg (Directo a WhatsApp)</span>
+            </div>
+          `
+        },
+        {
+          day: 4,
+          badge: "DÍA 04 / 07",
+          status: "[FASE 04: CONTENIDO & WEBP]",
+          tag: "[FASE 04 / FOTOGRAFÍA & SKUS]",
+          scope: "TIEMPO: 24 HORAS",
+          title: "Optimización Fotográfica y Conversión WebP",
+          desc: "Procesamos cada fotografía de tu negocio, recortamos a proporciones exactas de catálogo, convertimos a WebP con compresión de alto rendimiento para que carguen en milisegundos con redes 4G.",
+          checklist: [
+            "Compresión WebP con ahorro del 78% en peso de imágenes",
+            "Carga diferida nativa (loading='lazy')",
+            "Redacción de descripciones y especificaciones claras"
+          ],
+          simTitle: "TELEMETRÍA // DÍA 04",
+          progress: "PROGRESO 57%",
+          telemetryHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
+                <span class="text-asuncion-cognac">IMAGE_COMPRESSION: OPTIMIZER</span>
+                <span class="text-asuncion-cognac font-bold">[AHORRO 78%]</span>
+              </div>
+              <div class="space-y-1.5 text-asuncion-sand text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Peso original:</span>
+                  <span class="text-asuncion-muted line-through">4.8 MB</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Peso WebP:</span>
+                  <span class="text-asuncion-cognac font-bold">1.05 MB (-78%)</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Tiempo carga móvil:</span>
+                  <span class="text-white font-bold">&lt; 0.6 seg</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-border text-asuncion-muted text-[10px] flex items-center justify-between">
+              <span>ASPECT RATIO:</span>
+              <span class="text-white">4:5 uniforme en todo el catálogo</span>
+            </div>
+          `
+        },
+        {
+          day: 5,
+          badge: "DÍA 05 / 07",
+          status: "[FASE 05: PLANILHA & SINCRONIZACIÓN]",
+          tag: "[FASE 05 / INTEGRACIONES]",
+          scope: "TIEMPO: 24 HORAS",
+          title: "Sincronización con Google Sheets y Formulario",
+          desc: "Enlazamos la base de datos o planilha de Google Sheets para que puedas actualizar precios, stock o promociones desde tu propio celular sin tocar código.",
+          checklist: [
+            "Conexión con Google Sheets en tiempo real",
+            "Mapeo de campos: SKU, Título, Precio en Guaraníes, Stock",
+            "Actualización autónoma desde el teléfono"
+          ],
+          simTitle: "TELEMETRÍA // DÍA 05",
+          progress: "PROGRESO 71%",
+          telemetryHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
+                <span class="text-asuncion-cognac">SYNC_ENGINE: GOOGLE_SHEETS</span>
+                <span class="text-asuncion-cognac font-bold">[ACTIVO]</span>
+              </div>
+              <div class="space-y-1.5 text-asuncion-sand text-[11px]">
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Planilha enlazada:</span>
+                  <span class="text-white font-mono">Stock_Asuncion_2026</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Propagación:</span>
+                  <span class="text-asuncion-cognac font-bold">Tiempo real</span>
+                </div>
+                <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
+                  <span>• Autonomía del negocio:</span>
+                  <span class="text-white font-bold">100% sin depender de técnicos</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
+              <span>ADMINISTRACIÓN:</span>
+              <span class="font-bold">Desde tu propio smartphone</span>
+            </div>
+          `
+        },
+        {
+          day: 6,
+          badge: "DÍA 06 / 07",
+          status: "[FASE 06: AUDITORÍA QA & SIMULACIÓN REAL]",
+          tag: "[FASE 06 / CONTROL DE CALIDAD]",
+          scope: "TIEMPO: 24 HORAS",
+          title: "Auditoría Lighthouse 95+ y Pedido de Prueba Real",
+          desc: "Realizamos pedidos de prueba reales hacia tu WhatsApp sobre redes móviles de Paraguay para certificar que recibas las órdenes al instante y sin errores.",
+          checklist: [
+            "Puntajes Lighthouse &gt;= 95 en Rendimiento, Accesibilidad y SEO",
+            "Prueba de orden y despacho real hacia tu número de WhatsApp",
+            "Certificación de ergonomía táctil en pantallas de 360px a 1440px"
+          ],
+          simTitle: "TELEMETRÍA // DÍA 06",
+          progress: "PROGRESO 85%",
+          telemetryHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
+                <span class="text-asuncion-cognac">LIGHTHOUSE_REPORT: ASUNCION</span>
+                <span class="text-asuncion-cognac font-bold">[100% CERTIFICADO]</span>
+              </div>
+              <div class="grid grid-cols-4 gap-2 text-center my-3">
+                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
+                  <div class="text-lg font-bold text-asuncion-cognac">99</div>
+                  <div class="text-[9px] text-asuncion-muted uppercase">Perf</div>
+                </div>
+                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
+                  <div class="text-lg font-bold text-asuncion-cognac">100</div>
+                  <div class="text-[9px] text-asuncion-muted uppercase">A11y</div>
+                </div>
+                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
+                  <div class="text-lg font-bold text-asuncion-cognac">100</div>
+                  <div class="text-[9px] text-asuncion-muted uppercase">Best</div>
+                </div>
+                <div class="p-2 border border-asuncion-cognac/40 bg-asuncion-cognac/10">
+                  <div class="text-lg font-bold text-asuncion-cognac">100</div>
+                  <div class="text-[9px] text-asuncion-muted uppercase">SEO</div>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 bg-asuncion-void border border-asuncion-border text-[10px] text-asuncion-sand flex items-center justify-between">
+              <span>TEST DE WHATSAPP REAL:</span>
+              <span class="text-asuncion-cognac font-bold">[VERIFICADO EN ASUNCIÓN]</span>
+            </div>
+          `
+        },
+        {
+          day: 7,
+          badge: "DÍA 07 / 07",
+          status: "[FASE 07: DESPLIEGUE FINAL & ENTREGA]",
+          tag: "[FASE 07 / LANZAMIENTO]",
+          scope: "ENTREGA EN MANO",
+          title: "Despliegue en Edge Vercel, Dominio SSL y Entrega Final",
+          desc: "Tu sitio queda 100% activo bajo tu propio dominio (.store, .shop o .studio) con certificado SSL bancario, CDN global ultra rápida y soporte prioritario.",
+          checklist: [
+            "Despliegue global en Vercel Edge con CDN de baja latencia",
+            "Certificado SSL HTTPS bancario activado y validado",
+            "Manual exprés en video de 3 minutos para actualizar tu catálogo"
+          ],
+          simTitle: "TELEMETRÍA // DÍA 07",
+          progress: "PROGRESO 100%",
+          telemetryHtml: `
+            <div>
+              <div class="flex items-center justify-between text-[10px] text-asuncion-cognac border-b border-asuncion-cognac/30 pb-2 mb-3">
+                <span>DEPLOYMENT_STATUS: LIVE</span>
+                <span class="bg-asuncion-cognac text-black px-2 py-0.5 font-bold">[ONLINE]</span>
+              </div>
+              <div class="space-y-1.5 text-asuncion-sand text-[11px]">
+                <div class="p-1.5 border border-asuncion-cognac/20 bg-asuncion-cognac/5 flex justify-between">
+                  <span>Dominio activo:</span>
+                  <span class="text-white font-bold">https://tunegocio.store</span>
+                </div>
+                <div class="p-1.5 border border-asuncion-cognac/20 bg-asuncion-cognac/5 flex justify-between">
+                  <span>Seguridad SSL:</span>
+                  <span class="text-asuncion-cognac font-bold">TLS 1.3 Cifrado</span>
+                </div>
+                <div class="p-1.5 border border-asuncion-cognac/20 bg-asuncion-cognac/5 flex justify-between">
+                  <span>Canal de ventas:</span>
+                  <span class="text-white font-bold">WhatsApp Operativo</span>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 p-2 bg-asuncion-cognac text-black font-bold text-center text-xs uppercase tracking-wider">
+              SISTEMA LISTO PARA VENDER
+            </div>
+          `
+        }
+      ];
+
+      let currentAsuncionDay = 1;
+
+      function setAsuncionSprintDay(dayNum) {
+        if (dayNum < 1) dayNum = 1;
+        if (dayNum > 7) dayNum = 7;
+        currentAsuncionDay = dayNum;
+        const dayData = ASUNCION_SPRINT_DAYS[dayNum - 1];
+        if (!dayData) return;
+
+        document.querySelectorAll(".asuncion-proc-btn").forEach(btn => {
+          const d = parseInt(btn.getAttribute("data-day"), 10);
+          const isCurrent = d === dayNum;
+          btn.setAttribute("aria-selected", String(isCurrent));
+          if (isCurrent) {
+            btn.className = "asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+          } else {
+            btn.className = "asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+          }
+        });
+
+        const badge = document.getElementById("asuncionProcBadge");
+        const status = document.getElementById("asuncionProcStatus");
+        const pBar = document.getElementById("asuncionProcProgressBar");
+        const tag = document.getElementById("asuncionProcPhaseTag");
+        const scope = document.getElementById("asuncionProcPhaseScope");
+        const title = document.getElementById("asuncionProcPhaseTitle");
+        const desc = document.getElementById("asuncionProcPhaseDesc");
+        const checklist = document.getElementById("asuncionProcChecklist");
+        const simTitle = document.getElementById("asuncionSimTitle");
+        const simProgress = document.getElementById("asuncionSimProgress");
+        const stageTelemetry = document.getElementById("asuncionStageTelemetry");
+
+        if (badge) badge.textContent = dayData.badge;
+        if (status) status.textContent = dayData.status;
+        if (pBar) pBar.style.width = `${(dayNum / 7) * 100}%`;
+        if (tag) tag.textContent = dayData.tag;
+        if (scope) scope.textContent = dayData.scope;
+        if (title) title.textContent = dayData.title;
+        if (desc) desc.textContent = dayData.desc;
+        if (simTitle) simTitle.textContent = dayData.simTitle;
+        if (simProgress) simProgress.textContent = dayData.progress;
+        if (stageTelemetry) stageTelemetry.innerHTML = dayData.telemetryHtml;
+
+        if (checklist) {
+          checklist.innerHTML = dayData.checklist.map(item => `
+            <li class="flex items-center gap-2 text-white">
+              <span class="text-asuncion-cognac font-bold">[OK]</span>
+              <span>${item}</span>
+            </li>
+          `).join("");
+        }
+      }
+
+      document.querySelectorAll(".asuncion-proc-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const d = parseInt(btn.getAttribute("data-day"), 10);
+          setAsuncionSprintDay(d);
+        });
+      });
+
+      const asuncionPrevBtn = document.getElementById("asuncionPrevBtn");
+      const asuncionNextBtn = document.getElementById("asuncionNextBtn");
+
+      if (asuncionPrevBtn) {
+        asuncionPrevBtn.addEventListener("click", () => {
+          setAsuncionSprintDay(currentAsuncionDay - 1);
+        });
+      }
+
+      if (asuncionNextBtn) {
+        asuncionNextBtn.addEventListener("click", () => {
+          setAsuncionSprintDay(currentAsuncionDay + 1);
+        });
+      }
+
+      setAsuncionSprintDay(1);
     });
   </script>
 </body>
