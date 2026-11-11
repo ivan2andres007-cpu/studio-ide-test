@@ -14,7 +14,6 @@
     :root {
       --disp: 'Anton', Impact, 'Arial Narrow', sans-serif !important;
       --mono: 'Space Mono', ui-monospace, Menlo, Consolas, monospace !important;
-      --red: #ea584a !important;
     }
     /* Ensure local images fit cleanly */
     img { max-width: 100%; height: auto; display: block; }
@@ -22,15 +21,6 @@
     .visit-fig img { width: 100%; height: 100%; object-fit: cover; }
     .steps img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
     .strop-fig img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
-
-    /* Impeccable Craft Floor & Legibility Rules */
-    .brand-word small { font-size: 11.5px !important; letter-spacing: 0.08em; }
-    ::placeholder { color: #544e43 !important; opacity: 1 !important; }
-    .wrap { display: flow-root !important; }
-    .board-sec { padding: 64px 24px !important; overflow: hidden; }
-    .turno-sec { padding: 64px 24px !important; overflow: hidden; }
-    .visit-sec { padding: 64px 24px !important; overflow: hidden; }
-    .strop { padding: 24px !important; }
   </style>
 </head>
 <body>
@@ -68,13 +58,13 @@
     <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
+        <p class="tag"><span class="dot" aria-hidden="true"></span><span data-open-status="">Abierto · hasta las 20:00</span></p>
         <h1 id="hero-title" class="giant"><span class="g1">Corte.</span> <span class="g2">Fade.</span> <span class="g3">Navaja.</span><span class="sr"> La Forja Barber Studio, en Asunción</span></h1>
         <p class="lede">Barbería y taller de corte en Asunción. Tijera, máquina y navaja, con turno y sin apuro: te sentás, charlamos lo que querés y salís impecable.</p>
         <div class="cta-row">
           <a class="btn btn-red" href="#turno">Pedí tu turno</a>
           <a class="btn btn-ghost" href="#servicios">Ver precios</a>
         </div>
-        <p class="tag mt-4"><span class="dot" aria-hidden="true"></span><span data-open-status="">Abierto · hasta las 20:00</span></p>
       </div>
       <div class="hero-media">
         <div class="pole" aria-hidden="true"><span class="pole-cap"></span><span class="pole-glass"></span><span class="pole-cap"></span></div>
@@ -243,25 +233,6 @@
           <button class="map-shield" type="button"><span>Tocá para mover el mapa</span></button>
           <a class="map-link" href="https://www.openstreetmap.org/#map=16/-25.2954/-57.5796" target="_blank" rel="noopener">Abrir mapa grande</a>
         </div>
-      </div>
-    </section>
-    <!-- Banner de Prototipado Rápido PyMEs (Punto Prisma Studio) -->
-    <section class="prototype-sec" aria-labelledby="proto-title" style="background: #121110; border-top: 1px solid rgba(236,227,211,0.12); border-bottom: 1px solid rgba(236,227,211,0.12); padding: 48px 24px;">
-      <div class="wrap" style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start; max-width: 1100px; margin: 0 auto;">
-        <div style="display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11.5px; color: var(--brass); text-transform: uppercase; letter-spacing: 0.12em;">
-          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--brass);"></span>
-          <span>PROTOTIPADO RÁPIDO PYMES</span>
-        </div>
-        <h2 id="proto-title" style="font-family: var(--disp); font-size: clamp(28px, 4vw, 42px); line-height: 1.1; text-transform: uppercase; color: var(--bone); margin: 0;">
-          ¿No ves tu rubro comercial en la lista?
-        </h2>
-        <p style="font-size: 14px; line-height: 1.6; color: var(--mute); max-width: 720px; margin: 0;">
-          Diseñamos la arquitectura técnica, catálogo interactivo o sistema a medida para distribuidoras, ópticas, repuesterías agrícolas, veterinarias o industrias en 48 horas sin costo inicial.
-        </p>
-        <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20no%20vi%20mi%20rubro%20espec%C3%ADfico%20en%20el%20cat%C3%A1logo%20y%20quiero%20armar%20un%20prototipo%20a%20medida%20para%20mi%20empresa." target="_blank" rel="noopener" class="btn btn-red" style="margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 24px; font-family: var(--disp); font-size: 18px; text-transform: uppercase; text-decoration: none;">
-          <span>Consultar por WhatsApp</span>
-          <span>→</span>
-        </a>
       </div>
     </section>
   </main>
