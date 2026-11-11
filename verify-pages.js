@@ -123,6 +123,11 @@ async function runAudit() {
           const simTitle = await page.$eval('#procSimulatorTitle', el => el.textContent.trim());
           console.log(`  [7-Day Timeline Test] Clicked Day 03 -> Badge: "${badgeText}" | Sim: "${simTitle}"`);
         }
+
+        // Test gTLD domain preview
+        await page.fill('#gtldBrandInput', 'supermercado');
+        const storeDomain = await page.$eval('.gtld-preview-store', el => el.textContent.trim());
+        console.log(`  [gTLD Test] Domain preview for 'supermercado': ${storeDomain}`);
       }
 
       if (item.file === 'index-industrial-lab.html') {
@@ -131,8 +136,13 @@ async function runAudit() {
           await step4Btn.click();
           const badgeText = await page.$eval('#labStepBadge', el => el.textContent.trim());
           const oscilloTitle = await page.$eval('#labOscilloTitle', el => el.textContent.trim());
-          console.log(`  [Hardware Sequencer Test] Clicked Step 04 -> Badge: "${badgeText}" | Oscillo: "${oscilloTitle}"`);
+          console.log(`  [Console Sequencer Test] Clicked Step 04 -> Badge: "${badgeText}" | Monitor: "${oscilloTitle}"`);
         }
+
+        // Test gTLD domain preview
+        await page.fill('#labBrandInput', 'repuestosdeleste');
+        const storeDomain = await page.$eval('.lab-preview-store', el => el.textContent.trim());
+        console.log(`  [gTLD Test] Domain preview for 'repuestosdeleste': ${storeDomain}`);
 
         const initialDisplay = await page.$eval('#totalQuoteDisplay', el => el.textContent.trim());
         await page.fill('#skuRange', '150');
@@ -172,8 +182,8 @@ async function runAudit() {
 
         // Test Domain input
         await page.fill('#domainBrandInput', 'autocentro');
-        const firstDomain = await page.$eval('.domain-preview', el => el.textContent.trim());
-        console.log(`  [Domain Test] Domain preview for 'autocentro': ${firstDomain}`);
+        const firstDomain = await page.$eval('.swiss-preview-store', el => el.textContent.trim());
+        console.log(`  [gTLD Domain Test] Domain preview for 'autocentro': ${firstDomain}`);
       }
 
       if (item.file === 'index-modernismo-asuncion.html') {
@@ -184,6 +194,11 @@ async function runAudit() {
           const simTitle = await page.$eval('#asuncionSimTitle', el => el.textContent.trim());
           console.log(`  [Asuncion 7-Day Timeline Test] Clicked Day 06 -> Badge: "${badgeText}" | Telemetry: "${simTitle}"`);
         }
+
+        // Test gTLD Domain input
+        await page.fill('#asuncionBrandInput', 'boutiquecarmelitas');
+        const storeDomain = await page.$eval('.asuncion-preview-store', el => el.textContent.trim());
+        console.log(`  [gTLD Domain Test] Domain preview for 'boutiquecarmelitas': ${storeDomain}`);
 
         const tabBtn = await page.$('.case-tab-btn[data-case="barberia"]');
         if (tabBtn) {
