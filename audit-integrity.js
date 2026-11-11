@@ -3,9 +3,6 @@ const path = require('path');
 
 const files = [
   'index.html',
-  'index-atelier-suizo.html',
-  'index-industrial-lab.html',
-  'index-modernismo-asuncion.html',
   'demos/la-forja/index.html'
 ];
 

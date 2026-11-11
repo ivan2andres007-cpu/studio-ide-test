@@ -53,10 +53,7 @@ async function runAudit() {
   });
 
   const pagesToTest = [
-    { name: 'Original', file: 'index.html', prefix: 'original' },
-    { name: 'Variante 01 - Atelier Suizo', file: 'index-atelier-suizo.html', prefix: 'atelier-suizo' },
-    { name: 'Variante 02 - Industrial Lab', file: 'index-industrial-lab.html', prefix: 'industrial-lab' },
-    { name: 'Variante 03 - Modernismo Asunción', file: 'index-modernismo-asuncion.html', prefix: 'modernismo-asuncion' },
+    { name: 'Punto Prisma Studio (Principal)', file: 'index.html', prefix: 'studio-principal' },
     { name: 'Demo - La Forja Barber Studio', file: 'demos/la-forja/index.html', prefix: 'la-forja' }
   ];
 
@@ -116,12 +113,12 @@ async function runAudit() {
 
       // Test specific interactivity if present
       if (item.file === 'index.html') {
-        const day3Btn = await page.$('.proc-day-btn[data-day="3"]');
-        if (day3Btn) {
-          await day3Btn.click();
-          const badgeText = await page.$eval('#procDayBadge', el => el.textContent.trim());
-          const simTitle = await page.$eval('#procSimulatorTitle', el => el.textContent.trim());
-          console.log(`  [7-Day Timeline Test] Clicked Day 03 -> Badge: "${badgeText}" | Sim: "${simTitle}"`);
+        const asuncionDay6Btn = await page.$('.asuncion-proc-btn[data-day="6"]');
+        if (asuncionDay6Btn) {
+          await asuncionDay6Btn.click();
+          const badgeText = await page.$eval('#asuncionProcBadge', el => el.textContent.trim());
+          const simTitle = await page.$eval('#asuncionSimTitle', el => el.textContent.trim());
+          console.log(`  [Asunción 7-Day Timeline Test] Clicked Day 06 -> Badge: "${badgeText}" | Telemetry: "${simTitle}"`);
         }
 
         // Test scroll-driven progression
@@ -130,79 +127,6 @@ async function runAudit() {
           if (el) el.scrollIntoView({ behavior: 'instant', block: 'center' });
         });
         await page.waitForTimeout(200);
-        const scrolledBadge = await page.$eval('#procDayBadge', el => el.textContent.trim());
-        console.log(`  [Scroll Progression Test] Scrolled to #proceso -> Badge: "${scrolledBadge}"`);
-
-        // Test gTLD domain preview
-        await page.fill('#gtldBrandInput', 'supermercado');
-        const storeDomain = await page.$eval('.gtld-preview-store', el => el.textContent.trim());
-        console.log(`  [gTLD Test] Domain preview for 'supermercado': ${storeDomain}`);
-      }
-
-      if (item.file === 'index-industrial-lab.html') {
-        const step4Btn = await page.$('.lab-step-btn[data-step="4"]');
-        if (step4Btn) {
-          await step4Btn.click();
-          const badgeText = await page.$eval('#labStepBadge', el => el.textContent.trim());
-          const oscilloTitle = await page.$eval('#labMonitorTitle', el => el.textContent.trim());
-          console.log(`  [Console Sequencer Test] Clicked Step 04 -> Badge: "${badgeText}" | Monitor: "${oscilloTitle}"`);
-        }
-
-        // Test gTLD domain preview
-        await page.fill('#labBrandInput', 'repuestosdeleste');
-        const storeDomain = await page.$eval('.lab-preview-store', el => el.textContent.trim());
-        console.log(`  [gTLD Test] Domain preview for 'repuestosdeleste': ${storeDomain}`);
-
-        const initialDisplay = await page.$eval('#totalQuoteDisplay', el => el.textContent.trim());
-        await page.fill('#skuRange', '150');
-        await page.dispatchEvent('#skuRange', 'input');
-        const updatedDisplay = await page.$eval('#totalQuoteDisplay', el => el.textContent.trim());
-        console.log(`  [Calculator Test] Initial: ${initialDisplay} -> Updated (150 SKUs): ${updatedDisplay}`);
-
-        // Test toggle modSync
-        await page.click('#modSync');
-        const syncDisplay = await page.$eval('#totalQuoteDisplay', el => el.textContent.trim());
-        console.log(`  [Calculator Test] With Google Sheets Sync: ${syncDisplay}`);
-      }
-
-      if (item.file === 'index-atelier-suizo.html') {
-        const swissDay5Btn = await page.$('.swiss-proc-btn[data-day="5"]');
-        if (swissDay5Btn) {
-          await swissDay5Btn.click();
-          const badgeText = await page.$eval('#swissProcBadge', el => el.textContent.trim());
-          const simTitle = await page.$eval('#swissProcSimTitle', el => el.textContent.trim());
-          console.log(`  [Swiss 7-Day Timeline Test] Clicked Day 05 -> Badge: "${badgeText}" | Telemetry: "${simTitle}"`);
-        }
-
-        await page.fill('#demoSearchInput', 'barber');
-        await page.dispatchEvent('#demoSearchInput', 'input');
-        const count = await page.$eval('#demoCountLabel', el => el.textContent.trim());
-        console.log(`  [Search Filter Test] Result with 'barber': "${count}"`);
-        await page.click('#clearSearchBtn');
-
-        // Test WhatsApp Simulator
-        const addBtns = await page.$$('.sim-add-btn');
-        if (addBtns.length > 0) {
-          await addBtns[0].click();
-          await addBtns[1].click();
-          const simTotal = await page.$eval('#simTotalDisplay', el => el.textContent.trim());
-          console.log(`  [Simulator Test] Total after adding 2 items: ${simTotal}`);
-        }
-
-        // Test Domain input
-        await page.fill('#domainBrandInput', 'autocentro');
-        const firstDomain = await page.$eval('.swiss-preview-store', el => el.textContent.trim());
-        console.log(`  [gTLD Domain Test] Domain preview for 'autocentro': ${firstDomain}`);
-      }
-
-      if (item.file === 'index-modernismo-asuncion.html') {
-        const asuncionDay6Btn = await page.$('.asuncion-proc-btn[data-day="6"]');
-        if (asuncionDay6Btn) {
-          await asuncionDay6Btn.click();
-          const badgeText = await page.$eval('#asuncionProcBadge', el => el.textContent.trim());
-          const simTitle = await page.$eval('#asuncionSimTitle', el => el.textContent.trim());
-          console.log(`  [Asuncion 7-Day Timeline Test] Clicked Day 06 -> Badge: "${badgeText}" | Telemetry: "${simTitle}"`);
-        }
 
         // Test gTLD Domain input
         await page.fill('#asuncionBrandInput', 'boutiquecarmelitas');
