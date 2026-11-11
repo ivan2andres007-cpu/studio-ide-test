@@ -12,11 +12,11 @@
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59e0b' stroke-width='2'><rect x='2' y='2' width='20' height='20' rx='2'/><circle cx='8' cy='8' r='2'/><line x1='16' y1='8' x2='16' y2='8'/><line x1='8' y1='16' x2='16' y2='16'/></svg>">
 
-  <!-- Google Fonts: Space Grotesk + JetBrains Mono + Plus Jakarta Sans -->
+  <!-- Google Fonts: Space Mono (Tactical Console Display) + JetBrains Mono (Terminal Body & Data) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
@@ -26,20 +26,20 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['"Space Grotesk"', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Mono"', 'monospace'],
+            sans: ['"JetBrains Mono"', 'monospace'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
             lab: {
-              void: '#0e0f12',
-              chassis: '#16181d',
-              card: '#1b1d24',
+              void: '#07080a',
+              chassis: '#111318',
+              card: '#151820',
               sunken: '#090a0d',
-              border: '#282b34',
-              borderBright: '#3b3f4d',
-              text: '#f1f2f6',
-              muted: '#8b8f9e',
+              border: '#242a36',
+              borderBright: '#3c4558',
+              text: '#e6eaf2',
+              muted: '#7e879a',
               amber: '#f59e0b',
               amberGlow: '#d97706',
               emerald: '#10b981',
@@ -53,7 +53,7 @@
   <style>
     ::selection {
       background-color: #f59e0b;
-      color: #0e0f12;
+      color: #07080a;
     }
 
     html {
@@ -63,9 +63,9 @@
     }
 
     body {
-      background-color: #0e0f12;
-      color: #f1f2f6;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #07080a;
+      color: #e6eaf2;
+      font-family: 'JetBrains Mono', monospace;
       overflow-x: hidden;
       width: 100%;
       max-width: 100vw;

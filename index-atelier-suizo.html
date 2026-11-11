@@ -12,11 +12,11 @@
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'><polygon points='12 2 2 22 22 22'/></svg>">
 
-  <!-- Google Fonts: Syne + Plus Jakarta Sans + JetBrains Mono -->
+  <!-- Google Fonts: Archivo (Swiss International Typographic Style) + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
@@ -26,22 +26,24 @@
       theme: {
         extend: {
           fontFamily: {
-            display: ['Syne', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['Archivo', 'sans-serif'],
+            sans: ['Archivo', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
             swiss: {
-              void: '#070709',
-              base: '#0c0d10',
-              elevated: '#121318',
-              hover: '#191a21',
-              border: 'rgba(255, 255, 255, 0.08)',
-              borderStrong: 'rgba(255, 255, 255, 0.20)',
-              text: '#f3f3f6',
-              muted: '#8e8e9c',
-              subtle: '#5c5c68',
+              void: '#07080a',
+              base: '#0c0d12',
+              elevated: '#12141a',
+              hover: '#191b24',
+              border: 'rgba(255, 255, 255, 0.10)',
+              borderStrong: 'rgba(255, 255, 255, 0.25)',
+              text: '#f4f5f8',
+              muted: '#8e92a4',
+              subtle: '#5c6072',
               accent: '#ffffff',
+              red: '#eb2626',
+              redHover: '#ff3b3b',
             }
           }
         }
@@ -51,8 +53,8 @@
 
   <style>
     ::selection {
-      background-color: #ffffff;
-      color: #070709;
+      background-color: #eb2626;
+      color: #ffffff;
     }
 
     html {
@@ -62,9 +64,9 @@
     }
 
     body {
-      background-color: #070709;
-      color: #f3f3f6;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #07080a;
+      color: #f4f5f8;
+      font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
       overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
@@ -119,7 +121,7 @@
     button:focus-visible,
     input:focus-visible,
     select:focus-visible {
-      outline: 2px solid #ffffff !important;
+      outline: 2px solid #eb2626 !important;
       outline-offset: 2px !important;
     }
 
@@ -168,10 +170,10 @@
       
       <!-- Logo & Marca -->
       <a href="#inicio" class="flex items-center gap-3 group min-h-[44px]">
-        <div class="w-8 h-8 border border-white/20 bg-swiss-base flex items-center justify-center p-1.5 group-hover:border-white transition-colors">
-          <svg class="w-full h-full text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polygon points="12 2 2 22 22 22" stroke-linejoin="round" />
-            <line x1="12" y1="2" x2="12" y2="22" stroke-dasharray="2 2" />
+        <div class="w-8 h-8 border border-white/20 bg-swiss-base flex items-center justify-center p-1.5 group-hover:border-swiss-red transition-colors">
+          <svg class="w-full h-full text-swiss-red" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="10" y="4" width="4" height="16" />
+            <rect x="4" y="10" width="16" height="4" />
           </svg>
         </div>
         <div class="flex flex-col text-left">
@@ -280,7 +282,7 @@
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 border-t border-white/[0.08]">
               <a href="#demos"
-                class="h-11 px-6 bg-white hover:bg-slate-200 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
+                class="h-11 px-6 bg-swiss-red hover:bg-swiss-redHover text-white font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
                 <span>Explorar Demos en Vivo</span>
                 <span>↓</span>
               </a>
@@ -464,8 +466,8 @@
           </article>
 
           <!-- Pilar 02: Catálogo Móvil (Plan Estrella) -->
-          <article class="swiss-cell p-6 sm:p-8 flex flex-col justify-between bg-swiss-elevated border-t-2 border-t-white relative">
-            <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-white text-black font-mono text-[10px] font-bold px-3 py-1 uppercase tracking-wider">
+          <article class="swiss-cell p-6 sm:p-8 flex flex-col justify-between bg-swiss-elevated border-t-2 border-t-swiss-red relative">
+            <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-swiss-red text-white font-mono text-[10px] font-bold px-3 py-1 uppercase tracking-wider">
               PLAN ESTRELLA COMERCIOS
             </div>
 
@@ -515,7 +517,7 @@
 
             <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Cat%C3%A1logo%20M%C3%B3vil%20WhatsApp%20(Gs.%202.490.000)"
               target="_blank" rel="noopener"
-              class="w-full h-11 px-4 bg-white hover:bg-slate-200 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+              class="w-full h-11 px-4 bg-swiss-red hover:bg-swiss-redHover text-white font-display font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
               <span>Contratar Catálogo WhatsApp</span>
               <span>→</span>
             </a>
@@ -1512,7 +1514,7 @@ Hacé clic en '+ Agregar' en los productos de la izquierda para ver cómo se gen
             </p>
           </div>
           <a href="${customRubroUrl}" target="_blank" rel="noopener"
-            class="h-11 px-6 bg-white hover:bg-slate-200 text-black font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
+            class="h-11 px-6 bg-swiss-red hover:bg-swiss-redHover text-white font-display font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
             <span>Consultar por WhatsApp</span>
             <span>→</span>
           </a>
