@@ -1887,10 +1887,402 @@
       }
     });
 
-    // Inicializar catálogo al cargar
+    // Inicializar catálogo y proceso al cargar
     document.addEventListener("DOMContentLoaded", () => {
       renderDemos();
+      setSprintDay(1);
     });
+
+    /**
+     * Cronograma de 7 Días Ágil (Brutalismo Editorial)
+     */
+    const SPRINT_DAYS = [
+      {
+        day: 1,
+        badge: "DÍA 01 / 07",
+        status: "[FASE 01: INTAKE & DOMINIO]",
+        tag: "[FASE 01 / ONBOARDING]",
+        scope: "DURACIÓN: 24 HORAS",
+        title: "Recepción de Datos, Catálogo y Reserva de Dominio",
+        desc: "Nos pasás por WhatsApp o Drive tu lista de productos o servicios en Excel, fotos, lista de precios y tu logo. Si no tenés logo, definimos tipografía limpia y paleta de color. Configuramos el número de WhatsApp receptor de pedidos.",
+        checklist: [
+          "Ingesta completa de catálogo .xlsx con precios en Guaraníes",
+          "Asignación de dominio de identidad comercial (.store / .tech / .app)",
+          "Número de WhatsApp receptor verificado y enlazado"
+        ],
+        simTitle: "SIMULADOR EN VIVO // DÍA 01",
+        simHtml: `
+          <div>
+            <div class="flex items-center justify-between text-[10px] text-studio-muted border-b border-white/10 pb-2 mb-3">
+              <span>ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
+              <span class="text-emerald-400 font-bold">[PROCESADO]</span>
+            </div>
+            <div class="space-y-1.5 text-studio-text text-[11px]">
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>• SKUs importados:</span>
+                <span class="text-white font-bold">100 artículos</span>
+              </div>
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>• Moneda local:</span>
+                <span class="text-emerald-400 font-bold">Guaraníes (₲)</span>
+              </div>
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>• Receptor WhatsApp:</span>
+                <span class="text-white font-bold">+595 986 125 649</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-2 bg-studio-void border border-emerald-500/20 text-emerald-300 text-[10px] flex items-center justify-between">
+            <span>DOMINIO SELECCIONADO:</span>
+            <span class="font-bold underline">tunegocio.store</span>
+          </div>
+        `
+      },
+      {
+        day: 2,
+        badge: "DÍA 02 / 07",
+        status: "[FASE 02: ARQUITECTURA VISUAL]",
+        tag: "[FASE 02 / WIREFRAMES & UI]",
+        scope: "DURACIÓN: 24 HORAS",
+        title: "Estructuración de Grilla y Experiencia Móvil",
+        desc: "Definimos la jerarquía editorial bento grid y el flujo de navegación optimizado para pantallas OLED de celulares: buscador rápido, selector de categorías por chips y lectura visual sin fatiga.",
+        checklist: [
+          "Diseño UI adaptado a pantallas móviles de 360px a 430px",
+          "Jerarquía tipográfica con lectura nítida a plena luz del sol",
+          "Aprobación del wireframe y paleta sobria con el cliente"
+        ],
+        simTitle: "SIMULADOR EN VIVO // DÍA 02",
+        simHtml: `
+          <div>
+            <div class="flex items-center justify-between text-[10px] text-studio-muted border-b border-white/10 pb-2 mb-3">
+              <span>CANVAS_MÓVIL: VIEWPORT_390PX</span>
+              <span class="text-white font-bold">[EN REVISIÓN]</span>
+            </div>
+            <div class="p-3 border border-white/10 bg-studio-void space-y-2">
+              <div class="h-3 bg-white/20 w-3/4"></div>
+              <div class="h-2 bg-white/10 w-1/2"></div>
+              <div class="grid grid-cols-2 gap-2 pt-2">
+                <div class="h-16 border border-white/10 bg-studio-surface p-1 flex flex-col justify-end">
+                  <div class="h-2 bg-white/20 w-full mb-1"></div>
+                  <div class="h-2 bg-emerald-400/40 w-1/2"></div>
+                </div>
+                <div class="h-16 border border-white/10 bg-studio-surface p-1 flex flex-col justify-end">
+                  <div class="h-2 bg-white/20 w-full mb-1"></div>
+                  <div class="h-2 bg-emerald-400/40 w-1/2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-2 bg-studio-void border border-white/10 text-studio-muted text-[10px] flex items-center justify-between">
+            <span>DISPOSICIÓN TÁCTIL:</span>
+            <span class="text-white font-bold">Botones &ge; 44px de pulgar</span>
+          </div>
+        `
+      },
+      {
+        day: 3,
+        badge: "DÍA 03 / 07",
+        status: "[FASE 03: CARRITO & PAYLOAD WHATSAPP]",
+        tag: "[FASE 03 / CÓDIGO & MOTOR]",
+        scope: "DURACIÓN: 24 HORAS",
+        title: "Programación del Carrito y Despachador de WhatsApp",
+        desc: "Construimos el motor de pedidos: el cliente suma productos, calcula subtotales en tiempo real y, al tocar 'Enviar Pedido', el sistema genera un mensaje formateado y cifrado que llega a tu WhatsApp sin intermediarios.",
+        checklist: [
+          "Carrito ágil con persistencia de selección en localStorage",
+          "Calculadora en Guaraníes con totalización automática",
+          "Generador de payload URL API WhatsApp con desglose de ítems"
+        ],
+        simTitle: "SIMULADOR EN VIVO // DÍA 03",
+        simHtml: `
+          <div>
+            <div class="flex items-center justify-between text-[10px] text-studio-muted border-b border-white/10 pb-2 mb-3">
+              <span>WHATSAPP_DISPATCH: GENERADOR_PAYLOAD</span>
+              <span class="text-emerald-400 font-bold">[ACTIVO]</span>
+            </div>
+            <div class="bg-black/90 p-2.5 font-mono text-[10px] text-emerald-300 border border-white/10 leading-relaxed">
+              Hola, quiero pedir:<br>
+              • 1x Batería 12V 75Ah (₲ 580.000)<br>
+              • 2x Aceite 5W30 Sintético (₲ 180.000)<br>
+              ───────────────<br>
+              TOTAL ESTIMADO: ₲ 760.000
+            </div>
+          </div>
+          <div class="mt-4 p-2 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] flex items-center justify-between">
+            <span>CANAL DIRECTO:</span>
+            <span class="font-bold">Cierre 1 a 1 sin intermediarios</span>
+          </div>
+        `
+      },
+      {
+        day: 4,
+        badge: "DÍA 04 / 07",
+        status: "[FASE 04: CATÁLOGO & COMPRESIÓN WEBP]",
+        tag: "[FASE 04 / OPTIMIZACIÓN]",
+        scope: "DURACIÓN: 24 HORAS",
+        title: "Carga de Inventario y Optimización de Activos",
+        desc: "Procesamos todas las fotografías de productos en formato WebP de última generación. Reducimos el peso en más de un 80% para que el catálogo cargue de inmediato incluso con conexión 4G inestable en el interior del país.",
+        checklist: [
+          "Compresión fotográfica WebP con pérdida imperceptible",
+          "Carga perezosa de imágenes (loading='lazy')",
+          "Rendimiento optimizado para redes móviles paraguayas"
+        ],
+        simTitle: "SIMULADOR EN VIVO // DÍA 04",
+        simHtml: `
+          <div>
+            <div class="flex items-center justify-between text-[10px] text-studio-muted border-b border-white/10 pb-2 mb-3">
+              <span>ACTIVOS_DIGITALES: WEBP_PIPELINE</span>
+              <span class="text-emerald-400 font-bold">[REDUCIDO]</span>
+            </div>
+            <div class="space-y-1.5 text-studio-text text-[11px]">
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>Peso original JPG:</span>
+                <span class="text-studio-muted line-through">4.8 MB</span>
+              </div>
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>Peso WebP optimizado:</span>
+                <span class="text-emerald-400 font-bold">920 KB (-81%)</span>
+              </div>
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>Tiempo de primer render:</span>
+                <span class="text-white font-bold">&lt; 0.5s en 4G</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-2 bg-studio-void border border-white/10 text-studio-muted text-[10px] flex items-center justify-between">
+            <span>EFICIENCIA DE DATOS:</span>
+            <span class="text-white font-bold">Consumo mínimo para el cliente</span>
+          </div>
+        `
+      },
+      {
+        day: 5,
+        badge: "DÍA 05 / 07",
+        status: "[FASE 05: PLANILHA & GOOGLE SHEETS]",
+        tag: "[FASE 05 / INTEGRACIONES]",
+        scope: "DURACIÓN: 24 HORAS",
+        title: "Sincronización con Planilla de Precios",
+        desc: "Conectamos el catálogo a tu Google Sheets para que actualices precios y productos desde tu celular en 30 segundos, sin depender de programadores ni pagar cuotas mensuales de mantenimiento.",
+        checklist: [
+          "Conexión con hoja de cálculo de Google Sheets en tiempo real",
+          "Mapeo de campos: SKU, Título, Precio en Guaraníes, Stock",
+          "Sistema de caché local para evitar lentitud en pedidos masivos"
+        ],
+        simTitle: "SIMULADOR EN VIVO // DÍA 05",
+        simHtml: `
+          <div>
+            <div class="flex items-center justify-between text-[10px] text-studio-muted border-b border-white/10 pb-2 mb-3">
+              <span>INTEGRACIÓN: GOOGLE_SHEETS_BRIDGE</span>
+              <span class="text-emerald-400 font-bold">[CONECTADO]</span>
+            </div>
+            <div class="space-y-1.5 text-studio-text text-[11px]">
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>Hoja vinculada:</span>
+                <span class="text-white font-mono">Stock_Precios_PyME_2026</span>
+              </div>
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>Frecuencia de lectura:</span>
+                <span class="text-emerald-400 font-bold">Tiempo real</span>
+              </div>
+              <div class="p-1.5 border border-white/5 bg-studio-void flex justify-between">
+                <span>Autonomía del cliente:</span>
+                <span class="text-white font-bold">Total desde su celular</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-2 bg-studio-void border border-emerald-500/20 text-emerald-300 text-[10px] flex items-center justify-between">
+            <span>ACCESO CLIENTE:</span>
+            <span class="font-bold">Control total sin tocar código</span>
+          </div>
+        `
+      },
+      {
+        day: 6,
+        badge: "DÍA 06 / 07",
+        status: "[FASE 06: AUDITORÍA QA & SIMULACIÓN REAL]",
+        tag: "[FASE 06 / CONTROL DE CALIDAD]",
+        scope: "DURACIÓN: 24 HORAS",
+        title: "Auditoría Lighthouse 95+ y Pedido de Prueba Real",
+        desc: "Verificamos métricas Core Web Vitals en dispositivos móviles reales en redes Tigo y Personal. Enviamos un pedido de prueba real a tu WhatsApp para certificar el cierre de ventas.",
+        checklist: [
+          "Puntajes Lighthouse &gt;= 95 en Rendimiento, Accesibilidad y SEO",
+          "Prueba de pedido en WhatsApp con comprobante de recepción",
+          "Cero errores en consola de desarrollo y cero desbordes horizontales"
+        ],
+        simTitle: "SIMULADOR EN VIVO // DÍA 06",
+        simHtml: `
+          <div>
+            <div class="flex items-center justify-between text-[10px] text-studio-muted border-b border-white/10 pb-2 mb-3">
+              <span>AUDIT_REPORT: LIGHTHOUSE_BENCHMARK</span>
+              <span class="text-emerald-400 font-bold">[CERTIFICADO]</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2 text-center my-3">
+              <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                <div class="text-lg font-bold text-emerald-400">99</div>
+                <div class="text-[9px] text-studio-muted uppercase">Perf</div>
+              </div>
+              <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                <div class="text-lg font-bold text-emerald-400">100</div>
+                <div class="text-[9px] text-studio-muted uppercase">A11y</div>
+              </div>
+              <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                <div class="text-lg font-bold text-emerald-400">100</div>
+                <div class="text-[9px] text-studio-muted uppercase">Best</div>
+              </div>
+              <div class="p-2 border border-emerald-500/30 bg-emerald-500/10">
+                <div class="text-lg font-bold text-emerald-400">100</div>
+                <div class="text-[9px] text-studio-muted uppercase">SEO</div>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 bg-studio-void border border-white/10 text-[10px] text-studio-text flex items-center justify-between">
+            <span>VERIFICACIÓN WHATSAPP:</span>
+            <span class="text-emerald-400 font-bold">[100% OPERATIVO]</span>
+          </div>
+        `
+      },
+      {
+        day: 7,
+        badge: "DÍA 07 / 07",
+        status: "[FASE 07: DESPLIEGUE FINAL & ENTREGA]",
+        tag: "[FASE 07 / LANZAMIENTO]",
+        scope: "ENTREGA EN MANO",
+        title: "Conexión de Dominio Propio, SSL y Entrega Final",
+        desc: "Tu sistema queda 100% activo bajo tu propio dominio (.store, .tech o .app) con certificado SSL bancario, CDN global ultra rápida y soporte prioritario.",
+        checklist: [
+          "Despliegue en red global Edge con CDN de baja latencia",
+          "Certificado de seguridad SSL HTTPS activado y validado",
+          "Entrega de accesos completos y propiedad absoluta al cliente"
+        ],
+        simTitle: "SIMULADOR EN VIVO // DÍA 07",
+        simHtml: `
+          <div>
+            <div class="flex items-center justify-between text-[10px] text-emerald-400 border-b border-emerald-500/30 pb-2 mb-3">
+              <span>DEPLOYMENT_STATUS: PRODUCTION_LIVE</span>
+              <span class="bg-emerald-400 text-black px-2 py-0.5 font-bold">[ONLINE]</span>
+            </div>
+            <div class="space-y-1.5 text-studio-text text-[11px]">
+              <div class="p-1.5 border border-emerald-500/20 bg-emerald-500/5 flex justify-between">
+                <span>Dominio activo:</span>
+                <span class="text-white font-bold">https://tunegocio.store</span>
+              </div>
+              <div class="p-1.5 border border-emerald-500/20 bg-emerald-500/5 flex justify-between">
+                <span>Seguridad SSL:</span>
+                <span class="text-emerald-400 font-bold">TLS 1.3 Cifrado</span>
+              </div>
+              <div class="p-1.5 border border-emerald-500/20 bg-emerald-500/5 flex justify-between">
+                <span>Canal de ventas:</span>
+                <span class="text-white font-bold">WhatsApp Operativo</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-2 bg-emerald-400 text-black font-bold text-center text-xs uppercase tracking-wider">
+            SISTEMA LISTO PARA FACTURAR
+          </div>
+        `
+      }
+    ];
+
+    let currentSprintDay = 1;
+    let userSprintInteractedTimeout = 0;
+
+    function setSprintDay(dayNum, isUserClick) {
+      if (dayNum < 1) dayNum = 1;
+      if (dayNum > 7) dayNum = 7;
+      currentSprintDay = dayNum;
+      if (isUserClick) {
+        userSprintInteractedTimeout = Date.now() + 2500;
+      }
+      const dayData = SPRINT_DAYS[dayNum - 1];
+      if (!dayData) return;
+
+      document.querySelectorAll(".proc-day-btn").forEach(btn => {
+        const d = parseInt(btn.getAttribute("data-day"), 10);
+        const isCurrent = d === dayNum;
+        btn.setAttribute("aria-selected", String(isCurrent));
+        if (isCurrent) {
+          btn.className = "proc-day-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white bg-white text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+        } else {
+          btn.className = "proc-day-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-white/10 bg-studio-surface text-studio-muted hover:text-white hover:border-white/30 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+        }
+      });
+
+      const badge = document.getElementById("procDayBadge");
+      const status = document.getElementById("procDayStatus");
+      const pBar = document.getElementById("procProgressBar");
+      const tag = document.getElementById("procPhaseTag");
+      const scope = document.getElementById("procPhaseScope");
+      const title = document.getElementById("procPhaseTitle");
+      const desc = document.getElementById("procPhaseDesc");
+      const checklist = document.getElementById("procChecklist");
+      const simTitle = document.getElementById("procSimulatorTitle");
+      const simStage = document.getElementById("procSimulatorStage");
+
+      if (badge) badge.textContent = dayData.badge;
+      if (status) status.textContent = dayData.status;
+      if (pBar) pBar.style.width = `${(dayNum / 7) * 100}%`;
+      if (tag) tag.textContent = dayData.tag;
+      if (scope) scope.textContent = dayData.scope;
+      if (title) title.textContent = dayData.title;
+      if (desc) desc.textContent = dayData.desc;
+      if (simTitle) simTitle.textContent = dayData.simTitle;
+      if (simStage) simStage.innerHTML = dayData.simHtml;
+
+      if (checklist) {
+        checklist.innerHTML = dayData.checklist.map(item => `
+          <li class="flex items-center gap-2 text-white">
+            <span class="text-emerald-400 font-bold">[OK]</span>
+            <span>${item}</span>
+          </li>
+        `).join("");
+      }
+    }
+
+    document.querySelectorAll(".proc-day-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const d = parseInt(btn.getAttribute("data-day"), 10);
+        setSprintDay(d, true);
+      });
+    });
+
+    const procPrevBtn = document.getElementById("procPrevBtn");
+    const procNextBtn = document.getElementById("procNextBtn");
+    if (procPrevBtn) {
+      procPrevBtn.addEventListener("click", () => {
+        setSprintDay(currentSprintDay - 1, true);
+      });
+    }
+    if (procNextBtn) {
+      procNextBtn.addEventListener("click", () => {
+        setSprintDay(currentSprintDay + 1, true);
+      });
+    }
+
+    // Scroll-driven progression for #proceso in index.html
+    const procesoSectionEl = document.getElementById("proceso");
+    if (procesoSectionEl) {
+      let isProcesoTicking = false;
+      window.addEventListener("scroll", () => {
+        if (isProcesoTicking) return;
+        if (Date.now() < userSprintInteractedTimeout) return;
+        isProcesoTicking = true;
+        requestAnimationFrame(() => {
+          const rect = procesoSectionEl.getBoundingClientRect();
+          const vh = window.innerHeight || document.documentElement.clientHeight;
+          const startTrigger = vh * 0.70;
+          const endTrigger = vh * 0.20;
+          const totalSpan = rect.height + (startTrigger - endTrigger);
+          const scrolled = startTrigger - rect.top;
+          if (scrolled >= 0 && scrolled <= totalSpan) {
+            const ratio = scrolled / totalSpan;
+            const targetDay = Math.min(7, Math.max(1, Math.floor(ratio * 7) + 1));
+            if (targetDay !== currentSprintDay) {
+              setSprintDay(targetDay, false);
+            }
+          }
+          isProcesoTicking = false;
+        });
+      }, { passive: true });
+    }
 
     /**
      * Probador en vivo de Dominios Nuevos gTLD

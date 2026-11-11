@@ -2050,8 +2050,11 @@ Hacé clic en '+ Agregar' en los productos de la izquierda para ver cómo se gen
         }
       }
 
+      let userSwissInteractedTimeout = 0;
+
       document.querySelectorAll(".swiss-proc-btn").forEach(btn => {
         btn.addEventListener("click", () => {
+          userSwissInteractedTimeout = Date.now() + 2500;
           const d = parseInt(btn.getAttribute("data-day"), 10);
           setSwissSprintDay(d);
         });
@@ -2062,14 +2065,43 @@ Hacé clic en '+ Agregar' en los productos de la izquierda para ver cómo se gen
 
       if (swissPrevBtn) {
         swissPrevBtn.addEventListener("click", () => {
+          userSwissInteractedTimeout = Date.now() + 2500;
           setSwissSprintDay(currentSwissDay - 1);
         });
       }
 
       if (swissNextBtn) {
         swissNextBtn.addEventListener("click", () => {
+          userSwissInteractedTimeout = Date.now() + 2500;
           setSwissSprintDay(currentSwissDay + 1);
         });
+      }
+
+      // Scroll-driven progression for #proceso in index-atelier-suizo.html
+      const swissProcesoSection = document.getElementById("proceso");
+      if (swissProcesoSection) {
+        let isSwissTicking = false;
+        window.addEventListener("scroll", () => {
+          if (isSwissTicking) return;
+          if (Date.now() < userSwissInteractedTimeout) return;
+          isSwissTicking = true;
+          requestAnimationFrame(() => {
+            const rect = swissProcesoSection.getBoundingClientRect();
+            const vh = window.innerHeight || document.documentElement.clientHeight;
+            const startTrigger = vh * 0.70;
+            const endTrigger = vh * 0.20;
+            const totalSpan = rect.height + (startTrigger - endTrigger);
+            const scrolled = startTrigger - rect.top;
+            if (scrolled >= 0 && scrolled <= totalSpan) {
+              const ratio = scrolled / totalSpan;
+              const targetDay = Math.min(7, Math.max(1, Math.floor(ratio * 7) + 1));
+              if (targetDay !== currentSwissDay) {
+                setSwissSprintDay(targetDay);
+              }
+            }
+            isSwissTicking = false;
+          });
+        }, { passive: true });
       }
 
       setSwissSprintDay(1);

@@ -1777,8 +1777,11 @@
         }
       }
 
+      let userAsuncionInteractedTimeout = 0;
+
       document.querySelectorAll(".asuncion-proc-btn").forEach(btn => {
         btn.addEventListener("click", () => {
+          userAsuncionInteractedTimeout = Date.now() + 2500;
           const d = parseInt(btn.getAttribute("data-day"), 10);
           setAsuncionSprintDay(d);
         });
@@ -1789,14 +1792,43 @@
 
       if (asuncionPrevBtn) {
         asuncionPrevBtn.addEventListener("click", () => {
+          userAsuncionInteractedTimeout = Date.now() + 2500;
           setAsuncionSprintDay(currentAsuncionDay - 1);
         });
       }
 
       if (asuncionNextBtn) {
         asuncionNextBtn.addEventListener("click", () => {
+          userAsuncionInteractedTimeout = Date.now() + 2500;
           setAsuncionSprintDay(currentAsuncionDay + 1);
         });
+      }
+
+      // Scroll-driven progression for #proceso in index-modernismo-asuncion.html
+      const asuncionProcesoSection = document.getElementById("proceso");
+      if (asuncionProcesoSection) {
+        let isAsuncionTicking = false;
+        window.addEventListener("scroll", () => {
+          if (isAsuncionTicking) return;
+          if (Date.now() < userAsuncionInteractedTimeout) return;
+          isAsuncionTicking = true;
+          requestAnimationFrame(() => {
+            const rect = asuncionProcesoSection.getBoundingClientRect();
+            const vh = window.innerHeight || document.documentElement.clientHeight;
+            const startTrigger = vh * 0.70;
+            const endTrigger = vh * 0.20;
+            const totalSpan = rect.height + (startTrigger - endTrigger);
+            const scrolled = startTrigger - rect.top;
+            if (scrolled >= 0 && scrolled <= totalSpan) {
+              const ratio = scrolled / totalSpan;
+              const targetDay = Math.min(7, Math.max(1, Math.floor(ratio * 7) + 1));
+              if (targetDay !== currentAsuncionDay) {
+                setAsuncionSprintDay(targetDay);
+              }
+            }
+            isAsuncionTicking = false;
+          });
+        }, { passive: true });
       }
 
       // Lógica de Previsualización de Dominios Nuevos gTLD (Modernismo Asunción)

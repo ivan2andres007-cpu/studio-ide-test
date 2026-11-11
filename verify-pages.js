@@ -124,6 +124,15 @@ async function runAudit() {
           console.log(`  [7-Day Timeline Test] Clicked Day 03 -> Badge: "${badgeText}" | Sim: "${simTitle}"`);
         }
 
+        // Test scroll-driven progression
+        await page.evaluate(() => {
+          const el = document.getElementById('proceso');
+          if (el) el.scrollIntoView({ behavior: 'instant', block: 'center' });
+        });
+        await page.waitForTimeout(200);
+        const scrolledBadge = await page.$eval('#procDayBadge', el => el.textContent.trim());
+        console.log(`  [Scroll Progression Test] Scrolled to #proceso -> Badge: "${scrolledBadge}"`);
+
         // Test gTLD domain preview
         await page.fill('#gtldBrandInput', 'supermercado');
         const storeDomain = await page.$eval('.gtld-preview-store', el => el.textContent.trim());

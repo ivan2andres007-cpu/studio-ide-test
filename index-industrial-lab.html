@@ -1797,8 +1797,11 @@
         }
       }
 
+      let userLabInteractedTimeout = 0;
+
       document.querySelectorAll(".lab-step-btn").forEach(btn => {
         btn.addEventListener("click", () => {
+          userLabInteractedTimeout = Date.now() + 2500;
           const s = parseInt(btn.getAttribute("data-step"), 10);
           setLabStep(s);
         });
@@ -1809,14 +1812,43 @@
 
       if (labPrevBtn) {
         labPrevBtn.addEventListener("click", () => {
+          userLabInteractedTimeout = Date.now() + 2500;
           setLabStep(currentLabStep - 1);
         });
       }
 
       if (labNextBtn) {
         labNextBtn.addEventListener("click", () => {
+          userLabInteractedTimeout = Date.now() + 2500;
           setLabStep(currentLabStep + 1);
         });
+      }
+
+      // Scroll-driven progression for #proceso in index-industrial-lab.html
+      const labProcesoSection = document.getElementById("proceso");
+      if (labProcesoSection) {
+        let isLabTicking = false;
+        window.addEventListener("scroll", () => {
+          if (isLabTicking) return;
+          if (Date.now() < userLabInteractedTimeout) return;
+          isLabTicking = true;
+          requestAnimationFrame(() => {
+            const rect = labProcesoSection.getBoundingClientRect();
+            const vh = window.innerHeight || document.documentElement.clientHeight;
+            const startTrigger = vh * 0.70;
+            const endTrigger = vh * 0.20;
+            const totalSpan = rect.height + (startTrigger - endTrigger);
+            const scrolled = startTrigger - rect.top;
+            if (scrolled >= 0 && scrolled <= totalSpan) {
+              const ratio = scrolled / totalSpan;
+              const targetStep = Math.min(7, Math.max(1, Math.floor(ratio * 7) + 1));
+              if (targetStep !== currentLabStep) {
+                setLabStep(targetStep);
+              }
+            }
+            isLabTicking = false;
+          });
+        }, { passive: true });
       }
 
       // Lógica de Previsualización de Dominios Nuevos gTLD (Dark Console)
