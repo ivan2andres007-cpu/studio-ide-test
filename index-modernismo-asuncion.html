@@ -267,95 +267,253 @@
 
           <!-- Right Column: Silueta Móvil Arquitectónica con Barras Licitadas (Inspired by LibreSitio + Asunción Editorial) -->
           <div class="lg:col-span-5 w-full flex items-center justify-center lg:justify-end">
-            <div class="w-full max-w-md py-4 relative">
+            <div id="heroVariantWrap" class="w-full max-w-xl py-2 relative">
               
-              <!-- Subtle Header -->
-              <div class="flex items-center justify-between border-b border-asuncion-border pb-3 mb-6 font-mono text-[11px]">
+              <!-- Variant Controller Bar -->
+              <div class="flex flex-wrap items-center justify-between border-b border-asuncion-border pb-3 mb-6 font-mono text-[11px] gap-2">
                 <div class="flex items-center gap-2 text-white">
                   <span class="w-2 h-2 rounded-full bg-asuncion-cognac ring-2 ring-asuncion-cognac/20"></span>
-                  <span class="font-bold">DISPOSITIVO ARQUITECTÓNICO</span>
+                  <span class="font-bold tracking-wider">DISPOSITIVO ARQUITECTÓNICO</span>
                 </div>
-                <span class="text-asuncion-cognac font-bold tracking-wider">3 PLANES LLAVE EN MANO</span>
+                <!-- 3 Bold Variant Switcher Tabs -->
+                <div class="flex items-center gap-1 bg-[#12100e] p-1 border border-asuncion-borderWarm/30 rounded-md text-[10px]">
+                  <button type="button" id="tabVar1" onclick="switchHeroVariant(1)" class="px-2.5 py-1 font-bold rounded transition-all bg-asuncion-cognac text-black">01. UI Real</button>
+                  <button type="button" id="tabVar2" onclick="switchHeroVariant(2)" class="px-2.5 py-1 font-bold rounded transition-all text-asuncion-muted hover:text-white">02. Haces de Luz</button>
+                  <button type="button" id="tabVar3" onclick="switchHeroVariant(3)" class="px-2.5 py-1 font-bold rounded transition-all text-asuncion-muted hover:text-white">03. Boleta WA</button>
+                </div>
               </div>
 
-              <!-- Flex container: Phone Silhouette on left, Callout branches on right -->
-              <div class="flex items-center gap-4 sm:gap-6">
-                
-                <!-- Silueta de Teléfono Móvil -->
-                <div class="relative w-[130px] sm:w-[145px] h-[250px] sm:h-[270px] shrink-0 rounded-[30px] border-2 border-asuncion-cognac/50 bg-[#12100e] shadow-[0_0_25px_rgba(224,169,109,0.18)] p-3 flex flex-col justify-between overflow-hidden">
+              <!-- ───────── VARIANTE 01: MONOLITO CON UI EN VIVO ───────── -->
+              <div id="variantView1" class="hero-var-view transition-opacity duration-300">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
                   
-                  <!-- Dynamic Speaker Notch -->
-                  <div class="w-10 h-2 bg-black/90 rounded-full mx-auto flex items-center justify-center">
-                    <span class="w-1.5 h-1.5 rounded-full bg-asuncion-cognac/60"></span>
-                  </div>
-
-                  <!-- 3 Glowing Luminous Bars inside Screen -->
-                  <div class="space-y-4 my-auto">
-                    <!-- Bar 1 (Presencia) -->
-                    <div id="barAsuncion1" class="h-6 sm:h-7 rounded-full bg-gradient-to-r from-asuncion-cognac/20 via-asuncion-cognac/70 to-asuncion-cognac shadow-[0_0_12px_rgba(224,169,109,0.35)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
+                  <!-- Phone Frame -->
+                  <div class="relative w-[170px] sm:w-[185px] h-[340px] sm:h-[360px] shrink-0 rounded-[32px] border-2 border-asuncion-cognac/60 bg-[#12100e] shadow-[0_0_35px_rgba(224,169,109,0.2)] p-3 flex flex-col justify-between overflow-hidden">
                     
-                    <!-- Bar 2 (Catálogo - Highlighted) -->
-                    <div id="barAsuncion2" class="h-7 sm:h-8 rounded-full bg-gradient-to-r from-amber-400/40 via-asuncion-cognac to-amber-200 shadow-[0_0_20px_rgba(224,169,109,0.55)] ring-1 ring-asuncion-cognac/60 transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
-                    
-                    <!-- Bar 3 (Sistema a Medida) -->
-                    <div id="barAsuncion3" class="h-6 sm:h-7 rounded-full bg-gradient-to-r from-asuncion-terracotta/20 via-asuncion-terracotta/70 to-asuncion-terracotta shadow-[0_0_12px_rgba(200,106,61,0.35)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
+                    <!-- Top Status Bar -->
+                    <div class="flex items-center justify-between font-mono text-[8px] text-asuncion-muted pb-1 border-b border-white/5">
+                      <span>ASU 15:30</span>
+                      <div class="w-10 h-2 bg-black/90 rounded-full mx-auto flex items-center justify-center">
+                        <span class="w-1.5 h-1.5 rounded-full bg-asuncion-cognac/70"></span>
+                      </div>
+                      <span>5G 100%</span>
+                    </div>
+
+                    <!-- Dynamic Screen Content -->
+                    <div class="my-auto space-y-2.5">
+                      <div class="text-center font-serif text-[11px] font-bold text-white tracking-wide">
+                        PUNTO PRISMA · CATÁLOGO
+                      </div>
+                      
+                      <div class="p-2.5 bg-black/60 rounded-lg space-y-1">
+                        <span class="font-mono text-[7px] text-asuncion-cognac uppercase tracking-wider block">REPUESTO DISPONIBLE</span>
+                        <span class="font-serif text-[11px] font-bold text-white block leading-tight">Filtro Hidráulico Bosch</span>
+                        <div class="flex items-center justify-between pt-1">
+                          <span class="font-mono text-[10px] font-bold text-asuncion-cognac">₲ 185.000</span>
+                          <span class="text-[8px] font-mono text-emerald-400 font-bold">[EN STOCK]</span>
+                        </div>
+                      </div>
+
+                      <div class="p-2 bg-asuncion-cognac/10 rounded-md font-mono text-[8px] text-asuncion-cognac text-center">
+                        Carrito directo a WhatsApp
+                      </div>
+                    </div>
+
+                    <!-- Fixed Bottom Drawer -->
+                    <div class="py-1.5 px-2 bg-emerald-500/20 border-t border-emerald-500/30 rounded-lg font-mono text-[8px] text-emerald-300 text-center flex items-center justify-between">
+                      <span>1 ítem · ₲ 185k</span>
+                      <span class="font-bold">WhatsApp →</span>
+                    </div>
+
+                    <!-- Home Bar -->
+                    <div class="w-10 h-1 bg-white/20 rounded-full mx-auto mt-1"></div>
                   </div>
 
-                  <!-- Simulated WhatsApp Dispatch Pill at bottom of screen -->
-                  <div class="px-2 py-0.5 text-asuncion-cognac font-mono text-[9px] text-center flex items-center justify-center gap-1">
-                    <span class="w-1 h-1 rounded-full bg-emerald-400"></span>
-                    <span>WHATSAPP VENTA</span>
+                  <!-- Right Callout List -->
+                  <div class="flex-1 flex flex-col justify-between h-[340px] sm:h-[360px] py-2">
+                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="w-5 sm:w-8 h-[1px] bg-asuncion-cognac/50 group-hover:bg-asuncion-cognac group-hover:w-10 transition-all"></span>
+                        <span class="font-mono text-xs text-asuncion-cognac font-bold">[01]</span>
+                        <span class="font-serif font-bold text-white group-hover:text-asuncion-cognac text-base leading-none transition-colors">Presencia Express</span>
+                      </div>
+                      <div class="pl-8 sm:pl-10">
+                        <span class="font-mono text-xs text-asuncion-muted block">1 página · <strong class="text-white">₲ 1.490.000</strong></span>
+                        <span class="font-mono text-[10px] text-asuncion-subtle uppercase">Entrega garantizada en 7 días</span>
+                      </div>
+                    </a>
+
+                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="w-5 sm:w-8 h-[2px] bg-asuncion-cognac shadow-[0_0_10px_rgba(224,169,109,0.8)] group-hover:w-10 transition-all"></span>
+                        <span class="font-mono text-xs text-asuncion-cognac font-bold">[02]</span>
+                        <span class="font-serif font-bold text-asuncion-cognac text-lg leading-none">Catálogo PyME</span>
+                      </div>
+                      <div class="pl-8 sm:pl-10">
+                        <span class="font-mono text-xs text-white font-semibold block">Catálogo con Carrito · <strong class="text-asuncion-cognac">₲ 2.490.000</strong></span>
+                        <span class="font-mono text-[10px] text-emerald-400 uppercase font-bold">Despacho automatizado a WhatsApp</span>
+                      </div>
+                    </a>
+
+                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="w-5 sm:w-8 h-[1px] bg-asuncion-terracotta/50 group-hover:bg-asuncion-terracotta group-hover:w-10 transition-all"></span>
+                        <span class="font-mono text-xs text-asuncion-terracotta font-bold">[03]</span>
+                        <span class="font-serif font-bold text-white group-hover:text-asuncion-terracotta text-base leading-none transition-colors">A Medida</span>
+                      </div>
+                      <div class="pl-8 sm:pl-10">
+                        <span class="font-mono text-xs text-asuncion-muted block">Multi-página · <strong class="text-white">₲ 3.990.000</strong></span>
+                        <span class="font-mono text-[10px] text-asuncion-subtle uppercase">Software de gestión y facturación</span>
+                      </div>
+                    </a>
                   </div>
 
-                  <!-- Home Indicator Bar -->
-                  <div class="w-10 h-1 bg-white/20 rounded-full mx-auto"></div>
                 </div>
+              </div>
 
-                <!-- Callout Lines and Labels to the Right -->
-                <div class="flex-1 flex flex-col justify-between h-[250px] sm:h-[270px] py-2">
+              <!-- ───────── VARIANTE 02: HACES DE LUZ ESCULTURALES ───────── -->
+              <div id="variantView2" class="hero-var-view hidden transition-opacity duration-300">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
                   
-                  <!-- Callout 01 -->
-                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
-                    <div class="flex items-center gap-2 mb-1">
-                      <span class="w-4 sm:w-6 h-[1px] bg-asuncion-cognac/50 group-hover:bg-asuncion-cognac group-hover:w-8 transition-all"></span>
-                      <span class="font-serif font-bold text-white group-hover:text-asuncion-cognac text-sm sm:text-base leading-none transition-colors">Presencia</span>
+                  <!-- Phone Frame with Ambient Halo -->
+                  <div class="relative w-[170px] sm:w-[185px] h-[340px] sm:h-[360px] shrink-0 rounded-[32px] border-2 border-asuncion-cognac/50 bg-[#12100e] shadow-[0_0_40px_rgba(200,106,61,0.25)] p-3 flex flex-col justify-between overflow-hidden">
+                    
+                    <!-- Speaker Notch -->
+                    <div class="w-12 h-2.5 bg-black/90 rounded-full mx-auto flex items-center justify-center">
+                      <span class="w-1.5 h-1.5 rounded-full bg-asuncion-cognac"></span>
                     </div>
-                    <div class="pl-6 sm:pl-8">
-                      <span class="font-mono text-[11px] text-asuncion-muted block">Una página · <strong class="text-white">₲ 1.490.000</strong></span>
-                      <span class="font-mono text-[9px] text-asuncion-subtle uppercase">Entrega en 7 días</span>
-                    </div>
-                  </a>
 
-                  <!-- Callout 02 (Destacado) -->
-                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
-                    <div class="flex items-center gap-2 mb-1">
-                      <span class="w-4 sm:w-6 h-[2px] bg-asuncion-cognac shadow-[0_0_8px_rgba(224,169,109,0.8)] group-hover:w-8 transition-all"></span>
-                      <span class="font-serif font-bold text-asuncion-cognac text-base sm:text-lg leading-none">Catálogo Móvil</span>
+                    <!-- 3 Illuminated Horizontal Beams (LibreSitio Aesthetic Elevated) -->
+                    <div class="space-y-6 my-auto">
+                      <!-- Beam 01 -->
+                      <div class="h-7 rounded-full bg-gradient-to-r from-asuncion-cognac/30 via-asuncion-cognac/80 to-asuncion-cognac shadow-[0_0_16px_rgba(224,169,109,0.45)] transition-all cursor-pointer hover:scale-[1.03]"></div>
+                      
+                      <!-- Beam 02 (Golden Highlight) -->
+                      <div class="h-8 rounded-full bg-gradient-to-r from-amber-400/40 via-asuncion-cognac to-amber-200 shadow-[0_0_24px_rgba(224,169,109,0.7)] ring-1 ring-asuncion-cognac/70 transition-all cursor-pointer hover:scale-[1.03]"></div>
+                      
+                      <!-- Beam 03 -->
+                      <div class="h-7 rounded-full bg-gradient-to-r from-asuncion-terracotta/30 via-asuncion-terracotta/80 to-asuncion-terracotta shadow-[0_0_16px_rgba(200,106,61,0.4)] transition-all cursor-pointer hover:scale-[1.03]"></div>
                     </div>
-                    <div class="pl-6 sm:pl-8">
-                      <span class="font-mono text-[11px] text-white font-semibold block">2–3 páginas · <strong class="text-asuncion-cognac">₲ 2.490.000</strong></span>
-                      <span class="font-mono text-[9px] text-emerald-400 uppercase font-bold">Carrito directo WhatsApp</span>
-                    </div>
-                  </a>
 
-                  <!-- Callout 03 -->
-                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
-                    <div class="flex items-center gap-2 mb-1">
-                      <span class="w-4 sm:w-6 h-[1px] bg-asuncion-terracotta/50 group-hover:bg-asuncion-terracotta group-hover:w-8 transition-all"></span>
-                      <span class="font-serif font-bold text-white group-hover:text-asuncion-terracotta text-sm sm:text-base leading-none transition-colors">A Medida</span>
+                    <!-- Simulated WhatsApp Status -->
+                    <div class="px-2 py-0.5 text-asuncion-cognac font-mono text-[9px] text-center flex items-center justify-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span>CIERRE AUTOMÁTICO</span>
                     </div>
-                    <div class="pl-6 sm:pl-8">
-                      <span class="font-mono text-[11px] text-asuncion-muted block">Multipágina · <strong class="text-white">₲ 3.990.000</strong></span>
-                      <span class="font-mono text-[9px] text-asuncion-subtle uppercase">Software &amp; Gestión</span>
-                    </div>
-                  </a>
+
+                    <!-- Home Bar -->
+                    <div class="w-10 h-1 bg-white/20 rounded-full mx-auto"></div>
+                  </div>
+
+                  <!-- Cantilever Laser Lines Connecting to Plans -->
+                  <div class="flex-1 flex flex-col justify-between h-[340px] sm:h-[360px] py-3">
+                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-cognac to-asuncion-cognac/30 group-hover:w-14 transition-all"></span>
+                        <span class="font-serif font-bold text-white group-hover:text-asuncion-cognac text-base leading-none transition-colors">Presencia</span>
+                      </div>
+                      <div class="pl-10 sm:pl-14">
+                        <span class="font-mono text-xs text-asuncion-muted block">1 página · <strong class="text-white">₲ 1.490.000</strong></span>
+                        <span class="font-mono text-[10px] text-asuncion-subtle uppercase">Entrega en 7 días</span>
+                      </div>
+                    </a>
+
+                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="w-8 sm:w-12 h-[3px] bg-gradient-to-r from-amber-300 to-asuncion-cognac shadow-[0_0_12px_rgba(224,169,109,0.9)] group-hover:w-14 transition-all"></span>
+                        <span class="font-serif font-bold text-asuncion-cognac text-lg leading-none">Catálogo Móvil</span>
+                      </div>
+                      <div class="pl-10 sm:pl-14">
+                        <span class="font-mono text-xs text-white font-semibold block">Catálogo con Carrito · <strong class="text-asuncion-cognac">₲ 2.490.000</strong></span>
+                        <span class="font-mono text-[10px] text-emerald-400 uppercase font-bold">Carrito directo WhatsApp</span>
+                      </div>
+                    </a>
+
+                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                      <div class="flex items-center gap-2 mb-1">
+                        <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-terracotta to-asuncion-terracotta/30 group-hover:w-14 transition-all"></span>
+                        <span class="font-serif font-bold text-white group-hover:text-asuncion-terracotta text-base leading-none transition-colors">A Medida</span>
+                      </div>
+                      <div class="pl-10 sm:pl-14">
+                        <span class="font-mono text-xs text-asuncion-muted block">Multi-página · <strong class="text-white">₲ 3.990.000</strong></span>
+                        <span class="font-mono text-[10px] text-asuncion-subtle uppercase">Software &amp; Gestión</span>
+                      </div>
+                    </a>
+                  </div>
 
                 </div>
+              </div>
 
+              <!-- ───────── VARIANTE 03: BOLETA DE DESPACHO WHATSAPP ───────── -->
+              <div id="variantView3" class="hero-var-view hidden transition-opacity duration-300">
+                <div class="flex flex-col sm:flex-row items-center gap-6">
+                  
+                  <!-- Phone Frame with Invoice Ticket Slip -->
+                  <div class="relative w-[170px] sm:w-[185px] h-[340px] sm:h-[360px] shrink-0 rounded-[32px] border-2 border-asuncion-cognac/60 bg-[#12100e] shadow-[0_0_35px_rgba(224,169,109,0.2)] p-3 flex flex-col justify-between overflow-hidden">
+                    
+                    <!-- Ticket Header -->
+                    <div class="border-b border-asuncion-cognac/30 pb-2 text-center">
+                      <span class="font-mono text-[8px] text-asuncion-cognac uppercase tracking-wider block">BOLETA DE PEDIDO VENTA</span>
+                      <span class="font-serif text-[11px] font-bold text-white">PUNTO PRISMA STUDIO</span>
+                    </div>
+
+                    <!-- Ticket Body Lines -->
+                    <div class="space-y-2 font-mono text-[9px] text-asuncion-muted my-auto">
+                      <div class="flex justify-between border-b border-white/5 pb-1">
+                        <span>01. Presencia</span>
+                        <span class="text-white">₲ 1.490k</span>
+                      </div>
+                      <div class="flex justify-between border-b border-asuncion-cognac/40 pb-1 text-asuncion-cognac font-bold">
+                        <span>02. Catálogo PyME</span>
+                        <span>₲ 2.490k</span>
+                      </div>
+                      <div class="flex justify-between border-b border-white/5 pb-1">
+                        <span>03. A Medida</span>
+                        <span class="text-white">₲ 3.990k</span>
+                      </div>
+                      <div class="pt-1 flex justify-between font-bold text-white text-[10px]">
+                        <span>TOTAL PYME:</span>
+                        <span class="text-asuncion-cognac">₲ 2.490.000</span>
+                      </div>
+                    </div>
+
+                    <!-- Direct WhatsApp Action Pill -->
+                    <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20un%20proyecto" 
+                      target="_blank" rel="noopener"
+                      class="py-2 px-2 bg-emerald-500 hover:bg-emerald-400 text-black font-mono font-bold text-[9px] uppercase rounded-lg text-center flex items-center justify-center gap-1 transition-colors">
+                      <span>DESPACHAR A WA →</span>
+                    </a>
+
+                    <!-- Home Bar -->
+                    <div class="w-10 h-1 bg-white/20 rounded-full mx-auto mt-1"></div>
+                  </div>
+
+                  <!-- Right Feature Cards -->
+                  <div class="flex-1 flex flex-col justify-between h-[340px] sm:h-[360px] py-2">
+                    <div class="border-l-2 border-asuncion-cognac/40 pl-4 space-y-1">
+                      <span class="font-mono text-[10px] text-asuncion-cognac font-bold uppercase">SISTEMA CERO COMISIONES</span>
+                      <span class="font-serif font-bold text-white text-base block">Tu dinero va directo a tu cuenta</span>
+                      <p class="font-mono text-[11px] text-asuncion-muted">Sin porcentajes por transacción ni retenciones bancarias.</p>
+                    </div>
+
+                    <div class="border-l-2 border-asuncion-cognac pl-4 space-y-1">
+                      <span class="font-mono text-[10px] text-emerald-400 font-bold uppercase">DESPACHO EN TIEMPO REAL</span>
+                      <span class="font-serif font-bold text-asuncion-cognac text-lg block">El vendedor recibe la orden lista</span>
+                      <p class="font-mono text-[11px] text-asuncion-muted">El cliente selecciona en el móvil y la orden llega formateada a WhatsApp.</p>
+                    </div>
+
+                    <div class="border-l-2 border-asuncion-terracotta/40 pl-4 space-y-1">
+                      <span class="font-mono text-[10px] text-asuncion-terracotta font-bold uppercase">FACTURACIÓN LEGAL PY</span>
+                      <span class="font-serif font-bold text-white text-base block">Respaldo fiscal paraguayo</span>
+                      <p class="font-mono text-[11px] text-asuncion-muted">Factura con IVA incluido para tu contabilidad.</p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
               <!-- Bottom Footnote -->
-              <div class="mt-4 pt-3 border-t border-asuncion-border flex items-center justify-between text-[10px] font-mono text-asuncion-muted">
+              <div class="mt-6 pt-3 border-t border-asuncion-border flex items-center justify-between text-[10px] font-mono text-asuncion-muted">
                 <span>0% COMISIONES POR VENTA</span>
                 <a href="#soluciones" class="text-asuncion-cognac hover:underline font-bold">Ver tabla completa →</a>
               </div>
@@ -1967,6 +2125,30 @@
       }
 
       setAsuncionSprintDay(1);
+
+      // Switcher de 3 Variantes Hero (Impeccable Architectural Variants)
+      window.switchHeroVariant = function(varNum) {
+        for (let i = 1; i <= 3; i++) {
+          const view = document.getElementById("variantView" + i);
+          const tab = document.getElementById("tabVar" + i);
+          if (view) {
+            if (i === varNum) {
+              view.classList.remove("hidden");
+              view.style.opacity = "0";
+              setTimeout(() => { view.style.opacity = "1"; }, 20);
+            } else {
+              view.classList.add("hidden");
+            }
+          }
+          if (tab) {
+            if (i === varNum) {
+              tab.className = "px-2.5 py-1 font-bold rounded transition-all bg-asuncion-cognac text-black";
+            } else {
+              tab.className = "px-2.5 py-1 font-bold rounded transition-all text-asuncion-muted hover:text-white";
+            }
+          }
+        }
+      };
 
       // Live Studio Clock (Asunción / GMT-3)
       function tickAsuncionStudioClock() {
