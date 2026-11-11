@@ -144,7 +144,7 @@ async function runAudit() {
         if (step4Btn) {
           await step4Btn.click();
           const badgeText = await page.$eval('#labStepBadge', el => el.textContent.trim());
-          const oscilloTitle = await page.$eval('#labOscilloTitle', el => el.textContent.trim());
+          const oscilloTitle = await page.$eval('#labMonitorTitle', el => el.textContent.trim());
           console.log(`  [Console Sequencer Test] Clicked Step 04 -> Badge: "${badgeText}" | Monitor: "${oscilloTitle}"`);
         }
 

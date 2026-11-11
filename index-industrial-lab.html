@@ -1047,15 +1047,15 @@
             </div>
           </div>
 
-          <!-- Right Column: Oscilloscope / Telemetry Data Stream -->
+          <!-- Right Column: Telemetry & Stage Data Monitor -->
           <div class="lg:col-span-5 p-6 sm:p-8 bg-lab-sunken flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between pb-3 border-b border-lab-border font-mono text-xs text-lab-muted mb-4">
                 <span class="flex items-center gap-2 text-white font-semibold">
                   <span class="w-2 h-2 rounded-full bg-lab-amber ring-2 ring-lab-amber/20"></span>
-                  <span id="labOscilloTitle">MONITOR EN VIVO // STEP 01</span>
+                  <span id="labMonitorTitle">MONITOR EN VIVO // STEP 01</span>
                 </span>
-                <span class="text-lab-amber font-mono font-bold" id="labOscilloProgress">PROGRESS 14%</span>
+                <span class="text-lab-amber font-mono font-bold" id="labMonitorProgress">PROGRESS 14%</span>
               </div>
 
               <!-- Dynamic Data Stream Monitor -->
@@ -1465,7 +1465,7 @@
             "Asignación de dominio de identidad (.store / .shop / .studio)",
             "Enlace validado con número de WhatsApp de ventas"
           ],
-          oscilloTitle: "MONITOR EN VIVO // STEP 01",
+          monitorTitle: "MONITOR EN VIVO // STEP 01",
           progress: "PROGRESS 14%",
           telemetryHtml: `
             <div>
@@ -1507,7 +1507,7 @@
             "Barra táctil inferior con altura mínima de 44px certificada",
             "Buscador predictivo por código SKU sin recargar página"
           ],
-          oscilloTitle: "MONITOR EN VIVO // STEP 02",
+          monitorTitle: "MONITOR EN VIVO // STEP 02",
           progress: "PROGRESS 28%",
           telemetryHtml: `
             <div>
@@ -1549,7 +1549,7 @@
             "Formateo automático de importes en Guaraníes con puntos de miles",
             "Codificación segura de caracteres y parámetros wa.me"
           ],
-          oscilloTitle: "MONITOR EN VIVO // STEP 03",
+          monitorTitle: "MONITOR EN VIVO // STEP 03",
           progress: "PROGRESS 42%",
           telemetryHtml: `
             <div>
@@ -1584,7 +1584,7 @@
             "Ahorro verificado del 78% en consumo de ancho de banda",
             "Carga diferida con priority hints para el viewport visible"
           ],
-          oscilloTitle: "MONITOR EN VIVO // STEP 04",
+          monitorTitle: "MONITOR EN VIVO // STEP 04",
           progress: "PROGRESS 57%",
           telemetryHtml: `
             <div>
@@ -1626,7 +1626,7 @@
             "Mapeo de columnas: SKU, Nombre, Precio ₲, Estado, Stock",
             "Caché en el cliente para funcionamiento ultra fluido"
           ],
-          oscilloTitle: "MONITOR EN VIVO // STEP 05",
+          monitorTitle: "MONITOR EN VIVO // STEP 05",
           progress: "PROGRESS 71%",
           telemetryHtml: `
             <div>
@@ -1668,7 +1668,7 @@
             "Verificación de flujo de compra en celular real",
             "Certificación de cero desbordes horizontales en pantallas de 360px a 1440px"
           ],
-          oscilloTitle: "MONITOR EN VIVO // STEP 06",
+          monitorTitle: "MONITOR EN VIVO // STEP 06",
           progress: "PROGRESS 85%",
           telemetryHtml: `
             <div>
@@ -1714,7 +1714,7 @@
             "Certificado SSL HTTPS activado y validado",
             "Entrega de accesos completos y propiedad absoluta al cliente"
           ],
-          oscilloTitle: "MONITOR EN VIVO // STEP 07",
+          monitorTitle: "MONITOR EN VIVO // STEP 07",
           progress: "PROGRESS 100%",
           telemetryHtml: `
             <div>
@@ -1772,8 +1772,8 @@
         const title = document.getElementById("labStepTitle");
         const desc = document.getElementById("labStepDesc");
         const checklist = document.getElementById("labStepChecklist");
-        const oscilloTitle = document.getElementById("labOscilloTitle");
-        const oscilloProgress = document.getElementById("labOscilloProgress");
+        const monitorTitle = document.getElementById("labMonitorTitle");
+        const monitorProgress = document.getElementById("labMonitorProgress");
         const telemetryStage = document.getElementById("labStageTelemetry");
 
         if (badge) badge.textContent = stepData.badge;
@@ -1783,8 +1783,8 @@
         if (scope) scope.textContent = stepData.scope;
         if (title) title.textContent = stepData.title;
         if (desc) desc.textContent = stepData.desc;
-        if (oscilloTitle) oscilloTitle.textContent = stepData.oscilloTitle;
-        if (oscilloProgress) oscilloProgress.textContent = stepData.progress;
+        if (monitorTitle) monitorTitle.textContent = stepData.monitorTitle;
+        if (monitorProgress) monitorProgress.textContent = stepData.progress;
         if (telemetryStage) telemetryStage.innerHTML = stepData.telemetryHtml;
 
         if (checklist) {
