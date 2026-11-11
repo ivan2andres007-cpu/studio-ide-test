@@ -57,10 +57,17 @@
       color: #0e0d0c;
     }
 
+    input, textarea, select {
+      caret-color: #e0a96d;
+    }
+
     html {
       overflow-x: hidden;
       width: 100%;
       max-width: 100vw;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* Explicit Typographic Hierarchy Scale (impeccable / craft-floor) */
@@ -91,6 +98,7 @@
       width: 100%;
       max-width: 100vw;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .tabular-nums {
@@ -119,6 +127,7 @@
 
     ::-webkit-scrollbar-thumb {
       background: rgba(224, 169, 109, 0.25);
+      border-radius: 3px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
@@ -127,7 +136,7 @@
   </style>
 </head>
 
-<body class="selection:bg-amber-700 selection:text-white antialiased">
+<body class="antialiased">
 
   <!-- ───────────── HEADER EDITORIAL ───────────── -->
   <header class="border-b border-asuncion-border bg-asuncion-void">
@@ -158,7 +167,7 @@
       <div class="hidden sm:flex items-center gap-4">
         <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web"
           target="_blank" rel="noopener"
-          class="h-11 inline-flex items-center gap-2.5 px-5 border border-asuncion-cognac/30 hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-cognac font-mono text-xs uppercase tracking-wider transition-all">
+          class="h-11 inline-flex items-center gap-2.5 px-5 border border-asuncion-cognac/30 hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-cognac font-mono text-xs uppercase tracking-wider transition-all duration-200 active:scale-[0.98] hover:shadow-[0_2px_12px_rgba(224,169,109,0.15)]">
           <span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span>
           <span>Contactar por WhatsApp</span>
           <span>→</span>
@@ -167,7 +176,7 @@
 
       <!-- Mobile Button -->
       <button id="mobileMenuBtn" type="button" aria-expanded="false" aria-label="Abrir menú"
-        class="lg:hidden w-11 h-11 border border-asuncion-border bg-asuncion-surface text-asuncion-cognac flex items-center justify-center">
+        class="lg:hidden w-11 h-11 border border-asuncion-border bg-asuncion-surface text-asuncion-cognac flex items-center justify-center transition-colors hover:border-asuncion-cognac active:scale-[0.96]">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
           <path stroke-linecap="square" d="M3 6h18M3 12h18M3 18h18" />
         </svg>
@@ -183,7 +192,7 @@
         <a href="#dominios" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Dominios &amp; Hosting</a>
         <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio"
           target="_blank" rel="noopener"
-          class="min-h-[44px] mt-4 flex items-center justify-center gap-2 bg-asuncion-cognac text-black font-bold">
+          class="min-h-[44px] mt-4 flex items-center justify-center gap-2 bg-asuncion-cognac text-black font-bold active:scale-[0.98] transition-all">
           <span>Abrir WhatsApp (+595 986 125 649)</span>
           <span>→</span>
         </a>
@@ -192,14 +201,17 @@
   </header>
 
   <!-- Warm Editorial Studio Bar -->
-  <aside aria-label="Horario y Disponibilidad de Estudio" class="border-b border-asuncion-border/40 bg-asuncion-surface/80 py-2.5 px-4 font-mono text-[11px] text-asuncion-muted">
+  <aside aria-label="Horario y Disponibilidad de Estudio" class="border-b border-asuncion-border/40 bg-asuncion-surface/80 py-2.5 px-4 font-mono text-[11px] text-asuncion-muted backdrop-blur-sm">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-2.5">
-        <span class="w-2 h-2 rounded-full bg-asuncion-cognac ring-2 ring-asuncion-cognac/20"></span>
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-asuncion-cognac opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-asuncion-cognac"></span>
+        </span>
         <span class="text-white font-medium">ESTUDIO EN ASUNCIÓN:</span>
         <span class="text-asuncion-muted">PARAGUAY</span>
         <span class="text-white/20">|</span>
-        <span id="asuncionStudioClock" class="tabular-nums text-asuncion-cognac font-bold">ASU --:--:-- PYT</span>
+        <span id="asuncionStudioClock" class="tabular-nums text-asuncion-cognac font-bold tracking-wider">ASU --:--:-- PYT</span>
       </div>
       <div class="flex items-center gap-4 text-[10px] sm:text-[11px]">
         <span class="text-asuncion-muted">RESPUESTA EN WHATSAPP: <strong class="text-white">&lt; 15 MIN</strong></span>
@@ -235,13 +247,13 @@
 
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               <a href="#demos"
-                class="h-12 px-7 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-colors">
+                class="h-12 px-7 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_20px_rgba(224,169,109,0.2)] hover:shadow-[0_6px_28px_rgba(224,169,109,0.35)]">
                 <span>Explorar Catálogo de Demostraciones</span>
                 <span>↓</span>
               </a>
               <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20conversar%20sobre%20un%20proyecto"
                 target="_blank" rel="noopener"
-                class="h-12 px-6 border border-asuncion-cognac/30 hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-text font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
+                class="h-12 px-6 border border-asuncion-cognac/30 hover:border-asuncion-cognac hover:text-white bg-asuncion-surface text-asuncion-text font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98]">
                 <span>Conversar con el Estudio</span>
                 <span>→</span>
               </a>
@@ -251,6 +263,8 @@
           <!-- Right Column: Dispositivo Arquitectónico (Haces de Luz) -->
           <div class="lg:col-span-5 w-full flex items-center justify-center lg:justify-end">
             <div class="w-full max-w-xl py-2 relative">
+              <!-- Ambient Halo behind sculpture -->
+              <div class="absolute -top-10 -right-8 w-64 h-64 bg-asuncion-cognac/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
               
               <!-- Dispositivo Header -->
               <div class="flex items-center justify-between border-b border-asuncion-border pb-3 mb-6 font-mono text-[11px]">
@@ -267,7 +281,7 @@
               <div class="flex flex-col sm:flex-row items-center gap-6">
                 
                 <!-- Phone Frame with Ambient Halo -->
-                <div class="relative w-[170px] sm:w-[185px] h-[340px] sm:h-[360px] shrink-0 rounded-[32px] border-2 border-asuncion-cognac/50 bg-[#12100e] shadow-[0_0_40px_rgba(200,106,61,0.25)] p-3 flex flex-col justify-between overflow-hidden">
+                <div class="relative w-[170px] sm:w-[185px] h-[340px] sm:h-[360px] shrink-0 rounded-[32px] border-2 border-asuncion-cognac/50 bg-[#12100e] shadow-[0_0_40px_rgba(200,106,61,0.25)] p-3 flex flex-col justify-between overflow-hidden backdrop-blur-sm">
                   
                   <!-- Speaker Notch -->
                   <div class="w-12 h-2.5 bg-black/90 rounded-full mx-auto flex items-center justify-center">
@@ -280,22 +294,22 @@
                     <a href="#soluciones" id="heroBeam1" 
                       onmouseenter="document.getElementById('planPlate1')?.classList.add('translate-x-1.5')"
                       onmouseleave="document.getElementById('planPlate1')?.classList.remove('translate-x-1.5')"
-                      class="block h-7 rounded-full bg-gradient-to-r from-asuncion-cognac/30 via-asuncion-cognac/80 to-asuncion-cognac shadow-[0_0_16px_rgba(224,169,109,0.45)] transition-all cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_24px_rgba(224,169,109,0.85)]"
-                      aria-label="Ver plan Presencia"></a>
+                      class="block h-7 rounded-full bg-gradient-to-r from-asuncion-cognac/30 via-asuncion-cognac/80 to-asuncion-cognac shadow-[0_0_16px_rgba(224,169,109,0.45)] transition-all duration-200 cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_24px_rgba(224,169,109,0.85)]"
+                      aria-label="Ver plan Presencia" title="Plan Presencia Express"></a>
                     
                     <!-- Beam 02 (Golden Highlight) -->
                     <a href="#soluciones" id="heroBeam2" 
                       onmouseenter="document.getElementById('planPlate2')?.classList.add('translate-x-1.5')"
                       onmouseleave="document.getElementById('planPlate2')?.classList.remove('translate-x-1.5')"
-                      class="block h-8 rounded-full bg-gradient-to-r from-amber-400/40 via-asuncion-cognac to-amber-200 shadow-[0_0_24px_rgba(224,169,109,0.7)] ring-1 ring-asuncion-cognac/70 transition-all cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_32px_rgba(224,169,109,1)]"
-                      aria-label="Ver plan Catálogo Móvil"></a>
+                      class="block h-8 rounded-full bg-gradient-to-r from-amber-400/40 via-asuncion-cognac to-amber-200 shadow-[0_0_24px_rgba(224,169,109,0.7)] ring-1 ring-asuncion-cognac/70 transition-all duration-200 cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_32px_rgba(224,169,109,1)]"
+                      aria-label="Ver plan Catálogo Móvil" title="Plan Catálogo Móvil WhatsApp"></a>
                     
                     <!-- Beam 03 -->
                     <a href="#soluciones" id="heroBeam3" 
                       onmouseenter="document.getElementById('planPlate3')?.classList.add('translate-x-1.5')"
                       onmouseleave="document.getElementById('planPlate3')?.classList.remove('translate-x-1.5')"
-                      class="block h-7 rounded-full bg-gradient-to-r from-asuncion-terracotta/30 via-asuncion-terracotta/80 to-asuncion-terracotta shadow-[0_0_16px_rgba(200,106,61,0.4)] transition-all cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_24px_rgba(200,106,61,0.85)]"
-                      aria-label="Ver plan A Medida"></a>
+                      class="block h-7 rounded-full bg-gradient-to-r from-asuncion-terracotta/30 via-asuncion-terracotta/80 to-asuncion-terracotta shadow-[0_0_16px_rgba(200,106,61,0.4)] transition-all duration-200 cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_24px_rgba(200,106,61,0.85)]"
+                      aria-label="Ver plan A Medida" title="Plan Corporativo &amp; Sistemas"></a>
                   </div>
 
                   <!-- Simulated WhatsApp Status -->
@@ -313,7 +327,7 @@
                   <a href="#soluciones" id="planPlate1"
                     onmouseenter="document.getElementById('heroBeam1')?.classList.add('scale-[1.05]','brightness-125')"
                     onmouseleave="document.getElementById('heroBeam1')?.classList.remove('scale-[1.05]','brightness-125')"
-                    class="group block transition-all hover:translate-x-1">
+                    class="group block transition-all duration-200 hover:translate-x-1">
                     <div class="flex items-center gap-2 mb-1">
                       <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-cognac to-asuncion-cognac/30 group-hover:w-14 group-hover:from-asuncion-cognac group-hover:to-asuncion-cognac group-hover:shadow-[0_0_10px_rgba(224,169,109,0.8)] transition-all"></span>
                       <span class="font-serif font-bold text-white group-hover:text-asuncion-cognac text-base leading-none transition-colors">Presencia</span>
@@ -327,7 +341,7 @@
                   <a href="#soluciones" id="planPlate2"
                     onmouseenter="document.getElementById('heroBeam2')?.classList.add('scale-[1.05]','brightness-125')"
                     onmouseleave="document.getElementById('heroBeam2')?.classList.remove('scale-[1.05]','brightness-125')"
-                    class="group block transition-all hover:translate-x-1">
+                    class="group block transition-all duration-200 hover:translate-x-1">
                     <div class="flex items-center gap-2 mb-1">
                       <span class="w-8 sm:w-12 h-[3px] bg-gradient-to-r from-amber-300 to-asuncion-cognac shadow-[0_0_12px_rgba(224,169,109,0.9)] group-hover:w-14 group-hover:shadow-[0_0_18px_rgba(224,169,109,1)] transition-all"></span>
                       <span class="font-serif font-bold text-asuncion-cognac text-lg leading-none">Catálogo Móvil</span>
@@ -341,7 +355,7 @@
                   <a href="#soluciones" id="planPlate3"
                     onmouseenter="document.getElementById('heroBeam3')?.classList.add('scale-[1.05]','brightness-125')"
                     onmouseleave="document.getElementById('heroBeam3')?.classList.remove('scale-[1.05]','brightness-125')"
-                    class="group block transition-all hover:translate-x-1">
+                    class="group block transition-all duration-200 hover:translate-x-1">
                     <div class="flex items-center gap-2 mb-1">
                       <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-terracotta to-asuncion-terracotta/30 group-hover:w-14 group-hover:from-asuncion-terracotta group-hover:to-asuncion-terracotta group-hover:shadow-[0_0_10px_rgba(200,106,61,0.8)] transition-all"></span>
                       <span class="font-serif font-bold text-white group-hover:text-asuncion-terracotta text-base leading-none transition-colors">A Medida</span>
@@ -422,7 +436,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
           <!-- Pilar 01 -->
-          <article class="bg-asuncion-card border border-asuncion-border p-8 flex flex-col justify-between hover:border-asuncion-cognac/40 transition-colors">
+          <article class="bg-asuncion-card border border-asuncion-border p-8 flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)]">
             <div>
               <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-wider pb-3 border-b border-asuncion-border mb-6 flex justify-between">
                 <span>PLAN 01</span>
@@ -461,15 +475,15 @@
 
             <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20plan%20Presencia%20Express%20(Gs.%201.490.000)"
               target="_blank" rel="noopener"
-              class="h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+              class="h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac hover:text-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98]">
               <span>Elegir Presencia Express</span>
               <span>→</span>
             </a>
           </article>
 
           <!-- Pilar 02 (Plan Estrella) -->
-          <article class="bg-asuncion-void border-2 border-asuncion-cognac p-8 flex flex-col justify-between relative shadow-2xl">
-            <div class="absolute -top-3.5 right-6 px-3 py-1 bg-asuncion-cognac text-black font-mono text-[10px] font-bold uppercase tracking-wider">
+          <article class="bg-asuncion-void border-2 border-asuncion-cognac p-8 flex flex-col justify-between relative shadow-[0_12px_40px_rgba(224,169,109,0.12)] hover:shadow-[0_16px_48px_rgba(224,169,109,0.22)] transition-all duration-200 hover:-translate-y-1">
+            <div class="absolute -top-3.5 right-6 px-3 py-1 bg-asuncion-cognac text-black font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
               ELECCIÓN HABITUAL COMERCIOS
             </div>
 
@@ -524,14 +538,14 @@
 
             <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Cat%C3%A1logo%20M%C3%B3vil%20WhatsApp%20(Gs.%202.490.000)"
               target="_blank" rel="noopener"
-              class="h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+              class="h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.25)]">
               <span>Contratar Catálogo WhatsApp</span>
               <span>→</span>
             </a>
           </article>
 
           <!-- Pilar 03 -->
-          <article class="bg-asuncion-card border border-asuncion-border p-8 flex flex-col justify-between hover:border-asuncion-cognac/40 transition-colors">
+          <article class="bg-asuncion-card border border-asuncion-border p-8 flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)]">
             <div>
               <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-wider pb-3 border-b border-asuncion-border mb-6 flex justify-between">
                 <span>PLAN 03</span>
@@ -570,7 +584,7 @@
 
             <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20un%20Sitio%20Corporativo%20o%20Sistema%20a%20Medida"
               target="_blank" rel="noopener"
-              class="h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-colors">
+              class="h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac hover:text-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98]">
               <span>Consultar Sistema a Medida</span>
               <span>→</span>
             </a>
@@ -597,14 +611,14 @@
 
         <!-- Pestañas de Rubro -->
         <div class="flex flex-wrap gap-2 border-b border-asuncion-border pb-4 mb-8">
-          <button type="button" class="case-tab-btn h-10 px-5 border border-asuncion-cognac bg-asuncion-cognac text-black font-serif font-bold text-xs uppercase tracking-wider transition-colors" data-case="ferreteria">
-            01. Ferretería & Repuestos (Eusebio Ayala)
+          <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-cognac bg-asuncion-cognac text-black font-serif font-bold text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="ferreteria">
+            01. Ferretería &amp; Repuestos (Eusebio Ayala)
           </button>
-          <button type="button" class="case-tab-btn h-10 px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-colors" data-case="barberia">
-            02. Barber Studio & Estética (Villa Morra)
+          <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="barberia">
+            02. Barber Studio &amp; Estética (Villa Morra)
           </button>
-          <button type="button" class="case-tab-btn h-10 px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-colors" data-case="boutique">
-            03. Boutique & Calzados (Carmelitas)
+          <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="boutique">
+            03. Boutique &amp; Calzados (Carmelitas)
           </button>
         </div>
 
@@ -676,7 +690,7 @@
               <span class="font-mono text-xs text-asuncion-cognac font-bold">Cierre en menos de 60 segundos</span>
               <a id="caseWaBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20un%20cat%C3%A1logo%20m%C3%B3vil%20para%20Ferreter%C3%ADa%20y%20Repuestos"
                 target="_blank" rel="noopener"
-                class="h-10 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1 transition-colors">
+                class="h-11 px-5 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.2)]">
                 <span>Pedir para mi rubro</span>
                 <span>→</span>
               </a>
@@ -731,10 +745,10 @@
 
           <div class="pt-4 border-t border-asuncion-border flex flex-wrap gap-2">
             <span class="font-mono text-xs text-asuncion-muted uppercase self-center mr-2">Plan:</span>
-            <button class="chip-filter h-9 px-3.5 border border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold" data-plan="TODOS">TODOS</button>
-            <button class="chip-filter h-9 px-3.5 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs" data-plan="Catálogo Móvil WhatsApp">CATÁLOGO WHATSAPP</button>
-            <button class="chip-filter h-9 px-3.5 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs" data-plan="Presencia Express">LANDING EXPRESS</button>
-            <button class="chip-filter h-9 px-3.5 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs" data-plan="Corporativo & Sistemas">CORPORATIVO</button>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold active:scale-[0.98] transition-all" data-plan="TODOS">TODOS</button>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Catálogo Móvil WhatsApp">CATÁLOGO WHATSAPP</button>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Presencia Express">LANDING EXPRESS</button>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Corporativo & Sistemas">CORPORATIVO</button>
           </div>
         </div>
 
@@ -795,31 +809,31 @@
         <!-- 7-Segment Scrubber Track (Days 1 to 7) -->
         <div class="mb-8">
           <div class="flex items-center justify-between gap-2 overflow-x-auto pb-2 no-scrollbar" role="tablist" aria-label="Cronograma de 7 días">
-            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="1" role="tab" aria-selected="true">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all shadow-[0_0_16px_rgba(224,169,109,0.3)] active:scale-[0.97]" data-day="1" role="tab" aria-selected="true">
               <span class="text-[9px] block">ETAPA</span>
               <span class="text-xs font-extrabold">DÍA 01</span>
             </button>
-            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="2" role="tab" aria-selected="false">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-day="2" role="tab" aria-selected="false">
               <span class="text-[9px] block">ETAPA</span>
               <span class="text-xs font-extrabold">DÍA 02</span>
             </button>
-            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="3" role="tab" aria-selected="false">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-day="3" role="tab" aria-selected="false">
               <span class="text-[9px] block">ETAPA</span>
               <span class="text-xs font-extrabold">DÍA 03</span>
             </button>
-            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="4" role="tab" aria-selected="false">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-day="4" role="tab" aria-selected="false">
               <span class="text-[9px] block">ETAPA</span>
               <span class="text-xs font-extrabold">DÍA 04</span>
             </button>
-            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="5" role="tab" aria-selected="false">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-day="5" role="tab" aria-selected="false">
               <span class="text-[9px] block">ETAPA</span>
               <span class="text-xs font-extrabold">DÍA 05</span>
             </button>
-            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="6" role="tab" aria-selected="false">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-day="6" role="tab" aria-selected="false">
               <span class="text-[9px] block">ETAPA</span>
               <span class="text-xs font-extrabold">DÍA 06</span>
             </button>
-            <button type="button" class="asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all" data-day="7" role="tab" aria-selected="false">
+            <button type="button" class="asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-day="7" role="tab" aria-selected="false">
               <span class="text-[9px] block text-asuncion-cognac">FINAL</span>
               <span class="text-xs font-extrabold text-asuncion-cognac">DÍA 07</span>
             </button>
@@ -998,7 +1012,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             
             <!-- .store -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between">
+            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
               <div>
                 <div class="flex items-center justify-between font-mono text-xs mb-2">
                   <span class="text-asuncion-cognac font-bold text-base">.store</span>
@@ -1012,14 +1026,14 @@
               <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
                 <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
                 <a id="asuncionLinkStore" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.store"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1">
+                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
                   <span>Consultar →</span>
                 </a>
               </div>
             </div>
 
             <!-- .tech -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between">
+            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
               <div>
                 <div class="flex items-center justify-between font-mono text-xs mb-2">
                   <span class="text-asuncion-cognac font-bold text-base">.tech</span>
@@ -1033,14 +1047,14 @@
               <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
                 <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
                 <a id="asuncionLinkTech" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.tech"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1">
+                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
                   <span>Consultar →</span>
                 </a>
               </div>
             </div>
 
             <!-- .app -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between">
+            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
               <div>
                 <div class="flex items-center justify-between font-mono text-xs mb-2">
                   <span class="text-asuncion-cognac font-bold text-base">.app</span>
@@ -1054,14 +1068,14 @@
               <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
                 <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
                 <a id="asuncionLinkApp" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.app"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1">
+                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
                   <span>Consultar →</span>
                 </a>
               </div>
             </div>
 
             <!-- .blog -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between">
+            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
               <div>
                 <div class="flex items-center justify-between font-mono text-xs mb-2">
                   <span class="text-asuncion-cognac font-bold text-base">.blog</span>
@@ -1075,20 +1089,32 @@
               <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
                 <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
                 <a id="asuncionLinkBlog" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.blog"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1">
+                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
                   <span>Consultar →</span>
                 </a>
               </div>
             </div>
 
             <!-- .online / .xyz / .club -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between sm:col-span-2 lg:col-span-2">
+            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between sm:col-span-2 lg:col-span-2 hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
               <div>
                 <div class="flex items-center justify-between font-mono text-xs mb-2">
                   <span class="text-asuncion-cognac font-bold text-base">.online · .xyz · .club</span>
                   <span class="text-[10px] text-asuncion-muted border border-asuncion-border px-1.5 py-0.5">PRESENCIA GENERAL &amp; COMUNIDADES</span>
                 </div>
                 <div class="asuncion-preview-multi font-serif font-bold text-base text-white mb-2 truncate">mimarca.online / mimarca.xyz / mimarca.club</div>
+                <p class="text-xs text-asuncion-muted leading-relaxed">
+                  Presencia digital general, clubes, membresías o comunidades. Extensiones modernas y directas para marcas contemporáneas que buscan alta recordación.
+                </p>
+              </div>
+              <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
+                <span class="text-asuncion-muted text-[11px]">Disponibilidad y ajuste en precio según registrador</span>
+                <a id="asuncionLinkMulti" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20dominios%20.online%2C%20.xyz%20o%20.club"
+                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
+                  <span>Consultar opciones →</span>
+                </a>
+              </div>
+            </div>
                 <p class="text-xs text-asuncion-muted leading-relaxed">
                   Presencia digital general, clubes, membresías o comunidades. Extensiones modernas y directas para marcas contemporáneas que buscan alta recordación.
                 </p>
@@ -1146,18 +1172,18 @@
               <span class="font-mono text-xs text-white font-bold">Tarifa con descuento</span>
               <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20la%20modalidad%20de%20Solo%20Dise%C3%B1o%20y%20C%C3%B3digo%20Fuente"
                 target="_blank" rel="noopener"
-                class="h-11 px-5 border border-asuncion-border hover:border-asuncion-cognac text-white font-mono text-xs uppercase flex items-center gap-2 transition-colors">
+                class="h-11 px-5 border border-asuncion-border hover:border-asuncion-cognac hover:text-asuncion-cognac text-white font-mono text-xs uppercase flex items-center gap-2 transition-all duration-200 active:scale-[0.98]">
                 <span>Pedir Solo Código →</span>
               </a>
             </div>
           </div>
 
           <!-- Modalidad B -->
-          <div class="p-8 sm:p-12 flex flex-col justify-between bg-asuncion-surface">
+          <div class="p-8 sm:p-12 flex flex-col justify-between bg-asuncion-surface hover:bg-asuncion-surface/90 transition-colors">
             <div>
               <div class="flex items-center justify-between font-mono text-xs text-asuncion-muted mb-4 uppercase">
                 <span class="text-asuncion-cognac font-bold">MODALIDAD 02</span>
-                <span class="bg-asuncion-cognac text-black px-2 py-0.5 font-bold">[LLAVE EN MANO]</span>
+                <span class="bg-asuncion-cognac text-black px-2 py-0.5 font-bold shadow-sm">[LLAVE EN MANO]</span>
               </div>
               <h3 class="font-serif font-bold text-2xl text-white mb-4">
                 Hosting &amp; Despliegue Administrado
@@ -1184,7 +1210,7 @@
               <span class="font-mono text-xs text-asuncion-cognac font-bold">Solución integral activa</span>
               <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20la%20modalidad%20Llave%20en%20Mano%20con%20Hosting%20incluido"
                 target="_blank" rel="noopener"
-                class="h-11 px-5 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase flex items-center gap-2 transition-colors">
+                class="h-11 px-5 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase flex items-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.2)]">
                 <span>Pedir Llave en Mano →</span>
               </a>
             </div>
@@ -1198,7 +1224,7 @@
     <!-- ───────────── CIERRE EDITORIAL ───────────── -->
     <section class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="border border-asuncion-border bg-asuncion-card p-8 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="border border-asuncion-border bg-asuncion-card p-8 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
           <div class="max-w-xl">
             <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">INICIAR CONVERSACIÓN DIRECTA</span>
             <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight mb-4">
@@ -1210,7 +1236,7 @@
           </div>
           <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20conversar%20sobre%20un%20proyecto%20web"
             target="_blank" rel="noopener"
-            class="h-12 px-8 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 whitespace-nowrap transition-colors">
+            class="h-12 px-8 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-200 active:scale-[0.98] shadow-[0_4px_20px_rgba(224,169,109,0.25)] hover:shadow-[0_6px_28px_rgba(224,169,109,0.4)]">
             <span>Iniciar Consulta por WhatsApp</span>
             <span>→</span>
           </a>
@@ -1325,7 +1351,7 @@
         const waUrl = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, me gustaría encargar una web con el estilo de ${d.titulo} (${d.rubro})`)}`;
 
         html += `
-          <article class="bg-asuncion-surface border border-asuncion-border flex flex-col justify-between hover:border-asuncion-cognac/50 transition-colors group">
+          <article class="bg-asuncion-surface border border-asuncion-border flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)] group">
             <div>
               <div class="relative aspect-[16/10] bg-asuncion-void overflow-hidden border-b border-asuncion-border">
                 <img src="${d.imagenPreview}" alt="${d.titulo}" loading="lazy" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity">
@@ -1341,12 +1367,12 @@
             </div>
             <div class="p-6 pt-0 grid grid-cols-2 gap-3 font-mono text-xs">
               <a href="${d.urlDemo}" target="_blank" rel="noopener"
-                class="h-11 px-3 border border-asuncion-border hover:border-white text-white flex items-center justify-center gap-1 transition-colors">
+                class="h-11 px-3 border border-asuncion-border hover:border-white text-white flex items-center justify-center gap-1 transition-all duration-150 active:scale-[0.98]">
                 <span>Ver demo</span>
                 <span>↗</span>
               </a>
               <a href="${waUrl}" target="_blank" rel="noopener"
-                class="h-11 px-3 bg-asuncion-cognac hover:bg-amber-300 text-black font-bold flex items-center justify-center gap-1 transition-colors">
+                class="h-11 px-3 bg-asuncion-cognac hover:bg-amber-300 text-black font-bold flex items-center justify-center gap-1 transition-all duration-150 active:scale-[0.98] shadow-sm hover:shadow-[0_2px_10px_rgba(224,169,109,0.3)]">
                 <span>Pedir</span>
                 <span>→</span>
               </a>
@@ -1359,7 +1385,7 @@
       const customRubroUrl = `https://wa.me/595986125649?text=${encodeURIComponent("Hola Punto Prisma Studio, no vi mi rubro específico en el catálogo y quiero armar un prototipo a medida para mi empresa.")}`;
 
       html += `
-        <article class="col-span-1 md:col-span-2 lg:col-span-3 bg-asuncion-surface border border-dashed border-asuncion-cognac/40 p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <article class="col-span-1 md:col-span-2 lg:col-span-3 bg-asuncion-surface border border-dashed border-asuncion-cognac/50 hover:border-asuncion-cognac p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 transition-all duration-200 hover:shadow-[0_8px_30px_rgba(224,169,109,0.12)]">
           <div class="flex-1">
             <div class="flex items-center gap-2 font-mono text-xs text-asuncion-cognac uppercase tracking-wider mb-2">
               <span class="w-2 h-2 rounded-full bg-asuncion-cognac ring-2 ring-asuncion-cognac/20"></span>
@@ -1374,7 +1400,7 @@
           </div>
           <div class="flex-shrink-0 w-full md:w-auto">
             <a href="${customRubroUrl}" target="_blank" rel="noopener"
-              class="w-full md:w-auto h-11 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors whitespace-nowrap">
+              class="w-full md:w-auto h-11 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.2)] hover:shadow-[0_6px_22px_rgba(224,169,109,0.35)] whitespace-nowrap">
               <span>Consultar por WhatsApp</span>
               <span>→</span>
             </a>
@@ -1841,9 +1867,9 @@
           const isCurrent = d === dayNum;
           btn.setAttribute("aria-selected", String(isCurrent));
           if (isCurrent) {
-            btn.className = "asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+            btn.className = "asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all shadow-[0_0_16px_rgba(224,169,109,0.3)] active:scale-[0.97]";
           } else {
-            btn.className = "asuncion-proc-btn flex-1 min-h-[44px] min-w-[72px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all";
+            btn.className = "asuncion-proc-btn flex-1 min-h-[48px] min-w-[76px] p-2 border border-asuncion-border bg-asuncion-card text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]";
           }
         });
 
