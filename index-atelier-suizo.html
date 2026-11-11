@@ -311,61 +311,109 @@
             </div>
           </div>
 
-          <!-- Right Column: Live Index of the 3 Solutions -->
-          <div class="lg:col-span-5 bg-swiss-base border border-white/[0.08] p-6 sm:p-8">
+          <!-- Right Column: Das Raster-Telefon (Swiss International Phone Silhouette & Callout Matrix) -->
+          <div class="lg:col-span-5 p-2 sm:p-4 relative">
+            
+            <!-- Swiss Grid Crosshairs -->
+            <span class="absolute top-2 left-2 text-swiss-muted font-mono text-[10px] select-none">+</span>
+            <span class="absolute top-2 right-2 text-swiss-muted font-mono text-[10px] select-none">+</span>
+            <span class="absolute bottom-2 left-2 text-swiss-muted font-mono text-[10px] select-none">+</span>
+            <span class="absolute bottom-2 right-2 text-swiss-muted font-mono text-[10px] select-none">+</span>
+
             <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-6 font-mono text-xs">
-              <span class="text-white font-bold">ESTRUCTURA DE PLANES</span>
-              <span class="text-emerald-400">[VIGENTE EN ASUNCIÓN]</span>
+              <span class="text-white font-bold flex items-center gap-2">
+                <span class="inline-block w-2.5 h-2.5 bg-swiss-red flex items-center justify-center text-white text-[8px] font-bold leading-none">+</span>
+                <span>DAS RASTER-TELEFON</span>
+              </span>
+              <span class="text-swiss-red font-mono font-bold tracking-wider">[3 PLANES SUIZOS]</span>
             </div>
 
-            <div class="space-y-4">
+            <!-- Flex: Swiss Phone Silhouette on left, Callouts on right -->
+            <div class="flex items-center gap-4 sm:gap-6">
               
-              <!-- Plan 1 Mini -->
-              <a href="#soluciones" class="block p-4 border border-white/10 hover:border-white/30 bg-swiss-void transition-colors group">
-                <div class="flex items-center justify-between text-xs font-mono text-swiss-muted mb-1">
-                  <span>PLAN 01</span>
-                  <span>LANDING PAGE</span>
+              <!-- Silueta de Móvil Suizo de Precisión -->
+              <div class="relative w-[130px] sm:w-[145px] h-[255px] sm:h-[275px] shrink-0 rounded-[28px] border-2 border-white/30 bg-[#07080a] shadow-[0_0_30px_rgba(255,255,255,0.08)] p-3 flex flex-col justify-between overflow-hidden">
+                
+                <!-- Swiss Top Bezel & Camera -->
+                <div class="w-12 h-2.5 bg-white/10 rounded-full mx-auto flex items-center justify-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-swiss-red"></span>
                 </div>
-                <div class="flex items-center justify-between">
-                  <span class="font-display font-bold text-white group-hover:text-emerald-300 transition-colors">Presencia Express</span>
-                  <span class="font-mono text-sm font-bold text-white tabular-nums">₲ 1.490.000</span>
-                </div>
-                <p class="text-xs text-swiss-muted mt-2">Página única de alta conversión, horarios, mapa y botón directo.</p>
-              </a>
 
-              <!-- Plan 2 Mini (Highlight) -->
-              <a href="#soluciones" class="block p-4 border-2 border-white/40 bg-swiss-elevated transition-colors group relative">
-                <div class="absolute -top-2.5 right-4 px-2 py-0.5 bg-white text-black font-mono text-[9px] font-bold uppercase tracking-wider">
-                  MÁS SOLICITADO PYMES
+                <!-- 3 Illuminated Horizontal Bars inside Screen -->
+                <div class="space-y-4 my-auto">
+                  <!-- Bar 01 -->
+                  <div class="h-6 sm:h-7 rounded-full bg-white/70 hover:bg-white shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all cursor-pointer"></div>
+                  
+                  <!-- Bar 02 (Swiss Red Highlight) -->
+                  <div class="h-7 sm:h-8 rounded-full bg-swiss-red hover:bg-swiss-redHover shadow-[0_0_20px_rgba(235,38,38,0.7)] transition-all cursor-pointer"></div>
+                  
+                  <!-- Bar 03 -->
+                  <div class="h-6 sm:h-7 rounded-full bg-white/40 hover:bg-white/80 shadow-[0_0_10px_rgba(255,255,255,0.2)] transition-all cursor-pointer"></div>
                 </div>
-                <div class="flex items-center justify-between text-xs font-mono text-swiss-muted mb-1">
-                  <span class="text-white font-bold">PLAN 02</span>
-                  <span>CATÁLOGO WHATSAPP</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="font-display font-bold text-white group-hover:text-emerald-300 transition-colors">Catálogo Móvil Interactivo</span>
-                  <span class="font-mono text-base font-bold text-emerald-400 tabular-nums">₲ 2.490.000</span>
-                </div>
-                <p class="text-xs text-swiss-muted mt-2">Buscador, categorías, carrito de compras y despacho directo a WhatsApp.</p>
-              </a>
 
-              <!-- Plan 3 Mini -->
-              <a href="#soluciones" class="block p-4 border border-white/10 hover:border-white/30 bg-swiss-void transition-colors group">
-                <div class="flex items-center justify-between text-xs font-mono text-swiss-muted mb-1">
-                  <span>PLAN 03</span>
-                  <span>SISTEMA A MEDIDA</span>
+                <!-- Swiss Bottom Indicator Pill -->
+                <div class="px-2 py-0.5 font-mono text-[8px] text-swiss-muted text-center flex items-center justify-center gap-1">
+                  <span class="w-1 h-1 rounded-full bg-emerald-400"></span>
+                  <span>DISPATCH: WA_API</span>
                 </div>
-                <div class="flex items-center justify-between">
-                  <span class="font-display font-bold text-white group-hover:text-emerald-300 transition-colors">Corporativo & Sistemas</span>
-                  <span class="font-mono text-sm font-bold text-white tabular-nums">₲ 4.890.000</span>
-                </div>
-                <p class="text-xs text-swiss-muted mt-2">Multi-página corporativa, paneles administrativos y software específico.</p>
-              </a>
+
+                <!-- Home bar -->
+                <div class="w-10 h-1 bg-white/30 rounded-full mx-auto"></div>
+              </div>
+
+              <!-- Swiss Typographic Callouts to the Right -->
+              <div class="flex-1 flex flex-col justify-between h-[255px] sm:h-[275px] py-1 font-mono">
+                
+                <!-- Callout 01 -->
+                <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-4 sm:w-6 h-[1px] bg-white/30 group-hover:bg-white group-hover:w-8 transition-all"></span>
+                    <span class="font-display font-bold text-white group-hover:text-swiss-red text-sm sm:text-base leading-none transition-colors">01. Presencia</span>
+                  </div>
+                  <div class="pl-6 sm:pl-8">
+                    <span class="text-[11px] text-swiss-muted block">1 página · <strong class="text-white">₲ 1.490.000</strong></span>
+                    <span class="text-[9px] text-swiss-subtle uppercase">Entrega en 7 días</span>
+                  </div>
+                </a>
+
+                <!-- Callout 02 (Swiss Red Highlight) -->
+                <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-4 sm:w-6 h-[2px] bg-swiss-red shadow-[0_0_8px_rgba(235,38,38,0.8)] group-hover:w-8 transition-all"></span>
+                    <span class="font-display font-extrabold text-white text-base sm:text-lg leading-none">02. Catálogo</span>
+                  </div>
+                  <div class="pl-6 sm:pl-8">
+                    <span class="text-[11px] text-white font-semibold block">Catálogo · <strong class="text-swiss-red">₲ 2.490.000</strong></span>
+                    <span class="text-[9px] text-emerald-400 uppercase font-bold">Carrito directo WhatsApp</span>
+                  </div>
+                </a>
+
+                <!-- Callout 03 -->
+                <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-4 sm:w-6 h-[1px] bg-white/30 group-hover:bg-white group-hover:w-8 transition-all"></span>
+                    <span class="font-display font-bold text-white group-hover:text-swiss-red text-sm sm:text-base leading-none transition-colors">03. A Medida</span>
+                  </div>
+                  <div class="pl-6 sm:pl-8">
+                    <span class="text-[11px] text-swiss-muted block">Multi-página · <strong class="text-white">₲ 4.890.000</strong></span>
+                    <span class="text-[9px] text-swiss-subtle uppercase">Corporativo &amp; Sistemas</span>
+                  </div>
+                </a>
+
+              </div>
+
             </div>
 
-            <div class="mt-6 pt-4 border-t border-white/10 font-mono text-[11px] text-swiss-muted text-center">
-              Pago único sin mensualidades ocultas. Soporte local en Asunción.
+            <!-- Swiss Table Link -->
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-swiss-muted">
+              <span>0% COMISIÓN POR TRANSACCIÓN</span>
+              <a href="#soluciones" class="text-white hover:text-swiss-red font-bold transition-colors">Ver Matriz Suiza →</a>
             </div>
+
+            <div class="mt-4 pt-2 font-mono text-[10px] text-swiss-muted text-center">
+              Pago único sin mensualidades ocultas · Asunción, PY
+            </div>
+
           </div>
 
         </div>

@@ -73,3 +73,4 @@ console.log(`\n========================================`);
 console.log(`Integrity check finished. Total errors: ${totalErrors}`);
 console.log(`========================================`);
 process.exit(totalErrors > 0 ? 1 : 0);
+

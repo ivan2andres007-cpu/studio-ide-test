@@ -233,32 +233,134 @@
     <section class="border-b border-asuncion-border py-16 sm:py-24 bg-asuncion-void">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="max-w-3xl mb-12">
-          <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest mb-4 flex items-center gap-3">
-            <span class="w-8 h-[1px] bg-asuncion-cognac"></span>
-            <span>ARQUITECTURA DIGITAL PARA PYMES PARAGUAYAS</span>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12">
+          
+          <!-- Left Column: Manifesto & Actions -->
+          <div class="lg:col-span-7 flex flex-col items-start">
+            <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest mb-4 flex items-center gap-3">
+              <span class="w-8 h-[1px] bg-asuncion-cognac"></span>
+              <span>ARQUITECTURA DIGITAL PARA PYMES PARAGUAYAS</span>
+            </div>
+
+            <h1 class="font-serif font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12] mb-6">
+              Catálogos móviles y sistemas que cierran ventas con dignidad y velocidad.
+            </h1>
+
+            <p class="text-asuncion-muted text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+              Diseñamos plataformas comerciales con la nobleza de la arquitectura contemporánea: sin ornamentos inútiles, resistentes y hechas para durar. Tu cliente recorre tu stock en el celular, suma al carrito y envía el pedido completo directo al WhatsApp de tu vendedor.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              <a href="#demos"
+                class="h-12 px-7 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-colors">
+                <span>Explorar Catálogo de Demostraciones</span>
+                <span>↓</span>
+              </a>
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20conversar%20sobre%20un%20proyecto"
+                target="_blank" rel="noopener"
+                class="h-12 px-6 border border-asuncion-cognac/30 hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-text font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
+                <span>Conversar con el Estudio</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
 
-          <h1 class="font-serif font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12] mb-6">
-            Catálogos móviles y sistemas que cierran ventas con dignidad y velocidad.
-          </h1>
+          <!-- Right Column: Silueta Móvil Arquitectónica con Barras Licitadas (Inspired by LibreSitio + Asunción Editorial) -->
+          <div class="lg:col-span-5 w-full flex items-center justify-center lg:justify-end">
+            <div class="w-full max-w-md py-4 relative">
+              
+              <!-- Subtle Header -->
+              <div class="flex items-center justify-between border-b border-asuncion-border pb-3 mb-6 font-mono text-[11px]">
+                <div class="flex items-center gap-2 text-white">
+                  <span class="w-2 h-2 rounded-full bg-asuncion-cognac ring-2 ring-asuncion-cognac/20"></span>
+                  <span class="font-bold">DISPOSITIVO ARQUITECTÓNICO</span>
+                </div>
+                <span class="text-asuncion-cognac font-bold tracking-wider">3 PLANES LLAVE EN MANO</span>
+              </div>
 
-          <p class="text-asuncion-muted text-base sm:text-lg leading-relaxed mb-8">
-            Diseñamos plataformas comerciales con la nobleza de la arquitectura contemporánea: sin ornamentos inútiles, resistentes y hechas para durar. Tu cliente recorre tu stock en el celular, suma al carrito y envía el pedido completo directo al WhatsApp de tu vendedor.
-          </p>
+              <!-- Flex container: Phone Silhouette on left, Callout branches on right -->
+              <div class="flex items-center gap-4 sm:gap-6">
+                
+                <!-- Silueta de Teléfono Móvil -->
+                <div class="relative w-[130px] sm:w-[145px] h-[250px] sm:h-[270px] shrink-0 rounded-[30px] border-2 border-asuncion-cognac/50 bg-[#12100e] shadow-[0_0_25px_rgba(224,169,109,0.18)] p-3 flex flex-col justify-between overflow-hidden">
+                  
+                  <!-- Dynamic Speaker Notch -->
+                  <div class="w-10 h-2 bg-black/90 rounded-full mx-auto flex items-center justify-center">
+                    <span class="w-1.5 h-1.5 rounded-full bg-asuncion-cognac/60"></span>
+                  </div>
 
-          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <a href="#demos"
-              class="h-12 px-7 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-colors">
-              <span>Explorar Catálogo de Demostraciones</span>
-              <span>↓</span>
-            </a>
-            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20conversar%20sobre%20un%20proyecto"
-              target="_blank" rel="noopener"
-              class="h-12 px-6 border border-asuncion-cognac/30 hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-text font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
-              <span>Conversar con el Estudio</span>
-              <span>→</span>
-            </a>
+                  <!-- 3 Glowing Luminous Bars inside Screen -->
+                  <div class="space-y-4 my-auto">
+                    <!-- Bar 1 (Presencia) -->
+                    <div id="barAsuncion1" class="h-6 sm:h-7 rounded-full bg-gradient-to-r from-asuncion-cognac/20 via-asuncion-cognac/70 to-asuncion-cognac shadow-[0_0_12px_rgba(224,169,109,0.35)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
+                    
+                    <!-- Bar 2 (Catálogo - Highlighted) -->
+                    <div id="barAsuncion2" class="h-7 sm:h-8 rounded-full bg-gradient-to-r from-amber-400/40 via-asuncion-cognac to-amber-200 shadow-[0_0_20px_rgba(224,169,109,0.55)] ring-1 ring-asuncion-cognac/60 transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
+                    
+                    <!-- Bar 3 (Sistema a Medida) -->
+                    <div id="barAsuncion3" class="h-6 sm:h-7 rounded-full bg-gradient-to-r from-asuncion-terracotta/20 via-asuncion-terracotta/70 to-asuncion-terracotta shadow-[0_0_12px_rgba(200,106,61,0.35)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
+                  </div>
+
+                  <!-- Simulated WhatsApp Dispatch Pill at bottom of screen -->
+                  <div class="px-2 py-0.5 text-asuncion-cognac font-mono text-[9px] text-center flex items-center justify-center gap-1">
+                    <span class="w-1 h-1 rounded-full bg-emerald-400"></span>
+                    <span>WHATSAPP VENTA</span>
+                  </div>
+
+                  <!-- Home Indicator Bar -->
+                  <div class="w-10 h-1 bg-white/20 rounded-full mx-auto"></div>
+                </div>
+
+                <!-- Callout Lines and Labels to the Right -->
+                <div class="flex-1 flex flex-col justify-between h-[250px] sm:h-[270px] py-2">
+                  
+                  <!-- Callout 01 -->
+                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-4 sm:w-6 h-[1px] bg-asuncion-cognac/50 group-hover:bg-asuncion-cognac group-hover:w-8 transition-all"></span>
+                      <span class="font-serif font-bold text-white group-hover:text-asuncion-cognac text-sm sm:text-base leading-none transition-colors">Presencia</span>
+                    </div>
+                    <div class="pl-6 sm:pl-8">
+                      <span class="font-mono text-[11px] text-asuncion-muted block">Una página · <strong class="text-white">₲ 1.490.000</strong></span>
+                      <span class="font-mono text-[9px] text-asuncion-subtle uppercase">Entrega en 7 días</span>
+                    </div>
+                  </a>
+
+                  <!-- Callout 02 (Destacado) -->
+                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-4 sm:w-6 h-[2px] bg-asuncion-cognac shadow-[0_0_8px_rgba(224,169,109,0.8)] group-hover:w-8 transition-all"></span>
+                      <span class="font-serif font-bold text-asuncion-cognac text-base sm:text-lg leading-none">Catálogo Móvil</span>
+                    </div>
+                    <div class="pl-6 sm:pl-8">
+                      <span class="font-mono text-[11px] text-white font-semibold block">2–3 páginas · <strong class="text-asuncion-cognac">₲ 2.490.000</strong></span>
+                      <span class="font-mono text-[9px] text-emerald-400 uppercase font-bold">Carrito directo WhatsApp</span>
+                    </div>
+                  </a>
+
+                  <!-- Callout 03 -->
+                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-4 sm:w-6 h-[1px] bg-asuncion-terracotta/50 group-hover:bg-asuncion-terracotta group-hover:w-8 transition-all"></span>
+                      <span class="font-serif font-bold text-white group-hover:text-asuncion-terracotta text-sm sm:text-base leading-none transition-colors">A Medida</span>
+                    </div>
+                    <div class="pl-6 sm:pl-8">
+                      <span class="font-mono text-[11px] text-asuncion-muted block">Multipágina · <strong class="text-white">₲ 3.990.000</strong></span>
+                      <span class="font-mono text-[9px] text-asuncion-subtle uppercase">Software &amp; Gestión</span>
+                    </div>
+                  </a>
+
+                </div>
+
+              </div>
+
+              <!-- Bottom Footnote -->
+              <div class="mt-4 pt-3 border-t border-asuncion-border flex items-center justify-between text-[10px] font-mono text-asuncion-muted">
+                <span>0% COMISIONES POR VENTA</span>
+                <a href="#soluciones" class="text-asuncion-cognac hover:underline font-bold">Ver tabla completa →</a>
+              </div>
+
+            </div>
           </div>
         </div>
 

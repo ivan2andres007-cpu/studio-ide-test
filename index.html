@@ -359,71 +359,101 @@
           <!-- Right Column: Interactive Architectural Index & System Diagram -->
           <div class="lg:col-span-5 w-full flex flex-col gap-4">
 
-            <!-- Index Box -->
-            <div class="border border-white/[0.08] bg-studio-surface">
-
+            <!-- Monolito Obsidiana (LibreSitio-Inspired Editorial Smartphone Silhouette) -->
+            <div class="p-2 sm:p-4 relative">
+              
               <!-- Index Header -->
-              <div class="px-5 py-3.5 border-b border-white/[0.08] flex items-center justify-between">
-                <span class="font-mono text-xs uppercase text-studio-muted tracking-wider">ÍNDICE DE SOLUCIONES</span>
-                <span class="font-mono text-xs text-white">2026.1</span>
+              <div class="flex items-center justify-between border-b border-white/[0.08] pb-3 mb-6 font-mono text-xs">
+                <span class="font-mono text-xs uppercase text-studio-muted tracking-wider flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/20"></span>
+                  <span class="text-white font-bold">MONOLITO OBSIDIANA</span>
+                </span>
+                <span class="font-mono text-xs text-white">3 PLANES 2026</span>
               </div>
 
-              <!-- Index Items (Using clean div to maintain proper h1 -> h2 -> h3 hierarchy) -->
-              <div class="divide-y divide-white/[0.08]">
+              <!-- Flex container: Obsidian Phone Silhouette on left, Callout branches on right -->
+              <div class="flex items-center gap-4 sm:gap-6">
+                
+                <!-- Silueta de Teléfono Móvil Obsidiana -->
+                <div class="relative w-[130px] sm:w-[145px] h-[255px] sm:h-[275px] shrink-0 rounded-[30px] border-2 border-white/30 bg-studio-void shadow-[0_0_30px_rgba(255,255,255,0.06)] p-3 flex flex-col justify-between overflow-hidden">
+                  
+                  <!-- Speaker Notch -->
+                  <div class="w-12 h-2.5 bg-white/10 rounded-full mx-auto flex items-center justify-center">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  </div>
 
-                <!-- Item 01 -->
-                <a href="#soluciones" class="block p-4 sm:p-5 hover:bg-studio-elevated transition-colors group">
-                  <div class="flex items-center justify-between mb-1">
-                    <span class="font-mono text-xs text-studio-muted group-hover:text-white transition-colors">01 /
-                      PRESENCIA EXPRESS</span>
-                    <span class="font-mono text-xs text-white num-tabular font-bold">₲ 1.200.000</span>
+                  <!-- 3 Glowing Luminous Bars inside Screen (LibreSitio Signature Style) -->
+                  <div class="space-y-4 my-auto">
+                    <!-- Bar 1 (Presencia) -->
+                    <div class="h-6 sm:h-7 rounded-full bg-white/60 hover:bg-white shadow-[0_0_15px_rgba(255,255,255,0.35)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
+                    
+                    <!-- Bar 2 (Catálogo - Pure White Halo Highlight) -->
+                    <div class="h-7 sm:h-8 rounded-full bg-white shadow-[0_0_25px_rgba(255,255,255,0.7)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
+                    
+                    <!-- Bar 3 (Sistema a Medida) -->
+                    <div class="h-6 sm:h-7 rounded-full bg-white/40 hover:bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.2)] transition-all duration-300 cursor-pointer hover:scale-[1.03]"></div>
                   </div>
-                  <div class="font-heading font-bold text-sm sm:text-base text-white group-hover:underline">Landing Page
-                    Institucional</div>
-                  <p class="text-xs text-studio-muted mt-0.5">1 página de alta conversión, geolocalización Google Maps y
-                    contacto directo.</p>
-                </a>
 
-                <!-- Item 02 (Destacado) -->
-                <a href="#soluciones"
-                  class="block p-4 sm:p-5 bg-studio-elevated hover:bg-studio-highlight transition-colors group border-l-2 border-l-white">
-                  <div class="flex items-center justify-between mb-1">
-                    <span class="font-mono text-xs text-white font-semibold">02 / CATÁLOGO MÓVIL WHATSAPP</span>
-                    <span class="font-mono text-xs text-white num-tabular font-bold">₲ 1.850.000</span>
+                  <!-- Simulated WhatsApp Dispatch Pill at bottom of screen -->
+                  <div class="px-2 py-0.5 font-mono text-[8px] text-studio-muted text-center flex items-center justify-center gap-1">
+                    <span class="w-1 h-1 rounded-full bg-emerald-400"></span>
+                    <span>WHATSAPP VENTA</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <div class="font-heading font-bold text-sm sm:text-base text-white group-hover:underline">Catálogo
-                      con Cierre Directo</div>
-                    <span class="font-mono text-[9px] px-1.5 py-0.2 border border-white/20 text-white uppercase">Plan
-                      Estrella</span>
-                  </div>
-                  <p class="text-xs text-studio-muted mt-0.5">Buscador instantáneo por repuesto o código, carrito ágil y
-                    pedido formulado a WhatsApp.</p>
-                </a>
 
-                <!-- Item 03 -->
-                <a href="#soluciones" class="block p-4 sm:p-5 hover:bg-studio-elevated transition-colors group">
-                  <div class="flex items-center justify-between mb-1">
-                    <span class="font-mono text-xs text-studio-muted group-hover:text-white transition-colors">03 /
-                      SISTEMA A MEDIDA</span>
-                    <span class="font-mono text-xs text-white num-tabular font-bold">Desde ₲ 4.500.000</span>
-                  </div>
-                  <div class="font-heading font-bold text-sm sm:text-base text-white group-hover:underline">Sitio
-                    Corporativo & Software</div>
-                  <p class="text-xs text-studio-muted mt-0.5">Multipágina, sincronización de stock con Google Sheets,
-                    cotizadores y sucursales.</p>
-                </a>
+                  <!-- Home Indicator Bar -->
+                  <div class="w-10 h-1 bg-white/20 rounded-full mx-auto"></div>
+                </div>
+
+                <!-- Callout Lines and Labels to the Right -->
+                <div class="flex-1 flex flex-col justify-between h-[255px] sm:h-[275px] py-1 font-mono">
+                  
+                  <!-- Callout 01 -->
+                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-4 sm:w-6 h-[1px] bg-white/30 group-hover:bg-white group-hover:w-8 transition-all"></span>
+                      <span class="font-display font-bold text-white group-hover:underline text-sm sm:text-base leading-none transition-colors">Presencia</span>
+                    </div>
+                    <div class="pl-6 sm:pl-8">
+                      <span class="text-[11px] text-studio-muted block">1 página · <strong class="text-white num-tabular">₲ 1.200.000</strong></span>
+                      <span class="text-[9px] text-studio-subtle uppercase">Entrega en 7 días</span>
+                    </div>
+                  </a>
+
+                  <!-- Callout 02 (Destacado) -->
+                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-4 sm:w-6 h-[2px] bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] group-hover:w-8 transition-all"></span>
+                      <span class="font-display font-extrabold text-white text-base sm:text-lg leading-none">Catálogo Móvil</span>
+                    </div>
+                    <div class="pl-6 sm:pl-8">
+                      <span class="text-[11px] text-white font-semibold block">Catálogo · <strong class="text-white num-tabular">₲ 1.850.000</strong></span>
+                      <span class="text-[9px] text-emerald-400 uppercase font-bold">Carrito directo WhatsApp</span>
+                    </div>
+                  </a>
+
+                  <!-- Callout 03 -->
+                  <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span class="w-4 sm:w-6 h-[1px] bg-white/30 group-hover:bg-white group-hover:w-8 transition-all"></span>
+                      <span class="font-display font-bold text-white group-hover:underline text-sm sm:text-base leading-none transition-colors">A Medida</span>
+                    </div>
+                    <div class="pl-6 sm:pl-8">
+                      <span class="text-[11px] text-studio-muted block">Multi-página · <strong class="text-white num-tabular">₲ 4.500.000</strong></span>
+                      <span class="text-[9px] text-studio-subtle uppercase">Corporativo &amp; Software</span>
+                    </div>
+                  </a>
+
+                </div>
 
               </div>
 
               <!-- Index Footer Status -->
-              <div
-                class="px-5 py-3 border-t border-white/[0.08] bg-studio-void/60 flex items-center justify-between text-[11px] font-mono text-studio-muted">
-                <span class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span>Disponibilidad en Asunción</span>
+              <div class="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-studio-muted">
+                <span class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>0% COMISIONES POR VENTA</span>
                 </span>
-                <span class="text-white">SIN COSTOS OCULTOS</span>
+                <a href="#soluciones" class="text-white hover:underline font-bold">Ver tabla completa →</a>
               </div>
 
             </div>

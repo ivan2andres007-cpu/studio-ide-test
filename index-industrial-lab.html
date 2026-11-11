@@ -304,38 +304,108 @@
             </div>
           </div>
 
-          <!-- Right Interactive Console Panel -->
-          <div class="lg:col-span-5 bg-lab-chassis border border-lab-border p-6 tactile-bevel">
-            <div class="flex items-center justify-between pb-3 mb-4 border-b border-lab-border font-mono text-xs">
+          <!-- Right Interactive Console Panel: Terminal Portátil de Telemetría Táctica -->
+          <div class="lg:col-span-5 p-2 sm:p-4 relative">
+            
+            <!-- Tactical Hex Corner Accents -->
+            <span class="absolute top-2 left-2 text-lab-amber font-mono text-[9px] select-none">[+]</span>
+            <span class="absolute top-2 right-2 text-lab-amber font-mono text-[9px] select-none">[+]</span>
+            <span class="absolute bottom-2 left-2 text-lab-amber font-mono text-[9px] select-none">[+]</span>
+            <span class="absolute bottom-2 right-2 text-lab-amber font-mono text-[9px] select-none">[+]</span>
+
+            <div class="flex items-center justify-between pb-3 mb-6 border-b border-lab-border font-mono text-xs">
               <span class="text-white font-bold flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-lab-emerald"></span>
-                <span>ESPECIFICACIONES DE OPERACIÓN</span>
+                <span class="w-2 h-2 rounded-full bg-lab-emerald ring-2 ring-lab-emerald/20"></span>
+                <span>[TERMINAL_PORTÁTIL_PY]</span>
               </span>
-              <span class="text-lab-muted">VER. 2026.1</span>
+              <span class="text-lab-amber font-mono font-bold tracking-wider">[3 NIVELES DE MOTOR]</span>
             </div>
 
-            <div class="space-y-3 font-mono text-xs">
-              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
-                <span class="text-lab-muted">Protocolo de Despacho</span>
-                <span class="text-white font-semibold">WhatsApp Direct API</span>
+            <!-- Flex: Tactical Handheld Frame on left, Circuit callouts on right -->
+            <div class="flex items-center gap-4 sm:gap-6">
+              
+              <!-- Silueta de Dispositivo Táctico Portátil -->
+              <div class="relative w-[130px] sm:w-[145px] h-[255px] sm:h-[275px] shrink-0 rounded-[22px] border-2 border-lab-amber/40 bg-lab-sunken shadow-[0_0_25px_rgba(245,158,11,0.15)] p-3 flex flex-col justify-between overflow-hidden">
+                
+                <!-- Terminal Top Header Scanline -->
+                <div class="w-14 h-2 bg-black/80 rounded-sm mx-auto flex items-center justify-between px-1.5">
+                  <span class="w-1 h-1 rounded-full bg-lab-emerald"></span>
+                  <span class="font-mono text-[7px] text-lab-amber tracking-tighter">4G_OK</span>
+                </div>
+
+                <!-- 3 Glowing Phosphor Amber Bars inside Terminal Screen -->
+                <div class="space-y-4 my-auto">
+                  
+                  <!-- Bar 01 -->
+                  <div class="h-6 sm:h-7 rounded-sm bg-lab-amber/40 hover:bg-lab-amber/70 shadow-[0_0_10px_rgba(245,158,11,0.3)] transition-all cursor-pointer"></div>
+                  
+                  <!-- Bar 02 (Phosphor Amber Glowing Beam) -->
+                  <div class="h-7 sm:h-8 rounded-sm bg-gradient-to-r from-amber-400/40 via-lab-amber to-amber-200 shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all cursor-pointer"></div>
+                  
+                  <!-- Bar 03 -->
+                  <div class="h-6 sm:h-7 rounded-sm bg-lab-amber/20 hover:bg-lab-amber/50 shadow-[0_0_8px_rgba(245,158,11,0.2)] transition-all cursor-pointer"></div>
+
+                </div>
+
+                <!-- Terminal Bottom Packet Status -->
+                <div class="px-1.5 py-0.5 font-mono text-[8px] text-lab-muted text-center flex items-center justify-center gap-1">
+                  <span class="w-1 h-1 rounded-full bg-lab-amber"></span>
+                  <span>DISPATCH: WA_API</span>
+                </div>
+
+                <!-- Chassis Bottom Grip -->
+                <div class="w-12 h-1 bg-lab-amber/30 rounded-full mx-auto"></div>
               </div>
-              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
-                <span class="text-lab-muted">Comisión por Transacción</span>
-                <span class="text-lab-emerald font-bold">0% (Cero comisiones)</span>
+
+              <!-- Circuit Callouts to the Right -->
+              <div class="flex-1 flex flex-col justify-between h-[255px] sm:h-[275px] py-1 font-mono">
+                
+                <!-- Callout 01 -->
+                <a href="#cotizador" class="group block transition-transform hover:translate-x-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-4 sm:w-6 h-[1px] bg-lab-amber/40 group-hover:bg-lab-amber group-hover:w-8 transition-all"></span>
+                    <span class="font-display font-bold text-white group-hover:text-lab-amber text-xs sm:text-sm leading-none transition-colors">[01] PRESENCIA</span>
+                  </div>
+                  <div class="pl-6 sm:pl-8">
+                    <span class="text-[11px] text-lab-muted block">1 página · <strong class="text-white">₲ 1.490.000</strong></span>
+                    <span class="text-[9px] text-lab-muted uppercase">Entrega en 7 días</span>
+                  </div>
+                </a>
+
+                <!-- Callout 02 (Amber Highlight) -->
+                <a href="#cotizador" class="group block transition-transform hover:translate-x-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-4 sm:w-6 h-[2px] bg-lab-amber shadow-[0_0_8px_rgba(245,158,11,0.8)] group-hover:w-8 transition-all"></span>
+                    <span class="font-display font-extrabold text-lab-amber text-sm sm:text-base leading-none">[02] CATÁLOGO</span>
+                  </div>
+                  <div class="pl-6 sm:pl-8">
+                    <span class="text-[11px] text-white font-semibold block">Catálogo · <strong class="text-lab-amber">₲ 2.490.000</strong></span>
+                    <span class="text-[9px] text-lab-emerald uppercase font-bold">Carrito directo WhatsApp</span>
+                  </div>
+                </a>
+
+                <!-- Callout 03 -->
+                <a href="#cotizador" class="group block transition-transform hover:translate-x-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="w-4 sm:w-6 h-[1px] bg-lab-amber/40 group-hover:bg-lab-amber group-hover:w-8 transition-all"></span>
+                    <span class="font-display font-bold text-white group-hover:text-lab-amber text-xs sm:text-sm leading-none transition-colors">[03] A MEDIDA</span>
+                  </div>
+                  <div class="pl-6 sm:pl-8">
+                    <span class="text-[11px] text-lab-muted block">Multi-página · <strong class="text-white">₲ 3.990.000</strong></span>
+                    <span class="text-[9px] text-lab-muted uppercase">Software de Gestión</span>
+                  </div>
+                </a>
+
               </div>
-              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
-                <span class="text-lab-muted">Tiempo de Despliegue</span>
-                <span class="text-lab-amber font-bold">7 Días Hábiles</span>
-              </div>
-              <div class="bg-lab-sunken p-3 border border-lab-border flex justify-between items-center">
-                <span class="text-lab-muted">Dominio de Identidad</span>
-                <span class="text-white font-semibold">.store / .shop / .studio</span>
-              </div>
+
             </div>
 
-            <div class="mt-5 p-3 bg-lab-sunken/80 border border-lab-border/80 font-mono text-[11px] text-lab-muted">
-              Sistemas web probados en redes celulares 4G/5G de Paraguay con carga en menos de medio segundo.
+            <!-- Terminal Footnote -->
+            <div class="mt-4 pt-3 border-t border-lab-border flex items-center justify-between text-[10px] font-mono text-lab-muted">
+              <span>ZERO COMISIONES // CÓDIGO PROPIO</span>
+              <a href="#cotizador" class="text-lab-amber hover:underline font-bold transition-colors">Cotizador en Vivo →</a>
             </div>
+
           </div>
 
         </div>
