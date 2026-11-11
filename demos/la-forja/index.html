@@ -14,6 +14,7 @@
     :root {
       --disp: 'Anton', Impact, 'Arial Narrow', sans-serif !important;
       --mono: 'Space Mono', ui-monospace, Menlo, Consolas, monospace !important;
+      --red: #ea584a !important;
     }
     /* Ensure local images fit cleanly */
     img { max-width: 100%; height: auto; display: block; }
@@ -21,6 +22,15 @@
     .visit-fig img { width: 100%; height: 100%; object-fit: cover; }
     .steps img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
     .strop-fig img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+
+    /* Impeccable Craft Floor & Legibility Rules */
+    .brand-word small { font-size: 11.5px !important; letter-spacing: 0.08em; }
+    ::placeholder { color: #544e43 !important; opacity: 1 !important; }
+    .wrap { display: flow-root !important; }
+    .board-sec { padding: 64px 24px !important; overflow: hidden; }
+    .turno-sec { padding: 64px 24px !important; overflow: hidden; }
+    .visit-sec { padding: 64px 24px !important; overflow: hidden; }
+    .strop { padding: 24px !important; }
   </style>
 </head>
 <body>
@@ -58,13 +68,13 @@
     <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="tag"><span class="dot" aria-hidden="true"></span><span data-open-status="">Abierto · hasta las 20:00</span></p>
         <h1 id="hero-title" class="giant"><span class="g1">Corte.</span> <span class="g2">Fade.</span> <span class="g3">Navaja.</span><span class="sr"> La Forja Barber Studio, en Asunción</span></h1>
         <p class="lede">Barbería y taller de corte en Asunción. Tijera, máquina y navaja, con turno y sin apuro: te sentás, charlamos lo que querés y salís impecable.</p>
         <div class="cta-row">
           <a class="btn btn-red" href="#turno">Pedí tu turno</a>
           <a class="btn btn-ghost" href="#servicios">Ver precios</a>
         </div>
+        <p class="tag mt-4"><span class="dot" aria-hidden="true"></span><span data-open-status="">Abierto · hasta las 20:00</span></p>
       </div>
       <div class="hero-media">
         <div class="pole" aria-hidden="true"><span class="pole-cap"></span><span class="pole-glass"></span><span class="pole-cap"></span></div>

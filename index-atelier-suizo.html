@@ -71,16 +71,36 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Explicit Typographic Hierarchy Scale (impeccable / craft-floor) */
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 4.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+    h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+    }
+    h3 {
+      font-size: clamp(1.2rem, 2vw, 1.75rem);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+    }
+
     /* Swiss Architectural Grid Lines */
     .swiss-grid {
       display: grid;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background-color: rgba(255, 255, 255, 0.08);
       gap: 1px;
     }
 
     .swiss-cell {
       background-color: #0c0d10;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: clamp(1.25rem, 2vw, 2rem);
       transition: background-color 0.15s ease;
     }
 
@@ -609,7 +629,7 @@
             <div>
               <div class="flex items-center justify-between pb-3 border-b border-white/10 font-mono text-xs text-swiss-muted mb-4">
                 <span class="flex items-center gap-2 text-white">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-400/20"></span>
                   <span>PAYLOAD DIRECTO A WHATSAPP</span>
                 </span>
                 <span class="text-swiss-subtle">ENCRIPTADO E2E</span>

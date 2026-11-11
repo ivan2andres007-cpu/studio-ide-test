@@ -32,7 +32,7 @@ h1,h2,h3,p,figure,blockquote{margin:0}
 .skip{position:absolute;left:12px;top:-60px;z-index:300;background:var(--red);color:var(--ink);padding:10px 14px;font-weight:700;text-decoration:none}
 .skip:focus{top:52px}
 :focus-visible{outline:3px solid var(--red);outline-offset:3px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.wrap{max-width:var(--max);margin:0 auto;padding:clamp(24px, 4vw, 40px) var(--pad)}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;font:700 13.5px/1.1 var(--mono);text-transform:uppercase;letter-spacing:.08em;text-decoration:none;border:2px solid var(--bone);color:var(--bone);background:transparent;transition:transform .2s var(--ease),box-shadow .2s var(--ease),background .2s;cursor:pointer}
@@ -91,7 +91,7 @@ h1,h2,h3,p,figure,blockquote{margin:0}
 .sub{color:var(--mute);max-width:36em}
 
 /* board */
-.board-sec{background:var(--coal);padding:clamp(64px,9vw,120px) 0}
+.board-sec{background:var(--coal);padding:64px 24px}
 .board-grid{display:grid;gap:40px}
 .board{margin-top:28px;background:var(--felt) repeating-linear-gradient(0deg,transparent 0 7px,rgba(0,0,0,.28) 7px 8px);border:10px solid var(--wood);box-shadow:inset 0 0 40px rgba(0,0,0,.6),0 30px 50px -30px rgba(0,0,0,.8);padding:10px clamp(12px,2.4vw,24px)}
 .row{display:grid;grid-template-columns:auto 1fr auto auto;gap:0 14px;align-items:baseline;padding:14px 8px;border-bottom:1px dashed rgba(236,227,211,.16);text-decoration:none;text-transform:uppercase;font-weight:700;letter-spacing:.04em;transition:background .2s}
@@ -115,7 +115,7 @@ h1,h2,h3,p,figure,blockquote{margin:0}
 @media (min-width:900px){.board-grid{grid-template-columns:1.55fr 1fr;gap:64px;align-items:start}.house{position:sticky;top:calc(96px + var(--ls-bar-h,0px));margin-top:150px}}
 
 /* turno */
-.turno-sec{background:var(--bone);color:var(--ink);padding:clamp(64px,9vw,120px) 0}
+.turno-sec{background:var(--bone);color:var(--ink);padding:64px 24px}
 .turno-sec .kicker{color:var(--red-d)}
 .turno-sec .sub{color:var(--mute-d)}
 .turno-grid{display:grid;gap:48px}
@@ -173,7 +173,7 @@ h1,h2,h3,p,figure,blockquote{margin:0}
 .strop blockquote p{font:400 clamp(24px,4vw,50px)/1.04 var(--disp);text-transform:uppercase;max-width:22ch}
 
 /* visit */
-.visit-sec{background:var(--coal);padding-bottom:clamp(64px,9vw,120px)}
+.visit-sec{background:var(--coal);padding:64px 24px}
 .visit-fig{position:relative}
 .visit-fig img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .visit-fig::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(23,21,19,.92))}

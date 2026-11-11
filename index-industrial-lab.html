@@ -76,6 +76,26 @@
       font-variant-numeric: tabular-nums;
     }
 
+    /* Explicit Typographic Hierarchy Scale (impeccable / craft-floor) */
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 4.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 800;
+    }
+    h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+    }
+    h3 {
+      font-size: clamp(1.2rem, 2vw, 1.75rem);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      font-weight: 600;
+    }
+
     /* Industrial Tactile Bevel */
     .tactile-bevel {
       box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.08), inset -1px -1px 0px rgba(0, 0, 0, 0.4);
@@ -139,7 +159,7 @@
   <aside aria-label="Selector de Variantes de Diseño"
     class="bg-black/95 border-b border-lab-border px-4 py-2 font-mono text-[11px] flex flex-wrap items-center justify-between gap-3 sticky top-0 z-50 backdrop-blur-md">
     <div class="flex items-center gap-2 text-lab-muted">
-      <span class="inline-block w-2 h-2 rounded-full bg-lab-amber animate-pulse"></span>
+      <span class="inline-block w-2 h-2 rounded-full bg-lab-amber ring-2 ring-lab-amber/20"></span>
       <span class="text-white font-semibold">VARIANTE 02:</span>
       <span>DARK CONSOLE (SISTEMAS &amp; CALCULADORA EN VIVO)</span>
     </div>
@@ -664,7 +684,7 @@
           </div>
 
           <div class="font-mono text-xs text-lab-emerald bg-lab-chassis border border-lab-border px-3 py-2 flex items-center gap-2 self-start lg:self-end">
-            <span class="w-2 h-2 rounded-full bg-lab-emerald animate-pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-lab-emerald ring-2 ring-lab-emerald/20"></span>
             <span>REGISTRO DNS ACTIVO</span>
           </div>
         </div>
@@ -901,7 +921,7 @@
 
           <!-- Dynamic Console LED Readout -->
           <div class="flex items-center gap-3 font-mono text-xs sm:text-sm self-start lg:self-end bg-lab-chassis border border-lab-border px-3 py-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-lab-amber animate-pulse"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-lab-amber ring-2 ring-lab-amber/20"></span>
             <span class="text-lab-muted uppercase">SYS_STEP:</span>
             <span id="labStepBadge" class="font-bold text-white uppercase">[STEP 01/07]</span>
             <span id="labStepStatus" class="text-lab-amber font-semibold">INTAKE_&amp;_CATALOG</span>
@@ -1014,7 +1034,7 @@
             <div>
               <div class="flex items-center justify-between pb-3 border-b border-lab-border font-mono text-xs text-lab-muted mb-4">
                 <span class="flex items-center gap-2 text-white font-semibold">
-                  <span class="w-2 h-2 rounded-full bg-lab-amber animate-ping"></span>
+                  <span class="w-2 h-2 rounded-full bg-lab-amber ring-2 ring-lab-amber/20"></span>
                   <span id="labOscilloTitle">MONITOR EN VIVO // STEP 01</span>
                 </span>
                 <span class="text-lab-amber font-mono font-bold" id="labOscilloProgress">PROGRESS 14%</span>
