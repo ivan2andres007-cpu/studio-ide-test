@@ -277,14 +277,14 @@
                 </div>
                 <!-- 3 Bold Variant Switcher Tabs -->
                 <div class="flex items-center gap-1 bg-[#12100e] p-1 border border-asuncion-borderWarm/30 rounded-md text-[10px]">
-                  <button type="button" id="tabVar1" onclick="switchHeroVariant(1)" class="px-2.5 py-1 font-bold rounded transition-all bg-asuncion-cognac text-black">01. UI Real</button>
-                  <button type="button" id="tabVar2" onclick="switchHeroVariant(2)" class="px-2.5 py-1 font-bold rounded transition-all text-asuncion-muted hover:text-white">02. Haces de Luz</button>
+                  <button type="button" id="tabVar1" onclick="switchHeroVariant(1)" class="px-2.5 py-1 font-bold rounded transition-all text-asuncion-muted hover:text-white">01. UI Real</button>
+                  <button type="button" id="tabVar2" onclick="switchHeroVariant(2)" class="px-2.5 py-1 font-bold rounded transition-all bg-asuncion-cognac text-black">02. Haces de Luz</button>
                   <button type="button" id="tabVar3" onclick="switchHeroVariant(3)" class="px-2.5 py-1 font-bold rounded transition-all text-asuncion-muted hover:text-white">03. Boleta WA</button>
                 </div>
               </div>
 
               <!-- ───────── VARIANTE 01: MONOLITO CON UI EN VIVO ───────── -->
-              <div id="variantView1" class="hero-var-view transition-opacity duration-300">
+              <div id="variantView1" class="hero-var-view hidden transition-opacity duration-300">
                 <div class="flex flex-col sm:flex-row items-center gap-6">
                   
                   <!-- Phone Frame -->
@@ -371,8 +371,8 @@
                 </div>
               </div>
 
-              <!-- ───────── VARIANTE 02: HACES DE LUZ ESCULTURALES ───────── -->
-              <div id="variantView2" class="hero-var-view hidden transition-opacity duration-300">
+              <!-- ───────── VARIANTE 02: HACES DE LUZ ESCULTURALES (ACTIVA) ───────── -->
+              <div id="variantView2" class="hero-var-view transition-opacity duration-300">
                 <div class="flex flex-col sm:flex-row items-center gap-6">
                   
                   <!-- Phone Frame with Ambient Halo -->
@@ -386,13 +386,22 @@
                     <!-- 3 Illuminated Horizontal Beams (LibreSitio Aesthetic Elevated) -->
                     <div class="space-y-6 my-auto">
                       <!-- Beam 01 -->
-                      <div class="h-7 rounded-full bg-gradient-to-r from-asuncion-cognac/30 via-asuncion-cognac/80 to-asuncion-cognac shadow-[0_0_16px_rgba(224,169,109,0.45)] transition-all cursor-pointer hover:scale-[1.03]"></div>
+                      <a href="#soluciones" id="heroBeam1" 
+                        onmouseenter="document.getElementById('planPlate1')?.classList.add('translate-x-1.5')"
+                        onmouseleave="document.getElementById('planPlate1')?.classList.remove('translate-x-1.5')"
+                        class="block h-7 rounded-full bg-gradient-to-r from-asuncion-cognac/30 via-asuncion-cognac/80 to-asuncion-cognac shadow-[0_0_16px_rgba(224,169,109,0.45)] transition-all cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_24px_rgba(224,169,109,0.85)]"></a>
                       
                       <!-- Beam 02 (Golden Highlight) -->
-                      <div class="h-8 rounded-full bg-gradient-to-r from-amber-400/40 via-asuncion-cognac to-amber-200 shadow-[0_0_24px_rgba(224,169,109,0.7)] ring-1 ring-asuncion-cognac/70 transition-all cursor-pointer hover:scale-[1.03]"></div>
+                      <a href="#soluciones" id="heroBeam2" 
+                        onmouseenter="document.getElementById('planPlate2')?.classList.add('translate-x-1.5')"
+                        onmouseleave="document.getElementById('planPlate2')?.classList.remove('translate-x-1.5')"
+                        class="block h-8 rounded-full bg-gradient-to-r from-amber-400/40 via-asuncion-cognac to-amber-200 shadow-[0_0_24px_rgba(224,169,109,0.7)] ring-1 ring-asuncion-cognac/70 transition-all cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_32px_rgba(224,169,109,1)]"></a>
                       
                       <!-- Beam 03 -->
-                      <div class="h-7 rounded-full bg-gradient-to-r from-asuncion-terracotta/30 via-asuncion-terracotta/80 to-asuncion-terracotta shadow-[0_0_16px_rgba(200,106,61,0.4)] transition-all cursor-pointer hover:scale-[1.03]"></div>
+                      <a href="#soluciones" id="heroBeam3" 
+                        onmouseenter="document.getElementById('planPlate3')?.classList.add('translate-x-1.5')"
+                        onmouseleave="document.getElementById('planPlate3')?.classList.remove('translate-x-1.5')"
+                        class="block h-7 rounded-full bg-gradient-to-r from-asuncion-terracotta/30 via-asuncion-terracotta/80 to-asuncion-terracotta shadow-[0_0_16px_rgba(200,106,61,0.4)] transition-all cursor-pointer hover:scale-[1.04] hover:shadow-[0_0_24px_rgba(200,106,61,0.85)]"></a>
                     </div>
 
                     <!-- Simulated WhatsApp Status -->
@@ -407,9 +416,12 @@
 
                   <!-- Cantilever Laser Lines Connecting to Plans -->
                   <div class="flex-1 flex flex-col justify-between h-[340px] sm:h-[360px] py-3">
-                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <a href="#soluciones" id="planPlate1"
+                      onmouseenter="document.getElementById('heroBeam1')?.classList.add('scale-[1.05]','brightness-125')"
+                      onmouseleave="document.getElementById('heroBeam1')?.classList.remove('scale-[1.05]','brightness-125')"
+                      class="group block transition-all hover:translate-x-1">
                       <div class="flex items-center gap-2 mb-1">
-                        <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-cognac to-asuncion-cognac/30 group-hover:w-14 transition-all"></span>
+                        <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-cognac to-asuncion-cognac/30 group-hover:w-14 group-hover:from-asuncion-cognac group-hover:to-asuncion-cognac group-hover:shadow-[0_0_10px_rgba(224,169,109,0.8)] transition-all"></span>
                         <span class="font-serif font-bold text-white group-hover:text-asuncion-cognac text-base leading-none transition-colors">Presencia</span>
                       </div>
                       <div class="pl-10 sm:pl-14">
@@ -418,9 +430,12 @@
                       </div>
                     </a>
 
-                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <a href="#soluciones" id="planPlate2"
+                      onmouseenter="document.getElementById('heroBeam2')?.classList.add('scale-[1.05]','brightness-125')"
+                      onmouseleave="document.getElementById('heroBeam2')?.classList.remove('scale-[1.05]','brightness-125')"
+                      class="group block transition-all hover:translate-x-1">
                       <div class="flex items-center gap-2 mb-1">
-                        <span class="w-8 sm:w-12 h-[3px] bg-gradient-to-r from-amber-300 to-asuncion-cognac shadow-[0_0_12px_rgba(224,169,109,0.9)] group-hover:w-14 transition-all"></span>
+                        <span class="w-8 sm:w-12 h-[3px] bg-gradient-to-r from-amber-300 to-asuncion-cognac shadow-[0_0_12px_rgba(224,169,109,0.9)] group-hover:w-14 group-hover:shadow-[0_0_18px_rgba(224,169,109,1)] transition-all"></span>
                         <span class="font-serif font-bold text-asuncion-cognac text-lg leading-none">Catálogo Móvil</span>
                       </div>
                       <div class="pl-10 sm:pl-14">
@@ -429,9 +444,12 @@
                       </div>
                     </a>
 
-                    <a href="#soluciones" class="group block transition-transform hover:translate-x-1">
+                    <a href="#soluciones" id="planPlate3"
+                      onmouseenter="document.getElementById('heroBeam3')?.classList.add('scale-[1.05]','brightness-125')"
+                      onmouseleave="document.getElementById('heroBeam3')?.classList.remove('scale-[1.05]','brightness-125')"
+                      class="group block transition-all hover:translate-x-1">
                       <div class="flex items-center gap-2 mb-1">
-                        <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-terracotta to-asuncion-terracotta/30 group-hover:w-14 transition-all"></span>
+                        <span class="w-8 sm:w-12 h-[2px] bg-gradient-to-r from-asuncion-terracotta to-asuncion-terracotta/30 group-hover:w-14 group-hover:from-asuncion-terracotta group-hover:to-asuncion-terracotta group-hover:shadow-[0_0_10px_rgba(200,106,61,0.8)] transition-all"></span>
                         <span class="font-serif font-bold text-white group-hover:text-asuncion-terracotta text-base leading-none transition-colors">A Medida</span>
                       </div>
                       <div class="pl-10 sm:pl-14">
