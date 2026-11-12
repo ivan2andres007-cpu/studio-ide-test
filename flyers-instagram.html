@@ -129,6 +129,12 @@
           <span>Ver zonas seguras de IG (250px)</span>
         </label>
 
+        <!-- Switcher para simular el sticker nativo de Instagram -->
+        <label class="flex items-center gap-2 cursor-pointer bg-asuncion-surface border border-asuncion-border px-3 py-2 hover:border-asuncion-cognac transition-colors select-none">
+          <input type="checkbox" id="toggleStickers" class="accent-asuncion-cognac">
+          <span>Simular sticker de IG</span>
+        </label>
+
         <!-- Filtro de vista -->
         <div class="flex items-center border border-asuncion-border bg-asuncion-surface">
           <button type="button" class="view-btn px-3 py-2 text-black bg-asuncion-cognac font-bold uppercase transition-all" data-view="all">Todas (3)</button>
@@ -234,30 +240,35 @@
                 </div>
               </div>
 
-              <!-- Footer de la Historia / Simulación de Sticker Oficial -->
+              <!-- Zona de Enlace & Sticker Nativo de Instagram -->
               <div class="space-y-6">
                 
-                <!-- Sticker interactivo de enlace de Instagram -->
-                <div class="mx-auto max-w-[800px] bg-gradient-to-r from-asuncion-card via-asuncion-surface to-asuncion-card border-2 border-asuncion-cognac p-6 shadow-[0_15px_40px_rgba(224,169,109,0.25)] flex items-center justify-between">
-                  <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-asuncion-cognac flex items-center justify-center text-black font-bold text-2xl shadow-sm">
-                      ↗
-                    </div>
-                    <div>
-                      <div class="font-mono text-[16px] text-asuncion-cognac font-bold uppercase tracking-wider">
-                        ENLACE OFICIAL DEL ESTUDIO
-                      </div>
-                      <div class="font-mono text-[30px] font-bold text-white tracking-tight">
-                        studio.puntoprisma.store
-                      </div>
+                <div class="sticker-callout-zone text-center flex flex-col items-center justify-center py-6">
+                  <div class="font-mono text-[18px] text-asuncion-cognac uppercase tracking-[0.25em] mb-3 flex items-center justify-center gap-3">
+                    <span class="w-10 h-px bg-asuncion-cognac/40"></span>
+                    <span>ENLACE OFICIAL AL ESTUDIO</span>
+                    <span class="w-10 h-px bg-asuncion-cognac/40"></span>
+                  </div>
+                  
+                  <div class="font-serif italic font-normal text-[48px] text-white tracking-tight mb-3">
+                    studio.puntoprisma.store
+                  </div>
+                  
+                  <div class="inline-flex items-center gap-2 font-mono text-[17px] text-asuncion-sand/80 uppercase tracking-widest">
+                    <span>↓ Tocá el sticker de enlace para ver la plataforma ↓</span>
+                  </div>
+
+                  <!-- Espacio diáfano y limpio donde calza el sticker nativo en Instagram -->
+                  <div class="native-sticker-slot mt-5 h-[80px] flex items-center justify-center">
+                    <div class="simulated-sticker hidden px-8 py-3.5 bg-white text-black font-sans font-bold text-[22px] rounded-full shadow-[0_12px_36px_rgba(0,0,0,0.8)] flex items-center gap-3">
+                      <span class="text-xl">🔗</span>
+                      <span>studio.puntoprisma.store</span>
+                      <span class="text-sm">↗</span>
                     </div>
                   </div>
-                  <span class="font-mono text-[18px] text-black bg-asuncion-cognac font-bold px-4 py-2 uppercase tracking-wider">
-                    EXPLORAR SITIO
-                  </span>
                 </div>
 
-                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-4 border-t border-asuncion-border">
+                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-6 border-t border-asuncion-border">
                   <span>ASUNCIÓN · PARAGUAY</span>
                   <span class="text-asuncion-sand">ARQUITECTURA DE SOFTWARE COMERCIAL</span>
                   <span>WA: +595 986 125 649</span>
@@ -380,27 +391,35 @@
                 </div>
               </div>
 
-              <!-- Enlace a Dominio y Sticker IG -->
+              <!-- Zona de Enlace & Sticker Nativo de Instagram -->
               <div class="space-y-6">
                 
-                <div class="bg-[#151412] border-2 border-asuncion-cognac p-6 flex items-center justify-between shadow-[0_15px_40px_rgba(0,0,0,0.8)]">
-                  <div class="flex items-center gap-4">
-                    <span class="text-4xl text-emerald-400">🔒</span>
-                    <div>
-                      <div class="font-mono text-[16px] text-asuncion-cognac font-bold uppercase">
-                        PROBÁ LAS DEMOS EN VIVO EN EL SITIO
-                      </div>
-                      <div class="font-mono text-[30px] font-bold text-white tracking-tight">
-                        studio.puntoprisma.store
-                      </div>
+                <div class="sticker-callout-zone text-center flex flex-col items-center justify-center py-6">
+                  <div class="font-mono text-[18px] text-emerald-400 uppercase tracking-[0.25em] mb-3 flex items-center justify-center gap-3">
+                    <span class="w-10 h-px bg-emerald-500/40"></span>
+                    <span>DEMOS INTERACTIVAS &amp; CALCULADORA</span>
+                    <span class="w-10 h-px bg-emerald-500/40"></span>
+                  </div>
+                  
+                  <div class="font-mono font-bold text-[40px] text-white tracking-tight mb-3">
+                    studio.puntoprisma.store
+                  </div>
+                  
+                  <div class="inline-flex items-center gap-2 font-mono text-[17px] text-asuncion-sand/80 uppercase tracking-widest">
+                    <span>↓ Tocá el sticker para probar las demos en vivo ↓</span>
+                  </div>
+
+                  <!-- Espacio diáfano y limpio donde calza el sticker nativo en Instagram -->
+                  <div class="native-sticker-slot mt-5 h-[80px] flex items-center justify-center">
+                    <div class="simulated-sticker hidden px-8 py-3.5 bg-white text-black font-sans font-bold text-[22px] rounded-full shadow-[0_12px_36px_rgba(0,0,0,0.8)] flex items-center gap-3">
+                      <span class="text-xl">🔗</span>
+                      <span>VER DEMOS EN VIVO</span>
+                      <span class="text-sm">↗</span>
                     </div>
                   </div>
-                  <span class="font-mono text-[18px] text-black bg-asuncion-cognac font-bold px-5 py-3 uppercase tracking-wider">
-                    VER DEMOS ↗
-                  </span>
                 </div>
 
-                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-4 border-t border-asuncion-border">
+                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-6 border-t border-asuncion-border">
                   <span>FERRETERÍAS · BOUTIQUES · BARBERÍAS</span>
                   <span class="text-white font-bold">CALCULADORA DE ROI DISPONIBLE</span>
                 </div>
@@ -532,27 +551,35 @@
 
               </div>
 
-              <!-- Enlace Oficial y Sticker IG -->
+              <!-- Zona de Enlace & Sticker Nativo de Instagram -->
               <div class="space-y-6">
                 
-                <div class="bg-asuncion-surface border-2 border-asuncion-cognac p-6 flex items-center justify-between shadow-[0_15px_40px_rgba(224,169,109,0.25)]">
-                  <div class="flex items-center gap-4">
-                    <span class="text-4xl text-asuncion-cognac">⚡</span>
-                    <div>
-                      <div class="font-mono text-[16px] text-asuncion-cognac font-bold uppercase">
-                        RESERVÁ TU SPRINT EN EL SITIO OFICIAL
-                      </div>
-                      <div class="font-mono text-[30px] font-bold text-white tracking-tight">
-                        studio.puntoprisma.store
-                      </div>
+                <div class="sticker-callout-zone text-center flex flex-col items-center justify-center py-6">
+                  <div class="font-mono text-[18px] text-asuncion-cognac uppercase tracking-[0.25em] mb-3 flex items-center justify-center gap-3">
+                    <span class="w-10 h-px bg-asuncion-cognac/40"></span>
+                    <span>RESERVÁ TU SPRINT EN EL SITIO OFICIAL</span>
+                    <span class="w-10 h-px bg-asuncion-cognac/40"></span>
+                  </div>
+                  
+                  <div class="font-mono font-bold text-[40px] text-white tracking-tight mb-3">
+                    studio.puntoprisma.store
+                  </div>
+                  
+                  <div class="inline-flex items-center gap-2 font-mono text-[17px] text-asuncion-sand/80 uppercase tracking-widest">
+                    <span>↓ Tocá el sticker para agendar tu entrega en 7 días ↓</span>
+                  </div>
+
+                  <!-- Espacio diáfano y limpio donde calza el sticker nativo en Instagram -->
+                  <div class="native-sticker-slot mt-5 h-[80px] flex items-center justify-center">
+                    <div class="simulated-sticker hidden px-8 py-3.5 bg-asuncion-cognac text-black font-sans font-bold text-[22px] rounded-full shadow-[0_12px_36px_rgba(224,169,109,0.5)] flex items-center gap-3">
+                      <span class="text-xl">🔗</span>
+                      <span>AGENDAR SPRINT 7 DÍAS</span>
+                      <span class="text-sm">↗</span>
                     </div>
                   </div>
-                  <span class="font-mono text-[18px] text-black bg-asuncion-cognac font-bold px-5 py-3 uppercase tracking-wider">
-                    RESERVAR ↗
-                  </span>
                 </div>
 
-                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-4 border-t border-asuncion-border">
+                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-6 border-t border-asuncion-border">
                   <span>ATENCIÓN TÉCNICA DIRECTA EN ASUNCIÓN</span>
                   <span class="text-white font-bold">WHATSAPP: +595 986 125 649</span>
                 </div>
@@ -669,6 +696,20 @@
           } else {
             document.body.classList.remove("show-guides");
           }
+        });
+      }
+
+      // Toggle de Simulación de Stickers de Instagram
+      const toggleStickers = document.getElementById("toggleStickers");
+      if (toggleStickers) {
+        toggleStickers.addEventListener("change", (e) => {
+          document.querySelectorAll(".simulated-sticker").forEach(stk => {
+            if (e.target.checked) {
+              stk.classList.remove("hidden");
+            } else {
+              stk.classList.add("hidden");
+            }
+          });
         });
       }
 
