@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth bg-[#080706] text-[#f5efe6]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punto Prisma Studio · Flyers Instagram Stories (1080x1920)</title>
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            asuncion: {
+              void: '#0a0908',
+              surface: '#121110',
+              card: '#181715',
+              border: '#2a2723',
+              cognac: '#e0a96d',
+              cognacLight: '#f3cb98',
+              sand: '#e8ded2',
+              muted: '#9c9488',
+              subtle: '#5c564d'
+            }
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            cinzel: ['Cinzel', 'serif'],
+            sans: ['Outfit', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Estructura fija de Instagram Story 1080x1920 */
+    .story-frame {
+      width: 1080px;
+      height: 1920px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      background-color: #0c0b0a;
+      box-shadow: 0 25px 80px -15px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(224, 169, 109, 0.25);
+    }
+
+    /* Guías de Zona Segura de Instagram Story */
+    .safe-guide-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 250px;
+      border-bottom: 2px dashed rgba(239, 68, 68, 0.4);
+      background: linear-gradient(to bottom, rgba(239, 68, 68, 0.12), transparent);
+      pointer-events: none;
+      z-index: 100;
+      display: none;
+    }
+    .safe-guide-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 250px;
+      border-top: 2px dashed rgba(239, 68, 68, 0.4);
+      background: linear-gradient(to top, rgba(239, 68, 68, 0.12), transparent);
+      pointer-events: none;
+      z-index: 100;
+      display: none;
+    }
+    body.show-guides .safe-guide-top,
+    body.show-guides .safe-guide-bottom {
+      display: block;
+    }
+
+    /* Escalado visual para previsualización */
+    .scale-wrapper {
+      transform-origin: top center;
+      transition: transform 0.25s ease;
+    }
+    @media (max-width: 1400px) {
+      .story-preview {
+        zoom: 0.42;
+      }
+    }
+    @media (min-width: 1401px) {
+      .story-preview {
+        zoom: 0.48;
+      }
+    }
+
+    /* Simulación de grano y textura arquitectónica */
+    .noise-overlay {
+      background-image: radial-gradient(rgba(224, 169, 109, 0.08) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#080706] text-[#f5efe6] font-sans selection:bg-asuncion-cognac selection:text-black">
+
+  <!-- ───────────── HEADER DE CONTROL EDITORIAL ───────────── -->
+  <header class="sticky top-0 z-50 bg-[#0c0b0a]/90 backdrop-blur-md border-b border-asuncion-border px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2 font-mono text-xs text-asuncion-cognac uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-asuncion-cognac animate-pulse"></span>
+          <span>ESTUDIO EDITORIAL ASUNCIÓN · BRAND ASSETS</span>
+        </div>
+        <h1 class="font-serif font-bold text-xl sm:text-2xl text-white">
+          Flyers para Instagram Stories (9:16 · 1080×1920)
+        </h1>
+        <p class="text-xs text-asuncion-muted font-mono mt-0.5">
+          Dominio oficial: <span class="text-asuncion-cognac font-bold">studio.puntoprisma.store</span> · Estética Modernismo Asunción
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 font-mono text-xs">
+        <!-- Switcher de Guías Seguras IG -->
+        <label class="flex items-center gap-2 cursor-pointer bg-asuncion-surface border border-asuncion-border px-3 py-2 hover:border-asuncion-cognac transition-colors select-none">
+          <input type="checkbox" id="toggleGuides" class="accent-asuncion-cognac">
+          <span>Ver zonas seguras de IG (250px)</span>
+        </label>
+
+        <!-- Filtro de vista -->
+        <div class="flex items-center border border-asuncion-border bg-asuncion-surface">
+          <button type="button" class="view-btn px-3 py-2 text-black bg-asuncion-cognac font-bold uppercase transition-all" data-view="all">Todas (3)</button>
+          <button type="button" class="view-btn px-3 py-2 text-asuncion-muted hover:text-white uppercase transition-all" data-view="v1">Día 1 · Manifiesto</button>
+          <button type="button" class="view-btn px-3 py-2 text-asuncion-muted hover:text-white uppercase transition-all" data-view="v2">Día 2 · WhatsApp & ROI</button>
+          <button type="button" class="view-btn px-3 py-2 text-asuncion-muted hover:text-white uppercase transition-all" data-view="v3">Día 3 · Sprint 7 Días</button>
+        </div>
+
+        <a href="index.html" class="px-4 py-2 border border-asuncion-border hover:border-white text-white uppercase transition-all">
+          ← Volver a la Web
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ───────────── CONTENEDOR PRINCIPAL DE FLYERS ───────────── -->
+  <main class="max-w-[1920px] mx-auto px-4 sm:px-6 py-10">
+
+    <!-- Grid de Stories -->
+    <div id="storiesContainer" class="flex flex-wrap justify-center gap-10 items-start">
+
+      <!-- ══════════════════════════════════════════════════════════
+           VARIANTE 01 — DÍA 1 (LUNES): EL MANIFIESTO ARQUITECTÓNICO
+           Enfoque: Autoridad, Dignidad, Posicionamiento y Filosofía
+           ══════════════════════════════════════════════════════════ -->
+      <div id="wrapper-v1" class="flex flex-col items-center gap-4">
+        
+        <div class="text-center font-mono text-xs space-y-1">
+          <div class="text-asuncion-cognac font-bold uppercase tracking-wider">VARIANTE 01 · LUNES (LANZAMIENTO)</div>
+          <div class="text-asuncion-muted">El Manifiesto de Arquitectura Digital para PyMEs</div>
+        </div>
+
+        <div class="story-preview">
+          <article id="flyer-1" class="story-frame flex flex-col justify-between p-16 font-sans">
+            
+            <!-- Zona Segura Indicadores -->
+            <div class="safe-guide-top">
+              <span class="absolute bottom-2 left-16 text-[22px] font-mono text-red-400 bg-black/80 px-3 py-1">
+                Límite de cabecera de Instagram (250px)
+              </span>
+            </div>
+            <div class="safe-guide-bottom">
+              <span class="absolute top-2 left-16 text-[22px] font-mono text-red-400 bg-black/80 px-3 py-1">
+                Límite de barra de respuesta / enviar mensaje (250px)
+              </span>
+            </div>
+
+            <!-- Capa de Fondo e Imagen Arquitectónica -->
+            <div class="absolute inset-0 z-0">
+              <img src="assets/img/workstation.jpg" alt="Workstation arquitectónica" class="w-full h-full object-cover opacity-25 filter grayscale contrast-125">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#0a0908] via-[#0c0b0a]/90 to-[#0a0908]"></div>
+              <div class="absolute inset-0 noise-overlay opacity-70"></div>
+              <!-- Marco técnico fino -->
+              <div class="absolute inset-10 border border-asuncion-cognac/25 pointer-events-none"></div>
+              <div class="absolute top-10 left-10 w-8 h-8 border-t-2 border-l-2 border-asuncion-cognac"></div>
+              <div class="absolute top-10 right-10 w-8 h-8 border-t-2 border-r-2 border-asuncion-cognac"></div>
+              <div class="absolute bottom-10 left-10 w-8 h-8 border-b-2 border-l-2 border-asuncion-cognac"></div>
+              <div class="absolute bottom-10 right-10 w-8 h-8 border-b-2 border-r-2 border-asuncion-cognac"></div>
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL (ZONA SEGURA CENTRAL 250px a 1670px) -->
+            <div class="relative z-10 flex flex-col justify-between h-full pt-20 pb-16">
+              
+              <!-- Cabecera Editorial -->
+              <div>
+                <div class="flex items-center justify-between border-b border-asuncion-cognac/30 pb-6 mb-8 font-mono text-[20px] text-asuncion-sand tracking-widest uppercase">
+                  <div class="flex items-center gap-3">
+                    <span class="w-3.5 h-3.5 bg-asuncion-cognac rounded-full shadow-[0_0_12px_rgba(224,169,109,0.8)]"></span>
+                    <span class="font-bold text-white tracking-widest">PUNTO PRISMA STUDIO</span>
+                  </div>
+                  <span class="text-asuncion-cognac font-bold">ASU 25°17'S · PY</span>
+                </div>
+
+                <div class="inline-block px-4 py-1.5 bg-asuncion-cognac/15 border border-asuncion-cognac/40 text-asuncion-cognac font-mono text-[18px] uppercase tracking-wider mb-6">
+                  [MANIFIESTO COMERCIAL 2026]
+                </div>
+
+                <h2 class="font-serif font-bold text-[76px] leading-[1.05] text-white tracking-tight mb-8">
+                  Catálogos móviles y sistemas que cierran ventas con <span class="italic text-asuncion-cognac font-normal">dignidad y velocidad.</span>
+                </h2>
+
+                <p class="text-[28px] text-asuncion-sand/90 font-light leading-relaxed max-w-[920px] border-l-4 border-asuncion-cognac pl-6 py-2">
+                  Diseñamos plataformas comerciales con la nobleza de la arquitectura contemporánea: sin ornamentos inútiles, resistentes y hechas para durar.
+                </p>
+              </div>
+
+              <!-- Tres Métricas Técnicas Arquitectónicas -->
+              <div class="grid grid-cols-3 gap-6 my-8 py-8 border-y border-asuncion-border bg-asuncion-surface/80 backdrop-blur-sm p-6">
+                <div class="text-center border-r border-asuncion-border/60">
+                  <div class="font-serif font-bold text-[56px] text-asuncion-cognac leading-none">0.4s</div>
+                  <div class="font-mono text-[16px] text-asuncion-muted uppercase mt-2 font-bold">Carga 4G/5G</div>
+                  <div class="font-mono text-[14px] text-asuncion-subtle">Optimizado PY</div>
+                </div>
+                <div class="text-center border-r border-asuncion-border/60">
+                  <div class="font-serif font-bold text-[56px] text-white leading-none">0%</div>
+                  <div class="font-mono text-[16px] text-asuncion-cognac uppercase mt-2 font-bold">Comisiones</div>
+                  <div class="font-mono text-[14px] text-asuncion-subtle">Cero intermediarios</div>
+                </div>
+                <div class="text-center">
+                  <div class="font-serif font-bold text-[56px] text-asuncion-cognac leading-none">7 Días</div>
+                  <div class="font-mono text-[16px] text-asuncion-muted uppercase mt-2 font-bold">Entrega Certificada</div>
+                  <div class="font-mono text-[14px] text-asuncion-subtle">Llave en mano</div>
+                </div>
+              </div>
+
+              <!-- Footer de la Historia / Simulación de Sticker Oficial -->
+              <div class="space-y-6">
+                
+                <!-- Sticker interactivo de enlace de Instagram -->
+                <div class="mx-auto max-w-[800px] bg-gradient-to-r from-asuncion-card via-asuncion-surface to-asuncion-card border-2 border-asuncion-cognac p-6 shadow-[0_15px_40px_rgba(224,169,109,0.25)] flex items-center justify-between">
+                  <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-asuncion-cognac flex items-center justify-center text-black font-bold text-2xl shadow-sm">
+                      ↗
+                    </div>
+                    <div>
+                      <div class="font-mono text-[16px] text-asuncion-cognac font-bold uppercase tracking-wider">
+                        ENLACE OFICIAL DEL ESTUDIO
+                      </div>
+                      <div class="font-mono text-[30px] font-bold text-white tracking-tight">
+                        studio.puntoprisma.store
+                      </div>
+                    </div>
+                  </div>
+                  <span class="font-mono text-[18px] text-black bg-asuncion-cognac font-bold px-4 py-2 uppercase tracking-wider">
+                    EXPLORAR SITIO
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-4 border-t border-asuncion-border">
+                  <span>ASUNCIÓN · PARAGUAY</span>
+                  <span class="text-asuncion-sand">ARQUITECTURA DE SOFTWARE COMERCIAL</span>
+                  <span>WA: +595 986 125 649</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="assets/flyers/historia-01-manifiesto-asuncion-1080x1920.png" download="historia-01-manifiesto-asuncion-1080x1920.png" class="px-4 py-2 bg-asuncion-cognac hover:bg-amber-300 text-black text-xs font-mono uppercase font-bold flex items-center gap-2 transition-all active:scale-[0.98] shadow-sm">
+            <span>↓ Descargar PNG (1080×1920)</span>
+          </a>
+          <button type="button" class="copy-caption-btn px-4 py-2 bg-asuncion-card border border-asuncion-border hover:border-asuncion-cognac text-xs font-mono uppercase text-asuncion-cognac flex items-center gap-2 transition-all active:scale-[0.98]" data-story="1">
+            <span>⎘ Copiar Texto para Instagram</span>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════════════════
+           VARIANTE 02 — DÍA 2 (MIÉRCOLES): FRICCIÓN VS SOLUCIÓN (ROI)
+           Enfoque: 90% ventas por WhatsApp, 0% comisiones, dolor del cliente
+           ══════════════════════════════════════════════════════════ -->
+      <div id="wrapper-v2" class="flex flex-col items-center gap-4">
+        
+        <div class="text-center font-mono text-xs space-y-1">
+          <div class="text-asuncion-cognac font-bold uppercase tracking-wider">VARIANTE 02 · MIÉRCOLES (PROBLEMA & ROI)</div>
+          <div class="text-asuncion-muted">El 90% de las ventas en Paraguay se cierran en WhatsApp</div>
+        </div>
+
+        <div class="story-preview">
+          <article id="flyer-2" class="story-frame flex flex-col justify-between p-16 font-sans">
+            
+            <!-- Zona Segura Indicadores -->
+            <div class="safe-guide-top">
+              <span class="absolute bottom-2 left-16 text-[22px] font-mono text-red-400 bg-black/80 px-3 py-1">
+                Límite de cabecera de Instagram (250px)
+              </span>
+            </div>
+            <div class="safe-guide-bottom">
+              <span class="absolute top-2 left-16 text-[22px] font-mono text-red-400 bg-black/80 px-3 py-1">
+                Límite de barra de respuesta / enviar mensaje (250px)
+              </span>
+            </div>
+
+            <!-- Fondo oscuro con textura y grid -->
+            <div class="absolute inset-0 z-0">
+              <img src="assets/img/catalogo-movil.jpg" alt="Catálogo móvil" class="w-full h-full object-cover opacity-20 filter grayscale contrast-150">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#090807] via-[#0d0c0a]/95 to-[#090807]"></div>
+              <div class="absolute inset-0 noise-overlay opacity-60"></div>
+              <!-- Retícula técnica -->
+              <div class="absolute inset-10 border border-white/10 pointer-events-none"></div>
+            </div>
+
+            <!-- CONTENIDO CENTRAL -->
+            <div class="relative z-10 flex flex-col justify-between h-full pt-20 pb-16">
+              
+              <!-- Cabecera -->
+              <div>
+                <div class="flex items-center justify-between border-b border-white/10 pb-6 mb-8 font-mono text-[20px] text-asuncion-muted uppercase">
+                  <div class="flex items-center gap-3">
+                    <span class="w-3.5 h-3.5 bg-emerald-400 rounded-full shadow-[0_0_12px_rgba(52,211,153,0.8)]"></span>
+                    <span class="font-bold text-white">CIERRE ÁGIL SIN COMISIONES</span>
+                  </div>
+                  <span class="text-asuncion-cognac font-mono font-bold">CASO REAL PYMES</span>
+                </div>
+
+                <div class="inline-block px-4 py-1.5 bg-red-950/40 border border-red-500/40 text-red-400 font-mono text-[18px] uppercase tracking-wider mb-6">
+                  ¿TU VENDEDOR SIGUE MANDANDO PDFS DE 45MB?
+                </div>
+
+                <h2 class="font-serif font-bold text-[72px] leading-[1.08] text-white tracking-tight mb-8">
+                  El 90% de las ventas en Paraguay se cierran en <span class="text-emerald-400 italic font-normal">WhatsApp.</span>
+                </h2>
+
+                <p class="text-[26px] text-asuncion-sand/90 font-light leading-relaxed max-w-[920px]">
+                  Un sitio web lento o una tienda con registros obligatorios enfría al cliente. Con Punto Prisma tu stock se recorre en 0.4s y el pedido va directo al chat.
+                </p>
+              </div>
+
+              <!-- Comparativa Visual: Antes vs Ahora -->
+              <div class="my-6 grid grid-cols-2 gap-6 font-mono">
+                <!-- Modelo Antiguo -->
+                <div class="p-8 border border-red-500/30 bg-red-950/20 flex flex-col justify-between">
+                  <div>
+                    <div class="text-[18px] font-bold text-red-400 mb-4 pb-3 border-b border-red-500/20 uppercase">
+                      ✕ EL MODELO ANTIGUO
+                    </div>
+                    <ul class="space-y-4 text-[20px] text-red-200/90 leading-snug">
+                      <li>• PDFs pesados de 45MB que tardan 2 minutos en abrir.</li>
+                      <li>• Audios interminables preguntando "¿cuánto cuesta?".</li>
+                      <li>• 15% de comisión en apps de intermediarios.</li>
+                    </ul>
+                  </div>
+                  <div class="mt-6 pt-4 border-t border-red-500/20 text-[16px] text-red-400 font-bold uppercase">
+                    Resultado: 60% carritos perdidos
+                  </div>
+                </div>
+
+                <!-- Modelo Punto Prisma -->
+                <div class="p-8 border-2 border-asuncion-cognac bg-asuncion-surface/90 flex flex-col justify-between shadow-[0_10px_30px_rgba(224,169,109,0.15)]">
+                  <div>
+                    <div class="text-[18px] font-bold text-asuncion-cognac mb-4 pb-3 border-b border-asuncion-cognac/30 uppercase flex justify-between items-center">
+                      <span>✓ CON PUNTO PRISMA</span>
+                      <span class="text-[14px] bg-asuncion-cognac text-black px-2 py-0.5">0.4s</span>
+                    </div>
+                    <ul class="space-y-4 text-[20px] text-white leading-snug">
+                      <li>• Catálogo ultrarrápido con buscador y stock en ₲.</li>
+                      <li>• Carrito táctil y mensaje de orden listo al WhatsApp.</li>
+                      <li>• 0% comisiones. El 100% de la venta es tuyo.</li>
+                    </ul>
+                  </div>
+                  <div class="mt-6 pt-4 border-t border-asuncion-cognac/30 text-[16px] text-emerald-400 font-bold uppercase">
+                    Ahorro anual: +₲ 27.000.000
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enlace a Dominio y Sticker IG -->
+              <div class="space-y-6">
+                
+                <div class="bg-[#151412] border-2 border-asuncion-cognac p-6 flex items-center justify-between shadow-[0_15px_40px_rgba(0,0,0,0.8)]">
+                  <div class="flex items-center gap-4">
+                    <span class="text-4xl text-emerald-400">🔒</span>
+                    <div>
+                      <div class="font-mono text-[16px] text-asuncion-cognac font-bold uppercase">
+                        PROBÁ LAS DEMOS EN VIVO EN EL SITIO
+                      </div>
+                      <div class="font-mono text-[30px] font-bold text-white tracking-tight">
+                        studio.puntoprisma.store
+                      </div>
+                    </div>
+                  </div>
+                  <span class="font-mono text-[18px] text-black bg-asuncion-cognac font-bold px-5 py-3 uppercase tracking-wider">
+                    VER DEMOS ↗
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-4 border-t border-asuncion-border">
+                  <span>FERRETERÍAS · BOUTIQUES · BARBERÍAS</span>
+                  <span class="text-white font-bold">CALCULADORA DE ROI DISPONIBLE</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="assets/flyers/historia-02-whatsapp-roi-1080x1920.png" download="historia-02-whatsapp-roi-1080x1920.png" class="px-4 py-2 bg-asuncion-cognac hover:bg-amber-300 text-black text-xs font-mono uppercase font-bold flex items-center gap-2 transition-all active:scale-[0.98] shadow-sm">
+            <span>↓ Descargar PNG (1080×1920)</span>
+          </a>
+          <button type="button" class="copy-caption-btn px-4 py-2 bg-asuncion-card border border-asuncion-border hover:border-asuncion-cognac text-xs font-mono uppercase text-asuncion-cognac flex items-center gap-2 transition-all active:scale-[0.98]" data-story="2">
+            <span>⎘ Copiar Texto para Instagram</span>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- ══════════════════════════════════════════════════════════
+           VARIANTE 03 — DÍA 3 (VIERNES): SPRINT 7 DÍAS & DOMINIO OFICIAL
+           Enfoque: Urgencia positiva, facilidad, entrega en mano, dominios gTLD
+           ══════════════════════════════════════════════════════════ -->
+      <div id="wrapper-v3" class="flex flex-col items-center gap-4">
+        
+        <div class="text-center font-mono text-xs space-y-1">
+          <div class="text-asuncion-cognac font-bold uppercase tracking-wider">VARIANTE 03 · VIERNES (ACCIÓN & SPRINT)</div>
+          <div class="text-asuncion-muted">Tu catálogo en vivo el próximo viernes con dominio propio</div>
+        </div>
+
+        <div class="story-preview">
+          <article id="flyer-3" class="story-frame flex flex-col justify-between p-16 font-sans">
+            
+            <!-- Zona Segura Indicadores -->
+            <div class="safe-guide-top">
+              <span class="absolute bottom-2 left-16 text-[22px] font-mono text-red-400 bg-black/80 px-3 py-1">
+                Límite de cabecera de Instagram (250px)
+              </span>
+            </div>
+            <div class="safe-guide-bottom">
+              <span class="absolute top-2 left-16 text-[22px] font-mono text-red-400 bg-black/80 px-3 py-1">
+                Límite de barra de respuesta / enviar mensaje (250px)
+              </span>
+            </div>
+
+            <!-- Fondo con textura sutil y acentos dorados -->
+            <div class="absolute inset-0 z-0">
+              <img src="assets/img/solucion-catalogo.jpg" alt="Solución catálogo móvil" class="w-full h-full object-cover opacity-20 filter grayscale contrast-125">
+              <div class="absolute inset-0 bg-gradient-to-b from-[#0a0908] via-[#0e0d0b]/95 to-[#0a0908]"></div>
+              <div class="absolute inset-0 noise-overlay opacity-60"></div>
+              <div class="absolute inset-10 border border-asuncion-cognac/30 pointer-events-none"></div>
+            </div>
+
+            <!-- CONTENIDO CENTRAL -->
+            <div class="relative z-10 flex flex-col justify-between h-full pt-20 pb-16">
+              
+              <!-- Cabecera -->
+              <div>
+                <div class="flex items-center justify-between border-b border-asuncion-cognac/30 pb-6 mb-8 font-mono text-[20px] text-asuncion-sand uppercase">
+                  <div class="flex items-center gap-3">
+                    <span class="w-3.5 h-3.5 bg-asuncion-cognac rounded-full shadow-[0_0_12px_rgba(224,169,109,0.8)]"></span>
+                    <span class="font-bold text-white">SPRINT CERTIFICADO · 7 DÍAS HÁBILES</span>
+                  </div>
+                  <span class="text-asuncion-cognac font-bold font-mono">LLAVE EN MANO</span>
+                </div>
+
+                <div class="inline-block px-4 py-1.5 bg-asuncion-cognac text-black font-mono font-bold text-[18px] uppercase tracking-wider mb-6">
+                  SIN REUNIONES ETERNAS · SIN MENSUALIDADES CAUTIVAS
+                </div>
+
+                <h2 class="font-serif font-bold text-[74px] leading-[1.05] text-white tracking-tight mb-8">
+                  Tu sitio web y catálogo móvil <span class="italic text-asuncion-cognac font-normal">listo en 7 días.</span>
+                </h2>
+
+                <p class="text-[26px] text-asuncion-sand/90 font-light leading-relaxed max-w-[920px]">
+                  Un proceso estructurado para negocios de Asunción. Nos pasás tu lista de productos en Excel y te entregamos tu plataforma activa para facturar.
+                </p>
+              </div>
+
+              <!-- Cronograma 7 Días en 4 Hitos Verticales -->
+              <div class="space-y-4 my-6 font-mono">
+                
+                <div class="p-5 border border-asuncion-border bg-asuncion-surface/90 flex items-center justify-between">
+                  <div class="flex items-center gap-5">
+                    <span class="text-asuncion-cognac font-bold text-[28px]">01</span>
+                    <div>
+                      <div class="text-[20px] font-bold text-white uppercase">Día 1 · Ingesta &amp; Dominio</div>
+                      <div class="text-[16px] text-asuncion-muted">Carga de productos en Excel y reserva de tu .store o .shop</div>
+                    </div>
+                  </div>
+                  <span class="text-asuncion-cognac text-[18px] font-bold">[LISTO]</span>
+                </div>
+
+                <div class="p-5 border border-asuncion-border bg-asuncion-surface/90 flex items-center justify-between">
+                  <div class="flex items-center gap-5">
+                    <span class="text-asuncion-cognac font-bold text-[28px]">03</span>
+                    <div>
+                      <div class="text-[20px] font-bold text-white uppercase">Día 3 · Motor de Carrito WhatsApp</div>
+                      <div class="text-[16px] text-asuncion-muted">Precios en Guaraníes (₲) y botón directo a tu vendedor</div>
+                    </div>
+                  </div>
+                  <span class="text-asuncion-cognac text-[18px] font-bold">[LISTO]</span>
+                </div>
+
+                <div class="p-5 border border-asuncion-border bg-asuncion-surface/90 flex items-center justify-between">
+                  <div class="flex items-center gap-5">
+                    <span class="text-asuncion-cognac font-bold text-[28px]">05</span>
+                    <div>
+                      <div class="text-[20px] font-bold text-white uppercase">Día 5 · Sincronización Google Sheets</div>
+                      <div class="text-[16px] text-asuncion-muted">Actualizá precios y stock desde tu celular sin programar</div>
+                    </div>
+                  </div>
+                  <span class="text-asuncion-cognac text-[18px] font-bold">[LISTO]</span>
+                </div>
+
+                <div class="p-5 border-2 border-asuncion-cognac bg-asuncion-cognac/10 flex items-center justify-between">
+                  <div class="flex items-center gap-5">
+                    <span class="text-asuncion-cognac font-extrabold text-[28px]">07</span>
+                    <div>
+                      <div class="text-[20px] font-bold text-white uppercase">Día 7 · Despliegue en Vivo con SSL</div>
+                      <div class="text-[16px] text-asuncion-sand">Dominio bancario TLS 1.3, CDN global y entrega en mano</div>
+                    </div>
+                  </div>
+                  <span class="text-black bg-asuncion-cognac px-3 py-1 font-bold text-[16px] uppercase">[EN VIVO]</span>
+                </div>
+
+              </div>
+
+              <!-- Enlace Oficial y Sticker IG -->
+              <div class="space-y-6">
+                
+                <div class="bg-asuncion-surface border-2 border-asuncion-cognac p-6 flex items-center justify-between shadow-[0_15px_40px_rgba(224,169,109,0.25)]">
+                  <div class="flex items-center gap-4">
+                    <span class="text-4xl text-asuncion-cognac">⚡</span>
+                    <div>
+                      <div class="font-mono text-[16px] text-asuncion-cognac font-bold uppercase">
+                        RESERVÁ TU SPRINT EN EL SITIO OFICIAL
+                      </div>
+                      <div class="font-mono text-[30px] font-bold text-white tracking-tight">
+                        studio.puntoprisma.store
+                      </div>
+                    </div>
+                  </div>
+                  <span class="font-mono text-[18px] text-black bg-asuncion-cognac font-bold px-5 py-3 uppercase tracking-wider">
+                    RESERVAR ↗
+                  </span>
+                </div>
+
+                <div class="flex items-center justify-between text-[18px] font-mono text-asuncion-muted pt-4 border-t border-asuncion-border">
+                  <span>ATENCIÓN TÉCNICA DIRECTA EN ASUNCIÓN</span>
+                  <span class="text-white font-bold">WHATSAPP: +595 986 125 649</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </article>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="assets/flyers/historia-03-sprint-7dias-1080x1920.png" download="historia-03-sprint-7dias-1080x1920.png" class="px-4 py-2 bg-asuncion-cognac hover:bg-amber-300 text-black text-xs font-mono uppercase font-bold flex items-center gap-2 transition-all active:scale-[0.98] shadow-sm">
+            <span>↓ Descargar PNG (1080×1920)</span>
+          </a>
+          <button type="button" class="copy-caption-btn px-4 py-2 bg-asuncion-card border border-asuncion-border hover:border-asuncion-cognac text-xs font-mono uppercase text-asuncion-cognac flex items-center gap-2 transition-all active:scale-[0.98]" data-story="3">
+            <span>⎘ Copiar Texto para Instagram</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ───────────── GUÍA DE COPYWRITING Y HORARIOS DE PUBLICACIÓN ───────────── -->
+    <section class="mt-20 max-w-5xl mx-auto border border-asuncion-border bg-asuncion-surface p-8 sm:p-12 font-mono text-xs">
+      <div class="flex items-center gap-3 text-asuncion-cognac font-bold uppercase mb-4 tracking-widest">
+        <span class="w-2.5 h-2.5 bg-asuncion-cognac rounded-full"></span>
+        <span>GUÍA EDITORIAL DE PUBLICACIÓN PARA INSTAGRAM (ASUNCIÓN, PARAGUAY)</span>
+      </div>
+      <h3 class="font-serif font-bold text-2xl text-white mb-6">
+        Estrategia de 3 Días para Máxima Conversión de PyMEs
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-[11px] leading-relaxed">
+        
+        <!-- Día 1 -->
+        <div class="p-5 border border-asuncion-border bg-asuncion-void space-y-3">
+          <div class="text-asuncion-cognac font-bold uppercase text-xs">Lunes · Autoridad &amp; Manifiesto</div>
+          <p class="text-asuncion-muted">
+            <strong class="text-white">Horario sugerido:</strong> 07:45 – 08:45 PYT (primer vistazo matutino de dueños de negocios).
+          </p>
+          <p class="text-asuncion-muted">
+            <strong class="text-white">Objetivo:</strong> Generar respeto visual, marcar distancia con plantillas genéricas baratas y posicionar el estudio como arquitectos digitales sobrios.
+          </p>
+          <div class="p-2.5 bg-asuncion-card border border-white/5 text-asuncion-sand">
+            <strong>Sticker de enlace IG:</strong><br>
+            URL: <code>https://studio.puntoprisma.store</code><br>
+            Texto del sticker: <em>Conocé el Estudio ↗</em>
+          </div>
+        </div>
+
+        <!-- Día 2 -->
+        <div class="p-5 border border-asuncion-border bg-asuncion-void space-y-3">
+          <div class="text-emerald-400 font-bold uppercase text-xs">Miércoles · Dolor Financiero &amp; WhatsApp</div>
+          <p class="text-asuncion-muted">
+            <strong class="text-white">Horario sugerido:</strong> 12:30 – 13:45 PYT (pausa de almuerzo comercial en Asunción).
+          </p>
+          <p class="text-asuncion-muted">
+            <strong class="text-white">Objetivo:</strong> Exponer la fuga de clientes por PDFs lentos y comisiones injustas del 15% frente a la agilidad del catálogo propio.
+          </p>
+          <div class="p-2.5 bg-asuncion-card border border-white/5 text-asuncion-sand">
+            <strong>Sticker de enlace IG:</strong><br>
+            URL: <code>https://studio.puntoprisma.store/#comparador</code><br>
+            Texto del sticker: <em>Calculá tu Ahorro ₲ ↗</em>
+          </div>
+        </div>
+
+        <!-- Día 3 -->
+        <div class="p-5 border border-asuncion-border bg-asuncion-void space-y-3">
+          <div class="text-amber-300 font-bold uppercase text-xs">Viernes · Cierre &amp; Sprint Llave en Mano</div>
+          <p class="text-asuncion-muted">
+            <strong class="text-white">Horario sugerido:</strong> 16:30 – 18:00 PYT (planificación del fin de semana para lanzar la semana entrante).
+          </p>
+          <p class="text-asuncion-muted">
+            <strong class="text-white">Objetivo:</strong> Demostrar que en solo 7 días hábiles su negocio tiene catálogo en vivo sin dolores de cabeza técnicos.
+          </p>
+          <div class="p-2.5 bg-asuncion-card border border-white/5 text-asuncion-sand">
+            <strong>Sticker de enlace IG:</strong><br>
+            URL: <code>https://studio.puntoprisma.store/#proceso</code><br>
+            Texto del sticker: <em>Ver Sprint de 7 Días ↗</em>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-asuncion-border flex flex-col sm:flex-row items-center justify-between gap-4 text-asuncion-muted">
+        <div>
+          Hashtags recomendados: <span class="text-asuncion-cognac">#Asuncion #PymesParaguay #ComercioParaguayo #WhatsAppMarketing #SoftwareParaguay</span>
+        </div>
+        <div class="text-white font-bold">
+          © 2026 Punto Prisma Studio · Asunción, Paraguay
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ───────────── TOAST FLOTANTE ───────────── -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-asuncion-card border-2 border-asuncion-cognac text-white font-mono text-xs px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-all duration-300 opacity-0 translate-y-2 pointer-events-none flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span>
+    <span id="toastMsg">Texto copiado al portapapeles</span>
+  </div>
+
+  <!-- ───────────── LÓGICA INTERACTIVA ───────────── -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      // Toggle de Guías Seguras de Instagram
+      const toggle = document.getElementById("toggleGuides");
+      if (toggle) {
+        toggle.addEventListener("change", (e) => {
+          if (e.target.checked) {
+            document.body.classList.add("show-guides");
+          } else {
+            document.body.classList.remove("show-guides");
+          }
+        });
+      }
+
+      // Filtro de Vistas
+      const viewButtons = document.querySelectorAll(".view-btn");
+      const w1 = document.getElementById("wrapper-v1");
+      const w2 = document.getElementById("wrapper-v2");
+      const w3 = document.getElementById("wrapper-v3");
+
+      viewButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          viewButtons.forEach(b => {
+            b.classList.remove("text-black", "bg-asuncion-cognac", "font-bold");
+            b.classList.add("text-asuncion-muted");
+          });
+          btn.classList.add("text-black", "bg-asuncion-cognac", "font-bold");
+          btn.classList.remove("text-asuncion-muted");
+
+          const v = btn.getAttribute("data-view");
+          if (v === "all") {
+            w1.style.display = "flex";
+            w2.style.display = "flex";
+            w3.style.display = "flex";
+          } else if (v === "v1") {
+            w1.style.display = "flex";
+            w2.style.display = "none";
+            w3.style.display = "none";
+          } else if (v === "v2") {
+            w1.style.display = "none";
+            w2.style.display = "flex";
+            w3.style.display = "none";
+          } else if (v === "v3") {
+            w1.style.display = "none";
+            w2.style.display = "none";
+            w3.style.display = "flex";
+          }
+        });
+      });
+
+      // Toast Helper
+      function showToast(msg) {
+        const toast = document.getElementById("toast");
+        const toastMsg = document.getElementById("toastMsg");
+        if (!toast || !toastMsg) return;
+        toastMsg.textContent = msg;
+        toast.classList.remove("opacity-0", "translate-y-2", "pointer-events-none");
+        toast.classList.add("opacity-100", "translate-y-0");
+        setTimeout(() => {
+          toast.classList.add("opacity-0", "translate-y-2", "pointer-events-none");
+          toast.classList.remove("opacity-100", "translate-y-0");
+        }, 2600);
+      }
+
+      // Copiar Captions sugeridos
+      const captions = {
+        "1": `El software comercial para una PyME debe construirse como la buena arquitectura: sobrio, durable y hecho para operar sin fricción.\n\nEn Punto Prisma diseñamos catálogos móviles y sistemas para empresas de Asunción que cargan en 0.4s y cierran pedidos directos por WhatsApp.\n\n🔗 Entrá al link en el sticker o visitanos en studio.puntoprisma.store`,
+        "2": `¿Tu cliente te pide precios y tu vendedor le manda un PDF de 45MB?\n\nEl 90% de las compras en Paraguay se cierran en WhatsApp. Con un catálogo móvil interactivo tus clientes buscan repuestos o prendas al instante y te envían el pedido listo con total en Guaraníes.\n\n0% comisiones. El 100% de la venta es de tu negocio.\n\n🔗 Probá las demos en studio.puntoprisma.store`,
+        "3": `Tu catálogo móvil listo el próximo viernes.\n\nNos pasás tu lista de productos en Excel, fotos y precios. En 7 días hábiles tenés tu sitio web activo bajo tu propio dominio (.store, .shop o .tech), con carrito WhatsApp y sincronización con Google Sheets.\n\nSin reuniones eternas ni contratos cautivos.\n\n🔗 Agendá tu sprint en studio.puntoprisma.store`
+      };
+
+      document.querySelectorAll(".copy-caption-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const s = btn.getAttribute("data-story");
+          const text = captions[s] || "";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+              showToast("Texto de la Historia copiado para Instagram");
+            });
+          } else {
+            showToast("Texto listo para Instagram");
+          }
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>
