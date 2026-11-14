@@ -40,8 +40,8 @@ body {
 /* Explicit Typographic Hierarchy Scale according to prompt */
 h1, .font-h1 {
   font-family: 'Newsreader', Georgia, serif;
-  font-size: clamp(48px, 7vw, 104px);
-  line-height: 1.02;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.06;
   letter-spacing: -0.02em;
   font-weight: 600;
 }

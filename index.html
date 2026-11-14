@@ -120,24 +120,24 @@
 
   <main>
     <!-- ───────────── 2. HERO EDITORIAL ───────────── -->
-    <section id="inicio" class="pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Hero de Punto Prisma Studio">
-      <div class="max-w-[1200px] mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section id="inicio" class="py-12 sm:py-16 lg:py-16 xl:py-20 border-b border-[#F4EFE8]/[0.08] lg:min-h-[calc(100vh-5rem)] lg:flex lg:items-center" aria-label="Hero de Punto Prisma Studio">
+      <div class="max-w-[1200px] w-full mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           <!-- Columna Texto -->
-          <div class="lg:col-span-7 space-y-6">
+          <div class="lg:col-span-7 space-y-5">
             <span class="section-tag">— CATÁLOGOS PARA COMERCIOS · ASUNCIÓN</span>
             
             <h1 class="font-h1 text-[#F4EFE8]">
               Tu catálogo en el celular de tus clientes.
-              <span class="italic text-[#DFA96E] block mt-2 sm:mt-3">Sus pedidos, en tu WhatsApp.</span>
+              <span class="italic text-[#DFA96E] block mt-1.5 sm:mt-2">Sus pedidos, en tu WhatsApp.</span>
             </h1>
 
-            <p class="text-[#A8A29A] text-lg sm:text-xl leading-relaxed max-w-xl font-sans font-normal pt-2">
+            <p class="text-[#A8A29A] text-base sm:text-lg leading-relaxed max-w-xl font-sans font-normal">
               Sin comisiones por venta. Listo en 7 días hábiles. Empezás con el 30% y pagás el 70% restante cuando ves tu web terminada y la aprobás.
             </p>
 
-            <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a href="#demos" class="btn-pill btn-primary">
                 Ver demos en vivo
               </a>
@@ -146,20 +146,27 @@
                 Escribir por WhatsApp
               </a>
             </div>
+
+            <!-- Franja de Confianza Inmediata (Micro-trust indicators) -->
+            <div class="pt-1 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-mono text-[#A8A29A]">
+              <span class="flex items-center gap-1.5"><span class="text-[#DFA96E] font-bold">✓</span> Factura legal paraguaya</span>
+              <span class="flex items-center gap-1.5"><span class="text-[#DFA96E] font-bold">✓</span> Sin comisiones por venta</span>
+              <span class="flex items-center gap-1.5"><span class="text-[#DFA96E] font-bold">✓</span> 30% para empezar</span>
+            </div>
           </div>
 
           <!-- Columna Mockup Teléfono con Demo Real & Línea Conectora -->
           <div class="lg:col-span-5 flex flex-col items-center">
             
             <!-- Marco de Teléfono Realista -->
-            <div class="phone-frame w-[280px] sm:w-[310px] aspect-[9/18] relative shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+            <div class="phone-frame w-[270px] sm:w-[290px] aspect-[9/18] relative shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
               <!-- Notch Superior -->
               <div class="phone-notch"></div>
               
               <!-- Pantalla interactiva con la demo en vivo de La Forja -->
               <div class="w-full h-full overflow-hidden bg-[#0C0B0A]">
                 <iframe src="demos/la-forja/index.html" title="Demo interactiva en vivo dentro del teléfono"
-                  class="w-[375px] h-[750px] origin-top-left scale-[0.74] sm:scale-[0.82] border-0 pointer-events-auto"
+                  class="w-[375px] h-[750px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto"
                   loading="eager"></iframe>
               </div>
 
@@ -170,7 +177,7 @@
             </div>
 
             <!-- 3 Nombres de Plan con Línea Conectora -->
-            <div class="mt-8 flex items-center justify-center gap-3 text-xs font-mono text-[#A8A29A]">
+            <div class="mt-6 flex items-center justify-center gap-3 text-xs font-mono text-[#A8A29A]">
               <span class="hover:text-white transition-colors">Presencia Express</span>
               <span class="w-6 h-[1px] bg-[#DFA96E]/40"></span>
               <span class="text-[#DFA96E] font-semibold">Catálogo Móvil</span>
