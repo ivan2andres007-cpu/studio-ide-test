@@ -272,7 +272,7 @@ select:focus-visible {
 }
 .phone-capsule:hover {
   border-color: rgba(223, 169, 110, 0.5);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(223, 169, 110, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85);
 }
 
 /* --- METALLIC SATIN PILL BUTTONS (Libresitio style) --- */
@@ -302,6 +302,35 @@ select:focus-visible {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 #ffffff;
 }
 .btn-pill-satin:active {
+  transform: scale(0.98);
+}
+
+.btn-pill-outline {
+  height: 48px;
+  border-radius: 9999px;
+  padding: 0 1.25rem;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #F4EFE8;
+  background-color: transparent;
+  border: 1px solid rgba(244, 239, 232, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-pill-outline:hover {
+  border-color: #DFA96E;
+  color: #DFA96E;
+  background-color: rgba(223, 169, 110, 0.06);
+  transform: translateY(-1px);
+}
+.btn-pill-outline:active {
   transform: scale(0.98);
 }
 
@@ -377,7 +406,7 @@ select:focus-visible {
   background: rgba(223, 169, 110, 0.16);
   border-color: rgba(223, 169, 110, 0.45);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(223, 169, 110, 0.18);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 /* Grab to scroll carousel physics */
