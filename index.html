@@ -245,213 +245,291 @@
         <div class="space-y-8">
           
           <!-- Plan 1: Presencia Express -->
-          <div class="reveal-on-scroll clean-card transition-colors hover:border-[#DFA96E]/40">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="reveal-on-scroll clean-card transition-colors hover:border-[#DFA96E]/40 p-6 sm:p-8 lg:p-9">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               
-              <!-- Miniatura Teléfono -->
-              <div class="lg:col-span-3 flex justify-center">
-                <div class="phone-frame w-[140px] aspect-[9/16] relative bg-[#0C0B0A]">
-                  <div class="phone-notch scale-75 origin-top"></div>
-                  <iframe src="demos/la-forja/index.html" title="Miniatura Presencia Express"
-                    class="w-[375px] h-[667px] origin-top-left scale-[0.37] border-0 pointer-events-none"
-                    loading="lazy"></iframe>
+              <!-- Miniatura Cápsula + Info Principal -->
+              <div class="lg:col-span-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 min-w-0">
+                <!-- Cápsula con foto real -->
+                <div class="plan-capsule">
+                  <picture>
+                    <source srcset="assets/img/solucion-presencia.webp" type="image/webp">
+                    <img src="assets/img/solucion-presencia.jpg" alt="Presencia - La Forja Barbería"
+                      class="w-full h-full object-cover" width="108" height="180" loading="lazy">
+                  </picture>
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0C0B0A]/95 via-[#0C0B0A]/35 to-transparent pointer-events-none"></div>
+                  <div class="absolute bottom-2.5 inset-x-2 text-center pointer-events-none">
+                    <span class="text-[11px] font-bold text-white tracking-tight truncate block">La Forja</span>
+                    <span class="text-[9px] text-[#A8A29A] font-sans truncate block mt-0.5">Barbería</span>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Información y Chips -->
-              <div class="lg:col-span-6 space-y-4">
-                <div>
-                  <h3 class="font-serif font-semibold text-2xl text-white">Presencia Express</h3>
-                  <p class="text-[#A8A29A] text-sm font-sans mt-1">
-                    Landing page profesional de una sola pantalla con derivación directa a WhatsApp. Ideal para clínicas, profesionales y locales de servicios.
+                <!-- Textos, tags y chips -->
+                <div class="space-y-2.5 flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-[#A8A29A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="5" y="2" width="14" height="20" rx="3" stroke-width="1.8"/>
+                      <line x1="10" y1="18" x2="14" y2="18" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-mono text-xs text-[#A8A29A] font-medium">01</span>
+                  </div>
+
+                  <div>
+                    <h3 class="font-serif font-semibold text-2xl lg:text-3xl text-white inline">Presencia</h3>
+                    <span class="text-[#A8A29A] text-sm sm:text-base font-sans ml-2.5 font-normal">Una página</span>
+                  </div>
+
+                  <p class="text-[#A8A29A] text-sm sm:text-base font-sans leading-relaxed">
+                    Tu tarjeta digital. Lo justo para que te encuentren y te escriban.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2 pt-0.5">
+                    <span class="feature-chip">Qué hacés</span>
+                    <span class="feature-chip">Horario</span>
+                    <span class="feature-chip">Mapa</span>
+                    <span class="feature-chip">Botón a WhatsApp</span>
+                  </div>
+
+                  <p class="text-xs text-[#A8A29A]/80 font-sans tracking-wide pt-1">
+                    Dominio + llave en mano · 1 página · 1 correo
                   </p>
                 </div>
+              </div>
 
-                <!-- Chips (máx 4) -->
-                <div class="flex flex-wrap gap-2 pt-1">
-                  <span class="feature-chip">Landing de 1 página</span>
-                  <span class="feature-chip">Botón a WhatsApp</span>
-                  <span class="feature-chip">Ubicación y horarios</span>
-                  <span class="feature-chip">Dominio propio y SSL</span>
+              <!-- Plazo y Precio -->
+              <div class="lg:col-span-2 flex flex-row lg:flex-col justify-between lg:justify-center items-baseline lg:items-start gap-4 sm:gap-6 border-t lg:border-t-0 border-[#F4EFE8]/[0.08] pt-4 lg:pt-0">
+                <div>
+                  <span class="font-mono text-[10px] text-[#A8A29A] uppercase tracking-wider block">AL AIRE EN</span>
+                  <div class="font-sans text-xl sm:text-2xl font-bold text-white mt-0.5">7 días</div>
                 </div>
-
-                <div class="font-mono text-xs text-[#A8A29A]">
-                  <span>Plazo de entrega:</span> <span class="text-white font-medium">Hasta 7 días hábiles</span>
+                <div>
+                  <span class="font-mono text-[10px] text-[#A8A29A] uppercase tracking-wider block">PRECIO FUNDADOR</span>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-0.5">₲ 1.890.000</div>
+                  <div class="text-xs text-[#A8A29A] line-through font-mono mt-0.5">₲ 2.500.000</div>
                 </div>
               </div>
 
-              <!-- Precio y Botones -->
-              <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
-                <div>
-                  <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
-                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 1.890.000</div>
-                  <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
-                </div>
+              <!-- Botones de Acción -->
+              <div class="lg:col-span-3 flex flex-col items-stretch lg:items-end gap-2.5 w-full">
+                <a href="demos/la-forja/index.html" target="_blank" rel="noopener"
+                  class="btn-pill-satin w-full" aria-label="Ver ejemplo de Presencia">
+                  <span class="w-5 h-5 rounded bg-[#0C0B0A]/10 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-[#0C0B0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </span>
+                  <span>Ver ejemplo</span>
+                </a>
 
-                <div class="w-full flex flex-col gap-2.5">
-                  <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Presencia%20Express"
-                    target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-sm">
-                    Lo quiero
-                  </a>
-                  <a href="#demos" class="btn-pill btn-secondary w-full text-sm">
-                    Ver ejemplo
-                  </a>
-                </div>
+                <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Presencia%20Express"
+                  target="_blank" rel="noopener"
+                  class="btn-pill-satin w-full" aria-label="Quiero el Plan Presencia Express">
+                  <span class="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 shadow-sm">
+                    <svg class="w-3 h-3 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                  </span>
+                  <span>Lo quiero</span>
+                </a>
+
+                <a href="#preguntas" class="text-xs text-[#A8A29A] hover:text-[#DFA96E] transition font-sans text-center lg:text-right pt-0.5">
+                  Pagar con cripto →
+                </a>
               </div>
 
             </div>
           </div>
 
-          <!-- Plan 2: Catálogo Móvil (RECOMENDADO) -->
-          <div class="reveal-on-scroll clean-card border-[#DFA96E]/50 relative transition-colors hover:border-[#DFA96E]">
-            
-            <!-- Badge RECOMENDADO -->
-            <div class="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#DFA96E] text-[#0C0B0A] font-mono text-xs font-bold tracking-wider uppercase shadow-md">
-              RECOMENDADO
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Plan 2: Catálogo Móvil (PLAN PRINCIPAL) -->
+          <div class="reveal-on-scroll clean-card border-[#DFA96E]/40 transition-colors hover:border-[#DFA96E] p-6 sm:p-8 lg:p-9">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               
-              <!-- Miniatura Teléfono con Carrito -->
-              <div class="lg:col-span-3 flex justify-center">
-                <div class="phone-frame w-[140px] aspect-[9/16] relative bg-[#0C0B0A]">
-                  <div class="phone-notch scale-75 origin-top"></div>
-                  <!-- Vista representativa de catálogo con carrito -->
-                  <div class="w-full h-full p-2.5 text-[8px] font-sans flex flex-col justify-between bg-[#141210]">
-                    <div>
-                      <div class="h-2 w-16 bg-[#DFA96E] rounded mb-2"></div>
-                      <div class="space-y-1.5">
-                        <div class="h-8 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1 flex items-center justify-between">
-                          <span class="text-white">Taladro 650W</span>
-                          <span class="text-[#DFA96E]">₲ 485.000</span>
-                        </div>
-                        <div class="h-8 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1 flex items-center justify-between">
-                          <span class="text-white">Amoladora 4½</span>
-                          <span class="text-[#DFA96E]">₲ 390.000</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="h-5 bg-[#DFA96E] rounded flex items-center justify-center font-mono text-[7px] text-black font-bold">
-                      PEDIDO WHATSAPP (2)
-                    </div>
+              <!-- Miniatura Cápsula + Info Principal -->
+              <div class="lg:col-span-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 min-w-0">
+                <!-- Cápsula con foto real -->
+                <div class="plan-capsule">
+                  <picture>
+                    <source srcset="assets/img/solucion-catalogo.webp" type="image/webp">
+                    <img src="assets/img/solucion-catalogo.jpg" alt="Catálogo Móvil - Ferretería San José"
+                      class="w-full h-full object-cover" width="108" height="180" loading="lazy">
+                  </picture>
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0C0B0A]/95 via-[#0C0B0A]/35 to-transparent pointer-events-none"></div>
+                  <div class="absolute bottom-2.5 inset-x-2 text-center pointer-events-none">
+                    <span class="text-[11px] font-bold text-white tracking-tight truncate block">Ferretería San José</span>
+                    <span class="text-[9px] text-[#A8A29A] font-sans truncate block mt-0.5">Ferretería &amp; Hogar</span>
                   </div>
                 </div>
-              </div>
 
-              <!-- Información y Chips -->
-              <div class="lg:col-span-6 space-y-4">
-                <div>
-                  <h3 class="font-serif font-semibold text-2xl text-white">Catálogo Móvil con Carrito</h3>
-                  <p class="text-[#A8A29A] text-sm font-sans mt-1">
-                    Tu tienda en el celular de tus clientes. Permite elegir artículos, calcular el total y recibir el pedido detallado directamente en tu WhatsApp.
+                <!-- Textos, tags y chips -->
+                <div class="space-y-2.5 flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-[#A8A29A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="5" y="2" width="14" height="20" rx="3" stroke-width="1.8"/>
+                      <line x1="10" y1="18" x2="14" y2="18" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-mono text-xs text-[#A8A29A] font-medium">02</span>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full border border-white/20 bg-white/5 text-[10px] text-white font-mono uppercase tracking-wider font-semibold">
+                      PLAN PRINCIPAL
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 class="font-serif font-semibold text-2xl lg:text-3xl text-white inline">Catálogo Móvil</h3>
+                    <span class="text-[#A8A29A] text-sm sm:text-base font-sans ml-2.5 font-normal">Con carrito WhatsApp</span>
+                  </div>
+
+                  <p class="text-[#A8A29A] text-sm sm:text-base font-sans leading-relaxed">
+                    El paquete de todos los días. Para cuando una página no alcanza y querés que tus clientes compren directo en su celular.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2 pt-0.5">
+                    <span class="feature-chip">Catálogo con carrito</span>
+                    <span class="feature-chip">Pedido a WhatsApp</span>
+                    <span class="feature-chip">Buscador y filtros</span>
+                    <span class="feature-chip">Cálculo automático</span>
+                  </div>
+
+                  <p class="text-xs text-[#A8A29A]/80 font-sans tracking-wide pt-1">
+                    Dominio + llave en mano · Carrito integrado · 0% comisiones
                   </p>
                 </div>
+              </div>
 
-                <!-- Chips (máx 4) -->
-                <div class="flex flex-wrap gap-2 pt-1">
-                  <span class="feature-chip">Catálogo con carrito</span>
-                  <span class="feature-chip">Pedido a WhatsApp</span>
-                  <span class="feature-chip">Buscador y filtros</span>
-                  <span class="feature-chip">Dominio propio y SSL</span>
+              <!-- Plazo y Precio -->
+              <div class="lg:col-span-2 flex flex-row lg:flex-col justify-between lg:justify-center items-baseline lg:items-start gap-4 sm:gap-6 border-t lg:border-t-0 border-[#F4EFE8]/[0.08] pt-4 lg:pt-0">
+                <div>
+                  <span class="font-mono text-[10px] text-[#A8A29A] uppercase tracking-wider block">AL AIRE EN</span>
+                  <div class="font-sans text-xl sm:text-2xl font-bold text-white mt-0.5">7 días</div>
                 </div>
-
-                <div class="font-mono text-xs text-[#A8A29A]">
-                  <span>Plazo de entrega:</span> <span class="text-white font-medium">Hasta 7 días hábiles</span>
+                <div>
+                  <span class="font-mono text-[10px] text-[#A8A29A] uppercase tracking-wider block">PRECIO FUNDADOR</span>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-0.5">₲ 2.890.000</div>
+                  <div class="text-xs text-[#A8A29A] line-through font-mono mt-0.5">₲ 3.800.000</div>
                 </div>
               </div>
 
-              <!-- Precio y Botones -->
-              <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
-                <div>
-                  <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
-                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 2.890.000</div>
-                  <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
-                </div>
+              <!-- Botones de Acción -->
+              <div class="lg:col-span-3 flex flex-col items-stretch lg:items-end gap-2.5 w-full">
+                <a href="demos/ferreteria-san-jose/index.html" target="_blank" rel="noopener"
+                  class="btn-pill-satin w-full" aria-label="Ver ejemplo de Catálogo Móvil">
+                  <span class="w-5 h-5 rounded bg-[#0C0B0A]/10 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-[#0C0B0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </span>
+                  <span>Ver ejemplo</span>
+                </a>
 
-                <div class="w-full flex flex-col gap-2.5">
-                  <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Cat%C3%A1logo%20M%C3%B3vil"
-                    target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-sm">
-                    Lo quiero
-                  </a>
-                  <a href="#demos" class="btn-pill btn-secondary w-full text-sm">
-                    Ver ejemplo
-                  </a>
-                </div>
+                <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Cat%C3%A1logo%20M%C3%B3vil"
+                  target="_blank" rel="noopener"
+                  class="btn-pill-satin w-full" aria-label="Quiero el Plan Catálogo Móvil">
+                  <span class="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 shadow-sm">
+                    <svg class="w-3 h-3 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                  </span>
+                  <span>Lo quiero</span>
+                </a>
+
+                <a href="#preguntas" class="text-xs text-[#A8A29A] hover:text-[#DFA96E] transition font-sans text-center lg:text-right pt-0.5">
+                  Pagar con cripto →
+                </a>
               </div>
 
             </div>
           </div>
 
           <!-- Plan 3: Corporativo -->
-          <div class="reveal-on-scroll clean-card transition-colors hover:border-[#DFA96E]/40">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="reveal-on-scroll clean-card transition-colors hover:border-[#DFA96E]/40 p-6 sm:p-8 lg:p-9">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               
-              <!-- Miniatura Teléfono -->
-              <div class="lg:col-span-3 flex justify-center">
-                <div class="phone-frame w-[140px] aspect-[9/16] relative bg-[#0C0B0A]">
-                  <div class="phone-notch scale-75 origin-top"></div>
-                  <!-- Vista representativa de sistema corporativo -->
-                  <div class="w-full h-full p-2.5 text-[8px] font-sans flex flex-col justify-between bg-[#141210]">
-                    <div>
-                      <div class="h-2 w-12 bg-white/40 rounded mb-2"></div>
-                      <div class="grid grid-cols-2 gap-1.5 mb-2">
-                        <div class="h-7 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1">
-                          <span class="text-[#DFA96E] font-mono text-[6px]">SUCURSAL 1</span>
-                        </div>
-                        <div class="h-7 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1">
-                          <span class="text-[#DFA96E] font-mono text-[6px]">SUCURSAL 2</span>
-                        </div>
-                      </div>
-                      <div class="h-6 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1">
-                        <span class="text-white text-[7px]">Panel de Inventario</span>
-                      </div>
-                    </div>
-                    <div class="h-4 bg-white/10 rounded flex items-center justify-center font-mono text-[6px] text-white">
-                      MULTISUCURSAL ACTIVA
-                    </div>
+              <!-- Miniatura Cápsula + Info Principal -->
+              <div class="lg:col-span-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 min-w-0">
+                <!-- Cápsula con foto real -->
+                <div class="plan-capsule">
+                  <picture>
+                    <source srcset="assets/img/solucion-sistemas.webp" type="image/webp">
+                    <img src="assets/img/solucion-sistemas.jpg" alt="Corporativo - Industrial Lab"
+                      class="w-full h-full object-cover" width="108" height="180" loading="lazy">
+                  </picture>
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0C0B0A]/95 via-[#0C0B0A]/35 to-transparent pointer-events-none"></div>
+                  <div class="absolute bottom-2.5 inset-x-2 text-center pointer-events-none">
+                    <span class="text-[11px] font-bold text-white tracking-tight truncate block">Industrial Lab</span>
+                    <span class="text-[9px] text-[#A8A29A] font-sans truncate block mt-0.5">Equipamiento B2B</span>
                   </div>
                 </div>
-              </div>
 
-              <!-- Información y Chips -->
-              <div class="lg:col-span-6 space-y-4">
-                <div>
-                  <h3 class="font-serif font-semibold text-2xl text-white">Corporativo &amp; Sistemas</h3>
-                  <p class="text-[#A8A29A] text-sm font-sans mt-1">
-                    Estructura multipágina para empresas medianas y grandes. Paneles de autogestión de precios y derivación a múltiples números de WhatsApp.
+                <!-- Textos, tags y chips -->
+                <div class="space-y-2.5 flex-1 min-w-0">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-[#A8A29A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="5" y="2" width="14" height="20" rx="3" stroke-width="1.8"/>
+                      <line x1="10" y1="18" x2="14" y2="18" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                    <span class="font-mono text-xs text-[#A8A29A] font-medium">03</span>
+                  </div>
+
+                  <div>
+                    <h3 class="font-serif font-semibold text-2xl lg:text-3xl text-white inline">Corporativo</h3>
+                    <span class="text-[#A8A29A] text-sm sm:text-base font-sans ml-2.5 font-normal">A medida</span>
+                  </div>
+
+                  <p class="text-[#A8A29A] text-sm sm:text-base font-sans leading-relaxed">
+                    Estructura multipágina y sistemas para empresas medianas y grandes con múltiples sucursales o derivación técnica.
+                  </p>
+
+                  <div class="flex flex-wrap gap-2 pt-0.5">
+                    <span class="feature-chip">Portal multipágina</span>
+                    <span class="feature-chip">Panel autogestión</span>
+                    <span class="feature-chip">Multisucursal</span>
+                    <span class="feature-chip">Dominio propio y SSL</span>
+                  </div>
+
+                  <p class="text-xs text-[#A8A29A]/80 font-sans tracking-wide pt-1">
+                    Dominio + llave en mano · Multipágina · Factura legal
                   </p>
                 </div>
+              </div>
 
-                <!-- Chips (máx 4) -->
-                <div class="flex flex-wrap gap-2 pt-1">
-                  <span class="feature-chip">Portal multipágina</span>
-                  <span class="feature-chip">Panel de autogestión</span>
-                  <span class="feature-chip">Múltiples sucursales</span>
-                  <span class="feature-chip">Dominio propio y SSL</span>
+              <!-- Plazo y Precio -->
+              <div class="lg:col-span-2 flex flex-row lg:flex-col justify-between lg:justify-center items-baseline lg:items-start gap-4 sm:gap-6 border-t lg:border-t-0 border-[#F4EFE8]/[0.08] pt-4 lg:pt-0">
+                <div>
+                  <span class="font-mono text-[10px] text-[#A8A29A] uppercase tracking-wider block">AL AIRE EN</span>
+                  <div class="font-sans text-xl sm:text-2xl font-bold text-white mt-0.5">A convenir</div>
                 </div>
-
-                <div class="font-mono text-xs text-[#A8A29A]">
-                  <span>Plazo de entrega:</span> <span class="text-[#DFA96E] font-medium">Plazo según alcance, se confirma en la cotización</span>
+                <div>
+                  <span class="font-mono text-[10px] text-[#A8A29A] uppercase tracking-wider block">COTIZACIÓN</span>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-0.5">A cotizar</div>
+                  <div class="text-xs text-[#A8A29A] font-mono mt-0.5">Según alcance</div>
                 </div>
               </div>
 
-              <!-- Precio y Botones -->
-              <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
-                <div>
-                  <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
-                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">Desde ₲ 4.890.000</div>
-                  <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
-                </div>
+              <!-- Botones de Acción -->
+              <div class="lg:col-span-3 flex flex-col items-stretch lg:items-end gap-2.5 w-full">
+                <a href="demos/industrial-lab/index.html" target="_blank" rel="noopener"
+                  class="btn-pill-satin w-full" aria-label="Ver ejemplo de Plan Corporativo">
+                  <span class="w-5 h-5 rounded bg-[#0C0B0A]/10 flex items-center justify-center shrink-0">
+                    <svg class="w-3.5 h-3.5 text-[#0C0B0A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </span>
+                  <span>Ver ejemplo</span>
+                </a>
 
-                <div class="w-full flex flex-col gap-2.5">
-                  <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Corporativo"
-                    target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-sm">
-                    Lo quiero
-                  </a>
-                  <a href="#demos" class="btn-pill btn-secondary w-full text-sm">
-                    Ver ejemplo
-                  </a>
-                </div>
+                <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Corporativo"
+                  target="_blank" rel="noopener"
+                  class="btn-pill-satin w-full" aria-label="Quiero el Plan Corporativo">
+                  <span class="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 shadow-sm">
+                    <svg class="w-3 h-3 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                  </span>
+                  <span>Lo quiero</span>
+                </a>
+
+                <a href="#preguntas" class="text-xs text-[#A8A29A] hover:text-[#DFA96E] transition font-sans text-center lg:text-right pt-0.5">
+                  Pagar con cripto →
+                </a>
               </div>
 
             </div>
