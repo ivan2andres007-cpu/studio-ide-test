@@ -86,9 +86,10 @@
       <div class="hidden sm:flex items-center gap-4">
         <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
           target="_blank" rel="noopener"
-          class="h-[44px] px-6 rounded-full bg-[#DFA96E] hover:bg-[#c99558] text-[#0C0B0A] font-semibold text-xs tracking-wider uppercase inline-flex items-center gap-2 transition-all active:scale-[0.98]">
+          class="btn-pill btn-primary !h-[44px] !px-6 !text-xs tracking-wider uppercase inline-flex items-center gap-2 group"
+          aria-label="Contactar por WhatsApp">
           <span>WhatsApp</span>
-          <span>→</span>
+          <span class="btn-arrow font-sans font-bold text-sm">→</span>
         </a>
       </div>
 
@@ -150,12 +151,13 @@
             </p>
 
             <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <a href="#demos" class="btn-pill btn-primary">
-                Ver demos en vivo
+              <a href="#demos" class="btn-pill btn-primary group">
+                <span>Ver demos en vivo</span>
               </a>
               <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
-                target="_blank" rel="noopener" class="btn-pill btn-secondary">
-                Escribir por WhatsApp
+                target="_blank" rel="noopener" class="btn-pill btn-secondary group"
+                aria-label="Escribir por WhatsApp a Punto Prisma Studio">
+                <span>Escribir por WhatsApp</span>
               </a>
             </div>
 
@@ -361,7 +363,7 @@
                 <a href="demos/la-forja/index.html" target="_blank" rel="noopener" class="btn-pill-outline w-full group"
                   aria-label="Ver ejemplo de Presencia">
                   <span class="w-5 h-5 rounded bg-white/[0.08] flex items-center justify-center shrink-0">
-                    <svg class="w-3.5 h-3.5 text-[#F4EFE8] group-hover:text-[#DFA96E] transition-colors" fill="none"
+                    <svg class="w-3.5 h-3.5 text-[#F4EFE8] group-hover:text-[#DFA96E] btn-icon-popout transition-colors" fill="none"
                       stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
                         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -371,9 +373,9 @@
                 </a>
 
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Presencia%20Express"
-                  target="_blank" rel="noopener" class="btn-pill-satin w-full"
+                  target="_blank" rel="noopener" class="btn-pill-satin w-full group"
                   aria-label="Quiero el Plan Presencia Express">
-                  <span class="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 shadow-sm">
+                  <span class="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 shadow-sm btn-icon-wa">
                     <svg class="w-3 h-3 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -475,7 +477,7 @@
                 <a href="demos/ferreteria-san-jose/index.html" target="_blank" rel="noopener"
                   class="btn-pill-outline w-full group" aria-label="Ver ejemplo de Catálogo Móvil">
                   <span class="w-5 h-5 rounded bg-white/[0.08] flex items-center justify-center shrink-0">
-                    <svg class="w-3.5 h-3.5 text-[#F4EFE8] group-hover:text-[#DFA96E] transition-colors" fill="none"
+                    <svg class="w-3.5 h-3.5 text-[#F4EFE8] group-hover:text-[#DFA96E] btn-icon-popout transition-colors" fill="none"
                       stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
                         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -486,9 +488,9 @@
 
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Cat%C3%A1logo%20M%C3%B3vil"
                   target="_blank" rel="noopener"
-                  class="h-[48px] px-6 rounded-full bg-[#DFA96E] hover:bg-[#c99558] text-[#0C0B0A] font-semibold text-sm inline-flex items-center justify-center gap-2 transition-all shadow-[0_8px_20px_rgba(0,0,0,0.45)] border-t border-[#F4EFE8]/30 hover:scale-[1.01] active:scale-[0.98] w-full"
+                  class="btn-plan-featured group"
                   aria-label="Quiero el Plan Catálogo Móvil">
-                  <span class="w-5 h-5 rounded-full bg-[#0C0B0A] flex items-center justify-center shrink-0">
+                  <span class="w-5 h-5 rounded-full bg-[#0C0B0A] flex items-center justify-center shrink-0 btn-icon-wa">
                     <svg class="w-3 h-3 text-[#DFA96E] fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -582,7 +584,7 @@
                 <a href="demos/industrial-lab/index.html" target="_blank" rel="noopener"
                   class="btn-pill-outline w-full group" aria-label="Ver ejemplo de Plan Corporativo">
                   <span class="w-5 h-5 rounded bg-white/[0.08] flex items-center justify-center shrink-0">
-                    <svg class="w-3.5 h-3.5 text-[#F4EFE8] group-hover:text-[#DFA96E] transition-colors" fill="none"
+                    <svg class="w-3.5 h-3.5 text-[#F4EFE8] group-hover:text-[#DFA96E] btn-icon-popout transition-colors" fill="none"
                       stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
                         d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -592,8 +594,8 @@
                 </a>
 
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Corporativo"
-                  target="_blank" rel="noopener" class="btn-pill-satin w-full" aria-label="Quiero el Plan Corporativo">
-                  <span class="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 shadow-sm">
+                  target="_blank" rel="noopener" class="btn-pill-satin w-full group" aria-label="Quiero el Plan Corporativo">
+                  <span class="w-5 h-5 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 shadow-sm btn-icon-wa">
                     <svg class="w-3 h-3 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -749,9 +751,9 @@
               <div class="mt-3">
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20La%20Forja%20Barber%20Studio"
                   target="_blank" rel="noopener"
-                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5"
+                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5 group"
                   aria-label="Quiero el modelo La Forja">
-                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
+                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 btn-icon-wa">
                     <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -802,9 +804,9 @@
               <div class="mt-3">
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Ferreter%C3%ADa%20San%20Jos%C3%A9"
                   target="_blank" rel="noopener"
-                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5"
+                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5 group"
                   aria-label="Quiero el modelo Ferretería San José">
-                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
+                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 btn-icon-wa">
                     <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -855,9 +857,9 @@
               <div class="mt-3">
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Carmelitas%20Boutique"
                   target="_blank" rel="noopener"
-                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5"
+                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5 group"
                   aria-label="Quiero el modelo Carmelitas Boutique">
-                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
+                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 btn-icon-wa">
                     <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -908,9 +910,9 @@
               <div class="mt-3">
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Atelier%20Suizo"
                   target="_blank" rel="noopener"
-                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5"
+                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5 group"
                   aria-label="Quiero el modelo Atelier Suizo">
-                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
+                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 btn-icon-wa">
                     <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -961,9 +963,9 @@
               <div class="mt-3">
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Bebidas%20Express"
                   target="_blank" rel="noopener"
-                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5"
+                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5 group"
                   aria-label="Quiero el modelo Bebidas Express">
-                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
+                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 btn-icon-wa">
                     <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -1014,9 +1016,9 @@
               <div class="mt-3">
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Industrial%20Lab"
                   target="_blank" rel="noopener"
-                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5"
+                  class="btn-pill-satin !h-9 !text-xs w-full flex items-center justify-center gap-1.5 group"
                   aria-label="Quiero el modelo Industrial Lab">
-                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0">
+                  <span class="w-4 h-4 rounded-full bg-[#25D366] flex items-center justify-center shrink-0 btn-icon-wa">
                     <svg class="w-2.5 h-2.5 text-white fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
@@ -1290,8 +1292,9 @@
 
             <div class="lg:col-span-4 flex lg:justify-end">
               <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20un%20Plan%20Corporativo"
-                target="_blank" rel="noopener" class="btn-pill btn-primary w-full sm:w-auto text-sm">
-                Consultar por WhatsApp
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full sm:w-auto text-sm group inline-flex items-center justify-center gap-2">
+                <span>Consultar por WhatsApp</span>
+                <span class="btn-arrow font-sans font-bold text-sm">→</span>
               </a>
             </div>
 
@@ -1432,8 +1435,9 @@
           </p>
           <div class="pt-4">
             <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20mi%20cat%C3%A1logo%20web"
-              target="_blank" rel="noopener" class="btn-pill btn-primary text-base font-semibold px-10">
-              Escribir a WhatsApp · +595 986 125 649
+              target="_blank" rel="noopener" class="btn-pill btn-primary text-base font-semibold px-10 group inline-flex items-center justify-center gap-2">
+              <span>Escribir a WhatsApp · +595 986 125 649</span>
+              <span class="btn-arrow font-sans font-bold text-lg">→</span>
             </a>
           </div>
         </div>

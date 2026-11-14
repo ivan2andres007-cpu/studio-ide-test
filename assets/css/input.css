@@ -82,7 +82,7 @@ h3,
   font-variant-numeric: tabular-nums;
 }
 
-/* 52px Pill Button Utilities */
+/* 52px Pill Button Utilities with Organic Hover Choreography */
 .btn-pill {
   height: 52px;
   border-radius: 9999px;
@@ -94,34 +94,116 @@ h3,
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 220ms cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
+  will-change: transform;
+}
+
+.btn-pill:hover {
+  transform: translateY(-2px);
 }
 
 .btn-pill:active {
-  transform: scale(0.98);
+  transform: translateY(0) scale(0.98);
 }
 
+/* Primary Button (Amber Warm Gold) */
 .btn-primary {
   background-color: #DFA96E;
   color: #0C0B0A;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .btn-primary:hover {
-  background-color: #c99558;
+  background-color: #e5b47d;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Elegant Specular Shimmer Sweep on Primary Hover */
+.btn-primary::after,
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  pointer-events: none;
+  transition: none;
+}
+
+.btn-primary:hover::after,
+.btn-shimmer:hover::after {
+  left: 140%;
+  transition: left 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Secondary Button (Refined Outline) */
 .btn-secondary {
   border: 1px solid rgba(244, 239, 232, 0.2);
   color: #F4EFE8;
   background-color: transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary:hover {
   border-color: #DFA96E;
   color: #DFA96E;
+  background-color: rgba(223, 169, 110, 0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Arrow & Icon Micro-glides on Button Hover */
+.btn-pill .btn-arrow,
+.btn-pill-satin .btn-arrow,
+.btn-pill-outline .btn-arrow,
+.btn-hover-arrow .btn-arrow {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.btn-pill:hover .btn-arrow,
+.btn-pill-satin:hover .btn-arrow,
+.btn-pill-outline:hover .btn-arrow,
+.btn-hover-arrow:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* WhatsApp Icon Badge Micro-rotation on Hover */
+.btn-pill-satin:hover .btn-icon-wa,
+.btn-primary:hover .btn-icon-wa,
+.btn-pill:hover .btn-icon-wa,
+.btn-plan-featured:hover .btn-icon-wa {
+  transform: scale(1.12) rotate(4deg);
+}
+
+.btn-icon-wa {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+}
+
+.btn-pill-outline:hover .btn-icon-popout {
+  transform: translate(2px, -2px);
+}
+
+.btn-icon-popout {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
 }
 
 /* Feature Chips */
@@ -323,19 +405,48 @@ select:focus-visible {
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .btn-pill-satin:hover {
-  filter: brightness(1.04);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 #ffffff;
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.4), inset 0 1px 0 #ffffff;
 }
 
 .btn-pill-satin:active {
-  transform: scale(0.98);
+  transform: translateY(0) scale(0.98);
 }
 
+/* Subtle Shimmer Sweep across Satin Pills on Hover */
+.btn-pill-satin::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  pointer-events: none;
+}
+
+.btn-pill-satin:hover::after {
+  left: 140%;
+  transition: left 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- OUTLINE PILL BUTTONS (Secondary Actions) --- */
 .btn-pill-outline {
   height: 48px;
   border-radius: 9999px;
@@ -353,18 +464,131 @@ select:focus-visible {
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .btn-pill-outline:hover {
   border-color: #DFA96E;
   color: #DFA96E;
-  background-color: rgba(223, 169, 110, 0.06);
-  transform: translateY(-1px);
+  background-color: rgba(223, 169, 110, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .btn-pill-outline:active {
-  transform: scale(0.98);
+  transform: translateY(0) scale(0.98);
+}
+
+/* --- PLAN 02 FEATURED PRIMARY CTA BUTTON --- */
+.btn-plan-featured {
+  height: 48px;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  background-color: #DFA96E;
+  color: #0C0B0A;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(244, 239, 232, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-plan-featured:hover {
+  background-color: #e5b47d;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6);
+}
+
+.btn-plan-featured:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-plan-featured::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  pointer-events: none;
+}
+
+.btn-plan-featured:hover::after {
+  left: 140%;
+  transition: left 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- CAROUSEL ARROWS & FILTER PILLS HOVER ANIMATIONS --- */
+#carouselPrev,
+#carouselNext {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+#carouselPrev:hover {
+  transform: translateX(-3px) translateY(-1px);
+  border-color: #DFA96E;
+  background-color: #141210;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#carouselNext:hover {
+  transform: translateX(3px) translateY(-1px);
+  border-color: #DFA96E;
+  background-color: #141210;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+#carouselPrev:active,
+#carouselNext:active {
+  transform: scale(0.95);
+}
+
+.demo-filter-btn {
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.demo-filter-btn:hover {
+  transform: translateY(-1px);
+}
+
+.demo-filter-btn:active {
+  transform: scale(0.96);
 }
 
 /* --- CURSOR SPOTLIGHT & GLOW INTERACTIONS --- */
