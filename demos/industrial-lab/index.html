@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industrial Lab PY · Equipamiento Analítico & Instrumental B2B</title>
+  <meta name="description" content="Portal corporativo e instrumental técnico de laboratorio en Paraguay. Cotizaciones institucionales y presupuestos con factura legal a WhatsApp.">
+  <meta name="theme-color" content="#0D1117">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D1117;
+      --surface: #161D26;
+      --card: #1D2633;
+      --border: rgba(255, 255, 255, 0.08);
+      --teal: #00C49F;
+      --teal-hover: #00a887;
+      --blue: #38BDF8;
+      --text: #F1F5F9;
+      --text-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-bottom: 95px;
+    }
+    /* Studio Demo Bar */
+    .demo-bar {
+      background: #000;
+      border-bottom: 1px solid rgba(0, 196, 159, 0.3);
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .demo-bar a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .demo-bar a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      background: var(--teal);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: 800;
+      font-size: 16px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .logo-text h1 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFF;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--blue);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .iso-pill {
+      background: rgba(0, 196, 159, 0.1);
+      border: 1px solid rgba(0, 196, 159, 0.3);
+      color: var(--teal);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+    }
+
+    /* Categories */
+    .categories {
+      display: flex;
+      gap: 8px;
+      padding: 12px 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: rgba(22, 29, 38, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .categories::-webkit-scrollbar { display: none; }
+    .cat-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .cat-pill.active, .cat-pill:hover {
+      background: var(--teal);
+      color: #000;
+      border-color: var(--teal);
+      font-weight: 700;
+    }
+
+    /* Container & Grid */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(0, 196, 159, 0.4);
+      transform: translateY(-2px);
+    }
+    .card-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFF;
+      margin-top: 4px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .card-price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFF;
+      margin-top: 8px;
+    }
+    .btn-add {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #FFF;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .btn-add:hover {
+      background: var(--teal);
+      color: #000;
+      border-color: var(--teal);
+    }
+
+    /* Floating Cart Checkout Bar */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #161D26;
+      border-top: 1px solid rgba(0, 196, 159, 0.3);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 90;
+      box-shadow: 0 -10px 25px rgba(0,0,0,0.6);
+    }
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-count {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .cart-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--teal);
+    }
+    .btn-checkout {
+      background: var(--teal);
+      color: #000;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-checkout:hover { background: var(--teal-hover); transform: scale(1.02); }
+    .btn-checkout:active { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Notice Bar -->
+  <div class="demo-bar">
+    <span>DEMO EN VIVO · PUNTO PRISMA STUDIO</span>
+    <a href="../../index.html#demos">← Volver al Estudio</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-badge">IL</div>
+      <div class="logo-text">
+        <h1>Industrial Lab PY</h1>
+        <span>SISTEMAS B2B & COTIZACIÓN INSTITUCIONAL</span>
+      </div>
+    </div>
+    <div class="iso-pill">ISO 9001:2015</div>
+  </header>
+
+  <!-- Categories -->
+  <div class="categories">
+    <button type="button" class="cat-pill active" onclick="filterCat('all')">Catálogo B2B (5)</button>
+    <button type="button" class="cat-pill" onclick="filterCat('analitico')">Analítico</button>
+    <button type="button" class="cat-pill" onclick="filterCat('optica')">Óptica</button>
+    <button type="button" class="cat-pill" onclick="filterCat('esterilizacion')">Esterilización</button>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="container">
+    <div class="products-grid">
+      
+      <!-- Producto 1 -->
+      <div class="card" data-cat="analitico">
+        <div>
+          <span class="card-badge">CÓDIGO: BAL-001 · ANALÍTICO</span>
+          <h2 class="card-title">Balanza Analítica 0.001g</h2>
+          <p class="card-desc">Calibración interna automática, pantalla táctil LCD y puerto RS232 para exportación de datos.</p>
+          <div class="card-price">₲ 6.800.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToQuote('Balanza Analítica 0.001g', 6800000)">+ Agregar a cotización</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card" data-cat="optica">
+        <div>
+          <span class="card-badge">CÓDIGO: MIC-1000 · ÓPTICA</span>
+          <h2 class="card-title">Microscopio Binocular LED 1000x</h2>
+          <p class="card-desc">Objetivos acromáticos DIN 4x, 10x, 40x y 100x con iluminación Köhler de intensidad regulable.</p>
+          <div class="card-price">₲ 5.400.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToQuote('Microscopio Binocular LED', 5400000)">+ Agregar a cotización</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card" data-cat="esterilizacion">
+        <div>
+          <span class="card-badge">CÓDIGO: AUT-018 · ESTERILIZACIÓN</span>
+          <h2 class="card-title">Autoclave Digital 18L</h2>
+          <p class="card-desc">Cámara de acero inoxidable 304, ciclos automáticos a 121°C y 134°C con válvula de seguridad certificada.</p>
+          <div class="card-price">₲ 12.500.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToQuote('Autoclave Digital 18L', 12500000)">+ Agregar a cotización</button>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="card" data-cat="analitico">
+        <div>
+          <span class="card-badge">CÓDIGO: PHM-200 · ANALÍTICO</span>
+          <h2 class="card-title">Medidor de pH Digital de Mesa</h2>
+          <p class="card-desc">Compensación automática de temperatura (ATC) y calibración en 3 puntos con electrodo de vidrio combinado.</p>
+          <div class="card-price">₲ 2.100.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToQuote('Medidor pH Digital de Mesa', 2100000)">+ Agregar a cotización</button>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="card" data-cat="analitico">
+        <div>
+          <span class="card-badge">CÓDIGO: CEN-400 · CENTRÍFUGAS</span>
+          <h2 class="card-title">Centrífuga Clínica 4000 RPM</h2>
+          <p class="card-desc">Cabezal angular para 8 tubos de 15ml con temporizador digital y traba electrónica de tapa.</p>
+          <div class="card-price">₲ 3.750.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToQuote('Centrífuga Clínica 4000 RPM', 3750000)">+ Agregar a cotización</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp RFQ Bar -->
+  <div class="cart-bar">
+    <div class="cart-info">
+      <span class="cart-count" id="quoteCount">0 equipos en pliego de cotización</span>
+      <span class="cart-total" id="quoteTotal">₲ 0</span>
+    </div>
+    <a href="#" class="btn-checkout" onclick="checkoutWhatsApp(event)">
+      <span>Solicitar Cotización Formal</span>
+      <span>→</span>
+    </a>
+  </div>
+
+  <script>
+    let quoteItems = [];
+
+    function formatGs(amount) {
+      return '₲ ' + amount.toLocaleString('es-PY');
+    }
+
+    function addToQuote(name, price) {
+      quoteItems.push({ name, price });
+      updateQuoteUI();
+    }
+
+    function updateQuoteUI() {
+      const countEl = document.getElementById('quoteCount');
+      const totalEl = document.getElementById('quoteTotal');
+      const total = quoteItems.reduce((acc, item) => acc + item.price, 0);
+
+      countEl.textContent = `${quoteItems.length} ${quoteItems.length === 1 ? 'equipo en pliego' : 'equipos en pliego'}`;
+      totalEl.textContent = formatGs(total);
+    }
+
+    function filterCat(category) {
+      document.querySelectorAll('.cat-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function checkoutWhatsApp(e) {
+      e.preventDefault();
+      if (quoteItems.length === 0) {
+        alert('Agregá al menos un equipo al pliego para solicitar presupuesto formal.');
+        return;
+      }
+
+      const total = quoteItems.reduce((acc, item) => acc + item.price, 0);
+      let text = 'Hola Industrial Lab PY, deseo solicitar cotización institucional para los siguientes equipos:%0A';
+      
+      const counts = {};
+      quoteItems.forEach(item => {
+        counts[item.name] = (counts[item.name] || 0) + 1;
+      });
+
+      for (const [prod, qty] of Object.entries(counts)) {
+        text += `- ${qty}x ${encodeURIComponent(prod)}%0A`;
+      }
+      text += `%0AMonto estimado con IVA: ${encodeURIComponent(formatGs(total))}%0A%0ARazón social / RUC para emisión presupuestaria: `;
+
+      window.open(`https://wa.me/595986125649?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>

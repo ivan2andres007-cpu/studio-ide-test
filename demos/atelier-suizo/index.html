@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Suizo · Relojería & Joyas de Autor</title>
+  <meta name="description" content="Colección privada de piezas de alta relojería y joyería en Asunción. Atención personalizada y consulta directa por WhatsApp.">
+  <meta name="theme-color" content="#0B0C0E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0C0E;
+      --surface: #13151A;
+      --card: #181B22;
+      --border: rgba(255, 255, 255, 0.08);
+      --gold: #D4AF37;
+      --gold-hover: #c49f27;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-bottom: 90px;
+    }
+    /* Studio Demo Bar */
+    .demo-bar {
+      background: #000;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .demo-bar a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .demo-bar a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .logo h1 {
+      font-size: 26px;
+      font-weight: 600;
+      color: #FFF;
+      letter-spacing: 0.02em;
+    }
+    .logo span {
+      font-size: 11px;
+      color: var(--gold);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* Categories */
+    .categories {
+      display: flex;
+      gap: 8px;
+      padding: 12px 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: rgba(19, 21, 26, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .categories::-webkit-scrollbar { display: none; }
+    .cat-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .cat-pill.active, .cat-pill:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* Container & Grid */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(212, 175, 55, 0.4);
+      transform: translateY(-2px);
+    }
+    .card-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #FFF;
+      margin-top: 4px;
+      letter-spacing: -0.01em;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: sans-serif;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .card-price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-top: 10px;
+    }
+    .btn-action {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-family: sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .btn-action:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+    }
+
+    /* Floating Cart Checkout Bar */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #13151A;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 90;
+      box-shadow: 0 -10px 25px rgba(0,0,0,0.6);
+    }
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+      font-family: sans-serif;
+    }
+    .cart-count {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .cart-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .btn-checkout {
+      background: var(--gold);
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-family: sans-serif;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-checkout:hover { background: var(--gold-hover); transform: scale(1.02); }
+    .btn-checkout:active { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Notice Bar -->
+  <div class="demo-bar">
+    <span>DEMO EN VIVO · PUNTO PRISMA STUDIO</span>
+    <a href="../../index.html#demos">← Volver al Estudio</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <h1>Atelier Suizo</h1>
+      <span>RELOJERÍA & JOYERÍA DE AUTOR · ASUNCIÓN</span>
+    </div>
+  </header>
+
+  <!-- Categories -->
+  <div class="categories">
+    <button type="button" class="cat-pill active" onclick="filterCat('all')">Colección Completa</button>
+    <button type="button" class="cat-pill" onclick="filterCat('cronografos')">Cronógrafos</button>
+    <button type="button" class="cat-pill" onclick="filterCat('divers')">Diver & Sport</button>
+    <button type="button" class="cat-pill" onclick="filterCat('joyas')">Joyería Fina</button>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="container">
+    <div class="products-grid">
+      
+      <!-- Producto 1 -->
+      <div class="card" data-cat="cronografos">
+        <div>
+          <span class="card-tag">CALIBRE AUTOMÁTICO · SUIZO</span>
+          <h2 class="card-title">Cronógrafo Automático 41mm</h2>
+          <p class="card-desc">Cristal zafiro antirreflejo, bisel taquimétrico y fondo de caja en zafiro transparente. Acero 316L.</p>
+          <div class="card-price">₲ 4.250.000</div>
+        </div>
+        <button type="button" class="btn-action" onclick="addToInquiry('Cronógrafo Automático 41mm', 4250000)">+ Agregar a consulta</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card" data-cat="divers">
+        <div>
+          <span class="card-tag">PROFESIONAL · 300 METROS</span>
+          <h2 class="card-title">Diver Heritage 300m</h2>
+          <p class="card-desc">Bisel giratorio de cerámica grabado en platino, corona a rosca con válvula de escape de helio.</p>
+          <div class="card-price">₲ 3.800.000</div>
+        </div>
+        <button type="button" class="btn-action" onclick="addToInquiry('Diver Heritage 300m', 3800000)">+ Agregar a consulta</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card" data-cat="cronografos">
+        <div>
+          <span class="card-tag">CLÁSICO · CUERO NATURAL</span>
+          <h2 class="card-title">Classic Dress Watch 39mm</h2>
+          <p class="card-desc">Esfera lacada en rayos de sol con índices aplicados a mano. Correa de piel legítima cosida artesanalmente.</p>
+          <div class="card-price">₲ 2.450.000</div>
+        </div>
+        <button type="button" class="btn-action" onclick="addToInquiry('Classic Dress Watch 39mm', 2450000)">+ Agregar a consulta</button>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="card" data-cat="joyas">
+        <div>
+          <span class="card-tag">ORO 18K · CERTIFICADO GEMOLÓGICO</span>
+          <h2 class="card-title">Solitario Diamante 0.50 ct</h2>
+          <p class="card-desc">Montura clásica en oro blanco de 18 kilates. Diamante corte brillante color F pureza VS1.</p>
+          <div class="card-price">₲ 5.900.000</div>
+        </div>
+        <button type="button" class="btn-action" onclick="addToInquiry('Solitario Diamante 0.50 ct', 5900000)">+ Agregar a consulta</button>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="card" data-cat="joyas">
+        <div>
+          <span class="card-tag">PLATA 925 · ÓNYX NEGRO</span>
+          <h2 class="card-title">Gemelos Geométricos en Ónix</h2>
+          <p class="card-desc">Plata de ley 925 con piedra de ónix natural pulida a mano. Presentación en estuche de nogal.</p>
+          <div class="card-price">₲ 480.000</div>
+        </div>
+        <button type="button" class="btn-action" onclick="addToInquiry('Gemelos Geométricos en Ónix', 4800000)">+ Agregar a consulta</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp Inquiry Bar -->
+  <div class="cart-bar">
+    <div class="cart-info">
+      <span class="cart-count" id="inquiryCount">0 piezas para cotización</span>
+      <span class="cart-total" id="inquiryTotal">₲ 0</span>
+    </div>
+    <a href="#" class="btn-checkout" onclick="checkoutWhatsApp(event)">
+      <span>Consultar por WhatsApp</span>
+      <span>→</span>
+    </a>
+  </div>
+
+  <script>
+    let inquiries = [];
+
+    function formatGs(amount) {
+      return '₲ ' + amount.toLocaleString('es-PY');
+    }
+
+    function addToInquiry(name, price) {
+      inquiries.push({ name, price });
+      updateInquiryUI();
+    }
+
+    function updateInquiryUI() {
+      const countEl = document.getElementById('inquiryCount');
+      const totalEl = document.getElementById('inquiryTotal');
+      const total = inquiries.reduce((acc, item) => acc + item.price, 0);
+
+      countEl.textContent = `${inquiries.length} ${inquiries.length === 1 ? 'pieza seleccionada' : 'piezas seleccionadas'}`;
+      totalEl.textContent = formatGs(total);
+    }
+
+    function filterCat(category) {
+      document.querySelectorAll('.cat-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function checkoutWhatsApp(e) {
+      e.preventDefault();
+      if (inquiries.length === 0) {
+        alert('Agregá al menos una pieza a la consulta para coordinar atención personalizada.');
+        return;
+      }
+
+      const total = inquiries.reduce((acc, item) => acc + item.price, 0);
+      let text = 'Hola Atelier Suizo, deseo solicitar asesoramiento y disponibilidad para las siguientes piezas:%0A';
+      
+      inquiries.forEach((item, idx) => {
+        text += `${idx + 1}. ${encodeURIComponent(item.name)} (${encodeURIComponent(formatGs(item.price))})%0A`;
+      });
+      text += `%0AValor referencial: ${encodeURIComponent(formatGs(total))}%0A%0A¿Podrían coordinar una cita o brindarme ficha técnica detallada?`;
+
+      window.open(`https://wa.me/595986125649?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>

@@ -3,7 +3,12 @@ const path = require('path');
 
 const files = [
   'index.html',
-  'demos/la-forja/index.html'
+  'demos/la-forja/index.html',
+  'demos/ferreteria-san-jose/index.html',
+  'demos/carmelitas-boutique/index.html',
+  'demos/atelier-suizo/index.html',
+  'demos/bebidas-express/index.html',
+  'demos/industrial-lab/index.html'
 ];
 
 let totalErrors = 0;

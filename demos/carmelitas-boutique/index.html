@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carmelitas Boutique · Catálogo Móvil Moda & Calzados</title>
+  <meta name="description" content="Catálogo exclusivo de Carmelitas Boutique. Moda femenina, vestidos y calzados de autor en Asunción con pedidos directos a WhatsApp.">
+  <meta name="theme-color" content="#121110">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,400&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #121110;
+      --surface: #1A1816;
+      --card: #201D1A;
+      --border: rgba(244, 239, 232, 0.08);
+      --accent: #DFA96E;
+      --accent-hover: #c99558;
+      --text: #F4EFE8;
+      --text-muted: #A8A29A;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+    /* Studio Demo Bar */
+    .demo-bar {
+      background: #000;
+      border-bottom: 1px solid rgba(223, 169, 110, 0.3);
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .demo-bar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .demo-bar a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px;
+      text-align: center;
+    }
+    .logo h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: #FFF;
+      letter-spacing: -0.01em;
+    }
+    .logo span {
+      font-size: 11px;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      display: block;
+      margin-top: 3px;
+    }
+
+    /* Categories */
+    .categories {
+      display: flex;
+      gap: 8px;
+      padding: 12px 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: rgba(26, 24, 22, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .categories::-webkit-scrollbar { display: none; }
+    .cat-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .cat-pill.active, .cat-pill:hover {
+      background: var(--accent);
+      color: #0C0B0A;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Container & Grid */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(223, 169, 110, 0.4);
+      transform: translateY(-2px);
+    }
+    .card-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: #FFF;
+      margin-top: 4px;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .card-price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 8px;
+    }
+    .btn-add {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .btn-add:hover {
+      background: var(--accent);
+      color: #0C0B0A;
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Floating Cart Checkout Bar */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1A1816;
+      border-top: 1px solid rgba(223, 169, 110, 0.3);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 90;
+      box-shadow: 0 -10px 25px rgba(0,0,0,0.6);
+    }
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-count {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .cart-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .btn-checkout {
+      background: var(--accent);
+      color: #0C0B0A;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-checkout:hover { background: var(--accent-hover); transform: scale(1.02); }
+    .btn-checkout:active { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Notice Bar -->
+  <div class="demo-bar">
+    <span>DEMO EN VIVO · PUNTO PRISMA STUDIO</span>
+    <a href="../../index.html#demos">← Volver al Estudio</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <h1>Carmelitas Boutique</h1>
+      <span>COLECCIÓN ASUNCIÓN · VILLA MORRA</span>
+    </div>
+  </header>
+
+  <!-- Categories -->
+  <div class="categories">
+    <button type="button" class="cat-pill active" onclick="filterCat('all')">Todo (6)</button>
+    <button type="button" class="cat-pill" onclick="filterCat('vestidos')">Vestidos & Prendas</button>
+    <button type="button" class="cat-pill" onclick="filterCat('calzados')">Calzados</button>
+    <button type="button" class="cat-pill" onclick="filterCat('accesorios')">Carteras & Accesorios</button>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="container">
+    <div class="products-grid">
+      
+      <!-- Producto 1 -->
+      <div class="card" data-cat="vestidos">
+        <div>
+          <span class="card-tag">VESTIDOS · LINO PURO</span>
+          <h2 class="card-title">Vestido Lino Arena</h2>
+          <p class="card-desc">Corte evasé con lazo ajustable en cintura. Talles: S, M, L.</p>
+          <div class="card-price">₲ 320.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Vestido Lino Arena (Talle M)', 320000)">+ Elegir y agregar</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card" data-cat="calzados">
+        <div>
+          <span class="card-tag">CALZADOS · CUERO ARTESANAL</span>
+          <h2 class="card-title">Sandalias Cuero Suela</h2>
+          <p class="card-desc">Confección en cuero vacuno con base antideslizante. Talles: 36 al 40.</p>
+          <div class="card-price">₲ 260.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Sandalias Cuero Suela (Talle 38)', 260000)">+ Elegir y agregar</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card" data-cat="vestidos">
+        <div>
+          <span class="card-tag">BLUSAS · SEDA NATURAL</span>
+          <h2 class="card-title">Blusa Seda Marfil</h2>
+          <p class="card-desc">Textura satinada fluida con cuello en V sutil y botones de nácar.</p>
+          <div class="card-price">₲ 195.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Blusa Seda Marfil', 195000)">+ Elegir y agregar</button>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="card" data-cat="accesorios">
+        <div>
+          <span class="card-tag">CARTERAS · CUERO LEGÍTIMO</span>
+          <h2 class="card-title">Cartera Tote Caramelo</h2>
+          <p class="card-desc">Capacidad espaciosa con forro interno en pana y herrajes dorados.</p>
+          <div class="card-price">₲ 450.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Cartera Tote Caramelo', 450000)">+ Elegir y agregar</button>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="card" data-cat="vestidos">
+        <div>
+          <span class="card-tag">PANTALONES · SASTRERO</span>
+          <h2 class="card-title">Pantalón Palazzo Lino</h2>
+          <p class="card-desc">Tiro alto con pinzas delanteras y caída impecable. Talles: 38, 40, 42.</p>
+          <div class="card-price">₲ 280.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Pantalón Palazzo Lino', 280000)">+ Elegir y agregar</button>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="card" data-cat="vestidos">
+        <div>
+          <span class="card-tag">SASTRERÍA · ATEMPORAL</span>
+          <h2 class="card-title">Blazer Lino Crudo</h2>
+          <p class="card-desc">Estructurado liviano sin hombreras, ideal para media estación.</p>
+          <div class="card-price">₲ 490.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Blazer Lino Crudo', 490000)">+ Elegir y agregar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp Cart Bar -->
+  <div class="cart-bar">
+    <div class="cart-info">
+      <span class="cart-count" id="cartCount">0 prendas seleccionadas</span>
+      <span class="cart-total" id="cartTotal">₲ 0</span>
+    </div>
+    <a href="#" class="btn-checkout" onclick="checkoutWhatsApp(event)">
+      <span>Pedir por WhatsApp</span>
+      <span>→</span>
+    </a>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function formatGs(amount) {
+      return '₲ ' + amount.toLocaleString('es-PY');
+    }
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById('cartCount');
+      const totalEl = document.getElementById('cartTotal');
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+
+      countEl.textContent = `${cart.length} ${cart.length === 1 ? 'prenda' : 'prendas'} en el pedido`;
+      totalEl.textContent = formatGs(total);
+    }
+
+    function filterCat(category) {
+      document.querySelectorAll('.cat-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function checkoutWhatsApp(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert('Agregá al menos una prenda al pedido para continuar.');
+        return;
+      }
+
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      let text = 'Hola Carmelitas Boutique, quiero consultar y reservar las siguientes prendas:%0A';
+      
+      const counts = {};
+      cart.forEach(item => {
+        counts[item.name] = (counts[item.name] || 0) + 1;
+      });
+
+      for (const [prod, qty] of Object.entries(counts)) {
+        text += `- ${qty}x ${encodeURIComponent(prod)}%0A`;
+      }
+      text += `%0ASuma total: ${encodeURIComponent(formatGs(total))}%0A%0A¿Podrían confirmarme disponibilidad para probar o coordinar envío?`;
+
+      window.open(`https://wa.me/595986125649?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>

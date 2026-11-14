@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferretería & Repuestos San José · Catálogo Móvil con Carrito</title>
+  <meta name="description" content="Catálogo online de Ferretería San José. Herramientas eléctricas, repuestos y maquinarias con pedidos directo a WhatsApp en Asunción.">
+  <meta name="theme-color" content="#0F1115">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0F1115;
+      --surface: #161922;
+      --card: #1D212C;
+      --border: rgba(255, 255, 255, 0.08);
+      --amber: #E58514;
+      --amber-hover: #cf730d;
+      --text: #F3F4F6;
+      --text-muted: #9CA3AF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+    /* Studio Demo Bar */
+    .demo-bar {
+      background: #000;
+      border-bottom: 1px solid rgba(229, 133, 20, 0.3);
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #9CA3AF;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .demo-bar a {
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .demo-bar a:hover { text-decoration: underline; }
+    
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--amber);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #FFF;
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--amber);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    /* Categories */
+    .categories {
+      display: flex;
+      gap: 8px;
+      padding: 12px 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: rgba(22, 25, 34, 0.6);
+      border-bottom: 1px solid var(--border);
+    }
+    .categories::-webkit-scrollbar { display: none; }
+    .cat-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-pill.active, .cat-pill:hover {
+      background: var(--amber);
+      color: #000;
+      border-color: var(--amber);
+      font-weight: 600;
+    }
+
+    /* Container & Grid */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(229, 133, 20, 0.4);
+      transform: translateY(-2px);
+    }
+    .card-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #FFF;
+      margin-top: 4px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .card-price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFF;
+      margin-top: 8px;
+    }
+    .btn-add {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #FFF;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .btn-add:hover {
+      background: var(--amber);
+      color: #000;
+      border-color: var(--amber);
+    }
+
+    /* Floating Cart Checkout Bar */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #161922;
+      border-top: 1px solid rgba(229, 133, 20, 0.3);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 90;
+      box-shadow: 0 -10px 25px rgba(0,0,0,0.6);
+    }
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-count {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .cart-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--amber);
+    }
+    .btn-checkout {
+      background: var(--amber);
+      color: #000;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-checkout:hover { background: var(--amber-hover); transform: scale(1.02); }
+    .btn-checkout:active { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Notice Bar -->
+  <div class="demo-bar">
+    <span>DEMO EN VIVO · PUNTO PRISMA STUDIO</span>
+    <a href="../../index.html#demos">← Volver al Estudio</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">SJ</div>
+      <div class="logo-text">
+        <h1>Ferretería San José</h1>
+        <span>CATÁLOGO MÓVIL DIRECTO</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Categories -->
+  <div class="categories">
+    <button type="button" class="cat-pill active" onclick="filterCat('all')">Todos (6)</button>
+    <button type="button" class="cat-pill" onclick="filterCat('electricas')">Eléctricas</button>
+    <button type="button" class="cat-pill" onclick="filterCat('maquinas')">Maquinarias</button>
+    <button type="button" class="cat-pill" onclick="filterCat('manuales')">Manuales & Repuestos</button>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="container">
+    <div class="products-grid">
+      
+      <!-- Producto 1 -->
+      <div class="card" data-cat="electricas">
+        <div>
+          <span class="card-badge">SKU: TP-650 · ELÉCTRICAS</span>
+          <h2 class="card-title">Taladro Percutor 650W</h2>
+          <p class="card-desc">Mandril 13mm, velocidad variable y reversible. Ideal para mampostería y madera.</p>
+          <div class="card-price">₲ 485.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Taladro Percutor 650W', 485000)">+ Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card" data-cat="electricas">
+        <div>
+          <span class="card-badge">SKU: AM-450 · ELÉCTRICAS</span>
+          <h2 class="card-title">Amoladora Angular 4½"</h2>
+          <p class="card-desc">Potencia 850W con traba de eje y mango lateral de dos posiciones.</p>
+          <div class="card-price">₲ 390.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Amoladora Angular 4½', 390000)">+ Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card" data-cat="maquinas">
+        <div>
+          <span class="card-badge">SKU: SI-160 · MAQUINARIAS</span>
+          <h2 class="card-title">Soldadora Inverter 160A</h2>
+          <p class="card-desc">Tecnología IGBT ultraliviana, incluye pinza porta maza y máscara termosensible.</p>
+          <div class="card-price">₲ 820.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Soldadora Inverter 160A', 820000)">+ Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="card" data-cat="maquinas">
+        <div>
+          <span class="card-badge">SKU: HL-140 · MAQUINARIAS</span>
+          <h2 class="card-title">Hidrolavadora 1400W 105 Bar</h2>
+          <p class="card-desc">Sistema Auto-Stop, lanza con boquilla regulable y manguera de alta presión 5m.</p>
+          <div class="card-price">₲ 650.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Hidrolavadora 1400W', 650000)">+ Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="card" data-cat="manuales">
+        <div>
+          <span class="card-badge">SKU: LC-12 · MANUALES</span>
+          <h2 class="card-title">Set de Llaves Combinadas 12 pzs</h2>
+          <p class="card-desc">Acero cromo vanadio de 6 a 22 mm en estuche organizador enrollable.</p>
+          <div class="card-price">₲ 175.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Set Llaves Combinadas 12pzs', 175000)">+ Agregar al carrito</button>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="card" data-cat="manuales">
+        <div>
+          <span class="card-badge">SKU: DC-10 · REPUESTOS</span>
+          <h2 class="card-title">Discos de Corte Extra Fino (x10)</h2>
+          <p class="card-desc">Disco 115 x 1.0mm para corte rápido y limpio en acero inoxidable.</p>
+          <div class="card-price">₲ 45.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Discos de Corte x10', 45000)">+ Agregar al carrito</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp Cart Bar -->
+  <div class="cart-bar">
+    <div class="cart-info">
+      <span class="cart-count" id="cartCount">0 artículos seleccionados</span>
+      <span class="cart-total" id="cartTotal">₲ 0</span>
+    </div>
+    <a href="#" id="waCheckoutBtn" class="btn-checkout" onclick="checkoutWhatsApp(event)">
+      <span>Enviar a WhatsApp</span>
+      <span>→</span>
+    </a>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function formatGs(amount) {
+      return '₲ ' + amount.toLocaleString('es-PY');
+    }
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById('cartCount');
+      const totalEl = document.getElementById('cartTotal');
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+
+      countEl.textContent = `${cart.length} ${cart.length === 1 ? 'artículo' : 'artículos'} seleccionados`;
+      totalEl.textContent = formatGs(total);
+    }
+
+    function filterCat(category) {
+      document.querySelectorAll('.cat-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function checkoutWhatsApp(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert('Agregá al menos un producto al carrito para armar tu pedido.');
+        return;
+      }
+
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      let text = 'Hola Ferretería San José, quiero solicitar el siguiente pedido:%0A';
+      
+      const counts = {};
+      cart.forEach(item => {
+        counts[item.name] = (counts[item.name] || 0) + 1;
+      });
+
+      for (const [prod, qty] of Object.entries(counts)) {
+        text += `- ${qty}x ${encodeURIComponent(prod)}%0A`;
+      }
+      text += `%0ATotal estimado: ${encodeURIComponent(formatGs(total))}%0A%0A¿Tienen stock disponible para entrega o retiro?`;
+
+      window.open(`https://wa.me/595986125649?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>

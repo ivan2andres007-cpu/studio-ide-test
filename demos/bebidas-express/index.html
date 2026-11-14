@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es-PY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bebidas Asunción Express · Delivery de Packs Fríos</title>
+  <meta name="description" content="Delivery rápido de bebidas y packs fríos en Asunción. Pedidos express a WhatsApp con entrega garantizada en 35 minutos.">
+  <meta name="theme-color" content="#0A0E17">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0E17;
+      --surface: #121A2A;
+      --card: #192338;
+      --border: rgba(255, 255, 255, 0.08);
+      --yellow: #FFB800;
+      --cyan: #00E5FF;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      padding-bottom: 95px;
+    }
+    /* Studio Demo Bar */
+    .demo-bar {
+      background: #000;
+      border-bottom: 1px solid rgba(255, 184, 0, 0.3);
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .demo-bar a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .demo-bar a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      background: var(--yellow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .logo-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFF;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 11px;
+      color: var(--cyan);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .delivery-pill {
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      color: var(--cyan);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+    }
+
+    /* Categories */
+    .categories {
+      display: flex;
+      gap: 8px;
+      padding: 12px 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: rgba(18, 26, 42, 0.7);
+      border-bottom: 1px solid var(--border);
+    }
+    .categories::-webkit-scrollbar { display: none; }
+    .cat-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .cat-pill.active, .cat-pill:hover {
+      background: var(--yellow);
+      color: #000;
+      border-color: var(--yellow);
+    }
+
+    /* Container & Grid */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(255, 184, 0, 0.4);
+      transform: translateY(-2px);
+    }
+    .card-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFF;
+      margin-top: 4px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .card-price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-top: 8px;
+    }
+    .btn-add {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: #FFF;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+      width: 100%;
+    }
+    .btn-add:hover {
+      background: var(--yellow);
+      color: #000;
+      border-color: var(--yellow);
+    }
+
+    /* Floating Cart Checkout Bar */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #121A2A;
+      border-top: 1px solid rgba(255, 184, 0, 0.3);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 90;
+      box-shadow: 0 -10px 25px rgba(0,0,0,0.6);
+    }
+    .cart-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-count {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .cart-total {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--yellow);
+    }
+    .btn-checkout {
+      background: var(--yellow);
+      color: #000;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn-checkout:hover { background: #e5a500; transform: scale(1.02); }
+    .btn-checkout:active { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Notice Bar -->
+  <div class="demo-bar">
+    <span>DEMO EN VIVO · PUNTO PRISMA STUDIO</span>
+    <a href="../../index.html#demos">← Volver al Estudio</a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-badge">🍺</div>
+      <div class="logo-text">
+        <h1>Bebidas Asunción Express</h1>
+        <span>DELIVERY DIRECTO · ASUNCIÓN</span>
+      </div>
+    </div>
+    <div class="delivery-pill">⚡ 35 MIN</div>
+  </header>
+
+  <!-- Categories -->
+  <div class="categories">
+    <button type="button" class="cat-pill active" onclick="filterCat('all')">Todo (6)</button>
+    <button type="button" class="cat-pill" onclick="filterCat('cervezas')">Cervezas Frías</button>
+    <button type="button" class="cat-pill" onclick="filterCat('destilados')">Gin & Whisky</button>
+    <button type="button" class="cat-pill" onclick="filterCat('vinos')">Vinos & Hielo</button>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="container">
+    <div class="products-grid">
+      
+      <!-- Producto 1 -->
+      <div class="card" data-cat="cervezas">
+        <div>
+          <span class="card-badge">PACK x24 LATAS · FRÍO GARANTIZADO</span>
+          <h2 class="card-title">Pack Cerveza Especial (x24)</h2>
+          <p class="card-desc">Lata 355ml directo de cámara de frío con pack sellado.</p>
+          <div class="card-price">₲ 145.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Pack Cerveza Especial x24', 145000)">+ Agregar al pedido</button>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="card" data-cat="destilados">
+        <div>
+          <span class="card-badge">COMBO GIN · DESTILADOS</span>
+          <h2 class="card-title">Gin Premium 750ml + 4 Tónicas</h2>
+          <p class="card-desc">Incluye botánicos y 4 latas de agua tónica premium.</p>
+          <div class="card-price">₲ 180.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Combo Gin Premium + Tónicas', 180000)">+ Agregar al pedido</button>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="card" data-cat="destilados">
+        <div>
+          <span class="card-badge">ESCOCÉS · 12 AÑOS</span>
+          <h2 class="card-title">Whisky Escocés 12 Años 750ml</h2>
+          <p class="card-desc">Original cerrado en caja sellada con precinto fiscal.</p>
+          <div class="card-price">₲ 220.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Whisky Escocés 12 Años', 220000)">+ Agregar al pedido</button>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="card" data-cat="vinos">
+        <div>
+          <span class="card-badge">BODEGA · RESERVA</span>
+          <h2 class="card-title">Vino Malbec Gran Reserva 750ml</h2>
+          <p class="card-desc">Crianza de 12 meses en barrica de roble francés.</p>
+          <div class="card-price">₲ 95.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Vino Malbec Gran Reserva', 95000)">+ Agregar al pedido</button>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="card" data-cat="vinos">
+        <div>
+          <span class="card-badge">HIELO · ROLITO CRISTAL</span>
+          <h2 class="card-title">Hielo en Rolito Cristal 5kg</h2>
+          <p class="card-desc">Bolsa higiénica sellada con agua purificada.</p>
+          <div class="card-price">₲ 15.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Hielo en Rolito 5kg', 15000)">+ Agregar al pedido</button>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="card" data-cat="cervezas">
+        <div>
+          <span class="card-badge">ENERGIZANTE · PACK x4</span>
+          <h2 class="card-title">Pack Energizante 250ml (x4)</h2>
+          <p class="card-desc">Latas frías listas para consumo o mezcla.</p>
+          <div class="card-price">₲ 38.000</div>
+        </div>
+        <button type="button" class="btn-add" onclick="addToCart('Pack Energizante x4', 38000)">+ Agregar al pedido</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sticky WhatsApp Cart Bar -->
+  <div class="cart-bar">
+    <div class="cart-info">
+      <span class="cart-count" id="cartCount">0 bebidas seleccionadas</span>
+      <span class="cart-total" id="cartTotal">₲ 0</span>
+    </div>
+    <a href="#" class="btn-checkout" onclick="checkoutWhatsApp(event)">
+      <span>Pedir Delivery Ya</span>
+      <span>⚡</span>
+    </a>
+  </div>
+
+  <script>
+    let cart = [];
+
+    function formatGs(amount) {
+      return '₲ ' + amount.toLocaleString('es-PY');
+    }
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById('cartCount');
+      const totalEl = document.getElementById('cartTotal');
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+
+      countEl.textContent = `${cart.length} ${cart.length === 1 ? 'artículo' : 'artículos'} en el despacho`;
+      totalEl.textContent = formatGs(total);
+    }
+
+    function filterCat(category) {
+      document.querySelectorAll('.cat-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-cat') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function checkoutWhatsApp(e) {
+      e.preventDefault();
+      if (cart.length === 0) {
+        alert('Agregá al menos una bebida para despachar tu delivery.');
+        return;
+      }
+
+      const total = cart.reduce((acc, item) => acc + item.price, 0);
+      let text = 'Hola Bebidas Express, quiero solicitar el siguiente despacho urgente:%0A';
+      
+      const counts = {};
+      cart.forEach(item => {
+        counts[item.name] = (counts[item.name] || 0) + 1;
+      });
+
+      for (const [prod, qty] of Object.entries(counts)) {
+        text += `- ${qty}x ${encodeURIComponent(prod)}%0A`;
+      }
+      text += `%0ATotal: ${encodeURIComponent(formatGs(total))}%0A%0AMi dirección de entrega es: `;
+
+      window.open(`https://wa.me/595986125649?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>
