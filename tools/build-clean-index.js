@@ -1,0 +1,1174 @@
+const fs = require('fs');
+const path = require('path');
+
+const cleanHtml = `<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogos con carrito a WhatsApp para comercios en Paraguay | Punto Prisma Studio</title>
+  <meta name="description"
+    content="Diseño y arquitectura de catálogos web con carrito de pedidos directo a WhatsApp para comercios paraguayos. Sin comisiones por venta y entrega en 7 días hábiles.">
+  <link rel="canonical" href="https://studio.puntoprisma.store/">
+
+  <!-- Open Graph / Meta Compartir -->
+  <meta property="og:title" content="Catálogos con carrito a WhatsApp para comercios en Paraguay | Punto Prisma Studio">
+  <meta property="og:description"
+    content="Diseño y arquitectura de catálogos web con carrito de pedidos directo a WhatsApp para comercios paraguayos. Sin comisiones por venta y entrega en 7 días hábiles.">
+  <meta property="og:image" content="https://studio.puntoprisma.store/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Punto Prisma Studio: catálogos con carrito a WhatsApp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:locale" content="es_PY">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://studio.puntoprisma.store/">
+
+  <!-- Color de Tema del Navegador -->
+  <meta name="theme-color" content="#0C0B0A">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dfa96e' stroke-width='2'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/></svg>">
+
+  <!-- Google Fonts: Newsreader 600 + Outfit + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,600&family=Outfit:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Estático Compilado -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="antialiased bg-[#0C0B0A] text-[#F4EFE8]">
+
+  <!-- Enlace Accesible de Salto a Contenido Principal -->
+  <a href="#planes"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#DFA96E] focus:text-[#0C0B0A] focus:font-mono focus:text-xs focus:font-bold focus:shadow-lg focus:outline-none">
+    Saltar a los planes
+  </a>
+
+  <!-- ───────────── 1. HEADER EDITORIAL ───────────── -->
+  <header class="border-b border-[#F4EFE8]/[0.08] bg-[#0C0B0A]/95 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-[1200px] mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center gap-3 group" aria-label="Ir al inicio de Punto Prisma Studio">
+        <div class="w-9 h-9 border border-[#DFA96E]/40 bg-[#141210] rounded-lg flex items-center justify-center p-2 group-hover:border-[#DFA96E] transition-colors">
+          <svg class="w-full h-full text-[#DFA96E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <polygon points="12 2 2 22 22 22" />
+          </svg>
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="font-serif font-semibold text-lg text-white tracking-tight leading-tight">Punto Prisma</span>
+          <span class="font-mono text-[10px] text-[#DFA96E] tracking-[0.16em] uppercase">ESTUDIO EDITORIAL</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-[15px] text-[#A8A29A] font-sans font-medium" aria-label="Navegación principal">
+        <a href="#planes" class="hover:text-[#F4EFE8] transition-colors">Planes</a>
+        <a href="#demos" class="hover:text-[#F4EFE8] transition-colors">Demos</a>
+        <a href="#garantias" class="hover:text-[#F4EFE8] transition-colors">Garantías</a>
+        <a href="#proceso" class="hover:text-[#F4EFE8] transition-colors">Proceso</a>
+        <a href="#amedida" class="hover:text-[#F4EFE8] transition-colors">A medida</a>
+        <a href="#preguntas" class="hover:text-[#F4EFE8] transition-colors">Preguntas</a>
+      </nav>
+
+      <!-- Desktop Header CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
+          target="_blank" rel="noopener"
+          class="h-[44px] px-6 rounded-full bg-[#DFA96E] hover:bg-[#c99558] text-[#0C0B0A] font-semibold text-xs tracking-wider uppercase inline-flex items-center gap-2 transition-all active:scale-[0.98]">
+          <span>WhatsApp</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileMenu"
+        class="lg:hidden w-11 h-11 border border-[#F4EFE8]/[0.1] rounded-full flex items-center justify-center text-[#F4EFE8] hover:border-[#DFA96E] transition-colors"
+        aria-label="Abrir menú de navegación">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+          <line x1="4" y1="7" x2="20" y2="7" />
+          <line x1="4" y1="17" x2="20" y2="17" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-[#F4EFE8]/[0.08] bg-[#0C0B0A] px-6 py-6 space-y-4 text-base font-sans">
+      <a href="#planes" class="block py-2 text-[#A8A29A] hover:text-[#DFA96E] transition-colors mobile-nav-link">Planes</a>
+      <a href="#demos" class="block py-2 text-[#A8A29A] hover:text-[#DFA96E] transition-colors mobile-nav-link">Demos</a>
+      <a href="#garantias" class="block py-2 text-[#A8A29A] hover:text-[#DFA96E] transition-colors mobile-nav-link">Garantías</a>
+      <a href="#proceso" class="block py-2 text-[#A8A29A] hover:text-[#DFA96E] transition-colors mobile-nav-link">Proceso</a>
+      <a href="#amedida" class="block py-2 text-[#A8A29A] hover:text-[#DFA96E] transition-colors mobile-nav-link">A medida</a>
+      <a href="#preguntas" class="block py-2 text-[#A8A29A] hover:text-[#DFA96E] transition-colors mobile-nav-link">Preguntas</a>
+      <div class="pt-4 border-t border-[#F4EFE8]/[0.08]">
+        <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
+          target="_blank" rel="noopener"
+          class="w-full btn-pill btn-primary text-sm font-semibold">
+          Escribir por WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ───────────── 2. HERO EDITORIAL ───────────── -->
+    <section id="inicio" class="pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Hero de Punto Prisma Studio">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Columna Texto -->
+          <div class="lg:col-span-7 space-y-6">
+            <span class="section-tag">— CATÁLOGOS PARA COMERCIOS · ASUNCIÓN</span>
+            
+            <h1 class="font-h1 text-[#F4EFE8]">
+              Tu catálogo en el celular de tus clientes.
+              <span class="italic text-[#DFA96E] block mt-2 sm:mt-3">Sus pedidos, en tu WhatsApp.</span>
+            </h1>
+
+            <p class="text-[#A8A29A] text-lg sm:text-xl leading-relaxed max-w-xl font-sans font-normal pt-2">
+              Sin comisiones por venta. Listo en 7 días hábiles. Empezás con el 30% y pagás el 70% restante cuando ves tu web terminada y la aprobás.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a href="#demos" class="btn-pill btn-primary">
+                Ver demos en vivo
+              </a>
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
+                target="_blank" rel="noopener" class="btn-pill btn-secondary">
+                Escribir por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Columna Mockup Teléfono con Demo Real & Línea Conectora -->
+          <div class="lg:col-span-5 flex flex-col items-center">
+            
+            <!-- Marco de Teléfono Realista -->
+            <div class="phone-frame w-[280px] sm:w-[310px] aspect-[9/18] relative shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+              <!-- Notch Superior -->
+              <div class="phone-notch"></div>
+              
+              <!-- Pantalla interactiva con la demo en vivo de La Forja -->
+              <div class="w-full h-full overflow-hidden bg-[#0C0B0A]">
+                <iframe src="demos/la-forja/index.html" title="Demo interactiva en vivo dentro del teléfono"
+                  class="w-[375px] h-[750px] origin-top-left scale-[0.74] sm:scale-[0.82] border-0 pointer-events-auto"
+                  loading="eager"></iframe>
+              </div>
+
+              <!-- Pill overlay táctil -->
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#0C0B0A]/90 border border-[#F4EFE8]/[0.15] text-[11px] font-mono text-[#DFA96E] tracking-wider pointer-events-none whitespace-nowrap shadow-lg">
+                DEMO INTERACTIVA EN VIVO
+              </div>
+            </div>
+
+            <!-- 3 Nombres de Plan con Línea Conectora -->
+            <div class="mt-8 flex items-center justify-center gap-3 text-xs font-mono text-[#A8A29A]">
+              <span class="hover:text-white transition-colors">Presencia Express</span>
+              <span class="w-6 h-[1px] bg-[#DFA96E]/40"></span>
+              <span class="text-[#DFA96E] font-semibold">Catálogo Móvil</span>
+              <span class="w-6 h-[1px] bg-[#DFA96E]/40"></span>
+              <span class="hover:text-white transition-colors">Corporativo</span>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ───────────── 3. FRANJA DE 3 RAZONES ───────────── -->
+    <section class="py-16 sm:py-20 lg:py-24 border-b border-[#F4EFE8]/[0.08]" aria-label="Tres razones principales">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Razón 1 -->
+          <div class="space-y-2.5">
+            <div class="flex items-center gap-2">
+              <span class="text-[#DFA96E] text-base font-bold">✓</span>
+              <h3 class="font-serif font-semibold text-xl text-white">Precio final con IVA</h3>
+            </div>
+            <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
+              Sin costos ocultos ni sorpresas. Factura legal paraguaya en cada entrega.
+            </p>
+          </div>
+
+          <!-- Razón 2 -->
+          <div class="space-y-2.5">
+            <div class="flex items-center gap-2">
+              <span class="text-[#DFA96E] text-base font-bold">✓</span>
+              <h3 class="font-serif font-semibold text-xl text-white">Sin comisiones por venta</h3>
+            </div>
+            <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
+              El 100% de cada cobro ingresa directo a tu cuenta bancaria o en caja.
+            </p>
+          </div>
+
+          <!-- Razón 3 -->
+          <div class="space-y-2.5">
+            <div class="flex items-center gap-2">
+              <span class="text-[#DFA96E] text-base font-bold">✓</span>
+              <h3 class="font-serif font-semibold text-xl text-white">Tu pedido llega armado a tu WhatsApp</h3>
+            </div>
+            <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
+              Con productos, cantidades, total calculado y datos del cliente listos.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ───────────── 4. PLANES ───────────── -->
+    <section id="planes" class="py-20 sm:py-28 lg:py-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Planes de Punto Prisma Studio">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <!-- Encabezado de Sección -->
+        <div class="max-w-2xl mb-12 sm:mb-16">
+          <span class="section-tag">— PLANES</span>
+          <h2 class="font-h2 text-white mt-3 mb-4">
+            Tres modalidades claras para tu negocio.
+          </h2>
+          <p class="text-[#A8A29A] text-lg font-sans">
+            30% para empezar, 70% restante al aprobar tu web terminada.
+          </p>
+        </div>
+
+        <!-- 3 Tarjetas Horizontales -->
+        <div class="space-y-8">
+          
+          <!-- Plan 1: Presencia Express -->
+          <div class="clean-card transition-colors hover:border-[#DFA96E]/40">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Miniatura Teléfono -->
+              <div class="lg:col-span-3 flex justify-center">
+                <div class="phone-frame w-[140px] aspect-[9/16] relative bg-[#0C0B0A]">
+                  <div class="phone-notch scale-75 origin-top"></div>
+                  <iframe src="demos/la-forja/index.html" title="Miniatura Presencia Express"
+                    class="w-[375px] h-[667px] origin-top-left scale-[0.37] border-0 pointer-events-none"
+                    loading="lazy"></iframe>
+                </div>
+              </div>
+
+              <!-- Información y Chips -->
+              <div class="lg:col-span-6 space-y-4">
+                <div>
+                  <h3 class="font-serif font-semibold text-2xl text-white">Presencia Express</h3>
+                  <p class="text-[#A8A29A] text-sm font-sans mt-1">
+                    Landing page profesional de una sola pantalla con derivación directa a WhatsApp. Ideal para clínicas, profesionales y locales de servicios.
+                  </p>
+                </div>
+
+                <!-- Chips (máx 4) -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="feature-chip">Landing de 1 página</span>
+                  <span class="feature-chip">Botón a WhatsApp</span>
+                  <span class="feature-chip">Ubicación y horarios</span>
+                  <span class="feature-chip">Dominio propio y SSL</span>
+                </div>
+
+                <div class="font-mono text-xs text-[#A8A29A]">
+                  <span>Plazo de entrega:</span> <span class="text-white font-medium">Hasta 7 días hábiles</span>
+                </div>
+              </div>
+
+              <!-- Precio y Botones -->
+              <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
+                <div>
+                  <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 1.890.000</div>
+                  <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
+                </div>
+
+                <div class="w-full flex flex-col gap-2.5">
+                  <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Presencia%20Express"
+                    target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-sm">
+                    Lo quiero
+                  </a>
+                  <a href="#demos" class="btn-pill btn-secondary w-full text-sm">
+                    Ver ejemplo
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Plan 2: Catálogo Móvil (RECOMENDADO) -->
+          <div class="clean-card border-[#DFA96E]/50 relative transition-colors hover:border-[#DFA96E]">
+            
+            <!-- Badge RECOMENDADO -->
+            <div class="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-[#DFA96E] text-[#0C0B0A] font-mono text-xs font-bold tracking-wider uppercase shadow-md">
+              RECOMENDADO
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Miniatura Teléfono con Carrito -->
+              <div class="lg:col-span-3 flex justify-center">
+                <div class="phone-frame w-[140px] aspect-[9/16] relative bg-[#0C0B0A]">
+                  <div class="phone-notch scale-75 origin-top"></div>
+                  <!-- Vista representativa de catálogo con carrito -->
+                  <div class="w-full h-full p-2.5 text-[8px] font-sans flex flex-col justify-between bg-[#141210]">
+                    <div>
+                      <div class="h-2 w-16 bg-[#DFA96E] rounded mb-2"></div>
+                      <div class="space-y-1.5">
+                        <div class="h-8 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1 flex items-center justify-between">
+                          <span class="text-white">Taladro 650W</span>
+                          <span class="text-[#DFA96E]">₲ 485.000</span>
+                        </div>
+                        <div class="h-8 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1 flex items-center justify-between">
+                          <span class="text-white">Amoladora 4½</span>
+                          <span class="text-[#DFA96E]">₲ 390.000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="h-5 bg-[#DFA96E] rounded flex items-center justify-center font-mono text-[7px] text-black font-bold">
+                      PEDIDO WHATSAPP (2)
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Información y Chips -->
+              <div class="lg:col-span-6 space-y-4">
+                <div>
+                  <h3 class="font-serif font-semibold text-2xl text-white">Catálogo Móvil con Carrito</h3>
+                  <p class="text-[#A8A29A] text-sm font-sans mt-1">
+                    Tu tienda en el celular de tus clientes. Permite elegir artículos, calcular el total y recibir el pedido detallado directamente en tu WhatsApp.
+                  </p>
+                </div>
+
+                <!-- Chips (máx 4) -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="feature-chip">Catálogo con carrito</span>
+                  <span class="feature-chip">Pedido a WhatsApp</span>
+                  <span class="feature-chip">Buscador y filtros</span>
+                  <span class="feature-chip">Dominio propio y SSL</span>
+                </div>
+
+                <div class="font-mono text-xs text-[#A8A29A]">
+                  <span>Plazo de entrega:</span> <span class="text-white font-medium">Hasta 7 días hábiles</span>
+                </div>
+              </div>
+
+              <!-- Precio y Botones -->
+              <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
+                <div>
+                  <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 2.890.000</div>
+                  <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
+                </div>
+
+                <div class="w-full flex flex-col gap-2.5">
+                  <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Cat%C3%A1logo%20M%C3%B3vil"
+                    target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-sm">
+                    Lo quiero
+                  </a>
+                  <a href="#demos" class="btn-pill btn-secondary w-full text-sm">
+                    Ver ejemplo
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Plan 3: Corporativo -->
+          <div class="clean-card transition-colors hover:border-[#DFA96E]/40">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Miniatura Teléfono -->
+              <div class="lg:col-span-3 flex justify-center">
+                <div class="phone-frame w-[140px] aspect-[9/16] relative bg-[#0C0B0A]">
+                  <div class="phone-notch scale-75 origin-top"></div>
+                  <!-- Vista representativa de sistema corporativo -->
+                  <div class="w-full h-full p-2.5 text-[8px] font-sans flex flex-col justify-between bg-[#141210]">
+                    <div>
+                      <div class="h-2 w-12 bg-white/40 rounded mb-2"></div>
+                      <div class="grid grid-cols-2 gap-1.5 mb-2">
+                        <div class="h-7 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1">
+                          <span class="text-[#DFA96E] font-mono text-[6px]">SUCURSAL 1</span>
+                        </div>
+                        <div class="h-7 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1">
+                          <span class="text-[#DFA96E] font-mono text-[6px]">SUCURSAL 2</span>
+                        </div>
+                      </div>
+                      <div class="h-6 bg-[#0C0B0A] rounded border border-[#F4EFE8]/[0.08] p-1">
+                        <span class="text-white text-[7px]">Panel de Inventario</span>
+                      </div>
+                    </div>
+                    <div class="h-4 bg-white/10 rounded flex items-center justify-center font-mono text-[6px] text-white">
+                      MULTISUCURSAL ACTIVA
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Información y Chips -->
+              <div class="lg:col-span-6 space-y-4">
+                <div>
+                  <h3 class="font-serif font-semibold text-2xl text-white">Corporativo &amp; Sistemas</h3>
+                  <p class="text-[#A8A29A] text-sm font-sans mt-1">
+                    Estructura multipágina para empresas medianas y grandes. Paneles de autogestión de precios y derivación a múltiples números de WhatsApp.
+                  </p>
+                </div>
+
+                <!-- Chips (máx 4) -->
+                <div class="flex flex-wrap gap-2 pt-1">
+                  <span class="feature-chip">Portal multipágina</span>
+                  <span class="feature-chip">Panel de autogestión</span>
+                  <span class="feature-chip">Múltiples sucursales</span>
+                  <span class="feature-chip">Dominio propio y SSL</span>
+                </div>
+
+                <div class="font-mono text-xs text-[#A8A29A]">
+                  <span>Plazo de entrega:</span> <span class="text-[#DFA96E] font-medium">Plazo según alcance, se confirma en la cotización</span>
+                </div>
+              </div>
+
+              <!-- Precio y Botones -->
+              <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
+                <div>
+                  <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">Desde ₲ 4.890.000</div>
+                  <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
+                </div>
+
+                <div class="w-full flex flex-col gap-2.5">
+                  <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Corporativo"
+                    target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-sm">
+                    Lo quiero
+                  </a>
+                  <a href="#demos" class="btn-pill btn-secondary w-full text-sm">
+                    Ver ejemplo
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── 5. DEMOS EN VIVO ───────────── -->
+    <section id="demos" class="py-20 sm:py-28 lg:py-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Catálogo de Demos en Vivo">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <!-- Encabezado de Sección -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div class="max-w-2xl">
+            <span class="section-tag">— DEMOS EN VIVO</span>
+            <h2 class="font-h2 text-white mt-3 mb-4">
+              Probá cómo compran tus clientes.
+            </h2>
+            <p class="text-[#A8A29A] text-lg font-sans">
+              Demos reales navegables desde tu celular. Probá el carrito y enviá un pedido de prueba.
+            </p>
+          </div>
+
+          <!-- Filtro de Demos en Píldoras -->
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtrar demos por plan">
+            <button type="button" class="demo-filter-btn px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all bg-[#DFA96E] text-[#0C0B0A] font-semibold" data-filter="all">
+              Todos
+            </button>
+            <button type="button" class="demo-filter-btn px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all bg-[#141210] border border-[#F4EFE8]/[0.1] text-[#A8A29A] hover:text-white" data-filter="catalogo">
+              Catálogo Móvil
+            </button>
+            <button type="button" class="demo-filter-btn px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all bg-[#141210] border border-[#F4EFE8]/[0.1] text-[#A8A29A] hover:text-white" data-filter="presencia">
+              Presencia Express
+            </button>
+            <button type="button" class="demo-filter-btn px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all bg-[#141210] border border-[#F4EFE8]/[0.1] text-[#A8A29A] hover:text-white" data-filter="corporativo">
+              Corporativo
+            </button>
+          </div>
+        </div>
+
+        <!-- Carrusel / Grilla de Teléfonos con Demos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="demosGrid">
+          
+          <!-- Demo 1: La Forja Barber Studio -->
+          <div class="demo-card clean-card flex flex-col justify-between" data-category="presencia">
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline text-xs font-mono">
+                <span class="text-[#DFA96E]">PRESENCIA EXPRESS</span>
+                <span class="text-[#A8A29A]">Barbería &amp; Estética</span>
+              </div>
+              <h3 class="font-serif font-semibold text-xl text-white">La Forja Barber Studio</h3>
+              <p class="text-[#A8A29A] text-xs font-sans">Cortes, fade y navaja en Asunción con reserva inmediata a WhatsApp.</p>
+              
+              <!-- Teléfono con la demo real incrustada -->
+              <div class="phone-frame w-full aspect-[9/14] relative bg-[#0C0B0A] mt-4">
+                <div class="phone-notch scale-75 origin-top"></div>
+                <iframe src="demos/la-forja/index.html" title="Demo La Forja Barber Studio"
+                  class="w-[375px] h-[580px] origin-top-left scale-[0.68] sm:scale-[0.72] border-0 pointer-events-auto"
+                  loading="lazy"></iframe>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20La%20Forja%20Barber%20Studio"
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-xs uppercase font-semibold">
+                Quiero este modelo
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo 2: Ferretería & Repuestos San José -->
+          <div class="demo-card clean-card flex flex-col justify-between" data-category="catalogo">
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline text-xs font-mono">
+                <span class="text-[#DFA96E]">CATÁLOGO MÓVIL</span>
+                <span class="text-[#A8A29A]">Ferretería &amp; Repuestos</span>
+              </div>
+              <h3 class="font-serif font-semibold text-xl text-white">Ferretería San José</h3>
+              <p class="text-[#A8A29A] text-xs font-sans">Herramientas, máquinas y repuestos con carrito y cotización directa.</p>
+              
+              <!-- Teléfono Mockup con Carrito -->
+              <div class="phone-frame w-full aspect-[9/14] relative bg-[#141210] mt-4 p-4 flex flex-col justify-between text-xs font-sans">
+                <div class="phone-notch scale-75 origin-top"></div>
+                <div class="pt-4 space-y-2">
+                  <div class="text-[10px] font-mono text-[#DFA96E]">SAN JOSÉ FERRETERÍA</div>
+                  <div class="bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] p-2 rounded-lg flex justify-between items-center text-[11px]">
+                    <div>
+                      <div class="text-white font-medium">Taladro Percutor 650W</div>
+                      <div class="text-[10px] text-[#A8A29A]">SKU: TP-650</div>
+                    </div>
+                    <div class="text-[#DFA96E] font-mono font-bold">₲ 485.000</div>
+                  </div>
+                  <div class="bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] p-2 rounded-lg flex justify-between items-center text-[11px]">
+                    <div>
+                      <div class="text-white font-medium">Amoladora Angular 4½</div>
+                      <div class="text-[10px] text-[#A8A29A]">SKU: AM-450</div>
+                    </div>
+                    <div class="text-[#DFA96E] font-mono font-bold">₲ 390.000</div>
+                  </div>
+                </div>
+                <div class="bg-[#DFA96E] text-[#0C0B0A] py-2 rounded-full text-center font-mono text-[10px] font-bold">
+                  ENVIAR PEDIDO A WHATSAPP (₲ 875.000)
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Ferreter%C3%ADa%20San%20Jos%C3%A9"
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-xs uppercase font-semibold">
+                Quiero este modelo
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo 3: Carmelitas Boutique -->
+          <div class="demo-card clean-card flex flex-col justify-between" data-category="catalogo">
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline text-xs font-mono">
+                <span class="text-[#DFA96E]">CATÁLOGO MÓVIL</span>
+                <span class="text-[#A8A29A]">Moda &amp; Calzados</span>
+              </div>
+              <h3 class="font-serif font-semibold text-xl text-white">Carmelitas Boutique</h3>
+              <p class="text-[#A8A29A] text-xs font-sans">Colección de prendas y calzados con selector de talle y checkout ágil.</p>
+              
+              <!-- Teléfono Mockup Moda -->
+              <div class="phone-frame w-full aspect-[9/14] relative bg-[#141210] mt-4 p-4 flex flex-col justify-between text-xs font-sans">
+                <div class="phone-notch scale-75 origin-top"></div>
+                <div class="pt-4 space-y-2">
+                  <div class="text-[10px] font-mono text-[#DFA96E]">CARMELITAS BOUTIQUE</div>
+                  <div class="bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] p-2 rounded-lg flex justify-between items-center text-[11px]">
+                    <div>
+                      <div class="text-white font-medium">Vestido Lino Arena</div>
+                      <div class="text-[10px] text-[#A8A29A]">Talle: M · Color: Marfil</div>
+                    </div>
+                    <div class="text-[#DFA96E] font-mono font-bold">₲ 320.000</div>
+                  </div>
+                  <div class="bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] p-2 rounded-lg flex justify-between items-center text-[11px]">
+                    <div>
+                      <div class="text-white font-medium">Sandalias Cuero Suela</div>
+                      <div class="text-[10px] text-[#A8A29A]">Talle: 38</div>
+                    </div>
+                    <div class="text-[#DFA96E] font-mono font-bold">₲ 260.000</div>
+                  </div>
+                </div>
+                <div class="bg-[#DFA96E] text-[#0C0B0A] py-2 rounded-full text-center font-mono text-[10px] font-bold">
+                  ENVIAR PEDIDO A WHATSAPP (₲ 580.000)
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Carmelitas%20Boutique"
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-xs uppercase font-semibold">
+                Quiero este modelo
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo 4: Atelier Suizo -->
+          <div class="demo-card clean-card flex flex-col justify-between" data-category="catalogo">
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline text-xs font-mono">
+                <span class="text-[#DFA96E]">CATÁLOGO MÓVIL</span>
+                <span class="text-[#A8A29A]">Joyería &amp; Relojes</span>
+              </div>
+              <h3 class="font-serif font-semibold text-xl text-white">Atelier Suizo</h3>
+              <p class="text-[#A8A29A] text-xs font-sans">Piezas de alta gama con ficha técnica y consulta privada por pieza.</p>
+              
+              <div class="phone-frame w-full aspect-[9/14] relative bg-[#141210] mt-4 p-4 flex flex-col justify-between text-xs font-sans">
+                <div class="phone-notch scale-75 origin-top"></div>
+                <div class="pt-4 space-y-2">
+                  <div class="text-[10px] font-mono text-[#DFA96E]">ATELIER SUIZO · RELOJERÍA</div>
+                  <div class="bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] p-2 rounded-lg flex justify-between items-center text-[11px]">
+                    <div>
+                      <div class="text-white font-medium">Cronógrafo Automático 41mm</div>
+                      <div class="text-[10px] text-[#A8A29A]">Cristal zafiro · Acero 316L</div>
+                    </div>
+                    <div class="text-[#DFA96E] font-mono font-bold">₲ 4.250.000</div>
+                  </div>
+                </div>
+                <div class="bg-[#DFA96E] text-[#0C0B0A] py-2 rounded-full text-center font-mono text-[10px] font-bold">
+                  CONSULTAR DISPONIBILIDAD
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Atelier%20Suizo"
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-xs uppercase font-semibold">
+                Quiero este modelo
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo 5: Bebidas Asunción Express -->
+          <div class="demo-card clean-card flex flex-col justify-between" data-category="catalogo">
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline text-xs font-mono">
+                <span class="text-[#DFA96E]">CATÁLOGO MÓVIL</span>
+                <span class="text-[#A8A29A]">Bodega &amp; Bebidas</span>
+              </div>
+              <h3 class="font-serif font-semibold text-xl text-white">Bebidas Asunción Express</h3>
+              <p class="text-[#A8A29A] text-xs font-sans">Despacho express de packs y bebidas frías con pedido directo a repartidor.</p>
+              
+              <div class="phone-frame w-full aspect-[9/14] relative bg-[#141210] mt-4 p-4 flex flex-col justify-between text-xs font-sans">
+                <div class="phone-notch scale-75 origin-top"></div>
+                <div class="pt-4 space-y-2">
+                  <div class="text-[10px] font-mono text-[#DFA96E]">BEBIDAS EXPRESS · DELIVERY</div>
+                  <div class="bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] p-2 rounded-lg flex justify-between items-center text-[11px]">
+                    <div>
+                      <div class="text-white font-medium">Pack Cerveza Especial (x24)</div>
+                      <div class="text-[10px] text-[#A8A29A]">Lata 355ml · Frío garantizado</div>
+                    </div>
+                    <div class="text-[#DFA96E] font-mono font-bold">₲ 145.000</div>
+                  </div>
+                </div>
+                <div class="bg-[#DFA96E] text-[#0C0B0A] py-2 rounded-full text-center font-mono text-[10px] font-bold">
+                  PEDIR DELIVERY INMEDIATO
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Bebidas%20Express"
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-xs uppercase font-semibold">
+                Quiero este modelo
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo 6: Industrial Lab PY -->
+          <div class="demo-card clean-card flex flex-col justify-between" data-category="corporativo">
+            <div class="space-y-4">
+              <div class="flex justify-between items-baseline text-xs font-mono">
+                <span class="text-[#DFA96E]">CORPORATIVO</span>
+                <span class="text-[#A8A29A]">Equipamiento Técnico</span>
+              </div>
+              <h3 class="font-serif font-semibold text-xl text-white">Industrial Lab PY</h3>
+              <p class="text-[#A8A29A] text-xs font-sans">Instrumental de laboratorio y suministros con cotización por lote institucional.</p>
+              
+              <div class="phone-frame w-full aspect-[9/14] relative bg-[#141210] mt-4 p-4 flex flex-col justify-between text-xs font-sans">
+                <div class="phone-notch scale-75 origin-top"></div>
+                <div class="pt-4 space-y-2">
+                  <div class="text-[10px] font-mono text-[#DFA96E]">INDUSTRIAL LAB · PORTAL B2B</div>
+                  <div class="bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] p-2 rounded-lg flex justify-between items-center text-[11px]">
+                    <div>
+                      <div class="text-white font-medium">Balanza Analítica 0.001g</div>
+                      <div class="text-[10px] text-[#A8A29A]">Certificado ISO · Garantía 2 años</div>
+                    </div>
+                    <div class="text-[#DFA96E] font-mono font-bold">₲ 6.800.000</div>
+                  </div>
+                </div>
+                <div class="bg-[#DFA96E] text-[#0C0B0A] py-2 rounded-full text-center font-mono text-[10px] font-bold">
+                  SOLICITAR FICHA TÉCNICA
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20modelo%20de%20Industrial%20Lab"
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full text-xs uppercase font-semibold">
+                Quiero este modelo
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── 6. CÓMO TE CUIDAMOS ───────────── -->
+    <section id="garantias" class="py-20 sm:py-28 lg:py-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Cómo te cuidamos y garantías">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <!-- Encabezado de Sección -->
+        <div class="max-w-2xl mb-12 sm:mb-16">
+          <span class="section-tag">— CÓMO TE CUIDAMOS</span>
+          <h2 class="font-h2 text-white mt-3 mb-4">
+            Condiciones claras desde el primer contacto.
+          </h2>
+          <p class="text-[#A8A29A] text-lg font-sans">
+            Garantías pensadas para que compres con total tranquilidad y respaldo.
+          </p>
+        </div>
+
+        <!-- 3 Tarjetas de Garantía -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          
+          <!-- Tarjeta 1: Pago 30/70 -->
+          <div class="clean-card flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 01</span>
+              <h3 class="font-serif font-semibold text-2xl text-white">Pago 30/70</h3>
+              <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
+                Empezás con el 30%. El 70% restante lo pagás cuando ves tu web terminada en un enlace de prueba y la aprobás. Recién entonces la publicamos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Entrega en 7 días hábiles -->
+          <div class="clean-card flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 02</span>
+              <h3 class="font-serif font-semibold text-2xl text-white">Entrega en 7 días hábiles</h3>
+              <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
+                Válido para Presencia Express y Catálogo Móvil, contados desde que recibimos tus productos, fotos, logo y la seña. Si nos atrasamos por nuestra culpa, te descontamos el 10% del saldo. En el plan Corporativo, el plazo es según alcance y se confirma en la cotización.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: 2 rondas de corrección -->
+          <div class="clean-card flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 03</span>
+              <h3 class="font-serif font-semibold text-2xl text-white">2 rondas de corrección</h3>
+              <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
+                Revisamos textos, fotos, precios y detalles visuales para que tu web quede exactamente como la querés antes de publicarla.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 2 Líneas Adicionales Requeridas -->
+        <div class="space-y-4 pt-4 border-t border-[#F4EFE8]/[0.08] text-base font-sans">
+          <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+            <span class="font-semibold text-white">0% de comisiones por venta, siempre:</span>
+            <span class="text-[#A8A29A]">No tocamos tus cobros ni cobramos porcentaje de tus ventas. El dinero ingresa directo a tu cuenta bancaria o en caja.</span>
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
+            <span class="font-semibold text-white">Soporte por WhatsApp:</span>
+            <span class="text-[#A8A29A]">Respondemos en menos de 15 minutos de 08:00 a 18:00 (hora de Paraguay). Fuera de ese horario, apenas abrimos.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── 7. PROCESO ───────────── -->
+    <section id="proceso" class="py-20 sm:py-28 lg:py-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Proceso de trabajo">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <!-- Encabezado de Sección -->
+        <div class="max-w-2xl mb-12 sm:mb-16">
+          <span class="section-tag">— PROCESO</span>
+          <h2 class="font-h2 text-white mt-3 mb-4">
+            De tu inventario a WhatsApp en 4 pasos.
+          </h2>
+          <p class="text-[#A8A29A] text-lg font-sans">
+            Sin reuniones largas ni jerga técnica. Nos enviás tu información y nosotros nos encargamos de todo el montaje.
+          </p>
+        </div>
+
+        <!-- 4 Pasos Simples en Fila (Sin calendario, audio ni dial) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="clean-card space-y-3">
+            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 01</span>
+            <h3 class="font-serif font-semibold text-xl text-white">Información</h3>
+            <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
+              Nos enviás tus fotos, lista de productos o servicios, precios y logo por WhatsApp o Drive.
+            </p>
+          </div>
+
+          <div class="clean-card space-y-3">
+            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 02</span>
+            <h3 class="font-serif font-semibold text-xl text-white">Seña del 30%</h3>
+            <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
+              Transferís la seña inicial para activar el desarrollo y reservar tu turno de entrega.
+            </p>
+          </div>
+
+          <div class="clean-card space-y-3">
+            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 03</span>
+            <h3 class="font-serif font-semibold text-xl text-white">Enlace de prueba</h3>
+            <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
+              En 7 días hábiles recibís un enlace privado para navegar tu web, probar el carrito y pedir ajustes.
+            </p>
+          </div>
+
+          <div class="clean-card space-y-3">
+            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 04</span>
+            <h3 class="font-serif font-semibold text-xl text-white">Publicación</h3>
+            <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
+              Aprobás la versión final, abonás el 70% restante y publicamos tu catálogo en tu dominio propio.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── 8. A MEDIDA ───────────── -->
+    <section id="amedida" class="py-20 sm:py-28 lg:py-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Desarrollo corporativo a medida">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <div class="max-w-2xl mb-12">
+          <span class="section-tag">— A MEDIDA</span>
+          <h2 class="font-h2 text-white mt-3 mb-4">
+            Sistemas y plataformas para empresas.
+          </h2>
+          <p class="text-[#A8A29A] text-lg font-sans">
+            Estructuras para comercios con operaciones avanzadas.
+          </p>
+        </div>
+
+        <!-- Una sola tarjeta horizontal corporativa -->
+        <div class="clean-card">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-8 space-y-5">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="font-serif font-semibold text-2xl sm:text-3xl text-white">Plan Corporativo</span>
+                <span class="text-[#F4EFE8]/20">·</span>
+                <span class="font-mono text-2xl text-[#DFA96E] font-bold tabular-nums">Desde ₲ 4.890.000</span>
+              </div>
+
+              <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
+                Para empresas que demandan catálogos extensos, múltiples sucursales, paneles de autogestión de precios o flujos comerciales avanzados.
+              </p>
+
+              <!-- Chips -->
+              <div class="flex flex-wrap gap-2 pt-2">
+                <span class="feature-chip">Múltiples sucursales</span>
+                <span class="feature-chip">Panel autoadministrable</span>
+                <span class="feature-chip">Integración con planillas y CRM</span>
+                <span class="feature-chip">Plazo según alcance</span>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex lg:justify-end">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20un%20Plan%20Corporativo"
+                target="_blank" rel="noopener" class="btn-pill btn-primary w-full sm:w-auto text-sm">
+                Consultar por WhatsApp
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── 9. PREGUNTAS FRECUENTES (6 ACORDEONES) ───────────── -->
+    <section id="preguntas" class="py-20 sm:py-28 lg:py-36 border-b border-[#F4EFE8]/[0.08]" aria-label="Preguntas frecuentes">
+      <div class="max-w-[1200px] mx-auto px-6">
+        
+        <div class="max-w-2xl mb-12 sm:mb-16">
+          <span class="section-tag">— PREGUNTAS FRECUENTES</span>
+          <h2 class="font-h2 text-white mt-3 mb-4">
+            Todo lo que necesitás saber antes de empezar.
+          </h2>
+          <p class="text-[#A8A29A] text-lg font-sans">
+            Claridad comercial en cada detalle.
+          </p>
+        </div>
+
+        <!-- 6 Acordeones Limpios -->
+        <div class="space-y-4 max-w-3xl">
+          
+          <!-- Pregunta 1 -->
+          <div class="clean-card p-6 !py-5 transition-colors">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Cómo llegan los pedidos del catálogo a mi WhatsApp?</span>
+              <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
+            </button>
+            <div class="faq-content hidden pt-4 text-[#A8A29A] text-base font-sans leading-relaxed border-t border-[#F4EFE8]/[0.06] mt-4">
+              Cuando el cliente arma su pedido y toca 'Enviar pedido por WhatsApp', se abre una conversación directa con tu número con el listado detallado de productos, cantidades, precios unitarios, total calculado y sus datos de entrega. No requiere que el cliente instale ninguna app.
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="clean-card p-6 !py-5 transition-colors">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Existen comisiones por cada venta realizada?</span>
+              <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
+            </button>
+            <div class="faq-content hidden pt-4 text-[#A8A29A] text-base font-sans leading-relaxed border-t border-[#F4EFE8]/[0.06] mt-4">
+              Cero comisiones por venta. Pagás el plan y listo. Todo lo que cobres por tus ventas entra directo e íntegro a tu cuenta o en caja, sin porcentajes para intermediarios.
+            </div>
+          </div>
+
+          <!-- Pregunta 3 (Nueva requerida) -->
+          <div class="clean-card p-6 !py-5 transition-colors">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Qué pasa si no me gusta el diseño?</span>
+              <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
+            </button>
+            <div class="faq-content hidden pt-4 text-[#A8A29A] text-base font-sans leading-relaxed border-t border-[#F4EFE8]/[0.06] mt-4">
+              Tenés 2 rondas de corrección completas incluidas para ajustar tipografías, colores, orden de productos y contenidos. Además, gracias al modelo 30/70, solo abonás el 70% restante cuando ves la web terminada y la aprobás.
+            </div>
+          </div>
+
+          <!-- Pregunta 4 (Nueva requerida) -->
+          <div class="clean-card p-6 !py-5 transition-colors">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Qué necesito para empezar?</span>
+              <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
+            </button>
+            <div class="faq-content hidden pt-4 text-[#A8A29A] text-base font-sans leading-relaxed border-t border-[#F4EFE8]/[0.06] mt-4">
+              Solo necesitás enviarnos tu logo (si no tenés, armamos un encabezado tipográfico limpio), fotos de tus productos o servicios con sus nombres y precios, tus datos de contacto y la seña del 30%.
+            </div>
+          </div>
+
+          <!-- Pregunta 5 (Dominio y Hosting) -->
+          <div class="clean-card p-6 !py-5 transition-colors">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Cómo se eligen el dominio y el hosting?</span>
+              <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
+            </button>
+            <div class="faq-content hidden pt-4 text-[#A8A29A] text-base font-sans leading-relaxed border-t border-[#F4EFE8]/[0.06] mt-4">
+              El primer año de hosting de alta velocidad y certificado SSL están incluidos. Te asesoramos para registrar tu dominio propio (.store, .shop, .com o .com.py) según disponibilidad oficial y nos encargamos de toda la configuración técnica.
+            </div>
+          </div>
+
+          <!-- Pregunta 6 -->
+          <div class="clean-card p-6 !py-5 transition-colors">
+            <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
+              <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Cuáles son las formas de pago aceptadas?</span>
+              <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
+            </button>
+            <div class="faq-content hidden pt-4 text-[#A8A29A] text-base font-sans leading-relaxed border-t border-[#F4EFE8]/[0.06] mt-4">
+              Aceptamos transferencias bancarias SIPAP paraguayas, efectivo, USDT y Bitcoin. Emitimos factura legal paraguaya con IVA incluido en todos los pagos (30% al iniciar y 70% al aprobar la web terminada).
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ───────────── 10. CIERRE EDITORIAL ───────────── -->
+    <section class="py-24 sm:py-32 lg:py-40 text-center" aria-label="Contacto de cierre">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="max-w-2xl mx-auto space-y-6">
+          <h2 class="font-h1 text-white">¿Hablamos?</h2>
+          <p class="text-[#A8A29A] text-lg sm:text-xl font-sans leading-relaxed">
+            Escribinos al WhatsApp con los productos de tu empresa. Te respondemos en menos de 15 minutos.
+          </p>
+          <div class="pt-4">
+            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20mi%20cat%C3%A1logo%20web"
+              target="_blank" rel="noopener"
+              class="btn-pill btn-primary text-base font-semibold px-10">
+              Escribir a WhatsApp · +595 986 125 649
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ───────────── FOOTER MÍNIMO ───────────── -->
+  <footer class="border-t border-[#F4EFE8]/[0.08] bg-[#0C0B0A] pt-12 pb-28 sm:pb-12 text-sm text-[#A8A29A] font-sans">
+    <div class="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <span class="font-serif font-semibold text-white">Punto Prisma Studio</span>
+        <span>·</span>
+        <span class="font-mono text-xs">2026 · Asunción, Paraguay</span>
+      </div>
+
+      <div class="flex items-center gap-6 font-mono text-xs">
+        <a href="#planes" class="hover:text-white transition-colors">Planes</a>
+        <a href="#demos" class="hover:text-white transition-colors">Demos</a>
+        <a href="#garantias" class="hover:text-white transition-colors">Garantías</a>
+        <a href="https://wa.me/595986125649" target="_blank" rel="noopener" class="text-[#DFA96E] hover:underline">
+          +595 986 125 649
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Línea Legal Condicional -->
+    <div id="footerLegalLine" class="hidden max-w-[1200px] mx-auto px-6 mt-4 pt-4 border-t border-[#F4EFE8]/[0.04] text-xs font-mono text-[#A8A29A]/60 text-center"></div>
+  </footer>
+
+
+  <!-- Botón Flotante de WhatsApp Directo (56px, dorado ámbar con ícono negro, safe-area-inset) -->
+  <aside aria-label="Contacto directo por WhatsApp" class="fixed z-40" style="bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 1.25rem)); right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 1.25rem));">
+    <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
+      target="_blank" rel="noopener"
+      aria-label="Escribir por WhatsApp a Punto Prisma Studio (+595 986 125 649)"
+      class="w-14 h-14 rounded-full bg-[#DFA96E] hover:bg-[#c99558] text-[#0C0B0A] shadow-[0_10px_25px_rgba(0,0,0,0.5)] flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95 group"
+      title="Escribir por WhatsApp (+595 986 125 649)">
+      <svg class="w-7 h-7 fill-[#0C0B0A] transition-transform duration-200 group-hover:scale-110" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.04 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.16 12.04 20.16C10.66 20.16 9.31 19.8 8.12 19.12L7.84 18.95L4.72 19.77L5.55 16.73L5.36 16.43C4.61 15.22 4.21 13.58 4.21 11.91C4.21 7.37 7.91 3.67 12.04 3.67M9.05 7.42C8.88 7.42 8.6 7.49 8.36 7.75C8.13 8.01 7.46 8.63 7.46 9.91C7.46 11.19 8.39 12.43 8.52 12.6C8.65 12.77 10.32 15.35 12.91 16.47C15.06 17.4 15.5 17.21 15.97 17.17C16.44 17.13 17.48 16.55 17.7 15.94C17.91 15.33 17.91 14.81 17.85 14.71C17.78 14.61 17.62 14.54 17.38 14.42C17.13 14.3 15.92 13.7 15.69 13.62C15.46 13.53 15.3 13.49 15.13 13.74C14.96 14 14.49 14.54 14.35 14.71C14.21 14.88 14.07 14.9 13.82 14.78C13.58 14.65 12.79 14.4 11.86 13.57C11.13 12.92 10.64 12.12 10.5 11.87C10.36 11.62 10.49 11.49 10.61 11.37C10.72 11.26 10.86 11.08 10.98 10.93C11.11 10.79 11.15 10.69 11.23 10.52C11.32 10.35 11.27 10.2 11.21 10.08C11.15 9.95 10.66 8.75 10.45 8.26C10.25 7.78 10.05 7.84 9.9 7.83C9.76 7.83 9.59 7.83 9.42 7.83C9.25 7.83 9.05 7.42 9.05 7.42Z"/>
+      </svg>
+    </a>
+  </aside>
+
+  <!-- JavaScript Mínimo y Robusto -->
+  <script>
+    // Configuración Legal Condicional
+    const SITE_CONFIG = {
+      legal: {
+        razonSocial: "",
+        ruc: "",
+        terminosUrl: "",
+        privacidadUrl: ""
+      }
+    };
+
+    function renderLegalLine() {
+      const footerContainer = document.getElementById("footerLegalLine");
+      if (!footerContainer) return;
+      const { razonSocial, ruc, terminosUrl, privacidadUrl } = (SITE_CONFIG && SITE_CONFIG.legal) || {};
+      const hasLegal = Boolean(razonSocial || ruc || terminosUrl || privacidadUrl);
+      if (!hasLegal) {
+        footerContainer.innerHTML = "";
+        footerContainer.classList.add("hidden");
+        return;
+      }
+      const parts = [];
+      if (razonSocial || ruc) {
+        parts.push(\`<span>\${[razonSocial, ruc ? \`RUC: \${ruc}\` : ''].filter(Boolean).join(' · ')}</span>\`);
+      }
+      if (terminosUrl) {
+        parts.push(\`<a href="\${terminosUrl}" class="hover:text-[#DFA96E] underline">Términos</a>\`);
+      }
+      if (privacidadUrl) {
+        parts.push(\`<a href="\${privacidadUrl}" class="hover:text-[#DFA96E] underline">Privacidad</a>\`);
+      }
+      footerContainer.innerHTML = parts.join(' · ');
+      footerContainer.classList.remove("hidden");
+    }
+
+    // Acordeón de FAQ
+    document.querySelectorAll(".faq-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".clean-card");
+        const content = item ? item.querySelector(".faq-content") : null;
+        const icon = btn.querySelector(".faq-icon");
+        if (!content) return;
+        const isExpanded = btn.getAttribute("aria-expanded") === "true";
+
+        // Cerrar todos los demás
+        document.querySelectorAll(".faq-content").forEach(c => c.classList.add("hidden"));
+        document.querySelectorAll(".faq-toggle").forEach(b => {
+          b.setAttribute("aria-expanded", "false");
+          const ic = b.querySelector(".faq-icon");
+          if (ic) ic.textContent = "+";
+        });
+
+        // Abrir actual si estaba cerrado
+        if (!isExpanded) {
+          content.classList.remove("hidden");
+          btn.setAttribute("aria-expanded", "true");
+          if (icon) icon.textContent = "−";
+        }
+      });
+    });
+
+    // Filtro de Demos
+    document.querySelectorAll(".demo-filter-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+        
+        // Estilo activo
+        document.querySelectorAll(".demo-filter-btn").forEach(b => {
+          b.className = "demo-filter-btn px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all bg-[#141210] border border-[#F4EFE8]/[0.1] text-[#A8A29A] hover:text-white";
+        });
+        btn.className = "demo-filter-btn px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase transition-all bg-[#DFA96E] text-[#0C0B0A] font-semibold";
+
+        // Filtrar tarjetas
+        document.querySelectorAll(".demo-card").forEach(card => {
+          const category = card.getAttribute("data-category");
+          if (filter === "all" || category === filter) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        if (isOpen) {
+          mobileMenu.classList.add("hidden");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+        } else {
+          mobileMenu.classList.remove("hidden");
+          mobileMenuBtn.setAttribute("aria-expanded", "true");
+        }
+      });
+
+      document.querySelectorAll(".mobile-nav-link").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    renderLegalLine();
+  </script>
+</body>
+</html>
+`;
+
+fs.writeFileSync(path.resolve('index.html'), cleanHtml, 'utf8');
+console.log('Clean index.html written successfully! Length:', cleanHtml.length);

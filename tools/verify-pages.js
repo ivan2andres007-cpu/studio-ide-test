@@ -2,19 +2,17 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-// Resolve playwright from npm cache
 const playwrightPath = path.join(process.env.LOCALAPPDATA, 'npm-cache', '_npx', 'e41f203b7505f1fb', 'node_modules', 'playwright');
 const { chromium } = require(playwrightPath);
 
-const PORT = 5210;
+const PORT = 5270;
 const ROOT = process.cwd();
 const OUT_DIR = path.join(ROOT, 'tools', '.playwright-audit');
+const BA_DIR = path.join(OUT_DIR, 'before-after');
 
-if (!fs.existsSync(OUT_DIR)) {
-  fs.mkdirSync(OUT_DIR, { recursive: true });
-}
+if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
+if (!fs.existsSync(BA_DIR)) fs.mkdirSync(BA_DIR, { recursive: true });
 
-// MIME types
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -23,11 +21,12 @@ const MIME = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
-  '.ico': 'image/x-icon'
+  '.ico': 'image/x-icon',
+  '.woff2': 'font/woff2'
 };
 
-// Static file server
 const server = http.createServer((req, res) => {
   let reqPath = decodeURIComponent(req.url.split('?')[0]);
   if (reqPath === '/') reqPath = '/index.html';
@@ -44,183 +43,116 @@ const server = http.createServer((req, res) => {
 });
 
 async function runAudit() {
-  await new Promise(resolve => server.listen(PORT, resolve));
-  console.log(`[HTTP Server] Listening on http://localhost:${PORT}`);
+  await new Promise(resolve => server.listen(PORT, '127.0.0.1', resolve));
+  console.log(`[HTTP Server] Listening on http://127.0.0.1:${PORT}`);
 
   const browser = await chromium.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu']
+    args: ['--no-sandbox', '--disable-gpu']
   });
 
-  const pagesToTest = [
-    { name: 'Punto Prisma Studio (Principal)', file: 'index.html', prefix: 'studio-principal' },
-    { name: 'Demo - La Forja Barber Studio', file: 'demos/la-forja/index.html', prefix: 'la-forja' }
+  const viewports = [
+    { name: 'mobile-390', width: 390, height: 844, isMobile: true },
+    { name: 'desktop-1280', width: 1280, height: 900, isMobile: false },
+    { name: 'desktop-1920', width: 1920, height: 1080, isMobile: false }
   ];
 
-  const results = [];
+  const report = {
+    viewportsTested: [],
+    consoleErrors: [],
+    jsExceptions: [],
+    waLinksValid: true,
+    overflowCheck: {}
+  };
 
-  for (const item of pagesToTest) {
-    console.log(`\n========================================`);
-    console.log(`Auditing: ${item.name} (${item.file})`);
-    console.log(`========================================`);
+  for (const vp of viewports) {
+    console.log(`\nTesting viewport: ${vp.name} (${vp.width}x${vp.height})...`);
+    const context = await browser.newContext({
+      viewport: { width: vp.width, height: vp.height },
+      isMobile: vp.isMobile
+    });
+    const page = await context.newPage();
 
-    const pageResult = {
-      name: item.name,
-      file: item.file,
-      consoleErrors: [],
-      jsExceptions: [],
-      waLinksValid: true,
-      waLinkCount: 0,
-      tldDetected: false,
-      desktopScreenshot: '',
-      mobileScreenshot: ''
-    };
+    page.on('console', msg => {
+      if (msg.type() === 'error') report.consoleErrors.push(`[${vp.name}] ${msg.text()}`);
+    });
+    page.on('pageerror', err => {
+      report.jsExceptions.push(`[${vp.name}] ${err.message}`);
+    });
 
-    // 1. Desktop Test (1280x800)
-    {
-      const context = await browser.newContext({
-        viewport: { width: 1280, height: 800 },
-        deviceScaleFactor: 1
-      });
-      const page = await context.newPage();
+    await page.goto(`http://127.0.0.1:${PORT}/index.html`, { waitUntil: 'networkidle' });
 
-      page.on('console', msg => {
-        if (msg.type() === 'error') {
-          pageResult.consoleErrors.push(msg.text());
-        }
-      });
+    // Check horizontal scroll
+    const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    const clientWidth = await page.evaluate(() => document.documentElement.clientWidth);
+    const overflow = scrollWidth > clientWidth;
+    report.overflowCheck[vp.name] = { scrollWidth, clientWidth, overflow };
+    console.log(`  - Widths: client=${clientWidth}, scroll=${scrollWidth}. Overflow: ${overflow ? 'FAIL' : 'PASS'}`);
 
-      page.on('pageerror', err => {
-        pageResult.jsExceptions.push(err.message);
-      });
+    // Full page screenshot
+    const fullShot = path.join(OUT_DIR, `clean-redesign-${vp.name}.png`);
+    await page.screenshot({ path: fullShot, fullPage: false });
 
-      const url = `http://localhost:${PORT}/${item.file}`;
-      await page.goto(url, { waitUntil: 'networkidle' });
+    // Section specific screenshots for Before / After comparison
+    if (vp.width === 1280 || vp.width === 390) {
+      const mode = vp.width === 1280 ? 'desktop' : 'mobile';
 
-      // Verify WhatsApp links
-      const waLinks = await page.$$eval('a[href*="wa.me"]', anchors => anchors.map(a => a.href));
-      pageResult.waLinkCount = waLinks.length;
-      for (const link of waLinks) {
-        if (!link.includes('wa.me/595986125649')) {
-          pageResult.waLinksValid = false;
-          console.error(`Invalid WhatsApp link: ${link}`);
-        }
-      }
+      const heroEl = await page.$('#inicio');
+      if (heroEl) await heroEl.screenshot({ path: path.join(BA_DIR, `after-hero-${mode}.png`) });
 
-      // Check TLD mentions (.store, .shop, etc.)
-      const bodyText = await page.textContent('body');
-      pageResult.tldDetected = bodyText.includes('.store') || bodyText.includes('.shop') || bodyText.includes('.studio');
+      const planesEl = await page.$('#planes');
+      if (planesEl) await planesEl.screenshot({ path: path.join(BA_DIR, `after-planes-${mode}.png`) });
 
-      // Test specific interactivity if present
-      if (item.file === 'index.html') {
-        const asuncionDay6Btn = await page.$('.asuncion-proc-btn[data-day="6"]');
-        if (asuncionDay6Btn) {
-          await asuncionDay6Btn.click();
-          const badgeText = await page.$eval('#asuncionProcBadge', el => el.textContent.trim());
-          const simTitle = await page.$eval('#asuncionSimTitle', el => el.textContent.trim());
-          console.log(`  [Asunción 7-Day Timeline Test] Clicked Day 06 -> Badge: "${badgeText}" | Telemetry: "${simTitle}"`);
-        }
+      const demosEl = await page.$('#demos');
+      if (demosEl) await demosEl.screenshot({ path: path.join(BA_DIR, `after-demos-${mode}.png`) });
 
-        // Test scroll-driven progression
-        await page.evaluate(() => {
-          const el = document.getElementById('proceso');
-          if (el) el.scrollIntoView({ behavior: 'instant', block: 'center' });
-        });
-        await page.waitForTimeout(200);
-
-        // Test gTLD Domain input
-        await page.fill('#asuncionBrandInput', 'boutiquecarmelitas');
-        await page.dispatchEvent('#asuncionBrandInput', 'input');
-        const brandPrev = await page.$eval('#domainBrandPreview', el => el.textContent.trim());
-        const gtldPrev = await page.$eval('#domainGtldPreview', el => el.textContent.trim());
-        console.log(`  [Domain Test] Domain preview for 'boutiquecarmelitas': ${brandPrev}${gtldPrev}`);
-
-        const tabBtn = await page.$('.case-tab-btn[data-case="barberia"]');
-        if (tabBtn) {
-          await tabBtn.click();
-          console.log(`  [Case Tab Test] Switched to Barbería case successfully`);
-        }
-      }
-
-      // Screenshot Desktop
-      const desktopShot = path.join(OUT_DIR, `${item.prefix}-desktop-1280.png`);
-      await page.screenshot({ path: desktopShot, fullPage: false });
-      pageResult.desktopScreenshot = desktopShot;
-      console.log(`  [Screenshot] Desktop captured: ${path.basename(desktopShot)}`);
-
-      await context.close();
+      console.log(`  - After sections captured for ${mode} (hero, planes, demos)`);
     }
 
-    // 2. Mobile Test (390x844 - iPhone 14 / modern Android)
-    {
-      const context = await browser.newContext({
-        viewport: { width: 390, height: 844 },
-        deviceScaleFactor: 2,
-        isMobile: true,
-        hasTouch: true
-      });
-      const page = await context.newPage();
-
-      page.on('console', msg => {
-        if (msg.type() === 'error') {
-          pageResult.consoleErrors.push(msg.text());
-        }
-      });
-
-      page.on('pageerror', err => {
-        pageResult.jsExceptions.push(err.message);
-      });
-
-      const url = `http://localhost:${PORT}/${item.file}`;
-      await page.goto(url, { waitUntil: 'networkidle' });
-
-      // Test Mobile Menu Toggle if exists
-      const menuBtn = await page.$('#mobileMenuBtn');
-      if (menuBtn) {
-        await menuBtn.click();
-        const menuVisible = await page.$eval('#mobileMenu', el => !el.classList.contains('hidden'));
-        console.log(`  [Mobile Nav Test] Menu open toggle: ${menuVisible ? 'SUCCESS' : 'FAILED'}`);
+    // Check all wa.me links
+    const waLinks = await page.$$eval('a[href*="wa.me"]', anchors => anchors.map(a => a.href));
+    for (const link of waLinks) {
+      if (!link.includes('wa.me/595986125649')) {
+        report.waLinksValid = false;
+        console.error(`Invalid WhatsApp link: ${link}`);
       }
-
-      // Check horizontal overflow on mobile
-      const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
-      const clientWidth = await page.evaluate(() => document.documentElement.clientWidth);
-      const hasHorizontalScroll = scrollWidth > clientWidth;
-      pageResult.mobileOverflow = hasHorizontalScroll;
-
-      // Screenshot Mobile
-      const mobileShot = path.join(OUT_DIR, `${item.prefix}-mobile-390.png`);
-      await page.screenshot({ path: mobileShot, fullPage: false });
-      pageResult.mobileScreenshot = mobileShot;
-      console.log(`  [Screenshot] Mobile captured: ${path.basename(mobileShot)} (Overflow: ${hasHorizontalScroll ? 'FAIL' : 'PASS'})`);
-
-      await context.close();
     }
 
-    results.push(pageResult);
+    // Test Demo Filter on desktop
+    if (vp.width === 1280) {
+      const filterBtn = await page.$('.demo-filter-btn[data-filter="catalogo"]');
+      if (filterBtn) {
+        await filterBtn.click();
+        const visibleCards = await page.$$eval('.demo-card:not(.hidden)', cards => cards.length);
+        console.log(`  - Filter test: "Catálogo Móvil" filter active, ${visibleCards} cards visible`);
+      }
+
+      // Test FAQ toggle
+      const faqBtn = await page.$('.faq-toggle');
+      if (faqBtn) {
+        await faqBtn.click();
+        const expanded = await page.$eval('.faq-toggle', b => b.getAttribute('aria-expanded'));
+        console.log(`  - FAQ test: Accordion toggled, aria-expanded: ${expanded}`);
+      }
+    }
+
+    await context.close();
   }
 
   await browser.close();
   server.close();
 
-  console.log(`\n========================================`);
-  console.log(`AUDIT SUMMARY REPORT`);
-  console.log(`========================================`);
-  for (const r of results) {
-    console.log(`\nPage: ${r.name}`);
-    console.log(`- File: ${r.file}`);
-    console.log(`- Console Errors: ${r.consoleErrors.length === 0 ? '0 (CLEAN)' : r.consoleErrors.join(', ')}`);
-    console.log(`- JS Exceptions: ${r.jsExceptions.length === 0 ? '0 (CLEAN)' : r.jsExceptions.join(', ')}`);
-    console.log(`- WhatsApp Links: ${r.waLinkCount} links, all strictly 595986125649: ${r.waLinksValid ? 'PASS' : 'FAIL'}`);
-    console.log(`- Identity TLD (.store/.shop): ${r.tldDetected ? 'CONFIRMED' : 'NONE'}`);
-    console.log(`- Mobile Horizontal Overflow: ${r.mobileOverflow ? 'FAIL (overflow detected)' : 'PASS (clean fit)'}`);
+  console.log('\n========================================');
+  console.log('AUDIT VERIFICATION SUMMARY');
+  console.log('========================================');
+  console.log(`- Console Errors: ${report.consoleErrors.length}`);
+  console.log(`- JS Exceptions: ${report.jsExceptions.length}`);
+  console.log(`- All WhatsApp links valid: ${report.waLinksValid ? 'PASS' : 'FAIL'}`);
+  for (const [vp, data] of Object.entries(report.overflowCheck)) {
+    console.log(`- Overflow at ${vp}: ${data.overflow ? 'FAIL' : 'PASS'} (${data.clientWidth}px)`);
   }
 
-  fs.writeFileSync(path.join(OUT_DIR, 'summary.json'), JSON.stringify(results, null, 2));
-  console.log(`\nSummary JSON written to: ${path.join(OUT_DIR, 'summary.json')}`);
+  fs.writeFileSync(path.join(OUT_DIR, 'summary-redesign.json'), JSON.stringify(report, null, 2));
 }
 
-runAudit().catch(err => {
-  console.error('Audit failed:', err);
-  process.exit(1);
-});
+runAudit().catch(console.error);

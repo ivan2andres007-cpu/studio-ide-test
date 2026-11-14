@@ -2,36 +2,34 @@
 module.exports = {
   content: [
     "./index.html",
+    "./simulador.html",
     "./demos/**/*.html",
     "./demos/**/*.js",
-    "./assets/**/*.js"
+    "./tools/**/*.html"
   ],
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Newsreader', 'serif'],
+        serif: ['Newsreader', 'Georgia', 'serif'],
         sans: ['Outfit', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        asuncion: {
-          void: '#0e0d0c',
-          surface: '#161412',
-          card: '#1d1a17',
-          hover: '#24201c',
-          border: 'rgba(245, 241, 235, 0.08)',
-          borderWarm: 'rgba(217, 119, 54, 0.3)',
-          text: '#f5f1eb',
-          muted: '#a8a299',
-          subtle: '#8e8880',
-          terracotta: '#c86a3d',
-          cognac: '#e0a96d',
-          gold: '#d97736',
-          sand: '#d9cbb8'
+        bg: '#0C0B0A',
+        surface: '#141210',
+        card: '#141210',
+        amber: {
+          accent: '#DFA96E',
+          hover: '#c99558'
+        },
+        cream: {
+          text: '#F4EFE8',
+          muted: '#A8A29A',
+          subtle: 'rgba(244, 239, 232, 0.5)',
+          border: 'rgba(244, 239, 232, 0.08)'
         }
       }
     }
   },
   plugins: [],
 }
-

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Ahorro en Comisiones | Punto Prisma Studio</title>
+  <meta name="description"
+    content="Calculá cuánto dinero pierde tu negocio en comisiones de marketplace o pedidos y cuánto ahorrás con tu propio catálogo web directo a WhatsApp.">
+  <link rel="canonical" href="https://studio.puntoprisma.store/simulador.html">
+  <meta name="theme-color" content="#0C0B0A">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23dfa96e' stroke-width='2'><path d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/></svg>">
+
+  <!-- Google Fonts: Newsreader + Outfit + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    body {
+      background-color: #0C0B0A;
+      color: #F4EFE8;
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Header -->
+  <header class="border-b border-[#F4EFE8]/[0.08] bg-[#0C0B0A]/90 backdrop-blur-md sticky top-0 z-30">
+    <div class="max-w-[1200px] mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 border border-[#DFA96E]/40 bg-[#141210] rounded-lg flex items-center justify-center p-2 group-hover:border-[#DFA96E] transition-colors">
+          <svg class="w-full h-full text-[#DFA96E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12 2 2 22 22 22" />
+          </svg>
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="font-serif font-semibold text-lg text-white">Punto Prisma</span>
+          <span class="font-mono text-[10px] text-[#DFA96E] tracking-[0.16em] uppercase">ESTUDIO EDITORIAL</span>
+        </div>
+      </a>
+
+      <a href="index.html" class="inline-flex items-center gap-2 font-mono text-xs text-[#A8A29A] hover:text-[#DFA96E] transition-colors">
+        <span>←</span>
+        <span>Volver a la página principal</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="flex-1 py-16 lg:py-24">
+    <div class="max-w-[1000px] mx-auto px-6">
+      
+      <!-- Encabezado -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="font-mono text-xs text-[#DFA96E] uppercase tracking-[0.16em] block mb-3 font-semibold">— HERRAMIENTA FINANCIERA</span>
+        <h1 class="font-serif font-semibold text-3xl sm:text-5xl text-white tracking-tight leading-[1.1] mb-4">
+          Simulador de Ahorro en Comisiones
+        </h1>
+        <p class="text-[#A8A29A] text-base sm:text-lg leading-relaxed font-sans">
+          Las plataformas de marketplace descuentan comisiones de cada venta. Con tu propio catálogo web de Punto Prisma Studio tu comisión por venta es ₲ 0.
+        </p>
+      </div>
+
+      <!-- Tarjeta del Simulador -->
+      <div class="bg-[#141210] border border-[#F4EFE8]/[0.08] rounded-[24px] p-8 sm:p-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          
+          <!-- Controles a la izquierda -->
+          <div class="lg:col-span-6 space-y-8">
+            <div>
+              <div class="flex justify-between items-baseline mb-3">
+                <label for="salesRange" class="font-mono text-xs uppercase text-[#A8A29A] tracking-wider">
+                  Ventas mensuales estimadas:
+                </label>
+                <span id="salesDisplay" class="font-mono text-xl text-white font-bold tabular-nums">₲ 25.000.000</span>
+              </div>
+              <input type="range" id="salesRange" min="5000000" max="150000000" step="1000000" value="25000000"
+                class="w-full accent-[#DFA96E] cursor-pointer h-2 bg-[#0C0B0A] rounded-lg">
+              <div class="flex justify-between text-[11px] font-mono text-[#A8A29A]/60 mt-1">
+                <span>₲ 5M</span>
+                <span>₲ 75M</span>
+                <span>₲ 150M</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-baseline mb-3">
+                <label for="commissionRange" class="font-mono text-xs uppercase text-[#A8A29A] tracking-wider">
+                  Ajustá el porcentaje que te cobra tu plataforma:
+                </label>
+                <span id="commissionDisplay" class="font-mono text-xl text-[#DFA96E] font-bold tabular-nums">12%</span>
+              </div>
+              <input type="range" id="commissionRange" min="5" max="25" step="1" value="12"
+                class="w-full accent-[#DFA96E] cursor-pointer h-2 bg-[#0C0B0A] rounded-lg">
+              <div class="flex justify-between text-[11px] font-mono text-[#A8A29A]/60 mt-1">
+                <span>5%</span>
+                <span>15%</span>
+                <span>25%</span>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-[#0C0B0A] border border-[#F4EFE8]/[0.06] space-y-3">
+              <div class="flex justify-between text-xs font-mono">
+                <span class="text-[#A8A29A]">Comisión con intermediarios:</span>
+                <span id="roiMonthlyFee" class="text-rose-400 font-semibold tabular-nums">₲ 3.000.000 / mes</span>
+              </div>
+              <div class="flex justify-between text-xs font-mono">
+                <span class="text-[#A8A29A]">Comisión con Punto Prisma:</span>
+                <span class="text-[#DFA96E] font-bold">₲ 0 / mes</span>
+              </div>
+              <div class="pt-2 border-t border-[#F4EFE8]/[0.06] flex justify-between text-xs font-mono">
+                <span class="text-white font-semibold">Tasa de comisiones por venta:</span>
+                <span class="text-[#DFA96E] font-bold">0% POR VENTA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resultados a la derecha -->
+          <div class="lg:col-span-6 flex flex-col justify-between bg-[#0C0B0A] border border-[#F4EFE8]/[0.08] rounded-2xl p-6 sm:p-8">
+            <div>
+              <span class="font-mono text-xs text-[#DFA96E] uppercase tracking-wider block mb-2 font-semibold">AHORRO PROYECTADO A 1 AÑO</span>
+              <div id="roiAnnualSavings" class="font-mono text-3xl sm:text-4xl text-white font-bold tracking-tight mb-2 tabular-nums">
+                ₲ 36.000.000
+              </div>
+              <p class="text-[#A8A29A] text-xs leading-relaxed font-sans mb-6">
+                Dinero limpio que permanece en la cuenta bancaria de tu comercio en lugar de diluirse en comisiones por transacción.
+              </p>
+
+              <div class="space-y-3 font-mono text-xs border-t border-[#F4EFE8]/[0.08] pt-4">
+                <div class="flex justify-between text-[#A8A29A]">
+                  <span>Pérdida anual con intermediarios:</span>
+                  <span id="annualLoss" class="text-white tabular-nums font-semibold">₲ 36.000.000</span>
+                </div>
+                <div class="flex justify-between text-[#A8A29A]">
+                  <span>Costo único del Catálogo Móvil:</span>
+                  <span class="text-white tabular-nums">₲ 2.890.000</span>
+                </div>
+                <div class="flex justify-between text-[#DFA96E] font-bold pt-2 border-t border-[#F4EFE8]/[0.06]">
+                  <span>Retorno de inversión (ROI):</span>
+                  <span id="roiMultiple" class="tabular-nums">Se paga en el 1.º mes</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <a id="roiWaBtn"
+                href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20calcule%20mi%20ahorro%20en%20el%20simulador%20y%20quiero%20iniciar%20mi%20catalogo"
+                target="_blank" rel="noopener"
+                class="w-full h-[52px] rounded-full bg-[#DFA96E] hover:bg-[#c99558] text-[#0C0B0A] font-semibold text-sm flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+                <span>Quiero mi catálogo sin comisiones</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#F4EFE8]/[0.08] py-8 text-center text-xs text-[#A8A29A] font-mono">
+    <div class="max-w-[1200px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span>Punto Prisma Studio · Asunción, Paraguay</span>
+      <a href="https://wa.me/595986125649" target="_blank" rel="noopener" class="hover:text-[#DFA96E] transition-colors">
+        WhatsApp: +595 986 125 649
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const salesRange = document.getElementById("salesRange");
+    const commissionRange = document.getElementById("commissionRange");
+    const salesDisplay = document.getElementById("salesDisplay");
+    const commissionDisplay = document.getElementById("commissionDisplay");
+    const roiMonthlyFee = document.getElementById("roiMonthlyFee");
+    const roiAnnualSavings = document.getElementById("roiAnnualSavings");
+    const annualLoss = document.getElementById("annualLoss");
+    const roiMultiple = document.getElementById("roiMultiple");
+    const roiWaBtn = document.getElementById("roiWaBtn");
+
+    function formatGs(n) {
+      return "₲ " + Math.round(n).toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, ".");
+    }
+
+    function calculate() {
+      const sales = parseFloat(salesRange.value) || 25000000;
+      const rate = (parseFloat(commissionRange.value) || 12) / 100;
+
+      const monthlyFee = sales * rate;
+      const annualFee = monthlyFee * 12;
+
+      salesDisplay.textContent = formatGs(sales);
+      commissionDisplay.textContent = Math.round(rate * 100) + "%";
+      roiMonthlyFee.textContent = formatGs(monthlyFee) + " / mes";
+      roiAnnualSavings.textContent = formatGs(annualFee);
+      annualLoss.textContent = formatGs(annualFee);
+
+      const monthsToPayoff = 2890000 / (monthlyFee || 1);
+      if (monthsToPayoff <= 1) {
+        roiMultiple.textContent = "Se paga en menos de 1 mes";
+      } else {
+        roiMultiple.textContent = "Se amortiza en " + monthsToPayoff.toFixed(1) + " meses";
+      }
+
+      if (roiWaBtn) {
+        const msg = "Hola Punto Prisma Studio, calcule que pierdo " + formatGs(monthlyFee) + "/mes en comisiones. Quiero consultar por mi catalogo sin comisiones.";
+        roiWaBtn.href = "https://wa.me/595986125649?text=" + encodeURIComponent(msg);
+      }
+    }
+
+    salesRange.addEventListener("input", calculate);
+    commissionRange.addEventListener("input", calculate);
+    calculate();
+  </script>
+</body>
+</html>
