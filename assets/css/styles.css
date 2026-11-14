@@ -48,3 +48,30 @@
     border-radius: 22px;
   }
 }
+
+/* --- CAROUSEL DEMOS NO-SCROLLBAR --- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.phone-capsule {
+  position: relative;
+  border-radius: 38px;
+  border: 1px solid rgba(244, 239, 232, 0.15);
+  background: #0C0B0A;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+@media (min-width: 1024px) {
+  .phone-capsule {
+    border-radius: 42px;
+  }
+}
+.phone-capsule:hover {
+  border-color: rgba(223, 169, 110, 0.5);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8);
+}
