@@ -21,6 +21,27 @@
     .visit-fig img { width: 100%; height: 100%; object-fit: cover; }
     .steps img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
     .strop-fig img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+
+    /* Notch clearance for embedded phone frame & mobile */
+    .site-head { padding-top: 40px !important; }
+
+    /* Hide scrollbars completely across browsers */
+    html, body {
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+    html::-webkit-scrollbar, body::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    /* Bottom bar font fix: crisp modern sans-serif fallback so W and M render crisply */
+    .m-bar a {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 'Outfit', 'Helvetica Neue', Arial, sans-serif !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.08em !important;
+    }
   </style>
 </head>
 <body>
