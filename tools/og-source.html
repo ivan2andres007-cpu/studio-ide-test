@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Punto Prisma Studio · Open Graph Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,600;1,6..72,700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background-color: #0c0b0a;
+      color: #f5f1eb;
+      font-family: 'Outfit', sans-serif;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 64px 80px 56px;
+    }
+    /* Subtle background grid pattern */
+    .bg-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(224, 169, 109, 0.08) 1px, transparent 0);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+    .top-brand {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand-icon {
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(224, 169, 109, 0.5);
+      background: #161412;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    .brand-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: #e0a96d;
+    }
+    .brand-text-title {
+      font-family: 'Newsreader', serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+    .brand-text-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      color: #e0a96d;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .center-content {
+      position: relative;
+      z-index: 10;
+      margin-top: -10px;
+    }
+    .headline {
+      font-family: 'Newsreader', serif;
+      font-size: 64px;
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #f5f1eb;
+    }
+    .headline-accent {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      color: #e0a96d;
+      display: block;
+      margin-top: 10px;
+    }
+    .bottom-bar {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid rgba(245, 241, 235, 0.12);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+    }
+    .bottom-url {
+      color: #a8a299;
+      letter-spacing: 0.05em;
+    }
+    .bottom-tag {
+      color: #e0a96d;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  
+  <!-- Header -->
+  <div class="top-brand">
+    <div class="brand-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+        <polygon points="12 2 2 22 22 22" />
+      </svg>
+    </div>
+    <div>
+      <div class="brand-text-title">Punto Prisma</div>
+      <div class="brand-text-sub">ESTUDIO EDITORIAL · ASUNCIÓN</div>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <div class="center-content">
+    <h1 class="headline">
+      Tu catálogo en el celular<br>
+      de tus clientes.
+      <span class="headline-accent">Sus pedidos, en tu WhatsApp.</span>
+    </h1>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <span class="bottom-url">studio.puntoprisma.store</span>
+    <span class="bottom-tag">0% COMISIONES POR VENTA</span>
+  </div>
+</body>
+</html>

@@ -2,3 +2,6 @@
 .env*
 .playwright-audit/
 .taste-skill/
+tools/.playwright-audit/
+tools/.taste-skill/
+*.zip

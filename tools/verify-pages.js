@@ -8,7 +8,7 @@ const { chromium } = require(playwrightPath);
 
 const PORT = 5210;
 const ROOT = process.cwd();
-const OUT_DIR = path.join(ROOT, '.playwright-audit');
+const OUT_DIR = path.join(ROOT, 'tools', '.playwright-audit');
 
 if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });
