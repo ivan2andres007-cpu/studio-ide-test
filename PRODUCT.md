@@ -23,3 +23,4 @@ Claridad comercial frente al espectáculo. Software sobrio y durable:
 - Identidad visual: Fondo casi negro (`#0c0b0a`), dorado ámbar/coñac (`#e0a96d`), serif para titulares, mono solo para etiquetas y números, fuente de lectura normal para párrafos.
 - Tono: Directo, sobrio, honesto y transparente. Cero jerga críptica ("dispositivo arquitectónico", "telemetría", "reuniones estériles").
 - Cero cifras sin respaldo.
+

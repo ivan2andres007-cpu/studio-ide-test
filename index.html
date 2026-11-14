@@ -4,9 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Punto Prisma Studio | Arquitectura Web, Catálogos Móviles &amp; Sistemas WhatsApp</title>
+  <title>Catálogos con carrito a WhatsApp para comercios en Paraguay | Punto Prisma Studio</title>
   <meta name="description"
-    content="Estudio de diseño y arquitectura de software comercial en Asunción, Paraguay. Catálogos móviles de alta conversión y cierre directo a WhatsApp.">
+    content="Diseño y arquitectura de catálogos web con carrito de pedidos directo a WhatsApp para comercios paraguayos. Sin comisiones por venta y entrega en 7 días hábiles.">
+  <link rel="canonical" href="https://studio.puntoprisma.store/">
+
+  <!-- Open Graph / Meta Compartir -->
+  <meta property="og:title" content="Catálogos con carrito a WhatsApp para comercios en Paraguay | Punto Prisma Studio">
+  <meta property="og:description"
+    content="Diseño y arquitectura de catálogos web con carrito de pedidos directo a WhatsApp para comercios paraguayos. Sin comisiones por venta y entrega en 7 días hábiles.">
+  <meta property="og:image" content="https://studio.puntoprisma.store/assets/og.png">
+  <meta property="og:locale" content="es_PY">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://studio.puntoprisma.store/">
+
+  <!-- Color de Tema del Navegador -->
+  <meta name="theme-color" content="#0C0B0A">
 
   <!-- Favicon -->
   <link rel="icon"
@@ -19,124 +32,17 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,400;1,6..72,600&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Newsreader', 'serif'],
-            sans: ['Outfit', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            asuncion: {
-              void: '#0e0d0c',
-              surface: '#161412',
-              card: '#1d1a17',
-              hover: '#24201c',
-              border: 'rgba(245, 241, 235, 0.08)',
-              borderWarm: 'rgba(217, 119, 54, 0.3)',
-              text: '#f5f1eb',
-              muted: '#a8a299',
-              subtle: '#6b665f',
-              terracotta: '#c86a3d',
-              cognac: '#e0a96d',
-              gold: '#d97736',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    ::selection {
-      background-color: #e0a96d;
-      color: #0e0d0c;
-    }
-
-    input, textarea, select {
-      caret-color: #e0a96d;
-    }
-
-    html {
-      overflow-x: hidden;
-      width: 100%;
-      max-width: 100vw;
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Explicit Typographic Hierarchy Scale (impeccable / craft-floor) */
-    h1 {
-      font-size: clamp(2.25rem, 5vw, 4.25rem);
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-      font-weight: 800;
-    }
-    h2 {
-      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-      font-weight: 700;
-    }
-    h3 {
-      font-size: clamp(1.2rem, 2vw, 1.75rem);
-      line-height: 1.25;
-      letter-spacing: -0.015em;
-      font-weight: 600;
-    }
-
-    body {
-      background-color: #0e0d0c;
-      color: #f5f1eb;
-      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      overflow-x: hidden;
-      width: 100%;
-      max-width: 100vw;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .tabular-nums {
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* Accessible focus ring */
-    :focus-visible,
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    select:focus-visible {
-      outline: 2px solid #e0a96d !important;
-      outline-offset: 2px !important;
-    }
-
-    /* Custom warm scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #0e0d0c;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: rgba(224, 169, 109, 0.25);
-      border-radius: 3px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: rgba(224, 169, 109, 0.5);
-    }
-  </style>
+  <!-- CSS Estático Compilado (Zero-Runtime CDN) -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body class="antialiased">
+
+  <!-- Enlace Accesible de Salto a Contenido Principal -->
+  <a href="#soluciones"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-asuncion-cognac focus:text-black focus:font-mono focus:text-xs focus:font-bold focus:shadow-lg focus:outline-none">
+    Saltar a los planes
+  </a>
 
   <!-- ───────────── HEADER EDITORIAL ───────────── -->
   <header class="border-b border-asuncion-border bg-asuncion-void">
@@ -156,11 +62,13 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-7 font-mono text-xs uppercase tracking-wider text-asuncion-muted">
+      <nav class="hidden lg:flex items-center gap-6 font-mono text-xs uppercase tracking-wider text-asuncion-muted">
         <a href="#soluciones" class="hover:text-asuncion-cognac transition-colors">Planes</a>
-        <a href="#garantias" class="hover:text-asuncion-cognac transition-colors text-white font-semibold">Cómo te cuidamos</a>
         <a href="#demos" class="hover:text-asuncion-cognac transition-colors">Demos</a>
+        <a href="#garantias" class="hover:text-asuncion-cognac transition-colors text-white font-semibold">Cómo te cuidamos</a>
         <a href="#proceso" class="hover:text-asuncion-cognac transition-colors">Proceso 7 Días</a>
+        <a href="#amedida" class="hover:text-asuncion-cognac transition-colors">A Medida</a>
+        <a href="#simulador" class="hover:text-asuncion-cognac transition-colors">Simulador</a>
         <a href="#dominios" class="hover:text-asuncion-cognac transition-colors">Dominios &amp; Hosting</a>
         <a href="#faq" class="hover:text-asuncion-cognac transition-colors">Preguntas</a>
       </nav>
@@ -197,9 +105,11 @@
     <div id="mobileMenu" class="hidden lg:hidden border-t border-asuncion-border bg-asuncion-surface px-6 py-6 font-mono text-xs uppercase tracking-wider">
       <nav class="flex flex-col gap-2">
         <a href="#soluciones" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Planes</a>
+        <a href="#demos" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Demos</a>
         <a href="#garantias" class="min-h-[44px] flex items-center text-asuncion-cognac font-bold hover:text-white border-b border-asuncion-border/50">Cómo te cuidamos</a>
-        <a href="#demos" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Catálogo de Demos</a>
         <a href="#proceso" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Proceso 7 Días</a>
+        <a href="#amedida" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">A Medida (Corporativo)</a>
+        <a href="#simulador" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Simulador de Ahorro</a>
         <a href="#dominios" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Dominios &amp; Hosting</a>
         <a href="#faq" class="min-h-[44px] flex items-center text-asuncion-muted hover:text-white border-b border-asuncion-border/50">Preguntas Frecuentes</a>
         <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio"
@@ -226,9 +136,9 @@
         <span id="asuncionStudioClock" class="tabular-nums text-asuncion-cognac font-bold tracking-wider">ASU --:--:-- PYT</span>
       </div>
       <div class="flex items-center gap-4 text-[10px] sm:text-[11px]">
-        <span class="text-asuncion-muted">RESPUESTA EN WHATSAPP: <strong class="text-white">&lt; 15 MIN</strong></span>
+        <span class="text-asuncion-muted">ATENCIÓN: <strong class="text-white">PERSONAS REALES, SIN BOTS</strong></span>
         <span class="text-white/20">|</span>
-        <span class="text-asuncion-cognac font-bold">SIN COMISIONES POR VENTA</span>
+        <span class="text-asuncion-cognac font-bold">0% COMISIONES POR VENTA</span>
       </div>
     </div>
   </aside>
@@ -249,25 +159,27 @@
               <span>CATÁLOGOS PARA COMERCIOS · ASUNCIÓN</span>
             </div>
 
-            <h1 class="font-serif font-bold text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.12] mb-6">
+            <h1 class="font-serif font-bold text-white tracking-tight mb-6">
               Tu catálogo en el celular de tus clientes. Sus pedidos, en tu WhatsApp.
             </h1>
 
-            <p class="font-sans text-asuncion-muted text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+            <p class="font-sans text-base sm:text-lg text-asuncion-muted leading-relaxed max-w-2xl mb-8">
               Sin comisiones por venta. Listo en 7 días hábiles. Empezás con el 30% y pagás el 70% restante cuando ves tu web terminada y la aprobás.
             </p>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+            <!-- Botones Principales Solicitados -->
+            <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
               <a href="#demos"
-                class="h-12 px-7 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-sm tracking-wide flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_20px_rgba(224,169,109,0.2)] hover:shadow-[0_6px_28px_rgba(224,169,109,0.35)]">
+                class="min-h-[48px] px-8 bg-asuncion-cognac hover:bg-amber-300 text-black font-sans font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_20px_rgba(224,169,109,0.3)] hover:shadow-[0_6px_28px_rgba(224,169,109,0.45)]">
                 <span>Ver una demo en vivo</span>
-                <span>↓</span>
+                <span aria-hidden="true">↓</span>
               </a>
-              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20por%20un%20cat%C3%A1logo%20m%C3%B3vil"
+
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20conversar%20sobre%20el%20cat%C3%A1logo%20para%20mi%20negocio"
                 target="_blank" rel="noopener"
-                class="h-12 px-6 border border-asuncion-cognac/30 hover:border-asuncion-cognac hover:text-white bg-asuncion-surface text-asuncion-text font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98]">
+                class="min-h-[48px] px-7 border-2 border-asuncion-cognac/80 hover:border-asuncion-cognac hover:bg-asuncion-cognac/10 text-white font-mono text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98]">
                 <span>Escribir por WhatsApp</span>
-                <span>→</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
 
@@ -330,58 +242,66 @@
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                         <span>LOS LAURELES · ASUNCIÓN</span>
                       </div>
-                      <div class="font-serif font-bold text-white text-xs leading-tight mt-0.5">
-                        Catálogo de Repuestos &amp; Taller
-                      </div>
-                      <!-- Buscador Mini -->
-                      <div class="mt-1.5 h-6 bg-asuncion-void border border-asuncion-border px-2 flex items-center justify-between text-[10px] text-asuncion-muted font-mono">
-                        <span class="truncate">Buscar filtro, aceite...</span>
-                        <span class="text-asuncion-cognac">🔍</span>
+                      <div class="font-serif font-bold text-white text-xs truncate">
+                        Ferretería &amp; Repuestos
                       </div>
                     </div>
 
-                    <!-- Lista de Productos Reales de la Demo -->
-                    <div class="space-y-2 overflow-hidden my-auto">
-                      <!-- Producto 1 -->
-                      <div class="p-2 border border-asuncion-border bg-asuncion-surface/80 flex items-center justify-between gap-2">
-                        <div class="min-w-0">
-                          <span class="font-mono text-[9px] text-asuncion-muted block">#HF-6510</span>
-                          <span class="font-serif font-bold text-white text-[11px] block truncate">Filtro Hidráulico</span>
-                          <span class="font-mono text-asuncion-cognac text-[11px] font-bold">₲ 280.000</span>
+                    <!-- Buscador Móvil Instantáneo -->
+                    <div class="bg-black/60 border border-white/10 px-2 py-1 flex items-center gap-1.5 text-[9px] text-asuncion-muted font-mono mb-2">
+                      <svg class="w-2.5 h-2.5 text-asuncion-cognac shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                      </svg>
+                      <span class="text-white/80">amoladora, filtro, disco...</span>
+                    </div>
+
+                    <!-- Lista de Productos en Miniatura (Visual UI Real) -->
+                    <div class="space-y-1.5 overflow-hidden flex-1 py-1 font-mono text-[9px]">
+                      <div class="p-1.5 border border-white/10 bg-asuncion-surface/80 flex items-center justify-between">
+                        <div class="truncate pr-1">
+                          <span class="text-white font-medium block truncate">Amoladora 850W Bosch</span>
+                          <span class="text-asuncion-cognac font-bold">₲ 340.000</span>
                         </div>
-                        <span class="w-6 h-6 rounded bg-asuncion-cognac text-black font-mono font-bold text-xs flex items-center justify-center shrink-0">✓</span>
+                        <span class="px-1.5 py-0.5 bg-asuncion-cognac/20 text-asuncion-cognac text-[8px] font-bold border border-asuncion-cognac/40 shrink-0">+1</span>
                       </div>
 
-                      <!-- Producto 2 -->
-                      <div class="p-2 border border-asuncion-border bg-asuncion-surface/80 flex items-center justify-between gap-2">
-                        <div class="min-w-0">
-                          <span class="font-mono text-[9px] text-asuncion-muted block">#SYN-5W30</span>
-                          <span class="font-serif font-bold text-white text-[11px] block truncate">Aceite Sintético 1L</span>
-                          <span class="font-mono text-asuncion-cognac text-[11px] font-bold">₲ 170.000</span>
+                      <div class="p-1.5 border border-white/10 bg-asuncion-surface/80 flex items-center justify-between">
+                        <div class="truncate pr-1">
+                          <span class="text-white font-medium block truncate">Filtro Hidráulico HF</span>
+                          <span class="text-asuncion-cognac font-bold">₲ 280.000</span>
                         </div>
-                        <span class="w-6 h-6 rounded bg-asuncion-cognac text-black font-mono font-bold text-xs flex items-center justify-center shrink-0">✓</span>
+                        <span class="px-1.5 py-0.5 bg-asuncion-cognac/20 text-asuncion-cognac text-[8px] font-bold border border-asuncion-cognac/40 shrink-0">+1</span>
+                      </div>
+
+                      <div class="p-1.5 border border-white/10 bg-asuncion-surface/80 flex items-center justify-between">
+                        <div class="truncate pr-1">
+                          <span class="text-white font-medium block truncate">Disco Corte Diamantado</span>
+                          <span class="text-asuncion-cognac font-bold">₲ 65.000</span>
+                        </div>
+                        <span class="px-1.5 py-0.5 bg-asuncion-cognac/20 text-asuncion-cognac text-[8px] font-bold border border-asuncion-cognac/40 shrink-0">+1</span>
                       </div>
                     </div>
 
-                    <!-- Barra Fija Inferior de Pedido WhatsApp -->
-                    <div class="pt-2 border-t border-asuncion-border/70 mt-2 shrink-0">
-                      <div class="flex items-center justify-between text-[10px] font-mono text-asuncion-muted mb-1">
-                        <span>Total (2 items):</span>
-                        <strong class="text-white font-bold">₲ 450.000</strong>
-                      </div>
-                      <a href="#demos" class="w-full py-1.5 px-2 bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1 shadow-sm transition-colors">
-                        <span>Pedir al WhatsApp</span>
-                        <span>→</span>
+                    <!-- Botón Flotante Fijo de Cierre a WhatsApp en el Celular -->
+                    <div class="pt-2 border-t border-white/10 mt-1">
+                      <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20probar%20la%20demo%20de%20Ferreter%C3%ADa%20y%20Repuestos"
+                        target="_blank" rel="noopener"
+                        class="w-full py-1.5 px-2 bg-emerald-500 hover:bg-emerald-400 text-black font-mono text-[9px] font-bold uppercase tracking-wider flex items-center justify-between transition-colors shadow-sm">
+                        <span class="flex items-center gap-1">
+                          <span>PEDIDO (3)</span>
+                          <span class="text-emerald-950 font-normal">₲ 685.000</span>
+                        </span>
+                        <span>WA →</span>
                       </a>
                     </div>
 
                   </div>
 
-                  <!-- Home Bar -->
-                  <div class="w-10 h-1 bg-white/20 rounded-full mx-auto mt-2 shrink-0"></div>
+                  <!-- Home Indicator Bar -->
+                  <div class="w-20 h-1 bg-white/20 rounded-full mx-auto mt-2 shrink-0"></div>
                 </div>
 
-                <!-- Cantilever Laser Lines Connecting to Plans -->
+                <!-- Selector Lateral de Soluciones -->
                 <div class="flex-1 flex flex-col justify-between h-[420px] sm:h-[440px] py-2">
                   <a href="#soluciones" class="group block transition-all duration-200 hover:translate-x-1 p-3 border border-transparent hover:border-asuncion-border bg-transparent hover:bg-asuncion-surface/40">
                     <div class="flex items-center gap-2 mb-1">
@@ -405,36 +325,37 @@
                     </div>
                   </a>
 
-                  <a href="#soluciones" class="group block transition-all duration-200 hover:translate-x-1 p-3 border border-transparent hover:border-asuncion-border bg-transparent hover:bg-asuncion-surface/40">
+                  <a href="#amedida" class="group block transition-all duration-200 hover:translate-x-1 p-3 border border-transparent hover:border-asuncion-border bg-transparent hover:bg-asuncion-surface/40">
                     <div class="flex items-center gap-2 mb-1">
-                      <span class="w-8 sm:w-10 h-[2px] bg-gradient-to-r from-asuncion-terracotta to-asuncion-terracotta/30 group-hover:w-12 group-hover:from-asuncion-terracotta group-hover:to-asuncion-terracotta transition-all"></span>
+                      <span class="w-8 sm:w-10 h-[2px] bg-gradient-to-r from-asuncion-border to-asuncion-border/40 group-hover:w-12 group-hover:from-asuncion-terracotta group-hover:to-asuncion-terracotta transition-all"></span>
                       <span class="font-serif font-bold text-white group-hover:text-asuncion-terracotta text-base leading-none transition-colors">Corporativo &amp; Sistemas</span>
                     </div>
                     <div class="pl-10 sm:pl-12">
                       <span class="font-mono text-xs text-asuncion-muted block">Multi-página · <strong class="text-white">₲ 4.890.000</strong></span>
-                      <span class="font-mono text-[10px] text-asuncion-subtle uppercase">Software &amp; Gestión a Medida</span>
+                      <span class="font-mono text-[10px] text-asuncion-subtle uppercase">Software y gestión a medida</span>
                     </div>
                   </a>
+
+                  <!-- Micro-Resumen de Métricas Clave -->
+                  <div class="pt-3 border-t border-asuncion-border/60 font-mono text-[10px] text-asuncion-muted flex items-center justify-between pl-3">
+                    <span class="text-asuncion-cognac font-bold">0% COMISIONES POR VENTA</span>
+                    <a href="#soluciones" class="hover:text-white transition-colors">Ver planes →</a>
+                  </div>
                 </div>
 
               </div>
 
-              <!-- Bottom Footnote -->
-              <div class="mt-6 pt-3 border-t border-asuncion-border flex items-center justify-between text-[10px] font-mono text-asuncion-muted">
-                <span>0% COMISIONES POR VENTA</span>
-                <a href="#soluciones" class="text-asuncion-cognac hover:underline font-bold">Ver detalles de planes →</a>
-              </div>
-
             </div>
           </div>
+
         </div>
 
-        <!-- 3 Métricas Editoriales -->
-        <div class="grid grid-cols-1 md:grid-cols-3 border-t border-asuncion-border pt-8 gap-8 font-mono text-xs text-asuncion-muted">
+        <!-- 3 Métricas de Confianza Innegociables -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12 border-t border-asuncion-border font-mono text-xs">
           <div>
-            <span class="font-serif text-2xl sm:text-3xl font-bold text-asuncion-cognac block mb-1">Carga rápida en celular</span>
-            <span class="text-white font-semibold uppercase block mb-1">Optimización para Redes 4G/5G</span>
-            <p class="font-sans text-[11px] text-asuncion-muted leading-relaxed">Navegación fluida y ligera adaptada a las conexiones móviles de Asunción y todo el interior.</p>
+            <span class="font-serif text-3xl font-bold text-asuncion-cognac block mb-1">Carga rápida</span>
+            <span class="text-white font-semibold uppercase block mb-1">Velocidad Móvil</span>
+            <p class="font-sans text-[11px] text-asuncion-muted leading-relaxed">Arquitectura ultraligera optimizada para redes móviles 4G paraguayas en todo el país.</p>
           </div>
           <div>
             <span class="font-serif text-3xl font-bold text-asuncion-cognac block mb-1">0%</span>
@@ -451,7 +372,7 @@
         <!-- Architectural Visual Feature Asunción -->
         <div class="mt-12 border border-asuncion-border bg-asuncion-surface overflow-hidden">
           <div class="px-5 py-2.5 border-b border-asuncion-border font-mono text-xs text-asuncion-cognac flex items-center justify-between bg-asuncion-void">
-            <span>ARQUITECTURA & SEDE LOCAL // ASUNCIÓN, PARAGUAY</span>
+            <span>ARQUITECTURA &amp; SEDE LOCAL // ASUNCIÓN, PARAGUAY</span>
             <span class="text-asuncion-muted">SANTA TERESA / VILLA MORRA</span>
           </div>
           <div class="relative aspect-[21/9] sm:aspect-[24/9] w-full overflow-hidden">
@@ -467,25 +388,36 @@
       </div>
     </section>
 
-    <!-- ───────────── SECCIÓN DE SOLUCIONES (3 PILARES) ───────────── -->
+    <!-- ───────────── 3 RAZONES EN UNA LÍNEA (ESTRUCTURA SOLICITADA) ───────────── -->
+    <section aria-label="Compromisos Clave" class="border-b border-asuncion-border bg-asuncion-card/90 py-4 px-4 font-mono text-xs sm:text-sm text-center">
+      <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <span class="text-asuncion-cognac font-bold">● Precio final con IVA</span>
+        <span class="text-asuncion-border hidden sm:inline" aria-hidden="true">·</span>
+        <span class="text-white font-bold">● Sin comisiones</span>
+        <span class="text-asuncion-border hidden sm:inline" aria-hidden="true">·</span>
+        <span class="text-asuncion-cognac font-bold">● Tu pedido llega armado a tu WhatsApp</span>
+      </div>
+    </section>
+
+    <!-- ───────────── 01 · PLANES DE DESPLIEGUE RÁPIDO (#soluciones) ───────────── -->
     <section id="soluciones" class="pricing py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-surface">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">01 · PROPUESTA DE VALOR</span>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">01 · PLANES DE DESPLIEGUE RÁPIDO</span>
             <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
-              Tres soluciones calibradas para PyMEs paraguayas.
+              Tu catálogo web listo para vender.
             </h2>
           </div>
-          <p class="text-xs font-mono text-asuncion-muted max-w-xs">
-            Inversión transparente en Guaraníes (₲). Facturación legal paraguaya incluida en todos los planes.
+          <p class="text-xs font-mono text-asuncion-muted max-w-xs leading-relaxed">
+            Inversión transparente en Guaraníes (₲). Modalidad 30/70 y facturación legal paraguaya incluida.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
-          <!-- Pilar 01 -->
+          <!-- Plan 01: Presencia Express -->
           <article class="bg-asuncion-card border border-asuncion-border p-8 flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)]">
             <div>
               <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-wider pb-3 border-b border-asuncion-border mb-6 flex justify-between">
@@ -494,7 +426,7 @@
               </div>
               <h3 class="font-serif font-bold text-2xl text-white mb-3">Presencia Express</h3>
               <p class="font-sans text-xs text-asuncion-muted leading-relaxed mb-6">
-                Para clínicas, estudios jurídicos o firmas de servicios que necesitan credibilidad inmediata y derivación de pacientes o clientes a WhatsApp.
+                Para clínicas, estudios profesionales o servicios que necesitan credibilidad inmediata y derivación de clientes a WhatsApp.
               </p>
 
               <div class="py-4 border-y border-asuncion-border mb-6">
@@ -519,7 +451,7 @@
                 </li>
                 <li class="flex items-center gap-2">
                   <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Botón directo de WhatsApp</span>
+                  <span>Botón directo a tu WhatsApp</span>
                 </li>
                 <li class="flex items-center gap-2">
                   <span class="text-asuncion-cognac font-bold">✓</span>
@@ -532,15 +464,21 @@
               </ul>
             </div>
 
-            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20plan%20Presencia%20Express%20(Gs.%201.490.000)"
-              target="_blank" rel="noopener"
-              class="h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac hover:text-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98]">
-              <span>Elegir Presencia Express</span>
-              <span>→</span>
-            </a>
+            <div class="space-y-2 pt-2 border-t border-asuncion-border/40">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20plan%20Presencia%20Express%20(Gs.%201.490.000)"
+                target="_blank" rel="noopener"
+                class="h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac hover:text-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98]">
+                <span>Elegir Presencia Express</span>
+                <span>→</span>
+              </a>
+              <a href="#demos" data-jump-demo="barberia"
+                class="plan-demo-link block text-center py-2 font-mono text-xs text-asuncion-cognac hover:underline transition-colors">
+                Ver ejemplo de este plan →
+              </a>
+            </div>
           </article>
 
-          <!-- Pilar 02 (Plan Estrella) -->
+          <!-- Plan 02: Catálogo Móvil (Plan Estrella) -->
           <article class="bg-asuncion-void border-2 border-asuncion-cognac p-8 flex flex-col justify-between relative shadow-[0_12px_40px_rgba(224,169,109,0.12)] hover:shadow-[0_16px_48px_rgba(224,169,109,0.22)] transition-all duration-200 hover:-translate-y-1">
             <div class="absolute -top-3.5 right-6 px-3 py-1 bg-asuncion-cognac text-black font-mono text-[10px] font-bold uppercase tracking-wider shadow-sm">
               ELECCIÓN HABITUAL COMERCIOS
@@ -553,7 +491,7 @@
               </div>
               <h3 class="font-serif font-bold text-2xl text-white mb-3">Catálogo Móvil WhatsApp</h3>
               <p class="font-sans text-xs text-asuncion-muted leading-relaxed mb-6">
-                Diseñado para ferreterías, repuesteras, tiendas y distribuidores de Asunción y Gran Asunción. Carrito que envía el resumen ordenado al vendedor.
+                Diseñado para ferreterías, repuesteras, tiendas y distribuidores de Asunción y Gran Asunción. Carrito que envía el pedido ordenado al vendedor.
               </p>
 
               <div class="py-4 border-y border-asuncion-border mb-4 bg-asuncion-surface px-4">
@@ -595,87 +533,207 @@
               </ul>
             </div>
 
-            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Cat%C3%A1logo%20M%C3%B3vil%20WhatsApp%20(Gs.%202.490.000)"
-              target="_blank" rel="noopener"
-              class="h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.25)]">
-              <span>Contratar Catálogo WhatsApp</span>
-              <span>→</span>
-            </a>
-          </article>
-
-          <!-- Pilar 03 -->
-          <article class="bg-asuncion-card border border-asuncion-border p-8 flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)]">
-            <div>
-              <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-wider pb-3 border-b border-asuncion-border mb-6 flex justify-between">
-                <span>PLAN 03</span>
-                <span>SISTEMAS</span>
-              </div>
-              <h3 class="font-serif font-bold text-2xl text-white mb-3">Corporativo & Sistemas</h3>
-              <p class="font-sans text-xs text-asuncion-muted leading-relaxed mb-6">
-                Para empresas que demandan estructura multipágina, paneles administrativos, bases de datos o automatización de pedidos a medida.
-              </p>
-
-              <div class="py-4 border-y border-asuncion-border mb-6">
-                <span class="font-mono text-[11px] text-asuncion-muted uppercase block">Inversión base</span>
-                <span class="font-mono text-2xl font-bold text-white tabular-nums">₲ 4.890.000</span>
-                <span class="font-mono text-[10px] text-asuncion-cognac block mt-0.5 font-semibold">Modalidad 30/70 · A medida</span>
-              </div>
-
-              <!-- Visual Preview Sistemas -->
-              <div class="relative aspect-[16/9] mb-6 bg-asuncion-surface border border-asuncion-border overflow-hidden">
-                <img src="assets/img/solucion-sistemas.jpg" alt="Panel administrativo y arquitectura de sistemas empresariales a medida en Asunción"
-                  width="800" height="450" loading="lazy" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity duration-200">
-                <div class="absolute bottom-2 left-2 px-2 py-0.5 bg-black/85 font-mono text-[9px] text-asuncion-cognac border border-asuncion-border tracking-wider">
-                  SOFTWARE &amp; GESTIÓN EN TIEMPO REAL
-                </div>
-              </div>
-
-              <ul class="space-y-3 font-mono text-xs text-asuncion-muted mb-8">
-                <li class="flex items-center gap-2">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Sitio multipágina corporativo</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Panel administrativo privado</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Integración a CRM y bases de datos</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Soporte prioritario del estudio</span>
-                </li>
-              </ul>
+            <div class="space-y-2 pt-2 border-t border-asuncion-border/40">
+              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Cat%C3%A1logo%20M%C3%B3vil%20WhatsApp%20(Gs.%202.490.000)"
+                target="_blank" rel="noopener"
+                class="h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.25)]">
+                <span>Contratar Catálogo WhatsApp</span>
+                <span>→</span>
+              </a>
+              <a href="#demos" data-jump-demo="ferreteria"
+                class="plan-demo-link block text-center py-2 font-mono text-xs text-asuncion-cognac hover:underline transition-colors">
+                Ver ejemplo de este plan →
+              </a>
             </div>
-
-            <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20un%20Sitio%20Corporativo%20o%20Sistema%20a%20Medida"
-              target="_blank" rel="noopener"
-              class="h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac hover:text-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-between transition-all duration-200 active:scale-[0.98]">
-              <span>Consultar Sistema a Medida</span>
-              <span>→</span>
-            </a>
           </article>
 
+        </div>
+
+        <!-- Banner enlace a Plan Corporativo -->
+        <div class="mt-12 text-center font-mono text-xs text-asuncion-muted">
+          ¿Buscás desarrollo institucional multipágina o sistemas a medida? 
+          <a href="#amedida" class="text-asuncion-cognac font-bold underline hover:text-white transition-colors ml-1">
+            Conocé el Plan Corporativo &amp; Sistemas (₲ 4.890.000) ↓
+          </a>
         </div>
 
       </div>
     </section>
 
-    <!-- ───────────── SECCIÓN NUEVA: CÓMO TE CUIDAMOS (#garantias) ───────────── -->
+    <!-- ───────────── 02 · CATÁLOGO DE DEMOS EN VIVO (#demos) ───────────── -->
+    <section id="demos" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">02 · CATÁLOGO DE DEMOS EN VIVO</span>
+            <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
+              Probá cómo compran tus clientes en el celular.
+            </h2>
+            <p class="text-asuncion-muted text-xs sm:text-sm mt-2 max-w-2xl leading-relaxed">
+              Navegá ejemplos de comercios diseñados para Asunción y Gran Asunción con carrito directo a WhatsApp.
+            </p>
+          </div>
+          <div id="demoCount" class="font-mono text-xs text-asuncion-muted">
+            Mostrando 6 demostraciones
+          </div>
+        </div>
+
+        <!-- 3 Pestañas de Ejemplos de Comercios -->
+        <div class="mb-12 border border-asuncion-border bg-asuncion-card p-6 sm:p-8">
+          <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-3 font-semibold">
+            COMPARATIVA COMERCIAL INTERACTIVA
+          </div>
+          <p class="text-xs text-asuncion-muted mb-6 leading-relaxed">
+            Hacé clic en los ejemplos de comercios para comparar el modelo antiguo frente al sistema de cierre ágil de Punto Prisma:
+          </p>
+
+          <!-- Pestañas rotuladas como Ejemplo -->
+          <div class="flex flex-wrap gap-2 border-b border-asuncion-border pb-4 mb-6" role="tablist">
+            <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-cognac bg-asuncion-cognac text-black font-serif font-bold text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="ferreteria" role="tab" aria-selected="true">
+              Ejemplo: Ferretería &amp; Repuestos
+            </button>
+            <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="barberia" role="tab" aria-selected="false">
+              Ejemplo: Barber Studio &amp; Estética
+            </button>
+            <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="boutique" role="tab" aria-selected="false">
+              Ejemplo: Boutique &amp; Calzados
+            </button>
+          </div>
+
+          <!-- Panel Comparativo Dinámico -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Lado Izquierdo: Antes -->
+            <div class="bg-asuncion-surface border border-red-950/40 p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between font-mono text-xs text-red-400 pb-3 border-b border-white/5 mb-4 font-bold uppercase">
+                  <span>EL MODELO TRADICIONAL (FRICCIÓN)</span>
+                  <span>VENTAS PERDIDAS</span>
+                </div>
+                <h3 id="beforeTitle" class="font-serif font-bold text-lg sm:text-xl text-white mb-2">
+                  PDFs pesados y audios interminables
+                </h3>
+                <p id="beforeDesc" class="text-xs text-asuncion-muted leading-relaxed mb-6">
+                  Tu cliente en la calle pide precios por WhatsApp. Tu vendedor le manda un PDF de 45MB que tarda 2 minutos en descargar. El cliente se frustra, no busca el código y le compra a la competencia.
+                </p>
+                <ul id="beforeList" class="space-y-2.5 font-mono text-xs text-red-300/80">
+                  <li class="flex items-start gap-2">
+                    <span class="text-red-400 font-bold">[X]</span>
+                    <span>PDFs desactualizados con precios viejos</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-red-400 font-bold">[X]</span>
+                    <span>Vendedor atado a responder 50 audios por día</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-red-400 font-bold">[X]</span>
+                    <span>Sin buscador por código o compatibilidad</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-4 mt-6 border-t border-white/5 font-mono text-[11px] text-red-400/80">
+                Resultado: Ventas y cotizaciones perdidas por fricción y demoras.
+              </div>
+            </div>
+
+            <!-- Lado Derecho: Ahora con Punto Prisma -->
+            <div class="bg-asuncion-void border-2 border-asuncion-cognac p-6 sm:p-8 flex flex-col justify-between shadow-xl">
+              <div>
+                <div class="flex items-center justify-between font-mono text-xs text-asuncion-cognac pb-3 border-b border-asuncion-border mb-4 font-bold uppercase">
+                  <span>CON PUNTO PRISMA STUDIO</span>
+                  <span class="text-white">CIERRE EN 1 TOQUE</span>
+                </div>
+                <h3 id="afterTitle" class="font-serif font-bold text-lg sm:text-xl text-white mb-2">
+                  Catálogo ultrarrápido y orden lista al WhatsApp
+                </h3>
+                <p id="afterDesc" class="text-xs text-asuncion-muted leading-relaxed mb-6">
+                  El cliente entra con carga rápida en celular, escribe "amoladora" o "pastilla", agrega 2 unidades al carrito y pulsa 'Enviar Pedido'. Tu vendedor recibe el detalle completo listo para cobrar y enviar.
+                </p>
+                <ul id="afterList" class="space-y-2.5 font-mono text-xs text-asuncion-text">
+                  <li class="flex items-start gap-2">
+                    <span class="text-asuncion-cognac font-bold">✓</span>
+                    <span>Buscador instantáneo por código y descripción</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-asuncion-cognac font-bold">✓</span>
+                    <span>Mensaje de WhatsApp formateado con subtotal en ₲</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-asuncion-cognac font-bold">✓</span>
+                    <span>Precios actualizados en tiempo real por tu equipo</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="pt-4 mt-6 border-t border-asuncion-border flex items-center justify-between">
+                <span class="font-mono text-xs text-asuncion-cognac font-bold">Cierre en menos de 60 segundos</span>
+                <a id="caseWaBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20un%20cat%C3%A1logo%20m%C3%B3vil%20para%20Ferreter%C3%ADa%20y%20Repuestos"
+                  target="_blank" rel="noopener"
+                  class="h-10 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1 transition-all duration-200 active:scale-[0.98] shadow-sm">
+                  <span>Pedir para mi rubro</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Filtros y Directorio de Demostraciones -->
+        <div class="border border-asuncion-border bg-asuncion-surface p-6 mb-8 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+            
+            <div class="md:col-span-7">
+              <label class="block font-mono text-xs text-asuncion-muted uppercase mb-1">Buscar plantilla comercial</label>
+              <input id="searchInput" type="text" placeholder="Buscar ferretería, barbería, motores, clínica, abogados..."
+                class="w-full h-11 bg-asuncion-void border border-asuncion-border px-4 text-white font-mono text-xs focus:border-asuncion-cognac">
+            </div>
+
+            <div class="md:col-span-5">
+              <label for="rubroFilter" class="block font-mono text-xs text-asuncion-muted uppercase mb-1">Filtrar por rubro</label>
+              <select id="rubroFilter" aria-label="Filtrar ejemplos por rubro comercial" class="w-full h-11 bg-asuncion-void border border-asuncion-border px-4 text-white font-mono text-xs focus:border-asuncion-cognac cursor-pointer">
+                <option value="TODOS">Todos los rubros comerciales</option>
+                <option value="Ferreterías & Repuestos">Ferreterías &amp; Repuestos</option>
+                <option value="Barberías & Estética">Barberías &amp; Estética</option>
+                <option value="Automotor & Talleres">Automotor &amp; Talleres</option>
+                <option value="Salud & Clínicas">Salud &amp; Clínicas</option>
+                <option value="Servicios Profesionales">Servicios Profesionales</option>
+                <option value="Moda & Retail">Moda &amp; Retail</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="pt-4 border-t border-asuncion-border flex flex-wrap gap-2">
+            <span class="font-mono text-xs text-asuncion-muted uppercase self-center mr-2">Plan:</span>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold active:scale-[0.98] transition-all" data-plan="TODOS">TODOS</button>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Catálogo Móvil WhatsApp">CATÁLOGO WHATSAPP</button>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Presencia Express">LANDING EXPRESS</button>
+            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Corporativo & Sistemas">CORPORATIVO</button>
+          </div>
+        </div>
+
+        <!-- Grid de Demostraciones -->
+        <div id="demoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Renderizado con JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────── 03 · CÓMO TE CUIDAMOS (#garantias) ───────────── -->
     <section id="garantias" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-card/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">02 · SEGURIDAD &amp; TRANSPARENCIA COMERCIAL</span>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">03 · CONDICIONES Y TRANSPARENCIA</span>
             <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
               Cómo te cuidamos
             </h2>
           </div>
           <p class="font-sans text-xs sm:text-sm text-asuncion-muted max-w-md leading-relaxed">
-            Condiciones claras y garantías reales por escrito para que tu negocio crezca con respaldo directo desde el primer contacto.
+            Condiciones claras desde el primer contacto para que tu negocio crezca con respaldo directo.
           </p>
         </div>
 
@@ -763,7 +821,7 @@
               </div>
               <h3 class="font-serif font-bold text-xl text-white mb-3">Soporte por WhatsApp de 08:00 a 18:00 (hora de Paraguay), con respuesta en menos de 15 minutos.</h3>
               <p class="font-sans text-xs sm:text-sm text-asuncion-muted leading-relaxed max-w-xl">
-                Atención directa por ingenieros radicados en Paraguay. Sin bots genéricos, sin contestadores automáticos y sin esperas telefónicas.
+                Atención directa por personas reales, sin bots genéricos, sin contestadores automáticos y sin esperas telefónicas.
               </p>
             </div>
             <div class="mt-6 pt-4 border-t border-asuncion-border/60 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
@@ -779,7 +837,7 @@
 
         </div>
 
-        <!-- Pasos del Proceso -->
+        <!-- Pasos del Proceso (Lenguaje Simple, sin jerga) -->
         <div class="border border-asuncion-border bg-asuncion-surface p-8 sm:p-10 mb-8">
           <div class="flex items-center gap-3 font-mono text-xs text-asuncion-cognac uppercase tracking-wider mb-6 font-bold">
             <span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span>
@@ -788,16 +846,16 @@
           <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div class="border-l-2 border-asuncion-cognac/40 pl-4">
               <span class="font-mono text-xs text-asuncion-cognac font-bold block mb-1">PASO 01</span>
-              <h4 class="font-serif font-bold text-white text-base mb-1">Intake y Seña (30%)</h4>
+              <h4 class="font-serif font-bold text-white text-base mb-1">Recepción de datos y Seña (30%)</h4>
               <p class="font-sans text-xs text-asuncion-muted leading-relaxed">
-                Recibimos tus productos, fotos, logo y la seña del 30% vía SIPAP o efectivo.
+                Recibimos tu lista de productos, fotos, logo y la seña del 30% vía SIPAP o efectivo.
               </p>
             </div>
             <div class="border-l-2 border-asuncion-cognac/40 pl-4">
               <span class="font-mono text-xs text-asuncion-cognac font-bold block mb-1">PASO 02</span>
-              <h4 class="font-serif font-bold text-white text-base mb-1">Desarrollo y Carga</h4>
+              <h4 class="font-serif font-bold text-white text-base mb-1">Maquetación y Carga</h4>
               <p class="font-sans text-xs text-asuncion-muted leading-relaxed">
-                Maquetamos el catálogo móvil con buscador, precios en Guaraníes y carrito a WhatsApp.
+                Organizamos tu catálogo móvil con buscador, precios en Guaraníes y carrito a WhatsApp.
               </p>
             </div>
             <div class="border-l-2 border-asuncion-cognac/40 pl-4">
@@ -817,300 +875,25 @@
           </div>
         </div>
 
-        <!-- Línea Legal Componente Vacío (sin datos inventados) -->
-        <div class="border-t border-asuncion-border/70 pt-6 flex flex-wrap items-center justify-between gap-4 font-mono text-[11px] text-asuncion-subtle">
-          <div class="flex items-center gap-2">
-            <span class="text-asuncion-muted font-bold">Razón Social / RUC:</span>
-            <!-- Componente vacío reservado para razón social o RUC oficial -->
-            <span class="border-b border-dashed border-asuncion-border px-2 py-0.5 text-asuncion-muted">[Razón Social / RUC]</span>
-          </div>
-          <div class="flex items-center gap-4">
-            <!-- Componente vacío reservado para Términos de Servicio -->
-            <span class="text-asuncion-muted hover:text-white transition-colors cursor-default">[Términos del Servicio]</span>
-            <span class="text-white/20">·</span>
-            <!-- Componente vacío reservado para Política de Privacidad -->
-            <span class="text-asuncion-muted hover:text-white transition-colors cursor-default">[Política de Privacidad]</span>
-          </div>
+        <!-- Línea Legal Dinámica (Solo visible si SITE_CONFIG.legal contiene datos, 0 corchetes si está vacía) -->
+        <div id="legalLine" class="hidden mt-8 pt-6 border-t border-asuncion-border text-center font-mono text-[11px] text-asuncion-subtle">
         </div>
 
       </div>
     </section>
 
-    <!-- ───────────── CASOS COMPARATIVOS (TEMPORALMENTE INACTIVO - ESTRUCTURADO PARA REACTIVAR) ───────────── -->
-    <template id="casosComparadorTemplate" aria-hidden="true">
-    <section id="comparador" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="max-w-3xl mb-12">
-          <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">02 · ANÁLISIS COMERCIAL COMPARATIVO</span>
-          <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight mb-4">
-            ¿Por qué los catálogos en PDF y las tiendas tradicionales pierden ventas?
-          </h2>
-          <p class="text-asuncion-muted text-sm leading-relaxed">
-            Hacé clic en los casos reales de comercio paraguayo para comparar el modelo antiguo frente al sistema de cierre ágil de Punto Prisma.
-          </p>
-        </div>
-
-        <!-- Pestañas de Rubro -->
-        <div class="flex flex-wrap gap-2 border-b border-asuncion-border pb-4 mb-8">
-          <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-cognac bg-asuncion-cognac text-black font-serif font-bold text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="ferreteria">
-            01. Ferretería &amp; Repuestos (Eusebio Ayala)
-          </button>
-          <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="barberia">
-            02. Barber Studio &amp; Estética (Villa Morra)
-          </button>
-          <button type="button" class="case-tab-btn min-h-[44px] px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]" data-case="boutique">
-            03. Boutique &amp; Calzados (Carmelitas)
-          </button>
-        </div>
-
-        <!-- Panel Comparativo Dinámico -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <!-- Lado Izquierdo: Antes -->
-          <div class="bg-asuncion-surface border border-red-950/40 p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between font-mono text-xs text-red-400 pb-3 border-b border-white/5 mb-6 font-bold uppercase">
-                <span>EL MODELO TRADICIONAL (FRICCIÓN)</span>
-                <span>VENTAS PERDIDAS</span>
-              </div>
-              <h3 id="beforeTitle" class="font-serif font-bold text-xl text-white mb-3">
-                PDFs pesados y audios interminables
-              </h3>
-              <p id="beforeDesc" class="text-xs text-asuncion-muted leading-relaxed mb-6">
-                Tu cliente en la calle pide precios por WhatsApp. Tu vendedor le manda un PDF de 45MB que tarda 2 minutos en descargar. El cliente se frustra, no busca el código y le compra a la competencia.
-              </p>
-              <ul id="beforeList" class="space-y-3 font-mono text-xs text-red-300/80">
-                <li class="flex items-start gap-2">
-                  <span class="text-red-400 font-bold">[X]</span>
-                  <span>PDFs desactualizados con precios viejos</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-red-400 font-bold">[X]</span>
-                  <span>Vendedor atado a responder 50 audios por día</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-red-400 font-bold">[X]</span>
-                  <span>Sin buscador por código o compatibilidad</span>
-                </li>
-              </ul>
-            </div>
-            <div class="pt-6 mt-6 border-t border-white/5 font-mono text-[11px] text-red-400/80">
-              Resultado: Ventas y cotizaciones perdidas por fricción y demoras.
-            </div>
-          </div>
-
-          <!-- Lado Derecho: Ahora con Punto Prisma -->
-          <div class="bg-asuncion-card border-2 border-asuncion-cognac p-8 flex flex-col justify-between shadow-xl">
-            <div>
-              <div class="flex items-center justify-between font-mono text-xs text-asuncion-cognac pb-3 border-b border-asuncion-border mb-6 font-bold uppercase">
-                <span>CON PUNTO PRISMA STUDIO</span>
-                <span class="text-white">CIERRE EN 1 TOQUE</span>
-              </div>
-              <h3 id="afterTitle" class="font-serif font-bold text-xl text-white mb-3">
-                Catálogo ultrarrápido y orden lista al WhatsApp
-              </h3>
-              <p id="afterDesc" class="text-xs text-asuncion-muted leading-relaxed mb-6">
-                El cliente entra con carga rápida en celular, escribe "amoladora" o "pastilla", agrega 2 unidades al carrito y pulsa 'Enviar Pedido'. Tu vendedor recibe el detalle completo listo para cobrar y enviar.
-              </p>
-              <ul id="afterList" class="space-y-3 font-mono text-xs text-asuncion-text">
-                <li class="flex items-start gap-2">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Buscador instantáneo por código y descripción</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Mensaje de WhatsApp formateado con subtotal en ₲</span>
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Precios actualizados en tiempo real por tu equipo</span>
-                </li>
-              </ul>
-            </div>
-            <div class="pt-6 mt-6 border-t border-asuncion-border flex items-center justify-between">
-              <span class="font-mono text-xs text-asuncion-cognac font-bold">Cierre en menos de 60 segundos</span>
-              <a id="caseWaBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20un%20cat%C3%A1logo%20m%C3%B3vil%20para%20Ferreter%C3%ADa%20y%20Repuestos"
-                target="_blank" rel="noopener"
-                class="h-11 px-5 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center gap-1 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.2)]">
-                <span>Pedir para mi rubro</span>
-                <span>→</span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- ──────── CALCULADORA INTERACTIVA DE AHORRO EN COMISIONES ──────── -->
-        <div class="mt-12 border border-asuncion-border bg-asuncion-card p-6 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
-          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-asuncion-border">
-            <div>
-              <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">[SIMULADOR FINANCIERO PYME]</span>
-              <h3 class="font-serif font-bold text-xl sm:text-3xl text-white">
-                Calculá cuánto dinero ahorrás en comisiones con tu propio catálogo
-              </h3>
-              <p class="text-xs sm:text-sm text-asuncion-muted mt-2 max-w-2xl leading-relaxed">
-                Las plataformas de marketplace y pedidos descuentan entre el 10% y el 20% de cada venta. Con Punto Prisma Studio tu comisión es ₲ 0. Ajustá el simulador a tus ventas reales:
-              </p>
-            </div>
-            <div class="font-mono text-xs text-emerald-400 bg-asuncion-void border border-emerald-500/30 px-3 py-2 flex items-center gap-2 self-start lg:self-end">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
-              <span>0% COMISIONES DE POR VIDA</span>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <!-- Controles del Slider -->
-            <div class="lg:col-span-6 space-y-6">
-              <div>
-                <div class="flex justify-between items-center mb-2 font-mono text-xs">
-                  <span class="text-asuncion-muted uppercase">Ventas mensuales de tu negocio:</span>
-                  <span id="roiSalesDisplay" class="text-white font-bold text-base tabular-nums">₲ 15.000.000</span>
-                </div>
-                <input type="range" id="roiSalesSlider" min="3000000" max="60000000" step="1000000" value="15000000"
-                  class="w-full accent-asuncion-cognac cursor-pointer h-2.5 bg-asuncion-surface border border-asuncion-border"
-                  aria-label="Ajustar ventas mensuales estimadas">
-                <div class="flex justify-between font-mono text-[10px] text-asuncion-subtle mt-1.5">
-                  <span>₲ 3.000.000 / mes</span>
-                  <span>₲ 30.000.000 / mes</span>
-                  <span>₲ 60.000.000 / mes</span>
-                </div>
-              </div>
-
-              <div>
-                <label class="block font-mono text-xs text-asuncion-muted uppercase mb-2">Comisión habitual de otras plataformas:</label>
-                <div class="grid grid-cols-3 gap-2">
-                  <button type="button" class="roi-pct-btn p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs uppercase font-bold transition-all active:scale-[0.98]" data-pct="10">10%</button>
-                  <button type="button" class="roi-pct-btn p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs uppercase font-bold transition-all active:scale-[0.98] shadow-[0_0_12px_rgba(224,169,109,0.3)]" data-pct="15">15% (Habitual)</button>
-                  <button type="button" class="roi-pct-btn p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs uppercase font-bold transition-all active:scale-[0.98]" data-pct="20">20%</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Visual Readout de Ahorro -->
-            <div class="lg:col-span-6 border border-asuncion-border bg-asuncion-surface p-6 font-mono text-xs space-y-4 shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
-              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border">
-                <span class="text-red-400">Comisión mensual en apps:</span>
-                <span id="roiMonthlyLost" class="text-red-400 font-bold text-sm sm:text-base tabular-nums">-₲ 2.250.000</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border">
-                <span class="text-emerald-400">Comisión con Punto Prisma Studio:</span>
-                <span class="text-emerald-400 font-bold text-sm sm:text-base tabular-nums">₲ 0 (Cero comisiones)</span>
-              </div>
-              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border bg-asuncion-void p-3">
-                <span class="text-asuncion-sand font-bold">Ahorro anual en tu cuenta:</span>
-                <span id="roiYearlySaved" class="text-asuncion-cognac font-extrabold text-base sm:text-xl tabular-nums">+₲ 27.000.000</span>
-              </div>
-              <div class="flex justify-between items-center text-[11px] text-asuncion-muted">
-                <span>Amortización Plan Catálogo (₲ 2.490.000):</span>
-                <span id="roiPaybackDays" class="text-white font-bold">En solo 33 días</span>
-              </div>
-              <a id="roiWhatsAppBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20calcule%20un%20ahorro%20de%20comisiones%20y%20quiero%20mi%20cat%C3%A1logo%20propio"
-                target="_blank" rel="noopener"
-                class="w-full h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase flex items-center justify-between transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.25)]">
-                <span>Quiero Mi Catálogo Sin Comisiones</span>
-                <span>→</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    </template>
-
-    <!-- ───────────── CATÁLOGO DE DEMOS INTERACTIVO ───────────── -->
-    <section id="demos" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">03 · PORTFOLIO EN VIVO</span>
-            <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
-              Demostraciones interactivas por rubro.
-            </h2>
-          </div>
-          <div id="demoCount" class="font-mono text-xs text-asuncion-muted">
-            Mostrando 6 demostraciones
-          </div>
-        </div>
-
-        <!-- Filtros Editoriales -->
-        <div class="border border-asuncion-border bg-asuncion-surface p-6 mb-8 space-y-4">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-            
-            <div class="md:col-span-7">
-              <label class="block font-mono text-xs text-asuncion-muted uppercase mb-1">Buscar plantilla comercial</label>
-              <input id="searchInput" type="text" placeholder="Buscar ferretería, barbería, motores, clínica, abogados..."
-                class="w-full h-11 bg-asuncion-void border border-asuncion-border px-4 text-white font-mono text-xs focus:border-asuncion-cognac">
-            </div>
-
-            <div class="md:col-span-5">
-              <label class="block font-mono text-xs text-asuncion-muted uppercase mb-1">Filtrar por rubro</label>
-              <select id="rubroFilter" class="w-full h-11 bg-asuncion-void border border-asuncion-border px-4 text-white font-mono text-xs focus:border-asuncion-cognac cursor-pointer">
-                <option value="TODOS">Todos los rubros comerciales</option>
-                <option value="Ferreterías & Repuestos">Ferreterías & Repuestos</option>
-                <option value="Barberías & Estética">Barberías & Estética</option>
-                <option value="Automotor & Talleres">Automotor & Talleres</option>
-                <option value="Salud & Clínicas">Salud & Clínicas</option>
-                <option value="Servicios Profesionales">Servicios Profesionales</option>
-                <option value="Moda & Retail">Moda & Retail</option>
-              </select>
-            </div>
-
-          </div>
-
-          <div class="pt-4 border-t border-asuncion-border flex flex-wrap gap-2">
-            <span class="font-mono text-xs text-asuncion-muted uppercase self-center mr-2">Plan:</span>
-            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold active:scale-[0.98] transition-all" data-plan="TODOS">TODOS</button>
-            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Catálogo Móvil WhatsApp">CATÁLOGO WHATSAPP</button>
-            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Presencia Express">LANDING EXPRESS</button>
-            <button class="chip-filter min-h-[44px] px-4 border border-asuncion-border bg-asuncion-void text-asuncion-muted hover:text-white font-mono text-xs active:scale-[0.98] transition-all" data-plan="Corporativo & Sistemas">CORPORATIVO</button>
-          </div>
-        </div>
-
-        <!-- Grid de Demostraciones -->
-        <div id="demoGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Renderizado con JS -->
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ───────────── MANIFIESTO EDITORIAL ASUNCIÓN ───────────── -->
-    <section id="manifiesto" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-surface">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-4">04 · NUESTRA POSTURA</span>
-        <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight leading-snug mb-6">
-          "El software comercial para una PyME debe construirse como la buena arquitectura: sobrio, durable y hecho para operar sin fricción."
-        </h2>
-        <p class="font-sans text-asuncion-muted text-sm sm:text-base leading-relaxed max-w-2xl mx-auto mb-8">
-          En Paraguay, el canal preferido de compra directa es WhatsApp. Una tienda online compleja con registros tediosos y pasarelas lentas pierde clientes a cada segundo. Punto Prisma conecta tu catálogo con el canal que tu cliente ya domina y prefiere.
-        </p>
-        <div class="mb-8 border border-asuncion-border bg-asuncion-card overflow-hidden">
-          <div class="relative aspect-[21/9] w-full">
-            <img src="assets/img/workstation.jpg" alt="Mesa de diseño y arquitectura de software en Asunción"
-              width="1920" height="800" loading="lazy" class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity">
-          </div>
-        </div>
-        <div class="font-mono text-xs text-asuncion-cognac uppercase tracking-wider">
-          PUNTO PRISMA STUDIO · ASUNCIÓN, PARAGUAY
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────── CRONOGRAMA 7 DÍAS (EDITORIAL INTERACTIVO ASUNCIÓN) ───────────── -->
+    <!-- ───────────── 04 · PROCESO EN 7 DÍAS (#proceso) ───────────── -->
     <section id="proceso" class="order-process py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void" aria-label="Proceso de Pedido y Entrega">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
           <div>
-            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">05 · CRONOGRAMA ÁGIL</span>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">04 · PROCESO EN 7 DÍAS</span>
             <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
               Listo en 7 días hábiles.
             </h2>
             <p class="font-sans text-asuncion-muted text-sm mt-2 max-w-xl leading-relaxed">
-              Un proceso ordenado y transparente para empresas de Asunción y Gran Asunción. Pulsá cada día, arrastrá el dial o activá el recorrido guiado para auditar la entrega paso a paso.
+              Un proceso ordenado y transparente para empresas de Asunción y Gran Asunción. Pulsá cada día, arrastrá el dial o activá el recorrido para conocer la entrega paso a paso.
             </p>
           </div>
 
@@ -1119,7 +902,7 @@
             <span class="w-2.5 h-2.5 rounded-full bg-asuncion-cognac"></span>
             <span class="text-asuncion-muted uppercase">ETAPA:</span>
             <span id="asuncionProcBadge" class="font-bold text-white uppercase">DÍA 01 / 07</span>
-            <span id="asuncionProcStatus" class="text-asuncion-cognac font-semibold">FASE 01: INTAKE &amp; DOMINIO</span>
+            <span id="asuncionProcStatus" class="text-asuncion-cognac font-semibold">FASE 01: RECEPCIÓN Y DOMINIO</span>
           </div>
         </div>
 
@@ -1131,9 +914,9 @@
             <span id="asuncionCalendarDates" class="text-white font-bold text-xs sm:text-sm">Calculando entrega en días hábiles...</span>
           </div>
           <div class="flex items-center gap-2">
-            <button type="button" id="asuncionPlaySprintBtn" class="min-h-[44px] px-3.5 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-cognac font-mono text-xs uppercase flex items-center gap-2 transition-all active:scale-[0.97]" aria-label="Reproducir recorrido guiado de 7 días">
+            <button type="button" id="asuncionPlaySprintBtn" class="min-h-[44px] px-3.5 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-cognac font-mono text-xs uppercase flex items-center gap-2 transition-all active:scale-[0.97]" aria-label="Recorrido de 7 Días: Reproducir cronograma guiado">
               <span id="asuncionPlayIcon" class="text-sm">▶</span>
-              <span id="asuncionPlayText">Recorrido Guiado</span>
+              <span id="asuncionPlayText">Recorrido de 7 Días</span>
             </button>
             <button type="button" id="asuncionAudioToggleBtn" class="min-h-[44px] px-3 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs flex items-center gap-1.5 transition-all active:scale-[0.97]" title="Activar sonido táctil">
               <span id="asuncionAudioIcon">🔈</span>
@@ -1178,10 +961,10 @@
           <!-- Interactive Range Slider Fader -->
           <div class="mt-3 px-1">
             <div class="flex justify-between font-mono text-[10px] text-asuncion-subtle mb-1.5 uppercase">
-              <span>DÍA 01 · Intake</span>
-              <span>DÍA 03 · Catálogo</span>
-              <span>DÍA 05 · Sheets</span>
-              <span>DÍA 07 · En Vivo</span>
+              <span>DÍA 01 · DATOS Y DOMINIO</span>
+              <span>DÍA 03 · CATÁLOGO</span>
+              <span>DÍA 05 · PLANILLA</span>
+              <span>DÍA 07 · EN VIVO</span>
             </div>
             <input type="range" id="asuncionProcRange" min="1" max="7" value="1" step="1"
               class="w-full accent-asuncion-cognac cursor-pointer h-2 bg-asuncion-surface border border-asuncion-border"
@@ -1194,33 +977,36 @@
           </div>
         </div>
 
-        <!-- 2-Column Editorial Delivery Stage -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 border border-asuncion-border bg-asuncion-card">
-          
-          <!-- Left Column: Milestone Briefing -->
-          <div class="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-asuncion-border">
-            <div>
-              <div class="flex items-center gap-2 font-mono text-xs text-asuncion-muted mb-3 uppercase">
-                <span id="asuncionProcPhaseTag" class="text-asuncion-cognac font-bold">[FASE 01 / ONBOARDING]</span>
-                <span>·</span>
-                <span id="asuncionProcPhaseScope">TIEMPO: 24 HORAS</span>
+        <!-- Stage Dynamic Inspector Card -->
+        <div class="border border-asuncion-border bg-asuncion-card p-6 sm:p-10 mb-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left: Scope & Description -->
+            <div class="lg:col-span-7">
+              <div class="flex items-center gap-3 mb-4">
+                <span id="asuncionProcPhaseTag" class="px-2.5 py-1 bg-asuncion-void border border-asuncion-border font-mono text-[10px] text-asuncion-cognac uppercase font-bold tracking-wider">
+                  FASE 01 · INICIO
+                </span>
+                <span id="asuncionProcPhaseScope" class="font-mono text-xs text-asuncion-subtle uppercase">
+                  TIEMPO: 24 HORAS
+                </span>
               </div>
 
-              <h3 id="asuncionProcPhaseTitle" class="font-serif font-bold text-xl sm:text-2xl text-white mb-4">
+              <h3 id="asuncionProcPhaseTitle" class="font-serif font-bold text-xl sm:text-2xl text-white mb-3">
                 Recepción de Datos, Catálogo y Reserva de Dominio
               </h3>
 
-              <p id="asuncionProcPhaseDesc" class="text-xs sm:text-sm text-asuncion-muted leading-relaxed mb-6">
+              <p id="asuncionProcPhaseDesc" class="font-sans text-xs sm:text-sm text-asuncion-muted leading-relaxed mb-6">
                 Recibimos por WhatsApp o Drive tu lista de productos en Excel, fotos, lista de precios y tu logo. Si no tenés logo, definimos tipografía limpia y paleta de color. Configuramos el número de WhatsApp receptor de pedidos.
               </p>
 
               <!-- Technical Checklist -->
               <div class="p-4 border border-asuncion-border bg-asuncion-void mb-6">
-                <span class="font-mono text-[10px] text-asuncion-cognac uppercase block mb-2 font-bold">[ENTREGABLES VERIFICADOS DE ESTA ETAPA]:</span>
+                <span class="font-mono text-[10px] text-asuncion-cognac uppercase block mb-2 font-bold">Entregables de esta etapa:</span>
                 <ul id="asuncionProcChecklist" class="space-y-2 font-mono text-xs text-asuncion-muted">
                   <li class="flex items-center gap-2 text-white">
                     <span class="text-asuncion-cognac font-bold">✓</span>
-                    <span>Ingesta completa de catálogo .xlsx con precios en Guaraníes</span>
+                    <span>Carga de lista de productos con precios en Guaraníes</span>
                   </li>
                   <li class="flex items-center gap-2 text-white">
                     <span class="text-asuncion-cognac font-bold">✓</span>
@@ -1234,420 +1020,345 @@
               </div>
             </div>
 
-            <!-- Stage Navigation Controls -->
-            <div class="pt-6 border-t border-asuncion-border flex items-center justify-between gap-4 font-mono text-xs">
-              <div class="flex items-center gap-2">
-                <button type="button" id="asuncionPrevBtn" aria-label="Día anterior"
-                  class="h-11 px-4 border border-asuncion-border hover:border-white text-white uppercase flex items-center gap-1 transition-colors bg-asuncion-surface">
-                  <span>← Anterior</span>
-                </button>
-                <button type="button" id="asuncionNextBtn" aria-label="Siguiente día"
-                  class="h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-bold uppercase flex items-center gap-1 transition-colors">
-                  <span>Siguiente →</span>
-                </button>
-              </div>
-
-              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20el%20cronograma%20de%207%20d%C3%ADas"
-                target="_blank" rel="noopener"
-                class="hidden sm:inline-flex items-center gap-1.5 text-asuncion-cognac hover:text-amber-200 transition-colors uppercase">
-                <span>Comenzar Día 01</span>
-                <span>↗</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Right Column: Editorial Delivery Monitor -->
-          <div class="lg:col-span-5 p-6 sm:p-8 bg-asuncion-surface flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between pb-3 border-b border-asuncion-border font-mono text-xs text-asuncion-muted mb-4">
-                <span class="flex items-center gap-2 text-white font-semibold">
+            <!-- Right: Interactive Telemetry Screen -->
+            <div class="lg:col-span-5 bg-asuncion-surface border border-asuncion-border p-5">
+              <div class="flex items-center justify-between border-b border-asuncion-border pb-2.5 mb-4">
+                <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span>
-                  <span id="asuncionSimTitle">ESTADO // DÍA 01</span>
-                </span>
-                <span class="text-asuncion-cognac font-bold" id="asuncionSimProgress">PROGRESO 14%</span>
+                  <span id="asuncionSimTitle" class="font-mono text-xs font-bold text-white uppercase tracking-wider">Estado · Día 01</span>
+                </div>
+                <span id="asuncionSimProgress" class="font-mono text-[10px] text-asuncion-cognac font-bold">PROGRESO 14%</span>
               </div>
 
-              <!-- Dynamic Data Monitor -->
-              <div id="asuncionStageTelemetry" class="border border-asuncion-border bg-asuncion-card p-5 font-mono text-xs leading-relaxed min-h-[220px] flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
-                    <span class="text-asuncion-cognac">ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
-                    <span class="text-emerald-400 font-bold">✓ PROCESADO</span>
-                  </div>
-                  <div class="space-y-1.5 text-asuncion-sand text-[11px]">
-                    <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                      <span>• SKUs importados:</span>
-                      <span class="text-white font-bold">100 artículos</span>
-                    </div>
-                    <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                      <span>• Moneda local:</span>
-                      <span class="text-asuncion-cognac font-bold">Guaraníes (₲)</span>
-                    </div>
-                    <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                      <span>• Receptor WhatsApp:</span>
-                      <span class="text-white font-bold">+595 986 125 649</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mt-4 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
-                  <span>DOMINIO SELECCIONADO:</span>
-                  <span class="font-bold underline">tunegocio.store</span>
-                </div>
+              <!-- Telemetry Inner Widget (Swapped Dynamically via JS) -->
+              <div id="asuncionStageTelemetry" class="min-h-[220px] flex flex-col justify-between font-mono text-xs">
+                <!-- Rendered dynamically -->
               </div>
-            </div>
-
-            <!-- Direct Contact Link for 7-day sprint -->
-            <div class="pt-6 mt-6 border-t border-asuncion-border">
-              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20agendar%20mi%20entrega%20en%207%20d%C3%ADas%20h%C3%A1biles"
-                target="_blank" rel="noopener"
-                class="w-full h-11 px-4 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-card text-white font-mono text-xs uppercase flex items-center justify-center gap-2 transition-colors">
-                <span>Agendar Sprint de 7 Días en WhatsApp</span>
-                <span>→</span>
-              </a>
             </div>
 
           </div>
 
+          <!-- Bottom Navigation Controls -->
+          <div class="pt-6 mt-8 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
+            <button type="button" id="asuncionPrevBtn" class="min-h-[44px] px-4 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-sand hover:text-white flex items-center gap-2 transition-all active:scale-[0.98]">
+              <span>←</span>
+              <span>Día Anterior</span>
+            </button>
+
+            <span class="text-asuncion-muted hidden sm:inline">Paso a paso sin saltos técnicos</span>
+
+            <button type="button" id="asuncionNextBtn" class="min-h-[44px] px-4 border border-asuncion-cognac bg-asuncion-cognac text-black font-bold flex items-center gap-2 transition-all active:scale-[0.98] shadow-sm">
+              <span>Siguiente Día</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Direct Contact Link for 7-day delivery -->
+        <div class="text-center font-mono text-xs text-asuncion-muted">
+          ¿Querés empezar esta semana? 
+          <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20agendar%20mi%20entrega%20en%207%20d%C3%ADas%20h%C3%A1biles"
+            target="_blank" rel="noopener"
+            class="text-asuncion-cognac hover:underline font-bold ml-1">
+            Agendar entrega en 7 días hábiles por WhatsApp →
+          </a>
         </div>
 
       </div>
     </section>
 
-    <!-- ───────────── DOMINIOS NUEVOS gTLD & MODALIDADES FLEXIBLES ───────────── -->
-    <section id="dominios" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void" aria-label="Dominios gTLD y Modalidades">
+    <!-- ───────────── 05 · A MEDIDA: PLAN CORPORATIVO (#amedida) ───────────── -->
+    <section id="amedida" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-surface" aria-label="Desarrollo a Medida">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">05 · DESARROLLO A MEDIDA</span>
+            <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
+              Corporativo &amp; Sistemas
+            </h2>
+            <p class="font-sans text-xs sm:text-sm text-asuncion-muted mt-2 max-w-2xl leading-relaxed">
+              Para empresas que demandan estructura multipágina, paneles administrativos, bases de datos o automatización de pedidos a medida.
+            </p>
+          </div>
+          <div class="font-mono text-xs text-asuncion-cognac bg-asuncion-card border border-asuncion-border px-3 py-2 flex items-center gap-2 self-start md:self-end">
+            <span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span>
+            <span>ARQUITECTURA EMPRESARIAL</span>
+          </div>
+        </div>
+
+        <div class="bg-asuncion-card border-2 border-asuncion-border hover:border-asuncion-cognac/60 p-8 sm:p-12 transition-all duration-200 shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="font-mono text-xs text-asuncion-cognac font-bold uppercase tracking-wider">PLAN CORPORATIVO</span>
+                <span class="text-white/20">·</span>
+                <span class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums">₲ 4.890.000</span>
+                <span class="font-mono text-xs text-asuncion-muted">Modalidad 30/70 · IVA incluido</span>
+              </div>
+
+              <p class="font-sans text-xs sm:text-sm text-asuncion-muted leading-relaxed">
+                Desarrollo web robusto para empresas consolidadas. Integramos áreas de servicios, catálogos extensos, paneles de autogestión y flujos directos a múltiples números de WhatsApp por sucursal o vendedor.
+              </p>
+
+              <ul class="space-y-3 font-mono text-xs text-white">
+                <li class="flex items-center gap-2.5">
+                  <span class="text-asuncion-cognac font-bold">✓</span>
+                  <span>Sitio multipágina corporativo e institucional</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-asuncion-cognac font-bold">✓</span>
+                  <span>Panel administrativo privado para tu equipo</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-asuncion-cognac font-bold">✓</span>
+                  <span>Integración a CRM, planillas y bases de datos</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-asuncion-cognac font-bold">✓</span>
+                  <span>Soporte prioritario y capacitación incluida</span>
+                </li>
+              </ul>
+
+              <div class="pt-4 flex flex-wrap items-center gap-4">
+                <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20un%20Sitio%20Corporativo%20o%20Sistema%20a%20Medida"
+                  target="_blank" rel="noopener"
+                  class="h-12 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-sm">
+                  <span>Consultar Sistema a Medida</span>
+                  <span>→</span>
+                </a>
+                <a href="#demos"
+                  class="h-12 px-5 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface hover:text-asuncion-cognac text-white font-mono text-xs uppercase tracking-wider flex items-center justify-center transition-all">
+                  Ver ejemplo de este plan →
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5">
+              <div class="relative aspect-[16/10] bg-asuncion-surface border border-asuncion-border overflow-hidden">
+                <img src="assets/img/solucion-sistemas.jpg" alt="Panel administrativo y arquitectura de sistemas empresariales a medida en Asunción"
+                  width="800" height="450" loading="lazy" class="w-full h-full object-cover opacity-85 hover:opacity-100 transition-opacity duration-200">
+                <div class="absolute bottom-2 left-2 px-2.5 py-1 bg-black/85 font-mono text-[9px] text-asuncion-cognac border border-asuncion-border tracking-wider">
+                  SOFTWARE &amp; GESTIÓN EN TIEMPO REAL
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────── 06 · SIMULADOR DE AHORRO (EJEMPLO) (#simulador) ───────────── -->
+    <section id="simulador" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void" aria-label="Simulador de Ahorro">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="border border-asuncion-border bg-asuncion-card p-6 sm:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-asuncion-border">
+            <div>
+              <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">06 · SIMULADOR DE AHORRO (EJEMPLO)</span>
+              <h2 class="font-serif font-bold text-xl sm:text-3xl text-white">
+                Calculá cuánto dinero ahorrás en comisiones con tu propio catálogo
+              </h2>
+              <p class="text-xs sm:text-sm text-asuncion-muted mt-2 max-w-2xl leading-relaxed">
+                Las plataformas de marketplace y pedidos descuentan comisiones de cada venta. Con Punto Prisma Studio tu comisión es ₲ 0. Ajustá el porcentaje que te cobra tu plataforma y tus ventas estimadas:
+              </p>
+            </div>
+            <div class="font-mono text-xs text-emerald-400 bg-asuncion-void border border-emerald-500/30 px-3 py-2 flex items-center gap-2 self-start lg:self-end">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+              <span>0% COMISIONES POR VENTA</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Controles del Slider -->
+            <div class="lg:col-span-6 space-y-6">
+              <div>
+                <div class="flex justify-between items-center mb-2 font-mono text-xs">
+                  <span class="text-asuncion-muted uppercase">Ventas mensuales de tu negocio:</span>
+                  <span id="roiSalesDisplay" class="text-white font-bold text-base tabular-nums">₲ 15.000.000</span>
+                </div>
+                <input type="range" id="roiSalesSlider" min="3000000" max="60000000" step="1000000" value="15000000"
+                  class="w-full accent-asuncion-cognac cursor-pointer h-2.5 bg-asuncion-surface border border-asuncion-border"
+                  aria-label="Ajustar ventas mensuales estimadas">
+                <div class="flex justify-between font-mono text-[10px] text-asuncion-subtle mt-1.5">
+                  <span>₲ 3.000.000 / mes</span>
+                  <span>₲ 30.000.000 / mes</span>
+                  <span>₲ 60.000.000 / mes</span>
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-mono text-xs text-asuncion-muted uppercase mb-2">Ajustá el porcentaje que te cobra tu plataforma:</label>
+                <div class="grid grid-cols-3 gap-2">
+                  <button type="button" class="roi-pct-btn p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs uppercase font-bold transition-all active:scale-[0.98]" data-pct="10">10%</button>
+                  <button type="button" class="roi-pct-btn p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs uppercase font-bold transition-all active:scale-[0.98] shadow-[0_0_12px_rgba(224,169,109,0.3)]" data-pct="15">15% (Habitual)</button>
+                  <button type="button" class="roi-pct-btn p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-mono text-xs uppercase font-bold transition-all active:scale-[0.98]" data-pct="20">20%</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Readout de Ahorro -->
+            <div class="lg:col-span-6 border border-asuncion-border bg-asuncion-surface p-6 font-mono text-xs space-y-4 shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
+              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border">
+                <span class="text-red-400">Comisión mensual en apps:</span>
+                <span id="roiMonthlyLost" class="text-red-400 font-bold text-sm sm:text-base tabular-nums">-₲ 2.250.000</span>
+              </div>
+              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border">
+                <span class="text-emerald-400">Comisión con Punto Prisma Studio:</span>
+                <span class="text-emerald-400 font-bold text-sm sm:text-base tabular-nums">₲ 0 (Cero comisiones)</span>
+              </div>
+              <div class="flex justify-between items-center pb-3 border-b border-asuncion-border bg-asuncion-void p-3">
+                <span class="text-asuncion-sand font-bold">Ahorro anual en tu cuenta:</span>
+                <span id="roiYearlySaved" class="text-asuncion-cognac font-extrabold text-base sm:text-xl tabular-nums">+₲ 27.000.000</span>
+              </div>
+              <div class="flex justify-between items-center text-[11px] text-asuncion-muted">
+                <span>Amortización Plan Catálogo (₲ 2.490.000):</span>
+                <span id="roiPaybackDays" class="text-white font-bold">En solo 33 días</span>
+              </div>
+              <a id="roiWhatsAppBtn" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20calcule%20un%20ahorro%20de%20comisiones%20y%20quiero%20mi%20cat%C3%A1logo%20propio"
+                target="_blank" rel="noopener"
+                class="w-full h-11 px-4 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase flex items-center justify-between transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.25)]">
+                <span>Quiero Mi Catálogo Sin Comisiones</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────── 07 · DOMINIOS Y HOSTING (COMPACTADO) (#dominios) ───────────── -->
+    <section id="dominios" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-surface" aria-label="Dominios y Hosting">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>
-            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">06 · IDENTIDAD DE MARCA &amp; DESPLIEGUE</span>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">07 · IDENTIDAD DE MARCA Y DESPLIEGUE</span>
             <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
-              Dominios Nuevos gTLD y Modalidades Flexibles.
+              Tu nombre comercial en internet.
             </h2>
             <p class="font-sans text-asuncion-muted text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-              Elegí la extensión ideal para tu rubro comercial y decidí cómo querés operar: te entregamos el código limpio listo para tu servidor o te gestionamos el hosting llave en mano con ajuste de tarifas.
+              Tu catálogo funciona bajo tu propia dirección web con certificado de seguridad SSL incluido.
             </p>
           </div>
 
           <div class="font-mono text-xs text-asuncion-cognac bg-asuncion-card border border-asuncion-border px-3 py-2 flex items-center gap-2 self-start lg:self-end">
             <span class="w-2 h-2 rounded-full bg-asuncion-cognac"></span>
-            <span>REGISTRO DE MARCA OFICIAL</span>
+            <span>REGISTRO OFICIAL INCLUIDO</span>
           </div>
         </div>
 
-        <!-- ──────── BLOQUE 1: PROBADOR EN VIVO DE NUEVOS gTLD ──────── -->
-        <div class="border border-asuncion-border bg-asuncion-card p-6 sm:p-10 mb-12 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
+        <!-- Probador Interactivo Compactado -->
+        <div class="border border-asuncion-border bg-asuncion-card p-6 sm:p-8 mb-8 shadow-[0_12px_40px_rgba(0,0,0,0.4)]">
           
-          <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
-            <div class="max-w-2xl">
-              <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-1 font-semibold">[CONFIGURADOR INTERACTIVO DE DOMINIO]</span>
-              <h3 class="font-serif font-bold text-xl sm:text-3xl text-white">
-                Comprobá tu marca, elegí la extensión y reservala por WhatsApp
-              </h3>
-              <p class="font-sans text-xs sm:text-sm text-asuncion-muted mt-2 leading-relaxed">
-                Escribí el nombre de tu empresa (ej: <span class="text-asuncion-cognac font-mono font-bold">tumarca</span>), seleccioná la terminación comercial que mejor describe tu negocio y reservá tu enlace oficial con SSL incluido:
-              </p>
-            </div>
+          <div class="max-w-2xl mb-6">
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-1 font-semibold">CONFIGURADOR DE DOMINIO</span>
+            <h3 class="font-serif font-bold text-xl sm:text-2xl text-white">
+              Escribí tu marca, elegí la terminación y reservala por WhatsApp
+            </h3>
+          </div>
 
-            <div class="w-full lg:w-96">
-              <label for="asuncionBrandInput" class="block font-mono text-xs text-asuncion-muted uppercase mb-1.5 font-bold">Nombre comercial:</label>
-              <div class="relative">
-                <input type="text" id="asuncionBrandInput" value="tumarca"
-                  class="w-full h-12 bg-asuncion-surface border border-asuncion-border px-4 pr-10 text-white font-mono text-sm focus:border-asuncion-cognac transition-colors"
-                  placeholder="ej: tumarca, ferreteria, repuestos, boutique">
-                <span class="absolute right-3 top-3.5 text-xs font-mono text-asuncion-cognac">.py</span>
-              </div>
+          <!-- Input Nombre de Marca -->
+          <div class="mb-6">
+            <label for="asuncionBrandInput" class="block font-mono text-xs text-asuncion-muted uppercase mb-2">Ingresá el nombre comercial de tu negocio:</label>
+            <div class="relative">
+              <input type="text" id="asuncionBrandInput" value="tumarca" maxlength="32"
+                class="w-full h-12 bg-asuncion-void border-2 border-asuncion-border focus:border-asuncion-cognac px-4 text-white font-mono text-sm tracking-wider uppercase transition-colors"
+                placeholder="EJ: FERRETERIA-ASUNCION">
+              <span class="absolute right-4 top-3.5 font-mono text-[10px] text-asuncion-muted">PARAGUAY</span>
             </div>
           </div>
 
-          <!-- Selector de Extensiones gTLD (Pill Chips) -->
-          <div class="mb-8">
-            <label class="block font-mono text-xs text-asuncion-muted uppercase mb-3">Elegí la extensión gTLD para tu marca:</label>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5" role="radiogroup" aria-label="Extensiones de dominio">
-              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all shadow-[0_0_12px_rgba(224,169,109,0.25)] active:scale-[0.97]" data-gtld=".store" aria-checked="true">
+          <!-- Selector de Extensiones -->
+          <div class="mb-6">
+            <label class="block font-mono text-xs text-asuncion-muted uppercase mb-3">Elegí la terminación de tu dominio:</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all shadow-[0_0_12px_rgba(224,169,109,0.25)] active:scale-[0.97]" data-gtld=".store" aria-pressed="true">
                 <span class="text-sm font-extrabold">.store</span>
-                <span class="text-[9px] tracking-tight">Comercio / E-com</span>
+                <span class="text-[9px] tracking-tight">Comercio</span>
               </button>
-              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".shop" aria-checked="false">
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".shop" aria-pressed="false">
                 <span class="text-sm font-extrabold">.shop</span>
-                <span class="text-[9px] tracking-tight">Tienda &amp; Retail</span>
+                <span class="text-[9px] tracking-tight">Tienda</span>
               </button>
-              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".tech" aria-checked="false">
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".tech" aria-pressed="false">
                 <span class="text-sm font-extrabold">.tech</span>
-                <span class="text-[9px] tracking-tight">Tecnología / Software</span>
+                <span class="text-[9px] tracking-tight">Tecnología</span>
               </button>
-              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".app" aria-checked="false">
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".app" aria-pressed="false">
                 <span class="text-sm font-extrabold">.app</span>
-                <span class="text-[9px] tracking-tight">Sistemas &amp; SaaS</span>
+                <span class="text-[9px] tracking-tight">Aplicación</span>
               </button>
-              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".com.py" aria-checked="false">
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".com.py" aria-pressed="false">
                 <span class="text-sm font-extrabold">.com.py</span>
-                <span class="text-[9px] tracking-tight">Paraguay Oficial</span>
+                <span class="text-[9px] tracking-tight">Nacional</span>
               </button>
-              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".online" aria-checked="false">
+              <button type="button" class="asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]" data-gtld=".online" aria-pressed="false">
                 <span class="text-sm font-extrabold">.online</span>
-                <span class="text-[9px] tracking-tight">Presencia Digital</span>
+                <span class="text-[9px] tracking-tight">Presencia</span>
               </button>
             </div>
           </div>
 
-          <!-- Live Browser Address Bar Simulator & WhatsApp Dispatch -->
-          <div class="border border-asuncion-border bg-asuncion-surface p-6 sm:p-8 mb-8 font-mono text-xs shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-asuncion-border text-asuncion-muted text-[11px]">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
-                <span class="text-white font-bold uppercase">PREVISUALIZACIÓN DE URL OFICIAL</span>
-              </div>
-              <div class="flex items-center gap-4 text-asuncion-subtle">
-                <span class="flex items-center gap-1"><span class="text-asuncion-cognac">🔒</span> SSL incluido</span>
-                <span class="flex items-center gap-1"><span class="text-asuncion-cognac">⚡</span> Carga rápida en celular</span>
-              </div>
+          <!-- Preview Bar -->
+          <div class="bg-asuncion-void border border-asuncion-border p-3.5 sm:p-4 mb-6 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2 text-sm sm:text-base font-mono overflow-x-auto">
+              <span class="text-emerald-400 font-bold">🔒 https://</span>
+              <span id="domainBrandPreview" class="text-white font-bold">tumarca</span>
+              <span id="domainGtldPreview" class="text-asuncion-cognac font-extrabold">.store</span>
             </div>
-
-            <!-- Simulated Browser URL Bar -->
-            <div class="bg-asuncion-void border border-asuncion-border p-3.5 sm:p-4 mb-6 flex flex-wrap items-center justify-between gap-3">
-              <div class="flex items-center gap-2 text-sm sm:text-base font-mono overflow-x-auto">
-                <span class="text-emerald-400 font-bold">🔒 https://</span>
-                <span id="domainBrandPreview" class="text-white font-bold">tumarca</span>
-                <span id="domainGtldPreview" class="text-asuncion-cognac font-extrabold">.store</span>
-              </div>
-              <span id="domainAvailabilityBadge" class="text-[10px] uppercase font-bold px-2 py-0.5 border border-emerald-500/40 bg-emerald-500/10 text-emerald-400">
-                ● Sujeto a disponibilidad para tu plan
-              </span>
-            </div>
-
-            <!-- Direct CTA to WhatsApp with Selected Domain -->
-            <div class="flex flex-col sm:flex-row items-center gap-4">
-              <a id="asuncionMainDomainWaBtn"
-                href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20reservar%20el%20dominio%20tumarca.store%20para%20mi%20cat%C3%A1logo%20web%20y%20consultar%20disponibilidad."
-                target="_blank" rel="noopener"
-                class="w-full sm:flex-1 h-12 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_20px_rgba(224,169,109,0.3)]">
-                <span id="asuncionMainDomainWaBtnText">Reservar tumarca.store en WhatsApp</span>
-                <span>→</span>
-              </a>
-              <button type="button" id="asuncionCopyDomainBtn"
-                class="w-full sm:w-auto h-12 px-5 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-card text-asuncion-sand hover:text-white font-mono text-xs uppercase flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
-                <span>Copiar Enlace</span>
-                <span class="text-asuncion-cognac">⎘</span>
-              </button>
-            </div>
+            <span id="domainAvailabilityBadge" class="text-[10px] uppercase font-bold px-2 py-0.5 border border-emerald-500/40 bg-emerald-500/10 text-emerald-400">
+              ● Sujeto a disponibilidad para tu plan
+            </span>
           </div>
 
-          <!-- Grid de Extensiones (5 Grupos Solicitados) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            
-            <!-- .store -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
-              <div>
-                <div class="flex items-center justify-between font-mono text-xs mb-2">
-                  <span class="text-asuncion-cognac font-bold text-base">.store</span>
-                  <span class="text-[10px] text-asuncion-muted border border-asuncion-border px-1.5 py-0.5">E-COMMERCE</span>
-                </div>
-                <div class="asuncion-preview-store font-serif font-bold text-base text-white mb-2 truncate">mimarca.store</div>
-                <p class="text-xs text-asuncion-muted leading-relaxed">
-                  Tiendas y comercio electrónico. Ideal para catálogos móviles con pedidos directos por WhatsApp y venta minorista.
-                </p>
-              </div>
-              <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
-                <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
-                <a id="asuncionLinkStore" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.store"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
-                  <span>Consultar →</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- .tech -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
-              <div>
-                <div class="flex items-center justify-between font-mono text-xs mb-2">
-                  <span class="text-asuncion-cognac font-bold text-base">.tech</span>
-                  <span class="text-[10px] text-asuncion-muted border border-asuncion-border px-1.5 py-0.5">TECNOLOGÍA</span>
-                </div>
-                <div class="asuncion-preview-tech font-serif font-bold text-base text-white mb-2 truncate">mimarca.tech</div>
-                <p class="text-xs text-asuncion-muted leading-relaxed">
-                  Tecnología, startups e innovación. Proyecta distinción y autoridad para empresas de software, consultoras y servicios digitales.
-                </p>
-              </div>
-              <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
-                <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
-                <a id="asuncionLinkTech" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.tech"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
-                  <span>Consultar →</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- .app -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
-              <div>
-                <div class="flex items-center justify-between font-mono text-xs mb-2">
-                  <span class="text-asuncion-cognac font-bold text-base">.app</span>
-                  <span class="text-[10px] text-asuncion-muted border border-asuncion-border px-1.5 py-0.5">APPS &amp; SAAS</span>
-                </div>
-                <div class="asuncion-preview-app font-serif font-bold text-base text-white mb-2 truncate">mimarca.app</div>
-                <p class="text-xs text-asuncion-muted leading-relaxed">
-                  Aplicaciones móviles o software SaaS. Exige certificado SSL obligatorio y ofrece máxima confianza en sistemas interactivos.
-                </p>
-              </div>
-              <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
-                <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
-                <a id="asuncionLinkApp" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.app"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
-                  <span>Consultar →</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- .blog -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
-              <div>
-                <div class="flex items-center justify-between font-mono text-xs mb-2">
-                  <span class="text-asuncion-cognac font-bold text-base">.blog</span>
-                  <span class="text-[10px] text-asuncion-muted border border-asuncion-border px-1.5 py-0.5">CONTENIDO &amp; NOTICIAS</span>
-                </div>
-                <div class="asuncion-preview-blog font-serif font-bold text-base text-white mb-2 truncate">mimarca.blog</div>
-                <p class="text-xs text-asuncion-muted leading-relaxed">
-                  Sitios de contenido o bitácoras. Óptimo para posicionamiento en Google, publicaciones de moda, gastronomía y revistas de marca.
-                </p>
-              </div>
-              <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
-                <span class="text-asuncion-muted text-[11px]">Según disponibilidad</span>
-                <a id="asuncionLinkBlog" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20disponibilidad%20del%20dominio%20.blog"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
-                  <span>Consultar →</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- .online / .xyz / .club -->
-            <div class="p-6 border border-asuncion-border bg-asuncion-surface flex flex-col justify-between sm:col-span-2 lg:col-span-2 hover:border-asuncion-cognac/50 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(0,0,0,0.3)]">
-              <div>
-                <div class="flex items-center justify-between font-mono text-xs mb-2">
-                  <span class="text-asuncion-cognac font-bold text-base">.online · .xyz · .club</span>
-                  <span class="text-[10px] text-asuncion-muted border border-asuncion-border px-1.5 py-0.5">PRESENCIA GENERAL &amp; COMUNIDADES</span>
-                </div>
-                <div class="asuncion-preview-multi font-serif font-bold text-base text-white mb-2 truncate">mimarca.online / mimarca.xyz / mimarca.club</div>
-                <p class="text-xs text-asuncion-muted leading-relaxed">
-                  Presencia digital general, clubes, membresías o comunidades. Extensiones modernas y directas para marcas contemporáneas que buscan alta recordación.
-                </p>
-              </div>
-              <div class="mt-5 pt-4 border-t border-asuncion-border flex items-center justify-between font-mono text-xs">
-                <span class="text-asuncion-muted text-[11px]">Disponibilidad y ajuste en precio según registrador</span>
-                <a id="asuncionLinkMulti" href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20dominios%20.online%2C%20.xyz%20o%20.club"
-                   target="_blank" rel="noopener" class="text-asuncion-cognac hover:underline uppercase font-bold flex items-center gap-1 transition-colors hover:text-amber-300">
-                  <span>Consultar opciones →</span>
-                </a>
-              </div>
-            </div>
-
+          <!-- Direct CTA to WhatsApp -->
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <a id="asuncionMainDomainWaBtn"
+              href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20reservar%20el%20dominio%20tumarca.store%20para%20mi%20cat%C3%A1logo%20web%20y%20consultar%20disponibilidad."
+              target="_blank" rel="noopener"
+              class="w-full sm:flex-1 h-12 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-sm">
+              <span id="asuncionMainDomainWaBtnText">Reservar tumarca.store en WhatsApp</span>
+              <span>→</span>
+            </a>
+            <button type="button" id="asuncionCopyDomainBtn"
+              class="w-full sm:w-auto h-12 px-5 border border-asuncion-border hover:border-asuncion-cognac bg-asuncion-surface text-asuncion-sand hover:text-white font-mono text-xs uppercase flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+              <span>Copiar Enlace</span>
+              <span class="text-asuncion-cognac">⎘</span>
+            </button>
           </div>
-
-          <div class="mt-5 p-4 bg-asuncion-void border border-asuncion-border font-mono text-xs text-asuncion-muted flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <span>* Todos los dominios gTLD están sujetos a disponibilidad ante ICANN y ajuste en precio según la extensión y el registrador oficial.</span>
-            <span class="text-white font-semibold flex-shrink-0">Configuración DNS asistida</span>
-          </div>
-
         </div>
 
-        <!-- ──────── BLOQUE 2: MODALIDADES DE SERVICIO FLEXIBLES ──────── -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 border border-asuncion-border bg-asuncion-card divide-y lg:divide-y-0 lg:divide-x divide-asuncion-border">
-          
-          <!-- Modalidad A -->
-          <div class="p-8 sm:p-12 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between font-mono text-xs text-asuncion-muted mb-4 uppercase">
-                <span class="text-white font-bold">MODALIDAD 01</span>
-                <span class="text-asuncion-muted">[TÚ PONES EL HOSTING]</span>
-              </div>
-              <h3 class="font-serif font-bold text-2xl text-white mb-4">
-                Solo Diseño &amp; Código Fuente
-              </h3>
-              <p class="text-xs sm:text-sm text-asuncion-muted leading-relaxed mb-6">
-                Diseñamos y programamos todo el código fuente en HTML5 y JavaScript vanilla optimizado. Te entregamos la carpeta limpia lista para que la alojes en tu propio hosting, cPanel o servidor privado sin depender de nosotros.
-              </p>
-              <div class="p-5 bg-asuncion-void border border-asuncion-border space-y-2.5 mb-8 font-mono text-xs text-asuncion-muted">
-                <div class="flex items-center gap-2 text-white">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Propiedad absoluta del código fuente sin mensualidades</span>
-                </div>
-                <div class="flex items-center gap-2 text-white">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Ajuste de precio con tarifa reducida al prescindir de servidor</span>
-                </div>
-                <div class="flex items-center gap-2 text-white">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Guía técnica de despliegue en 3 minutos incluida</span>
-                </div>
-              </div>
-            </div>
-            <div class="pt-6 border-t border-asuncion-border flex items-center justify-between">
-              <span class="font-mono text-xs text-white font-bold">Tarifa con descuento</span>
-              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20la%20modalidad%20de%20Solo%20Dise%C3%B1o%20y%20C%C3%B3digo%20Fuente"
-                target="_blank" rel="noopener"
-                class="h-11 px-5 border border-asuncion-border hover:border-asuncion-cognac hover:text-asuncion-cognac text-white font-mono text-xs uppercase flex items-center gap-2 transition-all duration-200 active:scale-[0.98]">
-                <span>Pedir Solo Código →</span>
-              </a>
-            </div>
+        <!-- Hosting y Seguridad Compactados -->
+        <div class="p-6 border border-asuncion-border bg-asuncion-card flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs">
+          <div class="flex items-center gap-3">
+            <span class="text-xl text-emerald-400">🔒</span>
+            <span class="text-white">Servidores de alta velocidad con CDN global y certificado de seguridad SSL incluido.</span>
           </div>
-
-          <!-- Modalidad B -->
-          <div class="p-8 sm:p-12 flex flex-col justify-between bg-asuncion-surface hover:bg-asuncion-surface/90 transition-colors">
-            <div>
-              <div class="flex items-center justify-between font-mono text-xs text-asuncion-muted mb-4 uppercase">
-                <span class="text-asuncion-cognac font-bold">MODALIDAD 02</span>
-                <span class="bg-asuncion-cognac text-black px-2 py-0.5 font-bold shadow-sm">[LLAVE EN MANO]</span>
-              </div>
-              <h3 class="font-serif font-bold text-2xl text-white mb-4">
-                Hosting &amp; Despliegue Administrado
-              </h3>
-              <p class="font-sans text-xs sm:text-sm text-asuncion-muted leading-relaxed mb-6">
-                Nosotros nos encargamos de todo el ecosistema: servidor en red Edge de ultra velocidad, certificado SSL HTTPS automático, enlace DNS de tu dominio gTLD y monitoreo continuo. Te entregamos la web lista para facturar.
-              </p>
-              <div class="p-5 bg-asuncion-void border border-asuncion-border space-y-2.5 mb-8 font-mono text-xs text-asuncion-muted">
-                <div class="flex items-center gap-2 text-white">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Servidor Edge ultra rápido y SSL automático</span>
-                </div>
-                <div class="flex items-center gap-2 text-white">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Ajuste de precio según el plan de hosting seleccionado</span>
-                </div>
-                <div class="flex items-center gap-2 text-white">
-                  <span class="text-asuncion-cognac font-bold">✓</span>
-                  <span>Soporte técnico directo vía WhatsApp</span>
-                </div>
-              </div>
-            </div>
-            <div class="pt-6 border-t border-asuncion-border flex items-center justify-between">
-              <span class="font-mono text-xs text-asuncion-cognac font-bold">Solución integral activa</span>
-              <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20cotizar%20la%20modalidad%20Llave%20en%20Mano%20con%20Hosting%20incluido"
-                target="_blank" rel="noopener"
-                class="h-11 px-5 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase flex items-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.2)]">
-                <span>Pedir Llave en Mano →</span>
-              </a>
-            </div>
-          </div>
-
+          <span class="text-asuncion-muted text-[11px]">* Sujeto a disponibilidad en el registro oficial.</span>
         </div>
 
       </div>
     </section>
 
-    <!-- ───────────── PREGUNTAS FRECUENTES (RESOLUCIÓN TÉCNICA DIRECTA) ───────────── -->
+    <!-- ───────────── 08 · PREGUNTAS FRECUENTES (#faq) ───────────── -->
     <section id="faq" class="py-16 sm:py-24 border-b border-asuncion-border bg-asuncion-void" aria-label="Preguntas Frecuentes">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="mb-12">
-          <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">07 · PREGUNTAS FRECUENTES</span>
+          <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">08 · PREGUNTAS FRECUENTES</span>
           <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight">
-            Resolución técnica directa.
+            Respuestas claras a tus dudas.
           </h2>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-          <!-- Technical FAQ Accordion -->
+          <!-- FAQ Accordion -->
           <div class="lg:col-span-8 border border-asuncion-border divide-y divide-asuncion-border bg-asuncion-surface">
 
             <!-- FAQ 1 -->
@@ -1663,7 +1374,7 @@
               </div>
             </div>
 
-            <!-- FAQ 2 -->
+            <!-- FAQ 2 (Texto Exacto Requerido) -->
             <div class="faq-item transition-colors hover:bg-asuncion-card/50">
               <button type="button"
                 class="w-full flex items-center justify-between text-left p-6 font-serif font-bold text-base sm:text-lg text-white faq-toggle group focus-visible:outline focus-visible:outline-2 focus-visible:outline-asuncion-cognac min-h-[48px]"
@@ -1672,7 +1383,7 @@
                 <span class="font-mono text-sm text-asuncion-cognac faq-icon flex-shrink-0 w-7 h-7 flex items-center justify-center border border-asuncion-border bg-asuncion-void group-hover:border-asuncion-cognac transition-colors" aria-hidden="true">+</span>
               </button>
               <div id="faq-ans-2" class="faq-content hidden px-6 pb-6 pt-1 text-xs sm:text-sm text-asuncion-muted leading-relaxed border-t border-asuncion-border/30">
-                Cero comisiones. A diferencia de las plataformas de suscripción o aplicaciones de delivery que descuentan porcentajes de tus ventas, con Punto Prisma pagás un único costo por el desarrollo y la plataforma es 100% tuya.
+                Cero comisiones por venta. Pagás el plan y listo.
               </div>
             </div>
 
@@ -1689,7 +1400,7 @@
               </div>
             </div>
 
-            <!-- FAQ 4 -->
+            <!-- FAQ 4 (Texto Exacto Requerido) -->
             <div class="faq-item transition-colors hover:bg-asuncion-card/50">
               <button type="button"
                 class="w-full flex items-center justify-between text-left p-6 font-serif font-bold text-base sm:text-lg text-white faq-toggle group focus-visible:outline focus-visible:outline-2 focus-visible:outline-asuncion-cognac min-h-[48px]"
@@ -1698,13 +1409,13 @@
                 <span class="font-mono text-sm text-asuncion-cognac faq-icon flex-shrink-0 w-7 h-7 flex items-center justify-center border border-asuncion-border bg-asuncion-void group-hover:border-asuncion-cognac transition-colors" aria-hidden="true">+</span>
               </button>
               <div id="faq-ans-4" class="faq-content hidden px-6 pb-6 pt-1 text-xs sm:text-sm text-asuncion-muted leading-relaxed border-t border-asuncion-border/30">
-                Aceptamos transferencias bancarias locales (SIPAP / cualquier banco de plaza en Paraguay), efectivo y criptomonedas (USDT por red TRC20/BEP20 o Bitcoin). Se abona el 30% para iniciar y el 70% al aprobar la web terminada, antes de publicarla.
+                30% para iniciar y 70% al aprobar la web terminada, antes de publicarla. Aceptamos transferencias bancarias locales (SIPAP / cualquier banco de plaza en Paraguay), efectivo y criptomonedas (USDT o Bitcoin).
               </div>
             </div>
 
           </div>
 
-          <!-- FAQ Side Visual Card (Soporte Local PY) -->
+          <!-- FAQ Side Card (Soporte Directo) -->
           <div data-ui="support-card" class="lg:col-span-4 border border-asuncion-border bg-asuncion-surface p-6 sm:p-8 font-mono text-xs shadow-[0_12px_32px_rgba(0,0,0,0.3)]">
             <div class="flex items-center justify-between text-white font-bold mb-4 border-b border-asuncion-border pb-3">
               <div class="flex items-center gap-2">
@@ -1716,7 +1427,7 @@
               </svg>
             </div>
             <p class="text-asuncion-muted text-xs leading-relaxed mb-6 font-sans">
-              Atención directa por ingenieros radicados en Paraguay. Sin bots genéricos ni esperas telefónicas.
+              Atención directa por personas reales, sin bots ni esperas telefónicas.
             </p>
             <div class="space-y-3 border-t border-asuncion-border pt-4 text-xs">
               <div class="flex justify-between items-center py-1 border-b border-asuncion-border/40">
@@ -1728,7 +1439,7 @@
                 <span class="text-asuncion-cognac font-bold tabular-nums">&lt; 15 minutos</span>
               </div>
               <div class="flex justify-between items-center py-1">
-                <span class="text-asuncion-subtle">Línea técnica:</span>
+                <span class="text-asuncion-subtle">Línea directa:</span>
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20tengo%20una%20consulta%20t%C3%A9cnica"
                   target="_blank" rel="noopener"
                   class="text-white hover:text-asuncion-cognac transition-colors font-bold tabular-nums">
@@ -1754,15 +1465,15 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="border border-asuncion-border bg-asuncion-card p-8 sm:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_12px_40px_rgba(0,0,0,0.5)]">
           <div class="max-w-xl">
-            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2">INICIAR CONVERSACIÓN DIRECTA</span>
+            <span class="font-mono text-xs text-asuncion-cognac uppercase tracking-widest block mb-2 font-bold">INICIAR CONVERSACIÓN DIRECTA</span>
             <h2 class="font-serif font-bold text-2xl sm:text-4xl text-white tracking-tight mb-4">
-              ¿Conversamos sobre el catálogo de tu negocio?
+              ¿Listo para vender por WhatsApp sin pagar comisiones?
             </h2>
-            <p class="text-xs sm:text-sm text-asuncion-muted leading-relaxed">
-              Escribinos al WhatsApp con los requerimientos de tu empresa. Te respondemos con un análisis de viabilidad técnica y cotización formal en menos de 2 horas.
+            <p class="text-xs sm:text-sm text-asuncion-muted leading-relaxed font-sans">
+              Escribinos al WhatsApp con los productos de tu empresa. Te respondemos con un análisis de viabilidad técnica y cotización formal en menos de 2 horas.
             </p>
           </div>
-          <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20conversar%20sobre%20un%20proyecto%20web"
+          <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20iniciar%20un%20proyecto%20web"
             target="_blank" rel="noopener"
             class="h-12 px-8 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 whitespace-nowrap transition-all duration-200 active:scale-[0.98] shadow-[0_4px_20px_rgba(224,169,109,0.25)] hover:shadow-[0_6px_28px_rgba(224,169,109,0.4)]">
             <span>Iniciar Consulta por WhatsApp</span>
@@ -1782,21 +1493,72 @@
         <span>·</span>
         <span>Asunción, Paraguay</span>
       </div>
-      <div class="flex items-center gap-6 text-[11px]">
-        <a href="#soluciones" class="hover:text-asuncion-cognac transition-colors">Soluciones</a>
+      <div class="flex flex-wrap items-center gap-6 text-[11px]">
+        <a href="#soluciones" class="hover:text-asuncion-cognac transition-colors">Planes</a>
         <a href="#demos" class="hover:text-asuncion-cognac transition-colors">Demos</a>
-        <a href="#manifiesto" class="hover:text-asuncion-cognac transition-colors">Manifiesto</a>
+        <a href="#garantias" class="hover:text-asuncion-cognac transition-colors">Garantías</a>
+        <a href="#proceso" class="hover:text-asuncion-cognac transition-colors">Proceso 7 Días</a>
+        <a href="#amedida" class="hover:text-asuncion-cognac transition-colors">A Medida</a>
+        <a href="#simulador" class="hover:text-asuncion-cognac transition-colors">Simulador</a>
+        <a href="#dominios" class="hover:text-asuncion-cognac transition-colors">Dominios</a>
         <a href="#faq" class="hover:text-asuncion-cognac transition-colors">Preguntas</a>
-        <a href="https://wa.me/595986125649" target="_blank" rel="noopener" class="hover:text-asuncion-cognac transition-colors">WhatsApp Directo</a>
+        <a href="https://wa.me/595986125649" target="_blank" rel="noopener" class="hover:text-asuncion-cognac transition-colors">WhatsApp</a>
       </div>
       <div class="text-[11px] text-asuncion-subtle">
         © 2026 Punto Prisma Studio. Asunción, Paraguay.
       </div>
     </div>
+    <!-- Línea Legal del Footer (solo se muestra si SITE_CONFIG.legal tiene datos) -->
+    <div id="footerLegalLine" class="hidden mt-4 pt-4 border-t border-asuncion-border/40 text-center font-mono text-[11px] text-asuncion-subtle"></div>
   </footer>
 
-  <!-- ───────────── SCRIPT CATALOGO ───────────── -->
+  <!-- ───────────── SCRIPT CATALOGO & CONFIGURACIÓN ───────────── -->
   <script>
+    // ───────────── CONFIGURACIÓN LEGAL DEL SITIO (VACÍO POR DEFECTO) ─────────────
+    // Los campos solo se muestran en pantalla si se define su valor aquí.
+    const SITE_CONFIG = {
+      legal: {
+        razonSocial: "",
+        ruc: "",
+        terminosUrl: "",
+        privacidadUrl: ""
+      }
+    };
+
+    function renderLegalLine() {
+      const container = document.getElementById("legalLine");
+      const footerContainer = document.getElementById("footerLegalLine");
+      const { razonSocial, ruc, terminosUrl, privacidadUrl } = (SITE_CONFIG && SITE_CONFIG.legal) || {};
+      const hasLegal = Boolean(razonSocial || ruc || terminosUrl || privacidadUrl);
+
+      const applyLegal = (el) => {
+        if (!el) return;
+        if (!hasLegal) {
+          el.innerHTML = "";
+          el.classList.add("hidden");
+          return;
+        }
+        const parts = [];
+        if (razonSocial || ruc) {
+          parts.push(`<span>${[razonSocial, ruc ? `RUC: ${ruc}` : ''].filter(Boolean).join(' · ')}</span>`);
+        }
+        if (terminosUrl) {
+          parts.push(`<a href="${terminosUrl}" class="hover:text-asuncion-cognac underline">Términos del Servicio</a>`);
+        }
+        if (privacidadUrl) {
+          parts.push(`<a href="${privacidadUrl}" class="hover:text-asuncion-cognac underline">Política de Privacidad</a>`);
+        }
+        el.innerHTML = parts.join(' · ');
+        el.classList.remove("hidden");
+      };
+
+      applyLegal(container);
+      applyLegal(footerContainer);
+    }
+
+    // ───────────── DETECCIÓN DE REDUCED MOTION ─────────────
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const DEMOS = [
       {
         id: "ferreteria-los-laureles",
@@ -1891,7 +1653,7 @@
               <div class="p-6">
                 <span class="font-mono text-[10px] text-asuncion-subtle block mb-1 uppercase">${d.plan}</span>
                 <h3 class="font-serif font-bold text-lg text-white mb-2 group-hover:text-asuncion-cognac transition-colors">${d.titulo}</h3>
-                <p class="text-xs text-asuncion-muted leading-relaxed">${d.descripcion}</p>
+                <p class="text-xs text-asuncion-muted leading-relaxed font-sans">${d.descripcion}</p>
               </div>
             </div>
             <div class="p-6 pt-0 grid grid-cols-2 gap-3 font-mono text-xs">
@@ -1910,7 +1672,7 @@
         `;
       });
 
-      // Special 7th Card: Full-width architectural banner closing the 3rd row
+      // Special 7th Card: Custom Rubro
       const customRubroUrl = `https://wa.me/595986125649?text=${encodeURIComponent("Hola Punto Prisma Studio, no vi mi rubro específico en el catálogo y quiero armar un prototipo a medida para mi empresa.")}`;
 
       html += `
@@ -1923,13 +1685,13 @@
             <h3 class="font-serif font-bold text-xl text-white mb-2">
               ¿No ves tu rubro comercial en la lista?
             </h3>
-            <p class="text-xs sm:text-sm text-asuncion-muted leading-relaxed max-w-2xl">
-              Diseñamos la arquitectura técnica, catálogo interactivo o sistema a medida para distribuidoras, ópticas, repuesterías agrícolas, veterinarias o industrias en 48 horas sin costo inicial.
+            <p class="text-xs sm:text-sm text-asuncion-muted leading-relaxed max-w-2xl font-sans">
+              Diseñamos la estructura técnica o catálogo a medida para distribuidoras, ópticas, repuesterías agrícolas, veterinarias o industrias en 48 horas sin costo inicial.
             </p>
           </div>
           <div class="flex-shrink-0 w-full md:w-auto">
             <a href="${customRubroUrl}" target="_blank" rel="noopener"
-              class="w-full md:w-auto h-11 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-[0_4px_16px_rgba(224,169,109,0.2)] hover:shadow-[0_6px_22px_rgba(224,169,109,0.35)] whitespace-nowrap">
+              class="w-full md:w-auto h-11 px-6 bg-asuncion-cognac hover:bg-amber-300 text-black font-serif font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] shadow-sm whitespace-nowrap">
               <span>Consultar por WhatsApp</span>
               <span>→</span>
             </a>
@@ -1941,6 +1703,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      renderLegalLine();
       renderDemos();
 
       const mobileBtn = document.getElementById("mobileMenuBtn");
@@ -1952,46 +1715,57 @@
         });
       }
 
-      const searchInput = document.getElementById("searchInput");
-      if (searchInput) {
-        searchInput.addEventListener("input", (e) => {
-          currentSearch = e.target.value.toLowerCase().trim();
+      // Close mobile menu on anchor click
+      document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+          if (mobileMenu) mobileMenu.classList.add("hidden");
+          if (mobileBtn) mobileBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Filter chips
+      const chipButtons = document.querySelectorAll(".chip-filter");
+      chipButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          chipButtons.forEach(b => {
+            b.classList.remove("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
+            b.classList.add("border-asuncion-border", "bg-asuncion-void", "text-asuncion-muted");
+          });
+          btn.classList.add("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
+          btn.classList.remove("border-asuncion-border", "bg-asuncion-void", "text-asuncion-muted");
+          currentFilterPlan = btn.getAttribute("data-plan") || "TODOS";
           renderDemos();
         });
-      }
+      });
 
-      const rubroFilter = document.getElementById("rubroFilter");
-      if (rubroFilter) {
-        rubroFilter.addEventListener("change", (e) => {
+      // Rubro filter dropdown
+      const rubroSelect = document.getElementById("rubroFilter");
+      if (rubroSelect) {
+        rubroSelect.addEventListener("change", (e) => {
           currentFilterRubro = e.target.value;
           renderDemos();
         });
       }
 
-      document.querySelectorAll(".chip-filter").forEach(chip => {
-        chip.addEventListener("click", () => {
-          document.querySelectorAll(".chip-filter").forEach(c => {
-            c.classList.remove("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
-            c.classList.add("border-asuncion-border", "bg-asuncion-void", "text-asuncion-muted");
-          });
-          chip.classList.add("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
-          chip.classList.remove("border-asuncion-border", "bg-asuncion-void", "text-asuncion-muted");
-
-          currentFilterPlan = chip.getAttribute("data-plan");
+      // Live search input
+      const searchBox = document.getElementById("searchInput");
+      if (searchBox) {
+        searchBox.addEventListener("input", (e) => {
+          currentSearch = e.target.value.toLowerCase().trim();
           renderDemos();
         });
-      });
+      }
 
-      // Lógica del Comparador Antes vs Ahora
+      // ───────────── PESTAÑAS COMPARATIVAS (EJEMPLOS DE COMERCIO) ─────────────
       const casesData = {
         ferreteria: {
           rubro: "Ferretería & Repuestos (Eusebio Ayala)",
           beforeTitle: "PDFs pesados y audios interminables",
           beforeDesc: "Tu cliente en la calle pide precios por WhatsApp. Tu vendedor le manda un PDF de 45MB que tarda 2 minutos en descargar. El cliente se frustra, no busca el código y le compra a la competencia.",
           beforeItems: [
-            "[X] PDFs desactualizados con precios viejos",
-            "[X] Vendedor atado a responder 50 audios por día",
-            "[X] Sin buscador por código o compatibilidad"
+            "PDFs desactualizados con precios viejos",
+            "Vendedor atado a responder 50 audios por día",
+            "Sin buscador por código o compatibilidad"
           ],
           afterTitle: "Catálogo ultrarrápido y orden lista al WhatsApp",
           afterDesc: "El cliente entra con carga rápida en celular, escribe 'amoladora' o 'pastilla', agrega 2 unidades al carrito y pulsa 'Enviar Pedido'. Tu vendedor recibe el detalle completo listo para cobrar y enviar.",
@@ -2007,9 +1781,9 @@
           beforeTitle: "Turnos perdidos y llamadas en pleno corte",
           beforeDesc: "El barbero está con la navaja en la mano y suena el celular. Si atiende, interrumpe el servicio y desatiende al cliente sentado; si no atiende, pierde al nuevo cliente.",
           beforeItems: [
-            "[X] Interrupciones constantes en medio del trabajo",
-            "[X] Mensajes de '¿a qué hora tenés libre?' sin responder",
-            "[X] Clientes esperando horas sin turno asignado"
+            "Interrupciones constantes en medio del trabajo",
+            "Mensajes de '¿a qué hora tenés libre?' sin responder",
+            "Clientes esperando horas sin turno asignado"
           ],
           afterTitle: "Landing con agenda y servicios claros en 1 toque",
           afterDesc: "El cliente ve los cortes, fade, perfilado de barba con toalla caliente y sus precios en ₲. Selecciona el servicio y envía su solicitud directa por WhatsApp con día y hora preferida.",
@@ -2025,9 +1799,9 @@
           beforeTitle: "Fotos en Instagram sin talles ni precios claros",
           beforeDesc: "Publicás una foto y te llegan 40 DMs preguntando '¿precio?', '¿tenés talle 38?'. El 80% no compra porque la respuesta demora horas y el impulso se enfría.",
           beforeItems: [
-            "[X] 40 mensajes diarios preguntando exactamente lo mismo",
-            "[X] Sin stock actualizado visible en tiempo real",
-            "[X] Ventas perdidas por demora en responder precios"
+            "40 mensajes diarios preguntando exactamente lo mismo",
+            "Sin stock actualizado visible en tiempo real",
+            "Ventas perdidas por demora en responder precios"
           ],
           afterTitle: "Showroom móvil con talles, fotos y delivery en Asunción",
           afterDesc: "Tu cliente entra al link desde tu bio de Instagram, filtra por talle y color, suma al carrito y te manda el pedido listo con su dirección para delivery.",
@@ -2040,80 +1814,98 @@
         }
       };
 
+      function switchCaseTab(caseKey) {
+        document.querySelectorAll(".case-tab-btn").forEach(b => {
+          const isTarget = b.getAttribute("data-case") === caseKey;
+          b.setAttribute("aria-selected", String(isTarget));
+          if (isTarget) {
+            b.className = "case-tab-btn min-h-[44px] px-5 border border-asuncion-cognac bg-asuncion-cognac text-black font-serif font-bold text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]";
+          } else {
+            b.className = "case-tab-btn min-h-[44px] px-5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white font-serif text-xs uppercase tracking-wider transition-all duration-150 active:scale-[0.98]";
+          }
+        });
+
+        const c = casesData[caseKey];
+        if (!c) return;
+
+        const bTitle = document.getElementById("beforeTitle");
+        const bDesc = document.getElementById("beforeDesc");
+        const bList = document.getElementById("beforeList");
+        const aTitle = document.getElementById("afterTitle");
+        const aDesc = document.getElementById("afterDesc");
+        const aList = document.getElementById("afterList");
+        const caseBtn = document.getElementById("caseWaBtn");
+
+        if (bTitle) bTitle.textContent = c.beforeTitle;
+        if (bDesc) bDesc.textContent = c.beforeDesc;
+        if (bList) {
+          bList.innerHTML = c.beforeItems.map(it => `
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">[X]</span>
+              <span>${it}</span>
+            </li>
+          `).join("");
+        }
+
+        if (aTitle) aTitle.textContent = c.afterTitle;
+        if (aDesc) aDesc.textContent = c.afterDesc;
+        if (aList) {
+          aList.innerHTML = c.afterItems.map(it => `
+            <li class="flex items-start gap-2">
+              <span class="text-asuncion-cognac font-bold">✓</span>
+              <span>${it}</span>
+            </li>
+          `).join("");
+        }
+
+        if (caseBtn) {
+          caseBtn.href = `https://wa.me/595986125649?text=${encodeURIComponent(c.waMsg)}`;
+        }
+      }
+
       document.querySelectorAll(".case-tab-btn").forEach(btn => {
         btn.addEventListener("click", () => {
-          document.querySelectorAll(".case-tab-btn").forEach(b => {
-            b.classList.remove("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
-            b.classList.add("border-asuncion-border", "bg-asuncion-surface", "text-asuncion-muted");
-          });
-          btn.classList.add("border-asuncion-cognac", "bg-asuncion-cognac", "text-black", "font-bold");
-          btn.classList.remove("border-asuncion-border", "bg-asuncion-surface", "text-asuncion-muted");
+          const caseKey = btn.getAttribute("data-case");
+          if (caseKey) switchCaseTab(caseKey);
+        });
+      });
 
-          const c = casesData[btn.getAttribute("data-case")];
-          if (!c) return;
-
-          const bTitle = document.getElementById("beforeTitle");
-          const bDesc = document.getElementById("beforeDesc");
-          const bList = document.getElementById("beforeList");
-          const aTitle = document.getElementById("afterTitle");
-          const aDesc = document.getElementById("afterDesc");
-          const aList = document.getElementById("afterList");
-          const caseBtn = document.getElementById("caseWaBtn");
-
-          if (bTitle) bTitle.textContent = c.beforeTitle;
-          if (bDesc) bDesc.textContent = c.beforeDesc;
-          if (bList) {
-            bList.innerHTML = c.beforeItems.map(it => `
-              <li class="flex items-start gap-2">
-                <span class="text-red-400 font-bold">[X]</span>
-                <span>${it.replace(/^\[X\]\s*/, '')}</span>
-              </li>
-            `).join("");
-          }
-
-          if (aTitle) aTitle.textContent = c.afterTitle;
-          if (aDesc) aDesc.textContent = c.afterDesc;
-          if (aList) {
-            aList.innerHTML = c.afterItems.map(it => `
-              <li class="flex items-start gap-2">
-                <span class="text-asuncion-cognac font-bold">✓</span>
-                <span>${it.replace(/^\[OK\]\s*/, '')}</span>
-              </li>
-            `).join("");
-          }
-
-          if (caseBtn) {
-            caseBtn.href = `https://wa.me/595986125649?text=${encodeURIComponent(c.waMsg)}`;
+      // Links "Ver ejemplo de este plan" desde las tarjetas
+      document.querySelectorAll(".plan-demo-link").forEach(link => {
+        link.addEventListener("click", (e) => {
+          const targetCase = link.getAttribute("data-jump-demo");
+          if (targetCase && casesData[targetCase]) {
+            switchCaseTab(targetCase);
           }
         });
       });
 
-      // ───────────── CRONOGRAMA INTERACTIVO 7 DÍAS (MODERNISMO ASUNCIÓN) ─────────────
+      // ───────────── CRONOGRAMA INTERACTIVO 7 DÍAS ─────────────
       const ASUNCION_SPRINT_DAYS = [
         {
           day: 1,
           badge: "DÍA 01 / 07",
-          status: "[FASE 01: INTAKE & DOMINIO]",
-          tag: "[FASE 01 / ONBOARDING]",
+          status: "FASE 01: RECEPCIÓN Y DOMINIO",
+          tag: "FASE 01 · INICIO",
           scope: "TIEMPO: 24 HORAS",
           title: "Recepción de Datos, Catálogo y Reserva de Dominio",
           desc: "Recibimos por WhatsApp o Drive tu lista de productos en Excel, fotos, lista de precios y tu logo. Si no tenés logo, definimos tipografía limpia y paleta de color. Configuramos el número de WhatsApp receptor de pedidos.",
           checklist: [
-            "Ingesta completa de catálogo .xlsx con precios en Guaraníes",
+            "Carga de lista de productos con precios en Guaraníes",
             "Asignación de dominio de identidad comercial (.store / .shop / .studio)",
             "Número de WhatsApp receptor verificado y enlazado"
           ],
-          simTitle: "ESTADO // DÍA 01",
+          simTitle: "Estado · Día 01",
           progress: "PROGRESO 14%",
           telemetryHtml: `
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
-                <span class="text-asuncion-cognac">ARCHIVO_FUENTE: CATALOGO_PYME.XLSX</span>
-                <span id="simIngestStatus" class="text-emerald-400 font-bold">[PROCESADO 100%]</span>
+                <span class="text-asuncion-cognac">LISTA DE PRODUCTOS: CATALOGO.XLSX</span>
+                <span id="simIngestStatus" class="text-emerald-400 font-bold">Carga al 100%</span>
               </div>
               <div class="space-y-1.5 text-asuncion-sand text-[11px]">
                 <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between items-center">
-                  <span>• SKUs importados:</span>
+                  <span>• Artículos importados:</span>
                   <span id="simSkuCount" class="text-white font-bold">120 artículos</span>
                 </div>
                 <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between items-center">
@@ -2128,7 +1920,7 @@
             </div>
             <div class="mt-3 flex items-center gap-2">
               <button type="button" id="simIngestBtn" class="flex-1 min-h-[38px] px-2.5 bg-asuncion-surface hover:bg-asuncion-card border border-asuncion-cognac/50 hover:border-asuncion-cognac text-asuncion-cognac font-mono text-[10px] uppercase font-bold flex items-center justify-center gap-1.5 transition-all active:scale-[0.98]">
-                <span>↻ Re-simular Ingesta Excel</span>
+                <span>↻ Cargar lista de productos</span>
               </button>
             </div>
             <div class="mt-3 p-2 bg-asuncion-void border border-asuncion-cognac/30 text-asuncion-cognac text-[10px] flex items-center justify-between">
@@ -2140,23 +1932,23 @@
         {
           day: 2,
           badge: "DÍA 02 / 07",
-          status: "[FASE 02: ARQUITECTURA & WIREFRAME]",
-          tag: "[FASE 02 / ESTRUCTURA]",
+          status: "FASE 02: DISEÑO Y ESTRUCTURA",
+          tag: "FASE 02 · ESTRUCTURA",
           scope: "TIEMPO: 24 HORAS",
-          title: "Diseño Editorial y Wireframing Mobile-First",
+          title: "Diseño Editorial y Navegación Móvil",
           desc: "Estructuramos la navegación táctil optimizada para celulares en Asunción y todo Paraguay. Priorizamos categorías clave, filtros instantáneos y la barra fija inferior para despacho a WhatsApp.",
           checklist: [
             "Composición tipográfica con Newsreader y Outfit",
             "Mapeo de ergonomía táctil con botones mínimos de 44px",
             "Navegación fluida por rubros y colecciones"
           ],
-          simTitle: "ESTADO // DÍA 02",
+          simTitle: "Estado · Día 02",
           progress: "PROGRESO 28%",
           telemetryHtml: `
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-3">
-                <span class="text-asuncion-cognac">LAYOUT_DESIGN: EDITORIAL_ASUNCION</span>
-                <span class="text-asuncion-cognac font-bold">[APROBADO]</span>
+                <span class="text-asuncion-cognac">DISEÑO DE INTERFAZ: EDITORIAL</span>
+                <span class="text-asuncion-cognac font-bold">Aprobado</span>
               </div>
               <div class="space-y-1.5 text-asuncion-sand text-[11px]">
                 <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
@@ -2168,8 +1960,8 @@
                   <span class="text-asuncion-cognac font-bold">Inferior fija 44px</span>
                 </div>
                 <div class="p-1.5 border border-white/5 bg-asuncion-void flex justify-between">
-                  <span>• Contraste visual WCAG:</span>
-                  <span class="text-white font-bold">AAA Compliant</span>
+                  <span>• Contraste visual accesible:</span>
+                  <span class="text-white font-bold">Aprobado</span>
                 </div>
               </div>
             </div>
@@ -2186,23 +1978,23 @@
         {
           day: 3,
           badge: "DÍA 03 / 07",
-          status: "[FASE 03: MOTOR DE DESPACHO]",
-          tag: "[FASE 03 / DESARROLLO MOTOR]",
+          status: "FASE 03: MOTOR DE CATÁLOGO",
+          tag: "FASE 03 · DESARROLLO MOTOR",
           scope: "TIEMPO: 24 HORAS",
           title: "Motor de Catálogo Móvil y Carrito WhatsApp en Guaraníes",
-          desc: "Programamos el carrito de pedidos en JavaScript vanilla puro. Calcula el importe total exacto en Guaraníes (₲) y formatea el mensaje de pedido estructurado para WhatsApp.",
+          desc: "Programamos el carrito de pedidos en JavaScript ligero. Calcula el importe total exacto en Guaraníes (₲) y formatea el mensaje de pedido estructurado para WhatsApp.",
           checklist: [
-            "Motor reactivo local sin librerías lentas (< 10KB)",
+            "Motor reactivo local sin librerías lentas",
             "Formateo en Guaraníes con separadores de miles",
             "Enlace seguro wa.me listo para recepción de ventas"
           ],
-          simTitle: "ESTADO // DÍA 03",
+          simTitle: "Estado · Día 03",
           progress: "PROGRESO 42%",
           telemetryHtml: `
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
                 <span class="text-asuncion-cognac">BUSCADOR EN VIVO DE PRODUCTOS</span>
-                <span class="text-emerald-400 font-bold">[REACTIVO 0.1s]</span>
+                <span class="text-emerald-400 font-bold">Búsqueda instantánea</span>
               </div>
               <input type="text" id="simSearchInput" placeholder="Escribí ej: filtro, aceite, amoladora..."
                 class="w-full h-8 bg-asuncion-void border border-asuncion-border px-2 text-white font-mono text-[11px] mb-2 focus:border-asuncion-cognac" />
@@ -2218,31 +2010,31 @@
               </div>
             </div>
             <div class="mt-2.5 p-2 bg-black border border-asuncion-cognac/30 text-[10px] font-mono text-asuncion-sand flex items-center justify-between">
-              <span>LATENCIA LOCAL:</span>
-              <span class="text-emerald-400 font-bold">0 seg (Cierre en WhatsApp)</span>
+              <span>RESPUESTA DIRECTA:</span>
+              <span class="text-emerald-400 font-bold">Cierre en WhatsApp</span>
             </div>
           `
         },
         {
           day: 4,
           badge: "DÍA 04 / 07",
-          status: "[FASE 04: CONTENIDO & WEBP]",
-          tag: "[FASE 04 / FOTOGRAFÍA & SKUS]",
+          status: "FASE 04: FOTOGRAFÍA Y CATÁLOGO",
+          tag: "FASE 04 · FOTOS Y PRODUCTOS",
           scope: "TIEMPO: 24 HORAS",
-          title: "Optimización Fotográfica y Conversión WebP",
-          desc: "Procesamos cada fotografía de tu negocio, recortamos a proporciones exactas de catálogo, convertimos a WebP con compresión de alto rendimiento para que carguen en milisegundos con redes 4G.",
+          title: "Optimización Fotográfica y Catálogo de Productos",
+          desc: "Procesamos cada fotografía de tu negocio, recortamos a proporciones exactas de catálogo y optimizamos para que carguen al instante en redes móviles de todo el país.",
           checklist: [
-            "Compresión WebP con ahorro del 78% en peso de imágenes",
-            "Carga diferida nativa (loading='lazy')",
+            "Optimización de imágenes para carga rápida en celulares",
+            "Carga diferida nativa de fotos",
             "Redacción de descripciones y especificaciones claras"
           ],
-          simTitle: "ESTADO // DÍA 04",
+          simTitle: "Estado · Día 04",
           progress: "PROGRESO 57%",
           telemetryHtml: `
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
-                <span class="text-asuncion-cognac">SIMULADOR DE CARRITO TÁCTIL</span>
-                <span class="text-emerald-400 font-bold">[INTERACTIVO]</span>
+                <span class="text-asuncion-cognac">SIMULADOR DE CARRITO</span>
+                <span class="text-emerald-400 font-bold">Interactivo</span>
               </div>
               <div class="p-2 border border-asuncion-border bg-asuncion-void space-y-2 font-mono text-xs">
                 <div class="flex items-center justify-between text-white text-[11px]">
@@ -2267,27 +2059,27 @@
         {
           day: 5,
           badge: "DÍA 05 / 07",
-          status: "[FASE 05: PLANILHA & SINCRONIZACIÓN]",
-          tag: "[FASE 05 / INTEGRACIONES]",
+          status: "FASE 05: PLANILLA Y SINCRONIZACIÓN",
+          tag: "FASE 05 · INTEGRACIONES",
           scope: "TIEMPO: 24 HORAS",
           title: "Sincronización con Google Sheets y Formulario",
           desc: "Enlazamos la base de datos o planilla de Google Sheets para que puedas actualizar precios, stock o promociones desde tu propio celular sin tocar código.",
           checklist: [
             "Conexión con Google Sheets en tiempo real",
-            "Mapeo de campos: SKU, Título, Precio en Guaraníes, Stock",
+            "Mapeo de campos: Código, Nombre, Precio en Guaraníes, Stock",
             "Actualización autónoma desde el teléfono"
           ],
-          simTitle: "ESTADO // DÍA 05",
+          simTitle: "Estado · Día 05",
           progress: "PROGRESO 71%",
           telemetryHtml: `
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
-                <span class="text-asuncion-cognac">EDICIÓN EN VIVO DESDE SHEETS</span>
-                <span class="text-emerald-400 font-bold">[SINCRONIZADO]</span>
+                <span class="text-asuncion-cognac">EDICIÓN EN VIVO DESDE PLANILLA</span>
+                <span class="text-emerald-400 font-bold">Sincronizado</span>
               </div>
               <div class="p-2 border border-asuncion-border bg-asuncion-void font-mono text-[11px] space-y-2">
                 <div class="flex justify-between items-center text-white">
-                  <span>SKU #4892 - Batería 12V</span>
+                  <span>Código #4892 - Batería 12V</span>
                   <span id="sheetLivePrice" class="text-asuncion-cognac font-bold">₲ 450.000</span>
                 </div>
                 <div class="pt-1.5 border-t border-white/10 flex items-center justify-between gap-2">
@@ -2297,7 +2089,7 @@
                 </div>
               </div>
               <div class="mt-2 p-1.5 bg-black text-[10px] text-emerald-400 font-mono flex items-center justify-between">
-                <span>ESTADO DEL SYNC:</span>
+                <span>ESTADO DEL ENLACE:</span>
                 <span id="sheetSyncNotice">Enlace activo con smartphone</span>
               </div>
             </div>
@@ -2306,23 +2098,23 @@
         {
           day: 6,
           badge: "DÍA 06 / 07",
-          status: "[FASE 06: AUDITORÍA QA & SIMULACIÓN REAL]",
-          tag: "[FASE 06 / CONTROL DE CALIDAD]",
+          status: "FASE 06: PRUEBAS Y CONTROL DE CALIDAD",
+          tag: "FASE 06 · CONTROL DE CALIDAD",
           scope: "TIEMPO: 24 HORAS",
-          title: "Auditoría Lighthouse 95+ y Pedido de Prueba Real",
+          title: "Auditoría Lighthouse y Pedido de Prueba Real",
           desc: "Realizamos pedidos de prueba reales hacia tu WhatsApp sobre redes móviles de Paraguay para certificar que recibas las órdenes al instante y sin errores.",
           checklist: [
-            "Puntajes Lighthouse >= 95 en Rendimiento, Accesibilidad y SEO",
+            "Puntajes altos en Rendimiento, Accesibilidad y SEO",
             "Prueba de orden y despacho real hacia tu número de WhatsApp",
-            "Certificación de ergonomía táctil en pantallas de 360px a 1440px"
+            "Certificación de ergonomía táctil en celulares"
           ],
-          simTitle: "ESTADO // DÍA 06",
+          simTitle: "Estado · Día 06",
           progress: "PROGRESO 85%",
           telemetryHtml: `
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-muted border-b border-asuncion-border pb-2 mb-2">
-                <span class="text-asuncion-cognac">LIGHTHOUSE REPORT 100/100</span>
-                <span class="text-emerald-400 font-bold">[CERTIFICADO]</span>
+                <span class="text-asuncion-cognac">CALIDAD DE CÓDIGO</span>
+                <span class="text-emerald-400 font-bold">Certificado</span>
               </div>
               <div class="grid grid-cols-4 gap-1.5 text-center my-2">
                 <div class="p-1.5 border border-emerald-500/40 bg-emerald-500/10">
@@ -2343,7 +2135,7 @@
                 </div>
               </div>
               <button type="button" id="simSpeedBtn" class="w-full min-h-[36px] bg-asuncion-void border border-asuncion-cognac/40 hover:border-asuncion-cognac text-asuncion-cognac font-mono text-[10px] uppercase font-bold flex items-center justify-center gap-1 transition-all active:scale-[0.98]">
-                <span id="simSpeedBtnText">▶ Ejecutar Test de Velocidad en Red 4G PY</span>
+                <span id="simSpeedBtnText">▶ Ejecutar Test de Velocidad Móvil</span>
               </button>
               <div id="simSpeedResult" class="mt-2 text-[10px] text-asuncion-sand font-mono hidden">
                 Carga rápida en celular · Test de velocidad 4G aprobado
@@ -2354,23 +2146,23 @@
         {
           day: 7,
           badge: "DÍA 07 / 07",
-          status: "[FASE 07: DESPLIEGUE FINAL & ENTREGA]",
-          tag: "[FASE 07 / LANZAMIENTO]",
+          status: "FASE 07: PUBLICACIÓN FINAL",
+          tag: "FASE 07 · LANZAMIENTO",
           scope: "ENTREGA EN MANO",
-          title: "Despliegue en Edge Vercel, Dominio SSL y Entrega Final",
-          desc: "Tu sitio queda 100% activo bajo tu propio dominio (.store, .shop o .studio) con certificado SSL incluido, CDN global ultra rápida y soporte prioritario.",
+          title: "Publicación en Servidores Rápidos, Dominio SSL y Entrega Final",
+          desc: "Tu sitio queda 100% activo bajo tu propio dominio (.store, .shop o .studio) con certificado SSL incluido, servidores de alta velocidad y soporte prioritario.",
           checklist: [
-            "Despliegue global en Vercel Edge con CDN de baja latencia",
+            "Publicación en servidores de alta velocidad con CDN global",
             "Certificado SSL HTTPS activado y validado",
             "Manual exprés en video de 3 minutos para actualizar tu catálogo"
           ],
-          simTitle: "ESTADO // DÍA 07",
+          simTitle: "Estado · Día 07",
           progress: "PROGRESO 100%",
           telemetryHtml: `
             <div>
               <div class="flex items-center justify-between text-[10px] text-asuncion-cognac border-b border-asuncion-cognac/30 pb-2 mb-2">
-                <span>DEPLOYMENT_STATUS: LIVE</span>
-                <span class="bg-asuncion-cognac text-black px-2 py-0.5 font-bold">[ONLINE]</span>
+                <span>ESTADO DEL SITIO: EN VIVO</span>
+                <span class="bg-asuncion-cognac text-black px-2 py-0.5 font-bold">ACTIVO</span>
               </div>
               <div class="space-y-1.5 text-asuncion-sand text-[11px]">
                 <div class="p-1.5 border border-asuncion-cognac/20 bg-asuncion-cognac/5 flex justify-between">
@@ -2402,7 +2194,7 @@
 
       // Web Audio API Click Feedback
       function playTactileClick() {
-        if (!audioEnabled) return;
+        if (!audioEnabled || prefersReducedMotion) return;
         try {
           if (!audioCtx) {
             const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -2416,7 +2208,7 @@
           const gain = audioCtx.createGain();
           osc.type = "sine";
           osc.frequency.setValueAtTime(800, audioCtx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.035);
+          osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.035);
           gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
           gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.035);
           osc.connect(gain);
@@ -2480,10 +2272,10 @@
           if (btn && status && count) {
             btn.addEventListener("click", () => {
               playTactileClick();
-              status.textContent = "[PROCESANDO...]";
+              status.textContent = "Cargando datos...";
               status.className = "text-amber-400 font-bold";
               setTimeout(() => {
-                status.textContent = "[148 SKUs VALIDADOS]";
+                status.textContent = "148 artículos cargados";
                 status.className = "text-emerald-400 font-bold";
                 count.textContent = "148 artículos cargados";
               }, 400);
@@ -2558,7 +2350,7 @@
               const val = parseInt(priceInput.value, 10) || 0;
               priceLabel.textContent = "₲ " + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
               if (syncNotice) {
-                syncNotice.textContent = "Modificación reflejada en 0.2s";
+                syncNotice.textContent = "Modificación reflejada en tiempo real";
               }
             });
           }
@@ -2569,7 +2361,7 @@
           if (speedBtn && speedResult) {
             speedBtn.addEventListener("click", () => {
               playTactileClick();
-              if (btnText) btnText.textContent = "⏳ Analizando latencia en Asunción...";
+              if (btnText) btnText.textContent = "⏳ Analizando velocidad en Asunción...";
               setTimeout(() => {
                 if (btnText) btnText.textContent = "✓ Test Certificado: Aprobado";
                 speedResult.classList.remove("hidden");
@@ -2682,7 +2474,7 @@
         });
       }
 
-      // Autoplay Sprint Loop
+      // Autoplay Sprint Loop (Disabled if prefers-reduced-motion is true)
       let sprintPlayInterval = null;
       const playSprintBtn = document.getElementById("asuncionPlaySprintBtn");
       const playIcon = document.getElementById("asuncionPlayIcon");
@@ -2694,7 +2486,7 @@
             clearInterval(sprintPlayInterval);
             sprintPlayInterval = null;
             if (playIcon) playIcon.textContent = "▶";
-            if (playText) playText.textContent = "Recorrido Guiado";
+            if (playText) playText.textContent = "Recorrido de 7 Días";
             playSprintBtn.classList.remove("border-asuncion-cognac", "bg-asuncion-cognac/20");
           } else {
             if (playIcon) playIcon.textContent = "⏸";
@@ -2703,7 +2495,7 @@
             sprintPlayInterval = setInterval(() => {
               const next = currentAsuncionDay >= 7 ? 1 : currentAsuncionDay + 1;
               setAsuncionSprintDay(next);
-            }, 2600);
+            }, prefersReducedMotion ? 4000 : 2600);
           }
         });
       }
@@ -2732,7 +2524,7 @@
 
       // Scroll-driven progression for #proceso
       const asuncionProcesoSection = document.getElementById("proceso");
-      if (asuncionProcesoSection) {
+      if (asuncionProcesoSection && !prefersReducedMotion) {
         let isAsuncionTicking = false;
         window.addEventListener("scroll", () => {
           if (isAsuncionTicking) return;
@@ -2758,7 +2550,7 @@
         }, { passive: true });
       }
 
-      // ───────────── CONFIGURADOR INTERACTIVO DE DOMINIO & NUEVOS gTLD ─────────────
+      // ───────────── CONFIGURADOR INTERACTIVO DE DOMINIO ─────────────
       let selectedGtld = ".store";
       let brandRaw = "tumarca";
 
@@ -2787,31 +2579,6 @@
           mainWaBtnText.textContent = `Reservar ${fullDomain} en WhatsApp`;
         }
 
-        // Update 5 preview cards below
-        const pStore = document.querySelector(".asuncion-preview-store");
-        const pTech = document.querySelector(".asuncion-preview-tech");
-        const pApp = document.querySelector(".asuncion-preview-app");
-        const pBlog = document.querySelector(".asuncion-preview-blog");
-        const pMulti = document.querySelector(".asuncion-preview-multi");
-
-        if (pStore) pStore.textContent = `${brandRaw}.store`;
-        if (pTech) pTech.textContent = `${brandRaw}.tech`;
-        if (pApp) pApp.textContent = `${brandRaw}.app`;
-        if (pBlog) pBlog.textContent = `${brandRaw}.blog`;
-        if (pMulti) pMulti.textContent = `${brandRaw}.online / ${brandRaw}.xyz / ${brandRaw}.club`;
-
-        const lStore = document.getElementById("asuncionLinkStore");
-        const lTech = document.getElementById("asuncionLinkTech");
-        const lApp = document.getElementById("asuncionLinkApp");
-        const lBlog = document.getElementById("asuncionLinkBlog");
-        const lMulti = document.getElementById("asuncionLinkMulti");
-
-        if (lStore) lStore.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.store para mi empresa.`)}`;
-        if (lTech) lTech.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.tech para mi empresa.`)}`;
-        if (lApp) lApp.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.app para mi empresa.`)}`;
-        if (lBlog) lBlog.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar el dominio ${brandRaw}.blog para mi empresa.`)}`;
-        if (lMulti) lMulti.href = `https://wa.me/595986125649?text=${encodeURIComponent(`Hola Punto Prisma Studio, quiero consultar opciones de dominio para ${brandRaw} (.online, .xyz o .club).`)}`;
-
         // Also update day 1 and day 7 simulation labels if present
         const day1Dom = document.getElementById("simDay1Domain");
         if (day1Dom) day1Dom.textContent = fullDomain;
@@ -2830,10 +2597,10 @@
         chip.addEventListener("click", () => {
           playTactileClick();
           document.querySelectorAll(".asuncion-gtld-chip").forEach(c => {
-            c.setAttribute("aria-checked", "false");
+            c.setAttribute("aria-pressed", "false");
             c.className = "asuncion-gtld-chip min-h-[48px] p-2.5 border border-asuncion-border bg-asuncion-surface text-asuncion-muted hover:text-white hover:border-asuncion-cognac/40 font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all active:scale-[0.97]";
           });
-          chip.setAttribute("aria-checked", "true");
+          chip.setAttribute("aria-pressed", "true");
           chip.className = "asuncion-gtld-chip min-h-[48px] p-2.5 border-2 border-asuncion-cognac bg-asuncion-cognac text-black font-mono text-xs font-bold uppercase flex flex-col items-center justify-center transition-all shadow-[0_0_12px_rgba(224,169,109,0.25)] active:scale-[0.97]";
           selectedGtld = chip.getAttribute("data-gtld") || ".store";
           updateDomainConfigurator();
@@ -2848,10 +2615,10 @@
             navigator.clipboard.writeText(fullDomain).then(() => {
               showToast(`Copiado: ${fullDomain}`);
             }).catch(() => {
-              showToast(`URL: ${fullDomain}`);
+              showToast(`Enlace: ${fullDomain}`);
             });
           } else {
-            showToast(`URL: ${fullDomain}`);
+            showToast(`Enlace: ${fullDomain}`);
           }
           playTactileClick();
         });
@@ -2908,7 +2675,7 @@
         });
       });
 
-      // FAQ Accordion (Modernismo Asunción)
+      // FAQ Accordion
       const faqToggles = document.querySelectorAll(".faq-toggle");
       faqToggles.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -2966,6 +2733,7 @@
       setInterval(tickAsuncionStudioClock, 1000);
     });
   </script>
+
   <!-- Botón Flotante de WhatsApp Directo -->
   <aside aria-label="Contacto directo por WhatsApp" class="fixed bottom-6 right-6 z-40">
     <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
