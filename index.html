@@ -43,6 +43,9 @@
 
 <body class="antialiased bg-[#0C0B0A] text-[#F4EFE8]">
 
+  <!-- Resplandor Ambiental con Cursor (Linear & Vercel style) -->
+  <div class="ambient-glow-follower" id="ambientGlowFollower" aria-hidden="true"></div>
+
   <!-- Enlace Accesible de Salto a Contenido Principal -->
   <a href="#planes"
     class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#DFA96E] focus:text-[#0C0B0A] focus:font-mono focus:text-xs focus:font-bold focus:shadow-lg focus:outline-none">
@@ -186,39 +189,60 @@
     <section class="py-16 sm:py-20 lg:py-24 border-b border-[#F4EFE8]/[0.08]" aria-label="Tres razones principales">
       <div class="max-w-[1200px] mx-auto px-6">
         <h2 class="sr-only">Nuestras tres razones principales</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           
           <!-- Razón 1 -->
-          <div class="reveal-on-scroll reveal-stagger-1 space-y-2.5">
-            <div class="flex items-center gap-2">
-              <span class="text-[#DFA96E] text-base font-bold">✓</span>
-              <h3 class="font-serif font-semibold text-xl text-white">Precio final con IVA</h3>
+          <div class="reveal-on-scroll reveal-stagger-1 clean-card spotlight-card p-6 sm:p-7 space-y-4">
+            <div class="icon-badge" aria-hidden="true">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
             </div>
-            <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
-              Sin costos ocultos ni sorpresas. Factura legal paraguaya en cada entrega.
-            </p>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2">
+                <span class="text-[#DFA96E] text-sm font-bold">✓</span>
+                <h3 class="font-serif font-semibold text-xl text-white">Precio final con IVA</h3>
+              </div>
+              <p class="text-[#A8A29A] text-sm sm:text-base font-sans leading-relaxed">
+                Sin costos ocultos ni sorpresas. Factura legal paraguaya en cada entrega.
+              </p>
+            </div>
           </div>
 
           <!-- Razón 2 -->
-          <div class="reveal-on-scroll reveal-stagger-2 space-y-2.5">
-            <div class="flex items-center gap-2">
-              <span class="text-[#DFA96E] text-base font-bold">✓</span>
-              <h3 class="font-serif font-semibold text-xl text-white">Sin comisiones por venta</h3>
+          <div class="reveal-on-scroll reveal-stagger-2 clean-card spotlight-card p-6 sm:p-7 space-y-4">
+            <div class="icon-badge" aria-hidden="true">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5a2 2 0 11-4 0 2 2 0 014 0zm7 7a2 2 0 11-4 0 2 2 0 014 0zM12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
             </div>
-            <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
-              El 100% de cada cobro ingresa directo a tu cuenta bancaria o en caja.
-            </p>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2">
+                <span class="text-[#DFA96E] text-sm font-bold">✓</span>
+                <h3 class="font-serif font-semibold text-xl text-white">Sin comisiones por venta</h3>
+              </div>
+              <p class="text-[#A8A29A] text-sm sm:text-base font-sans leading-relaxed">
+                El 100% de cada cobro ingresa directo a tu cuenta bancaria o en caja.
+              </p>
+            </div>
           </div>
 
           <!-- Razón 3 -->
-          <div class="reveal-on-scroll reveal-stagger-3 space-y-2.5">
-            <div class="flex items-center gap-2">
-              <span class="text-[#DFA96E] text-base font-bold">✓</span>
-              <h3 class="font-serif font-semibold text-xl text-white">Tu pedido llega armado a tu WhatsApp</h3>
+          <div class="reveal-on-scroll reveal-stagger-3 clean-card spotlight-card p-6 sm:p-7 space-y-4">
+            <div class="icon-badge" aria-hidden="true">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
             </div>
-            <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
-              Con productos, cantidades, total calculado y datos del cliente listos.
-            </p>
+            <div class="space-y-1.5">
+              <div class="flex items-center gap-2">
+                <span class="text-[#DFA96E] text-sm font-bold">✓</span>
+                <h3 class="font-serif font-semibold text-xl text-white">Tu pedido llega armado a tu WhatsApp</h3>
+              </div>
+              <p class="text-[#A8A29A] text-sm sm:text-base font-sans leading-relaxed">
+                Con productos, cantidades, total calculado y datos del cliente listos.
+              </p>
+            </div>
           </div>
 
         </div>
@@ -245,7 +269,7 @@
         <div class="space-y-8">
           
           <!-- Plan 1: Presencia Express -->
-          <div class="reveal-on-scroll clean-card transition-colors hover:border-[#DFA96E]/40 p-6 sm:p-8 lg:p-9">
+          <div class="reveal-on-scroll clean-card spotlight-card transition-colors hover:border-[#DFA96E]/40 p-6 sm:p-8 lg:p-9">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               
               <!-- Miniatura Cápsula + Info Principal -->
@@ -341,7 +365,7 @@
           </div>
 
           <!-- Plan 2: Catálogo Móvil (PLAN PRINCIPAL) -->
-          <div class="reveal-on-scroll clean-card border-[#DFA96E]/40 transition-colors hover:border-[#DFA96E] p-6 sm:p-8 lg:p-9">
+          <div class="reveal-on-scroll clean-card spotlight-card border-[#DFA96E]/40 transition-colors hover:border-[#DFA96E] p-6 sm:p-8 lg:p-9">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               
               <!-- Miniatura Cápsula + Info Principal -->
@@ -440,7 +464,7 @@
           </div>
 
           <!-- Plan 3: Corporativo -->
-          <div class="reveal-on-scroll clean-card transition-colors hover:border-[#DFA96E]/40 p-6 sm:p-8 lg:p-9">
+          <div class="reveal-on-scroll clean-card spotlight-card transition-colors hover:border-[#DFA96E]/40 p-6 sm:p-8 lg:p-9">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               
               <!-- Miniatura Cápsula + Info Principal -->
@@ -617,7 +641,7 @@
         </div>
 
         <!-- Carrusel Horizontal de Teléfonos -->
-        <div id="demosCarousel" class="flex gap-6 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scroll-smooth no-scrollbar select-none" tabindex="0" aria-label="Carrusel de plantillas en vivo">
+        <div id="demosCarousel" class="flex gap-6 overflow-x-auto pb-4 pt-1 snap-x snap-mandatory scroll-smooth no-scrollbar select-none grab-carousel" tabindex="0" aria-label="Carrusel de plantillas en vivo">
           
           <!-- Teléfono 1: La Forja Barber Studio -->
           <div class="w-[270px] sm:w-[290px] shrink-0 snap-start flex flex-col group demo-card" data-category="presencia" data-rubro="barberia">
@@ -937,9 +961,16 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           
           <!-- Tarjeta 1: Pago 30/70 -->
-          <div class="reveal-on-scroll reveal-stagger-1 clean-card flex flex-col justify-between">
-            <div class="space-y-3">
-              <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 01</span>
+          <div class="reveal-on-scroll reveal-stagger-1 clean-card spotlight-card flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 01</span>
+                <div class="icon-badge !w-10 !h-10 !rounded-xl" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+              </div>
               <h3 class="font-serif font-semibold text-2xl text-white">Pago 30/70</h3>
               <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
                 Empezás con el 30%. El 70% restante lo pagás cuando ves tu web terminada en un enlace de prueba y la aprobás. Recién entonces la publicamos.
@@ -948,9 +979,17 @@
           </div>
 
           <!-- Tarjeta 2: Entrega en 7 días hábiles -->
-          <div class="reveal-on-scroll reveal-stagger-2 clean-card flex flex-col justify-between">
-            <div class="space-y-3">
-              <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 02</span>
+          <div class="reveal-on-scroll reveal-stagger-2 clean-card spotlight-card flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 02</span>
+                <div class="icon-badge !w-10 !h-10 !rounded-xl" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+              </div>
               <h3 class="font-serif font-semibold text-2xl text-white">Entrega en 7 días hábiles</h3>
               <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
                 Válido para Presencia Express y Catálogo Móvil, contados desde que recibimos tus productos, fotos, logo y la seña. Si nos atrasamos por nuestra culpa, te descontamos el 10% del saldo. En el plan Corporativo, el plazo es según alcance y se confirma en la cotización.
@@ -959,9 +998,16 @@
           </div>
 
           <!-- Tarjeta 3: 2 rondas de corrección -->
-          <div class="reveal-on-scroll reveal-stagger-3 clean-card flex flex-col justify-between">
-            <div class="space-y-3">
-              <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 03</span>
+          <div class="reveal-on-scroll reveal-stagger-3 clean-card spotlight-card flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs text-[#DFA96E] tracking-wider uppercase font-semibold">GARANTÍA 03</span>
+                <div class="icon-badge !w-10 !h-10 !rounded-xl" aria-hidden="true">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                  </svg>
+                </div>
+              </div>
               <h3 class="font-serif font-semibold text-2xl text-white">2 rondas de corrección</h3>
               <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
                 Revisamos textos, fotos, precios y detalles visuales para que tu web quede exactamente como la querés antes de publicarla.
@@ -972,13 +1018,19 @@
         </div>
 
         <!-- 2 Líneas Adicionales Requeridas -->
-        <div class="reveal-on-scroll space-y-4 pt-4 border-t border-[#F4EFE8]/[0.08] text-base font-sans">
+        <div class="reveal-on-scroll space-y-4 pt-6 border-t border-[#F4EFE8]/[0.08] text-base font-sans">
           <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
-            <span class="font-semibold text-white">0% de comisiones por venta, siempre:</span>
+            <span class="font-semibold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#DFA96E] shrink-0"></span>
+              0% de comisiones por venta, siempre:
+            </span>
             <span class="text-[#A8A29A]">No tocamos tus cobros ni cobramos porcentaje de tus ventas. El dinero ingresa directo a tu cuenta bancaria o en caja.</span>
           </div>
           <div class="flex flex-col sm:flex-row sm:items-baseline gap-2">
-            <span class="font-semibold text-white">Soporte por WhatsApp:</span>
+            <span class="font-semibold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#25D366] shrink-0"></span>
+              Soporte por WhatsApp:
+            </span>
             <span class="text-[#A8A29A]">Respondemos en menos de 15 minutos de 08:00 a 18:00 (hora de Paraguay). Fuera de ese horario, apenas abrimos.</span>
           </div>
         </div>
@@ -1005,32 +1057,62 @@
         <!-- 4 Pasos Simples en Fila (Sin calendario, audio ni dial) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <div class="reveal-on-scroll reveal-stagger-1 clean-card space-y-3">
-            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 01</span>
+          <div class="reveal-on-scroll reveal-stagger-1 clean-card spotlight-card space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 01</span>
+              <div class="icon-badge !w-9 !h-9 !rounded-xl" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="font-serif font-semibold text-xl text-white">Información</h3>
             <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
               Nos enviás tus fotos, lista de productos o servicios, precios y logo por WhatsApp o Drive.
             </p>
           </div>
 
-          <div class="reveal-on-scroll reveal-stagger-2 clean-card space-y-3">
-            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 02</span>
+          <div class="reveal-on-scroll reveal-stagger-2 clean-card spotlight-card space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 02</span>
+              <div class="icon-badge !w-9 !h-9 !rounded-xl" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                  <rect x="2" y="5" width="20" height="14" rx="2"/>
+                  <line x1="2" y1="10" x2="22" y2="10"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="font-serif font-semibold text-xl text-white">Seña del 30%</h3>
             <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
               Transferís la seña inicial para activar el desarrollo y reservar tu turno de entrega.
             </p>
           </div>
 
-          <div class="reveal-on-scroll reveal-stagger-3 clean-card space-y-3">
-            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 03</span>
+          <div class="reveal-on-scroll reveal-stagger-3 clean-card spotlight-card space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 03</span>
+              <div class="icon-badge !w-9 !h-9 !rounded-xl" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                  <rect x="5" y="2" width="14" height="20" rx="3"/>
+                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="font-serif font-semibold text-xl text-white">Enlace de prueba</h3>
             <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
               En 7 días hábiles recibís un enlace privado para navegar tu web, probar el carrito y pedir ajustes.
             </p>
           </div>
 
-          <div class="reveal-on-scroll reveal-stagger-4 clean-card space-y-3">
-            <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 04</span>
+          <div class="reveal-on-scroll reveal-stagger-4 clean-card spotlight-card space-y-3.5">
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs text-[#DFA96E] font-bold tracking-widest block">PASO 04</span>
+              <div class="icon-badge !w-9 !h-9 !rounded-xl" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                </svg>
+              </div>
+            </div>
             <h3 class="font-serif font-semibold text-xl text-white">Publicación</h3>
             <p class="text-[#A8A29A] text-sm font-sans leading-relaxed">
               Aprobás la versión final, abonás el 70% restante y publicamos tu catálogo en tu dominio propio.
@@ -1058,14 +1140,24 @@
         </div>
 
         <!-- Una sola tarjeta horizontal corporativa -->
-        <div class="reveal-on-scroll clean-card">
+        <div class="reveal-on-scroll clean-card spotlight-card p-8 sm:p-10">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div class="lg:col-span-8 space-y-5">
-              <div class="flex flex-wrap items-center gap-3">
-                <span class="font-serif font-semibold text-2xl sm:text-3xl text-white">Plan Corporativo</span>
-                <span class="text-[#F4EFE8]/20">·</span>
-                <span class="font-mono text-2xl text-[#DFA96E] font-bold tabular-nums">Desde ₲ 4.890.000</span>
+              <div class="flex items-center gap-4">
+                <div class="icon-badge !w-11 !h-11 !rounded-2xl" aria-hidden="true">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
+                    <rect x="2" y="2" width="6" height="6" rx="1"/>
+                    <rect x="16" y="2" width="6" height="6" rx="1"/>
+                    <rect x="9" y="16" width="6" height="6" rx="1"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 8v3a2 2 0 002 2h10a2 2 0 002-2V8M12 13v3"/>
+                  </svg>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="font-serif font-semibold text-2xl sm:text-3xl text-white">Plan Corporativo</span>
+                  <span class="text-[#F4EFE8]/20">·</span>
+                  <span class="font-mono text-2xl text-[#DFA96E] font-bold tabular-nums">Desde ₲ 4.890.000</span>
+                </div>
               </div>
 
               <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
@@ -1113,7 +1205,7 @@
         <div class="space-y-4 max-w-3xl">
           
           <!-- Pregunta 1 -->
-          <div class="reveal-on-scroll reveal-stagger-1 clean-card p-6 !py-5 transition-colors">
+          <div class="reveal-on-scroll reveal-stagger-1 clean-card spotlight-card p-6 !py-5 transition-colors">
             <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
               <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Cómo llegan los pedidos del catálogo a mi WhatsApp?</span>
               <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
@@ -1124,7 +1216,7 @@
           </div>
 
           <!-- Pregunta 2 -->
-          <div class="reveal-on-scroll reveal-stagger-2 clean-card p-6 !py-5 transition-colors">
+          <div class="reveal-on-scroll reveal-stagger-2 clean-card spotlight-card p-6 !py-5 transition-colors">
             <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
               <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Existen comisiones por cada venta realizada?</span>
               <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
@@ -1135,7 +1227,7 @@
           </div>
 
           <!-- Pregunta 3 (Nueva requerida) -->
-          <div class="reveal-on-scroll reveal-stagger-3 clean-card p-6 !py-5 transition-colors">
+          <div class="reveal-on-scroll reveal-stagger-3 clean-card spotlight-card p-6 !py-5 transition-colors">
             <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
               <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Qué pasa si no me gusta el diseño?</span>
               <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
@@ -1146,7 +1238,7 @@
           </div>
 
           <!-- Pregunta 4 (Nueva requerida) -->
-          <div class="reveal-on-scroll reveal-stagger-4 clean-card p-6 !py-5 transition-colors">
+          <div class="reveal-on-scroll reveal-stagger-4 clean-card spotlight-card p-6 !py-5 transition-colors">
             <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
               <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Qué necesito para empezar?</span>
               <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
@@ -1157,7 +1249,7 @@
           </div>
 
           <!-- Pregunta 5 (Dominio y Hosting) -->
-          <div class="reveal-on-scroll reveal-stagger-5 clean-card p-6 !py-5 transition-colors">
+          <div class="reveal-on-scroll reveal-stagger-5 clean-card spotlight-card p-6 !py-5 transition-colors">
             <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
               <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Cómo se eligen el dominio y el hosting?</span>
               <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
@@ -1168,7 +1260,7 @@
           </div>
 
           <!-- Pregunta 6 -->
-          <div class="reveal-on-scroll reveal-stagger-6 clean-card p-6 !py-5 transition-colors">
+          <div class="reveal-on-scroll reveal-stagger-6 clean-card spotlight-card p-6 !py-5 transition-colors">
             <button type="button" class="faq-toggle w-full flex items-center justify-between gap-4 text-left cursor-pointer" aria-expanded="false">
               <span class="font-serif font-semibold text-lg sm:text-xl text-white">¿Cuáles son las formas de pago aceptadas?</span>
               <span class="faq-icon text-[#DFA96E] font-mono text-xl select-none">+</span>
@@ -1391,13 +1483,68 @@
         });
       });
 
-      // Filtro por Rubro
+      // Filtro por Rubro (con sincronización para evitar filtros vacíos)
       if (rubroSelect) {
         rubroSelect.addEventListener("change", (e) => {
           activeRubro = e.target.value;
+          // Sincronizar filtro de Plan a "Todos" para no ocultar la categoría por conflicto cruzado
+          activePlan = "all";
+          document.querySelectorAll(".demo-filter-btn").forEach(b => {
+            if (b.getAttribute("data-filter") === "all") {
+              b.className = "demo-filter-btn px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all bg-[#F4EFE8] text-[#0C0B0A]";
+            } else {
+              b.className = "demo-filter-btn px-4 py-1.5 rounded-full text-xs font-medium tracking-wide transition-all text-[#A8A29A] hover:text-white hover:bg-[#141210]";
+            }
+          });
           updateFiltering();
         });
       }
+    })();
+
+    // Arrastre Horizontal del Carrusel con el Mouse (Desktop Grab-to-Scroll Physics)
+    (function initCarouselGrabPhysics() {
+      const carousel = document.getElementById("demosCarousel");
+      if (!carousel) return;
+
+      let isDown = false;
+      let startX = 0;
+      let scrollStart = 0;
+      let dragged = false;
+
+      carousel.addEventListener("mousedown", (e) => {
+        // Ignorar únicamente en inputs, selects o botones de acción explícita
+        if (e.target.closest("button, select")) return;
+        e.preventDefault();
+        isDown = true;
+        dragged = false;
+        carousel.classList.add("is-dragging");
+        startX = e.clientX;
+        scrollStart = carousel.scrollLeft;
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 4) {
+          dragged = true;
+        }
+        carousel.scrollLeft = scrollStart - (dx * 1.25);
+      });
+
+      window.addEventListener("mouseup", () => {
+        if (!isDown) return;
+        isDown = false;
+        carousel.classList.remove("is-dragging");
+      });
+
+      // Prevenir clics accidentales si el usuario arrastró
+      carousel.addEventListener("click", (e) => {
+        if (dragged) {
+          e.preventDefault();
+          e.stopPropagation();
+          dragged = false;
+        }
+      }, true);
     })();
 
     // Mobile Menu Toggle
@@ -1519,8 +1666,76 @@
       });
     })();
 
-    renderLegalLine();
-  </script>
+    // Difuminados e Iluminación Interactiva con el Cursor (Linear & Vercel style)
+    (function initCursorSpotlights() {
+      const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!hasFinePointer || prefersReduced) return;
+
+      const follower = document.getElementById('ambientGlowFollower');
+      const spotlightCards = document.querySelectorAll('.spotlight-card');
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let currentX = mouseX;
+      let currentY = mouseY;
+      let rafId = null;
+
+      // Actualizar variables de posición en cada tarjeta bajo el cursor
+      function updateCardSpotlights(e) {
+        spotlightCards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          if (
+            e.clientX >= rect.left - 80 &&
+            e.clientX <= rect.right + 80 &&
+            e.clientY >= rect.top - 80 &&
+            e.clientY <= rect.bottom + 80
+          ) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x.toFixed(1)}px`);
+            card.style.setProperty('--mouse-y', `${y.toFixed(1)}px`);
+          }
+        });
+      }
+
+      function renderFollower() {
+        const ease = 0.12;
+        currentX += (mouseX - currentX) * ease;
+        currentY += (mouseY - currentY) * ease;
+
+        if (follower) {
+          follower.style.transform = `translate3d(${currentX.toFixed(1)}px, ${currentY.toFixed(1)}px, 0) translate(-50%, -50%)`;
+        }
+
+        if (Math.abs(mouseX - currentX) > 0.1 || Math.abs(mouseY - currentY) > 0.1) {
+          rafId = requestAnimationFrame(renderFollower);
+        } else {
+          rafId = null;
+        }
+      }
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (follower && !follower.classList.contains('is-active')) {
+          follower.classList.add('is-active');
+        }
+
+        updateCardSpotlights(e);
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(renderFollower);
+        }
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => {
+        if (follower) {
+          follower.classList.remove('is-active');
+        }
+      });
+    })();
 
     renderLegalLine();
   </script>

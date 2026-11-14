@@ -227,6 +227,173 @@ select:focus-visible {
   background: rgba(223, 169, 110, 0.5);
 }
 
+/* --- NO-SCROLLBAR UTILITY --- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* --- PLAN CAPSULES & CAROUSEL --- */
+.plan-capsule {
+  width: 108px;
+  height: 180px;
+  border-radius: 28px;
+  border: 1px solid rgba(244, 239, 232, 0.14);
+  background: #0C0B0A;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 640px) {
+  .plan-capsule {
+    width: 92px;
+    height: 150px;
+    border-radius: 22px;
+  }
+}
+
+.phone-capsule {
+  position: relative;
+  border-radius: 38px;
+  border: 1px solid rgba(244, 239, 232, 0.15);
+  background: #0C0B0A;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+@media (min-width: 1024px) {
+  .phone-capsule {
+    border-radius: 42px;
+  }
+}
+.phone-capsule:hover {
+  border-color: rgba(223, 169, 110, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(223, 169, 110, 0.08);
+}
+
+/* --- METALLIC SATIN PILL BUTTONS (Libresitio style) --- */
+.btn-pill-satin {
+  height: 48px;
+  border-radius: 9999px;
+  padding: 0 1.25rem;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0C0B0A;
+  background: linear-gradient(180deg, #FFFFFF 0%, #D8D2C7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-pill-satin:hover {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35), inset 0 1px 0 #ffffff;
+}
+.btn-pill-satin:active {
+  transform: scale(0.98);
+}
+
+/* --- CURSOR SPOTLIGHT & GLOW INTERACTIONS --- */
+.ambient-glow-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(223, 169, 110, 0.055) 0%,
+    rgba(223, 169, 110, 0.018) 40%,
+    transparent 70%
+  );
+  transform: translate3d(-9999px, -9999px, 0) translate(-50%, -50%);
+  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.ambient-glow-follower.is-active {
+  opacity: 1;
+}
+
+/* Interactive Card Spotlight (Linear / Vercel style) */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    480px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px),
+    rgba(223, 169, 110, 0.12),
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+.spotlight-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Luxury Editorial Icon Badges */
+.icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(223, 169, 110, 0.08);
+  border: 1px solid rgba(223, 169, 110, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #DFA96E;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.clean-card:hover .icon-badge,
+.spotlight-card:hover .icon-badge {
+  background: rgba(223, 169, 110, 0.16);
+  border-color: rgba(223, 169, 110, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(223, 169, 110, 0.18);
+}
+
+/* Grab to scroll carousel physics */
+.grab-carousel {
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.grab-carousel.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto !important;
+}
+.grab-carousel.is-dragging iframe {
+  pointer-events: none !important;
+}
+
 /* Reduced motion rules */
 @media (prefers-reduced-motion: reduce) {
   html {
