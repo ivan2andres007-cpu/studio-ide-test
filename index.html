@@ -186,16 +186,19 @@
                   class="w-[375px] h-[750px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto"
                   loading="eager"></iframe>
               </div>
+            </div>
 
-              <!-- Pill overlay táctil -->
-              <div
-                class="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-[#0C0B0A]/90 border border-[#F4EFE8]/[0.15] text-[11px] font-mono text-[#DFA96E] tracking-wider pointer-events-none whitespace-nowrap shadow-lg">
+            <!-- Etiqueta debajo del teléfono -->
+            <div class="mt-4 flex justify-center">
+              <span
+                class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#141210] border border-[#F4EFE8]/[0.15] text-[11px] font-mono text-[#DFA96E] tracking-wider shadow-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#DFA96E] animate-pulse"></span>
                 DEMO INTERACTIVA EN VIVO
-              </div>
+              </span>
             </div>
 
             <!-- 3 Nombres de Plan con Línea Conectora -->
-            <div class="mt-6 flex items-center justify-center gap-3 text-xs font-mono text-[#A8A29A]">
+            <div class="mt-4 flex items-center justify-center gap-3 text-xs font-mono text-[#A8A29A]">
               <span class="hover:text-white transition-colors">Presencia Express</span>
               <span class="w-6 h-[1px] bg-[#DFA96E]/40"></span>
               <span class="text-[#DFA96E] font-semibold">Catálogo Móvil</span>
@@ -293,20 +296,19 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
               <!-- Miniatura Cápsula + Info Principal -->
-              <div class="lg:col-span-6 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 min-w-0">
-                <!-- Cápsula con foto real -->
-                <div class="plan-capsule">
-                  <picture>
-                    <source srcset="assets/img/solucion-presencia.webp" type="image/webp">
-                    <img src="assets/img/solucion-presencia.jpg" alt="Presencia - La Forja Barbería"
-                      class="w-full h-full object-cover" width="108" height="180" loading="lazy">
-                  </picture>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#0C0B0A]/95 via-[#0C0B0A]/35 to-transparent pointer-events-none">
+              <div class="lg:col-span-6 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 min-w-0">
+                <!-- Cápsula con foto real y pie debajo -->
+                <div class="flex flex-col items-center sm:items-start shrink-0">
+                  <div class="plan-capsule">
+                    <picture>
+                      <source srcset="assets/img/solucion-presencia.webp" type="image/webp">
+                      <img src="assets/img/solucion-presencia.jpg" alt="Presencia - La Forja Barber Studio"
+                        class="w-full h-full object-cover object-top" width="180" height="270" loading="lazy">
+                    </picture>
                   </div>
-                  <div class="absolute bottom-2.5 inset-x-2 text-center pointer-events-none">
-                    <span class="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight block">La Forja</span>
-                    <span class="text-[10px] sm:text-[11px] text-[#A8A29A] font-sans font-medium leading-tight block mt-0.5">Barber Studio</span>
+                  <div class="mt-2.5 text-center sm:text-left w-full">
+                    <span class="text-sm font-semibold text-white block whitespace-nowrap">La Forja</span>
+                    <span class="text-xs text-[#A8A29A] font-sans block mt-0.5 whitespace-nowrap">Barber Studio</span>
                   </div>
                 </div>
 
@@ -371,9 +373,9 @@
                 </a>
 
                 <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Presencia%20Express"
-                  target="_blank" rel="noopener" class="btn-wa-primary w-full group"
+                  target="_blank" rel="noopener" class="btn-wa-secondary w-full group"
                   aria-label="Quiero el Plan Presencia Express">
-                  <svg class="w-4 h-4 fill-[#0C0B0A] shrink-0 btn-icon-wa" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg class="w-4 h-4 fill-[#DFA96E] shrink-0 btn-icon-wa" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                   </svg>
@@ -396,20 +398,19 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
               <!-- Miniatura Cápsula + Info Principal -->
-              <div class="lg:col-span-6 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 min-w-0">
-                <!-- Cápsula con foto real -->
-                <div class="plan-capsule">
-                  <picture>
-                    <source srcset="assets/img/solucion-catalogo.webp" type="image/webp">
-                    <img src="assets/img/solucion-catalogo.jpg" alt="Catálogo Móvil - Ferretería San José"
-                      class="w-full h-full object-cover" width="108" height="180" loading="lazy">
-                  </picture>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#0C0B0A]/95 via-[#0C0B0A]/35 to-transparent pointer-events-none">
+              <div class="lg:col-span-6 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 min-w-0">
+                <!-- Cápsula con foto real y pie debajo -->
+                <div class="flex flex-col items-center sm:items-start shrink-0">
+                  <div class="plan-capsule">
+                    <picture>
+                      <source srcset="assets/img/solucion-catalogo.webp" type="image/webp">
+                      <img src="assets/img/solucion-catalogo.jpg" alt="Catálogo Móvil - Ferretería San José"
+                        class="w-full h-full object-cover object-top" width="180" height="270" loading="lazy">
+                    </picture>
                   </div>
-                  <div class="absolute bottom-2.5 inset-x-2 text-center pointer-events-none">
-                    <span class="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight block">Ferretería San José</span>
-                    <span class="text-[10px] sm:text-[11px] text-[#A8A29A] font-sans font-medium leading-tight block mt-0.5">Ferretería &amp; Repuestos</span>
+                  <div class="mt-2.5 text-center sm:text-left w-full">
+                    <span class="text-sm font-semibold text-white block whitespace-nowrap">Ferretería San José</span>
+                    <span class="text-xs text-[#A8A29A] font-sans block mt-0.5 whitespace-nowrap">Ferretería &amp; Repuestos</span>
                   </div>
                 </div>
 
@@ -505,20 +506,19 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
               <!-- Miniatura Cápsula + Info Principal -->
-              <div class="lg:col-span-6 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 min-w-0">
-                <!-- Cápsula con foto real -->
-                <div class="plan-capsule">
-                  <picture>
-                    <source srcset="assets/img/solucion-sistemas.webp" type="image/webp">
-                    <img src="assets/img/solucion-sistemas.jpg" alt="Corporativo - Industrial Lab"
-                      class="w-full h-full object-cover" width="108" height="180" loading="lazy">
-                  </picture>
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#0C0B0A]/95 via-[#0C0B0A]/35 to-transparent pointer-events-none">
+              <div class="lg:col-span-6 flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6 min-w-0">
+                <!-- Cápsula con foto real y pie debajo -->
+                <div class="flex flex-col items-center sm:items-start shrink-0">
+                  <div class="plan-capsule">
+                    <picture>
+                      <source srcset="assets/img/solucion-sistemas.webp" type="image/webp">
+                      <img src="assets/img/solucion-sistemas.jpg" alt="Corporativo - Industrial Lab"
+                        class="w-full h-full object-cover object-top" width="180" height="270" loading="lazy">
+                    </picture>
                   </div>
-                  <div class="absolute bottom-2.5 inset-x-2 text-center pointer-events-none">
-                    <span class="text-[11px] sm:text-xs font-bold text-white tracking-tight leading-tight block">Industrial Lab PY</span>
-                    <span class="text-[10px] sm:text-[11px] text-[#A8A29A] font-sans font-medium leading-tight block mt-0.5">Equipamiento B2B</span>
+                  <div class="mt-2.5 text-center sm:text-left w-full">
+                    <span class="text-sm font-semibold text-white block whitespace-nowrap">Industrial Lab PY</span>
+                    <span class="text-xs text-[#A8A29A] font-sans block mt-0.5 whitespace-nowrap">Equipamiento B2B</span>
                   </div>
                 </div>
 
@@ -584,14 +584,14 @@
                   <span>Ver ejemplo</span>
                 </a>
 
-                <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20el%20Plan%20Corporativo"
-                  target="_blank" rel="noopener" class="btn-wa-primary w-full group"
-                  aria-label="Quiero el Plan Corporativo">
-                  <svg class="w-4 h-4 fill-[#0C0B0A] shrink-0 btn-icon-wa" viewBox="0 0 24 24" aria-hidden="true">
+                <a href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20consultar%20por%20el%20Plan%20Corporativo"
+                  target="_blank" rel="noopener" class="btn-wa-secondary w-full group"
+                  aria-label="Consultar por el Plan Corporativo">
+                  <svg class="w-4 h-4 fill-[#DFA96E] shrink-0 btn-icon-wa" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                   </svg>
-                  <span>Lo quiero</span>
+                  <span>Consultar</span>
                 </a>
 
                 <span
@@ -1462,7 +1462,7 @@
 
   <!-- Botón Flotante de WhatsApp Directo (56px, dorado ámbar con ícono negro, safe-area-inset) -->
   <aside aria-label="Contacto directo por WhatsApp" class="fixed z-40 pointer-events-none"
-    style="bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 1.25rem)); right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 1.25rem));">
+    style="bottom: max(1.5rem, calc(env(safe-area-inset-bottom, 0px) + 1.5rem)); right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 1.25rem));">
     <div id="floatingWaWrapper" class="pointer-events-auto will-change-transform">
       <a id="floatingWaBtn"
         href="https://wa.me/595986125649?text=Hola%20Punto%20Prisma%20Studio%2C%20quiero%20hacer%20una%20consulta"
@@ -1542,6 +1542,15 @@
 
     // Carrusel y Filtros de Demos (Plantillas en Vivo)
     (function initDemosCarousel() {
+      // Asegurar que cada teléfono arranque arriba del todo
+      document.querySelectorAll(".phone-capsule iframe, .phone-frame iframe").forEach(iframe => {
+        iframe.addEventListener("load", () => {
+          try {
+            iframe.contentWindow?.scrollTo(0, 0);
+          } catch (e) {}
+        });
+      });
+
       const carousel = document.getElementById("demosCarousel");
       const prevBtn = document.getElementById("carouselPrev");
       const nextBtn = document.getElementById("carouselNext");

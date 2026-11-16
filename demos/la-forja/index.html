@@ -277,6 +277,15 @@
     <a href="tel:+595986125649">Llamar</a>
   </nav>
 
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
+    });
+  </script>
   <script src="main.js" defer></script>
 </body>
 </html>

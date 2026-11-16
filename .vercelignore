@@ -1,2 +1,7 @@
 tools/
 .env*
+DESIGN.md
+PRODUCT.md
+.impeccable/
+screenshots/
+README.md

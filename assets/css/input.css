@@ -344,22 +344,29 @@ select:focus-visible {
 
 /* --- PLAN CAPSULES & CAROUSEL --- */
 .plan-capsule {
-  width: 108px;
-  height: 180px;
+  width: 180px;
+  height: 270px;
   border-radius: 28px;
   border: 1px solid rgba(244, 239, 232, 0.14);
   background: #0C0B0A;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.plan-capsule img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 @media (max-width: 640px) {
   .plan-capsule {
-    width: 92px;
-    height: 150px;
-    border-radius: 22px;
+    width: 160px;
+    height: 240px;
+    border-radius: 24px;
   }
 }
 
@@ -778,6 +785,14 @@ select:focus-visible {
 
 .grab-carousel.is-dragging iframe {
   pointer-events: none !important;
+}
+
+/* Floating WhatsApp Button Mobile Safe Margins */
+@media (max-width: 640px) {
+  aside[aria-label="Contacto directo por WhatsApp"] {
+    bottom: max(1.75rem, calc(env(safe-area-inset-bottom, 0px) + 1.75rem)) !important;
+    right: max(1.25rem, calc(env(safe-area-inset-right, 0px) + 1.25rem)) !important;
+  }
 }
 
 /* Reduced motion rules */

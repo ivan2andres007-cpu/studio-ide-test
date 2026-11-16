@@ -43,7 +43,7 @@
     .demo-bar {
       background: #000;
       border-bottom: 1px solid rgba(0, 196, 159, 0.3);
-      padding: 34px 16px 8px 16px;
+      padding: 34px 68px 8px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -370,6 +370,14 @@
   </div>
 
   <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function() {
+      window.scrollTo(0, 0);
+    });
+
     let quoteItems = [];
 
     function formatGs(amount) {
