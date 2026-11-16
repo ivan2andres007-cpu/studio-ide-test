@@ -285,7 +285,7 @@ const cleanHtml = `<!DOCTYPE html>
               <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
                 <div>
                   <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
-                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 1.890.000</div>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 500.000</div>
                   <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
                 </div>
 
@@ -365,7 +365,7 @@ const cleanHtml = `<!DOCTYPE html>
               <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
                 <div>
                   <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
-                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 2.890.000</div>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">₲ 799.000</div>
                   <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
                 </div>
 
@@ -440,7 +440,7 @@ const cleanHtml = `<!DOCTYPE html>
               <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end gap-5 border-t lg:border-t-0 lg:border-l border-[#F4EFE8]/[0.08] pt-6 lg:pt-0 lg:pl-8">
                 <div>
                   <span class="font-mono text-[11px] text-[#A8A29A] uppercase tracking-wider block">PRECIO DEL PLAN</span>
-                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">Desde ₲ 4.890.000</div>
+                  <div class="font-mono text-2xl sm:text-3xl font-bold text-white tabular-nums mt-1">A cotizar según alcance</div>
                   <span class="text-xs text-[#A8A29A] block mt-0.5">IVA incluido · Modalidad 30/70</span>
                 </div>
 
@@ -876,7 +876,7 @@ const cleanHtml = `<!DOCTYPE html>
               <div class="flex flex-wrap items-center gap-3">
                 <span class="font-serif font-semibold text-2xl sm:text-3xl text-white">Plan Corporativo</span>
                 <span class="text-[#F4EFE8]/20">·</span>
-                <span class="font-mono text-2xl text-[#DFA96E] font-bold tabular-nums">Desde ₲ 4.890.000</span>
+                <span class="font-mono text-2xl text-[#DFA96E] font-bold tabular-nums">A cotizar según alcance</span>
               </div>
 
               <p class="text-[#A8A29A] text-base font-sans leading-relaxed">
