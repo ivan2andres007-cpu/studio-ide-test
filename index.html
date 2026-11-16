@@ -182,9 +182,19 @@
 
               <!-- Pantalla interactiva con la demo en vivo de La Forja -->
               <div class="w-full h-full overflow-hidden bg-[#0C0B0A]">
-                <iframe src="demos/la-forja/index.html" title="Demo interactiva en vivo dentro del teléfono"
-                  class="w-[375px] h-[750px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto"
+                <iframe src="demos/la-forja/index.html?demo=1" title="Demo interactiva en vivo dentro del teléfono"
+                  class="w-[375px] h-[750px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-none"
                   loading="eager"></iframe>
+              </div>
+
+              <!-- Trigger interactivo con texto chico "Tocá para probar" -->
+              <div class="demo-touch-trigger" title="Tocá para probar la demo">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C0B0A]/85 backdrop-blur-sm border border-[#F4EFE8]/25 text-[11px] font-sans font-medium text-[#F4EFE8] shadow-lg pointer-events-none">
+                  <svg class="w-3.5 h-3.5 text-[#DFA96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <span>Tocá para probar</span>
+                </span>
               </div>
             </div>
 
@@ -360,7 +370,7 @@
 
               <!-- Botones de Acción -->
               <div class="lg:col-span-3 flex flex-col items-stretch lg:items-end gap-2.5 w-full">
-                <a href="demos/la-forja/index.html" target="_blank" rel="noopener" class="btn-pill-outline w-full group"
+                <a href="demos/la-forja/index.html?demo=1" target="_blank" rel="noopener" class="btn-pill-outline w-full group"
                   aria-label="Ver ejemplo de Presencia">
                   <span class="w-5 h-5 rounded bg-white/[0.08] flex items-center justify-center shrink-0">
                     <svg class="w-3.5 h-3.5 text-[#F4EFE8] group-hover:text-[#DFA96E] btn-icon-popout transition-colors"
@@ -431,8 +441,7 @@
 
                   <div>
                     <h3 class="font-serif font-semibold text-2xl lg:text-3xl text-white inline">Catálogo Móvil</h3>
-                    <span class="text-[#A8A29A] text-sm sm:text-base font-sans ml-2.5 font-normal">Con carrito
-                      WhatsApp</span>
+                    <span class="text-[#A8A29A] text-sm sm:text-base font-sans ml-2.5 font-normal whitespace-nowrap">Con carrito</span>
                   </div>
 
                   <p class="text-[#A8A29A] text-sm sm:text-base font-sans leading-relaxed">
@@ -708,10 +717,10 @@
             data-category="presencia" data-rubro="barberia">
             <div class="phone-capsule relative w-full h-[520px] sm:h-[550px] bg-[#0C0B0A]">
               <div class="phone-notch scale-75 origin-top"></div>
-              <iframe src="demos/la-forja/index.html" title="Demo La Forja Barber Studio"
-                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto rounded-[36px]"
+              <iframe src="demos/la-forja/index.html?demo=1" title="Demo La Forja Barber Studio"
+                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-none rounded-[36px]"
                 loading="lazy"></iframe>
-              <a href="demos/la-forja/index.html" target="_blank" rel="noopener"
+              <a href="demos/la-forja/index.html?demo=1" target="_blank" rel="noopener"
                 class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#0C0B0A]/85 hover:bg-[#DFA96E] border border-[#F4EFE8]/20 flex items-center justify-center text-[#A8A29A] hover:text-[#0C0B0A] transition z-30 shadow-md"
                 title="Abrir demo en pestaña nueva">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -719,11 +728,20 @@
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
+              <!-- Trigger interactivo con texto chico "Tocá para probar" -->
+              <div class="demo-touch-trigger" title="Tocá para probar la demo">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C0B0A]/85 backdrop-blur-sm border border-[#F4EFE8]/25 text-[11px] font-sans font-medium text-[#F4EFE8] shadow-lg pointer-events-none">
+                  <svg class="w-3.5 h-3.5 text-[#DFA96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <span>Tocá para probar</span>
+                </span>
+              </div>
             </div>
 
             <div class="mt-3.5 px-1">
               <div class="flex items-center justify-between">
-                <a href="demos/la-forja/index.html" target="_blank" rel="noopener"
+                <a href="demos/la-forja/index.html?demo=1" target="_blank" rel="noopener"
                   class="font-sans font-semibold text-white text-base hover:text-[#DFA96E] transition flex items-center gap-1.5 truncate">
                   <span class="truncate">La Forja Barber Studio</span>
                   <svg class="w-3.5 h-3.5 text-[#A8A29A] group-hover:text-[#DFA96E] transition shrink-0" fill="none"
@@ -760,7 +778,7 @@
             <div class="phone-capsule relative w-full h-[520px] sm:h-[550px] bg-[#0C0B0A]">
               <div class="phone-notch scale-75 origin-top"></div>
               <iframe src="demos/ferreteria-san-jose/index.html" title="Demo Ferretería San José"
-                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto rounded-[36px]"
+                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-none rounded-[36px]"
                 loading="lazy"></iframe>
               <a href="demos/ferreteria-san-jose/index.html" target="_blank" rel="noopener"
                 class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#0C0B0A]/85 hover:bg-[#DFA96E] border border-[#F4EFE8]/20 flex items-center justify-center text-[#A8A29A] hover:text-[#0C0B0A] transition z-30 shadow-md"
@@ -770,6 +788,15 @@
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
+              <!-- Trigger interactivo con texto chico "Tocá para probar" -->
+              <div class="demo-touch-trigger" title="Tocá para probar la demo">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C0B0A]/85 backdrop-blur-sm border border-[#F4EFE8]/25 text-[11px] font-sans font-medium text-[#F4EFE8] shadow-lg pointer-events-none">
+                  <svg class="w-3.5 h-3.5 text-[#DFA96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <span>Tocá para probar</span>
+                </span>
+              </div>
             </div>
 
             <div class="mt-3.5 px-1">
@@ -811,7 +838,7 @@
             <div class="phone-capsule relative w-full h-[520px] sm:h-[550px] bg-[#0C0B0A]">
               <div class="phone-notch scale-75 origin-top"></div>
               <iframe src="demos/carmelitas-boutique/index.html" title="Demo Carmelitas Boutique"
-                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto rounded-[36px]"
+                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-none rounded-[36px]"
                 loading="lazy"></iframe>
               <a href="demos/carmelitas-boutique/index.html" target="_blank" rel="noopener"
                 class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#0C0B0A]/85 hover:bg-[#DFA96E] border border-[#F4EFE8]/20 flex items-center justify-center text-[#A8A29A] hover:text-[#0C0B0A] transition z-30 shadow-md"
@@ -821,6 +848,15 @@
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
+              <!-- Trigger interactivo con texto chico "Tocá para probar" -->
+              <div class="demo-touch-trigger" title="Tocá para probar la demo">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C0B0A]/85 backdrop-blur-sm border border-[#F4EFE8]/25 text-[11px] font-sans font-medium text-[#F4EFE8] shadow-lg pointer-events-none">
+                  <svg class="w-3.5 h-3.5 text-[#DFA96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <span>Tocá para probar</span>
+                </span>
+              </div>
             </div>
 
             <div class="mt-3.5 px-1">
@@ -862,7 +898,7 @@
             <div class="phone-capsule relative w-full h-[520px] sm:h-[550px] bg-[#0C0B0A]">
               <div class="phone-notch scale-75 origin-top"></div>
               <iframe src="demos/atelier-suizo/index.html" title="Demo Atelier Suizo"
-                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto rounded-[36px]"
+                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-none rounded-[36px]"
                 loading="lazy"></iframe>
               <a href="demos/atelier-suizo/index.html" target="_blank" rel="noopener"
                 class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#0C0B0A]/85 hover:bg-[#DFA96E] border border-[#F4EFE8]/20 flex items-center justify-center text-[#A8A29A] hover:text-[#0C0B0A] transition z-30 shadow-md"
@@ -872,6 +908,15 @@
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
+              <!-- Trigger interactivo con texto chico "Tocá para probar" -->
+              <div class="demo-touch-trigger" title="Tocá para probar la demo">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C0B0A]/85 backdrop-blur-sm border border-[#F4EFE8]/25 text-[11px] font-sans font-medium text-[#F4EFE8] shadow-lg pointer-events-none">
+                  <svg class="w-3.5 h-3.5 text-[#DFA96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <span>Tocá para probar</span>
+                </span>
+              </div>
             </div>
 
             <div class="mt-3.5 px-1">
@@ -913,7 +958,7 @@
             <div class="phone-capsule relative w-full h-[520px] sm:h-[550px] bg-[#0C0B0A]">
               <div class="phone-notch scale-75 origin-top"></div>
               <iframe src="demos/bebidas-express/index.html" title="Demo Bebidas Asunción Express"
-                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto rounded-[36px]"
+                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-none rounded-[36px]"
                 loading="lazy"></iframe>
               <a href="demos/bebidas-express/index.html" target="_blank" rel="noopener"
                 class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#0C0B0A]/85 hover:bg-[#DFA96E] border border-[#F4EFE8]/20 flex items-center justify-center text-[#A8A29A] hover:text-[#0C0B0A] transition z-30 shadow-md"
@@ -923,6 +968,15 @@
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
+              <!-- Trigger interactivo con texto chico "Tocá para probar" -->
+              <div class="demo-touch-trigger" title="Tocá para probar la demo">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C0B0A]/85 backdrop-blur-sm border border-[#F4EFE8]/25 text-[11px] font-sans font-medium text-[#F4EFE8] shadow-lg pointer-events-none">
+                  <svg class="w-3.5 h-3.5 text-[#DFA96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <span>Tocá para probar</span>
+                </span>
+              </div>
             </div>
 
             <div class="mt-3.5 px-1">
@@ -964,7 +1018,7 @@
             <div class="phone-capsule relative w-full h-[520px] sm:h-[550px] bg-[#0C0B0A]">
               <div class="phone-notch scale-75 origin-top"></div>
               <iframe src="demos/industrial-lab/index.html" title="Demo Industrial Lab PY"
-                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-auto rounded-[36px]"
+                class="w-[375px] h-[720px] origin-top-left scale-[0.72] sm:scale-[0.77] border-0 pointer-events-none rounded-[36px]"
                 loading="lazy"></iframe>
               <a href="demos/industrial-lab/index.html" target="_blank" rel="noopener"
                 class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-[#0C0B0A]/85 hover:bg-[#DFA96E] border border-[#F4EFE8]/20 flex items-center justify-center text-[#A8A29A] hover:text-[#0C0B0A] transition z-30 shadow-md"
@@ -974,6 +1028,15 @@
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
+              <!-- Trigger interactivo con texto chico "Tocá para probar" -->
+              <div class="demo-touch-trigger" title="Tocá para probar la demo">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0C0B0A]/85 backdrop-blur-sm border border-[#F4EFE8]/25 text-[11px] font-sans font-medium text-[#F4EFE8] shadow-lg pointer-events-none">
+                  <svg class="w-3.5 h-3.5 text-[#DFA96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                  </svg>
+                  <span>Tocá para probar</span>
+                </span>
+              </div>
             </div>
 
             <div class="mt-3.5 px-1">
@@ -1540,9 +1603,86 @@
       });
     });
 
-    // Carrusel y Filtros de Demos (Plantillas en Vivo)
-    (function initDemosCarousel() {
-      // Asegurar que cada teléfono arranque arriba del todo
+    // Interacción en iframes de demos (Tocá para probar & rueda scrollea página)
+    (function initIframeInteraction() {
+      const containers = document.querySelectorAll(".phone-frame, .phone-capsule");
+
+      function deactivateAll() {
+        containers.forEach(c => c.classList.remove("is-interactive"));
+      }
+
+      containers.forEach(container => {
+        // Al hacer clic se activa la interacción
+        container.addEventListener("click", (e) => {
+          if (e.target.closest('a[title*="Abrir demo"]')) return;
+          if (!container.classList.contains("is-interactive")) {
+            deactivateAll();
+            container.classList.add("is-interactive");
+          }
+        });
+
+        // Se desactiva al salir el cursor
+        container.addEventListener("mouseleave", () => {
+          container.classList.remove("is-interactive");
+        });
+
+        // Que la rueda del mouse siempre scrollee la página
+        container.addEventListener("wheel", (e) => {
+          window.scrollBy({ top: e.deltaY, left: e.deltaX, behavior: "auto" });
+        }, { passive: true });
+      });
+
+      // Se desactiva al tocar fuera
+      document.addEventListener("pointerdown", (e) => {
+        if (!e.target.closest(".phone-frame, .phone-capsule")) {
+          deactivateAll();
+        }
+      });
+
+      // Capturar wheel dentro de los iframes y reenviarlo a window
+      function attachWheel(iframe) {
+        try {
+          if (iframe.contentWindow) {
+            iframe.contentWindow.addEventListener("wheel", (e) => {
+              window.scrollBy({ top: e.deltaY, left: e.deltaX, behavior: "auto" });
+            }, { passive: true });
+          }
+        } catch (err) {}
+      }
+
+      document.querySelectorAll(".phone-frame iframe, .phone-capsule iframe").forEach(iframe => {
+        iframe.addEventListener("load", () => attachWheel(iframe));
+        attachWheel(iframe);
+      });
+    })();
+
+    // Asegurar que al cargar todos los teléfonos del carrusel arranquen arriba del todo
+    (function initIframeScrollReset() {
+      function resetAll() {
+        document.querySelectorAll(".phone-capsule iframe, .phone-frame iframe").forEach(iframe => {
+          try {
+            if (iframe.contentWindow) {
+              iframe.contentWindow.scrollTo(0, 0);
+              if (iframe.contentDocument && iframe.contentDocument.documentElement) {
+                iframe.contentDocument.documentElement.scrollTop = 0;
+                if (iframe.contentDocument.body) iframe.contentDocument.body.scrollTop = 0;
+              }
+            }
+          } catch (e) {}
+        });
+        const carousel = document.getElementById("demosCarousel");
+        if (carousel && !carousel.dataset.userScrolled) {
+          carousel.scrollLeft = 0;
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", resetAll);
+      window.addEventListener("load", () => {
+        resetAll();
+        setTimeout(resetAll, 100);
+        setTimeout(resetAll, 400);
+      });
+
       document.querySelectorAll(".phone-capsule iframe, .phone-frame iframe").forEach(iframe => {
         iframe.addEventListener("load", () => {
           try {
@@ -1550,7 +1690,10 @@
           } catch (e) {}
         });
       });
+    })();
 
+    // Carrusel y Filtros de Demos (Plantillas en Vivo)
+    (function initDemosCarousel() {
       const carousel = document.getElementById("demosCarousel");
       const prevBtn = document.getElementById("carouselPrev");
       const nextBtn = document.getElementById("carouselNext");

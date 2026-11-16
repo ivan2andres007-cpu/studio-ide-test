@@ -23,7 +23,7 @@
 /* ---------- Akãrague Barbería ---------- */
 :root{--ink:#0f0e0d;--coal:#171513;--felt:#1b1a18;--wood:#2b2621;--bone:#ece3d3;--paper:#fffaf1;--mute:#a8a092;--mute-d:#5c544a;--red:#e0483a;--red-d:#b3261e;--blue:#2f55a4;--brass:#c9a46a;--line:rgba(236,227,211,.14);--disp:'AK Anton',Impact,'Arial Narrow',sans-serif;--mono:'AK Mono',ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;--max:1240px;--pad:clamp(18px,4vw,40px);--ease:cubic-bezier(.2,.7,.2,1)}
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(80px + var(--ls-bar-h,0px));scrollbar-width:none;-ms-overflow-style:none}
+html{-webkit-text-size-adjust:100%;scroll-behavior:auto;scroll-padding-top:0;scrollbar-width:none;-ms-overflow-style:none}
 html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 body{margin:0;background:var(--ink);color:var(--bone);font:400 15.5px/1.65 var(--mono);-webkit-font-smoothing:antialiased;overflow-x:clip;scrollbar-width:none;-ms-overflow-style:none}
 img{display:block;max-width:100%;height:auto}

@@ -382,6 +382,35 @@ select:focus-visible {
   -ms-overflow-style: none !important;
 }
 
+/* --- PHONE DEMO INTERACTIVITY (Default pointer-events: none, active on click) --- */
+.phone-capsule iframe,
+.phone-frame iframe {
+  pointer-events: none !important;
+}
+
+.phone-capsule.is-interactive iframe,
+.phone-frame.is-interactive iframe {
+  pointer-events: auto !important;
+}
+
+.demo-touch-trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+}
+
+.phone-capsule.is-interactive .demo-touch-trigger,
+.phone-frame.is-interactive .demo-touch-trigger {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .phone-capsule::-webkit-scrollbar,
 .phone-capsule iframe::-webkit-scrollbar,
 .phone-frame::-webkit-scrollbar,

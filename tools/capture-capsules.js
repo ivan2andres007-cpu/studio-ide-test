@@ -37,7 +37,10 @@ async function captureCapsules() {
       deviceScaleFactor: 2
     });
 
-    const fileUrl = 'file:///' + t.file.replace(/\\/g, '/');
+    let fileUrl = 'file:///' + t.file.replace(/\\/g, '/');
+    if (t.name.includes('La Forja')) {
+      fileUrl += '?demo=1';
+    }
     console.log(`Loading ${t.name}: ${fileUrl}`);
     await page.goto(fileUrl, { waitUntil: 'networkidle' });
     await page.waitForTimeout(600);

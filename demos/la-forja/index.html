@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+  </script>
   <title>La Forja Barber Studio · Corte, Fade y Navaja en Asunción</title>
   <meta name="description" content="Barbería de autor en Asunción: corte clásico, fade, barba con toalla caliente y afeitado a navaja. Martes a sábado. Pedí tu turno por WhatsApp al 0986 125 649.">
   <meta name="theme-color" content="#0f0e0d">
@@ -285,6 +290,19 @@
     window.addEventListener('load', function() {
       window.scrollTo(0, 0);
     });
+    try {
+      if (window.location.search.indexOf('demo=1') !== -1) {
+        var openSpan = document.querySelector('[data-open-status]');
+        if (openSpan) {
+          openSpan.textContent = 'Abierto ahora, hasta las 18:00';
+          openSpan.parentNode.classList.add('is-open');
+        }
+        var openLong = document.querySelector('[data-open-status-long]');
+        if (openLong) {
+          openLong.innerHTML = '<b>Abierto ahora</b>, hasta las 18:00. Si hay sillón libre te atendemos por orden de llegada; con turno, no esperás.';
+        }
+      }
+    } catch (e) {}
   </script>
   <script src="main.js" defer></script>
 </body>

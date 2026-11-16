@@ -21,6 +21,19 @@
   function fmt(h) { return Math.floor(h) + ':' + ('0' + Math.round((h % 1) * 60)).slice(-2); }
 
   function status() {
+    try {
+      if (window.location.search.indexOf('demo=1') !== -1) {
+        $$('[data-open-status]').forEach(function (el) {
+          el.textContent = 'Abierto ahora, hasta las 18:00';
+          el.parentNode.classList.add('is-open');
+        });
+        $$('[data-open-status-long]').forEach(function (el) {
+          el.innerHTML = '<b>Abierto ahora</b>, hasta las 18:00. Si hay sillón libre te atendemos por orden de llegada; con turno, no esperás.';
+        });
+        return;
+      }
+    } catch (e) {}
+
     var n = pyNow(), t = HOURS[n.d], open = !!t && n.h >= t[0] && n.h < t[1], when = '';
     if (!open) {
       if (t && n.h < t[0]) when = 'hoy a las ' + fmt(t[0]);
